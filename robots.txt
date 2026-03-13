@@ -1,0 +1,33 @@
+# DueSight Intelligence - Robots.txt
+# Allow all crawlers + AI bots for maximum SEO/GEO visibility
+
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+# AI Crawlers - explicitly allowed for GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://avl1981.github.io/duesight-website/sitemap.xml

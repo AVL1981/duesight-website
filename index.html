@@ -62,6 +62,87 @@
     }
     </script>
 
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Wat is DueSight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DueSight is een AI-gestuurd due diligence platform dat 38 AI-agenten inzet om 64+ publieke databronnen te scannen. In 90 seconden levert het een institutioneel rapport met financiele, juridische, compliance- en cyber-analyse."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hoeveel kost DueSight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DueSight biedt drie plannen: Starter (gratis, beperkte scans), Professional (EUR 249/maand) en Enterprise (EUR 4.999/maand met onbeperkte scans en API-toegang)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Welke landen dekt DueSight?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DueSight dekt 6 jurisdicties: Nederland, Belgie, Duitsland, Frankrijk, Verenigd Koninkrijk en de Verenigde Staten."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wat is Benford's Law analyse?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Benford's Law is een forensische techniek die controleert of cijfers in financiele rapportages een natuurlijke verdeling volgen. Afwijkingen kunnen duiden op manipulatie of fraude. DueSight past dit automatisch toe op alle gescande bedrijven."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hoe werkt sanctiescreening?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DueSight screent tegen OFAC (VS), EU-sanctielijsten, VN-panels en nationale PEP-registers. Daarnaast worden ICIJ Panama/Paradise/Pandora Papers doorzocht op offshore structuren."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Wat is UBO-verificatie?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "UBO-verificatie (Ultimate Beneficial Owner) traceert de uiteindelijke eigenaar van een bedrijf via OpenKvK en GLEIF Level 2 data. Dit is verplicht onder de Wwft voor compliance-doeleinden."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://avl1981.github.io/duesight-website/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Performance: preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- GEO: LLMs.txt for AI crawlers -->
+    <link rel="alternate" type="text/plain" href="/duesight-website/llms.txt" title="LLMs.txt">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Dealfront Tracker (Leadfeeder) -->
@@ -6938,18 +7019,18 @@
                         title="OpenSanctions" onerror="this.style.display='none'">
                     <img loading="lazy" src="https://www.google.com/s2/favicons?domain=shodan.io&sz=64" alt="Shodan"
                         title="Shodan Cyber Intelligence" onerror="this.style.display='none'">
-                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=gov.uk&sz=64" alt="Companies House"
-                        title="UK Companies House" onerror="this.style.display='none'">
-                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=bundesanzeiger.de&sz=64" alt="Bundesanzeiger"
-                        title="Bundesanzeiger" onerror="this.style.display='none'">
-                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=tenderned.nl&sz=64" alt="TenderNed"
-                        title="TenderNed Overheidsopdrachten" onerror="this.style.display='none'">
-                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=rechtspraak.nl&sz=64" alt="Rechtspraak.nl"
-                        title="De Rechtspraak" onerror="this.style.display='none'">
+                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=gov.uk&sz=64"
+                        alt="Companies House" title="UK Companies House" onerror="this.style.display='none'">
+                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=bundesanzeiger.de&sz=64"
+                        alt="Bundesanzeiger" title="Bundesanzeiger" onerror="this.style.display='none'">
+                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=tenderned.nl&sz=64"
+                        alt="TenderNed" title="TenderNed Overheidsopdrachten" onerror="this.style.display='none'">
+                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=rechtspraak.nl&sz=64"
+                        alt="Rechtspraak.nl" title="De Rechtspraak" onerror="this.style.display='none'">
                     <img loading="lazy" src="https://www.google.com/s2/favicons?domain=sec.gov&sz=64" alt="SEC EDGAR"
                         title="US SEC EDGAR" onerror="this.style.display='none'">
-                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=gdeltproject.org&sz=64" alt="GDELT"
-                        title="GDELT Global News Intelligence" onerror="this.style.display='none'">
+                    <img loading="lazy" src="https://www.google.com/s2/favicons?domain=gdeltproject.org&sz=64"
+                        alt="GDELT" title="GDELT Global News Intelligence" onerror="this.style.display='none'">
                     <img loading="lazy" src="https://www.google.com/s2/favicons?domain=kadaster.nl&sz=64" alt="Kadaster"
                         title="Kadaster BAG" onerror="this.style.display='none'">
                 </div>
@@ -9815,8 +9896,8 @@
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                     <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; overflow: hidden;"
                         title="Anthropic Claude — AI Reasoning Engine">
-                        <img loading="lazy" src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128" alt="Anthropic"
-                            width="36" height="36" style="border-radius: 6px;">
+                        <img loading="lazy" src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=128"
+                            alt="Anthropic" width="36" height="36" style="border-radius: 6px;">
                     </div>
                     <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Anthropic</span>
                     <span style="font-size: 0.65rem; color: var(--text-muted);">Claude</span>
@@ -9833,8 +9914,8 @@
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
                     <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; overflow: hidden;"
                         title="Shodan — Cyber Exposure Intelligence">
-                        <img loading="lazy" src="https://www.google.com/s2/favicons?domain=shodan.io&sz=128" alt="Shodan" width="36"
-                            height="36" style="border-radius: 6px;">
+                        <img loading="lazy" src="https://www.google.com/s2/favicons?domain=shodan.io&sz=128"
+                            alt="Shodan" width="36" height="36" style="border-radius: 6px;">
                     </div>
                     <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Shodan</span>
                     <span style="font-size: 0.65rem; color: var(--text-muted);">Cyber Intel</span>
