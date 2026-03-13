@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altman Z-Score: Faillissementsrisico Voorspellen | DueSight Intelligence</title>
+    <meta name="description" content="Altman Z-Score uitgelegd: hoe deze formule faillissementsrisico voorspelt. Berekening, interpretatie en DueSight toepassing.">
+    <link rel="canonical" href="https://avl1981.github.io/duesight-website/blog/altman-z-score/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Altman Z-Score: Faillissementsrisico Voorspellen">
+    <meta property="og:description" content="Altman Z-Score uitgelegd: hoe deze formule faillissementsrisico voorspelt. Berekening, interpretatie en DueSight toepass">
+    <meta property="og:locale" content="nl_NL">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Altman Z-Score: Faillissementsrisico Voorspellen","author":{"@type":"Organization","name":"DueSight Intelligence"},"datePublished":"2026-03-14","dateModified":"2026-03-14"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avl1981.github.io/duesight-website/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://avl1981.github.io/duesight-website/blog/"},{"@type":"ListItem","position":3,"name":"Altman Z-Score: Faillissementsrisico Voorspellen"}]}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#0a0e1a; color:#c8d0e0; line-height:1.8; font-size:17px; }
+        .article-container { max-width:740px; margin:0 auto; padding:48px 24px 80px; }
+        .breadcrumb { font-size:0.8rem; color:#64748b; margin-bottom:32px; }
+        .breadcrumb a { color:#6366f1; text-decoration:none; }
+        h1 { font-size:2.4rem; font-weight:800; color:#e2e8f0; line-height:1.2; margin-bottom:16px; }
+        .article-meta { font-size:0.85rem; color:#64748b; margin-bottom:40px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+        .tag { background:rgba(99,102,241,0.12); color:#818cf8; padding:3px 12px; border-radius:14px; font-size:0.75rem; font-weight:600; }
+        h2 { font-size:1.6rem; font-weight:700; color:#e2e8f0; margin:48px 0 16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.04); }
+        h3 { font-size:1.2rem; font-weight:700; color:#e2e8f0; margin:32px 0 12px; }
+        p { margin-bottom:20px; } strong { color:#e2e8f0; } a { color:#6366f1; text-decoration:none; }
+        .lead { font-size:1.15rem; color:#94a3b8; line-height:1.7; margin-bottom:32px; }
+        .answer-box { background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06)); border:1px solid rgba(99,102,241,0.15); border-radius:16px; padding:28px 32px; margin:24px 0 40px; }
+        .answer-box strong { color:#818cf8; display:block; margin-bottom:8px; font-size:0.8rem; letter-spacing:1.5px; text-transform:uppercase; }
+        ul, ol { margin:0 0 20px 24px; } li { margin-bottom:8px; }
+        .stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:16px; margin:24px 0 32px; }
+        .stat-card { background:rgba(15,20,40,0.8); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:20px; text-align:center; }
+        .stat-value { font-size:2rem; font-weight:800; color:#22d3ee; }
+        .stat-label { font-size:0.75rem; color:#64748b; text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+        table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:0.9rem; }
+        th { text-align:left; padding:10px 14px; color:#64748b; font-weight:600; font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid rgba(255,255,255,0.1); background:rgba(15,20,40,0.5); }
+        td { padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.04); }
+        .cta-block { background:linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08)); border:1px solid rgba(99,102,241,0.2); border-radius:16px; padding:36px; text-align:center; margin:48px 0; }
+        .cta-block h3 { margin-top:0; }
+        .cta-btn { display:inline-block; padding:14px 40px; background:linear-gradient(135deg,#6366f1,#8b5cf6); color:white; font-weight:700; border-radius:12px; text-decoration:none; margin-top:16px; box-shadow:0 4px 20px rgba(99,102,241,0.3); }
+        .toc { background:rgba(15,20,40,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:24px 28px; margin:0 0 40px; }
+        .toc h3 { margin-top:0; font-size:0.9rem; color:#64748b; text-transform:uppercase; letter-spacing:1px; }
+        .toc ol { margin-bottom:0; } .toc a { color:#94a3b8; font-size:0.9rem; }
+        .footer { margin-top:64px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.06); color:#475569; font-size:0.8rem; text-align:center; }
+        .footer a { color:#6366f1; }
+        @media (max-width:600px) { h1 { font-size:1.8rem; } .stat-grid { grid-template-columns:1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <article class="article-container">
+        <nav class="breadcrumb"><a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; Altman Z-Score: Faillissementsrisico Voo</nav>
+
+        <h1>Altman Z-Score: Faillissementsrisico Voorspellen</h1>
+
+        <div class="article-meta">
+            <span>DueSight Intelligence</span>
+            <span>&bull; 14 maart 2026</span>
+            <span>&bull; 8 min leestijd</span>
+            <span class="tag">Financiele Analyse</span><span class="tag">Risico</span>
+        </div>
+
+        <div class="answer-box">
+            <strong>Snel antwoord</strong>
+            De Altman Z-Score is een formule die vijf financiele ratio's combineert om de kans op faillissement te voorspellen. Een score onder 1.8 = hoog risico, boven 3.0 = veilig. DueSight berekent automatisch de Z-Score voor elk gescand bedrijf.
+        </div>
+
+        <div class="toc">
+            <h3>Inhoudsopgave</h3>
+            <ol><li><a href="#wat">Wat is de Altman Z-Score?</a></li><li><a href="#formule">De formule</a></li><li><a href="#interpretatie">Interpretatie: de zones</a></li><li><a href="#varianten">Varianten per bedrijfstype</a></li><li><a href="#toepassing">Hoe DueSight het toepast</a></li><li><a href="#faq">Veelgestelde vragen</a></li></ol>
+        </div>
+
+        
+        <h2 id="wat">1. Wat is de Altman Z-Score?</h2>
+        <p>De <strong>Altman Z-Score</strong> is een wiskundig model ontwikkeld door professor Edward Altman (NYU Stern) in 1968. Het combineert vijf financi&euml;le ratio's in &eacute;&eacute;n score die de kans op faillissement voorspelt.</p>
+             <p>Het model voorspelt faillissementen met <strong>80-90% nauwkeurigheid</strong> tot twee jaar vooruit &mdash; een track record van meer dan 55 jaar.</p>
+
+        <h2 id="formule">2. De Formule</h2>
+        <p>De Z-Score voor publieke productiebedrijven:</p>
+             <p><strong>Z = 1.2&times;X1 + 1.4&times;X2 + 3.3&times;X3 + 0.6&times;X4 + 1.0&times;X5</strong></p>
+             <table><thead><tr><th>Variable</th><th>Ratio</th><th>Wat het meet</th></tr></thead><tbody>
+             <tr><td>X1</td><td>Working Capital / Total Assets</td><td>Liquiditeit</td></tr>
+             <tr><td>X2</td><td>Retained Earnings / Total Assets</td><td>Winstgevendheid (cumulatief)</td></tr>
+             <tr><td>X3</td><td>EBIT / Total Assets</td><td>Operationele effici&euml;ntie</td></tr>
+             <tr><td>X4</td><td>Market Cap / Total Liabilities</td><td>Solvabiliteit</td></tr>
+             <tr><td>X5</td><td>Revenue / Total Assets</td><td>Asset utilization</td></tr>
+             </tbody></table>
+
+        <h2 id="interpretatie">3. Interpretatie: De Drie Zones</h2>
+        <div class="stat-grid">
+                <div class="stat-card"><div class="stat-value" style="color:#34d399;">&gt;3.0</div><div class="stat-label">Veilige Zone</div></div>
+                <div class="stat-card"><div class="stat-value" style="color:#fbbf24;">1.8-3.0</div><div class="stat-label">Grijze Zone</div></div>
+                <div class="stat-card"><div class="stat-value" style="color:#f87171;">&lt;1.8</div><div class="stat-label">Gevarenzone</div></div>
+             </div>
+             <ul>
+                <li><strong>Z &gt; 3.0 (Veilig)</strong> &mdash; Het bedrijf is financieel gezond. Kans op faillissement is minimaal.</li>
+                <li><strong>1.8 &lt; Z &lt; 3.0 (Grijs)</strong> &mdash; Onzeker gebied. Nader onderzoek nodig.</li>
+                <li><strong>Z &lt; 1.8 (Gevaar)</strong> &mdash; Hoog risico op faillissement binnen 2 jaar.</li>
+             </ul>
+
+        <h2 id="varianten">4. Varianten per Bedrijfstype</h2>
+        <p>Altman ontwikkelde varianten voor verschillende bedrijfstypen:</p>
+             <table><thead><tr><th>Model</th><th>Voor wie</th><th>Verschil</th></tr></thead><tbody>
+             <tr><td><strong>Z-Score</strong></td><td>Publieke productiebedrijven</td><td>Origineel model (1968)</td></tr>
+             <tr><td><strong>Z'-Score</strong></td><td>Niet-beursgenoteerde bedrijven</td><td>X4 = Boekwaarde eigen vermogen i.p.v. marktwaarde</td></tr>
+             <tr><td><strong>Z''-Score</strong></td><td>Niet-productiebedrijven (dienstverlening)</td><td>X5 (omzet/assets) verwijderd</td></tr>
+             </tbody></table>
+             <p>DueSight selecteert automatisch het juiste model op basis van het bedrijfstype.</p>
+
+        <h2 id="toepassing">5. Hoe DueSight de Z-Score Toepast</h2>
+        <p>Bij elke company scan berekent DueSight automatisch de Altman Z-Score:</p>
+             <ol>
+                <li><strong>Financi&euml;le data extractie</strong> &mdash; Jaarrekening van KvK of Handelsregister</li>
+                <li><strong>Model selectie</strong> &mdash; Z, Z' of Z'' op basis van bedrijfstype</li>
+                <li><strong>Berekening</strong> &mdash; Alle 5 ratio's berekend en gewogen</li>
+                <li><strong>Trendanalyse</strong> &mdash; Vergelijking over meerdere jaren heen</li>
+                <li><strong>Rapportage</strong> &mdash; Score met kleurcodering en context in het DD-rapport</li>
+             </ol>
+
+        <h2 id="faq">6. Veelgestelde Vragen</h2>
+        <h3>Werkt de Z-Score voor alle bedrijven?</h3>
+             <p>De Z-Score is het meest betrouwbaar voor productiebedrijven en middelgrote dienstverleners. Voor financi&euml;le instellingen (banken, verzekeraars) is het model minder geschikt vanwege hun unieke balansstructuur.</p>
+             <h3>Hoe betrouwbaar is de Z-Score?</h3>
+             <p>Het originele model voorspelde faillissementen met 72% nauwkeurigheid &eacute;&eacute;n jaar vooruit, en tot 94% met de ge&euml;volueerde variant. Het is een van de meest gevalideerde financi&euml;le modellen ter wereld.</p>
+             <h3>Kan een bedrijf met een lage Z-Score overleven?</h3>
+             <p>Ja. Een lage Z-Score is een waarschuwingssignaal, geen vonnis. Bedrijven in herstructurering, seizoensgebonden industri&euml;en, of met sterke cashflow kunnen overleven ondanks een lage score.</p>
+
+
+        <div class="cta-block">
+            <h3>Gratis Due Diligence Scan</h3>
+            <p>DueSight scant 64+ bronnen in 90 seconden. Probeer het gratis.</p>
+            <a href="../../#scan-dashboard" class="cta-btn">Start Gratis Scan &rarr;</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 DueSight Intelligence | <a href="../../">Home</a> | <a href="../">Alle artikelen</a></p>
+            <p style="margin-top:8px;">Gerelateerd: <a href="../wat-is-due-diligence/">Wat is Due Diligence?</a> | <a href="../benfords-law-fraude-detectie/">Benford's Law</a></p>
+        </div>
+    </article>
+</body>
+</html>
