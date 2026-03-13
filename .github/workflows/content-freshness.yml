@@ -1,0 +1,34 @@
+name: Content Freshness Update
+
+on:
+  schedule:
+    # Runs every Monday at 06:00 UTC (07:00 CET)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check content freshness
+        run: python content-agent/scripts/content_freshness.py --check
+
+      - name: Refresh stale content dates
+        run: python content-agent/scripts/content_freshness.py --refresh
+
+      - name: Update sitemap
+        run: python content-agent/scripts/content_freshness.py --refresh
+
+      - name: Commit and push
+        run: |
+          git config user.name "DueSight Content Bot"
+          git config user.email "bot@duesight.nl"
+          git add -A
+          git diff --cached --quiet || git commit -m "🤖 Weekly content freshness update $(date +%Y-%m-%d)"
+          git push
