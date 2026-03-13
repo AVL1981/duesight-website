@@ -4,11 +4,13 @@ on:
   schedule:
     # Runs every Monday at 06:00 UTC (07:00 CET)
     - cron: '0 6 * * 1'
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -17,18 +19,14 @@ jobs:
           python-version: '3.11'
 
       - name: Check content freshness
-        run: python content-agent/scripts/content_freshness.py --check
+        run: python scripts/content_freshness.py --check
 
       - name: Refresh stale content dates
-        run: python content-agent/scripts/content_freshness.py --refresh
+        run: python scripts/content_freshness.py --refresh
 
-      - name: Update sitemap
-        run: python content-agent/scripts/content_freshness.py --refresh
-
-      - name: Commit and push
+      - name: Commit and push if changed
         run: |
           git config user.name "DueSight Content Bot"
           git config user.email "bot@duesight.nl"
           git add -A
-          git diff --cached --quiet || git commit -m "🤖 Weekly content freshness update $(date +%Y-%m-%d)"
-          git push
+          git diff --cached --quiet || (git commit -m "🤖 Weekly content freshness update $(date +%Y-%m-%d)" && git push)
