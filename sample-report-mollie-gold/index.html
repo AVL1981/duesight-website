@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DueSight Intelligence â€” Mollie Pre-DD Rapport</title>
+    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor Mollie. AI-gestuurde due diligence analyse met 38 agents en 64+ bronnen.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://avl1981.github.io/duesight-website/sample-report-mollie-gold/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: rgba(15,20,40,0.8);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: #6366f1;
+            --accent-secondary: #22d3ee;
+            --border-glass: rgba(255,255,255,0.06);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
+            padding: 12px 0; transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--accent-secondary); }
+        .report-header {
+            text-align: center; padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+        .report-header img { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 16px; }
+        .report-header h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
+        .report-header .sector { color: var(--text-muted); font-size: 0.85rem; }
+        .report-badge {
+            display: inline-block; margin-top: 16px; padding: 4px 14px;
+            background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px; font-size: 0.7rem; font-weight: 700;
+            color: var(--accent-primary); letter-spacing: 1.5px; text-transform: uppercase;
+        }
+        .score-section {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            padding: 40px 0; border-bottom: 1px solid var(--border-glass);
+        }
+        .score-card {
+            text-align: center; padding: 24px 16px;
+            background: var(--bg-card); border: 1px solid var(--border-glass);
+            border-radius: 14px;
+        }
+        .score-card .value { font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
+        .score-card .label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .section { padding: 40px 0; border-bottom: 1px solid var(--border-glass); }
+        .section h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .section h2 .icon { font-size: 1.1rem; }
+        .metric-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .metric-row .key { color: var(--text-secondary); font-size: 0.85rem; }
+        .metric-row .val { font-weight: 600; font-size: 0.85rem; }
+        .tag {
+            display: inline-block; padding: 3px 10px; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700;
+        }
+        .tag-high { background: rgba(34,211,238,0.1); color: #22d3ee; }
+        .tag-medium { background: rgba(251,191,36,0.1); color: #fbbf24; }
+        .tag-low { background: rgba(248,113,113,0.1); color: #f87171; }
+        .tag-verified { background: rgba(52,211,153,0.1); color: #34d399; }
+        .engine-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
+        .engine-card {
+            text-align: center; padding: 14px 8px;
+            background: var(--bg-card); border: 1px solid var(--border-glass);
+            border-radius: 10px; font-size: 0.7rem;
+        }
+        .engine-card .name { font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
+        .engine-card .result { color: var(--accent-secondary); }
+        .disclaimer {
+            text-align: center; padding: 40px 0; color: var(--text-muted);
+            font-size: 0.7rem; line-height: 1.8;
+        }
+        .cta-section {
+            text-align: center; padding: 40px 0 60px;
+        }
+        .cta-btn {
+            display: inline-block; padding: 14px 36px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white; font-weight: 700; font-size: 1rem;
+            border-radius: 12px; text-decoration: none;
+            transition: all 0.3s; box-shadow: 0 4px 20px rgba(99,102,241,0.25);
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
+        @media (max-width: 768px) {
+            .score-section { grid-template-columns: repeat(2, 1fr); }
+            .engine-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">â† Terug naar DueSight</a>
+
+        <div class="report-header">
+            <img src="https://www.google.com/s2/favicons?domain=mollie.com&sz=128" alt="Mollie" onerror="this.style.display='none'">
+            <h1>Mollie</h1>
+            <div class="sector">Fintech & Payments</div>
+            <div class="report-badge">ðŸ“‹ Pre-DD Intelligence Rapport</div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-card">
+                <div class="value" style="color: #22d3ee">88%</div>
+                <div class="label">Confidence Score</div>
+            </div>
+            <div class="score-card">
+                <div class="value" style="color: #22d3ee">A+</div>
+                <div class="label">Compliance Grade</div>
+            </div>
+            <div class="score-card">
+                <div class="value">12</div>
+                <div class="label">Modules Analysed</div>
+            </div>
+            <div class="score-card">
+                <div class="value" style="color: #22d3ee">INVEST</div>
+                <div class="label">Consensus</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">ðŸ“Š</span> Executive Summary</h2>
+            <div class="metric-row"><span class="key">Bedrijfsnaam</span><span class="val">Mollie</span></div>
+            <div class="metric-row"><span class="key">KvK-nummer</span><span class="val">30204462</span></div>
+            <div class="metric-row"><span class="key">Geschatte omzet</span><span class="val">â‚¬800M+</span></div>
+            <div class="metric-row"><span class="key">Medewerkers</span><span class="val">2,500+</span></div>
+            <div class="metric-row"><span class="key">Sector</span><span class="val">Fintech & Payments</span></div>
+            <div class="metric-row"><span class="key">Website</span><span class="val"><a href="https://mollie.com" target="_blank" style="color:var(--accent-secondary);text-decoration:none;">mollie.com</a></span></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">ðŸ”</span> FinanciÃ«le Analyse</h2>
+            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-high">VERIFIED</span></div>
+            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PASS</span></div>
+            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CONSISTENT</span></div>
+            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW</span></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">âš–ï¸</span> Compliance & Sancties</h2>
+            <div class="metric-row"><span class="key">OFAC / EU Sanctielijsten</span><span class="tag tag-verified">CLEAN</span></div>
+            <div class="metric-row"><span class="key">UBO Transparantie</span><span class="tag tag-high">VERIFIED</span></div>
+            <div class="metric-row"><span class="key">PEP Screening</span><span class="tag tag-verified">NO MATCH</span></div>
+            <div class="metric-row"><span class="key">AML Risk Score</span><span class="tag tag-verified">LOW RISK</span></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">ðŸ›¡ï¸</span> Cyber Exposure</h2>
+            <div class="metric-row"><span class="key">Open Ports (Shodan)</span><span class="tag tag-medium">3 FOUND</span></div>
+            <div class="metric-row"><span class="key">SSL/TLS Status</span><span class="tag tag-verified">VALID</span></div>
+            <div class="metric-row"><span class="key">Data Breach History</span><span class="tag tag-verified">CLEAN</span></div>
+            <div class="metric-row"><span class="key">DNS Security</span><span class="tag tag-high">DNSSEC</span></div>
+        </div>
+
+        <div class="section">
+            <h2><span class="icon">ðŸ¤–</span> 5-Engine AI Consensus</h2>
+            <div class="engine-grid">
+                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">INVEST</div></div>
+                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">INVEST</div></div>
+                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">INVEST</div></div>
+                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">INVEST</div></div>
+                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">INVEST</div></div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
+                Dit is een voorbeeldrapport. Start uw eigen analyse in 90 seconden.
+            </p>
+            <a href="../index.html#scan-dashboard" class="cta-btn">Start uw eigen analyse â†’</a>
+        </div>
+
+        <div class="disclaimer">
+            <strong>DEMO DATA</strong> â€” Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronnen (KvK, CBS, Shodan, OpenSanctions).<br>
+            Geen due diligence of juridisch advies. Werkelijke rapporten uitsluitend voor geregistreerde opdrachtgevers.<br>
+            <span style="opacity: 0.5;">ðŸ¤– EU AI Act Art. 52 â€” autonoom gegenereerd door DueSight AI Protocol v5.3</span><br>
+            <span style="opacity: 0.3;">CONFIDENTIAL Â· PROTOCOL V5.3</span>
+        </div>
+    </div>
+</body>
+</html>
