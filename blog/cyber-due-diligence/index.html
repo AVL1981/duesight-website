@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Due Diligence: Digitale Risico's Scannen | DueSight</title>
+    <meta name="description"
+        content="Cyber due diligence: hoe je digitale risico's scant voor M&A en compliance. Shodan, HIBP, SSL-checks en NIS2-richtlijn uitgelegd.">
+    <link rel="canonical" href="https://avl1981.github.io/duesight-website/blog/cyber-due-diligence/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cyber Due Diligence: Digitale Risico's Scannen voor M&A">
+    <meta property="og:description"
+        content="Complete gids cyber DD: Shodan scanning, HIBP checks, SSL/TLS analyse en NIS2-compliance.">
+    <meta property="og:locale" content="nl_NL">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cyber Due Diligence: Digitale Risico's Scannen voor M&A","author":{"@type":"Organization","name":"DueSight Intelligence"},"datePublished":"2026-03-13","dateModified":"2026-03-13"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avl1981.github.io/duesight-website/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://avl1981.github.io/duesight-website/blog/"},{"@type":"ListItem","position":3,"name":"Cyber Due Diligence"}]}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e1a;
+            color: #c8d0e0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .breadcrumb a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(99, 102, 241, 0.12);
+            color: #818cf8;
+            padding: 3px 12px;
+            border-radius: 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin: 48px 0 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin: 32px 0 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #e2e8f0;
+        }
+
+        a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .answer-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.06));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin: 24px 0 40px;
+        }
+
+        .answer-box strong {
+            color: #818cf8;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        ul,
+        ol {
+            margin: 0 0 20px 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 24px 0 32px;
+        }
+
+        .stat-card {
+            background: rgba(15, 20, 40, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f87171;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 14px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 20, 40, 0.5);
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .cta-block {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-block h3 {
+            margin-top: 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-top: 16px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .toc {
+            background: rgba(15, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin: 0 0 40px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toc ol {
+            margin-bottom: 0;
+        }
+
+        .toc a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .danger-box {
+            background: rgba(248, 113, 113, 0.08);
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .danger-box strong {
+            color: #f87171;
+        }
+
+        .footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #475569;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #6366f1;
+        }
+
+        @media (max-width:600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="article-container">
+        <nav class="breadcrumb"><a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; Cyber Due
+            Diligence</nav>
+
+        <h1>Cyber Due Diligence: Digitale Risico's Scannen voor M&amp;A</h1>
+
+        <div class="article-meta">
+            <span>DueSight Intelligence</span><span>&bull; 13 maart 2026</span><span>&bull; 10 min leestijd</span>
+            <span class="tag">Cybersecurity</span><span class="tag">M&amp;A</span><span class="tag">NIS2</span>
+        </div>
+
+        <div class="answer-box">
+            <strong>Snel antwoord</strong>
+            Cyber due diligence is het scannen van digitale risico's van een bedrijf v&oacute;&oacute;r een overname of
+            samenwerking. Dit omvat: open poorten en kwetsbaarheden (Shodan), datalekken (Have I Been Pwned),
+            SSL/TLS-configuratie, DNS-beveiliging en NIS2-compliance. Gemiddelde kosten van een data breach na overname:
+            &euro;4.45 miljoen. DueSight voert deze scans automatisch uit.
+        </div>
+
+        <div class="toc">
+            <h3>Inhoudsopgave</h3>
+            <ol>
+                <li><a href="#waarom">Waarom cyber DD bij M&amp;A?</a></li>
+                <li><a href="#nis2">NIS2-richtlijn: wat verandert er?</a></li>
+                <li><a href="#scanning">5 checks voor cyber DD</a></li>
+                <li><a href="#shodan">Shodan: wat ziet een aanvaller?</a></li>
+                <li><a href="#hibp">Have I Been Pwned: datalekken</a></li>
+                <li><a href="#ssl">SSL/TLS en DNS-beveiliging</a></li>
+                <li><a href="#cases">Data breach na overname: cases</a></li>
+                <li><a href="#faq">Veelgestelde vragen</a></li>
+            </ol>
+        </div>
+
+        <p class="lead">
+            In 2017 ontdekte Verizon na de overname van Yahoo dat 3 miljard accounts gehackt waren &mdash; de
+            overnameprijs daalde met $350 miljoen. Marriott erfde in 2018 een data breach van Starwood Hotels die 500
+            miljoen gasten trof. Cyber due diligence had dit kunnen voorkomen.
+        </p>
+
+        <h2 id="waarom">1. Waarom Cyber DD bij M&amp;A?</h2>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-value">&euro;4.45M</div>
+                <div class="stat-label">Gem. kosten data breach</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">277</div>
+                <div class="stat-label">Dagen om breach te detecteren</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">83%</div>
+                <div class="stat-label">Bedrijven met kwetsbaarheden</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$350M</div>
+                <div class="stat-label">Yahoo overnamekorting</div>
+            </div>
+        </div>
+
+        <p>Bij een overname erf je niet alleen activa en personeel &mdash; je erft ook <strong>digitale schuld</strong>:
+        </p>
+        <ul>
+            <li><strong>Onontdekte breaches</strong> &mdash; Gemiddeld 277 dagen om een breach te detecteren</li>
+            <li><strong>Verouderde systemen</strong> &mdash; Legacy software met bekende kwetsbaarheden</li>
+            <li><strong>Compliance-gaps</strong> &mdash; Niet voldoen aan AVG, NIS2 of sectorspecifieke eisen</li>
+            <li><strong>Shadow IT</strong> &mdash; Ongeautoriseerde systemen en diensten</li>
+        </ul>
+
+        <h2 id="nis2">2. NIS2-Richtlijn: Wat Verandert Er?</h2>
+        <p>
+            De <strong>Network and Information Security Directive 2 (NIS2)</strong> is sinds oktober 2024 van kracht in
+            de EU. De richtlijn breidt de cybersecurity-verplichtingen drastisch uit:
+        </p>
+        <ul>
+            <li><strong>Meer sectoren</strong> &mdash; Naast energie en transport nu ook: voedsel, afval, chemie,
+                ICT-diensten, post, ruimtevaart</li>
+            <li><strong>Supply chain security</strong> &mdash; Bedrijven moeten de cybersecurity van hun
+                <em>leveranciers</em> beoordelen</li>
+            <li><strong>Bestuurlijke aansprakelijkheid</strong> &mdash; Bestuurders zijn persoonlijk aansprakelijk voor
+                naleving</li>
+            <li><strong>Meldplicht</strong> &mdash; Significante incidenten binnen 24 uur melden</li>
+            <li><strong>Boetes</strong> &mdash; Tot &euro;10 miljoen of 2% van de wereldwijde jaaromzet</li>
+        </ul>
+
+        <div class="danger-box">
+            <strong>&#9888; NIS2 Impact:</strong> Due diligence bij overnames moet nu expliciet cyber-risico's en
+            NIS2-compliance van het doelbedrijf beoordelen. Dit is geen optional &mdash; het is een
+            bestuurdersverantwoordelijkheid.
+        </div>
+
+        <h2 id="scanning">3. De 5 Checks voor Cyber Due Diligence</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Check</th>
+                    <th>Tool</th>
+                    <th>Wat het vindt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><strong>Open poorten &amp; services</strong></td>
+                    <td>Shodan</td>
+                    <td>Exposed databases, RDP, verouderde servers</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><strong>Data breaches</strong></td>
+                    <td>Have I Been Pwned</td>
+                    <td>Gelekte credentials van medewerkers</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><strong>SSL/TLS configuratie</strong></td>
+                    <td>SSL Labs / DueSight</td>
+                    <td>Zwakke encryptie, verlopen certificaten</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><strong>DNS-beveiliging</strong></td>
+                    <td>DNS queries</td>
+                    <td>Ontbrekende SPF, DKIM, DMARC, DNSSEC</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>Subdomain enumeration</strong></td>
+                    <td>crt.sh / DueSight</td>
+                    <td>Vergeten test-omgevingen, shadow IT</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="shodan">4. Shodan: Wat Ziet een Aanvaller?</h2>
+        <p>
+            <strong>Shodan</strong> is een zoekmachine voor internet-connected apparaten. Het scant voortdurend het
+            internet en catalogiseert welke poorten open staan, welke software draait, en welke kwetsbaarheden aanwezig
+            zijn.
+        </p>
+        <p>Wat DueSight zoekt via Shodan:</p>
+        <ul>
+            <li><strong>Open databases</strong> &mdash; MongoDB, Elasticsearch, Redis zonder authenticatie</li>
+            <li><strong>RDP/VNC</strong> &mdash; Remote desktop poorten open naar het internet</li>
+            <li><strong>Verouderde webservers</strong> &mdash; Apache 2.2, IIS 6.0 met bekende exploits</li>
+            <li><strong>IoT-apparaten</strong> &mdash; Cameras, printers, industriele systemen</li>
+            <li><strong>Known CVE's</strong> &mdash; Software met publiek bekende kwetsbaarheden</li>
+        </ul>
+
+        <h2 id="hibp">5. Have I Been Pwned: Datalekken</h2>
+        <p>
+            <strong>Have I Been Pwned (HIBP)</strong> aggregeert data uit 700+ publieke data breaches. DueSight
+            controleert of e-mailadressen van het doelbedrijf voorkomen in gelekte databases.
+        </p>
+        <p>Waarom dit belangrijk is bij DD:</p>
+        <ul>
+            <li>Gelekte wachtwoorden = <strong>credential stuffing risico</strong></li>
+            <li>Veel hits = <strong>zwak wachtwoordbeleid</strong></li>
+            <li>Executive accounts in breaches = <strong>spear phishing risico</strong></li>
+        </ul>
+
+        <h2 id="ssl">6. SSL/TLS en DNS-beveiliging</h2>
+        <h3>SSL/TLS analyse</h3>
+        <ul>
+            <li>Certificaat geldigheid en uitgever</li>
+            <li>Protocol versie (TLS 1.2 minimum, TLS 1.3 aanbevolen)</li>
+            <li>Cipher suites (geen RC4, geen 3DES)</li>
+            <li>HSTS header aanwezig?</li>
+        </ul>
+        <h3>DNS-beveiliging</h3>
+        <ul>
+            <li><strong>SPF</strong> &mdash; Voorkomt e-mail spoofing</li>
+            <li><strong>DKIM</strong> &mdash; Verifieert afzender authenticiteit</li>
+            <li><strong>DMARC</strong> &mdash; Beleid voor afhandeling van spoofed e-mail</li>
+            <li><strong>DNSSEC</strong> &mdash; Voorkomt DNS-hijacking</li>
+        </ul>
+
+        <h2 id="cases">7. Data Breach na Overname: Cases</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Case</th>
+                    <th>Wat gebeurde</th>
+                    <th>Kosten</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Yahoo/Verizon (2017)</strong></td>
+                    <td>3 miljard accounts gehackt v&oacute;&oacute;r overname</td>
+                    <td>-$350M overnameprijs</td>
+                </tr>
+                <tr>
+                    <td><strong>Marriott/Starwood (2018)</strong></td>
+                    <td>500M gasten gegevens gelekt sinds 2014</td>
+                    <td>&pound;18.4M GDPR-boete</td>
+                </tr>
+                <tr>
+                    <td><strong>SolarWinds (2020)</strong></td>
+                    <td>Supply chain attack via software update</td>
+                    <td>$40M+ incident response</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-block">
+            <h3>Cyber due diligence in 90 seconden</h3>
+            <p>DueSight scant Shodan, HIBP, SSL en DNS-configuratie automatisch voor elk bedrijf.</p>
+            <a href="../../sample-report-adyen/" class="cta-btn">Adyen Cyber Rapport bekijken &rarr;</a>
+        </div>
+
+        <h2 id="faq">8. Veelgestelde Vragen</h2>
+
+        <h3>Is cyber due diligence verplicht bij overnames?</h3>
+        <p>Niet wettelijk verplicht als zodanig, maar onder NIS2 zijn bestuurders persoonlijk aansprakelijk voor
+            cybersecurity. Een overname zonder cyber DD kan dus bestuurdersaansprakelijkheid opleveren als er achteraf
+            een breach ontdekt wordt.</p>
+
+        <h3>Hoe lang duurt een cyber DD scan?</h3>
+        <p>Een handmatige cyber DD door een securitybedrijf duurt 2-4 weken en kost &euro;10.000-&euro;50.000.
+            DueSight's geautomatiseerde scan duurt 90 seconden en dekt de belangrijkste checks.</p>
+
+        <h3>Wat als de target veel kwetsbaarheden heeft?</h3>
+        <p>Dat is juist waardevol om te weten v&oacute;&oacute;r de deal. Je kunt: (1) de overnameprijs verlagen, (2)
+            remediatie-kosten meenemen in de waardering, (3) specifieke garanties opnemen in het koopcontract, of (4)
+            afzien van de deal.</p>
+
+        <div class="footer">
+            <p>&copy; 2026 DueSight Intelligence | <a href="../../">Home</a> | <a href="../">Alle artikelen</a></p>
+            <p style="margin-top:8px;">Gerelateerd: <a href="../wat-is-due-diligence/">Due Diligence Gids</a> | <a
+                    href="../ubo-verificatie/">UBO Verificatie</a></p>
+        </div>
+    </article>
+</body>
+
+</html>

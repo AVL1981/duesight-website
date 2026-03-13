@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBO Verificatie: Wie is de Uiteindelijke Eigenaar? | DueSight</title>
+    <meta name="description"
+        content="UBO verificatie uitgelegd: hoe je de Ultimate Beneficial Owner traceert via KvK, GLEIF en OpenCorporates. Wwft-verplichting met praktische stappen.">
+    <link rel="canonical" href="https://avl1981.github.io/duesight-website/blog/ubo-verificatie/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="UBO Verificatie: Wie is de Uiteindelijke Eigenaar?">
+    <meta property="og:description"
+        content="Complete gids UBO-verificatie: hoe de Ultimate Beneficial Owner traceren via KvK en GLEIF. Wwft-verplicht.">
+    <meta property="og:locale" content="nl_NL">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UBO Verificatie: Wie is de Uiteindelijke Eigenaar?","author":{"@type":"Organization","name":"DueSight Intelligence"},"datePublished":"2026-03-13","dateModified":"2026-03-13"}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avl1981.github.io/duesight-website/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://avl1981.github.io/duesight-website/blog/"},{"@type":"ListItem","position":3,"name":"UBO Verificatie"}]}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0e1a;
+            color: #c8d0e0;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .article-container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .breadcrumb a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #e2e8f0;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(99, 102, 241, 0.12);
+            color: #818cf8;
+            padding: 3px 12px;
+            border-radius: 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin: 48px 0 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin: 32px 0 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: #e2e8f0;
+        }
+
+        a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .answer-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.06));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 16px;
+            padding: 28px 32px;
+            margin: 24px 0 40px;
+        }
+
+        .answer-box strong {
+            color: #818cf8;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        ul,
+        ol {
+            margin: 0 0 20px 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 24px 0 32px;
+        }
+
+        .stat-card {
+            background: rgba(15, 20, 40, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #22d3ee;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 14px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 20, 40, 0.5);
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .cta-block {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 36px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-block h3 {
+            margin-top: 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            margin-top: 16px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .toc {
+            background: rgba(15, 20, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 24px 28px;
+            margin: 0 0 40px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toc ol {
+            margin-bottom: 0;
+        }
+
+        .toc a {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .warning-box {
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .warning-box strong {
+            color: #fbbf24;
+        }
+
+        .footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: #475569;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #6366f1;
+        }
+
+        @media (max-width:600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article class="article-container">
+        <nav class="breadcrumb"><a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; UBO Verificatie
+        </nav>
+
+        <h1>UBO Verificatie: Wie is de Uiteindelijke Eigenaar?</h1>
+
+        <div class="article-meta">
+            <span>DueSight Intelligence</span><span>&bull; 13 maart 2026</span><span>&bull; 9 min leestijd</span>
+            <span class="tag">UBO</span><span class="tag">Compliance</span><span class="tag">Wwft</span>
+        </div>
+
+        <div class="answer-box">
+            <strong>Snel antwoord</strong>
+            De Ultimate Beneficial Owner (UBO) is de natuurlijke persoon die uiteindelijk &gt;25% eigendom of
+            zeggenschap heeft over een bedrijf. UBO-verificatie is verplicht onder de Wwft. DueSight traceert UBO-ketens
+            automatisch via KvK, OpenCorporates en GLEIF Level 2 data door meerdere jurisdicties en vennootschapslagen
+            heen.
+        </div>
+
+        <div class="toc">
+            <h3>Inhoudsopgave</h3>
+            <ol>
+                <li><a href="#wat">Wat is een UBO?</a></li>
+                <li><a href="#waarom">Waarom UBO-verificatie?</a></li>
+                <li><a href="#register">Het UBO-register in Nederland</a></li>
+                <li><a href="#complex">Complexe structuren doorgronden</a></li>
+                <li><a href="#databronnen">Beschikbare databronnen</a></li>
+                <li><a href="#automatisering">Automatische UBO-tracering</a></li>
+                <li><a href="#faq">Veelgestelde vragen</a></li>
+            </ol>
+        </div>
+
+        <p class="lead">
+            Achter elke BV, holding of stichting zit uiteindelijk een mens van vlees en bloed &mdash; de Ultimate
+            Beneficial Owner. Maar in een wereld van shell companies, offshore structuren en meerdere vennootschapslagen
+            is het vinden van die persoon vaak een uitdaging. Toch is het verplicht.
+        </p>
+
+        <h2 id="wat">1. Wat is een UBO?</h2>
+        <p>
+            De <strong>Ultimate Beneficial Owner (UBO)</strong> is de natuurlijke persoon die uiteindelijk eigenaar is
+            van of zeggenschap heeft over een juridische entiteit. De Europese Anti-witwasrichtlijn definieert een UBO
+            als iemand die:
+        </p>
+        <ul>
+            <li>Direct of indirect <strong>&gt;25% van de aandelen</strong> houdt</li>
+            <li>Direct of indirect <strong>&gt;25% van de stemrechten</strong> uitoefent</li>
+            <li><strong>Feitelijke zeggenschap</strong> heeft (ook zonder formeel eigendom)</li>
+        </ul>
+        <p>Bij een keten van vennootschappen wordt het percentage <strong>vermenigvuldigd</strong>: als Persoon A 60%
+            bezit van Holding B, en Holding B 50% van BV C, dan is Persoon A UBO van BV C (60% &times; 50% = 30% &gt;
+            25%).</p>
+
+        <h2 id="waarom">2. Waarom UBO-Verificatie?</h2>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-value">€775M</div>
+                <div class="stat-label">ING boete (2018)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">810K+</div>
+                <div class="stat-label">Offshore entiteiten ICIJ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">25%</div>
+                <div class="stat-label">UBO-drempel</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Jurisdicties DueSight</div>
+            </div>
+        </div>
+        <p>UBO-verificatie voorkomt:</p>
+        <ul>
+            <li><strong>Witwassen</strong> &mdash; Criminelen verbergen eigendom via vennootschapslagen</li>
+            <li><strong>Sanctie-ontwijking</strong> &mdash; Gesanctioneerde personen opereren via stromannen</li>
+            <li><strong>Belastingontduiking</strong> &mdash; Offshore constructies verhullen de werkelijke eigenaar</li>
+            <li><strong>Terrorismefinanciering</strong> &mdash; Anonieme geldstromen via shell companies</li>
+        </ul>
+
+        <h2 id="register">3. Het UBO-Register in Nederland</h2>
+        <p>
+            Sinds 2020 moeten in Nederland alle BV's, NV's, stichtingen, verenigingen en vennootschappen hun UBO's
+            registreren bij de <strong>Kamer van Koophandel (KvK)</strong>. Dit register is echter <strong>niet
+                openbaar</strong> voor het grote publiek (na een uitspraak van het Europees Hof van Justitie in 2022).
+        </p>
+
+        <div class="warning-box">
+            <strong>&#9888; Let op:</strong> Het UBO-register is alleen toegankelijk voor bevoegde autoriteiten (FIU,
+            toezichthouders) en Wwft-plichtige instellingen met een gerechtvaardigd belang. Publieke toegang is beperkt.
+        </div>
+
+        <h3>Internationale UBO-registers</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Land</th>
+                    <th>Register</th>
+                    <th>Openbaar?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nederland</td>
+                    <td>KvK UBO-register</td>
+                    <td>Beperkt</td>
+                </tr>
+                <tr>
+                    <td>Belgi&euml;</td>
+                    <td>KBO/BCE</td>
+                    <td>Beperkt</td>
+                </tr>
+                <tr>
+                    <td>Duitsland</td>
+                    <td>Transparenzregister</td>
+                    <td>Beperkt</td>
+                </tr>
+                <tr>
+                    <td>VK</td>
+                    <td>Companies House PSC</td>
+                    <td>Ja (gratis)</td>
+                </tr>
+                <tr>
+                    <td>Luxemburg</td>
+                    <td>RBE</td>
+                    <td>Beperkt</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="complex">4. Complexe Structuren Doorgronden</h2>
+        <p>De uitdaging bij UBO-verificatie is het navigeren door <strong>complexe eigendomsstructuren</strong>:</p>
+        <ul>
+            <li><strong>Gelaagde holdings</strong> &mdash; BV bezit Holding, Holding bezit BV, BV bezit... </li>
+            <li><strong>Cross-border structuren</strong> &mdash; Nederlandse BV eigendom van Luxemburgse SARL eigendom
+                van Cypriotische Ltd</li>
+            <li><strong>Circulaire structuren</strong> &mdash; Bedrijf A bezit B, B bezit C, C bezit A</li>
+            <li><strong>Stromannen</strong> &mdash; Nominale directeuren die de werkelijke eigenaar verhullen</li>
+        </ul>
+
+        <h2 id="databronnen">5. Beschikbare Databronnen</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bron</th>
+                    <th>Data</th>
+                    <th>Kosten</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OpenKvK</strong></td>
+                    <td>Nederlandse bedrijfsdata, bestuurders</td>
+                    <td>Gratis</td>
+                </tr>
+                <tr>
+                    <td><strong>GLEIF Level 2</strong></td>
+                    <td>Internationale ownership chains (LEI)</td>
+                    <td>Gratis API</td>
+                </tr>
+                <tr>
+                    <td><strong>OpenCorporates</strong></td>
+                    <td>200M+ bedrijven, 140+ jurisdicties</td>
+                    <td>Gratis (basis)</td>
+                </tr>
+                <tr>
+                    <td><strong>Companies House</strong></td>
+                    <td>UK bedrijven + PSC (UBO)</td>
+                    <td>Gratis API</td>
+                </tr>
+                <tr>
+                    <td><strong>OffeneRegister</strong></td>
+                    <td>Duitse bedrijven (Handelsregister)</td>
+                    <td>Gratis (CC BY 4.0)</td>
+                </tr>
+                <tr>
+                    <td><strong>ICIJ</strong></td>
+                    <td>Offshore Leaks Database</td>
+                    <td>Gratis, doorzoekbaar</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>DueSight combineert al deze bronnen automatisch om UBO-ketens door meerdere jurisdicties te traceren.</p>
+
+        <h2 id="automatisering">6. Automatische UBO-Tracering</h2>
+        <p>DueSight's UBO-resolver werkt in vier stappen:</p>
+        <ol>
+            <li><strong>Bedrijfsidentificatie</strong> &mdash; KvK-nummer, LEI, of bedrijfsnaam als startpunt</li>
+            <li><strong>Eigendomsketen opbouwen</strong> &mdash; Traceert via OpenKvK + GLEIF Level 2 naar bovenliggende
+                entiteiten</li>
+            <li><strong>Grensoverschrijdend volgen</strong> &mdash; Volgt de keten naar buitenlandse registers
+                (Companies House, Handelsregister)</li>
+            <li><strong>Natuurlijke persoon identificeren</strong> &mdash; Stopt pas als de UBO (een mens) is gevonden
+                of de keten doodloopt</li>
+        </ol>
+
+        <div class="cta-block">
+            <h3>UBO-verificatie in 90 seconden</h3>
+            <p>DueSight traceert eigendomsketens door 6 jurisdicties automatisch.</p>
+            <a href="../../#scan-dashboard" class="cta-btn">Start UBO Check &rarr;</a>
+        </div>
+
+        <h2 id="faq">7. Veelgestelde Vragen</h2>
+
+        <h3>Wat als er geen UBO gevonden kan worden?</h3>
+        <p>Als na grondig onderzoek geen UBO met &gt;25% eigendom ge&iuml;dentificeerd kan worden, wordt het hoger
+            leidinggevend personeel (bestuurders) als "pseudo-UBO" aangemerkt. Dit moet je documenteren.</p>
+
+        <h3>Hoe vaak moet ik UBO-data verifi&euml;ren?</h3>
+        <p>Bij het aangaan van de relatie en vervolgens bij elke trigger-event: bestuurswijziging, aandelenoverdracht,
+            fusie, of bij twijfel over de actuele eigendomsstructuur.</p>
+
+        <h3>Wat is GLEIF Level 2?</h3>
+        <p>De Global Legal Entity Identifier Foundation beheert het LEI-systeem. Level 1 = basisgegevens. <strong>Level
+                2 = eigendomsrelaties</strong> (directe en ultieme moederbedrijven). Dit is een gratis,
+            gestandaardiseerde manier om internationale UBO-ketens te traceren.</p>
+
+        <div class="footer">
+            <p>&copy; 2026 DueSight Intelligence | <a href="../../">Home</a> | <a href="../">Alle artikelen</a></p>
+            <p style="margin-top:8px;">Gerelateerd: <a href="../sanctiescreening-nederland/">Sanctiescreening</a> | <a
+                    href="../wat-is-due-diligence/">Due Diligence Gids</a></p>
+        </div>
+    </article>
+</body>
+
+</html>
