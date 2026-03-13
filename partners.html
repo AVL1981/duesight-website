@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DueSight — Certified Partners</title>
+    <meta name="description"
+        content="DueSight Certified Partners: onafhankelijke adviseurs en accountants die uw DD-resultaten professioneel kunnen valideren.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: rgba(17, 24, 39, 0.85);
+            --border-glass: rgba(99, 102, 241, 0.15);
+            --text-primary: #e2e8f0;
+            --text-secondary: rgba(226, 232, 240, 0.7);
+            --text-muted: rgba(226, 232, 240, 0.4);
+            --accent-primary: #6366f1;
+            --accent-gradient: linear-gradient(135deg, #6366f1, #22d3ee);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .partners-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .partners-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 32px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .partners-logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .partners-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #e0e7ff, #fff, #c7d2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .partners-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .partners-badge {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 6px 20px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            font-size: 0.78rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Disclaimer */
+        .partners-disclaimer {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px 24px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .partners-disclaimer strong {
+            color: #f59e0b;
+        }
+
+        /* Partner Cards */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            padding: 40px 0 80px;
+        }
+
+        .partner-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 28px 24px;
+            transition: all 0.3s;
+        }
+
+        .partner-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .partner-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .partner-logo-box {
+            width: 52px;
+            height: 52px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .partner-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .partner-type {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .partner-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .partner-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .partner-tag {
+            font-size: 0.68rem;
+            padding: 3px 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            color: var(--text-muted);
+        }
+
+        .partner-cta {
+            display: inline-block;
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 8px;
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .partner-cta:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.6);
+        }
+
+        .partner-verified {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: #22c55e;
+            margin-top: 12px;
+        }
+
+        /* CTA for Partners */
+        .become-partner {
+            text-align: center;
+            padding: 60px 0 80px;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .become-partner h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .become-partner p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .become-partner-btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .become-partner-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+        }
+
+        .become-partner-price {
+            margin-top: 12px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .partners-footer {
+            text-align: center;
+            padding: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .partners-footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="partners-header">
+            <a href="index.html" class="partners-logo">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="#6366f1" stroke-width="2.5" />
+                    <polyline points="12,20 18,26 28,14" stroke="#22d3ee" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                DueSight
+            </a>
+            <h1 class="partners-title">Certified Partners</h1>
+            <p class="partners-subtitle">
+                Onafhankelijke adviseurs, accountants en advocaten die uw DueSight Intelligence Report professioneel
+                kunnen valideren en verdiepen.
+            </p>
+            <span class="partners-badge">ZERO-REFERRAL MODEL</span>
+        </div>
+
+        <!-- Neutrality Disclaimer -->
+        <div class="partners-disclaimer">
+            <strong>⚠ Disclaimer:</strong> DueSight ontvangt geen commissie, referral fee of kickback van onderstaande
+            partners.
+            Wij bieden uitsluitend een platform voor zichtbaarheid. De keuze voor een adviseur is volledig aan u.
+            DueSight geeft geen advies en is niet aansprakelijk voor de dienstverlening van derden.
+        </div>
+
+        <!-- Partner Cards -->
+        <div class="partners-grid">
+            <!-- Partner 1 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">🏛️</div>
+                    <div>
+                        <div class="partner-name">Van der Berg & Partners</div>
+                        <div class="partner-type">Registeraccountant (RA)</div>
+                    </div>
+                </div>
+                <p class="partner-desc">Gespecialiseerd in financiële due diligence voor MKB-overnames. 15+ jaar
+                    ervaring met KvK-jaarrekeningen en CBS-benchmarks.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">Financiële DD</span>
+                    <span class="partner-tag">Waardering</span>
+                    <span class="partner-tag">MKB</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+
+            <!-- Partner 2 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">🔒</div>
+                    <div>
+                        <div class="partner-name">CyberShield BV</div>
+                        <div class="partner-type">CISO-as-a-Service</div>
+                    </div>
+                </div>
+                <p class="partner-desc">NIS2-gecertificeerde cybersecurity assessments. Valideert DueSight Cyber
+                    Exposure scans met hands-on penetration testing.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">Cyber Security</span>
+                    <span class="partner-tag">NIS2</span>
+                    <span class="partner-tag">Pentest</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+
+            <!-- Partner 3 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">⚖️</div>
+                    <div>
+                        <div class="partner-name">Lexis Compliance Groep</div>
+                        <div class="partner-type">Compliance & Legal Advisory</div>
+                    </div>
+                </div>
+                <p class="partner-desc">Expertise in Wwft, sanctiescreening en UBO-verificatie. Vertaalt DueSight red
+                    flags naar juridische actieplannen.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">Compliance</span>
+                    <span class="partner-tag">Wwft</span>
+                    <span class="partner-tag">Sancties</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+
+            <!-- Partner 4 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">📊</div>
+                    <div>
+                        <div class="partner-name">DataForce Analytics</div>
+                        <div class="partner-type">Data Science & Forensics</div>
+                    </div>
+                </div>
+                <p class="partner-desc">Forensische data-analyse, Benford's Law auditing en Excel verificatie. Partner
+                    voor complexe financiële datasets.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">Forensisch</span>
+                    <span class="partner-tag">Data Science</span>
+                    <span class="partner-tag">Excel Audit</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+
+            <!-- Partner 5 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">🌍</div>
+                    <div>
+                        <div class="partner-name">GlobalRisk Consultants</div>
+                        <div class="partner-type">TPRM & Supply Chain Risk</div>
+                    </div>
+                </div>
+                <p class="partner-desc">Third-Party Risk Management specialisten. Vertaalt DueSight Vendor Risk scans
+                    naar operationele due diligence frameworks.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">TPRM</span>
+                    <span class="partner-tag">Supply Chain</span>
+                    <span class="partner-tag">ESG</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+
+            <!-- Partner 6 -->
+            <div class="partner-card">
+                <div class="partner-top">
+                    <div class="partner-logo-box">💼</div>
+                    <div>
+                        <div class="partner-name">M&A Advisory Group</div>
+                        <div class="partner-type">Corporate Finance</div>
+                    </div>
+                </div>
+                <p class="partner-desc">Full-service M&A begeleiding van LOI tot closing. Gebruikt DueSight als
+                    pre-screening voor hun dealflow pipeline.</p>
+                <div class="partner-tags">
+                    <span class="partner-tag">M&A</span>
+                    <span class="partner-tag">Corporate Finance</span>
+                    <span class="partner-tag">Dealflow</span>
+                </div>
+                <a href="#" class="partner-cta">Profiel bekijken →</a>
+                <div class="partner-verified">✓ DueSight Verified Partner</div>
+            </div>
+        </div>
+
+        <!-- Become a Partner CTA -->
+        <div class="become-partner">
+            <h3>Word Certified Partner</h3>
+            <p>Bent u registeraccountant, compliance officer of cybersecurity specialist? Vergroot uw zichtbaarheid bij
+                bedrijven die al actief onderzoek doen.</p>
+            <a href="mailto:partners@duesight.nl" class="become-partner-btn">Word Partner →</a>
+            <p class="become-partner-price">Listing fee: €200/maand — Geen commissie, geen referrals, geen
+                verstrengeling.</p>
+        </div>
+    </div>
+
+    <div class="partners-footer">
+        <p>© DueSight B.V. 2026 — <a href="index.html">Terug naar DueSight.nl</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DueSight — Responsive Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0f1a;
+            color: #e2e8f0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* ── Top Toolbar ── */
+        .toolbar {
+            background: #111827;
+            border-bottom: 1px solid rgba(52, 211, 153, 0.15);
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+            z-index: 100;
+        }
+
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 12px;
+            padding-right: 16px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toolbar-brand svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .toolbar-brand span {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #34d399;
+            letter-spacing: -0.3px;
+        }
+
+        /* Device category groups */
+        .device-group {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .device-group-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: rgba(255, 255, 255, 0.3);
+            margin-right: 6px;
+            font-weight: 600;
+        }
+
+        .group-sep {
+            width: 1px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 0 10px;
+        }
+
+        /* Device buttons */
+        .device-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .device-btn:hover {
+            border-color: rgba(52, 211, 153, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+            background: rgba(52, 211, 153, 0.05);
+        }
+
+        .device-btn.active {
+            border-color: #34d399;
+            color: #34d399;
+            background: rgba(52, 211, 153, 0.1);
+            box-shadow: 0 0 12px rgba(52, 211, 153, 0.1);
+        }
+
+        .device-btn .icon {
+            font-size: 0.9rem;
+        }
+
+        .device-btn .dims {
+            font-size: 0.58rem;
+            opacity: 0.5;
+            font-weight: 400;
+        }
+
+        /* Orientation toggle */
+        .orient-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            margin-left: 4px;
+        }
+
+        .orient-btn:hover {
+            border-color: rgba(52, 211, 153, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .orient-btn.rotated {
+            transform: rotate(90deg);
+        }
+
+        /* Info bar */
+        .info-bar {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .current-size {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-variant-numeric: tabular-nums;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .current-size strong {
+            color: #34d399;
+            font-weight: 600;
+        }
+
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .zoom-btn {
+            width: 26px;
+            height: 26px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+
+        .zoom-btn:hover {
+            border-color: rgba(52, 211, 153, 0.3);
+            color: #fff;
+        }
+
+        .zoom-label {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.35);
+            min-width: 32px;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ── Preview Area ── */
+        .preview-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            overflow: auto;
+            background:
+                radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.03) 0%, transparent 60%),
+                repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255, 255, 255, 0.015) 19px, rgba(255, 255, 255, 0.015) 20px),
+                repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255, 255, 255, 0.015) 19px, rgba(255, 255, 255, 0.015) 20px);
+        }
+
+        .device-frame {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(52, 211, 153, 0.03);
+            overflow: hidden;
+            background: #0d1117;
+        }
+
+        .device-frame.phone {
+            border-radius: 36px;
+            padding: 12px;
+            box-shadow:
+                0 0 0 2px #1f2937,
+                0 0 0 4px #111827,
+                0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .device-frame.phone::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background: #1f2937;
+            border-radius: 10px;
+            z-index: 10;
+        }
+
+        .device-frame.tablet {
+            border-radius: 18px;
+            padding: 10px;
+            box-shadow:
+                0 0 0 2px #1f2937,
+                0 0 0 3px #111827,
+                0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .device-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .device-frame.phone iframe {
+            border-radius: 28px;
+        }
+
+        .device-frame.tablet iframe {
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .device-btn .dims {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .toolbar {
+                flex-wrap: wrap;
+                padding: 8px 12px;
+                gap: 8px;
+            }
+
+            .device-group-label {
+                display: none;
+            }
+
+            .group-sep {
+                height: 20px;
+                margin: 0 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="toolbar">
+        <div class="toolbar-brand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Preview</span>
+        </div>
+
+        <!-- PHONES -->
+        <div class="device-group">
+            <span class="device-group-label">Mobiel</span>
+            <button class="device-btn" data-w="375" data-h="667" data-type="phone" title="iPhone SE">
+                <span class="icon">📱</span> SE <span class="dims">375×667</span>
+            </button>
+            <button class="device-btn" data-w="390" data-h="844" data-type="phone" title="iPhone 14">
+                <span class="icon">📱</span> 14 <span class="dims">390×844</span>
+            </button>
+            <button class="device-btn" data-w="414" data-h="896" data-type="phone" title="iPhone 14 Plus / Pro Max">
+                <span class="icon">📱</span> Pro Max <span class="dims">414×896</span>
+            </button>
+            <button class="device-btn" data-w="360" data-h="800" data-type="phone" title="Samsung Galaxy S21">
+                <span class="icon">📱</span> Galaxy <span class="dims">360×800</span>
+            </button>
+        </div>
+
+        <div class="group-sep"></div>
+
+        <!-- TABLETS -->
+        <div class="device-group">
+            <span class="device-group-label">Tablet</span>
+            <button class="device-btn" data-w="768" data-h="1024" data-type="tablet" title="iPad Mini">
+                <span class="icon">📟</span> Mini <span class="dims">768×1024</span>
+            </button>
+            <button class="device-btn" data-w="820" data-h="1180" data-type="tablet" title="iPad Air">
+                <span class="icon">📟</span> Air <span class="dims">820×1180</span>
+            </button>
+            <button class="device-btn" data-w="1024" data-h="1366" data-type="tablet" title="iPad Pro 12.9&quot;">
+                <span class="icon">📟</span> Pro <span class="dims">1024×1366</span>
+            </button>
+        </div>
+
+        <div class="group-sep"></div>
+
+        <!-- DESKTOPS -->
+        <div class="device-group">
+            <span class="device-group-label">Desktop</span>
+            <button class="device-btn" data-w="1280" data-h="800" data-type="desktop" title="Laptop 13&quot;">
+                <span class="icon">💻</span> 13" <span class="dims">1280×800</span>
+            </button>
+            <button class="device-btn" data-w="1440" data-h="900" data-type="desktop" title="Laptop 15&quot;">
+                <span class="icon">💻</span> 15" <span class="dims">1440×900</span>
+            </button>
+            <button class="device-btn active" data-w="1920" data-h="1080" data-type="desktop" title="Full HD">
+                <span class="icon">🖥️</span> FHD <span class="dims">1920×1080</span>
+            </button>
+        </div>
+
+        <div class="group-sep"></div>
+
+        <!-- Orientation toggle -->
+        <button class="orient-btn" id="orientBtn" title="Draai scherm (landschap/portret)">🔄</button>
+
+        <!-- Info -->
+        <div class="info-bar">
+            <div class="current-size">
+                <strong id="sizeLabel">1920 × 1080</strong>
+            </div>
+            <div class="zoom-controls">
+                <button class="zoom-btn" id="zoomOut" title="Zoom uit">−</button>
+                <span class="zoom-label" id="zoomLabel">auto</span>
+                <button class="zoom-btn" id="zoomIn" title="Zoom in">+</button>
+                <button class="zoom-btn" id="zoomFit" title="Zoom passend"
+                    style="font-size:0.6rem; width: auto; padding: 0 6px;">FIT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="preview-area" id="previewArea">
+        <div class="device-frame" id="deviceFrame">
+            <iframe src="index.html" id="previewFrame"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const frame = document.getElementById('deviceFrame');
+        const iframe = document.getElementById('previewFrame');
+        const previewArea = document.getElementById('previewArea');
+        const sizeLabel = document.getElementById('sizeLabel');
+        const zoomLabel = document.getElementById('zoomLabel');
+        const orientBtn = document.getElementById('orientBtn');
+
+        let currentW = 1920, currentH = 1080, currentType = 'desktop';
+        let isLandscape = false;
+        let zoomLevel = 0; // 0 = auto-fit
+
+        // All device buttons
+        const buttons = document.querySelectorAll('.device-btn');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                currentW = parseInt(btn.dataset.w);
+                currentH = parseInt(btn.dataset.h);
+                currentType = btn.dataset.type;
+                isLandscape = false;
+                orientBtn.classList.remove('rotated');
+
+                zoomLevel = 0;
+                applySize();
+            });
+        });
+
+        // Orientation toggle
+        orientBtn.addEventListener('click', () => {
+            isLandscape = !isLandscape;
+            orientBtn.classList.toggle('rotated', isLandscape);
+            applySize();
+        });
+
+        // Zoom controls
+        document.getElementById('zoomIn').addEventListener('click', () => {
+            if (zoomLevel === 0) zoomLevel = getAutoScale();
+            zoomLevel = Math.min(2, zoomLevel + 0.1);
+            applySize();
+        });
+
+        document.getElementById('zoomOut').addEventListener('click', () => {
+            if (zoomLevel === 0) zoomLevel = getAutoScale();
+            zoomLevel = Math.max(0.15, zoomLevel - 0.1);
+            applySize();
+        });
+
+        document.getElementById('zoomFit').addEventListener('click', () => {
+            zoomLevel = 0;
+            applySize();
+        });
+
+        function getAutoScale() {
+            const areaRect = previewArea.getBoundingClientRect();
+            const availW = areaRect.width - 60;
+            const availH = areaRect.height - 60;
+
+            let w = isLandscape ? currentH : currentW;
+            let h = isLandscape ? currentW : currentH;
+
+            // Add frame padding
+            const padding = currentType === 'phone' ? 24 : currentType === 'tablet' ? 20 : 0;
+            const totalW = w + padding;
+            const totalH = h + padding;
+
+            const scaleW = availW / totalW;
+            const scaleH = availH / totalH;
+            return Math.min(scaleW, scaleH, 1);
+        }
+
+        function applySize() {
+            let w = isLandscape ? currentH : currentW;
+            let h = isLandscape ? currentW : currentH;
+
+            // Update label
+            sizeLabel.textContent = `${w} × ${h}`;
+
+            // Calculate scale
+            const scale = zoomLevel === 0 ? getAutoScale() : zoomLevel;
+            zoomLabel.textContent = zoomLevel === 0 ? 'auto' : `${Math.round(scale * 100)}%`;
+
+            // Set type class
+            frame.className = 'device-frame';
+            if (currentType === 'phone') frame.classList.add('phone');
+            if (currentType === 'tablet') frame.classList.add('tablet');
+
+            // Apply dimensions (iframe gets full device resolution, frame is scaled)
+            iframe.style.width = w + 'px';
+            iframe.style.height = h + 'px';
+
+            const padding = currentType === 'phone' ? 24 : currentType === 'tablet' ? 20 : 0;
+            frame.style.width = (w + padding) + 'px';
+            frame.style.height = (h + padding) + 'px';
+            frame.style.transform = `scale(${scale})`;
+            frame.style.transformOrigin = 'center center';
+        }
+
+        // Initial render
+        applySize();
+
+        // Re-fit on resize
+        window.addEventListener('resize', () => {
+            if (zoomLevel === 0) applySize();
+        });
+    </script>
+</body>
+
+</html>

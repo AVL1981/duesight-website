@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notaris Due Diligence API — Documentatie | DueSight</title>
+    <meta name="description"
+        content="API documentatie voor de DueSight Notaris Due Diligence API. UBO-identificatie, sanctiescreening en KvK-verificatie via REST API.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0a0e1a;
+            --bg-card: rgba(15, 20, 40, 0.7);
+            --border: rgba(99, 102, 241, 0.15);
+            --text: #e2e8f0;
+            --text-sec: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --orange: #f97316;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 16px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .sidebar .logo {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f97316, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .sidebar .logo-sub {
+            font-size: 9px;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .nav-group {
+            margin-bottom: 24px;
+        }
+
+        .nav-group-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            padding-left: 12px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: var(--text-sec);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.15s;
+        }
+
+        .nav-link:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--text);
+        }
+
+        .nav-link.active {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .method-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .method-badge.get {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--green);
+        }
+
+        .method-badge.post {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--accent);
+        }
+
+        /* Main Content */
+        .main {
+            padding: 32px 48px;
+            max-width: 800px;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                padding: 24px 16px;
+            }
+        }
+
+        .sample-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            color: var(--orange);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        h1 span {
+            background: linear-gradient(135deg, #f97316, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro {
+            font-size: 15px;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 48px 0 16px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--text-sec);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* API Endpoint Card */
+        .endpoint-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .endpoint-header {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .endpoint-method {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .endpoint-method.get {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--green);
+        }
+
+        .endpoint-method.post {
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--accent);
+        }
+
+        .endpoint-path {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .endpoint-body {
+            padding: 20px;
+        }
+
+        .endpoint-desc {
+            font-size: 14px;
+            color: var(--text-sec);
+            margin-bottom: 16px;
+        }
+
+        /* Parameter Table */
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 20px;
+        }
+
+        .param-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .param-table td {
+            padding: 10px 12px;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .param-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .param-required {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--red);
+            text-transform: uppercase;
+        }
+
+        .param-optional {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .param-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Code Block */
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .code-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .code-lang {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        pre {
+            padding: 16px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-sec);
+        }
+
+        pre .key {
+            color: #7dd3fc;
+        }
+
+        pre .str {
+            color: #86efac;
+        }
+
+        pre .num {
+            color: #fbbf24;
+        }
+
+        pre .bool {
+            color: #c084fc;
+        }
+
+        pre .comment {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        pre .null {
+            color: var(--text-muted);
+        }
+
+        /* Status Codes */
+        .status-list {
+            margin: 12px 0;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .status-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        .status-code.s200 {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--green);
+        }
+
+        .status-code.s400 {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--yellow);
+        }
+
+        .status-code.s401 {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--red);
+        }
+
+        .status-code.s429 {
+            background: rgba(249, 115, 22, 0.2);
+            color: var(--orange);
+        }
+
+        /* Info boxes */
+        .info-box {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(99, 102, 241, 0.05));
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: center;
+            margin: 48px 0 32px;
+        }
+
+        .cta-box h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .cta-box p {
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #f97316, #6366f1);
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+        }
+
+        footer {
+            padding: 24px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">⚖️ Notaris API</div>
+            <div class="logo-sub">DueSight Due Diligence</div>
+
+            <nav>
+                <div class="nav-group">
+                    <div class="nav-group-label">Introductie</div>
+                    <a href="#overview" class="nav-link active">Overzicht</a>
+                    <a href="#auth" class="nav-link">Authenticatie</a>
+                    <a href="#quickstart" class="nav-link">Quickstart</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-label">Endpoints</div>
+                    <a href="#ubo" class="nav-link"><span class="method-badge get">GET</span> UBO Structuur</a>
+                    <a href="#sanctions" class="nav-link"><span class="method-badge get">GET</span> Sanctiescreening</a>
+                    <a href="#kvk" class="nav-link"><span class="method-badge get">GET</span> KvK Verificatie</a>
+                    <a href="#full-check" class="nav-link"><span class="method-badge post">POST</span> Volledige
+                        Check</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-label">Overig</div>
+                    <a href="#errors" class="nav-link">Foutcodes</a>
+                    <a href="#rate-limits" class="nav-link">Rate Limits</a>
+                    <a href="#webhooks" class="nav-link">Webhooks</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="sample-badge">📖 API DOCUMENTATIE VOORBEELD</div>
+
+            <h1 id="overview">Notaris Due Diligence <span>API</span></h1>
+            <p class="intro">
+                Automatiseer uw Wwft-verplichtingen met de DueSight Notaris API. UBO-identificatie, sanctiescreening
+                en KvK-verificatie via een enkele REST API — direct integreerbaar in uw notarissoftware.
+            </p>
+
+            <div class="info-box">
+                <p>
+                    <strong>Base URL:</strong> <code
+                        style="color: var(--accent);">https://api.duesight.nl/v1/notaris</code><br>
+                    <strong>Format:</strong> JSON · <strong>Auth:</strong> Bearer Token · <strong>Rate Limit:</strong>
+                    100 req/min
+                </p>
+            </div>
+
+            <!-- Auth Section -->
+            <h2 id="auth">🔐 Authenticatie</h2>
+            <p>Alle API calls vereisen een Bearer token in de Authorization header. Tokens zijn beschikbaar via uw
+                DueSight dashboard.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">Request Header</span>
+                    <span class="code-lang">HTTP</span>
+                </div>
+                <pre>Authorization: Bearer ds_ntrs_live_sk_xxxxxxxxxxxx
+Content-Type: application/json</pre>
+            </div>
+
+            <!-- Quickstart -->
+            <h2 id="quickstart">⚡ Quickstart</h2>
+            <p>Een volledige Wwft-check in 3 regels code:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">cURL Voorbeeld</span>
+                    <span class="code-lang">BASH</span>
+                </div>
+                <pre>curl -X POST https://api.duesight.nl/v1/notaris/full-check \
+  -H "Authorization: Bearer ds_ntrs_live_sk_xxxx" \
+  -H "Content-Type: application/json" \
+  -d '{
+    <span class="key">"kvk_number"</span>: <span class="str">"30204462"</span>,
+    <span class="key">"transaction_type"</span>: <span class="str">"overdracht"</span>,
+    <span class="key">"include_ubo"</span>: <span class="bool">true</span>,
+    <span class="key">"include_sanctions"</span>: <span class="bool">true</span>
+  }'</pre>
+            </div>
+
+            <!-- Endpoint: UBO -->
+            <h2 id="ubo">Endpoints</h2>
+
+            <div class="endpoint-card">
+                <div class="endpoint-header">
+                    <span class="endpoint-method get">GET</span>
+                    <span class="endpoint-path">/v1/notaris/ubo/{kvk_number}</span>
+                </div>
+                <div class="endpoint-body">
+                    <p class="endpoint-desc">Retourneert de volledige UBO-structuur inclusief aandeelhouders,
+                        bestuurders en uiteindelijk belanghebbenden (UBO's) conform Wwft Art. 3.</p>
+
+                    <h3>Parameters</h3>
+                    <table class="param-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Vereist</th>
+                                <th>Beschrijving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="param-name">kvk_number</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-required">Ja</span></td>
+                                <td>KvK-registratienummer (8 cijfers)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">depth</span></td>
+                                <td><span class="param-type">integer</span></td>
+                                <td><span class="param-optional">Optioneel</span></td>
+                                <td>Diepte aandeelhoudersketen (default: 3)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">200 OK</span>
+                            <span class="code-lang">JSON</span>
+                        </div>
+                        <pre>{
+  <span class="key">"status"</span>: <span class="str">"success"</span>,
+  <span class="key">"kvk_number"</span>: <span class="str">"30204462"</span>,
+  <span class="key">"company_name"</span>: <span class="str">"Mollie B.V."</span>,
+  <span class="key">"legal_form"</span>: <span class="str">"Besloten Vennootschap"</span>,
+  <span class="key">"ubo_result"</span>: {
+    <span class="key">"ubos_found"</span>: <span class="num">2</span>,
+    <span class="key">"ubos"</span>: [
+      {
+        <span class="key">"name"</span>: <span class="str">"A. Adriaansens"</span>,
+        <span class="key">"type"</span>: <span class="str">"direct_shareholder"</span>,
+        <span class="key">"ownership_pct"</span>: <span class="num">45.2</span>,
+        <span class="key">"nationality"</span>: <span class="str">"NL"</span>,
+        <span class="key">"pep_status"</span>: <span class="bool">false</span>,
+        <span class="key">"sanctions_hit"</span>: <span class="bool">false</span>
+      },
+      {
+        <span class="key">"name"</span>: <span class="str">"TCV Management B.V."</span>,
+        <span class="key">"type"</span>: <span class="str">"indirect_via_holding"</span>,
+        <span class="key">"ownership_pct"</span>: <span class="num">28.7</span>,
+        <span class="key">"jurisdiction"</span>: <span class="str">"US"</span>,
+        <span class="key">"sub_ubos"</span>: [
+          {
+            <span class="key">"name"</span>: <span class="str">"[See TCV Management filing]"</span>,
+            <span class="key">"note"</span>: <span class="str">"Foreign entity — manual verification recommended"</span>
+          }
+        ]
+      }
+    ]
+  },
+  <span class="key">"directors"</span>: [
+    {
+      <span class="key">"name"</span>: <span class="str">"S.P. Stolk"</span>,
+      <span class="key">"title"</span>: <span class="str">"Bestuurder"</span>,
+      <span class="key">"start_date"</span>: <span class="str">"2020-03-15"</span>,
+      <span class="key">"pep_status"</span>: <span class="bool">false</span>
+    }
+  ],
+  <span class="key">"confidence_score"</span>: <span class="num">0.89</span>,
+  <span class="key">"data_sources"</span>: [<span class="str">"kvk_hvds"</span>, <span class="str">"opencoporates"</span>, <span class="str">"opensanctions"</span>],
+  <span class="key">"generated_at"</span>: <span class="str">"2026-03-01T14:23:00Z"</span>,
+  <span class="key">"audit_trail_id"</span>: <span class="str">"adt_7f8a9b2c3d4e"</span>
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endpoint: Sanctions -->
+            <div class="endpoint-card" id="sanctions">
+                <div class="endpoint-header">
+                    <span class="endpoint-method get">GET</span>
+                    <span class="endpoint-path">/v1/notaris/sanctions/{entity_name}</span>
+                </div>
+                <div class="endpoint-body">
+                    <p class="endpoint-desc">Real-time sanctiescreening tegen OFAC SDN, EU Financial Sanctions, UN
+                        Security Council en 80+ andere lijsten via OpenSanctions.</p>
+
+                    <h3>Parameters</h3>
+                    <table class="param-table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Vereist</th>
+                                <th>Beschrijving</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="param-name">entity_name</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-required">Ja</span></td>
+                                <td>Naam van persoon of bedrijf</td>
+                            </tr>
+                            <tr>
+                                <td><span class="param-name">entity_type</span></td>
+                                <td><span class="param-type">string</span></td>
+                                <td><span class="param-optional">Optioneel</span></td>
+                                <td>Person | Company (auto-detect)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Response</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">200 OK — Geen hits</span>
+                            <span class="code-lang">JSON</span>
+                        </div>
+                        <pre>{
+  <span class="key">"status"</span>: <span class="str">"success"</span>,
+  <span class="key">"entity"</span>: <span class="str">"Mollie B.V."</span>,
+  <span class="key">"screening_result"</span>: <span class="str">"CLEAN"</span>,
+  <span class="key">"risk_level"</span>: <span class="str">"LOW"</span>,
+  <span class="key">"total_matches"</span>: <span class="num">0</span>,
+  <span class="key">"lists_checked"</span>: <span class="num">84</span>,
+  <span class="key">"lists_include"</span>: [<span class="str">"OFAC SDN"</span>, <span class="str">"EU Sanctions"</span>, <span class="str">"UN SC"</span>, <span class="str">"UK HMT"</span>, <span class="str">"..."</span>],
+  <span class="key">"pep_result"</span>: <span class="bool">false</span>,
+  <span class="key">"screened_at"</span>: <span class="str">"2026-03-01T14:23:02Z"</span>,
+  <span class="key">"audit_trail_id"</span>: <span class="str">"adt_8g9b0c3d4e5f"</span>,
+  <span class="key">"valid_until"</span>: <span class="str">"2026-03-02T14:23:02Z"</span>
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Endpoint: KvK -->
+            <div class="endpoint-card" id="kvk">
+                <div class="endpoint-header">
+                    <span class="endpoint-method get">GET</span>
+                    <span class="endpoint-path">/v1/notaris/kvk/{kvk_number}</span>
+                </div>
+                <div class="endpoint-body">
+                    <p class="endpoint-desc">KvK-registratieverificatie met rechtsgeldigheidscheck, adresvalidatie en
+                        shell company detectie.</p>
+
+                    <h3>Response</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">200 OK</span>
+                            <span class="code-lang">JSON</span>
+                        </div>
+                        <pre>{
+  <span class="key">"status"</span>: <span class="str">"success"</span>,
+  <span class="key">"kvk_number"</span>: <span class="str">"30204462"</span>,
+  <span class="key">"company_name"</span>: <span class="str">"Mollie B.V."</span>,
+  <span class="key">"registration_date"</span>: <span class="str">"2004-08-27"</span>,
+  <span class="key">"legal_form"</span>: <span class="str">"Besloten Vennootschap"</span>,
+  <span class="key">"active"</span>: <span class="bool">true</span>,
+  <span class="key">"address"</span>: {
+    <span class="key">"street"</span>: <span class="str">"Keizersgracht 126"</span>,
+    <span class="key">"city"</span>: <span class="str">"Amsterdam"</span>,
+    <span class="key">"postcode"</span>: <span class="str">"1015 CW"</span>,
+    <span class="key">"bag_validated"</span>: <span class="bool">true</span>,
+    <span class="key">"building_function"</span>: <span class="str">"kantoor"</span>,
+    <span class="key">"shell_risk"</span>: <span class="str">"LOW"</span>
+  },
+  <span class="key">"risk_flags"</span>: [],
+  <span class="key">"confidence_score"</span>: <span class="num">0.95</span>,
+  <span class="key">"audit_trail_id"</span>: <span class="str">"adt_9h0c1d4e5f6g"</span>
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Check -->
+            <div class="endpoint-card" id="full-check">
+                <div class="endpoint-header">
+                    <span class="endpoint-method post">POST</span>
+                    <span class="endpoint-path">/v1/notaris/full-check</span>
+                </div>
+                <div class="endpoint-body">
+                    <p class="endpoint-desc">Volledige Wwft-check in één API call: combineert UBO, sanctiescreening,
+                        KvK-verificatie en adresvalidatie. Retourneert een compleet dossier met audit trail.</p>
+
+                    <h3>Request Body</h3>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-label">POST Body</span>
+                            <span class="code-lang">JSON</span>
+                        </div>
+                        <pre>{
+  <span class="key">"kvk_number"</span>: <span class="str">"30204462"</span>,
+  <span class="key">"transaction_type"</span>: <span class="str">"overdracht"</span>,  <span class="comment">// overdracht | oprichting | fusie</span>
+  <span class="key">"include_ubo"</span>: <span class="bool">true</span>,
+  <span class="key">"include_sanctions"</span>: <span class="bool">true</span>,
+  <span class="key">"include_address_verification"</span>: <span class="bool">true</span>,
+  <span class="key">"additional_persons"</span>: [           <span class="comment">// Optioneel: extra personen screenen</span>
+    { <span class="key">"name"</span>: <span class="str">"J. de Vries"</span>, <span class="key">"role"</span>: <span class="str">"koper"</span> }
+  ]
+}</pre>
+                    </div>
+
+                    <div class="info-box">
+                        <p>💡 <strong>Prijs:</strong> €4,99 per API call. Enterprise pricing op aanvraag. Eén full-check
+                            vervangt 4 losse API calls.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Codes -->
+            <h2 id="errors">Foutcodes</h2>
+            <div class="status-list">
+                <div class="status-item"><span class="status-code s200">200</span> Succesvolle request</div>
+                <div class="status-item"><span class="status-code s400">400</span> Ongeldig KvK-nummer of ontbrekende
+                    parameter</div>
+                <div class="status-item"><span class="status-code s401">401</span> Ongeldige of verlopen API key</div>
+                <div class="status-item"><span class="status-code s429">429</span> Rate limit bereikt (100 req/min)
+                </div>
+            </div>
+
+            <!-- Rate Limits -->
+            <h2 id="rate-limits">Rate Limits</h2>
+            <table class="param-table">
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Requests/min</th>
+                        <th>Requests/maand</th>
+                        <th>Audit Trail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Starter</td>
+                        <td>20</td>
+                        <td>500</td>
+                        <td>30 dagen</td>
+                    </tr>
+                    <tr>
+                        <td>Professional</td>
+                        <td>100</td>
+                        <td>5.000</td>
+                        <td>1 jaar</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>Onbeperkt</td>
+                        <td>Onbeperkt</td>
+                        <td>7 jaar</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Webhooks -->
+            <h2 id="webhooks">Webhooks</h2>
+            <p>Ontvang real-time notificaties wanneer een eerder gescreend bedrijf wijzigingen vertoont
+                (bestuurderswijziging, sanctie-hit, faillissement).</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-label">Webhook Payload</span>
+                    <span class="code-lang">JSON</span>
+                </div>
+                <pre>{
+  <span class="key">"event"</span>: <span class="str">"entity.alert"</span>,
+  <span class="key">"kvk_number"</span>: <span class="str">"30204462"</span>,
+  <span class="key">"company_name"</span>: <span class="str">"Mollie B.V."</span>,
+  <span class="key">"alert_type"</span>: <span class="str">"director_change"</span>,
+  <span class="key">"severity"</span>: <span class="str">"warning"</span>,
+  <span class="key">"details"</span>: <span class="str">"Bestuurder J.P. van der Berg uitgeschreven op 12-02-2026"</span>,
+  <span class="key">"timestamp"</span>: <span class="str">"2026-02-12T09:15:00Z"</span>
+}</pre>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>API Toegang Aanvragen</h3>
+                <p>Integreer DueSight in uw notarissoftware en automatiseer uw Wwft-verplichtingen volledig.</p>
+                <a href="../index.html#pricing" class="cta-btn">API Documentatie & Demo →</a>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">€4,99 per API call · Enterprise
+                    pricing op aanvraag · JSON + Audit Trail</p>
+            </div>
+
+            <footer>
+                <p>&copy; 2026 DueSight Notaris API — <a href="../index.html">DueSight.nl</a></p>
+                <p style="margin-top: 8px;">Dit is een voorbeelddocumentatie. Werkelijke API responses kunnen afwijken.
+                </p>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

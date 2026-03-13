@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benford's Law P&L Scanner — DueSight Forensische Verificatie</title>
+    <meta name="description"
+        content="Upload uw P&L of jaarrekening (XLSX/CSV) voor een wetenschappelijke Benford's Law analyse. 100% client-side, zero data retention.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- SheetJS for XLSX/CSV parsing -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: rgba(15, 20, 35, 0.85);
+            --bg-glass: rgba(20, 28, 50, 0.6);
+            --border: rgba(100, 120, 200, 0.15);
+            --accent: #00d4aa;
+            --accent-glow: rgba(0, 212, 170, 0.3);
+            --warning: #ff6b35;
+            --danger: #ff4057;
+            --text-primary: #e8eaf6;
+            --text-secondary: #8892b0;
+            --text-muted: #5a6380;
+            --success: #00e676;
+            --gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(0, 212, 170, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(100, 120, 200, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        .scanner-header {
+            text-align: center;
+            padding: 3rem 1.5rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scanner-header .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .scanner-header h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .scanner-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main container */
+        .scanner-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Upload zone */
+        .upload-zone {
+            background: var(--bg-card);
+            border: 2px dashed rgba(0, 212, 170, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .upload-zone:hover,
+        .upload-zone.drag-over {
+            border-color: var(--accent);
+            background: rgba(0, 212, 170, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 212, 170, 0.15);
+        }
+
+        .upload-zone .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .upload-zone h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .upload-zone p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .upload-zone input {
+            display: none;
+        }
+
+        .upload-zone .formats {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        .upload-zone .formats span {
+            background: rgba(100, 120, 200, 0.15);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* PDF badge highlight */
+        .upload-zone .formats .pdf-badge {
+            background: linear-gradient(135deg, rgba(255, 100, 50, 0.25), rgba(255, 60, 80, 0.15));
+            color: #ff8c66;
+            border: 1px solid rgba(255, 100, 50, 0.3);
+        }
+
+        /* Paste zone */
+        .paste-zone {
+            max-width: 700px;
+            margin: 0.75rem auto 0;
+        }
+
+        .paste-toggle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: color 0.2s;
+        }
+
+        .paste-toggle:hover {
+            color: var(--accent-primary);
+        }
+
+        .paste-content {
+            margin-top: 0.5rem;
+        }
+
+        .paste-content textarea {
+            width: 100%;
+            background: rgba(30, 30, 52, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 1rem;
+            resize: vertical;
+            min-height: 120px;
+            box-sizing: border-box;
+        }
+
+        .paste-content textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .paste-content textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+
+        .paste-content .btn-analyze {
+            margin-top: 0.75rem;
+            width: 100%;
+        }
+
+        /* OCR fallback banner */
+        .ocr-banner {
+            display: none;
+            max-width: 700px;
+            margin: 1rem auto;
+            padding: 1rem 1.25rem;
+            background: linear-gradient(135deg, rgba(255, 170, 50, 0.1), rgba(255, 100, 50, 0.05));
+            border: 1px solid rgba(255, 170, 50, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .ocr-banner .ocr-title {
+            color: #ffaa32;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .ocr-banner a {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        .btn-demo {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.15), rgba(0, 212, 170, 0.05));
+            border: 1px solid rgba(0, 212, 170, 0.4);
+            color: var(--accent);
+            padding: 0.6rem 1.4rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-demo:hover {
+            background: rgba(0, 212, 170, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(0, 212, 170, 0.2);
+        }
+
+        /* Privacy badge */
+        .privacy-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            background: rgba(0, 230, 118, 0.08);
+            border: 1px solid rgba(0, 230, 118, 0.2);
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            color: var(--success);
+            margin-bottom: 2rem;
+        }
+
+        /* Terminal */
+        .terminal {
+            background: rgba(10, 14, 26, 0.95);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .terminal.active {
+            display: block;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(20, 28, 50, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red {
+            background: #ff5f57;
+        }
+
+        .terminal-dot.yellow {
+            background: #febc2e;
+        }
+
+        .terminal-dot.green {
+            background: #28c840;
+        }
+
+        .terminal-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        .terminal-body {
+            padding: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            line-height: 1.7;
+            max-height: 280px;
+            overflow-y: auto;
+            color: var(--text-secondary);
+        }
+
+        .terminal-body .line {
+            opacity: 0;
+            animation: fadeInLine 0.3s ease forwards;
+        }
+
+        .terminal-body .line.success {
+            color: var(--success);
+        }
+
+        .terminal-body .line.warning {
+            color: var(--warning);
+        }
+
+        .terminal-body .line.danger {
+            color: var(--danger);
+        }
+
+        .terminal-body .line.accent {
+            color: var(--accent);
+        }
+
+        @keyframes fadeInLine {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Results panel */
+        .results-panel {
+            display: none;
+        }
+
+        .results-panel.active {
+            display: block;
+        }
+
+        /* Score card */
+        .score-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .score-card h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+
+        .score-ring {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .score-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .score-ring .bg {
+            fill: none;
+            stroke: rgba(100, 120, 200, 0.1);
+            stroke-width: 8;
+        }
+
+        .score-ring .progress {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1.5s ease, stroke 0.5s ease;
+        }
+
+        .score-value {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-value .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .score-value .label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .score-verdict {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .score-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        .stat-item .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.2rem;
+        }
+
+        /* Chart */
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .chart-card h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 260px;
+            position: relative;
+        }
+
+        .chart-container svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .chart-legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 0.75rem;
+        }
+
+        .chart-legend span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .chart-legend .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        /* Anomaly table */
+        .anomaly-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .anomaly-card h3 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1rem;
+        }
+
+        .anomaly-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.78rem;
+        }
+
+        .anomaly-table th {
+            text-align: left;
+            padding: 0.6rem 0.8rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .anomaly-table td {
+            padding: 0.55rem 0.8rem;
+            border-bottom: 1px solid rgba(100, 120, 200, 0.08);
+            color: var(--text-secondary);
+        }
+
+        .anomaly-table tr:hover td {
+            background: rgba(100, 120, 200, 0.04);
+        }
+
+        .risk-badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+
+        .risk-badge.high {
+            background: rgba(255, 64, 87, 0.15);
+            color: var(--danger);
+        }
+
+        .risk-badge.medium {
+            background: rgba(255, 107, 53, 0.15);
+            color: var(--warning);
+        }
+
+        .risk-badge.low {
+            background: rgba(0, 230, 118, 0.12);
+            color: var(--success);
+        }
+
+        /* Upsell lock */
+        .upsell-lock {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.08), rgba(100, 120, 200, 0.08));
+            border: 1px solid rgba(0, 212, 170, 0.25);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upsell-lock::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px,
+                    rgba(0, 212, 170, 0.02) 10px, rgba(0, 212, 170, 0.02) 20px);
+        }
+
+        .upsell-lock>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .upsell-lock .lock-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upsell-lock h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .upsell-lock p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .upsell-lock .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--accent), #00b894);
+            color: #0a0e1a;
+            padding: 0.7rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .upsell-lock .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        /* Share bar */
+        .share-bar {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .share-btn:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        /* How it works */
+        .how-it-works {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .how-it-works h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .how-step {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .how-step .step-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .how-step h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .how-step p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .scanner-footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scanner-footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .scanner-footer p {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Column selector modal */
+        .column-selector {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .column-selector.active {
+            display: block;
+        }
+
+        .column-selector h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .column-selector p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .col-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .col-option {
+            background: rgba(100, 120, 200, 0.1);
+            border: 1px solid rgba(100, 120, 200, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .col-option:hover,
+        .col-option.selected {
+            border-color: var(--accent);
+            background: rgba(0, 212, 170, 0.12);
+            color: var(--text-primary);
+        }
+
+        .btn-analyze {
+            background: linear-gradient(135deg, var(--accent), #00b894);
+            color: #0a0e1a;
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-analyze:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px var(--accent-glow);
+        }
+
+        .btn-analyze:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .score-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .how-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="scanner-header">
+        <div class="badge" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradBenford)" stroke-width="8"></circle>
+                <path d="M30 50 L45 65 L70 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <defs>
+                    <linearGradient id="logoGradBenford" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"></stop>
+                        <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1"></stop>
+                    </linearGradient>
+                </defs>
+            </svg>
+            Forensic Financial Analysis
+        </div>
+        <h1>Benford's Law P&L Scanner</h1>
+        <p>Upload uw jaarrekening of P&L statement. DueSight analyseert de cijferverdeling volgens de wet van Benford —
+            volledig in uw browser, zero data retention.</p>
+    </header>
+
+    <main class="scanner-container">
+
+        <!-- Privacy badge -->
+        <div class="privacy-badge">
+            🔒 Zero Retention — Uw data verlaat nooit uw browser. 100% client-side verwerking.
+        </div>
+
+        <!-- Upload zone -->
+        <div class="upload-zone" id="uploadZone">
+            <div class="icon">📊</div>
+            <h3>Sleep uw bestand hierheen of klik om te uploaden</h3>
+            <p>Ondersteund: XLSX, XLS, CSV, PDF — Max 50MB</p>
+            <div class="formats">
+                <span>.xlsx</span>
+                <span>.xls</span>
+                <span>.csv</span>
+                <span class="pdf-badge">.pdf</span>
+            </div>
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv,.pdf">
+            <div class="btn-row">
+                <button class="btn-demo" id="btnDemo" type="button">▶ Start Demo Analyse</button>
+            </div>
+        </div>
+
+        <!-- Copy-paste input -->
+        <div class="paste-zone" id="pasteZone">
+            <div class="paste-toggle" id="pasteToggle">📋 Of plak getallen handmatig</div>
+            <div class="paste-content" id="pasteContent" style="display:none;">
+                <textarea id="pasteInput" rows="8" placeholder="Plak financiële getallen hier, één per regel...
+
+Voorbeeld:
+€ 125.000,00
+45.678,90
+(12.345,00)
+89.200"></textarea>
+                <button class="btn-analyze" id="btnPaste" type="button">📋 Analyseer geplakte data</button>
+            </div>
+        </div>
+
+        <!-- OCR fallback banner -->
+        <div class="ocr-banner" id="ocrBanner">
+            <div class="ocr-title">📷 Gescand PDF-bestand gedetecteerd</div>
+            <p>Dit PDF-bestand bevat geen selecteerbare tekst (waarschijnlijk gescand). Gebruik <a
+                    href="index.html#pricing">DueSight Pro</a> voor server-side OCR-extractie, of kopieer de getallen
+                handmatig via het tekstveld hierboven.</p>
+        </div>
+
+        <!-- Column selector -->
+        <div class="column-selector" id="columnSelector">
+            <h3>Selecteer de kolom met financiële bedragen</h3>
+            <p>We detecteerden meerdere numerieke kolommen. Kies de kolom die u wilt analyseren:</p>
+            <div class="col-options" id="colOptions"></div>
+            <button class="btn-analyze" id="btnAnalyze" disabled>🔬 Start Benford Analyse</button>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal" id="terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">duesight-forensic-engine v2.1</span>
+            </div>
+            <div class="terminal-body" id="terminalBody"></div>
+        </div>
+
+        <!-- Results panel -->
+        <div class="results-panel" id="resultsPanel">
+
+            <!-- Score card -->
+            <div class="score-card" id="scoreCard">
+                <h2>Forensic Integrity Score</h2>
+                <div class="score-ring">
+                    <svg viewBox="0 0 160 160">
+                        <circle class="bg" cx="80" cy="80" r="70" />
+                        <circle class="progress" id="scoreArc" cx="80" cy="80" r="70" stroke-dasharray="440"
+                            stroke-dashoffset="440" />
+                    </svg>
+                    <div class="score-value">
+                        <span class="number" id="scoreNumber">—</span>
+                        <span class="label">/ 100</span>
+                    </div>
+                </div>
+                <div class="score-verdict" id="scoreVerdict">Analyseren...</div>
+                <div class="score-subtitle" id="scoreSubtitle"></div>
+                <div class="score-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="statRecords">—</div>
+                        <div class="stat-label">Records geanalyseerd</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statChiSq">—</div>
+                        <div class="stat-label">Chi-kwadraat (χ²)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="statMAD">—</div>
+                        <div class="stat-label">MAD Score</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="chart-card">
+                <h3>Eerste-Cijfer Distributie — Verwacht vs. Werkelijk</h3>
+                <div class="chart-container" id="chartContainer"></div>
+                <div class="chart-legend">
+                    <span><span class="dot" style="background: var(--accent);"></span> Benford Verwacht</span>
+                    <span><span class="dot" style="background: rgba(100, 120, 200, 0.6);"></span> Werkelijke Data</span>
+                </div>
+            </div>
+
+            <!-- Anomaly table -->
+            <div class="anomaly-card">
+                <h3>Digit Anomalieën — Z-Score Analyse</h3>
+                <table class="anomaly-table" id="anomalyTable">
+                    <thead>
+                        <tr>
+                            <th>Digit</th>
+                            <th>Verwacht %</th>
+                            <th>Werkelijk %</th>
+                            <th>Afwijking</th>
+                            <th>Z-Score</th>
+                            <th>Risico</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anomalyBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Upsell -->
+            <div class="upsell-lock">
+                <div class="lock-icon">🔐</div>
+                <h3>Volledige Forensische Rapportage</h3>
+                <p>Ontgrendel cellocatie-analyse, tweede-orde tests, opsplitsing per rekening, en een gedetailleerd
+                    PDF-rapport met audit-trail.</p>
+                <a href="index.html#pricing" class="cta-btn">Bekijk DueSight Pro →</a>
+            </div>
+
+            <!-- Share bar -->
+            <div class="share-bar">
+                <button class="share-btn" id="btnCopyLink" type="button">📋 Kopieer Link</button>
+                <a class="share-btn" id="btnShareLinkedIn" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                <a class="share-btn" id="btnShareX" href="#" target="_blank" rel="noopener">𝕏 Deel</a>
+            </div>
+        </div>
+
+        <!-- How it works -->
+        <div class="how-it-works">
+            <h3>Hoe werkt de Benford Analyse?</h3>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="step-icon">📄</div>
+                    <h4>1. Upload</h4>
+                    <p>Upload uw XLSX, CSV of PDF met financiële data. Alles blijft in uw browser.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-icon">🔢</div>
+                    <h4>2. Extractie</h4>
+                    <p>We extraheren alle numerieke waarden en bepalen het eerste significante cijfer.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-icon">📐</div>
+                    <h4>3. Statistiek</h4>
+                    <p>Chi-kwadraat test, MAD-analyse en Z-scores per digit worden berekend.</p>
+                </div>
+                <div class="how-step">
+                    <div class="step-icon">🎯</div>
+                    <h4>4. Resultaat</h4>
+                    <p>Een Integrity Score van 0-100 met visuele grafiek en anomaliedetails.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="scanner-footer">
+        <a href="index.html">← Terug naar DueSight.nl</a>
+        <p>Forensische analyse gebaseerd op Benford's Law (Newcomb 1881, Benford 1938, Nigrini 2012)</p>
+    </footer>
+
+    <!-- PDF.js CDN for client-side PDF parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs" type="module"></script>
+    <script>
+        // Load PDF.js via classic script tag for global access
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js';
+            s.onload = function () {
+                if (window.pdfjsLib) {
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js';
+                }
+            };
+            document.head.appendChild(s);
+        })();
+    </script>
+
+    <script>
+        /**
+         * DueSight Benford's Law Engine — 100% Client-Side
+         * 
+         * Implements:
+         * - First-digit frequency analysis
+         * - Chi-square goodness-of-fit test (df=8)
+         * - Mean Absolute Deviation (MAD) per Nigrini (2012) thresholds
+         * - Z-scores per digit
+         * - Dynamic SVG bar chart
+         * - Integrity Score calculation
+         */
+
+        // ═══════════════════════════════════════════════════════════
+        //  BENFORD ENGINE
+        // ═══════════════════════════════════════════════════════════
+
+        const BENFORD_EXPECTED = [
+            0,        // digit 0 placeholder
+            0.30103,  // digit 1: log10(1 + 1/1)
+            0.17609,  // digit 2
+            0.12494,  // digit 3
+            0.09691,  // digit 4
+            0.07918,  // digit 5
+            0.06695,  // digit 6
+            0.05799,  // digit 7
+            0.05115,  // digit 8
+            0.04576   // digit 9
+        ];
+
+        // Chi-square critical values (df=8)
+        const CHI_SQ_P05 = 15.507;
+        const CHI_SQ_P01 = 20.090;
+
+        // MAD thresholds (Nigrini, 2012)
+        const MAD_CLOSE = 0.006;
+        const MAD_ACCEPTABLE = 0.012;
+        const MAD_MARGINAL = 0.015;
+
+        /**
+         * Extract first significant digit from a number.
+         * Ignores zero, negatives are abs'd.
+         * @param {number} num
+         * @returns {number|null} digit 1-9 or null
+         */
+        function firstSignificantDigit(num) {
+            if (num === 0 || !isFinite(num)) return null;
+            const abs = Math.abs(num);
+            const str = abs.toExponential();
+            const d = parseInt(str.charAt(0), 10);
+            return (d >= 1 && d <= 9) ? d : null;
+        }
+
+        /**
+         * Run full Benford analysis on an array of numbers.
+         * @param {number[]} numbers
+         * @returns {object} analysis results
+         */
+        function benfordAnalysis(numbers) {
+            // Count first digits
+            const counts = new Array(10).fill(0); // index 0 unused
+            let totalValid = 0;
+
+            for (const num of numbers) {
+                const d = firstSignificantDigit(num);
+                if (d !== null) {
+                    counts[d]++;
+                    totalValid++;
+                }
+            }
+
+            if (totalValid < 10) {
+                return { error: 'Te weinig geldige records (minimaal 10 nodig)', totalValid };
+            }
+
+            // Observed proportions
+            const observed = new Array(10).fill(0);
+            for (let d = 1; d <= 9; d++) {
+                observed[d] = counts[d] / totalValid;
+            }
+
+            // Chi-square test
+            let chiSquare = 0;
+            for (let d = 1; d <= 9; d++) {
+                const expected = BENFORD_EXPECTED[d] * totalValid;
+                chiSquare += Math.pow(counts[d] - expected, 2) / expected;
+            }
+
+            // MAD (Mean Absolute Deviation)
+            let madSum = 0;
+            for (let d = 1; d <= 9; d++) {
+                madSum += Math.abs(observed[d] - BENFORD_EXPECTED[d]);
+            }
+            const mad = madSum / 9;
+
+            // Z-scores per digit
+            const zScores = new Array(10).fill(0);
+            for (let d = 1; d <= 9; d++) {
+                const p = BENFORD_EXPECTED[d];
+                const se = Math.sqrt(p * (1 - p) / totalValid);
+                zScores[d] = (observed[d] - p) / se;
+            }
+
+            // Integrity score calculation
+            let integrityScore;
+            if (mad <= MAD_CLOSE) {
+                integrityScore = 90 + Math.round((MAD_CLOSE - mad) / MAD_CLOSE * 10);
+            } else if (mad <= MAD_ACCEPTABLE) {
+                integrityScore = 70 + Math.round((MAD_ACCEPTABLE - mad) / (MAD_ACCEPTABLE - MAD_CLOSE) * 19);
+            } else if (mad <= MAD_MARGINAL) {
+                integrityScore = 50 + Math.round((MAD_MARGINAL - mad) / (MAD_MARGINAL - MAD_ACCEPTABLE) * 19);
+            } else {
+                integrityScore = Math.max(5, Math.round(50 * (1 - (mad - MAD_MARGINAL) / 0.03)));
+            }
+            integrityScore = Math.min(100, Math.max(0, integrityScore));
+
+            // Chi-square penalty
+            if (chiSquare > CHI_SQ_P01) {
+                integrityScore = Math.max(0, integrityScore - 10);
+            } else if (chiSquare > CHI_SQ_P05) {
+                integrityScore = Math.max(0, integrityScore - 5);
+            }
+
+            // Verdict
+            let verdict, verdictColor, subtitle;
+            if (integrityScore >= 85) {
+                verdict = '✅ Hoge Conformiteit';
+                verdictColor = 'var(--success)';
+                subtitle = 'Distributie komt sterk overeen met Benford\'s Law. Geen indicaties van manipulatie.';
+            } else if (integrityScore >= 65) {
+                verdict = '⚠️ Acceptabel — Lichte Afwijkingen';
+                verdictColor = 'var(--gold)';
+                subtitle = 'Enkele afwijkingen gedetecteerd. Kan natuurlijke oorzaken hebben, maar verdient aandacht.';
+            } else if (integrityScore >= 45) {
+                verdict = '🟠 Marginaal — Nader Onderzoek Aanbevolen';
+                verdictColor = 'var(--warning)';
+                subtitle = 'Significante afwijkingen van de verwachte verdeling. Forensisch vervolgonderzoek aanbevolen.';
+            } else {
+                verdict = '🔴 Non-Conformiteit — Hoog Risico';
+                verdictColor = 'var(--danger)';
+                subtitle = 'Ernstige afwijkingen van Benford\'s Law. Sterke indicatie van mogelijke data-manipulatie.';
+            }
+
+            return {
+                totalValid,
+                counts,
+                observed,
+                chiSquare,
+                mad,
+                zScores,
+                integrityScore,
+                verdict,
+                verdictColor,
+                subtitle,
+                chiSquareSignificant: chiSquare > CHI_SQ_P05,
+                chiSquareHighlySignificant: chiSquare > CHI_SQ_P01
+            };
+        }
+
+
+        // ═══════════════════════════════════════════════════════════
+        //  DEMO DATA — Simulated P&L with subtle manipulation
+        // ═══════════════════════════════════════════════════════════
+
+        function generateDemoData() {
+            // Generates ~500 numbers that roughly follow Benford with subtle anomalies
+            // Simulates a P&L where some entries appear manipulated (excess of digit 5, deficit of digit 1)
+            const data = [];
+            const benfordCumulative = [];
+            let cum = 0;
+            for (let d = 1; d <= 9; d++) {
+                cum += BENFORD_EXPECTED[d];
+                benfordCumulative.push(cum);
+            }
+
+            // Generate 400 clean Benford-conforming numbers
+            for (let i = 0; i < 400; i++) {
+                const r = Math.random();
+                let digit = 1;
+                for (let d = 0; d < 9; d++) {
+                    if (r < benfordCumulative[d]) { digit = d + 1; break; }
+                }
+                const magnitude = Math.pow(10, Math.floor(Math.random() * 4) + 1);
+                const suffix = Math.random() * (magnitude / digit);
+                data.push(parseFloat((digit * magnitude + suffix).toFixed(2)));
+            }
+
+            // Inject 60 manipulated entries (excess digit 5 and 8)
+            for (let i = 0; i < 35; i++) {
+                const magnitude = Math.pow(10, Math.floor(Math.random() * 3) + 2);
+                data.push(parseFloat((5 * magnitude + Math.random() * magnitude * 0.8).toFixed(2)));
+            }
+            for (let i = 0; i < 25; i++) {
+                const magnitude = Math.pow(10, Math.floor(Math.random() * 3) + 2);
+                data.push(parseFloat((8 * magnitude + Math.random() * magnitude * 0.5).toFixed(2)));
+            }
+
+            // Remove some digit-1 entries to create deficit
+            let removed = 0;
+            const filtered = data.filter(n => {
+                if (removed < 30 && firstSignificantDigit(n) === 1 && Math.random() < 0.4) {
+                    removed++;
+                    return false;
+                }
+                return true;
+            });
+
+            return filtered;
+        }
+
+
+        // ═══════════════════════════════════════════════════════════
+        //  UI CONTROLLER
+        // ═══════════════════════════════════════════════════════════
+
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('fileInput');
+        const btnDemo = document.getElementById('btnDemo');
+        const columnSelector = document.getElementById('columnSelector');
+        const colOptions = document.getElementById('colOptions');
+        const btnAnalyze = document.getElementById('btnAnalyze');
+        const terminal = document.getElementById('terminal');
+        const terminalBody = document.getElementById('terminalBody');
+        const resultsPanel = document.getElementById('resultsPanel');
+
+        let parsedWorkbook = null;
+        let selectedColumn = null;
+        let allNumbers = [];
+
+        // Drag & drop
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault(); uploadZone.classList.add('drag-over');
+        });
+        uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault(); uploadZone.classList.remove('drag-over');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        });
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) handleFile(e.target.files[0]);
+        });
+
+        // Demo button
+        btnDemo.addEventListener('click', () => {
+            allNumbers = generateDemoData();
+            runAnalysis('[Demo] Gesimuleerde P&L Dataset', allNumbers.length);
+        });
+
+        // Paste zone toggle
+        document.getElementById('pasteToggle').addEventListener('click', () => {
+            const content = document.getElementById('pasteContent');
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Paste analyze button
+        document.getElementById('btnPaste').addEventListener('click', () => {
+            const text = document.getElementById('pasteInput').value.trim();
+            if (!text) { alert('Plak eerst getallen in het tekstveld.'); return; }
+            allNumbers = extractNumbersFromText(text);
+            if (allNumbers.length < 10) {
+                alert('Te weinig getallen gevonden (' + allNumbers.length + '). Minimaal 10 waarden nodig.');
+                return;
+            }
+            runAnalysis('[Geplakt] Handmatige invoer', allNumbers.length);
+        });
+
+        // ═══════════════════════════════════════════════════════════
+        //  SMART NUMBER PARSER — Handles EU/NL/US formats
+        // ═══════════════════════════════════════════════════════════
+
+        /**
+         * Extract financial numbers from text.
+         * Handles EU notation (1.234.567,89), US notation (1,234,567.89),
+         * currency symbols, accounting negatives (1.234), and filters
+         * out dates, percentages, and phone numbers.
+         * @param {string} text - Raw text to parse
+         * @returns {number[]} Extracted numbers (absolute values >= 1)
+         */
+        function extractNumbersFromText(text) {
+            const numbers = [];
+            // Split on whitespace and newlines
+            const lines = text.split(/[\r\n]+/);
+
+            for (const line of lines) {
+                // Skip lines that look like dates (dd-mm-yyyy, dd/mm/yyyy)
+                if (/^\s*\d{1,2}[\-\/]\d{1,2}[\-\/]\d{2,4}\s*$/.test(line)) continue;
+
+                // Find all number-like patterns in the line
+                // Matches: 1.234.567,89 | 1,234,567.89 | (1.234) | €125.000 | -45678
+                const matches = line.match(/[\(\-]?[€$£]?\s*\d[\d.,]*\d[\)%]?|[\(\-]?[€$£]?\s*\d+[\)%]?/g);
+                if (!matches) continue;
+
+                for (let raw of matches) {
+                    // Skip percentages
+                    if (raw.endsWith('%')) continue;
+                    // Skip phone-number-like patterns (10+ digits with no separators or thin ones)
+                    if (raw.replace(/[^\d]/g, '').length > 12) continue;
+                    // Skip date-like patterns embedded in text (2024, 2025, 2026)
+                    const digitsOnly = raw.replace(/[^\d]/g, '');
+                    if (/^20[12]\d$/.test(digitsOnly)) continue;
+
+                    // Check for accounting negative: (1.234)
+                    const isNegative = raw.includes('(') || raw.startsWith('-');
+
+                    // Strip currency symbols, parentheses, spaces
+                    raw = raw.replace(/[€$£()\s]/g, '');
+                    // Strip leading minus (we track it separately)
+                    raw = raw.replace(/^-/, '');
+
+                    if (!raw || !/\d/.test(raw)) continue;
+
+                    // Detect EU vs US format
+                    let num;
+                    const lastComma = raw.lastIndexOf(',');
+                    const lastDot = raw.lastIndexOf('.');
+
+                    if (lastComma > lastDot) {
+                        // EU format: 1.234.567,89 → comma is decimal sep
+                        num = parseFloat(raw.replace(/\./g, '').replace(',', '.'));
+                    } else if (lastDot > lastComma) {
+                        // US format: 1,234,567.89 → dot is decimal sep  
+                        num = parseFloat(raw.replace(/,/g, ''));
+                    } else if (lastComma >= 0 && lastDot < 0) {
+                        // Only commas — check if it's a decimal or thousands
+                        const afterComma = raw.split(',')[1] || '';
+                        if (afterComma.length <= 2) {
+                            // 1234,56 → EU decimal
+                            num = parseFloat(raw.replace(',', '.'));
+                        } else {
+                            // 1,234 → US thousands
+                            num = parseFloat(raw.replace(/,/g, ''));
+                        }
+                    } else {
+                        // No separators
+                        num = parseFloat(raw);
+                    }
+
+                    if (!isNaN(num) && isFinite(num) && Math.abs(num) >= 1) {
+                        numbers.push(isNegative ? -Math.abs(num) : num);
+                    }
+                }
+            }
+            return numbers;
+        }
+
+
+        // ═══════════════════════════════════════════════════════════
+        //  PDF HANDLER — Client-side extraction via PDF.js
+        // ═══════════════════════════════════════════════════════════
+
+        /**
+         * Handle PDF file: extract text from all pages, parse numbers.
+         * @param {File} file - PDF file from upload
+         */
+        async function handlePDF(file) {
+            if (typeof pdfjsLib === 'undefined') {
+                alert('PDF.js wordt geladen... Probeer het over een paar seconden opnieuw.');
+                return;
+            }
+
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                let allText = '';
+
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const textContent = await page.getTextContent();
+
+                    // Reconstruct text with line breaks based on Y-position changes
+                    let lastY = null;
+                    for (const item of textContent.items) {
+                        if (lastY !== null && Math.abs(item.transform[5] - lastY) > 3) {
+                            allText += '\n';
+                        }
+                        allText += item.str + ' ';
+                        lastY = item.transform[5];
+                    }
+                    allText += '\n--- Page ' + i + ' ---\n';
+                }
+
+                // Extract numbers from the full text
+                allNumbers = extractNumbersFromText(allText);
+
+                if (allNumbers.length < 10) {
+                    // Layer 2: try server-side extraction (Camelot + OCR)
+                    try {
+                        const formData = new FormData();
+                        formData.append('file', file);
+                        const resp = await fetch('http://localhost:8099/api/benford/pdf-extract', {
+                            method: 'POST',
+                            body: formData,
+                        });
+                        if (resp.ok) {
+                            const serverResult = await resp.json();
+                            if (serverResult.numbers && serverResult.numbers.length >= 10) {
+                                allNumbers = serverResult.numbers;
+                                document.getElementById('ocrBanner').style.display = 'none';
+                                runAnalysis(
+                                    file.name + ' (PDF, server-side ' + serverResult.method + ')',
+                                    allNumbers.length
+                                );
+                                return;
+                            }
+                        }
+                    } catch (serverErr) {
+                        // Server not available — fall through to OCR banner
+                    }
+
+                    // Both layers failed — show OCR banner
+                    document.getElementById('ocrBanner').style.display = 'block';
+                    if (allNumbers.length === 0) {
+                        alert('Geen getallen gevonden in dit PDF. Het bestand is waarschijnlijk gescand (afbeelding). Gebruik DueSight Pro voor OCR, of plak de getallen handmatig.');
+                    } else {
+                        alert('Slechts ' + allNumbers.length + ' getallen gevonden (minimaal 10 nodig). Het PDF bevat mogelijk gescande afbeeldingen.');
+                    }
+                    return;
+                }
+
+                document.getElementById('ocrBanner').style.display = 'none';
+                runAnalysis(file.name + ' (PDF, ' + pdf.numPages + ' pagina\'s)', allNumbers.length);
+
+            } catch (err) {
+                alert('Fout bij het lezen van het PDF-bestand: ' + err.message);
+            }
+        }
+
+
+        /**
+         * Handle uploaded file: route to PDF handler or SheetJS based on extension
+         */
+        function handleFile(file) {
+            const maxSize = 50 * 1024 * 1024;
+            if (file.size > maxSize) {
+                alert('Bestand te groot. Maximum is 50MB.');
+                return;
+            }
+
+            // Route PDFs to the PDF.js handler
+            const ext = file.name.split('.').pop().toLowerCase();
+            if (ext === 'pdf') {
+                handlePDF(file);
+                return;
+            }
+
+            // Excel/CSV path via SheetJS
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = new Uint8Array(e.target.result);
+                    parsedWorkbook = XLSX.read(data, { type: 'array' });
+
+                    const firstSheet = parsedWorkbook.Sheets[parsedWorkbook.SheetNames[0]];
+                    const json = XLSX.utils.sheet_to_json(firstSheet, { defval: null });
+
+                    if (!json.length) {
+                        alert('Geen data gevonden in het bestand.');
+                        return;
+                    }
+
+                    // Detect numeric columns
+                    const columns = Object.keys(json[0]);
+                    const numericCols = [];
+
+                    for (const col of columns) {
+                        let numCount = 0;
+                        for (const row of json) {
+                            const val = parseFloat(row[col]);
+                            if (!isNaN(val) && val !== 0) numCount++;
+                        }
+                        if (numCount >= 10) {
+                            numericCols.push({ name: col, count: numCount });
+                        }
+                    }
+
+                    if (numericCols.length === 0) {
+                        alert('Geen numerieke kolommen gevonden met voldoende data (minimaal 10 waarden).');
+                        return;
+                    }
+
+                    // If only one numeric column, auto-select
+                    if (numericCols.length === 1) {
+                        allNumbers = extractColumn(json, numericCols[0].name);
+                        runAnalysis(file.name, allNumbers.length);
+                        return;
+                    }
+
+                    // Show column selector
+                    showColumnSelector(numericCols, json, file.name);
+
+                } catch (err) {
+                    alert('Fout bij het lezen van het bestand: ' + err.message);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        function extractColumn(json, colName) {
+            const nums = [];
+            for (const row of json) {
+                const val = parseFloat(row[colName]);
+                if (!isNaN(val) && val !== 0 && isFinite(val)) {
+                    nums.push(val);
+                }
+            }
+            return nums;
+        }
+
+        function showColumnSelector(numericCols, json, fileName) {
+            columnSelector.classList.add('active');
+            colOptions.innerHTML = '';
+            selectedColumn = null;
+            btnAnalyze.disabled = true;
+
+            for (const col of numericCols) {
+                const btn = document.createElement('button');
+                btn.className = 'col-option';
+                btn.textContent = `${col.name} (${col.count} waarden)`;
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.col-option').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    selectedColumn = col.name;
+                    btnAnalyze.disabled = false;
+                });
+                colOptions.appendChild(btn);
+            }
+
+            btnAnalyze.onclick = () => {
+                if (!selectedColumn) return;
+                columnSelector.classList.remove('active');
+                allNumbers = extractColumn(json, selectedColumn);
+                runAnalysis(fileName, allNumbers.length);
+            };
+        }
+
+
+        // ═══════════════════════════════════════════════════════════
+        //  ANALYSIS RUNNER
+        // ═══════════════════════════════════════════════════════════
+
+        async function runAnalysis(fileName, recordCount) {
+            // Hide upload, show terminal
+            uploadZone.style.display = 'none';
+            terminal.classList.add('active');
+            resultsPanel.classList.remove('active');
+            terminalBody.innerHTML = '';
+
+            // Terminal animation
+            const lines = [
+                { text: `$ duesight forensic-scan --file="${fileName}"`, cls: 'accent' },
+                { text: '[init] Benford\'s Law Engine v2.1 geladen...', cls: '' },
+                { text: `[load] ${recordCount} records geëxtraheerd`, cls: '' },
+                { text: '[filter] Nulwaarden en niet-numerieke entries verwijderd...', cls: '' },
+            ];
+
+            // Show init lines
+            for (const line of lines) {
+                await addTerminalLine(line.text, line.cls, 120);
+            }
+
+            // Run actual analysis
+            const results = benfordAnalysis(allNumbers);
+
+            if (results.error) {
+                await addTerminalLine(`[ERROR] ${results.error}`, 'danger', 100);
+                return;
+            }
+
+            await addTerminalLine(`[benford] ${results.totalValid} geldige waarden — eerste-cijfer extractie...`, '', 150);
+            await addTerminalLine('[stats] Chi-kwadraat test berekenen (df=8)...', '', 180);
+            await addTerminalLine(`[stats] χ² = ${results.chiSquare.toFixed(3)} ${results.chiSquareHighlySignificant ? '⚠ SIGNIFICANT (p<0.01)' : results.chiSquareSignificant ? '⚠ SIGNIFICANT (p<0.05)' : '✓ niet-significant'}`, results.chiSquareSignificant ? 'warning' : 'success', 120);
+            await addTerminalLine('[stats] MAD (Mean Absolute Deviation) berekenen...', '', 150);
+
+            let madLabel;
+            if (results.mad <= MAD_CLOSE) madLabel = 'CLOSE CONFORMITY';
+            else if (results.mad <= MAD_ACCEPTABLE) madLabel = 'ACCEPTABLE';
+            else if (results.mad <= MAD_MARGINAL) madLabel = 'MARGINAAL';
+            else madLabel = 'NON-CONFORMITY';
+
+            await addTerminalLine(`[stats] MAD = ${results.mad.toFixed(5)} → ${madLabel}`, results.mad <= MAD_ACCEPTABLE ? 'success' : 'warning', 120);
+            await addTerminalLine('[z-scores] Per-digit Z-score analyse...', '', 150);
+
+            // Show flagged digits
+            for (let d = 1; d <= 9; d++) {
+                if (Math.abs(results.zScores[d]) > 1.96) {
+                    const dir = results.zScores[d] > 0 ? 'SURPLUS' : 'DEFICIT';
+                    await addTerminalLine(`  ⚠ Digit ${d}: Z=${results.zScores[d].toFixed(2)} → ${dir} (${(results.observed[d] * 100).toFixed(1)}% vs ${(BENFORD_EXPECTED[d] * 100).toFixed(1)}% verwacht)`, 'warning', 80);
+                }
+            }
+
+            await addTerminalLine(`[score] Integrity Score: ${results.integrityScore}/100`, results.integrityScore >= 70 ? 'success' : results.integrityScore >= 45 ? 'warning' : 'danger', 200);
+            await addTerminalLine('[done] Forensische analyse compleet ✓', 'success', 150);
+
+            // Show results
+            await sleep(400);
+            renderResults(results);
+        }
+
+        function addTerminalLine(text, cls, delay) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    const line = document.createElement('div');
+                    line.className = `line ${cls}`;
+                    line.textContent = text;
+                    terminalBody.appendChild(line);
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                    resolve();
+                }, delay);
+            });
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+
+        // ═══════════════════════════════════════════════════════════
+        //  RESULTS RENDERER
+        // ═══════════════════════════════════════════════════════════
+
+        function renderResults(results) {
+            resultsPanel.classList.add('active');
+
+            // Score ring
+            const scoreArc = document.getElementById('scoreArc');
+            const circumference = 2 * Math.PI * 70;
+            const offset = circumference * (1 - results.integrityScore / 100);
+            scoreArc.setAttribute('stroke-dasharray', circumference);
+
+            // Animate score
+            let current = 0;
+            const scoreNum = document.getElementById('scoreNumber');
+            const interval = setInterval(() => {
+                current++;
+                if (current > results.integrityScore) {
+                    clearInterval(interval);
+                    current = results.integrityScore;
+                }
+                scoreNum.textContent = current;
+            }, 15);
+
+            setTimeout(() => {
+                scoreArc.setAttribute('stroke-dashoffset', offset);
+                scoreArc.setAttribute('stroke', results.verdictColor);
+            }, 100);
+
+            document.getElementById('scoreVerdict').textContent = results.verdict;
+            document.getElementById('scoreVerdict').style.color = results.verdictColor;
+            document.getElementById('scoreSubtitle').textContent = results.subtitle;
+
+            // Stats
+            document.getElementById('statRecords').textContent = results.totalValid.toLocaleString('nl-NL');
+            document.getElementById('statChiSq').textContent = results.chiSquare.toFixed(2);
+            document.getElementById('statMAD').textContent = results.mad.toFixed(5);
+
+            // Chart
+            renderChart(results);
+
+            // Anomaly table
+            renderAnomalyTable(results);
+
+            // Share links
+            setupShareLinks(results);
+        }
+
+        function renderChart(results) {
+            const container = document.getElementById('chartContainer');
+            const w = 800, h = 260;
+            const marginLeft = 40, marginRight = 20, marginTop = 20, marginBottom = 40;
+            const chartW = w - marginLeft - marginRight;
+            const chartH = h - marginTop - marginBottom;
+            const barGroupW = chartW / 9;
+            const barW = barGroupW * 0.3;
+            const gap = barGroupW * 0.08;
+
+            let svg = `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">`;
+
+            // Y-axis labels & grid
+            const maxVal = Math.max(0.35, ...results.observed.slice(1));
+            for (let i = 0; i <= 4; i++) {
+                const val = (maxVal / 4) * i;
+                const y = marginTop + chartH - (val / maxVal) * chartH;
+                svg += `<line x1="${marginLeft}" y1="${y}" x2="${w - marginRight}" y2="${y}" stroke="rgba(100,120,200,0.1)" stroke-width="1"/>`;
+                svg += `<text x="${marginLeft - 6}" y="${y + 3}" fill="#5a6380" font-size="9" font-family="JetBrains Mono" text-anchor="end">${(val * 100).toFixed(0)}%</text>`;
+            }
+
+            // Bars
+            for (let d = 1; d <= 9; d++) {
+                const x = marginLeft + (d - 1) * barGroupW + barGroupW * 0.15;
+                const expectedH = (BENFORD_EXPECTED[d] / maxVal) * chartH;
+                const observedH = (results.observed[d] / maxVal) * chartH;
+
+                // Expected bar
+                svg += `<rect x="${x}" y="${marginTop + chartH - expectedH}" width="${barW}" height="${expectedH}"
+                rx="3" fill="rgba(0,212,170,0.5)">
+                <animate attributeName="height" from="0" to="${expectedH}" dur="0.6s" fill="freeze"/>
+                <animate attributeName="y" from="${marginTop + chartH}" to="${marginTop + chartH - expectedH}" dur="0.6s" fill="freeze"/>
+            </rect>`;
+
+                // Observed bar
+                const barColor = Math.abs(results.zScores[d]) > 1.96 ?
+                    (results.zScores[d] > 0 ? 'rgba(255,107,53,0.7)' : 'rgba(255,64,87,0.6)') :
+                    'rgba(100,120,200,0.5)';
+
+                svg += `<rect x="${x + barW + gap}" y="${marginTop + chartH - observedH}" width="${barW}" height="${observedH}"
+                rx="3" fill="${barColor}">
+                <animate attributeName="height" from="0" to="${observedH}" dur="0.8s" fill="freeze"/>
+                <animate attributeName="y" from="${marginTop + chartH}" to="${marginTop + chartH - observedH}" dur="0.8s" fill="freeze"/>
+            </rect>`;
+
+                // X-axis label
+                svg += `<text x="${x + barW}" y="${h - 10}" fill="#8892b0" font-size="12" font-family="JetBrains Mono" text-anchor="middle">${d}</text>`;
+            }
+
+            svg += '</svg>';
+            container.innerHTML = svg;
+        }
+
+        function renderAnomalyTable(results) {
+            const tbody = document.getElementById('anomalyBody');
+            tbody.innerHTML = '';
+
+            for (let d = 1; d <= 9; d++) {
+                const expected = BENFORD_EXPECTED[d] * 100;
+                const observed = results.observed[d] * 100;
+                const deviation = observed - expected;
+                const z = results.zScores[d];
+
+                let riskLevel, riskCls;
+                if (Math.abs(z) > 2.58) { riskLevel = 'Hoog'; riskCls = 'high'; }
+                else if (Math.abs(z) > 1.96) { riskLevel = 'Medium'; riskCls = 'medium'; }
+                else { riskLevel = 'Laag'; riskCls = 'low'; }
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td style="font-weight:600; font-family:'JetBrains Mono',monospace;">${d}</td>
+                <td>${expected.toFixed(1)}%</td>
+                <td>${observed.toFixed(1)}%</td>
+                <td style="color: ${deviation > 0 ? 'var(--warning)' : deviation < -1 ? 'var(--danger)' : 'var(--text-secondary)'}">
+                    ${deviation > 0 ? '+' : ''}${deviation.toFixed(1)}%
+                </td>
+                <td style="font-family:'JetBrains Mono',monospace; color: ${Math.abs(z) > 1.96 ? 'var(--warning)' : 'var(--text-secondary)'}">
+                    ${z.toFixed(2)}
+                </td>
+                <td><span class="risk-badge ${riskCls}">${riskLevel}</span></td>
+            `;
+                tbody.appendChild(row);
+            }
+        }
+
+        function setupShareLinks(results) {
+            const shareText = `Benford's Law analyse via DueSight: Integrity Score ${results.integrityScore}/100 — ${results.verdict}`;
+            const shareUrl = window.location.href;
+
+            document.getElementById('btnCopyLink').addEventListener('click', () => {
+                navigator.clipboard.writeText(shareUrl).then(() => {
+                    const btn = document.getElementById('btnCopyLink');
+                    btn.textContent = '✅ Gekopieerd!';
+                    setTimeout(() => { btn.textContent = '📋 Kopieer Link'; }, 2000);
+                });
+            });
+
+            document.getElementById('btnShareLinkedIn').href =
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+
+            document.getElementById('btnShareX').href =
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+        }
+
+    </script>
+</body>
+
+</html>

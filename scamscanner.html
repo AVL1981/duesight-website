@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamScanner — Is deze webshop te vertrouwen? | Gratis Check</title>
+    <meta name="description"
+        content="Check in 30 seconden of een webshop betrouwbaar is. Gratis AI-scan op KvK, adres, domeinleeftijd en klachten. Powered by DueSight.">
+    <meta name="keywords"
+        content="webshop check, nep webshop herkennen, scam check, betrouwbare webshop, veilig online kopen">
+    <link rel="canonical" href="https://scamscanner.nl/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: rgba(15, 20, 40, 0.7);
+            --bg-card-hover: rgba(25, 30, 55, 0.85);
+            --border-glass: rgba(99, 102, 241, 0.15);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── Background effects ── */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            z-index: 0;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+        }
+
+        /* ── Layout ── */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Header ── */
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .powered-by {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .powered-by a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+
+        .powered-by a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Hero ── */
+        .hero {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #818cf8, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 480px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* ── Search ── */
+        .search-box {
+            display: flex;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .search-box button {
+            padding: 16px 28px;
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .search-box button:active {
+            transform: scale(0.97);
+        }
+
+        .search-box button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── Trust strip ── */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .trust-strip span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ── Results ── */
+        #results {
+            display: none;
+            margin: 48px 0;
+            animation: fadeUp 0.6s ease-out;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .risk-meter {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .risk-meter svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .risk-meter .meter-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.06);
+            stroke-width: 10;
+        }
+
+        .risk-meter .meter-fill {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1.5s ease-out, stroke 0.5s;
+        }
+
+        .risk-score {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .risk-score .number {
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .risk-score .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .risk-verdict-text {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .risk-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* ── Signal cards ── */
+        .signals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .signal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 20px;
+            transition: transform 0.2s, border-color 0.3s;
+        }
+
+        .signal-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .signal-card .module-name {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .signal-card .module-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .flag-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .flag-severity {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+
+        .flag-severity.critical {
+            background: var(--red);
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+        }
+
+        .flag-severity.high {
+            background: #f97316;
+        }
+
+        .flag-severity.medium {
+            background: var(--yellow);
+        }
+
+        .flag-severity.low {
+            background: var(--green);
+        }
+
+        .no-flags {
+            font-size: 13px;
+            color: var(--green);
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            margin-top: 32px;
+            text-align: center;
+            padding: 28px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(99, 102, 241, 0.02));
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            border-radius: 20px;
+        }
+
+        .cta-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ── Share buttons ── */
+        .share-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .share-section p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn.linkedin {
+            background: #0A66C2;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn.reddit {
+            background: #FF4500;
+        }
+
+        .share-btn.copy-link {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid var(--border-glass);
+            color: var(--text-primary);
+        }
+
+        .share-btn.copied {
+            background: var(--green) !important;
+            color: white !important;
+        }
+
+        /* ── How it works ── */
+        .how-section {
+            padding: 80px 0;
+        }
+
+        .how-section h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+        }
+
+        .how-card {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+        }
+
+        .how-card .step-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .how-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .how-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: #818cf8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Loading ── */
+        .loading-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .loading-bar .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6366f1, #818cf8, #a5b4fc);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .loading-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .search-box {
+                flex-direction: column;
+            }
+
+            .signals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-strip {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div>
+                <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                    <svg width="32" height="32" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradScam)" stroke-width="8">
+                        </circle>
+                        <path d="M30 50 L45 65 L70 35" fill="none" stroke="white" stroke-width="8"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                        <defs>
+                            <linearGradient id="logoGradScam" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"></stop>
+                                <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    ScamScanner
+                </div>
+                <div class="logo-sub">MERCHANT RISK INTELLIGENCE</div>
+            </div>
+            <div class="powered-by">
+                Powered by <a href="https://duesight.nl" target="_blank">DueSight</a>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Is deze webshop <span>te vertrouwen?</span></h1>
+            <p>Check gratis in 30 seconden of een webshop betrouwbaar is. Wij scannen KvK, adres, domein en klachten.
+            </p>
+
+            <div class="search-box">
+                <input type="text" id="domainInput" placeholder="bijv. verdachte-shop.nl" autocomplete="off"
+                    spellcheck="false">
+                <button id="scanBtn" onclick="startScan()">Scan Starten 🔍</button>
+            </div>
+            <div class="loading-bar" id="loadingBar">
+                <div class="fill" id="loadingFill"></div>
+            </div>
+            <div class="loading-text" id="loadingText">KvK Handelsregister opvragen...</div>
+
+            <div class="trust-strip">
+                <span>🔒 Gratis & privé</span>
+                <span>⚡ 30 seconden</span>
+                <span>📊 64+ datapunten</span>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results">
+            <div class="result-header">
+                <div class="risk-meter">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="meter-bg" cx="50" cy="50" r="40" />
+                        <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="40" stroke-dasharray="0 251.2" />
+                    </svg>
+                    <div class="risk-score">
+                        <div class="number" id="scoreNumber">0</div>
+                        <div class="label">RISICO SCORE</div>
+                    </div>
+                </div>
+                <div class="risk-verdict-text" id="verdictText">-</div>
+                <div class="risk-description" id="verdictDesc">-</div>
+            </div>
+
+            <div class="signals-grid" id="signalsGrid"></div>
+
+            <div class="cta-section">
+                <p>Wilt u een compleet DD-rapport over dit bedrijf? Inclusief financiële analyse, juridische screening
+                    en MITRE ATT&CK mapping.</p>
+                <a id="duesightCta" href="index.html" class="cta-btn">Volledig Rapport bij DueSight →</a>
+
+                <div class="share-section" id="shareSection">
+                    <p>📤 Deel dit resultaat</p>
+                    <div class="share-buttons">
+                        <a class="share-btn whatsapp" id="shareWhatsApp" href="#" target="_blank">💬 WhatsApp</a>
+                        <a class="share-btn linkedin" id="shareLinkedIn" href="#" target="_blank">💼 LinkedIn</a>
+                        <a class="share-btn twitter" id="shareTwitter" href="#" target="_blank">🐦 X / Twitter</a>
+                        <a class="share-btn reddit" id="shareReddit" href="#" target="_blank">🔴 Reddit</a>
+                        <button class="share-btn copy-link" id="shareCopyLink" onclick="copyShareLink()">🔗 Kopieer
+                            Link</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="how-section">
+            <h2>Hoe werkt het?</h2>
+            <div class="how-grid">
+                <div class="how-card">
+                    <div class="step-icon">🏢</div>
+                    <h3>KvK Verificatie</h3>
+                    <p>We controleren de registratie, SBI-code, oprichtingsdatum en rechtsvorm.</p>
+                </div>
+                <div class="how-card">
+                    <div class="step-icon">📍</div>
+                    <h3>Adrescontrole</h3>
+                    <p>BAG/Kadaster check op virtuele kantoren en woonfunctie.</p>
+                </div>
+                <div class="how-card">
+                    <div class="step-icon">💻</div>
+                    <h3>Tech Analyse</h3>
+                    <p>Domeinleeftijd, dropship-plugins en hosting-infrastructuur.</p>
+                </div>
+                <div class="how-card">
+                    <div class="step-icon">💬</div>
+                    <h3>Reputatie Scan</h3>
+                    <p>Trustpilot, GDELT nieuws en Radar/Opgelicht signalen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 ScamScanner — <a href="https://duesight.nl">DueSight</a> Merchant Risk Intelligence</p>
+            <p style="margin-top: 8px;">
+                Dit rapport bevat uitsluitend feitelijke risico-indicatoren op basis van openbare data.
+                Het is geen juridisch oordeel.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const API_BASE = window.SCAMSCANNER_API || 'http://localhost:5050';
+
+        async function startScan() {
+            const input = document.getElementById('domainInput');
+            const btn = document.getElementById('scanBtn');
+            const domain = input.value.trim().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+
+            if (!domain) {
+                input.style.borderColor = '#ef4444';
+                input.style.animation = 'pulse 0.5s';
+                setTimeout(() => { input.style.borderColor = ''; input.style.animation = ''; }, 500);
+                return;
+            }
+
+            // Show loading
+            btn.disabled = true;
+            btn.textContent = 'Bezig...';
+            const loadingBar = document.getElementById('loadingBar');
+            const loadingFill = document.getElementById('loadingFill');
+            const loadingText = document.getElementById('loadingText');
+            loadingBar.style.display = 'block';
+            loadingText.style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+
+            // Animated progress
+            const steps = [
+                { pct: 15, label: '🏢 KvK Handelsregister opvragen...' },
+                { pct: 35, label: '📍 Adres verificatie via BAG...' },
+                { pct: 55, label: '💻 Tech stack scan...' },
+                { pct: 75, label: '💬 Reputatie analyse...' },
+                { pct: 90, label: '📊 Risicoscore berekenen...' },
+            ];
+            let step = 0;
+            const stepInterval = setInterval(() => {
+                if (step < steps.length) {
+                    loadingFill.style.width = steps[step].pct + '%';
+                    loadingText.textContent = steps[step].label;
+                    step++;
+                }
+            }, 2500);
+
+            try {
+                const response = await fetch(
+                    `${API_BASE}/api/merchant-risk-score?domain=${encodeURIComponent(domain)}`
+                );
+                clearInterval(stepInterval);
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+
+                loadingFill.style.width = '100%';
+                loadingText.textContent = '✅ Analyse compleet!';
+
+                setTimeout(() => renderResults(data), 600);
+
+            } catch (err) {
+                clearInterval(stepInterval);
+                loadingText.textContent = '❌ Scan mislukt: ' + err.message;
+                loadingFill.style.background = '#ef4444';
+                loadingFill.style.width = '100%';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Scan Starten 🔍';
+            }
+        }
+
+        function renderResults(data) {
+            document.getElementById('results').style.display = 'block';
+
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Risk meter
+            const score = data.risk_score || 0;
+            const verdict = data.risk_verdict || {};
+            const circumference = 2 * Math.PI * 40;
+            const fill = document.getElementById('meterFill');
+            fill.setAttribute('stroke-dasharray', `${(score / 100) * circumference} ${circumference}`);
+            fill.setAttribute('stroke', verdict.color || '#6366f1');
+
+            // Animate score number
+            const scoreEl = document.getElementById('scoreNumber');
+            scoreEl.style.color = verdict.color || '#e2e8f0';
+            animateNumber(scoreEl, 0, score, 1200);
+
+            document.getElementById('verdictText').textContent = `${verdict.emoji || ''} ${verdict.label || ''}`;
+            document.getElementById('verdictText').style.color = verdict.color || '#e2e8f0';
+            document.getElementById('verdictDesc').textContent = verdict.description || '';
+
+            // Signal cards
+            const grid = document.getElementById('signalsGrid');
+            const modules = [
+                { key: 'entity', icon: '🏢', name: 'KvK Registratie' },
+                { key: 'address', icon: '📍', name: 'Adresverificatie' },
+                { key: 'tech_stack', icon: '💻', name: 'Tech & Domein' },
+                { key: 'reputation', icon: '💬', name: 'Reputatie' },
+            ];
+
+            grid.innerHTML = modules.map(m => {
+                const signal = (data.signals || {})[m.key] || {};
+                const flags = signal.flags || [];
+                const flagsHtml = flags.length > 0
+                    ? flags.map(f => `
+                        <div class="flag-item">
+                            <div class="flag-severity ${f.severity || 'medium'}"></div>
+                            <span>${f.fact || ''}</span>
+                        </div>
+                    `).join('')
+                    : '<div class="no-flags">✅ Geen aandachtspunten</div>';
+
+                return `
+                    <div class="signal-card">
+                        <div class="module-icon">${m.icon}</div>
+                        <div class="module-name">${m.name}</div>
+                        ${flagsHtml}
+                    </div>
+                `;
+            }).join('');
+
+            // Update share buttons with scan data
+            updateShareButtons(
+                document.getElementById('domainInput').value.trim().replace(/^https?:\/\//, '').replace(/\/.*$/, ''),
+                score,
+                verdict
+            );
+        }
+
+        function animateNumber(el, from, to, duration) {
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(from + (to - from) * eased);
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Enter key support
+        document.getElementById('domainInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') startScan();
+        });
+
+        // ── Shareable URL support ──
+        let lastScannedDomain = '';
+
+        function updateShareButtons(domain, score, verdict) {
+            lastScannedDomain = domain;
+            const shareUrl = `${window.location.origin}${window.location.pathname}?domain=${encodeURIComponent(domain)}`;
+            const emoji = score <= 30 ? '✅' : score <= 60 ? '⚠️' : '🚨';
+            const text = `${emoji} ScamScanner: "${domain}" scoort ${score}/100 risico. Check zelf gratis:`;
+
+            // Update URL without reload
+            history.replaceState(null, '', `?domain=${encodeURIComponent(domain)}`);
+
+            // WhatsApp
+            document.getElementById('shareWhatsApp').href =
+                `https://wa.me/?text=${encodeURIComponent(text + ' ' + shareUrl)}`;
+
+            // LinkedIn
+            document.getElementById('shareLinkedIn').href =
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+
+            // Twitter / X
+            document.getElementById('shareTwitter').href =
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
+
+            // Reddit
+            document.getElementById('shareReddit').href =
+                `https://www.reddit.com/submit?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(`ScamScanner: ${domain} scoort ${score}/100 risico`)}`;
+
+            // DueSight CTA — prefill bedrijfsnaam
+            document.getElementById('duesightCta').href =
+                `index.html#scan-dashboard`;
+        }
+
+        function copyShareLink() {
+            const shareUrl = `${window.location.origin}${window.location.pathname}?domain=${encodeURIComponent(lastScannedDomain)}`;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                const btn = document.getElementById('shareCopyLink');
+                btn.classList.add('copied');
+                btn.textContent = '✅ Gekopieerd!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.textContent = '🔗 Kopieer Link';
+                }, 2000);
+            });
+        }
+
+        // Auto-scan from URL parameter
+        (function autoScanFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const domain = params.get('domain');
+            if (domain) {
+                document.getElementById('domainInput').value = domain;
+                setTimeout(() => startScan(), 300);
+            }
+        })();
+    </script>
+</body>
+
+</html>

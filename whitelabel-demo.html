@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Label Platform Demo — DueSight Intelligence</title>
+    <meta name="description"
+        content="Voorbeeld van het DueSight White Label Intelligence Platform. Due diligence rapporten onder uw eigen branding.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Partner branding — configurable */
+            --partner-primary: #1e3a5f;
+            --partner-secondary: #2563eb;
+            --partner-accent: #0ea5e9;
+            --partner-name: "Van Dijk & Partners Accountants";
+            /* Base */
+            --bg: #f8fafc;
+            --bg-dark: #0f172a;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-sec: #64748b;
+            --text-muted: #94a3b8;
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* DueSight Demo Banner */
+        .demo-banner {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .demo-banner a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Partner Header */
+        .partner-header {
+            background: var(--partner-primary);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .partner-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .partner-logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--partner-secondary), var(--partner-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .partner-logo h1 {
+            font-size: 18px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .partner-logo .sub {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .partner-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .partner-nav a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.15s;
+        }
+
+        .partner-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .partner-nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .partner-nav {
+                display: none;
+            }
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: calc(100vh - 120px);
+        }
+
+        @media (max-width: 900px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: white;
+            border-right: 1px solid var(--border);
+            padding: 24px 16px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            padding-left: 12px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--text-sec);
+            cursor: pointer;
+            transition: all 0.15s;
+            text-decoration: none;
+        }
+
+        .sidebar-item:hover {
+            background: #f1f5f9;
+            color: var(--text);
+        }
+
+        .sidebar-item.active {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--partner-secondary);
+            font-weight: 600;
+        }
+
+        .sidebar-item .icon {
+            font-size: 16px;
+        }
+
+        .sidebar-item .badge {
+            margin-left: auto;
+            font-size: 11px;
+            font-weight: 700;
+            background: var(--partner-secondary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 32px;
+            background: #f8fafc;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .page-header h2 {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb span {
+            color: var(--partner-secondary);
+        }
+
+        /* Report Card */
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .report-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .report-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .report-card-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .report-card-header .company-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .report-card-header .company-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .report-card-body {
+            padding: 20px;
+        }
+
+        .report-score {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .score-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: white;
+        }
+
+        .score-circle.high {
+            background: var(--green);
+        }
+
+        .score-circle.medium {
+            background: var(--yellow);
+        }
+
+        .score-circle.low {
+            background: var(--red);
+        }
+
+        .score-label .score-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .score-label .score-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .report-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .metric {
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .metric .metric-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric .metric-value {
+            font-size: 16px;
+            font-weight: 800;
+            margin-top: 2px;
+        }
+
+        .report-card-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: all 0.15s;
+        }
+
+        .btn-primary {
+            background: var(--partner-secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--partner-secondary);
+            border: 1px solid var(--partner-secondary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(37, 99, 235, 0.05);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+        }
+
+        .stat-card .stat-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-card .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            margin-top: 4px;
+        }
+
+        .stat-card .stat-delta {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* Branding Preview Panel */
+        .branding-panel {
+            margin-top: 32px;
+            background: white;
+            border: 2px dashed var(--partner-secondary);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .branding-panel h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .brand-option {
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .brand-option .option-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .brand-option .option-preview {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            margin: 0 auto 8px;
+            border: 2px solid var(--border);
+        }
+
+        /* Partner Footer */
+        .partner-footer {
+            background: var(--partner-primary);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 24px 32px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .partner-footer .powered {
+            font-size: 11px;
+            margin-top: 8px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .partner-footer a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+        }
+
+        .partner-footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- DueSight Demo Banner -->
+    <div class="demo-banner">
+        🏷️ Dit is een voorbeeld van het DueSight White Label Platform — <a href="index.html#pricing">Partner worden
+            →</a>
+    </div>
+
+    <!-- Partner Branded Header -->
+    <div class="partner-header">
+        <div class="partner-logo">
+            <div class="partner-logo-icon">VD</div>
+            <div>
+                <h1>Van Dijk & Partners</h1>
+                <div class="sub">DUE DILIGENCE INTELLIGENCE</div>
+            </div>
+        </div>
+        <nav class="partner-nav">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Rapporten</a>
+            <a href="#">Klanten</a>
+            <a href="#">Instellingen</a>
+        </nav>
+    </div>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-label">Navigatie</div>
+                <a class="sidebar-item active"><span class="icon">📊</span> Dashboard</a>
+                <a class="sidebar-item"><span class="icon">📄</span> Rapporten <span class="badge">12</span></a>
+                <a class="sidebar-item"><span class="icon">👥</span> Klanten <span class="badge">8</span></a>
+                <a class="sidebar-item"><span class="icon">🔔</span> Monitoring <span class="badge"
+                        style="background: var(--red);">3</span></a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-label">Recente Rapporten</div>
+                <a class="sidebar-item"><span class="icon">🏢</span> Mollie B.V.</a>
+                <a class="sidebar-item"><span class="icon">🏢</span> Adyen N.V.</a>
+                <a class="sidebar-item"><span class="icon">🏢</span> PostNL B.V.</a>
+                <a class="sidebar-item"><span class="icon">🏢</span> Bunq B.V.</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-label">Account</div>
+                <a class="sidebar-item"><span class="icon">🎨</span> Branding</a>
+                <a class="sidebar-item"><span class="icon">⚙️</span> Instellingen</a>
+                <a class="sidebar-item"><span class="icon">📈</span> Facturatie</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="page-header">
+                <div>
+                    <div class="breadcrumb">Dashboard / <span>Overzicht</span></div>
+                    <h2>Welkom, Van Dijk & Partners</h2>
+                </div>
+                <button class="btn btn-primary" style="flex: none; padding: 12px 24px;">
+                    + Nieuw Rapport
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-label">Actieve rapporten</div>
+                    <div class="stat-value" style="color: var(--partner-secondary);">12</div>
+                    <div class="stat-delta" style="color: var(--green);">↑ +3 deze maand</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Klanten bediend</div>
+                    <div class="stat-value">8</div>
+                    <div class="stat-delta" style="color: var(--green);">↑ +2 deze maand</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Gem. verkoopprijs</div>
+                    <div class="stat-value" style="color: var(--green);">€125</div>
+                    <div class="stat-delta" style="color: var(--text-muted);">→ Per rapport</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Maandelijks resultaat</div>
+                    <div class="stat-value" style="color: var(--green);">€1.201</div>
+                    <div class="stat-delta" style="color: var(--text-muted);">Marge: €60-135/rapport</div>
+                </div>
+            </div>
+
+            <!-- Report Grid -->
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px;">Recente Rapporten</h3>
+            <div class="report-grid">
+                <!-- Report 1 -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <div class="company-name">Mollie B.V.</div>
+                        <div class="company-meta">KvK 30204462 · 1 maart 2026</div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="report-score">
+                            <div class="score-circle high">79</div>
+                            <div class="score-label">
+                                <div class="score-text">Laag Risico</div>
+                                <div class="score-desc">11 clusters geanalyseerd</div>
+                            </div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Financieel</div>
+                                <div class="metric-value" style="color: var(--green);">A</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Compliance</div>
+                                <div class="metric-value" style="color: var(--green);">✓</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Cyber</div>
+                                <div class="metric-value" style="color: var(--yellow);">B+</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Markt</div>
+                                <div class="metric-value" style="color: var(--green);">A-</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-card-footer">
+                        <a class="btn btn-primary" href="../sample-report-mollie-gold/index.html">Bekijk Rapport</a>
+                        <button class="btn btn-outline">📤 Deel</button>
+                    </div>
+                </div>
+
+                <!-- Report 2 -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <div class="company-name">Adyen N.V.</div>
+                        <div class="company-meta">KvK 34259528 · 26 feb 2026</div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="report-score">
+                            <div class="score-circle high">85</div>
+                            <div class="score-label">
+                                <div class="score-text">Laag Risico</div>
+                                <div class="score-desc">11 clusters geanalyseerd</div>
+                            </div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Financieel</div>
+                                <div class="metric-value" style="color: var(--green);">A+</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Compliance</div>
+                                <div class="metric-value" style="color: var(--green);">✓</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Cyber</div>
+                                <div class="metric-value" style="color: var(--green);">A</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Markt</div>
+                                <div class="metric-value" style="color: var(--green);">A+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-card-footer">
+                        <a class="btn btn-primary" href="../sample-report-adyen/index.html">Bekijk Rapport</a>
+                        <button class="btn btn-outline">📤 Deel</button>
+                    </div>
+                </div>
+
+                <!-- Report 3 -->
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <div class="company-name">PostNL B.V.</div>
+                        <div class="company-meta">KvK 28105420 · 22 feb 2026</div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="report-score">
+                            <div class="score-circle medium">62</div>
+                            <div class="score-label">
+                                <div class="score-text">Gemiddeld Risico</div>
+                                <div class="score-desc">11 clusters geanalyseerd</div>
+                            </div>
+                        </div>
+                        <div class="report-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Financieel</div>
+                                <div class="metric-value" style="color: var(--yellow);">B</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Compliance</div>
+                                <div class="metric-value" style="color: var(--green);">✓</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Cyber</div>
+                                <div class="metric-value" style="color: var(--yellow);">B-</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Markt</div>
+                                <div class="metric-value" style="color: var(--yellow);">B+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-card-footer">
+                        <a class="btn btn-primary" href="../sample-report-postnl/index.html">Bekijk Rapport</a>
+                        <button class="btn btn-outline">📤 Deel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Branding Preview Panel -->
+            <div class="branding-panel">
+                <h3>🎨 Uw Branding Configuratie</h3>
+                <p style="font-size: 13px; color: var(--text-sec); margin-bottom: 16px;">
+                    Alle rapporten worden automatisch gegenereerd met uw logo, huisstijl en contactgegevens.
+                </p>
+                <div class="brand-options">
+                    <div class="brand-option">
+                        <div class="option-label">Primaire kleur</div>
+                        <div class="color-swatch" style="background: var(--partner-primary);"></div>
+                        <div class="option-preview">#1e3a5f</div>
+                    </div>
+                    <div class="brand-option">
+                        <div class="option-label">Accent kleur</div>
+                        <div class="color-swatch" style="background: var(--partner-secondary);"></div>
+                        <div class="option-preview">#2563eb</div>
+                    </div>
+                    <div class="brand-option">
+                        <div class="option-label">Logo</div>
+                        <div class="partner-logo-icon" style="margin: 0 auto 8px; width: 40px; height: 40px;">VD</div>
+                        <div class="option-preview">Van Dijk</div>
+                    </div>
+                    <div class="brand-option">
+                        <div class="option-label">Rapport voettekst</div>
+                        <div class="option-preview" style="font-size: 12px; color: var(--text-sec);">
+                            "Rapport opgesteld door<br>Van Dijk & Partners"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Partner Branded Footer -->
+    <div class="partner-footer">
+        <p>© 2026 Van Dijk & Partners Accountants — Due Diligence Intelligence Platform</p>
+        <p class="powered">Powered by <a href="index.html">DueSight</a> White Label Intelligence · €299/mnd</p>
+    </div>
+</body>
+
+</html>

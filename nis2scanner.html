@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIS2 Leverancier Scanner — Cyber Risk Assessment | DueSight</title>
+    <meta name="description"
+        content="Gratis NIS2 compliance check voor leveranciers. Scan security headers, kwetsbaarheden en MITRE ATT&CK in 30 seconden. Powered by DueSight.">
+    <meta name="keywords"
+        content="NIS2, leverancier screening, cyber risk, supply chain security, MITRE ATT&CK, compliance check">
+    <link rel="canonical" href="https://duesight.nl/nis2scanner">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: rgba(15, 20, 40, 0.7);
+            --bg-card-hover: rgba(25, 30, 55, 0.85);
+            --border-glass: rgba(99, 102, 241, 0.15);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --nis2-blue: #0ea5e9;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image:
+                linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .bg-gradient {
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            z-index: 0;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .powered-by {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .powered-by a {
+            color: var(--nis2-blue);
+            text-decoration: none;
+        }
+
+        .powered-by a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            max-width: 520px;
+            margin: 0 auto 12px;
+            line-height: 1.6;
+        }
+
+        .nis2-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            color: var(--nis2-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        /* Search */
+        .search-box {
+            display: flex;
+            gap: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-box input:focus {
+            border-color: var(--nis2-blue);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+        }
+
+        .search-box button {
+            padding: 16px 28px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .search-box button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+        }
+
+        .search-box button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .trust-strip span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Loading */
+        .loading-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .loading-bar .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0ea5e9, #6366f1, #a78bfa);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        .loading-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+            display: none;
+        }
+
+        /* Results */
+        #results {
+            display: none;
+            margin: 48px 0;
+            animation: fadeUp 0.6s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Score meter */
+        .score-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .nis2-meter {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .nis2-meter svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .nis2-meter .meter-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.06);
+            stroke-width: 10;
+        }
+
+        .nis2-meter .meter-fill {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transition: stroke-dasharray 1.5s ease-out, stroke 0.5s;
+        }
+
+        .nis2-score-inner {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nis2-score-inner .number {
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .nis2-score-inner .label {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .verdict-text {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .verdict-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        /* Component cards */
+        .components-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .comp-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .comp-card .comp-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .comp-card .comp-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .comp-card .comp-value {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .comp-card .comp-detail {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Risk flags */
+        .risk-flags {
+            margin-top: 24px;
+        }
+
+        .risk-flags h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .flag-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            margin-bottom: 8px;
+        }
+
+        .flag-severity-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .flag-severity-dot.CRITICAL {
+            background: var(--red);
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+        }
+
+        .flag-severity-dot.HIGH {
+            background: #f97316;
+        }
+
+        .flag-severity-dot.MEDIUM {
+            background: var(--yellow);
+        }
+
+        .flag-severity-dot.LOW {
+            background: var(--green);
+        }
+
+        .flag-content {
+            flex: 1;
+        }
+
+        .flag-category {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--nis2-blue);
+            letter-spacing: 0.5px;
+        }
+
+        .flag-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .no-flags {
+            padding: 16px;
+            text-align: center;
+            color: var(--green);
+            font-size: 14px;
+        }
+
+        /* CTA + Share */
+        .cta-section {
+            margin-top: 28px;
+            text-align: center;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(99, 102, 241, 0.04));
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            border-radius: 20px;
+        }
+
+        .cta-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .share-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .share-section p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+        }
+
+        .share-btn.linkedin {
+            background: #0A66C2;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .share-btn.copy-link {
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            color: var(--text-primary);
+        }
+
+        .share-btn.copied {
+            background: var(--green) !important;
+            color: white !important;
+        }
+
+        /* How it works */
+        .how-section {
+            padding: 60px 0;
+        }
+
+        .how-section h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 32px;
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .how-card {
+            text-align: center;
+            padding: 24px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+        }
+
+        .how-card .step-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .how-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .how-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--nis2-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .search-box {
+                flex-direction: column;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-strip {
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+
+    <div class="container">
+        <header>
+            <div>
+                <div class="logo">🛡️ NIS2 Scanner</div>
+                <div class="logo-sub">SUPPLIER CYBER RISK INTELLIGENCE</div>
+            </div>
+            <div class="powered-by">
+                Powered by <a href="https://duesight.nl" target="_blank">DueSight</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="nis2-badge">🇪🇺 NIS2 Richtlijn — Art. 21 Supply Chain Security</div>
+            <h1>Voldoet uw leverancier aan <span>NIS2?</span></h1>
+            <p>Scan in 30 seconden de cyber-weerbaarheid van elke leverancier. Security headers, kwetsbaarheden en
+                MITRE ATT&CK mapping in één rapport.</p>
+
+            <div class="search-box">
+                <input type="text" id="domainInput" placeholder="bijv. leverancier.nl" autocomplete="off"
+                    spellcheck="false">
+                <button id="scanBtn" onclick="startScan()">Scan Starten 🔍</button>
+            </div>
+            <div class="loading-bar" id="loadingBar">
+                <div class="fill" id="loadingFill"></div>
+            </div>
+            <div class="loading-text" id="loadingText">Security headers controleren...</div>
+
+            <div class="trust-strip">
+                <span>🇪🇺 NIS2 Art. 21 compliant</span>
+                <span>⚡ 30 seconden</span>
+                <span>🔒 Geen data opslag</span>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results">
+            <div class="score-header">
+                <div class="nis2-meter">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="meter-bg" cx="50" cy="50" r="40" />
+                        <circle class="meter-fill" id="meterFill" cx="50" cy="50" r="40" stroke-dasharray="0 251.2" />
+                    </svg>
+                    <div class="nis2-score-inner">
+                        <div class="number" id="scoreNumber">0</div>
+                        <div class="label">NIS2 Score</div>
+                    </div>
+                </div>
+                <div class="verdict-text" id="verdictText">-</div>
+                <div class="verdict-desc" id="verdictDesc">-</div>
+            </div>
+
+            <div class="components-grid" id="componentsGrid"></div>
+            <div class="risk-flags" id="riskFlags"></div>
+
+            <div class="cta-section">
+                <p>Wilt u een volledig NIS2 compliance rapport met MITRE ATT&CK mapping, kill chain analyse en
+                    aanbevelingen?</p>
+                <a href="https://duesight.nl" class="cta-btn" target="_blank">Volledig NIS2 Rapport →</a>
+
+                <div class="share-section" id="shareSection">
+                    <p>📤 Deel dit resultaat</p>
+                    <div class="share-buttons">
+                        <a class="share-btn whatsapp" id="shareWhatsApp" href="#" target="_blank">💬 WhatsApp</a>
+                        <a class="share-btn linkedin" id="shareLinkedIn" href="#" target="_blank">💼 LinkedIn</a>
+                        <a class="share-btn twitter" id="shareTwitter" href="#" target="_blank">🐦 X / Twitter</a>
+                        <button class="share-btn copy-link" id="shareCopyLink" onclick="copyShareLink()">🔗 Kopieer
+                            Link</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="how-section">
+            <h2>Hoe werkt de NIS2 scan?</h2>
+            <div class="how-grid">
+                <div class="how-card">
+                    <div class="step-icon">🔒</div>
+                    <h3>Security Headers</h3>
+                    <p>HSTS, CSP, X-Frame-Options en 4 andere kritieke headers (30% van de score).</p>
+                </div>
+                <div class="how-card">
+                    <div class="step-icon">🔍</div>
+                    <h3>Kwetsbaarheden</h3>
+                    <p>Shodan InternetDB scan op open poorten, CVE's en gevaarlijke services (40% van de score).</p>
+                </div>
+                <div class="how-card">
+                    <div class="step-icon">⚔️</div>
+                    <h3>MITRE ATT&CK</h3>
+                    <p>Mapping naar bekende aanvalstechnieken en kill chain fasen (30% van de score).</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 NIS2 Scanner — <a href="https://duesight.nl">DueSight</a> Supplier Cyber Risk
+                Intelligence</p>
+            <p style="margin-top: 8px;">
+                Dit rapport bevat uitsluitend feitelijke risico-indicatoren op basis van openbare data.
+                Het is geen juridisch oordeel over NIS2-compliance.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const API_BASE = window.NIS2_API || 'http://localhost:5050';
+
+        async function startScan() {
+            const input = document.getElementById('domainInput');
+            const btn = document.getElementById('scanBtn');
+            const domain = input.value.trim().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+
+            if (!domain) {
+                input.style.borderColor = '#ef4444';
+                setTimeout(() => { input.style.borderColor = ''; }, 500);
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Bezig...';
+            const loadingBar = document.getElementById('loadingBar');
+            const loadingFill = document.getElementById('loadingFill');
+            const loadingText = document.getElementById('loadingText');
+            loadingBar.style.display = 'block';
+            loadingText.style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+
+            const steps = [
+                { pct: 20, label: '🔒 Security headers controleren...' },
+                { pct: 45, label: '🔍 Shodan vulnerability scan...' },
+                { pct: 70, label: '⚔️ MITRE ATT&CK mapping...' },
+                { pct: 90, label: '📊 NIS2 compliance score berekenen...' },
+            ];
+            let step = 0;
+            const stepInterval = setInterval(() => {
+                if (step < steps.length) {
+                    loadingFill.style.width = steps[step].pct + '%';
+                    loadingText.textContent = steps[step].label;
+                    step++;
+                }
+            }, 3000);
+
+            try {
+                const response = await fetch(
+                    `${API_BASE}/api/nis2-scan?domain=${encodeURIComponent(domain)}`
+                );
+                clearInterval(stepInterval);
+
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+
+                loadingFill.style.width = '100%';
+                loadingText.textContent = '✅ NIS2 analyse compleet!';
+
+                setTimeout(() => renderResults(data, domain), 600);
+
+            } catch (err) {
+                clearInterval(stepInterval);
+                loadingText.textContent = '❌ Scan mislukt: ' + err.message;
+                loadingFill.style.background = '#ef4444';
+                loadingFill.style.width = '100%';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Scan Starten 🔍';
+            }
+        }
+
+        function renderResults(data, domain) {
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            const score = data.nis2_score || 0;
+            const circumference = 2 * Math.PI * 40;
+            const fill = document.getElementById('meterFill');
+            const color = score >= 75 ? '#22c55e' : score >= 50 ? '#f59e0b' : '#ef4444';
+            fill.setAttribute('stroke-dasharray', `${(score / 100) * circumference} ${circumference}`);
+            fill.setAttribute('stroke', color);
+
+            const scoreEl = document.getElementById('scoreNumber');
+            scoreEl.style.color = color;
+            animateNumber(scoreEl, 0, score, 1200);
+
+            document.getElementById('verdictText').textContent = data.verdict_label || '';
+            document.getElementById('verdictText').style.color = color;
+            document.getElementById('verdictDesc').textContent = data.methodology || '';
+
+            // Component cards
+            const comp = data.components || {};
+            const grid = document.getElementById('componentsGrid');
+            grid.innerHTML = `
+                <div class="comp-card">
+                    <div class="comp-icon">🔒</div>
+                    <div class="comp-label">Headers</div>
+                    <div class="comp-value" style="color: ${(comp.headers?.score || 0) >= 50 ? '#22c55e' : '#ef4444'}">${comp.headers?.grade || '?'}</div>
+                    <div class="comp-detail">${comp.headers?.score || 0}/100 — ${(comp.headers?.missing || []).length} ontbrekend</div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-icon">🔍</div>
+                    <div class="comp-label">Exposure</div>
+                    <div class="comp-value" style="color: ${(comp.exposure?.score || 0) <= 30 ? '#22c55e' : '#ef4444'}">${comp.exposure?.score || 0}</div>
+                    <div class="comp-detail">${comp.exposure?.open_ports || 0} poorten — ${comp.exposure?.cve_count || 0} CVE's</div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-icon">⚔️</div>
+                    <div class="comp-label">MITRE ATT&CK</div>
+                    <div class="comp-value" style="color: ${(comp.mitre?.techniques_mapped || 0) === 0 ? '#22c55e' : '#f59e0b'}">${comp.mitre?.techniques_mapped || 0}</div>
+                    <div class="comp-detail">technieken — ${(comp.mitre?.kill_chain_phases || []).length} fasen</div>
+                </div>
+            `;
+
+            // Risk flags
+            const flagsContainer = document.getElementById('riskFlags');
+            const flags = data.risk_flags || [];
+            if (flags.length > 0) {
+                flagsContainer.innerHTML = `
+                    <h3>⚠️ NIS2 Risicovlaggen</h3>
+                    ${flags.map(f => `
+                        <div class="flag-item">
+                            <div class="flag-severity-dot ${f.severity || 'MEDIUM'}"></div>
+                            <div class="flag-content">
+                                <div class="flag-category">${f.category || ''}</div>
+                                <div class="flag-description">${f.description || ''}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                `;
+            } else {
+                flagsContainer.innerHTML = '<div class="no-flags">✅ Geen NIS2 risicovlaggen gedetecteerd</div>';
+            }
+
+            updateShareButtons(domain, score);
+        }
+
+        function animateNumber(el, from, to, duration) {
+            const start = performance.now();
+            function tick(now) {
+                const p = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(from + (to - from) * eased);
+                if (p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Enter key
+        document.getElementById('domainInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') startScan();
+        });
+
+        // Share
+        let lastDomain = '';
+
+        function updateShareButtons(domain, score) {
+            lastDomain = domain;
+            const shareUrl = `${window.location.origin}${window.location.pathname}?domain=${encodeURIComponent(domain)}`;
+            const emoji = score >= 75 ? '✅' : score >= 50 ? '⚠️' : '🚨';
+            const text = `${emoji} NIS2 Leverancier Scan: "${domain}" scoort ${score}/100. Check zelf gratis:`;
+
+            history.replaceState(null, '', `?domain=${encodeURIComponent(domain)}`);
+
+            document.getElementById('shareWhatsApp').href =
+                `https://wa.me/?text=${encodeURIComponent(text + ' ' + shareUrl)}`;
+            document.getElementById('shareLinkedIn').href =
+                `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+            document.getElementById('shareTwitter').href =
+                `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`;
+        }
+
+        function copyShareLink() {
+            const shareUrl = `${window.location.origin}${window.location.pathname}?domain=${encodeURIComponent(lastDomain)}`;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                const btn = document.getElementById('shareCopyLink');
+                btn.classList.add('copied');
+                btn.textContent = '✅ Gekopieerd!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.textContent = '🔗 Kopieer Link';
+                }, 2000);
+            });
+        }
+
+        // Auto-scan from URL
+        (function autoScanFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const domain = params.get('domain');
+            if (domain) {
+                document.getElementById('domainInput').value = domain;
+                setTimeout(() => startScan(), 300);
+            }
+        })();
+    </script>
+</body>
+
+</html>

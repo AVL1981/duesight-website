@@ -1,0 +1,37 @@
+# Python dev scripts
+*.py
+*.pyc
+__pycache__/
+
+# Data & caches
+*.db
+*.sqlite
+*.xlsx
+*.pdf
+
+# Video files (te groot voor GitHub, host via CDN/YouTube)
+*.mp4
+*.webm
+*.avi
+
+# Editor & system
+.vscode/
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store
+
+# Dev config
+extensions.json
+subsidy_rules_2026.json
+
+# PowerShell scripts
+*.ps1
+
+# Text dumps
+*.txt
+!robots.txt
+
+# Strategy docs (niet publiek)
+STRATEGY_RADAR_MRR.md
