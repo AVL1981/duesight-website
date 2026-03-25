@@ -9230,9 +9230,16 @@ body {
 <!-- ========================================== -->
 <!-- IRONCLAD PREVIEW ENVIRONMENT BANNER        -->
 <!-- ========================================== -->
-<div style="background: rgba(249, 115, 22, 0.08); border-bottom: 1px solid rgba(249, 115, 22, 0.2); padding: 8px 16px; text-align: center; font-size: 0.72rem; letter-spacing: 1px; color: #fb923c; font-family: 'Inter', sans-serif; font-weight: 600; z-index: 10000; position: relative;">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:6px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-    INSTITUTIONELE PREVIEW OMGEVING — Deze instantie draait op een read-only evaluatie-node. <span style="opacity: 0.7; margin: 0 8px;">|</span> <a href="https://duesight.nl" style="color:#fdba74;text-decoration:none;border-bottom:1px solid rgba(253,186,116,0.4);padding-bottom:1px;transition:all 0.2s;">Boek een live deployment allocatie →</a>
+<style>
+@keyframes ds-preview-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(251,146,60,0.7)} 50%{box-shadow:0 0 0 6px rgba(251,146,60,0)} }
+</style>
+<div style="background: linear-gradient(135deg, rgba(249,115,22,0.18) 0%, rgba(234,88,12,0.22) 100%); border-bottom: 2px solid rgba(249,115,22,0.5); padding: 14px 24px; text-align: center; font-family: 'Inter', sans-serif; z-index: 10000; position: relative; backdrop-filter: blur(12px);">
+    <div style="display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <span style="display:inline-block; width:10px; height:10px; background:#fb923c; border-radius:50%; animation: ds-preview-pulse 2s infinite;"></span>
+        <span style="font-size: 0.85rem; font-weight: 800; letter-spacing: 2px; color: #fdba74; text-transform: uppercase;">⚠ PREVIEW OMGEVING</span>
+        <span style="font-size: 0.8rem; color: rgba(253,186,116,0.8); font-weight: 500;">— Dit is een read-only demonstratie-instantie. Functionaliteit is beperkt.</span>
+        <a href="https://duesight.nl" style="display:inline-flex; align-items:center; gap:6px; padding: 6px 18px; background: rgba(249,115,22,0.9); color: #fff; border-radius: 6px; font-size: 0.78rem; font-weight: 700; text-decoration: none; letter-spacing: 0.5px; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(234,88,12,1)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(249,115,22,0.9)';this.style.transform='translateY(0)'">Toegang Aanvragen →</a>
+    </div>
 </div>
 <!-- ========================================== -->
 
