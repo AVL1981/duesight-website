@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DueSight Intelligence — PostNL Pre-DD Rapport</title>
-    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor PostNL. AI-gestuurde due diligence analyse met 38 agents en 64+ bronnen.">
+    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor PostNL met bronstatus, confidence en compliance-signalen per finding.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://avl1981.github.io/duesight-website/sample-report-postnl/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -97,15 +97,243 @@
             transition: all 0.3s; box-shadow: 0 4px 20px rgba(99,102,241,0.25);
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
+
+        .report-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 0 6px;
+        }
+        .report-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 0 14px;
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            background: rgba(15,20,40,0.75);
+            color: var(--text-secondary);
+            font: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .report-action-btn:hover {
+            color: var(--accent-secondary);
+            border-color: rgba(34,211,238,0.28);
+        }
+        @media (max-width: 768px) {
+            .report-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .report-action-btn {
+                width: 100%;
+            }
+        }
+        @media print {
+            :root {
+                --bg-primary: #ffffff;
+                --bg-card: #ffffff;
+                --text-primary: #111827;
+                --text-secondary: #334155;
+                --text-muted: #64748b;
+                --border-glass: #d8dee9;
+            }
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body {
+                background: #ffffff;
+                color: #111827;
+            }
+            .container {
+                max-width: none;
+                padding: 0 18mm;
+            }
+            .back-link,
+            .report-actions,
+            .cta-section,
+            .lock-overlay {
+                display: none !important;
+            }
+            .report-header {
+                padding: 20px 0;
+            }
+            .score-section,
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .score-card,
+            .engine-card,
+            .source-card {
+                background: #ffffff;
+                border: 1px solid #d8dee9;
+                box-shadow: none;
+            }
+            .locked-section {
+                user-select: auto;
+                pointer-events: auto;
+            }
+            .locked-section::after {
+                display: none;
+            }
+            a {
+                color: #0369a1 !important;
+                text-decoration: none;
+            }
+        }
         @media (max-width: 768px) {
             .score-section { grid-template-columns: repeat(2, 1fr); }
             .engine-grid { grid-template-columns: repeat(3, 1fr); }
         }
+
+        /*  REVEAL & LOCK  Conversion Optimisation  */
+        .locked-section {
+            position: relative;
+            user-select: none;
+            pointer-events: none;
+        }
+        .locked-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            background: rgba(10, 14, 26, 0.45);
+            border-radius: 14px;
+            z-index: 10;
+        }
+        .locked-section .lock-overlay {
+            display: flex !important;
+        }
+        .lock-overlay {
+            display: none;
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            pointer-events: auto;
+        }
+        .lock-overlay .lock-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 12px rgba(99,102,241,0.4));
+        }
+        .lock-overlay .lock-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .lock-overlay .lock-cta {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 8px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            pointer-events: auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+        }
+        .lock-overlay .lock-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99,102,241,0.45);
+        }
+        .partial-blur::after {
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0.6) 40%, rgba(10,14,26,0.85) 100%);
+        }
     </style>
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="DueSight — PostNL Pre-DD Rapport">
+    <meta property="og:description" content="DueSight voorbeeldrapport voor PostNL met bronstatus, confidence en point-in-time compliance screening.">
+    <meta property="og:url" content="https://avl1981.github.io/duesight-website/sample-report-postnl/">
+    <meta property="og:site_name" content="DueSight Intelligence">
+    <meta property="og:locale" content="nl_NL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DueSight — PostNL Pre-DD Rapport">
+    <meta name="twitter:description" content="DueSight voorbeeldrapport voor PostNL met bronstatus, confidence en point-in-time compliance screening.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "DueSight Pre-DD Rapport — PostNL",
+        "description": "DueSight voorbeeldrapport voor PostNL met bronstatus, confidence en point-in-time compliance screening.",
+        "brand": {
+            "@type": "Organization",
+            "name": "DueSight Intelligence",
+            "url": "https://duesight.nl"
+        },
+        "category": "Due Diligence Intelligence",
+        "url": "https://avl1981.github.io/duesight-website/sample-report-postnl/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "description": "Gratis voorbeeldrapport — werkelijke rapporten vanaf €399",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Welke risico's screent DueSight bij PostNL?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sanctielijsten, UBO-transparantie, financiële anomalieën, data breaches en open poorten via Shodan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hoe betrouwbaar is de AI-analyse?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DueSight gebruikt 5 onafhankelijke AI-engines die elkaar cross-valideren. De consensus score geeft de betrouwbaarheid aan."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://avl1981.github.io/duesight-website/"},
+            {"@type": "ListItem", "position": 2, "name": "Rapporten"},
+            {"@type": "ListItem", "position": 3, "name": "PostNL Rapport"}
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
         <a href="../index.html" class="back-link">← Terug naar DueSight</a>
+
+        <div class="report-actions" aria-label="Rapport acties">
+            <button type="button" class="report-action-btn" onclick="window.print()">PDF / afdrukken</button>
+            <a href="../index.html#scan-dashboard" class="report-action-btn">Nieuwe scan</a>
+        </div>
 
         <div class="report-header">
             <img src="https://www.google.com/s2/favicons?domain=postnl.nl&sz=128" alt="PostNL" onerror="this.style.display='none'">
@@ -117,7 +345,7 @@
         <div class="score-section">
             <div class="score-card">
                 <div class="value" style="color: #fbbf24">74%</div>
-                <div class="label">Confidence Score</div>
+                <div class="label">Demo Confidence</div>
             </div>
             <div class="score-card">
                 <div class="value" style="color: #fbbf24">B+</div>
@@ -125,11 +353,11 @@
             </div>
             <div class="score-card">
                 <div class="value">12</div>
-                <div class="label">Modules Analysed</div>
+                <div class="label">Review Areas</div>
             </div>
             <div class="score-card">
-                <div class="value" style="color: #fbbf24">HOLD</div>
-                <div class="label">Consensus</div>
+                <div class="value" style="color: #fbbf24">REVIEW</div>
+                <div class="label">Memo Status</div>
             </div>
         </div>
 
@@ -141,55 +369,76 @@
             <div class="metric-row"><span class="key">Medewerkers</span><span class="val">37,000+</span></div>
             <div class="metric-row"><span class="key">Sector</span><span class="val">Logistics & Postal</span></div>
             <div class="metric-row"><span class="key">Website</span><span class="val"><a href="https://postnl.nl" target="_blank" style="color:var(--accent-secondary);text-decoration:none;">postnl.nl</a></span></div>
+            <div class="metric-row"><span class="key">Rapportstatus</span><span class="tag tag-medium">DEMO / REFRESH NEEDED</span></div>
+        </div>
+
+
+        <div class="section">
+            <h2><span class="icon">&#x1F4CB;</span> Source Status Snapshot</h2>
+            <div class="metric-row"><span class="key">Live bronrefresh</span><span class="tag tag-medium">PENDING</span></div>
+            <div class="metric-row"><span class="key">Officiele registerroute</span><span class="tag tag-medium">REQUIRED FOR PRODUCTION</span></div>
+            <div class="metric-row"><span class="key">Sanctions/PEP route</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
+            <div class="metric-row"><span class="key">Adverse media route</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
         </div>
 
         <div class="section">
             <h2><span class="icon">&#x1F50D;</span> Financiële Analyse</h2>
-            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-high">VERIFIED</span></div>
-            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PASS</span></div>
-            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CONSISTENT</span></div>
-            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW</span></div>
+            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-medium">REVIEW-ONLY</span></div>
+            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PATTERN OK</span></div>
+            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CHECKED</span></div>
+            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW SIGNAL</span></div>
         </div>
 
-        <div class="section">
+        <div class="section locked-section partial-blur">
+            <div class="lock-overlay">
+                <div style="font-size: 2rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(99,102,241,0.6));">&#x1F512;</div>
+                <span class="lock-text" style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">UBO &amp; Sanctie Screening<br><span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500; margin-top: 4px; display: block;">Verificatie tegen 24 mondiale toezichthouders (OFAC, EU, UN)</span></span>
+                <a href="../index.html#scan-dashboard" class="lock-cta" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.5); color: #a5b4fc; box-shadow: none;">Inspecteer Compliance Risks &#x2192;</a>
+            </div>
             <h2><span class="icon">&#x2696;&#xFE0F;</span> Compliance &amp; Sancties</h2>
-            <div class="metric-row"><span class="key">OFAC / EU Sanctielijsten</span><span class="tag tag-verified">CLEAN</span></div>
-            <div class="metric-row"><span class="key">UBO Transparantie</span><span class="tag tag-high">VERIFIED</span></div>
-            <div class="metric-row"><span class="key">PEP Screening</span><span class="tag tag-verified">NO MATCH</span></div>
-            <div class="metric-row"><span class="key">AML Risk Score</span><span class="tag tag-verified">LOW RISK</span></div>
+            <div class="metric-row"><span class="key">OpenSanctions / watchlist screening</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
+            <div class="metric-row"><span class="key">UBO / director coverage</span><span class="tag tag-medium">INCOMPLETE</span></div>
+            <div class="metric-row"><span class="key">PEP topic match</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
+            <div class="metric-row"><span class="key">AML Review Status</span><span class="tag tag-medium">REVIEW REQUIRED</span></div>
         </div>
 
-        <div class="section">
+        <div class="section locked-section">
+            <div class="lock-overlay">
+                <div style="font-size: 2rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(34,211,238,0.6));">&#x1F512;</div>
+                <span class="lock-text" style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">Dark Web &amp; Exposure Audit<br><span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500; margin-top: 4px; display: block;">Directe detectie van actieve CVE\'s, open ports en datalekken</span></span>
+                <a href="../index.html#scan-dashboard" class="lock-cta" style="background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.5); color: #67e8f9; box-shadow: none;">Bekijk Cyber Vulnerabilities &#x2192;</a>
+            </div>
             <h2><span class="icon">&#x1F6E1;&#xFE0F;</span> Cyber Exposure</h2>
-            <div class="metric-row"><span class="key">Open Ports (Shodan)</span><span class="tag tag-medium">3 FOUND</span></div>
-            <div class="metric-row"><span class="key">SSL/TLS Status</span><span class="tag tag-verified">VALID</span></div>
-            <div class="metric-row"><span class="key">Data Breach History</span><span class="tag tag-verified">CLEAN</span></div>
-            <div class="metric-row"><span class="key">DNS Security</span><span class="tag tag-high">DNSSEC</span></div>
+            <div class="metric-row"><span class="key">Passive exposure scan</span><span class="tag tag-medium">PENDING LIVE CHECK</span></div>
+            <div class="metric-row"><span class="key">SSL/TLS Status</span><span class="tag tag-medium">CHECK REQUIRED</span></div>
+            <div class="metric-row"><span class="key">Data Breach History</span><span class="tag tag-medium">REVIEW REQUIRED</span></div>
+            <div class="metric-row"><span class="key">DNS Security</span><span class="tag tag-medium">CHECK REQUIRED</span></div>
         </div>
 
         <div class="section">
             <h2><span class="icon">&#x1F916;</span> 5-Engine AI Consensus</h2>
             <div class="engine-grid">
-                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">HOLD</div></div>
-                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">HOLD</div></div>
-                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">HOLD</div></div>
-                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">HOLD</div></div>
-                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">HOLD</div></div>
+                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">REVIEW</div></div>
             </div>
         </div>
 
-        <div class="cta-section">
-            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
-                Dit is een voorbeeldrapport. Start uw eigen analyse in 90 seconden.
+        <div class="cta-section" style="background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 50px 20px; border-radius: 16px;">
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">Pre-DD preview in enkele minuten.</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Voorkom blinde vlekken. Activeer bronroutes voor registerdata, sanctions/PEP, cyber, adverse media en financiele patronen. Elke bevinding krijgt bronstatus, confidence en beperking mee.
             </p>
-            <a href="../index.html#scan-dashboard" class="cta-btn">Start uw eigen analyse →</a>
+            <a href="../index.html#scan-dashboard" class="cta-btn" style="box-shadow: 0 0 30px rgba(99,102,241,0.4); font-size: 1.05rem; padding: 16px 48px;">Begin Nieuwe Scan &mdash; <span style="font-weight: 500; font-size: 0.9rem; opacity: 0.9;">Vanaf &euro;79</span> &rarr;</a>
         </div>
 
         <div class="disclaimer">
-            <strong>DEMO DATA</strong> — Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronnen (KvK, CBS, Shodan, OpenSanctions).<br>
+            <strong>DEMO DATA</strong> - Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronroutes waar beschikbaar (KvK, CBS, Shodan, OpenSanctions-compatible screening).<br>
             Geen due diligence of juridisch advies. Werkelijke rapporten uitsluitend voor geregistreerde opdrachtgevers.<br>
-            <span style="opacity: 0.5;">EU AI Act Art. 52 — autonoom gegenereerd door DueSight AI Protocol v5.3</span><br>
-            <span style="opacity: 0.3;">CONFIDENTIAL · PROTOCOL V5.3</span>
+            <span style="opacity: 0.5;">AI-ondersteunde inhoud - DueSight Evidence Ledger v1 | Geen juridisch advies</span><br>
+            <span style="opacity: 0.3;">SAMPLE REPORT - POINT-IN-TIME SOURCE STATUS</span>
         </div>
     </div>
 </body>

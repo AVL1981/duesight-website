@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DueSight Intelligence — Mollie Pre-DD Rapport</title>
-    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor Mollie. AI-gestuurde due diligence analyse met 38 agents en 64+ bronnen.">
+    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor Mollie B.V. met evidence ledger, bronstatus en point-in-time compliance screening.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://avl1981.github.io/duesight-website/sample-report-mollie-gold/">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -82,6 +82,40 @@
         }
         .engine-card .name { font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
         .engine-card .result { color: var(--accent-secondary); }
+        .evidence-note {
+            margin-top: 18px;
+            padding: 16px 18px;
+            background: rgba(34,211,238,0.06);
+            border: 1px solid rgba(34,211,238,0.16);
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.65;
+        }
+        .evidence-note strong { color: var(--text-primary); }
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .source-card {
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+        }
+        .source-card .source-title {
+            color: var(--text-primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .source-card .source-meta {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            line-height: 1.5;
+        }
         .disclaimer {
             text-align: center; padding: 40px 0; color: var(--text-muted);
             font-size: 0.7rem; line-height: 1.8;
@@ -97,15 +131,244 @@
             transition: all 0.3s; box-shadow: 0 4px 20px rgba(99,102,241,0.25);
         }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
+
+        .report-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 0 6px;
+        }
+        .report-action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 38px;
+            padding: 0 14px;
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            background: rgba(15,20,40,0.75);
+            color: var(--text-secondary);
+            font: inherit;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .report-action-btn:hover {
+            color: var(--accent-secondary);
+            border-color: rgba(34,211,238,0.28);
+        }
+        @media (max-width: 768px) {
+            .report-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .report-action-btn {
+                width: 100%;
+            }
+        }
+        @media print {
+            :root {
+                --bg-primary: #ffffff;
+                --bg-card: #ffffff;
+                --text-primary: #111827;
+                --text-secondary: #334155;
+                --text-muted: #64748b;
+                --border-glass: #d8dee9;
+            }
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body {
+                background: #ffffff;
+                color: #111827;
+            }
+            .container {
+                max-width: none;
+                padding: 0 18mm;
+            }
+            .back-link,
+            .report-actions,
+            .cta-section,
+            .lock-overlay {
+                display: none !important;
+            }
+            .report-header {
+                padding: 20px 0;
+            }
+            .score-section,
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .score-card,
+            .engine-card,
+            .source-card {
+                background: #ffffff;
+                border: 1px solid #d8dee9;
+                box-shadow: none;
+            }
+            .locked-section {
+                user-select: auto;
+                pointer-events: auto;
+            }
+            .locked-section::after {
+                display: none;
+            }
+            a {
+                color: #0369a1 !important;
+                text-decoration: none;
+            }
+        }
         @media (max-width: 768px) {
             .score-section { grid-template-columns: repeat(2, 1fr); }
             .engine-grid { grid-template-columns: repeat(3, 1fr); }
+            .source-grid { grid-template-columns: 1fr; }
+        }
+
+        /*  REVEAL & LOCK  Conversion Optimisation  */
+        .locked-section {
+            position: relative;
+            user-select: none;
+            pointer-events: none;
+        }
+        .locked-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            background: rgba(10, 14, 26, 0.45);
+            border-radius: 14px;
+            z-index: 10;
+        }
+        .locked-section .lock-overlay {
+            display: flex !important;
+        }
+        .lock-overlay {
+            display: none;
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            pointer-events: auto;
+        }
+        .lock-overlay .lock-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 12px rgba(99,102,241,0.4));
+        }
+        .lock-overlay .lock-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #a5b4fc;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .lock-overlay .lock-cta {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 8px 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            pointer-events: auto;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+        }
+        .lock-overlay .lock-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99,102,241,0.45);
+        }
+        .partial-blur::after {
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0.6) 40%, rgba(10,14,26,0.85) 100%);
         }
     </style>
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="DueSight — Mollie Pre-DD Rapport">
+    <meta property="og:description" content="DueSight voorbeeldrapport voor Mollie B.V. met evidence ledger, bronstatus en point-in-time compliance screening.">
+    <meta property="og:url" content="https://avl1981.github.io/duesight-website/sample-report-mollie-gold/">
+    <meta property="og:site_name" content="DueSight Intelligence">
+    <meta property="og:locale" content="nl_NL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DueSight — Mollie Pre-DD Rapport">
+    <meta name="twitter:description" content="DueSight voorbeeldrapport voor Mollie B.V. met evidence ledger, bronstatus en point-in-time compliance screening.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "DueSight Pre-DD Rapport — Mollie",
+        "description": "DueSight voorbeeldrapport voor Mollie B.V. met evidence ledger, bronstatus en point-in-time compliance screening.",
+        "brand": {
+            "@type": "Organization",
+            "name": "DueSight Intelligence",
+            "url": "https://duesight.nl"
+        },
+        "category": "Due Diligence Intelligence",
+        "url": "https://avl1981.github.io/duesight-website/sample-report-mollie-gold/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "description": "Gratis voorbeeldrapport — werkelijke rapporten vanaf €399",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Wat is een Gold-tier rapport?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Een Gold-tier rapport bevat alle standaard analyses plus verdiepte financiële forensiek, uitgebreide UBO-ketens en sector-specifieke benchmarks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Hoe vergelijkt DueSight met traditionele DD?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Traditionele DD kost vaak duizenden euro's en duurt weken. DueSight levert een bronherleidbare pre-DD preview in minuten, met beperkingen en vervolgstappen per finding."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://avl1981.github.io/duesight-website/"},
+            {"@type": "ListItem", "position": 2, "name": "Rapporten"},
+            {"@type": "ListItem", "position": 3, "name": "Mollie Rapport"}
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
         <a href="../index.html" class="back-link">← Terug naar DueSight</a>
+
+        <div class="report-actions" aria-label="Rapport acties">
+            <button type="button" class="report-action-btn" onclick="window.print()">PDF / afdrukken</button>
+            <a href="../index.html#scan-dashboard" class="report-action-btn">Nieuwe scan</a>
+        </div>
 
         <div class="report-header">
             <img src="https://www.google.com/s2/favicons?domain=mollie.com&sz=128" alt="Mollie" onerror="this.style.display='none'">
@@ -117,49 +380,88 @@
         <div class="score-section">
             <div class="score-card">
                 <div class="value" style="color: #22d3ee">88%</div>
-                <div class="label">Confidence Score</div>
+                <div class="label">Demo Confidence</div>
             </div>
             <div class="score-card">
-                <div class="value" style="color: #22d3ee">A+</div>
-                <div class="label">Compliance Grade</div>
+                <div class="value" style="color: #22d3ee">PARTIAL</div>
+                <div class="label">Source Coverage</div>
             </div>
             <div class="score-card">
-                <div class="value">12</div>
-                <div class="label">Modules Analysed</div>
+                <div class="value">13</div>
+                <div class="label">Evidence Rows</div>
             </div>
             <div class="score-card">
-                <div class="value" style="color: #22d3ee">INVEST</div>
-                <div class="label">Consensus</div>
+                <div class="value" style="color: #22d3ee">REVIEW</div>
+                <div class="label">Memo Status</div>
             </div>
         </div>
 
         <div class="section">
             <h2><span class="icon">&#x1F4CA;</span> Executive Summary</h2>
-            <div class="metric-row"><span class="key">Bedrijfsnaam</span><span class="val">Mollie</span></div>
+            <div class="metric-row"><span class="key">Bedrijfsnaam</span><span class="val">Mollie B.V.</span></div>
             <div class="metric-row"><span class="key">KvK-nummer</span><span class="val">30204462</span></div>
-            <div class="metric-row"><span class="key">Geschatte omzet</span><span class="val">€800M+</span></div>
-            <div class="metric-row"><span class="key">Medewerkers</span><span class="val">2,500+</span></div>
+            <div class="metric-row"><span class="key">Schaalindicatie</span><span class="val">Enterprise PSP / review-only</span></div>
+            <div class="metric-row"><span class="key">Bronstatus</span><span class="val">Point-in-time sample</span></div>
             <div class="metric-row"><span class="key">Sector</span><span class="val">Fintech & Payments</span></div>
             <div class="metric-row"><span class="key">Website</span><span class="val"><a href="https://mollie.com" target="_blank" style="color:var(--accent-secondary);text-decoration:none;">mollie.com</a></span></div>
+            <div class="metric-row"><span class="key">Rapportstatus</span><span class="tag tag-verified">UPDATED 2026-05-22</span></div>
         </div>
 
         <div class="section">
             <h2><span class="icon">&#x1F50D;</span> Financiële Analyse</h2>
-            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-high">VERIFIED</span></div>
-            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PASS</span></div>
-            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CONSISTENT</span></div>
-            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW</span></div>
+            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-medium">REVIEW-ONLY</span></div>
+            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PATTERN OK</span></div>
+            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CHECKED</span></div>
+            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW SIGNAL</span></div>
         </div>
 
         <div class="section">
             <h2><span class="icon">&#x2696;&#xFE0F;</span> Compliance &amp; Sancties</h2>
-            <div class="metric-row"><span class="key">OFAC / EU Sanctielijsten</span><span class="tag tag-verified">CLEAN</span></div>
-            <div class="metric-row"><span class="key">UBO Transparantie</span><span class="tag tag-high">VERIFIED</span></div>
-            <div class="metric-row"><span class="key">PEP Screening</span><span class="tag tag-verified">NO MATCH</span></div>
-            <div class="metric-row"><span class="key">AML Risk Score</span><span class="tag tag-verified">LOW RISK</span></div>
+            <div class="metric-row"><span class="key">OpenSanctions / watchlist screening</span><span class="tag tag-verified">NO CLAIM-SAFE MATCH</span></div>
+            <div class="metric-row"><span class="key">PEP / sanctions topic match</span><span class="tag tag-verified">NONE FOUND</span></div>
+            <div class="metric-row"><span class="key">Laatste evidence-ledger check</span><span class="val">22 mei 2026, 09:30 CEST</span></div>
+            <div class="metric-row"><span class="key">Source status</span><span class="tag tag-verified">LEDGER OK</span></div>
+            <div class="metric-row"><span class="key">UBO/director rescreen</span><span class="tag tag-medium">REQUIRED</span></div>
+            <div class="evidence-note">
+                <strong>Point-in-time result:</strong> de laatste DueSight evidence-ledger run voor Mollie B.V. vond geen claim-safe sanctions/PEP match op de beschikbare bedrijfsidentiteit. Dit is geen volledige clean opinion: definitieve AML sign-off vereist herhaling op bestuurders, UBO's, related parties, geboortedata en actuele officiële identifiers.
+            </div>
+            <div class="source-grid">
+                <div class="source-card">
+                    <div class="source-title">Source envelope</div>
+                    <div class="source-meta">source: sanctions_enricher_v1<br>source_status: OK<br>fallback_used: false<br>freshness: checked</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-title">Diligence question</div>
+                    <div class="source-meta">Zijn UBO's, bestuurders en materiële related parties ook in scope voor sanctions/PEP screening?</div>
+                </div>
+            </div>
         </div>
 
         <div class="section">
+            <h2><span class="icon">&#x1F4CB;</span> Public Acquisition Snapshot</h2>
+            <div class="metric-row"><span class="key">Temporary scrape acquisition</span><span class="tag tag-verified">13 DEMO-PROMOTED ROWS</span></div>
+            <div class="metric-row"><span class="key">Memo policy</span><span class="tag tag-medium">REVIEW-ONLY</span></div>
+            <div class="metric-row"><span class="key">Adverse media</span><span class="tag tag-verified">CLEAN / INCOMPLETE SOURCES</span></div>
+            <div class="metric-row"><span class="key">Digital footprint</span><span class="tag tag-verified">PASSIVE SOURCE BACKED</span></div>
+            <div class="metric-row"><span class="key">Source-health</span><span class="tag tag-medium">YELLOW</span></div>
+            <div class="source-grid">
+                <div class="source-card">
+                    <div class="source-title">Acquisition summary</div>
+                    <div class="source-meta">GovData/Data.gov: 0 hits<br>Wikidata: 1 hit (Q95552428)<br>GLEIF: 4 LEIs<br>Public website: 4 pages<br>Common Crawl: 5 URLs<br>Wayback: 5 snapshots</div>
+                </div>
+                <div class="source-card">
+                    <div class="source-title">Operational note</div>
+                    <div class="source-meta">OpenSanctions live refresh is quota-limited on this trial key. Use Yente/self-host, cached evidence or a renewed key for production refreshes.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section locked-section">
+            <div class="lock-overlay">
+                <div style="font-size: 2rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(34,211,238,0.6));">&#x1F512;</div>
+                <span class="lock-text" style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">Dark Web &amp; Exposure Audit<br><span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500; margin-top: 4px; display: block;">Directe detectie van actieve CVE\'s, open ports en datalekken</span></span>
+                <a href="../index.html#scan-dashboard" class="lock-cta" style="background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.5); color: #67e8f9; box-shadow: none;">Bekijk Cyber Vulnerabilities &#x2192;</a>
+            </div>
             <h2><span class="icon">&#x1F6E1;&#xFE0F;</span> Cyber Exposure</h2>
             <div class="metric-row"><span class="key">Open Ports (Shodan)</span><span class="tag tag-medium">3 FOUND</span></div>
             <div class="metric-row"><span class="key">SSL/TLS Status</span><span class="tag tag-verified">VALID</span></div>
@@ -170,26 +472,27 @@
         <div class="section">
             <h2><span class="icon">&#x1F916;</span> 5-Engine AI Consensus</h2>
             <div class="engine-grid">
-                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">INVEST</div></div>
-                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">INVEST</div></div>
-                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">INVEST</div></div>
-                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">INVEST</div></div>
-                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">INVEST</div></div>
+                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">REVIEW</div></div>
+                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">REVIEW</div></div>
             </div>
         </div>
 
-        <div class="cta-section">
-            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
-                Dit is een voorbeeldrapport. Start uw eigen analyse in 90 seconden.
+        <div class="cta-section" style="background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 50px 20px; border-radius: 16px;">
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">Pre-DD preview in enkele minuten.</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Voorkom blinde vlekken. Activeer bronroutes voor registerdata, sanctions/PEP, cyber, adverse media en financiële patronen. Elke bevinding krijgt bronstatus, confidence en beperking mee.
             </p>
-            <a href="../index.html#scan-dashboard" class="cta-btn">Start uw eigen analyse →</a>
+            <a href="../index.html#scan-dashboard" class="cta-btn" style="box-shadow: 0 0 30px rgba(99,102,241,0.4); font-size: 1.05rem; padding: 16px 48px;">Begin Nieuwe Scan &mdash; <span style="font-weight: 500; font-size: 0.9rem; opacity: 0.9;">Vanaf &euro;79</span> &rarr;</a>
         </div>
 
         <div class="disclaimer">
-            <strong>DEMO DATA</strong> — Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronnen (KvK, CBS, Shodan, OpenSanctions).<br>
+            <strong>DEMO DATA</strong> - Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronroutes waar beschikbaar (KvK, CBS, Shodan, OpenSanctions-compatible screening).<br>
             Geen due diligence of juridisch advies. Werkelijke rapporten uitsluitend voor geregistreerde opdrachtgevers.<br>
-            <span style="opacity: 0.5;">EU AI Act Art. 52 — autonoom gegenereerd door DueSight AI Protocol v5.3</span><br>
-            <span style="opacity: 0.3;">CONFIDENTIAL · PROTOCOL V5.3</span>
+            <span style="opacity: 0.5;">AI-ondersteunde inhoud - DueSight Evidence Ledger v1 | Geen juridisch advies</span><br>
+            <span style="opacity: 0.3;">SAMPLE REPORT - POINT-IN-TIME SOURCE STATUS</span>
         </div>
     </div>
 </body>
