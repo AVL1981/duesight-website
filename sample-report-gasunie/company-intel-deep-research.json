@@ -1,0 +1,53 @@
+{
+  "schema_version": "duesight.company_intel_deep_research.v1",
+  "run_id": "certified-samples-rest-20260526-235449-gasunie",
+  "target": "N.V. Nederlandse Gasunie",
+  "updated_at": "2026-05-29T10:57:04+00:00",
+  "prompt_version": "BUSINESS_PROFILE_INTEL_LAYER_20260521",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "models_used": [
+    "Codex/GPT renderer-gate",
+    "local_ollama:xortron3-fast:Q5_K_M"
+  ],
+  "model_routes_required_for_max_run": [
+    "Claude Code / Opus deep-research pass",
+    "Gemini / Antigravity grounded fast pass",
+    "Codex / GPT judge-synthesis pass",
+    "MiniMax / GLM / Hermes optional contradiction and enrichment passes"
+  ],
+  "tools_used": [
+    "business_profile_intel",
+    "commercial_deep_research_delta",
+    "competitor_intel",
+    "talent_intel",
+    "identity_resolution",
+    "deep_research_query_plan",
+    "local sanctions/Yente cache",
+    "OFAC DuckDB cache",
+    "premium_source_discovery",
+    "public_acquisition",
+    "source envelope normalizer"
+  ],
+  "routes": [
+    "website/team",
+    "TSG/public transaction context",
+    "LinkedIn discovery",
+    "news/adverse media",
+    "Wayback/archive",
+    "public dorking",
+    "reverse media",
+    "Xortron on verified evidence"
+  ],
+  "deep_research_agent_required": true,
+  "candidate_prompt_evaluation_path": "company-intel-prompt-evaluation.json",
+  "candidate_prompt_decision": "adopt_as_market_talent_expansion_layer_not_replacement",
+  "verified_findings": 5,
+  "review_only_findings": 2,
+  "official_upgrade_required": 7,
+  "commercial_delta_path": "commercial-deep-research-delta.json",
+  "identity_resolution_path": "identity-resolution.json",
+  "competitor_intel_path": "competitor-intel.json",
+  "talent_intel_path": "talent-intel.json",
+  "findings_path": "company-intel-findings.json",
+  "gate_report_path": "company-intel-gate-report.json"
+}

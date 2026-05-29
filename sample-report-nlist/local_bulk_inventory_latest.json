@@ -1,0 +1,1140 @@
+{
+  "target_name": "NLIST B.V.",
+  "target": "https://nlist.nl",
+  "metadata": {
+    "generated_at": "2026-05-26T20:49:31+00:00"
+  },
+  "manifest": {
+    "run_id": "local-bulk-nlist_b_v-20260526204935",
+    "timestamp": "2026-05-26T20:49:31+00:00",
+    "target": "https://nlist.nl",
+    "modules": [
+      "yente_local",
+      "ofac_duckdb",
+      "registry_duckdb",
+      "adverse_media_cache",
+      "whale_tracker_cache",
+      "nvd_cve_cache",
+      "award_module_probe"
+    ],
+    "status": "available",
+    "limitations": [
+      "Inventory proves source availability, not target-specific legal/finance/UBO conclusions.",
+      "Hosted provider rate limits are operational status and must not appear as public report claims.",
+      "Missing award_intel module remains a build gap until reconstructed from surviving specs/history."
+    ]
+  },
+  "phases": {
+    "enrichment": {
+      "local_bulk_inventory": {
+        "schema_version": "duesight.local_bulk_source_inventory.v1",
+        "target_name": "NLIST B.V.",
+        "target_domain": "https://nlist.nl",
+        "status": "available",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "rows": [
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Local sanctions/PEP bulk",
+            "claim": "Local Yente/OpenSanctions backend is OK with 349 catalog datasets and searchable=True.",
+            "source": "http://localhost:8001",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "status": "OK",
+              "source": "http://localhost:8001",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "datasets": 349,
+              "index_stale": true,
+              "searchable": true,
+              "detail": "catalog=ok"
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "OFAC/local sanctions DuckDB",
+            "claim": "Local OFAC/sanctions DuckDB is present with 19050 sanctions records.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+              "size_bytes": 3158016,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "sanctions",
+                  "row_count": 19050
+                },
+                {
+                  "schema": "main",
+                  "table": "snapshots",
+                  "row_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Registry cache DuckDB",
+            "claim": "Local registry DuckDB is present with 2 cached registry rows.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+              "size_bytes": 1323008,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "registry_cache",
+                  "row_count": 2
+                }
+              ]
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Adverse media cache",
+            "claim": "Adverse-media cache is present with 19 files and 1 target cache hits.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Cached no-hit supports guarded media context only; complete clearance requires source list, query scope and timestamp.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+              "file_count": 19,
+              "target_file_count": 1,
+              "target_files": [
+                "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\nlist_b_v_.json"
+              ],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\the_specialist_group_b_v_.json",
+              "latest_mtime": "2026-05-26T11:04:15.256771+00:00"
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Whale tracker cache",
+            "claim": "Whale tracker cache is present with 5 snapshots.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Portfolio/institutional-flow context only; usually not material for private NL targets without a matched security/issuer.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+              "file_count": 5,
+              "target_file_count": 0,
+              "target_files": [],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker\\whale_2026-04-12.json",
+              "latest_mtime": "2026-04-12T03:30:03.908494+00:00"
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Cyber vulnerability cache",
+            "claim": "NVD/CVE cache is present with 13 files.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Cache availability is not target exposure proof; combine with tech fingerprinting, asset ownership and CVE matching.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+              "file_count": 13,
+              "target_file_count": 0,
+              "target_files": [],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache\\nvd_6086f49cd98b58ab1dba7b1780a779b1.json",
+              "latest_mtime": "2026-05-19T16:28:31.720855+00:00"
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "DueSight master DuckDB",
+            "claim": "DueSight master DuckDB is present with 120 cert/cache rows.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Internal cache inventory only; does not replace target-specific primary evidence.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+              "size_bytes": 2109440,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "cert_cache",
+                  "row_count": 120
+                },
+                {
+                  "schema": "main",
+                  "table": "cert_cache_meta",
+                  "row_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Award intelligence module",
+            "claim": "Award intelligence module is present as a first-class DueSight module with local SQLite award database and primary-evidence harvester.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\tools\\award_intel",
+            "source_status": "OK",
+            "checked_at": "2026-05-27T11:01:20+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+            "row_id": "local-bulk-inventory-08"
+          }
+        ],
+        "summary": "Local bulk inventory records which cached/bulk sources are available. It is provenance evidence, not a substitute for target-specific source rows."
+      }
+    },
+    "evidence_ledger": {
+      "sections": {
+        "local_bulk_inventory": {
+          "section": "local_bulk_inventory",
+          "title": "Local bulk source inventory",
+          "status": "available",
+          "summary": "Local bulk inventory records which cached/bulk sources are available. It is provenance evidence, not a substitute for target-specific source rows.",
+          "target_claim_safe": false,
+          "rows": [
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Local sanctions/PEP bulk",
+              "claim": "Local Yente/OpenSanctions backend is OK with 349 catalog datasets and searchable=True.",
+              "source": "http://localhost:8001",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "High",
+              "limitation": "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+              "claim_safe_for_memo": true,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "status": "OK",
+                "source": "http://localhost:8001",
+                "checked_at": "2026-05-26T20:49:31+00:00",
+                "datasets": 349,
+                "index_stale": true,
+                "searchable": true,
+                "detail": "catalog=ok"
+              },
+              "row_id": "local-bulk-inventory-01"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "OFAC/local sanctions DuckDB",
+              "claim": "Local OFAC/sanctions DuckDB is present with 19050 sanctions records.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "High",
+              "limitation": "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+              "claim_safe_for_memo": true,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+                "size_bytes": 3158016,
+                "tables": [
+                  {
+                    "schema": "main",
+                    "table": "sanctions",
+                    "row_count": 19050
+                  },
+                  {
+                    "schema": "main",
+                    "table": "snapshots",
+                    "row_count": 1
+                  }
+                ]
+              },
+              "row_id": "local-bulk-inventory-02"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Registry cache DuckDB",
+              "claim": "Local registry DuckDB is present with 2 cached registry rows.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "Medium",
+              "limitation": "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output.",
+              "claim_safe_for_memo": false,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+                "size_bytes": 1323008,
+                "tables": [
+                  {
+                    "schema": "main",
+                    "table": "registry_cache",
+                    "row_count": 2
+                  }
+                ]
+              },
+              "row_id": "local-bulk-inventory-03"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Adverse media cache",
+              "claim": "Adverse-media cache is present with 19 files and 1 target cache hits.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "High",
+              "limitation": "Cached no-hit supports guarded media context only; complete clearance requires source list, query scope and timestamp.",
+              "claim_safe_for_memo": true,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+                "file_count": 19,
+                "target_file_count": 1,
+                "target_files": [
+                  "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\nlist_b_v_.json"
+                ],
+                "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\the_specialist_group_b_v_.json",
+                "latest_mtime": "2026-05-26T11:04:15.256771+00:00"
+              },
+              "row_id": "local-bulk-inventory-04"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Whale tracker cache",
+              "claim": "Whale tracker cache is present with 5 snapshots.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "Medium",
+              "limitation": "Portfolio/institutional-flow context only; usually not material for private NL targets without a matched security/issuer.",
+              "claim_safe_for_memo": false,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+                "file_count": 5,
+                "target_file_count": 0,
+                "target_files": [],
+                "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker\\whale_2026-04-12.json",
+                "latest_mtime": "2026-04-12T03:30:03.908494+00:00"
+              },
+              "row_id": "local-bulk-inventory-05"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Cyber vulnerability cache",
+              "claim": "NVD/CVE cache is present with 13 files.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "Medium",
+              "limitation": "Cache availability is not target exposure proof; combine with tech fingerprinting, asset ownership and CVE matching.",
+              "claim_safe_for_memo": false,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+                "file_count": 13,
+                "target_file_count": 0,
+                "target_files": [],
+                "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache\\nvd_6086f49cd98b58ab1dba7b1780a779b1.json",
+                "latest_mtime": "2026-05-19T16:28:31.720855+00:00"
+              },
+              "row_id": "local-bulk-inventory-06"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "DueSight master DuckDB",
+              "claim": "DueSight master DuckDB is present with 120 cert/cache rows.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+              "source_status": "OK",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "Medium",
+              "limitation": "Internal cache inventory only; does not replace target-specific primary evidence.",
+              "claim_safe_for_memo": false,
+              "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+              "meta": {
+                "exists": true,
+                "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+                "size_bytes": 2109440,
+                "tables": [
+                  {
+                    "schema": "main",
+                    "table": "cert_cache",
+                    "row_count": 120
+                  },
+                  {
+                    "schema": "main",
+                    "table": "cert_cache_meta",
+                    "row_count": 1
+                  }
+                ]
+              },
+              "row_id": "local-bulk-inventory-07"
+            },
+            {
+              "section": "local_bulk_inventory",
+              "bucket": "Award intelligence module",
+              "claim": "Award intelligence module is present as a first-class DueSight module with local SQLite award database and primary-evidence harvester.",
+              "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\tools\\award_intel",
+              "source_status": "OK",
+              "checked_at": "2026-05-27T11:01:20+00:00",
+              "freshness": "checked",
+              "fallback_used": false,
+              "confidence": "High",
+              "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
+              "claim_safe_for_memo": true,
+              "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+              "row_id": "local-bulk-inventory-08"
+            }
+          ],
+          "diligence_questions": [
+            "Which target-specific module output turns local source availability into a memo-safe claim?",
+            "Which primary finance and UBO documents are still missing for final closure?"
+          ]
+        }
+      },
+      "rows": [
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Local sanctions/PEP bulk",
+          "claim": "Local Yente/OpenSanctions backend is OK with 349 catalog datasets and searchable=True.",
+          "source": "http://localhost:8001",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "High",
+          "limitation": "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+          "claim_safe_for_memo": true,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "status": "OK",
+            "source": "http://localhost:8001",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "datasets": 349,
+            "index_stale": true,
+            "searchable": true,
+            "detail": "catalog=ok"
+          },
+          "row_id": "local-bulk-inventory-01"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "OFAC/local sanctions DuckDB",
+          "claim": "Local OFAC/sanctions DuckDB is present with 19050 sanctions records.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "High",
+          "limitation": "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+          "claim_safe_for_memo": true,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+            "size_bytes": 3158016,
+            "tables": [
+              {
+                "schema": "main",
+                "table": "sanctions",
+                "row_count": 19050
+              },
+              {
+                "schema": "main",
+                "table": "snapshots",
+                "row_count": 1
+              }
+            ]
+          },
+          "row_id": "local-bulk-inventory-02"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Registry cache DuckDB",
+          "claim": "Local registry DuckDB is present with 2 cached registry rows.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "Medium",
+          "limitation": "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output.",
+          "claim_safe_for_memo": false,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+            "size_bytes": 1323008,
+            "tables": [
+              {
+                "schema": "main",
+                "table": "registry_cache",
+                "row_count": 2
+              }
+            ]
+          },
+          "row_id": "local-bulk-inventory-03"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Adverse media cache",
+          "claim": "Adverse-media cache is present with 19 files and 1 target cache hits.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "High",
+          "limitation": "Cached no-hit supports guarded media context only; complete clearance requires source list, query scope and timestamp.",
+          "claim_safe_for_memo": true,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+            "file_count": 19,
+            "target_file_count": 1,
+            "target_files": [
+              "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\nlist_b_v_.json"
+            ],
+            "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\the_specialist_group_b_v_.json",
+            "latest_mtime": "2026-05-26T11:04:15.256771+00:00"
+          },
+          "row_id": "local-bulk-inventory-04"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Whale tracker cache",
+          "claim": "Whale tracker cache is present with 5 snapshots.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "Medium",
+          "limitation": "Portfolio/institutional-flow context only; usually not material for private NL targets without a matched security/issuer.",
+          "claim_safe_for_memo": false,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+            "file_count": 5,
+            "target_file_count": 0,
+            "target_files": [],
+            "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker\\whale_2026-04-12.json",
+            "latest_mtime": "2026-04-12T03:30:03.908494+00:00"
+          },
+          "row_id": "local-bulk-inventory-05"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Cyber vulnerability cache",
+          "claim": "NVD/CVE cache is present with 13 files.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "Medium",
+          "limitation": "Cache availability is not target exposure proof; combine with tech fingerprinting, asset ownership and CVE matching.",
+          "claim_safe_for_memo": false,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+            "file_count": 13,
+            "target_file_count": 0,
+            "target_files": [],
+            "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache\\nvd_6086f49cd98b58ab1dba7b1780a779b1.json",
+            "latest_mtime": "2026-05-19T16:28:31.720855+00:00"
+          },
+          "row_id": "local-bulk-inventory-06"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "DueSight master DuckDB",
+          "claim": "DueSight master DuckDB is present with 120 cert/cache rows.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+          "source_status": "OK",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "Medium",
+          "limitation": "Internal cache inventory only; does not replace target-specific primary evidence.",
+          "claim_safe_for_memo": false,
+          "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+          "meta": {
+            "exists": true,
+            "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+            "size_bytes": 2109440,
+            "tables": [
+              {
+                "schema": "main",
+                "table": "cert_cache",
+                "row_count": 120
+              },
+              {
+                "schema": "main",
+                "table": "cert_cache_meta",
+                "row_count": 1
+              }
+            ]
+          },
+          "row_id": "local-bulk-inventory-07"
+        },
+        {
+          "section": "local_bulk_inventory",
+          "bucket": "Award intelligence module",
+          "claim": "Award intelligence module is present as a first-class DueSight module with local SQLite award database and primary-evidence harvester.",
+          "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\tools\\award_intel",
+          "source_status": "OK",
+          "checked_at": "2026-05-27T11:01:20+00:00",
+          "freshness": "checked",
+          "fallback_used": false,
+          "confidence": "High",
+          "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
+          "claim_safe_for_memo": true,
+          "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+          "row_id": "local-bulk-inventory-08"
+        }
+      ],
+      "schema_version": "duesight.evidence_ledger.v1",
+      "status": "available",
+      "required_row_fields": [
+        "source",
+        "source_status",
+        "checked_at",
+        "freshness",
+        "fallback_used",
+        "confidence",
+        "limitation"
+      ],
+      "claim_policy": {
+        "target_claim_safe": false,
+        "rule": "Risk signals are not treated as final target claims without authoritative source evidence, identifier confidence and scope proof.",
+        "memo_language": "Use source, source_status, checked_at, freshness, fallback_used, confidence, limitation and diligence question for every memo claim."
+      },
+      "diligence_questions": [
+        "Which target-specific module output turns local source availability into a memo-safe claim?",
+        "Which primary finance and UBO documents are still missing for final closure?"
+      ],
+      "source_envelope_complete": true,
+      "source_envelope_contract_fields_missing": [],
+      "source_envelope_incomplete_rows": 0,
+      "source_envelope_issues": []
+    }
+  },
+  "evidence_ledger": {
+    "schema_version": "duesight.evidence_ledger.v1",
+    "status": "available",
+    "required_row_fields": [
+      "source",
+      "source_status",
+      "checked_at",
+      "freshness",
+      "fallback_used",
+      "confidence",
+      "limitation"
+    ],
+    "claim_policy": {
+      "target_claim_safe": false,
+      "rule": "Risk signals are not treated as final target claims without authoritative source evidence, identifier confidence and scope proof.",
+      "memo_language": "Use source, source_status, checked_at, freshness, fallback_used, confidence, limitation and diligence question for every memo claim."
+    },
+    "sections": {
+      "local_bulk_inventory": {
+        "section": "local_bulk_inventory",
+        "title": "Local bulk source inventory",
+        "status": "available",
+        "summary": "Local bulk inventory records which cached/bulk sources are available. It is provenance evidence, not a substitute for target-specific source rows.",
+        "target_claim_safe": false,
+        "rows": [
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Local sanctions/PEP bulk",
+            "claim": "Local Yente/OpenSanctions backend is OK with 349 catalog datasets and searchable=True.",
+            "source": "http://localhost:8001",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "status": "OK",
+              "source": "http://localhost:8001",
+              "checked_at": "2026-05-26T20:49:31+00:00",
+              "datasets": 349,
+              "index_stale": true,
+              "searchable": true,
+              "detail": "catalog=ok"
+            },
+            "row_id": "local-bulk-inventory-01"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "OFAC/local sanctions DuckDB",
+            "claim": "Local OFAC/sanctions DuckDB is present with 19050 sanctions records.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+              "size_bytes": 3158016,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "sanctions",
+                  "row_count": 19050
+                },
+                {
+                  "schema": "main",
+                  "table": "snapshots",
+                  "row_count": 1
+                }
+              ]
+            },
+            "row_id": "local-bulk-inventory-02"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Registry cache DuckDB",
+            "claim": "Local registry DuckDB is present with 2 cached registry rows.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+              "size_bytes": 1323008,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "registry_cache",
+                  "row_count": 2
+                }
+              ]
+            },
+            "row_id": "local-bulk-inventory-03"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Adverse media cache",
+            "claim": "Adverse-media cache is present with 19 files and 1 target cache hits.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "Cached no-hit supports guarded media context only; complete clearance requires source list, query scope and timestamp.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+              "file_count": 19,
+              "target_file_count": 1,
+              "target_files": [
+                "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\nlist_b_v_.json"
+              ],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\the_specialist_group_b_v_.json",
+              "latest_mtime": "2026-05-26T11:04:15.256771+00:00"
+            },
+            "row_id": "local-bulk-inventory-04"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Whale tracker cache",
+            "claim": "Whale tracker cache is present with 5 snapshots.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Portfolio/institutional-flow context only; usually not material for private NL targets without a matched security/issuer.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+              "file_count": 5,
+              "target_file_count": 0,
+              "target_files": [],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker\\whale_2026-04-12.json",
+              "latest_mtime": "2026-04-12T03:30:03.908494+00:00"
+            },
+            "row_id": "local-bulk-inventory-05"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Cyber vulnerability cache",
+            "claim": "NVD/CVE cache is present with 13 files.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Cache availability is not target exposure proof; combine with tech fingerprinting, asset ownership and CVE matching.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+              "file_count": 13,
+              "target_file_count": 0,
+              "target_files": [],
+              "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache\\nvd_6086f49cd98b58ab1dba7b1780a779b1.json",
+              "latest_mtime": "2026-05-19T16:28:31.720855+00:00"
+            },
+            "row_id": "local-bulk-inventory-06"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "DueSight master DuckDB",
+            "claim": "DueSight master DuckDB is present with 120 cert/cache rows.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+            "source_status": "OK",
+            "checked_at": "2026-05-26T20:49:31+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "Medium",
+            "limitation": "Internal cache inventory only; does not replace target-specific primary evidence.",
+            "claim_safe_for_memo": false,
+            "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+            "meta": {
+              "exists": true,
+              "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+              "size_bytes": 2109440,
+              "tables": [
+                {
+                  "schema": "main",
+                  "table": "cert_cache",
+                  "row_count": 120
+                },
+                {
+                  "schema": "main",
+                  "table": "cert_cache_meta",
+                  "row_count": 1
+                }
+              ]
+            },
+            "row_id": "local-bulk-inventory-07"
+          },
+          {
+            "section": "local_bulk_inventory",
+            "bucket": "Award intelligence module",
+            "claim": "Award intelligence module is present as a first-class DueSight module with local SQLite award database and primary-evidence harvester.",
+            "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\tools\\award_intel",
+            "source_status": "OK",
+            "checked_at": "2026-05-27T11:01:20+00:00",
+            "freshness": "checked",
+            "fallback_used": false,
+            "confidence": "High",
+            "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
+            "claim_safe_for_memo": true,
+            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+            "row_id": "local-bulk-inventory-08"
+          }
+        ],
+        "diligence_questions": [
+          "Which target-specific module output turns local source availability into a memo-safe claim?",
+          "Which primary finance and UBO documents are still missing for final closure?"
+        ]
+      }
+    },
+    "rows": [
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Local sanctions/PEP bulk",
+        "claim": "Local Yente/OpenSanctions backend is OK with 349 catalog datasets and searchable=True.",
+        "source": "http://localhost:8001",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "High",
+        "limitation": "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+        "claim_safe_for_memo": true,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "status": "OK",
+          "source": "http://localhost:8001",
+          "checked_at": "2026-05-26T20:49:31+00:00",
+          "datasets": 349,
+          "index_stale": true,
+          "searchable": true,
+          "detail": "catalog=ok"
+        },
+        "row_id": "local-bulk-inventory-01"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "OFAC/local sanctions DuckDB",
+        "claim": "Local OFAC/sanctions DuckDB is present with 19050 sanctions records.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "High",
+        "limitation": "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+        "claim_safe_for_memo": true,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\sanctions.duckdb",
+          "size_bytes": 3158016,
+          "tables": [
+            {
+              "schema": "main",
+              "table": "sanctions",
+              "row_count": 19050
+            },
+            {
+              "schema": "main",
+              "table": "snapshots",
+              "row_count": 1
+            }
+          ]
+        },
+        "row_id": "local-bulk-inventory-02"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Registry cache DuckDB",
+        "claim": "Local registry DuckDB is present with 2 cached registry rows.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output.",
+        "claim_safe_for_memo": false,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\ds-gap-closure\\data\\registries.duckdb",
+          "size_bytes": 1323008,
+          "tables": [
+            {
+              "schema": "main",
+              "table": "registry_cache",
+              "row_count": 2
+            }
+          ]
+        },
+        "row_id": "local-bulk-inventory-03"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Adverse media cache",
+        "claim": "Adverse-media cache is present with 19 files and 1 target cache hits.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "High",
+        "limitation": "Cached no-hit supports guarded media context only; complete clearance requires source list, query scope and timestamp.",
+        "claim_safe_for_memo": true,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache",
+          "file_count": 19,
+          "target_file_count": 1,
+          "target_files": [
+            "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\nlist_b_v_.json"
+          ],
+          "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\adverse_media_cache\\the_specialist_group_b_v_.json",
+          "latest_mtime": "2026-05-26T11:04:15.256771+00:00"
+        },
+        "row_id": "local-bulk-inventory-04"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Whale tracker cache",
+        "claim": "Whale tracker cache is present with 5 snapshots.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Portfolio/institutional-flow context only; usually not material for private NL targets without a matched security/issuer.",
+        "claim_safe_for_memo": false,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker",
+          "file_count": 5,
+          "target_file_count": 0,
+          "target_files": [],
+          "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\whale_tracker\\whale_2026-04-12.json",
+          "latest_mtime": "2026-04-12T03:30:03.908494+00:00"
+        },
+        "row_id": "local-bulk-inventory-05"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Cyber vulnerability cache",
+        "claim": "NVD/CVE cache is present with 13 files.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Cache availability is not target exposure proof; combine with tech fingerprinting, asset ownership and CVE matching.",
+        "claim_safe_for_memo": false,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache",
+          "file_count": 13,
+          "target_file_count": 0,
+          "target_files": [],
+          "latest_file": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\vulnerability_cache\\nvd_6086f49cd98b58ab1dba7b1780a779b1.json",
+          "latest_mtime": "2026-05-19T16:28:31.720855+00:00"
+        },
+        "row_id": "local-bulk-inventory-06"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "DueSight master DuckDB",
+        "claim": "DueSight master DuckDB is present with 120 cert/cache rows.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+        "source_status": "OK",
+        "checked_at": "2026-05-26T20:49:31+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Internal cache inventory only; does not replace target-specific primary evidence.",
+        "claim_safe_for_memo": false,
+        "diligence_question": "Which target-specific module output turns this source availability into a memo-safe claim?",
+        "meta": {
+          "exists": true,
+          "path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\master.duckdb",
+          "size_bytes": 2109440,
+          "tables": [
+            {
+              "schema": "main",
+              "table": "cert_cache",
+              "row_count": 120
+            },
+            {
+              "schema": "main",
+              "table": "cert_cache_meta",
+              "row_count": 1
+            }
+          ]
+        },
+        "row_id": "local-bulk-inventory-07"
+      },
+      {
+        "section": "local_bulk_inventory",
+        "bucket": "Award intelligence module",
+        "claim": "Award intelligence module is present as a first-class DueSight module with local SQLite award database and primary-evidence harvester.",
+        "source": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\tools\\award_intel",
+        "source_status": "OK",
+        "checked_at": "2026-05-27T11:01:20+00:00",
+        "freshness": "checked",
+        "fallback_used": false,
+        "confidence": "High",
+        "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
+        "claim_safe_for_memo": true,
+        "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+        "row_id": "local-bulk-inventory-08"
+      }
+    ],
+    "diligence_questions": [
+      "Which target-specific module output turns local source availability into a memo-safe claim?",
+      "Which primary finance and UBO documents are still missing for final closure?"
+    ],
+    "source_envelope_complete": true,
+    "source_envelope_contract_fields_missing": [],
+    "source_envelope_incomplete_rows": 0,
+    "source_envelope_issues": []
+  }
+}

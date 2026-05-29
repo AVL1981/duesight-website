@@ -1,0 +1,86 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-adyen-n.v.-20260529T090112Z",
+  "target": {
+    "name": "Adyen N.V.",
+    "domain": "adyen.com",
+    "kvk": "34259528",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:01:12+00:00",
+  "summary": {
+    "status": "completed_with_review",
+    "updated_at": "2026-05-29T09:01:12+00:00",
+    "gate_decision": "REVIEW",
+    "social_status": "executed",
+    "sentiment_status": "deferred",
+    "platforms_checked": 443,
+    "profiles_found": 4,
+    "promoted_social_sources": 7,
+    "sentiment_sources_active": 0,
+    "sentiment_sources_total": 0,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "Adyen N.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://www.facebook.com/AdyenPayments/",
+        "source_status": "source-bound",
+        "checked_at": "2026-05-29T09:01:12+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://www.facebook.com/AdyenPayments/",
+        "https://www.linkedin.com/company/adyen",
+        "https://x.com/Adyen",
+        "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=adyen.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "https://nl.linkedin.com/company/adyen-n.v.",
+        "https://github.com/adyenpayments",
+        "https://www.instagram.com/adyen/?hl=en"
+      ],
+      "raw_profiles_found_internal": 4,
+      "promoted_sources_count": 7
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment was not promoted in this replay.",
+      "claim_level": "not promoted",
+      "public_report_allowed": false,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "deferred",
+        "checked_at": "2026-05-29T09:01:12+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": true,
+        "confidence": "Low",
+        "limitation": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context."
+      }
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://www.facebook.com/AdyenPayments/",
+      "https://www.linkedin.com/company/adyen",
+      "https://x.com/Adyen",
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=adyen.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      " null, \"ebitda_estimate\": null, \"debt_equity_ratio\": null, \"current_ratio\": null, \"revenue_per_fte\": 3411.0, \"source\": \"linkedin_public\", \"confidence\": 0.6, \"data_grade\": \"C\", \"is_real_data\": true, \"raw\": {\"slug\": \"adyen\", \"founded\": null, \"description\": \"Adyen (AMS: ADYEN) is the financial technology platform of choice for leading companies. By providing end-to-end payments capabilities, data-dri"
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

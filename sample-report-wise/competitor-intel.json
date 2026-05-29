@@ -1,0 +1,14 @@
+{
+  "count": 1,
+  "records": [
+    {
+      "name": "News/reference signal found for Wise plc: Citi handhaaft verkoopadvies voor Wise-aandel...",
+      "why_relevant": "Business news signal",
+      "source": "news.google.com",
+      "claim_level": "market route context"
+    }
+  ],
+  "requested_field_slots": 60,
+  "filled_field_slots": 3,
+  "next_action": "Run full source-first competitor field extraction before claiming addresses, revenue, hiring count or employees."
+}

@@ -1,0 +1,41 @@
+{
+  "source": "https://nlist.nl/nl/vacatures",
+  "claim_level": "target-owned hiring context; live vacancy count must be refreshed per replay",
+  "role_families": [
+    {
+      "family": "Maintenance",
+      "signals": [
+        "allround monteur",
+        "koelmonteur",
+        "monteur E+I",
+        "HVAC",
+        "service"
+      ]
+    },
+    {
+      "family": "Engineering",
+      "signals": [
+        "electrical engineer",
+        "hardware engineer",
+        "mechanical design",
+        "structural"
+      ]
+    },
+    {
+      "family": "IT",
+      "signals": [
+        "DevOps",
+        ".NET",
+        "full stack"
+      ]
+    }
+  ],
+  "skill_buckets": [
+    "elektrotechniek",
+    "werktuigbouw",
+    "maintenance/service",
+    "industriele automatisering",
+    "software/IT",
+    "relocation/compliance"
+  ]
+}

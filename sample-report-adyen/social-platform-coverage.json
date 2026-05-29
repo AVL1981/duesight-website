@@ -1,0 +1,170 @@
+{
+  "schema_version": "duesight.social_platform_coverage.v1",
+  "target": {
+    "name": "Adyen N.V.",
+    "domain": "adyen.com",
+    "kvk": "34259528",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:01:12+00:00",
+  "social_scan": {
+    "status": "executed",
+    "elapsed_s": 52.041,
+    "result": {
+      "social_status": "FOUND",
+      "social_platforms_checked": 443,
+      "social_profiles_found": 4,
+      "social_trust_badge": {
+        "badge": "SILVER",
+        "score": 53,
+        "platforms_total": 4,
+        "platforms_verified": 4,
+        "platforms_unique": 4,
+        "description": "Moderate digital presence — some verification signals present"
+      },
+      "social_breach_check_passed": false,
+      "social_breach_count": 0,
+      "social_risk_level": "MEDIUM",
+      "social_risk_signals": [
+        "linkedin: very few connections/repos (possible throwaway account)",
+        "github: very few connections/repos (possible throwaway account)",
+        "facebook: very few connections/repos (possible throwaway account)",
+        "instagram: very few connections/repos (possible throwaway account)"
+      ],
+      "social_profiles": [
+        {
+          "platform": "linkedin",
+          "handle": "adyen-n.v.",
+          "url": "https://nl.linkedin.com/company/adyen-n.v.",
+          "name": "Adyen N.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
+          "platform": "github",
+          "handle": "adyenpayments",
+          "url": "https://github.com/adyenpayments",
+          "name": "Adyen N.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
+          "platform": "facebook",
+          "handle": "AdyenPayments",
+          "url": "https://www.facebook.com/AdyenPayments/",
+          "name": "Adyen N.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
+          "platform": "instagram",
+          "handle": "adyen",
+          "url": "https://www.instagram.com/adyen/?hl=en",
+          "name": "Adyen N.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        }
+      ]
+    },
+    "profiles": [
+      {
+        "platform": "linkedin",
+        "handle": "adyen-n.v.",
+        "url": "https://nl.linkedin.com/company/adyen-n.v.",
+        "name": "Adyen N.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
+        "platform": "github",
+        "handle": "adyenpayments",
+        "url": "https://github.com/adyenpayments",
+        "name": "Adyen N.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
+        "platform": "facebook",
+        "handle": "AdyenPayments",
+        "url": "https://www.facebook.com/AdyenPayments/",
+        "name": "Adyen N.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
+        "platform": "instagram",
+        "handle": "adyen",
+        "url": "https://www.instagram.com/adyen/?hl=en",
+        "name": "Adyen N.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      }
+    ],
+    "platforms_checked": 443,
+    "profiles_found": 4,
+    "risk_level": "MEDIUM"
+  },
+  "existing_social_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://www.facebook.com/AdyenPayments/",
+      "https://www.linkedin.com/company/adyen",
+      "https://x.com/Adyen",
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=adyen.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      " null, \"ebitda_estimate\": null, \"debt_equity_ratio\": null, \"current_ratio\": null, \"revenue_per_fte\": 3411.0, \"source\": \"linkedin_public\", \"confidence\": 0.6, \"data_grade\": \"C\", \"is_real_data\": true, \"raw\": {\"slug\": \"adyen\", \"founded\": null, \"description\": \"Adyen (AMS: ADYEN) is the financial technology platform of choice for leading companies. By providing end-to-end payments capabilities, data-dri"
+    ]
+  }
+}

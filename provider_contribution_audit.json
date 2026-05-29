@@ -1,0 +1,1033 @@
+[
+  {
+    "report": "adyen",
+    "score": 70,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": true,
+    "total_urls": 61,
+    "local_urls": 3,
+    "cloud_urls": 36,
+    "excluded_urls": 22,
+    "local_pct": 4.9,
+    "cloud_pct": 59.0,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 13,
+        "elapsed_s": 5.683,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 9,
+        "elapsed_s": 32.583,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 37.951,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 2,
+        "elapsed_s": 21.343,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 3,
+        "elapsed_s": 35.518,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 4,
+        "elapsed_s": 61.301,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 4,
+        "elapsed_s": 48.646,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 4,
+        "elapsed_s": 17.092,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 4.575,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 22,
+        "elapsed_s": 180.469,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "report": "bunq",
+    "score": 71,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": true,
+    "total_urls": 66,
+    "local_urls": 3,
+    "cloud_urls": 43,
+    "excluded_urls": 20,
+    "local_pct": 4.5,
+    "cloud_pct": 65.2,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 11,
+        "elapsed_s": 1.24,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 38.891,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 45.557,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 5,
+        "elapsed_s": 14.329,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 3,
+        "elapsed_s": 33.71,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 8,
+        "elapsed_s": 54.242,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 134.174,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 9,
+        "elapsed_s": 18.717,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 3.223,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 20,
+        "elapsed_s": 180.332,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": true
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 9,
+      "retained_previous_success_count": 1,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [
+        "codex_cli"
+      ],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "error": "'charmap' codec can't decode byte 0x9d in position 3609: character maps to <undefined>",
+    "report": "gasunie"
+  },
+  {
+    "report": "getthere",
+    "score": 67,
+    "verdict": "REVIEW",
+    "gate": "PASS",
+    "has_data_quality": false,
+    "total_urls": 70,
+    "local_urls": 3,
+    "cloud_urls": 50,
+    "excluded_urls": 17,
+    "local_pct": 4.3,
+    "cloud_pct": 71.4,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 2.814,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 11,
+        "elapsed_s": 28.941,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 36.792,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 20.965,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 3,
+        "elapsed_s": 27.049,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 12,
+        "elapsed_s": 62.157,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 56.39,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 2,
+        "elapsed_s": 15.405,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 15,
+        "elapsed_s": 112.585,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 17,
+        "elapsed_s": 180.456,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "report": "mollie-gold",
+    "score": 71,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": false,
+    "total_urls": 111,
+    "local_urls": 0,
+    "cloud_urls": 88,
+    "excluded_urls": 23,
+    "local_pct": 0.0,
+    "cloud_pct": 79.3,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 1.523,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 34.979,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 12,
+        "elapsed_s": 31.083,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 19.402,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 0,
+        "elapsed_s": 8.887,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 22,
+        "elapsed_s": 67.954,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 5,
+        "elapsed_s": 39.14,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 6,
+        "elapsed_s": 9.628,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 33,
+        "elapsed_s": 116.199,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 23,
+        "elapsed_s": 180.289,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "error": "'charmap' codec can't decode byte 0x8f in position 3579: character maps to <undefined>",
+    "report": "multiselect"
+  },
+  {
+    "report": "nlist",
+    "score": 71,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": false,
+    "total_urls": 77,
+    "local_urls": 0,
+    "cloud_urls": 49,
+    "excluded_urls": 28,
+    "local_pct": 0.0,
+    "cloud_pct": 63.6,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 1.677,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 6,
+        "elapsed_s": 29.654,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 32.205,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 20.138,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 0,
+        "elapsed_s": 19.314,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 11,
+        "elapsed_s": 40.196,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 74.087,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 4,
+        "elapsed_s": 17.032,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 18,
+        "elapsed_s": 92.895,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 28,
+        "elapsed_s": 180.413,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "error": "'charmap' codec can't decode byte 0x9d in position 2722: character maps to <undefined>",
+    "report": "postnl"
+  },
+  {
+    "report": "shell",
+    "score": 70,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": true,
+    "total_urls": 71,
+    "local_urls": 6,
+    "cloud_urls": 44,
+    "excluded_urls": 21,
+    "local_pct": 8.5,
+    "cloud_pct": 62.0,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 11,
+        "elapsed_s": 2.146,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 12.297,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 15.519,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 7,
+        "elapsed_s": 17.153,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 6,
+        "elapsed_s": 57.611,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 14,
+        "elapsed_s": 51.846,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 2,
+        "elapsed_s": 95.632,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 8.834,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 2.187,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 21,
+        "elapsed_s": 180.45,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "report": "specialist-group",
+    "score": 64,
+    "verdict": "REVIEW",
+    "gate": "PASS",
+    "has_data_quality": true,
+    "total_urls": 68,
+    "local_urls": 1,
+    "cloud_urls": 56,
+    "excluded_urls": 11,
+    "local_pct": 1.5,
+    "cloud_pct": 82.4,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 1.497,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 15.031,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 36.809,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 19.864,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 1,
+        "elapsed_s": 8.985,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 12,
+        "elapsed_s": 48.912,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 1,
+        "elapsed_s": 60.264,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 4,
+        "elapsed_s": 23.052,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 29,
+        "elapsed_s": 167.848,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 11,
+        "elapsed_s": 180.449,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 10,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "report": "truelegends",
+    "score": 66,
+    "verdict": "REVIEW",
+    "gate": "PASS",
+    "has_data_quality": false,
+    "total_urls": 62,
+    "local_urls": 0,
+    "cloud_urls": 37,
+    "excluded_urls": 25,
+    "local_pct": 0.0,
+    "cloud_pct": 59.7,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 1,
+        "elapsed_s": 1.494,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 36.951,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 8,
+        "elapsed_s": 32.96,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 5,
+        "elapsed_s": 17.601,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 0,
+        "elapsed_s": 1.766,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 57.839,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 2,
+        "elapsed_s": 81.782,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 10,
+        "elapsed_s": 102.932,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 25,
+        "elapsed_s": 95.39,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 1,
+        "elapsed_s": 7.745,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 8,
+      "retained_previous_success_count": 2,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [
+        "antigravity_codeassist",
+        "claude_code"
+      ],
+      "health_gated_retained_or_skipped": []
+    }
+  },
+  {
+    "report": "wise",
+    "score": 70,
+    "verdict": "READY_WITH_LIMITATIONS",
+    "gate": "PASS",
+    "has_data_quality": false,
+    "total_urls": 64,
+    "local_urls": 0,
+    "cloud_urls": 48,
+    "excluded_urls": 16,
+    "local_pct": 0.0,
+    "cloud_pct": 75.0,
+    "provider_stats": [
+      {
+        "provider": "minimax_search",
+        "is_local": false,
+        "urls": 12,
+        "elapsed_s": 1.53,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_a",
+        "is_local": false,
+        "urls": 12,
+        "elapsed_s": 33.6,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "minimax_highspeed_b",
+        "is_local": false,
+        "urls": 1,
+        "elapsed_s": 27.618,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "glm_direct",
+        "is_local": false,
+        "urls": 5,
+        "elapsed_s": 19.284,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "local_xortron",
+        "is_local": true,
+        "urls": 0,
+        "elapsed_s": 19.179,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      },
+      {
+        "provider": "hermes_deepseek",
+        "is_local": false,
+        "urls": 16,
+        "elapsed_s": 67.126,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "nvidia_nim_nemotron",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 42.429,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      },
+      {
+        "provider": "claude_code",
+        "is_local": false,
+        "urls": 0,
+        "elapsed_s": 94.412,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      },
+      {
+        "provider": "codex_cli",
+        "is_local": false,
+        "urls": 16,
+        "elapsed_s": 95.316,
+        "status": "partial_executed",
+        "findings_count": 0,
+        "retained": false
+      },
+      {
+        "provider": "antigravity_codeassist",
+        "is_local": false,
+        "urls": 2,
+        "elapsed_s": 8.054,
+        "status": "executed",
+        "findings_count": 0,
+        "retained": true
+      }
+    ],
+    "fresh_summary": {
+      "fresh_current_run_count": 6,
+      "retained_previous_success_count": 4,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [
+        "antigravity_codeassist",
+        "claude_code",
+        "local_xortron"
+      ],
+      "health_gated_retained_or_skipped": [
+        "nvidia_nim_nemotron"
+      ]
+    }
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "schema_version": "duesight.max_research_anti_hallucination_gates.v1",
+  "target": {
+    "name": "The Specialist Group B.V.",
+    "domain": "thespecialistgroup.com",
+    "kvk": "93038948",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T10:53:01+00:00",
+  "decision": "PASS",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Entity lock",
+      "status": "PASS",
+      "message": "Target name and identifiers present."
+    },
+    {
+      "id": "G2",
+      "name": "Provider execution",
+      "status": "PASS",
+      "message": "11 provider routes executed; required routes include query-plan deep crawl, Claude Code, GLM, Hermes DeepSeek, MiniMax, Antigravity, Codex and local guard; missing standard routes: none."
+    },
+    {
+      "id": "G3",
+      "name": "MiniMax dual route",
+      "status": "PASS",
+      "message": "MiniMax A/B highspeed routes must both be recorded."
+    },
+    {
+      "id": "G4",
+      "name": "Antigravity Code Assist route",
+      "status": "PASS",
+      "message": "Antigravity authenticated Code Assist route must be recorded or explain missing local auth."
+    },
+    {
+      "id": "G5",
+      "name": "GLM route",
+      "status": "PASS",
+      "message": "GLM/Zhipu direct route must be recorded or explain missing auth."
+    },
+    {
+      "id": "G6",
+      "name": "Xortron local guard",
+      "status": "PASS",
+      "message": "Local Xortron/Ollama route checks verified-evidence synthesis."
+    },
+    {
+      "id": "G7",
+      "name": "Source URL depth",
+      "status": "PASS",
+      "message": "106 source URLs extracted from provider outputs."
+    },
+    {
+      "id": "G8",
+      "name": "Source envelope readiness",
+      "status": "PASS",
+      "message": "Each candidate finding has source URLs and claim level fields."
+    },
+    {
+      "id": "G9",
+      "name": "Official claim gate",
+      "status": "PASS",
+      "message": "Finance/ownership/UBO claims stay gated unless primary/provider proof is attached."
+    },
+    {
+      "id": "G10",
+      "name": "Social proof guard",
+      "status": "PASS",
+      "message": "LinkedIn/social treated as corroboration/discovery only."
+    },
+    {
+      "id": "G11",
+      "name": "Contradiction scan",
+      "status": "PASS",
+      "message": "Provider conflicts require manual review."
+    },
+    {
+      "id": "G12",
+      "name": "Public error hygiene",
+      "status": "PASS",
+      "message": "Raw provider errors must not flow to public HTML."
+    }
+  ],
+  "public_report_rule": "Only source-backed, claim-level-labelled findings may enter public HTML; provider diagnostics remain internal artifacts."
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-postnl-n.v.-20260529T095231Z",
+  "target": {
+    "name": "PostNL N.V.",
+    "domain": "postnl.nl",
+    "kvk": "",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:52:31+00:00",
+  "summary": {
+    "status": "completed",
+    "updated_at": "2026-05-29T09:52:31+00:00",
+    "gate_decision": "PASS",
+    "social_status": "executed",
+    "sentiment_status": "executed",
+    "platforms_checked": 443,
+    "profiles_found": 0,
+    "promoted_social_sources": 1,
+    "sentiment_sources_active": 7,
+    "sentiment_sources_total": 19,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "PostNL N.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=postnl.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "source_status": "source-bound",
+        "checked_at": "2026-05-29T09:52:31+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=postnl.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+      ],
+      "raw_profiles_found_internal": 0,
+      "promoted_sources_count": 1
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment produced NEGATIVE with 7/19 active DueSight sources.",
+      "claim_level": "guarded signal layer",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "model-composite",
+        "checked_at": "2026-05-29T09:52:31+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "54%",
+        "limitation": "Composite sentiment supports triage and prioritization; it is not legal, finance or ownership proof."
+      },
+      "source_breakdown": {
+        "news_rss": 0.0,
+        "rechtspraak": -0.8,
+        "cbs_vertrouwen": 0.0667,
+        "xortron_raw": -0.22,
+        "linkedin_signals": -0.5,
+        "groq_sentiment": -0.22,
+        "twitter_sentiment": 0.0
+      },
+      "risk_factors": [
+        "⚖️ Rechtszaken gedetecteerd"
+      ]
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=postnl.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      "s source-backed context, not a substitute for official register evidence.\", \"privacy_policy\": \"Business-role data only; social/search snippets remain discovery hints unless corroborated.\", \"website_profile\": {\"status\": \"available\", \"website\": \"https://postnl.nl\", \"website_pages\": [{\"url\": \"https://www.postnl.nl/\", \"path\": \"/\", \"title\": \"PostNL: Wij bezorgen bijzondere momenten! | PostNL\", \"descrip"
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

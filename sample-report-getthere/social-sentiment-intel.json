@@ -1,0 +1,101 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-getthere-b.v.-20260529T093911Z",
+  "target": {
+    "name": "GetThere B.V.",
+    "domain": "getthere.nl",
+    "kvk": "",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:39:11+00:00",
+  "summary": {
+    "status": "completed",
+    "updated_at": "2026-05-29T09:39:11+00:00",
+    "gate_decision": "PASS",
+    "social_status": "executed",
+    "sentiment_status": "executed",
+    "platforms_checked": 443,
+    "profiles_found": 101,
+    "promoted_social_sources": 9,
+    "sentiment_sources_active": 8,
+    "sentiment_sources_total": 19,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "GetThere B.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://www.linkedin.com/company/724706/",
+        "source_status": "source-bound",
+        "checked_at": "2026-05-29T09:39:11+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://www.linkedin.com/company/724706/",
+        "https://www.facebook.com/gettherenl",
+        "https://www.linkedin.com/company/get-there/",
+        "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=getthere.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "https://www.github.com/getthere",
+        "https://www.youtube.com/@getthere",
+        "https://twitter.com/getthere?lang=en-GB",
+        "https://www.instagram.com/2getthere.bv/",
+        "https://br.linkedin.com/company/getthere-solutions"
+      ],
+      "raw_profiles_found_internal": 101,
+      "promoted_sources_count": 9
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment produced NEUTRAL with 8/19 active DueSight sources.",
+      "claim_level": "guarded signal layer",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "model-composite",
+        "checked_at": "2026-05-29T09:39:11+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "53%",
+        "limitation": "Composite sentiment supports triage and prioritization; it is not legal, finance or ownership proof."
+      },
+      "source_breakdown": {
+        "rechtspraak": -0.8,
+        "cbs_vertrouwen": 0.0667,
+        "kvk_mutaties": 0.1,
+        "xortron_raw": -0.355,
+        "hermes_validated": -0.1,
+        "linkedin_signals": -0.5,
+        "groq_sentiment": 0.85,
+        "twitter_sentiment": 0.0
+      },
+      "risk_factors": [
+        "⚖️ Rechtszaken gedetecteerd"
+      ]
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://www.linkedin.com/company/724706/",
+      "https://www.facebook.com/gettherenl",
+      "https://www.linkedin.com/company/get-there/",
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=getthere.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      "nagement/role claim; statutory director, shareholder and UBO status still require official register proof.\"}, {\"name\": \"LinkedIn Jack Anja Hektor\", \"role\": \"Recruitment & Coördinator Freelancers\", \"source_type\": \"company_website\", \"source_url\": \"https://www.getthere.nl/freelance-it-opdrachten/team/\", \"evidence_level\": \"target_owned_public_profile\", \"confidence\": \"High\", \"checked_at\": \"2026-05-26T2"
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

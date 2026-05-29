@@ -1,437 +1,75 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!doctype html>
+<html lang="nl" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DueSight Intelligence — Gasunie Pre-DD Rapport</title>
-    <meta name="description" content="Voorbeeldrapport van DueSight Intelligence voor Gasunie met bronstatus, confidence en compliance-signalen per finding.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://avl1981.github.io/duesight-website/sample-report-gasunie/">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #0a0e1a;
-            --bg-card: rgba(15,20,40,0.8);
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --accent-primary: #6366f1;
-            --accent-secondary: #22d3ee;
-            --border-glass: rgba(255,255,255,0.06);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-        .back-link {
-            display: inline-flex; align-items: center; gap: 8px;
-            color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
-            padding: 12px 0; transition: color 0.2s;
-        }
-        .back-link:hover { color: var(--accent-secondary); }
-        .report-header {
-            text-align: center; padding: 60px 0 40px;
-            border-bottom: 1px solid var(--border-glass);
-        }
-        .report-header img { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 16px; }
-        .report-header h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
-        .report-header .sector { color: var(--text-muted); font-size: 0.85rem; }
-        .report-badge {
-            display: inline-block; margin-top: 16px; padding: 4px 14px;
-            background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2);
-            border-radius: 16px; font-size: 0.7rem; font-weight: 700;
-            color: var(--accent-primary); letter-spacing: 1.5px; text-transform: uppercase;
-        }
-        .score-section {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-            padding: 40px 0; border-bottom: 1px solid var(--border-glass);
-        }
-        .score-card {
-            text-align: center; padding: 24px 16px;
-            background: var(--bg-card); border: 1px solid var(--border-glass);
-            border-radius: 14px;
-        }
-        .score-card .value { font-size: 1.6rem; font-weight: 800; margin-bottom: 4px; }
-        .score-card .label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .section { padding: 40px 0; border-bottom: 1px solid var(--border-glass); }
-        .section h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        .section h2 .icon { font-size: 1.1rem; }
-        .metric-row {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-        .metric-row .key { color: var(--text-secondary); font-size: 0.85rem; }
-        .metric-row .val { font-weight: 600; font-size: 0.85rem; }
-        .tag {
-            display: inline-block; padding: 3px 10px; border-radius: 6px;
-            font-size: 0.7rem; font-weight: 700;
-        }
-        .tag-high { background: rgba(34,211,238,0.1); color: #22d3ee; }
-        .tag-medium { background: rgba(251,191,36,0.1); color: #fbbf24; }
-        .tag-low { background: rgba(248,113,113,0.1); color: #f87171; }
-        .tag-verified { background: rgba(52,211,153,0.1); color: #34d399; }
-        .engine-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
-        .engine-card {
-            text-align: center; padding: 14px 8px;
-            background: var(--bg-card); border: 1px solid var(--border-glass);
-            border-radius: 10px; font-size: 0.7rem;
-        }
-        .engine-card .name { font-weight: 700; color: var(--text-primary); margin-bottom: 2px; }
-        .engine-card .result { color: var(--accent-secondary); }
-        .disclaimer {
-            text-align: center; padding: 40px 0; color: var(--text-muted);
-            font-size: 0.7rem; line-height: 1.8;
-        }
-        .cta-section {
-            text-align: center; padding: 40px 0 60px;
-        }
-        .cta-btn {
-            display: inline-block; padding: 14px 36px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white; font-weight: 700; font-size: 1rem;
-            border-radius: 12px; text-decoration: none;
-            transition: all 0.3s; box-shadow: 0 4px 20px rgba(99,102,241,0.25);
-        }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.35); }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>DueSight Certified Replay - N.V. Nederlandse Gasunie | Kort Memo</title>
+<meta name="description" content="Certified sample replay voor N.V. Nederlandse Gasunie met score 71/100 REVIEW, manifest en evidence ledger.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        .report-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 0 6px;
-        }
-        .report-action-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 38px;
-            padding: 0 14px;
-            border: 1px solid var(--border-glass);
-            border-radius: 8px;
-            background: rgba(15,20,40,0.75);
-            color: var(--text-secondary);
-            font: inherit;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .report-action-btn:hover {
-            color: var(--accent-secondary);
-            border-color: rgba(34,211,238,0.28);
-        }
-        @media (max-width: 768px) {
-            .report-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .report-action-btn {
-                width: 100%;
-            }
-        }
-        @media print {
-            :root {
-                --bg-primary: #ffffff;
-                --bg-card: #ffffff;
-                --text-primary: #111827;
-                --text-secondary: #334155;
-                --text-muted: #64748b;
-                --border-glass: #d8dee9;
-            }
-            * {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            body {
-                background: #ffffff;
-                color: #111827;
-            }
-            .container {
-                max-width: none;
-                padding: 0 18mm;
-            }
-            .back-link,
-            .report-actions,
-            .cta-section,
-            .lock-overlay {
-                display: none !important;
-            }
-            .report-header {
-                padding: 20px 0;
-            }
-            .score-section,
-            .section {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-            .score-card,
-            .engine-card,
-            .source-card {
-                background: #ffffff;
-                border: 1px solid #d8dee9;
-                box-shadow: none;
-            }
-            .locked-section {
-                user-select: auto;
-                pointer-events: auto;
-            }
-            .locked-section::after {
-                display: none;
-            }
-            a {
-                color: #0369a1 !important;
-                text-decoration: none;
-            }
-        }
-        @media (max-width: 768px) {
-            .score-section { grid-template-columns: repeat(2, 1fr); }
-            .engine-grid { grid-template-columns: repeat(3, 1fr); }
-        }
+<style>
+:root{--bg:#070b12;--panel:#101826;--soft:#151f2e;--line:rgba(255,255,255,.10);--text:#eef4ff;--muted:#91a1b8;--accent:#1aa6b7;--blue:#315ddc;--ok:#0aa875;--warn:#d69b12;--bad:#c93d42;--shadow:0 26px 80px rgba(3,8,20,.42)}
+:root[data-theme=light]{--bg:#e8eef5;--panel:#f9fbfe;--soft:#eef3f8;--line:rgba(18,30,46,.13);--text:#152033;--muted:#5d6f86;--accent:#007f86;--blue:#2559d6;--shadow:0 28px 70px rgba(65,82,105,.22)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,rgba(49,93,220,.12),transparent 30%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.55}a{color:inherit}.shell{max-width:1180px;margin:0 auto;padding:22px 22px 70px}.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--panel) 90%,transparent);backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:0 0 14px 14px;margin:0 auto 22px;max-width:1180px;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:space-between}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a,.theme button{border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:8px 13px;text-decoration:none;font-size:13px;font-weight:700;color:var(--muted)}.theme{display:flex;gap:6px}.theme button{cursor:pointer;color:var(--text)}.brand{font-weight:900;letter-spacing:.1px}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;margin:16px 0 22px}.hero-card,.panel{background:linear-gradient(145deg,color-mix(in srgb,var(--panel) 96%,white 4%),var(--panel));border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.hero-card{padding:34px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.8px;color:var(--accent);font-weight:900}.hero h1{font-size:clamp(34px,5vw,62px);line-height:.96;margin:13px 0 12px;letter-spacing:0}.lead{font-size:18px;color:var(--muted);max-width:780px}.score-lockup{padding:28px;display:grid;gap:14px}.score-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;margin:auto;background:conic-gradient(var(--accent) calc(var(--score)*1%),rgba(148,163,184,.22) 0);box-shadow:inset 0 0 0 14px color-mix(in srgb,var(--panel) 95%,transparent)}.score-ring strong{font-size:34px}.score-ring span{display:block;font-size:11px;color:var(--muted);text-align:center;text-transform:uppercase;font-weight:800}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.metric-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:15px;min-height:92px}.metric-card span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800}.metric-card strong{display:block;margin-top:9px;font-size:20px}.metric-card.ok strong{color:var(--ok)}.metric-card.warn strong{color:var(--warn)}.section{margin-top:22px;padding:24px}.section h2{margin:0 0 14px;font-size:24px}.section h3{margin:18px 0 8px;font-size:16px;color:var(--accent)}.muted{color:var(--muted)}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;background:color-mix(in srgb,var(--panel) 96%,black 4%)}th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px;background:color-mix(in srgb,var(--soft) 86%,black 14%)}.pill{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:11px;font-weight:900;text-transform:uppercase;white-space:nowrap}.pill.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent);background:color-mix(in srgb,var(--ok) 11%,transparent)}.pill.warn{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent);background:color-mix(in srgb,var(--warn) 11%,transparent)}.pill.bad{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 45%,transparent);background:color-mix(in srgb,var(--bad) 11%,transparent)}.split{display:grid;grid-template-columns:1fr 1fr;gap:16px}.callout{border-left:4px solid var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);padding:14px 16px;border-radius:0 10px 10px 0;color:var(--text)}.footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.links a{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:10px 13px;text-decoration:none;font-weight:800;font-size:13px}@media(max-width:850px){.hero,.split{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shell{padding:14px}.topbar{border-radius:0}.hero-card{padding:24px}}@media(max-width:620px){.topbar{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;padding:12px 14px}.brand{grid-column:1;grid-row:1}.theme{grid-column:2;grid-row:1;justify-content:flex-end}.nav{grid-column:1/3;grid-row:2;justify-content:flex-start}.nav a,.theme button{padding:7px 11px;font-size:12px}}
+@media print{body{background:white;color:#111}.topbar,.theme{display:none}.shell{max-width:none}.hero-card,.panel,.metric-card{box-shadow:none;break-inside:avoid}.section{break-inside:avoid}}
+</style>
 
-        /*  REVEAL & LOCK  Conversion Optimisation  */
-        .locked-section {
-            position: relative;
-            user-select: none;
-            pointer-events: none;
-        }
-        .locked-section::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            background: rgba(10, 14, 26, 0.45);
-            border-radius: 14px;
-            z-index: 10;
-        }
-        .locked-section .lock-overlay {
-            display: flex !important;
-        }
-        .lock-overlay {
-            display: none;
-            position: absolute;
-            inset: 0;
-            z-index: 20;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            pointer-events: auto;
-        }
-        .lock-overlay .lock-icon {
-            font-size: 2rem;
-            filter: drop-shadow(0 0 12px rgba(99,102,241,0.4));
-        }
-        .lock-overlay .lock-text {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #a5b4fc;
-            text-align: center;
-            line-height: 1.5;
-        }
-        .lock-overlay .lock-cta {
-            display: inline-block;
-            margin-top: 4px;
-            padding: 8px 24px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            font-weight: 700;
-            font-size: 0.8rem;
-            border-radius: 8px;
-            text-decoration: none;
-            pointer-events: auto;
-            transition: all 0.3s;
-            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
-        }
-        .lock-overlay .lock-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(99,102,241,0.45);
-        }
-        .partial-blur::after {
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
-            background: linear-gradient(to bottom, rgba(10,14,26,0) 0%, rgba(10,14,26,0.6) 40%, rgba(10,14,26,0.85) 100%);
-        }
-    </style>
-
-    <meta property="og:type" content="product">
-    <meta property="og:title" content="DueSight — Gasunie Pre-DD Rapport">
-    <meta property="og:description" content="DueSight voorbeeldrapport voor Gasunie met bronstatus, confidence en point-in-time compliance screening.">
-    <meta property="og:url" content="https://avl1981.github.io/duesight-website/sample-report-gasunie/">
-    <meta property="og:site_name" content="DueSight Intelligence">
-    <meta property="og:locale" content="nl_NL">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DueSight — Gasunie Pre-DD Rapport">
-    <meta name="twitter:description" content="DueSight voorbeeldrapport voor Gasunie met bronstatus, confidence en point-in-time compliance screening.">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "DueSight Pre-DD Rapport — Gasunie",
-        "description": "DueSight voorbeeldrapport voor Gasunie met bronstatus, confidence en point-in-time compliance screening.",
-        "brand": {
-            "@type": "Organization",
-            "name": "DueSight Intelligence",
-            "url": "https://duesight.nl"
-        },
-        "category": "Due Diligence Intelligence",
-        "url": "https://avl1981.github.io/duesight-website/sample-report-gasunie/",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "EUR",
-            "description": "Gratis voorbeeldrapport — werkelijke rapporten vanaf €399",
-            "availability": "https://schema.org/InStock"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Waarom is NIS2 relevant voor Gasunie?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Als essentiële dienstverlener valt Gasunie onder de NIS2-richtlijn. DueSight screent automatisch op NIS2-compliance indicators."
-                }
-            }
-        ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://avl1981.github.io/duesight-website/"},
-            {"@type": "ListItem", "position": 2, "name": "Rapporten"},
-            {"@type": "ListItem", "position": 3, "name": "Gasunie Rapport"}
-        ]
-    }
-    </script>
+<script>function dsTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('ds-report-theme',t)}document.addEventListener('DOMContentLoaded',function(){dsTheme(localStorage.getItem('ds-report-theme')||'dark')});</script>
 </head>
-<body>
-    <div class="container">
-        <a href="../index.html" class="back-link">← Terug naar DueSight</a>
-
-        <div class="report-actions" aria-label="Rapport acties">
-            <button type="button" class="report-action-btn" onclick="window.print()">PDF / afdrukken</button>
-            <a href="../index.html#scan-dashboard" class="report-action-btn">Nieuwe scan</a>
-        </div>
-
-        <div class="report-header">
-            <img src="https://www.google.com/s2/favicons?domain=gasunie.nl&sz=128" alt="Gasunie" onerror="this.style.display='none'">
-            <h1>Gasunie</h1>
-            <div class="sector">Energy Infrastructure</div>
-            <div class="report-badge">Pre-DD Intelligence Rapport</div>
-        </div>
-
-        <div class="score-section">
-            <div class="score-card">
-                <div class="value" style="color: #34d399">77%</div>
-                <div class="label">Demo Confidence</div>
-            </div>
-            <div class="score-card">
-                <div class="value" style="color: #34d399">B+</div>
-                <div class="label">Compliance Grade</div>
-            </div>
-            <div class="score-card">
-                <div class="value">12</div>
-                <div class="label">Review Areas</div>
-            </div>
-            <div class="score-card">
-                <div class="value" style="color: #fbbf24">REVIEW</div>
-                <div class="label">Memo Status</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">&#x1F4CA;</span> Executive Summary</h2>
-            <div class="metric-row"><span class="key">Bedrijfsnaam</span><span class="val">Gasunie</span></div>
-            <div class="metric-row"><span class="key">KvK-nummer</span><span class="val">02010556</span></div>
-            <div class="metric-row"><span class="key">Geschatte omzet</span><span class="val">€2.8B+</span></div>
-            <div class="metric-row"><span class="key">Medewerkers</span><span class="val">2,100+</span></div>
-            <div class="metric-row"><span class="key">Sector</span><span class="val">Energy Infrastructure</span></div>
-            <div class="metric-row"><span class="key">Website</span><span class="val"><a href="https://gasunie.nl" target="_blank" style="color:var(--accent-secondary);text-decoration:none;">gasunie.nl</a></span></div>
-            <div class="metric-row"><span class="key">Rapportstatus</span><span class="tag tag-medium">DEMO / REFRESH NEEDED</span></div>
-        </div>
-
-
-        <div class="section">
-            <h2><span class="icon">&#x1F4CB;</span> Source Status Snapshot</h2>
-            <div class="metric-row"><span class="key">Live bronrefresh</span><span class="tag tag-medium">PENDING</span></div>
-            <div class="metric-row"><span class="key">Officiele registerroute</span><span class="tag tag-medium">REQUIRED FOR PRODUCTION</span></div>
-            <div class="metric-row"><span class="key">Sanctions/PEP route</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
-            <div class="metric-row"><span class="key">Adverse media route</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">&#x1F50D;</span> Financiële Analyse</h2>
-            <div class="metric-row"><span class="key">Revenue Cross-validatie</span><span class="tag tag-medium">REVIEW-ONLY</span></div>
-            <div class="metric-row"><span class="key">Benford Distribution</span><span class="tag tag-verified">PATTERN OK</span></div>
-            <div class="metric-row"><span class="key">Formule-integriteit</span><span class="tag tag-verified">CHECKED</span></div>
-            <div class="metric-row"><span class="key">Anomalie Alert Level</span><span class="tag tag-medium">LOW SIGNAL</span></div>
-        </div>
-
-        <div class="section locked-section partial-blur">
-            <div class="lock-overlay">
-                <div style="font-size: 2rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(99,102,241,0.6));">&#x1F512;</div>
-                <span class="lock-text" style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">UBO &amp; Sanctie Screening<br><span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500; margin-top: 4px; display: block;">Verificatie tegen 24 mondiale toezichthouders (OFAC, EU, UN)</span></span>
-                <a href="../index.html#scan-dashboard" class="lock-cta" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.5); color: #a5b4fc; box-shadow: none;">Inspecteer Compliance Risks &#x2192;</a>
-            </div>
-            <h2><span class="icon">&#x2696;&#xFE0F;</span> Compliance &amp; Sancties</h2>
-            <div class="metric-row"><span class="key">OpenSanctions / watchlist screening</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
-            <div class="metric-row"><span class="key">UBO / director coverage</span><span class="tag tag-medium">INCOMPLETE</span></div>
-            <div class="metric-row"><span class="key">PEP topic match</span><span class="tag tag-medium">RESCREEN REQUIRED</span></div>
-            <div class="metric-row"><span class="key">AML Review Status</span><span class="tag tag-medium">REVIEW REQUIRED</span></div>
-        </div>
-
-        <div class="section locked-section">
-            <div class="lock-overlay">
-                <div style="font-size: 2rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(34,211,238,0.6));">&#x1F512;</div>
-                <span class="lock-text" style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">Dark Web &amp; Exposure Audit<br><span style="font-size: 0.75rem; color: #94a3b8; font-weight: 500; margin-top: 4px; display: block;">Directe detectie van actieve CVE\'s, open ports en datalekken</span></span>
-                <a href="../index.html#scan-dashboard" class="lock-cta" style="background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.5); color: #67e8f9; box-shadow: none;">Bekijk Cyber Vulnerabilities &#x2192;</a>
-            </div>
-            <h2><span class="icon">&#x1F6E1;&#xFE0F;</span> Cyber Exposure</h2>
-            <div class="metric-row"><span class="key">Passive exposure scan</span><span class="tag tag-medium">PENDING LIVE CHECK</span></div>
-            <div class="metric-row"><span class="key">SSL/TLS Status</span><span class="tag tag-medium">CHECK REQUIRED</span></div>
-            <div class="metric-row"><span class="key">Data Breach History</span><span class="tag tag-medium">REVIEW REQUIRED</span></div>
-            <div class="metric-row"><span class="key">DNS Security</span><span class="tag tag-medium">CHECK REQUIRED</span></div>
-        </div>
-
-        <div class="section">
-            <h2><span class="icon">&#x1F916;</span> 5-Engine AI Consensus</h2>
-            <div class="engine-grid">
-                <div class="engine-card"><div class="name">GPT-4o</div><div class="result">REVIEW</div></div>
-                <div class="engine-card"><div class="name">Claude Opus</div><div class="result">REVIEW</div></div>
-                <div class="engine-card"><div class="name">Gemini Pro</div><div class="result">REVIEW</div></div>
-                <div class="engine-card"><div class="name">DeepSeek R1</div><div class="result">REVIEW</div></div>
-                <div class="engine-card"><div class="name">Llama 3.1</div><div class="result">REVIEW</div></div>
-            </div>
-        </div>
-
-        <div class="cta-section" style="background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 50px 20px; border-radius: 16px;">
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: #f8fafc; margin-bottom: 12px;">Pre-DD preview in enkele minuten.</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Voorkom blinde vlekken. Activeer bronroutes voor registerdata, sanctions/PEP, cyber, adverse media en financiele patronen. Elke bevinding krijgt bronstatus, confidence en beperking mee.
-            </p>
-            <a href="../index.html#scan-dashboard" class="cta-btn" style="box-shadow: 0 0 30px rgba(99,102,241,0.4); font-size: 1.05rem; padding: 16px 48px;">Begin Nieuwe Scan &mdash; <span style="font-weight: 500; font-size: 0.9rem; opacity: 0.9;">Vanaf &euro;79</span> &rarr;</a>
-        </div>
-
-        <div class="disclaimer">
-            <strong>DEMO DATA</strong> - Dit voorbeeldrapport is illustratief en gebaseerd op publieke bronroutes waar beschikbaar (KvK, CBS, Shodan, OpenSanctions-compatible screening).<br>
-            Geen due diligence of juridisch advies. Werkelijke rapporten uitsluitend voor geregistreerde opdrachtgevers.<br>
-            <span style="opacity: 0.5;">AI-ondersteunde inhoud - DueSight Evidence Ledger v1 | Geen juridisch advies</span><br>
-            <span style="opacity: 0.3;">SAMPLE REPORT - POINT-IN-TIME SOURCE STATUS</span>
-        </div>
+<body><div class="topbar"><div class="brand">DueSight</div><nav class="nav"><a href="index.html">Kort</a><a href="hub.html">Uitgebreid</a><a href="flipbook.html">Flipbook</a><a href="pipeline-manifest.json">Manifest</a><a href="evidence-ledger.json">Ledger</a></nav><div class="theme"><button onclick="dsTheme('light')">Light</button><button onclick="dsTheme('dark')">Dark</button></div></div>
+<main class="shell">
+  <section class="hero">
+    <div class="hero-card">
+      <div class="eyebrow">Certified short memo</div>
+      <h1>N.V. Nederlandse Gasunie</h1>
+      <p class="lead">Compacte boardroom-samenvatting met score, kernbevindingen en official-proof vervolgstappen. Geen investeringsadvies; finance en ownership blijven gated zonder primaire documenten.</p>
+      <div class="links"><a href="hub.html">Open uitgebreid dossier</a><a href="flipbook.html">Open flipbook</a></div>
     </div>
-</body>
-</html>
+    <aside class="hero-card score-lockup">
+      <div class="score-ring" style="--score:71"><div><strong>71</strong><span>Evidence score</span></div></div>
+      <div class="metric-grid" style="grid-template-columns:1fr 1fr">
+        <div class="metric-card neutral"><span>Status</span><strong>REVIEW</strong></div>
+        <div class="metric-card ok"><span>Rows</span><strong>50</strong></div>
+      </div>
+    </aside>
+  </section>
+  <section class="panel section">
+    <h2>Pipeline Status</h2>
+    <div class="metric-grid">
+      <div class="metric-card ok"><span>Run status</span><strong>certified with limitations</strong></div>
+      <div class="metric-card ok"><span>Source envelope</span><strong>complete</strong></div>
+      <div class="metric-card ok"><span>Claim-safe rows</span><strong>21</strong></div>
+      <div class="metric-card ok"><span>Modules</span><strong>13</strong></div>
+    </div>
+    <div class="table-wrap"><table><tbody>
+      <tr><th>Run ID</th><td>certified-samples-rest-20260526-235449-gasunie</td></tr>
+      <tr><th>Target</th><td>N.V. Nederlandse Gasunie / gasunie.nl</td></tr>
+      <tr><th>Generated</th><td>2026-05-26T21:58:01+00:00</td></tr>
+      <tr><th>Score model</th><td>duesight.sample_report_score_model.v2</td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="panel section">
+    <h2>Score Model</h2>
+    <div class="table-wrap"><table><thead><tr><th>Component</th><th>Score</th><th>Status</th><th>Rationale</th></tr></thead><tbody><tr><td>Evidence integrity</td><td>22/22</td><td><span class="pill neutral">strong</span></td><td>Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.</td></tr><tr><td>Source readiness</td><td>7/13</td><td><span class="pill warn">yellow</span></td><td>Provider preflight is usable but not fully production-clean because deferred hosted context route routes need recovery or paid/local coverage.</td></tr><tr><td>Compliance and media</td><td>16/18</td><td><span class="pill warn">limited_clean</span></td><td>Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.</td></tr><tr><td>Ownership and governance</td><td>10/15</td><td><span class="pill warn">manual_review</span></td><td>Ownership routes exist, but official UBO/shareholder evidence is not claim-safe in this replay.</td></tr><tr><td>Finance integrity</td><td>5/15</td><td><span class="pill warn">source_limited</span></td><td>Finance route is technically verified, but no memo-safe official filing or target-specific finance output is available.</td></tr><tr><td>Cyber footprint</td><td>6/10</td><td><span class="pill neutral">context_only</span></td><td>External footprint evidence exists, but provider/CDN context is not target-owned exposure without asset proof.</td></tr><tr><td>Business context</td><td>5/7</td><td><span class="pill warn">limited</span></td><td>Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.</td></tr></tbody></table></div>
+  </section>
+  <section class="panel section">
+    <h2>Onderbouwde Context, Geen Officiële Claim</h2>
+    <div class="callout">Deze rijen zijn de maximaal onderbouwde context die DueSight in deze replay wel heeft gevonden. Ze mogen het DD-verhaal richting geven, maar worden niet gepromoveerd tot officiële finance-, ownership- of UBO-claim.</div>
+    <p class="muted">Geen buyer-safe publieke rijen voor deze sectie; detail blijft beschikbaar in de audit-artifacts.</p>
+  </section>
+  <section class="panel section">
+    <h2>Bewijssterkte Buiten Officiële Documenten</h2>
+    <div class="table-wrap"><table><thead><tr><th>Onderwerp</th><th>Bewijssterkte</th><th>Wat DueSight wel kan zeggen</th><th>Onderbouwing</th><th>Nodig voor officiële claim</th></tr></thead><tbody><tr><td>Groeps- en transactiecontext</td><td><span class="pill warn">Middel als onderbouwde context</span></td><td>DueSight beoordeelt eventuele groeps- of transactiecontext voor N.V. Nederlandse Gasunie alleen wanneer die uit targetrelevante bronnen komt.</td><td>10 rows / 0 memo-safe<br>open identity reference, GLEIF, Public Website, archive discovery</td><td>Current registry extract, shareholder register, transaction document or licensed provider output with document hash.</td></tr><tr><td>Management en aanspreekpunten</td><td><span class="pill warn">Middel als onderbouwde context</span></td><td>DueSight heeft publiek brongebonden management-/rolcontext voor N.V. Nederlandse Gasunie gevonden.</td><td>6 rows / 6 memo-safe<br>sanctions screening route, gasunie.nl</td><td>Official register/director extract or client-confirmed management schedule for legally binding role claims.</td></tr><tr><td>Groei- en marktcontext</td><td><span class="pill warn">Laag / discovery</span></td><td>Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.</td><td>1 rows / 0 memo-safe<br>audit artifact</td><td>Primary award page/PDF/article capture plus annual account, seller P&amp;L or provider finance document with hash.</td></tr><tr><td>Professionele/sociale corroboratie</td><td><span class="pill warn">Laag / discovery</span></td><td>LinkedIn/professional-profile routes leveren corroboratie en discovery-hints, geen zelfstandige ownership- of personeelsclaim.</td><td>0 rows / 0 memo-safe<br></td><td>Official website, register or contracted provider corroboration for each people/company profile claim.</td></tr><tr><td>Financiële claimbaarheid</td><td><span class="pill warn">Geblokkeerd voor officiële finance-claim</span></td><td>De finance-route is technisch aanwezig, maar de replay heeft geen target-specifieke officiële filing of P&amp;L opgehaald.</td><td>2 rows / 0 memo-safe<br>finance source route</td><td>KVK/Dataservice annual account, XBRL/PDF filing, seller P&amp;L or licensed provider finance document with source hash.</td></tr><tr><td>Juridische eigendom / UBO</td><td><span class="pill warn">Geblokkeerd voor officiële ownership/UBO-claim</span></td><td>Publieke structuurcontext kan richting geven, maar juridisch eigendom/UBO blijft niet officieel bewezen in deze replay.</td><td>5 rows / 1 memo-safe<br>sanctions screening route, GLEIF LEI register corroboration, DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2</td><td>Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash.</td></tr></tbody></table></div>
+    <div class="metric-grid"><div class="metric-card ok"><span>Teamrollen</span><strong>6</strong></div><div class="metric-card ok"><span>Concurrenten</span><strong>0</strong></div><div class="metric-card ok"><span>Skill buckets</span><strong>0</strong></div><div class="metric-card ok"><span>Identity delta</span><strong>02010556</strong></div></div>
+  </section>
+  <section class="panel section">
+    <h2>Kernbevindingen</h2>
+    <div class="table-wrap"><table><thead><tr><th>Layer</th><th>Finding</th><th>Source</th><th>Status</th><th>Confidence</th><th>Limitation</th></tr></thead><tbody><tr><td>No sanctions/PEP match</td><td>No claim-safe sanctions or PEP risk match was found for N.V. Nederlandse Gasunie.</td><td>sanctions_enricher_v1</td><td><span class="pill ok">OK</span></td><td>Medium</td><td>Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.</td></tr><tr><td>Company website profile</td><td>N.V. Nederlandse Gasunie has an official website page relevant to company profile: Gasunie.</td><td>https://www.gasunie.nl/</td><td><span class="pill ok">OK</span></td><td>High</td><td>Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.</td></tr><tr><td>Company website profile</td><td>N.V. Nederlandse Gasunie has an official website page relevant to company profile: Gasunie.</td><td>https://www.gasunie.nl/nl</td><td><span class="pill ok">OK</span></td><td>High</td><td>Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.</td></tr><tr><td>Company website profile</td><td>N.V. Nederlandse Gasunie has an official website page relevant to company profile: Gasunie.</td><td>https://www.gasunie.nl/en</td><td><span class="pill ok">OK</span></td><td>High</td><td>Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.</td></tr><tr><td>Company website profile</td><td>N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.</td><td>https://www.gasunie.nl/contact</td><td><span class="pill ok">OK</span></td><td>High</td><td>Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.</td></tr><tr><td>Company website profile</td><td>N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.</td><td>https://www.gasunie.nl/nl/contact</td><td><span class="pill ok">OK</span></td><td>High</td><td>Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.</td></tr></tbody></table></div>
+  </section>
+  <section class="panel section">
+    <h2>Official-Proof Gates</h2>
+    <div class="callout">Belangrijke beperking: finance_source en ownership_ubo blijven geblokkeerd voor officiële claims zolang KvK/jaarrekening/UBO/shareholder- of provider-documenten met bronhash ontbreken. Open blockers: finance_source, ownership_ubo. Attach KvK/Dataservice finance filings, lawful UBO extract or a licensed provider document with hash, then rerun certified replay.</div>
+  </section>
+  <div class="footer">DueSight certified sample replay. Public/authorized sources only; auditdetails staan in JSON-artifacts.</div>
+</main></body></html>

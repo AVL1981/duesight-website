@@ -1,0 +1,170 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "Shell plc",
+    "domain": "shell.com",
+    "kvk": "",
+    "country": "GB",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T10:15:26+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "deep_research_crawl",
+        "glm_direct"
+      ],
+      "provider_count": 2,
+      "source_urls": [
+        "https://PDF.pdf",
+        "https://amecorg.com/member/shell-plc/",
+        "https://bebee.com/gb/jobs/portfolio-analyst-product-trading-london-uk-shell-plc-london--techmap_gb_24139119",
+        "https://builtin.com/job/shell-graduate-programme-2026-india/7118898",
+        "https://dare.uva.nl/document/2/81261",
+        "https://en.wikipedia.org/wiki/Shell_plc",
+        "https://finance.yahoo.com/quote/SHEL/",
+        "https://investor.ecovyst.com/sec-filings/all-sec-filings/content/0001140361-25-012748/0001140361-25-012748.pdf",
+        "https://live.euronext.com/en/products/equities/company-news/2025-03-25-shell-publishes-annual-report-and-accounts",
+        "https://royaldutchshellgroup.com/2016/09/19/88205/",
+        "https://royaldutchshellplc.com/",
+        "https://shell.com/",
+        "https://shell.com/about",
+        "https://shell.com/careers",
+        "https://shell.com/contact"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "glm_direct",
+        "local_xortron",
+        "minimax_search"
+      ],
+      "provider_count": 4,
+      "source_urls": [
+        "http://www.shell.com",
+        "http://www.shell.com/about-us/",
+        "http://www.shell.com/about-us/leadership.html",
+        "http://www.shell.com/about-us/our-business.html",
+        "http://www.shell.com/about-us/our-headquarters.html",
+        "http://www.shell.com/about-us/what-we-do.html",
+        "http://www.shell.com/investors.html",
+        "http://www.shell.com/investors/results-and-reporting.html",
+        "https://PDF.pdf",
+        "https://api.gleif.org/",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Shell+plc&page%5Bsize%5D=5",
+        "https://bebee.com/gb/jobs/senior-ri[REDACTED_SECRET",
+        "https://uk.linkedin.com/company/shell",
+        "https://www.facebook.com/groups/1239227684930825/posts/1297906832396243/",
+        "https://www.shell.co.uk/about-us/sustainability/people-and-communities/energy-transition-jobs-and-skills.html"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_b"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "http://www.bp.com",
+        "http://www.shell.com",
+        "http://www.shell.com/about-us/",
+        "http://www.shell.com/about-us/leadership.html",
+        "http://www.shell.com/about-us/our-business.html",
+        "http://www.shell.com/about-us/our-headquarters.html",
+        "http://www.shell.com/about-us/what-we-do.html",
+        "http://www.shell.com/investors.html",
+        "http://www.shell.com/investors/results-and-reporting.html",
+        "https://BP.com",
+        "https://PDF.pdf",
+        "https://amecorg.com/member/shell-plc/",
+        "https://api.gleif.org/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "competitors",
+      "providers": [
+        "glm_direct"
+      ],
+      "provider_count": 1,
+      "source_urls": [
+        "https://PDF.pdf"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "antigravity_codeassist",
+        "codex_cli"
+      ],
+      "provider_count": 2,
+      "source_urls": [
+        "http://www.shell.com/about-us/leadership.html",
+        "https://api.gleif.org/",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Shell+plc&page%5Bsize%5D=5",
+        "https://find-and-update.company-information.service.gov.uk/company/04366849",
+        "https://find-and-update.company-information.service.gov.uk/company/04366849/persons-with-significant-control",
+        "https://lei.info/21380068P1DRHMJ8KU70",
+        "https://ofac.treasury.gov/sanctions-list-search-tool",
+        "https://shell.gcs-web.com/news-releases/news-release-details/shell-plc-1st-quarter-2026-unaudited-results",
+        "https://www.asa.org.uk/rulings/shell-uk-ltd-g22-1170842-shell-uk-ltd.html",
+        "https://www.gov.uk/government/publications/the-uk-sanctions-list",
+        "https://www.iana.org/domains/root/db/shell.html",
+        "https://www.rechtspraak.nl/organisatie-en-contact/organisatie/gerechtshoven/gerechtshof-den-haag/nieuws/hague-court-denies-claim-for-reduction-in-shells-co2-emissions",
+        "https://www.sec.gov/Archives/edgar/data/1306965/000162828026017027/shellannualreportandacco.htm",
+        "https://www.shell.com/careers/information-technology/information-and-digital-engineering.html",
+        "https://www.shell.com/careers/trading-and-supply.html"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "codex_cli",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "http://www.bp.com",
+        "http://www.shell.com",
+        "http://www.shell.com/about-us/leadership.html",
+        "http://www.shell.com/about-us/our-business.html",
+        "http://www.shell.com/about-us/our-headquarters.html",
+        "http://www.shell.com/about-us/what-we-do.html",
+        "http://www.shell.com/investors.html",
+        "http://www.shell.com/investors/results-and-reporting.html",
+        "https://BP.com",
+        "https://PDF.pdf",
+        "https://amecorg.com/member/shell-plc/",
+        "https://api.gleif.org/",
+        "https://find-and-update.company-information.service.gov.uk/",
+        "https://find-and-update.company-information.service.gov.uk/company/04366849",
+        "https://find-and-update.company-information.service.gov.uk/company/04366849/persons-with-significant-control"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

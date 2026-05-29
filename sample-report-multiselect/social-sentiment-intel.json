@@ -1,0 +1,81 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-multiselect-b.v.-20260529T084846Z",
+  "target": {
+    "name": "Multiselect B.V.",
+    "domain": "multiselect.nl",
+    "kvk": "",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T08:48:46+00:00",
+  "summary": {
+    "status": "completed_with_review",
+    "updated_at": "2026-05-29T08:48:46+00:00",
+    "gate_decision": "REVIEW",
+    "social_status": "executed",
+    "sentiment_status": "deferred",
+    "platforms_checked": 443,
+    "profiles_found": 60,
+    "promoted_social_sources": 5,
+    "sentiment_sources_active": 0,
+    "sentiment_sources_total": 0,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "Multiselect B.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=multiselect.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "source_status": "source-bound",
+        "checked_at": "2026-05-29T08:48:46+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=multiselect.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "https://www.youtube.com/@multiselect",
+        "https://twitter.com/multiselect",
+        "https://www.instagram.com/multiselecttechniek/",
+        "https://github.com/shentao/vue-multiselect"
+      ],
+      "raw_profiles_found_internal": 60,
+      "promoted_sources_count": 5
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment was not promoted in this replay.",
+      "claim_level": "not promoted",
+      "public_report_allowed": false,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "deferred",
+        "checked_at": "2026-05-29T08:48:46+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": true,
+        "confidence": "Low",
+        "limitation": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context."
+      }
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=multiselect.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      "s source-backed context, not a substitute for official register evidence.\", \"privacy_policy\": \"Business-role data only; social/search snippets remain discovery hints unless corroborated.\", \"website_profile\": {\"status\": \"available\", \"website\": \"https://multiselect.nl\", \"website_pages\": [{\"url\": \"https://multiselect.nl/\", \"path\": \"/\", \"title\": \"Multiselect.nl - Ingenieurs in bouw, civiel & techniek\""
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

@@ -1,0 +1,950 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "Wise plc",
+    "domain": "wise.com",
+    "kvk": "",
+    "country": "GB",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T08:06:15+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 10,
+  "failed_or_skipped": 8,
+  "target_site_crawl": {
+    "pages_checked": 40,
+    "source_urls": [
+      "https://wise.com/",
+      "https://wise.com/nl/",
+      "https://wise.com/team",
+      "https://wise.com/about",
+      "https://wise.com/careers",
+      "https://wise.com/contact",
+      "https://wise.com/de/business/manage-team",
+      "https://wise.com/gb/business/contact",
+      "https://wise.com/de/about/our-story",
+      "https://wise.com/de/blog",
+      "https://wise.com/de/partnerwise",
+      "https://wise.com/de/about/wise-reviews",
+      "https://wise.com/nl/business/manage-team",
+      "https://wise.com/nl/about/our-story",
+      "https://wise.com/nl/blog",
+      "https://wise.com/nl/partnerwise",
+      "https://wise.com/gb/about/wise-reviews",
+      "https://wise.com/gb/about/our-story",
+      "https://wise.com/cz/about/our-story",
+      "https://wise.com/us/about/our-story",
+      "https://wise.com/ca/about/our-story",
+      "https://wise.com/jp/about/our-story",
+      "https://wise.com/th/about/our-story",
+      "https://wise.com/my/about/our-story",
+      "https://wise.com/ch/about/our-story",
+      "https://wise.com/it/about/our-story",
+      "https://wise.com/sg/about/our-story",
+      "https://wise.com/nz/about/our-story",
+      "https://wise.com/hk/about/our-story"
+    ],
+    "pages": [
+      {
+        "url": "https://wise.com/",
+        "status": 200,
+        "title": "Wise: The international account | Money without borders | Wise Germany",
+        "bytes": 599542
+      },
+      {
+        "url": "https://wise.com/nl/",
+        "status": 200,
+        "title": "Wise, de internationale rekening | Geld zonder grenzen | Wise Nederland",
+        "bytes": 599583
+      },
+      {
+        "url": "https://wise.com/en/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/team",
+        "status": 200,
+        "title": "Wise - Login",
+        "bytes": 91876
+      },
+      {
+        "url": "https://wise.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/en/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/about",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 598371
+      },
+      {
+        "url": "https://wise.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/careers",
+        "status": 200,
+        "title": "MAKE A WISE MOVE",
+        "bytes": 278576
+      },
+      {
+        "url": "https://wise.com/nl/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/en/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/contact",
+        "status": 200,
+        "title": "Wise - Login",
+        "bytes": 91892
+      },
+      {
+        "url": "https://wise.com/sitemap.xml",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://wise.com/de/business/manage-team",
+        "status": 200,
+        "title": "Finanzverwaltung im Team – mit Wise Business<!-- --> - Wise",
+        "bytes": 587768
+      },
+      {
+        "url": "https://wise.com/gb/business/contact",
+        "status": 200,
+        "title": "Contact the Wise Business sales team today",
+        "bytes": 599400
+      },
+      {
+        "url": "https://wise.com/de/about/our-story",
+        "status": 200,
+        "title": "Die Geschichte von Wise<!-- --> - Wise",
+        "bytes": 598881
+      },
+      {
+        "url": "https://wise.com/de/blog",
+        "status": 200,
+        "title": "Deutschland Blog - Wise",
+        "bytes": 445368
+      },
+      {
+        "url": "https://wise.com/de/partnerwise",
+        "status": 200,
+        "title": "Affiliate und Business Auszahlungen<!-- --> - Wise",
+        "bytes": 584102
+      },
+      {
+        "url": "https://wise.com/de/about/wise-reviews",
+        "status": 200,
+        "title": "Reviews für Wise (zuvor TransferWise) | Lies dir unsere Kundenbewertungen durch<!-- --> - Wise",
+        "bytes": 598611
+      },
+      {
+        "url": "https://wise.com/nl/business/manage-team",
+        "status": 200,
+        "title": "Beheer je teambudgetten met Wise Zakelijk<!-- --> - Wise",
+        "bytes": 585639
+      },
+      {
+        "url": "https://wise.com/nl/about/our-story",
+        "status": 200,
+        "title": "Het verhaal van Wise<!-- --> - Wise",
+        "bytes": 599447
+      },
+      {
+        "url": "https://wise.com/nl/blog",
+        "status": 200,
+        "title": "Nederland Blog - Wise",
+        "bytes": 435140
+      },
+      {
+        "url": "https://wise.com/nl/partnerwise",
+        "status": 200,
+        "title": "Wise Partnerships<!-- --> - Wise",
+        "bytes": 579179
+      },
+      {
+        "url": "https://wise.com/gb/about/wise-reviews",
+        "status": 200,
+        "title": "Wise (formerly TransferWise) Reviews | Read our Customer Reviews<!-- --> - Wise",
+        "bytes": 599347
+      },
+      {
+        "url": "https://wise.com/gb/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 598371
+      },
+      {
+        "url": "https://wise.com/cz/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 598458
+      },
+      {
+        "url": "https://wise.com/us/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 593594
+      },
+      {
+        "url": "https://wise.com/ca/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 597578
+      },
+      {
+        "url": "https://wise.com/jp/about/our-story",
+        "status": 200,
+        "title": "Wise（ワイズ）の歴史<!-- --> - Wise",
+        "bytes": 575344
+      },
+      {
+        "url": "https://wise.com/th/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 349893
+      },
+      {
+        "url": "https://wise.com/my/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 377937
+      },
+      {
+        "url": "https://wise.com/ch/about/our-story",
+        "status": 200,
+        "title": "Die Geschichte von Wise<!-- --> - Wise",
+        "bytes": 598884
+      },
+      {
+        "url": "https://wise.com/it/about/our-story",
+        "status": 200,
+        "title": "La Storia di Wise<!-- --> - Wise",
+        "bytes": 599251
+      },
+      {
+        "url": "https://wise.com/sg/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 597932
+      },
+      {
+        "url": "https://wise.com/nz/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 593499
+      },
+      {
+        "url": "https://wise.com/hk/about/our-story",
+        "status": 200,
+        "title": "The Story of Wise<!-- --> - Wise",
+        "bytes": 563306
+      }
+    ]
+  },
+  "source_urls_count": 65,
+  "source_urls": [
+    "https://wise.com/",
+    "https://wise.com/nl/",
+    "https://wise.com/team",
+    "https://wise.com/about",
+    "https://wise.com/careers",
+    "https://wise.com/contact",
+    "https://wise.com/de/business/manage-team",
+    "https://wise.com/gb/business/contact",
+    "https://wise.com/de/about/our-story",
+    "https://wise.com/de/blog",
+    "https://wise.com/de/partnerwise",
+    "https://wise.com/de/about/wise-reviews",
+    "https://wise.com/nl/business/manage-team",
+    "https://wise.com/nl/about/our-story",
+    "https://wise.com/nl/blog",
+    "https://wise.com/nl/partnerwise",
+    "https://wise.com/gb/about/wise-reviews",
+    "https://wise.com/gb/about/our-story",
+    "https://wise.com/cz/about/our-story",
+    "https://wise.com/us/about/our-story",
+    "https://wise.com/ca/about/our-story",
+    "https://wise.com/jp/about/our-story",
+    "https://wise.com/th/about/our-story",
+    "https://wise.com/my/about/our-story",
+    "https://wise.com/ch/about/our-story",
+    "https://wise.com/it/about/our-story",
+    "https://wise.com/sg/about/our-story",
+    "https://wise.com/nz/about/our-story",
+    "https://wise.com/hk/about/our-story",
+    "https://www.occ.treas.gov/topics/charters-and-licensing/public-comment/wise-national-trust-application.pdf",
+    "https://cdn.prod.website-files.com/5e1533c83b28b3131344ab22/69cad958d8bd2caea326782f_i-Select%20Superannuation%20Scheme%20Investment%20Options%20Supplement%2031.03.2026.pdf",
+    "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus(13April2026).pdf",
+    "https://www.ftassociation.org/wp-content/uploads/2025/02/Lee-Declaration-stamped.pdf",
+    "https://infobytes.orrick.com/wp-content/uploads/RENEWED-MOTION-TO-INTERVENE.pdf",
+    "https://anchor.fm/s/34e2d888/podcast/rss",
+    "https://wise.com/imaginary-v2/Wise-Annual-Report-Accounts-FY2023.pdf",
+    "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+    "https://wise.com/imaginary-v2/images/3f1628373b212ca54c1ac73c68d69b72-WISE-2024-Annual-Report-and-Accounts.pdf",
+    "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+    "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+    "https://owners.wise.com/investor-relations",
+    "https://www.consumeraffairs.com/finance/transferwise.html?page=3",
+    "https://digikogu.taltech.ee/et/Download/3ccc0f5b-efb5-41fb-9e2d-aeba36aba0b7",
+    "https://wise.com/imaginary-v2/images/ad736416f90791dbb49c7e59f1f45d8d-WiseFY2025AnnualReportAccounts.pdf",
+    "https://wise.com/imaginary-v2/images/2aeb66e27009d06acbd6f46f746feae2-WIS001_Book.pdf",
+    "https://telescopeinvesting.com/should-you-invest-in-wise/",
+    "https://wise.com/imaginary-v2/images/97c51957002352675ad2f67f905e9950-WISE_PLC_HY_FY25_RNS.pdf",
+    "https://wise.com/imaginary-v2/images/7225a78f5d177b9bba2c8152e664ee7e-Wiseplc-FY2025.pdf",
+    "https://owners.wise.com/static-files/c80f329d-a678-4de2-82a5-49a0c799af64",
+    "https://www.foragerfunds.com/news",
+    "https://www.stocktitan.net/sec-filings/CURR/20-f-currenc-group-inc-files-annual-report-foreign-issuer-152a6c1754be.html",
+    "https://www.scribd.com/document/837231485/Americas-Technology-Software-Gen-AI-Part-VIII-Catalyst-or-Culprit-1",
+    "https://www.trustpilot.com/review/wise.com",
+    "https://wise.jobs/",
+    "https://www.investormeetcompany.com/companies/wise-plc/rns/4035305/view",
+    "https://www.linkedin.com/company/wiseaccount",
+    "https://newsroom.wise.com/en-NAM/assets/228784/",
+    "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f",
+    "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f/fxwise-fxwisecom",
+    "https://wise.com/gb/blog/",
+    "https://finance.yahoo.com/quote/WISE.L/",
+    "https://wise.com/gb/about/wise-share-price",
+    "https://en.wikipedia.org/wiki/Wise_(company)",
+    "https://www.reveliolabs.com/companies/wise/employees/",
+    "https://www.londonstockexchange.com/news-article/WISE/publication-of-scheme-circular/17117568"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"Wise plc\" \"wise.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "executed_retry",
+      "elapsed_s": 1.674,
+      "discovered_urls_count": 15,
+      "source_urls": [
+        "https://www.occ.treas.gov/topics/charters-and-licensing/public-comment/wise-national-trust-application.pdf",
+        "https://cdn.prod.website-files.com/5e1533c83b28b3131344ab22/69cad958d8bd2caea326782f_i-Select%20Superannuation%20Scheme%20Investment%20Options%20Supplement%2031.03.2026.pdf",
+        "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus(13April2026).pdf",
+        "https://www.ftassociation.org/wp-content/uploads/2025/02/Lee-Declaration-stamped.pdf",
+        "https://infobytes.orrick.com/wp-content/uploads/RENEWED-MOTION-TO-INTERVENE.pdf",
+        "https://anchor.fm/s/34e2d888/podcast/rss",
+        "https://wise.com/imaginary-v2/Wise-Annual-Report-Accounts-FY2023.pdf",
+        "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+        "https://wise.com/imaginary-v2/images/3f1628373b212ca54c1ac73c68d69b72-WISE-2024-Annual-Report-and-Accounts.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "[PDF] Proposed Wise National Trust Application - OCC",
+          "snippet": "nonpublic pro forma financial information regarding the business strategies and plans of Wise plc ... https://wise.com/imaginary-v2/images ...",
+          "url": "https://www.occ.treas.gov/topics/charters-and-licensing/public-comment/wise-national-trust-application.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] i-Select Superannuation Scheme | Investment Options Supplement",
+          "snippet": "Wise PLC - GBP (WISE) (Cash Dist). 0.00%. 0.00%. 0.56% https://wise.com/. We're at scale, growing fast and profitable. In bringing transparency ...",
+          "url": "https://cdn.prod.website-files.com/5e1533c83b28b3131344ab22/69cad958d8bd2caea326782f_i-Select%20Superannuation%20Scheme%20Investment%20Options%20Supplement%2031.03.2026.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Wise Group plc",
+          "snippet": "Wise Group's website is www.wise.com. Except to the extent expressly ... Wise plc, a public limited company incorporated in. England and ...",
+          "url": "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus(13April2026).pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Lee-Declaration-stamped.pdf - Financial Technology Association",
+          "snippet": "wise.com. December 29, 2023. Filed via Electronic Submission: https ... Stock Exchange under the ticker symbol “WISE PLC.” In the United ...",
+          "url": "https://www.ftassociation.org/wp-content/uploads/2025/02/Lee-Declaration-stamped.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Case: 5:24-cv-00304-DCR Doc #: 43 Filed: 03/26/25 Page - InfoBytes",
+          "snippet": "wise.com. December 29, 2023. Filed via Electronic Submission: https://www ... Stock Exchange under the ticker symbol “WISE PLC.” In the United States ...",
+          "url": "https://infobytes.orrick.com/wp-content/uploads/RENEWED-MOTION-TO-INTERVENE.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Wise plc\" acquisition overname parent group investor shareholder \"wise.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "executed",
+      "elapsed_s": 1.792,
+      "discovered_urls_count": 3,
+      "source_urls": [
+        "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+        "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+        "https://owners.wise.com/investor-relations"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "[PDF] Prospectus July 2021 - Wise",
+          "snippet": "This document comprises a Prospectus relating to Wise plc prepared in accordance with the Prospectus Regulation Rules.",
+          "url": "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Wise plc Wise Group plc",
+          "snippet": "If the Scheme is not approved by Wise Shareholders then Wise would remain the ultimate parent company of the Group and would retain its existing ...",
+          "url": "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Wise Plc. Investor relations (IR) website contains information about our business for stockholders, potential investors, and financial analysts.",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Wise plc\" vacancies careers jobs hiring skills competitors \"wise.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "executed",
+      "elapsed_s": 1.275,
+      "discovered_urls_count": 14,
+      "source_urls": [
+        "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus(13April2026).pdf",
+        "https://wise.com/imaginary-v2/images/3f1628373b212ca54c1ac73c68d69b72-WISE-2024-Annual-Report-and-Accounts.pdf",
+        "https://www.consumeraffairs.com/finance/transferwise.html?page=3",
+        "https://digikogu.taltech.ee/et/Download/3ccc0f5b-efb5-41fb-9e2d-aeba36aba0b7",
+        "https://wise.com/imaginary-v2/images/ad736416f90791dbb49c7e59f1f45d8d-WiseFY2025AnnualReportAccounts.pdf",
+        "https://wise.com/imaginary-v2/images/2aeb66e27009d06acbd6f46f746feae2-WIS001_Book.pdf",
+        "https://wise.com/imaginary-v2/Wise-Annual-Report-Accounts-FY2023.pdf",
+        "https://telescopeinvesting.com/should-you-invest-in-wise/",
+        "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+        "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "[PDF] Wise Group plc",
+          "snippet": "wise.com/owners. A copy of this Prospectus has ... over such U.S. Holder's tax basis in the ordinary shares of Wise plc surrendered in the.",
+          "url": "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus(13April2026).pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] WISE 2024 Annual Report and Accounts",
+          "snippet": "which is available on our website at https://wise.com/owners/corporate-governance. ... Wise plc (the 'Company') is a public limited company ...",
+          "url": "https://wise.com/imaginary-v2/images/3f1628373b212ca54c1ac73c68d69b72-WISE-2024-Annual-Report-and-Accounts.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "500+ Wise (formerly TransferWise) Reviews | Page 3",
+          "snippet": "... in Brazil on Wise.com (membership number **). Wise informed me the ... They have a ticker Wise plc (WISE.L) - Eurotrash stock market ...",
+          "url": "https://www.consumeraffairs.com/finance/transferwise.html?page=3",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Financial analysis and valuation of a Wise PLC - Digikogu",
+          "snippet": "In 2021 Wise PLC. became a publicly traded company through direct ... https://wise.com/us/blog/looking-ahead-to-transferwise-in-2016.",
+          "url": "https://digikogu.taltech.ee/et/Download/3ccc0f5b-efb5-41fb-9e2d-aeba36aba0b7",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 2025 Annual Report and Accounts - Wise",
+          "snippet": "In FY2025, a Non-Executive Director of Wise plc undertook an ... wise.com/owners/corporate-governance. Day-to-day management of the ...",
+          "url": "https://wise.com/imaginary-v2/images/ad736416f90791dbb49c7e59f1f45d8d-WiseFY2025AnnualReportAccounts.pdf",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Wise plc\" revenue omzet growth FT1000 annual report ranking \"wise.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "executed",
+      "elapsed_s": 1.688,
+      "discovered_urls_count": 4,
+      "source_urls": [
+        "https://owners.wise.com/investor-relations",
+        "https://wise.com/imaginary-v2/images/97c51957002352675ad2f67f905e9950-WISE_PLC_HY_FY25_RNS.pdf",
+        "https://wise.com/imaginary-v2/images/7225a78f5d177b9bba2c8152e664ee7e-Wiseplc-FY2025.pdf",
+        "https://owners.wise.com/static-files/c80f329d-a678-4de2-82a5-49a0c799af64"
+      ],
+      "source_urls_count": 4,
+      "matched_results": [
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Wise Plc. Investor relations (IR) website contains information about our business for stockholders, potential investors, and financial analysts.",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] WISE PLC HY FY25 RNS (Release Version)",
+          "snippet": "This drove another six months of strong financial performance with YoY growth in active customers of 25%, underlying income of 19%, cross border ...",
+          "url": "https://wise.com/imaginary-v2/images/97c51957002352675ad2f67f905e9950-WISE_PLC_HY_FY25_RNS.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Wise plc - FY2025",
+          "snippet": "Customer growth, account adoption and higher interest rates drove underlying income up 16%. YoY to £1.4bn FY2024 £1.2bn) and revenue up 15% to ...",
+          "url": "https://wise.com/imaginary-v2/images/7225a78f5d177b9bba2c8152e664ee7e-Wiseplc-FY2025.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] WISE PLC HY FY26 RNS",
+          "snippet": "Our customers moved £84.9bn with us in H1 FY26, an increase of 24% vs H1 FY25. 26% on a constant currency basis). Investments in our ...",
+          "url": "https://owners.wise.com/static-files/c80f329d-a678-4de2-82a5-49a0c799af64",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Wise plc\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed",
+      "elapsed_s": 1.32,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+        "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+        "https://www.foragerfunds.com/news",
+        "https://www.stocktitan.net/sec-filings/CURR/20-f-currenc-group-inc-files-annual-report-foreign-issuer-152a6c1754be.html",
+        "https://www.scribd.com/document/837231485/Americas-Technology-Software-Gen-AI-Part-VIII-Catalyst-or-Culprit-1"
+      ],
+      "source_urls_count": 5,
+      "matched_results": [
+        {
+          "title": "[PDF] Prospectus July 2021 - Wise",
+          "snippet": "This document comprises a Prospectus relating to Wise plc prepared in accordance with the Prospectus Regulation Rules.",
+          "url": "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Wise Group plc",
+          "snippet": "Pursuant to the Reorganization Transaction (as defined in the registration statement), the holders of ordinary shares of Wise plc will receive ...",
+          "url": "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "News - Forager Funds",
+          "snippet": "Patience Pays for Wise Plc. Read. Wise Plc (LSE:WISE) is a stock the Forager International Shares Fund team has followed since its 2021 IPO. The elegantly ...",
+          "url": "https://www.foragerfunds.com/news",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "Currenc 20-F: Going concern, Animoca merger, Tranglo sale",
+          "snippet": "recruiting and retaining talented and capable management and employees in various markets; ... WISE, plc (“WISE”) and Singapore Telecommunications ...",
+          "url": "https://www.stocktitan.net/sec-filings/CURR/20-f-currenc-group-inc-files-annual-report-foreign-issuer-152a6c1754be.html",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "Gen-AI Investment Insights and Trends | PDF - Scribd",
+          "snippet": "... Wise PLC, Worldline The rating(s) for Fair Isaac Corp., Iron Mountain Inc., S&P Global Inc. and Thomson Reuters Corp. is/are relative to the other companies ...",
+          "url": "https://www.scribd.com/document/837231485/Americas-Technology-Software-Gen-AI-Part-VIII-Catalyst-or-Culprit-1",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"Wise plc\" OR \"wise.com\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.728,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.trustpilot.com/review/wise.com",
+        "https://owners.wise.com/investor-relations",
+        "https://wise.jobs/",
+        "https://wise.com/us/about/our-story",
+        "https://www.investormeetcompany.com/companies/wise-plc/rns/4035305/view",
+        "https://www.linkedin.com/company/wiseaccount",
+        "https://newsroom.wise.com/en-NAM/assets/228784/"
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "Read Customer Service Reviews of wise.com - Trustpilot",
+          "snippet": "Wise logo · Visit website. Claimed profile. Paid Trustpilot subscription. Wise ... About us · Jobs · Contact · Blog · How Trustpilot works · Press · Investor ...",
+          "url": "https://www.trustpilot.com/review/wise.com",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Leadership Team · Corporate Governance · Committee Charters. Company. Wise.com · About Us · Careers · Press. © 2026 Wise Plc. All rights reserved. Authorised by ...",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "MAKE A WISE MOVE",
+          "snippet": "company logo. Keyword. Search. Shortlist 0. company logo. Our business. Back. Our ... team in our São Paulo office!The WFM Operations Partner Lead is the ...",
+          "url": "https://wise.jobs/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Story of Wise",
+          "snippet": "And we've built a team that's dedicated to keeping your money safe, and the process watertight. ... www.businessinsider.com logo. Inside the rise of the $5 ...",
+          "url": "https://wise.com/us/about/our-story",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Change of Registered Office, 03 March 2025 07:00 | WISE - WISE PLC",
+          "snippet": "Wise plc has changed its registered office to 1st Floor, Worship Square, 65 ... cosec@wise.com. About Wise. Wise is a global technology company, building ...",
+          "url": "https://www.investormeetcompany.com/companies/wise-plc/rns/4035305/view",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.29,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.336,
+      "discovered_urls_count": 5,
+      "source_urls": [
+        "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f",
+        "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f/fxwise-fxwisecom"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "f",
+          "snippet": "FX-Wise (fx-wise.com)(opens in a new window) (12-04-2024); Fx2 Funding(opens in a new window) (27-12-2023); FX24TRADE.IO(opens in a new window) (20-06-2023) ...",
+          "url": "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "FXWise fxwisecom - AFM",
+          "snippet": "FX-Wise (fx-wise.com). https://moneysmart.gov.au/check-and-report-scams/investor-alert-list#!fx-wise-fx-wise-com--1768 (opens in a new window) ...",
+          "url": "https://www.afm.nl/nl-nl/consumenten/waarschuwingen/bekijk-de-waarschuwingen/f/fxwise-fxwisecom",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.279,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.303,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.329,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.265,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.143,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.286,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"Wise plc\" OR \"wise.com\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.312,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"Wise plc\" OR \"wise.com\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:GB",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.369,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://wise.com/gb/blog/",
+        "https://owners.wise.com/investor-relations",
+        "https://finance.yahoo.com/quote/WISE.L/"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "United Kingdom Blog - Wise",
+          "snippet": "Welcome to the Wise blog for United Kingdom — a must-read for anyone sending money abroad. Find out how to save on international money transfers & manage ...",
+          "url": "https://wise.com/gb/blog/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Wise.com · About Us · Careers · Press. © 2026 Wise Plc. All rights reserved. Authorised by the Financial Conduct Authority. This website is for information ...",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise Group plc (WISE.L) Stock Price, News, Quote & History",
+          "snippet": "Wise Group plc was founded in 2010 and is based in London, the United Kingdom. wise.com. 6,500. Full Time Employees. March 31. Fiscal Year Ends. Technology ...",
+          "url": "https://finance.yahoo.com/quote/WISE.L/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@wise.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.237,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+        "https://owners.wise.com/investor-relations",
+        "https://wise.com/gb/about/wise-share-price",
+        "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+        "https://en.wikipedia.org/wiki/Wise_(company)",
+        "https://wise.com/imaginary-v2/images/7225a78f5d177b9bba2c8152e664ee7e-Wiseplc-FY2025.pdf",
+        "https://wise.com/imaginary-v2/images/ad736416f90791dbb49c7e59f1f45d8d-WiseFY2025AnnualReportAccounts.pdf",
+        "https://www.reveliolabs.com/companies/wise/employees/",
+        "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+        "https://www.londonstockexchange.com/news-article/WISE/publication-of-scheme-circular/17117568"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "[PDF] Prospectus July 2021 - Wise",
+          "snippet": "with Wise plc, pursuant to which Wise plc acquired the entire issued share capital ... 213800LD9XCHIC1C4V71 and our website is www.wise.com.",
+          "url": "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Wise.com · About Us · Careers · Press. © 2026 Wise Plc. All rights reserved. Authorised by the Financial Conduct Authority. This website is for information ...",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise PLC Share Price | WISE Stock - Wise",
+          "snippet": "Wise PLC Share Price. Looking for Wise share prices? Our stock ticker is WISE but you'll also find us under LSE : WISE or LON : WISE. Want to become a Wise ...",
+          "url": "https://wise.com/gb/about/wise-share-price",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Wise plc Wise Group plc",
+          "snippet": "(a) a reorganisation of Wise plc (“Wise”) and its subsidiaries ... on the Group's website at wise.com/owners once approved by and filed ...",
+          "url": "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise (company) - Wikipedia",
+          "snippet": "As of 2023, it offers three main products: Wise Account, Wise Business, and Wise Platform. Wise PLC ... wise.com · Edit this at Wikidata. Contents. 1 History; 2 ...",
+          "url": "https://en.wikipedia.org/wiki/Wise_(company)",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"wise.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.301,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+        "https://owners.wise.com/investor-relations",
+        "https://wise.com/gb/about/wise-share-price",
+        "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+        "https://en.wikipedia.org/wiki/Wise_(company)",
+        "https://www.londonstockexchange.com/news-article/WISE/publication-of-scheme-circular/17117568",
+        "https://wise.com/imaginary-v2/images/6b836dfe62f4b6cfcedacf745c69ed7f-WiseGroupplc-USForm20-FDraftRegistrationStatement.pdf",
+        "https://www.reveliolabs.com/companies/wise/employees/",
+        "https://wise.com/imaginary-v2/images/ad736416f90791dbb49c7e59f1f45d8d-WiseFY2025AnnualReportAccounts.pdf",
+        "https://wise.com/imaginary-v2/images/7225a78f5d177b9bba2c8152e664ee7e-Wiseplc-FY2025.pdf"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "[PDF] Prospectus July 2021 - Wise",
+          "snippet": "with Wise plc, pursuant to which Wise plc acquired the entire issued share capital ... 213800LD9XCHIC1C4V71 and our website is www.wise.com.",
+          "url": "https://wise.com/imaginary-v2/images/66edcbaae5e13b596fd612fede0a9482-Wise_Prospectus.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise Plc.: Overview",
+          "snippet": "Wise.com · About Us · Careers · Press. © 2026 Wise Plc. All rights reserved. Authorised by the Financial Conduct Authority. This website is for information ...",
+          "url": "https://owners.wise.com/investor-relations",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise PLC Share Price | WISE Stock - Wise",
+          "snippet": "Wise PLC Share Price. Looking for Wise share prices? Our stock ticker is WISE but you'll also find us under LSE : WISE or LON : WISE. Want to become a Wise ...",
+          "url": "https://wise.com/gb/about/wise-share-price",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Wise plc Wise Group plc",
+          "snippet": "(a) a reorganisation of Wise plc (“Wise”) and its subsidiaries ... on the Group's website at wise.com/owners once approved by and filed ...",
+          "url": "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Wise (company) - Wikipedia",
+          "snippet": "As of 2023, it offers three main products: Wise Account, Wise Business, and Wise Platform. Wise PLC ... wise.com · Edit this at Wikidata. Contents. 1 History; 2 ...",
+          "url": "https://en.wikipedia.org/wiki/Wise_(company)",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "duesight.company_intel_findings.v1",
+  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
+  "target": "NLIST B.V.",
+  "updated_at": "2026-05-29T10:57:04+00:00",
+  "findings": [
+    {
+      "id": "operating-model",
+      "title": "Specialistische technical-talent operatie",
+      "what_duesight_found": "NLIST wordt in de publieke laag zichtbaar als technical staffing / detachering met internationale sourcing, relocation, fieldmanagement en backoffice-uitvoering.",
+      "buyer_value": "Dit is een sterkere buyer-thesis dan een generiek recruitmentbureau: de waarde zit in schaarse profielen plus uitvoering rond relocatie en plaatsing.",
+      "claim_level": "source-backed public context",
+      "evidence_rows": 3,
+      "memo_safe_rows": 3,
+      "sources": [
+        "thespecialistgroup.com",
+        "nlist.nl"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Management pack, klantconcentratie, contractor/FTE split en margebridge voor reliance op schaalbaarheid."
+    },
+    {
+      "id": "management-team",
+      "title": "Publiek team en rolverdeling gevonden",
+      "what_duesight_found": "De target-owned teamlaag noemt managing partners en operationele rollen, waaronder Anne-Jan Geertsma, Dennis Kuiper, Stephanie van der Toorn - Faas, Roy Beekman, consultants, recruiters, relocation en backoffice.",
+      "buyer_value": "Een koper ziet direct of er leadership, commercial, delivery, sourcing en operations capaciteit aanwezig is.",
+      "claim_level": "high public/team-page context",
+      "evidence_rows": 6,
+      "memo_safe_rows": 6,
+      "sources": [
+        "nlist.nl"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Current KvK/director extract of client-confirmed management schedule voor juridisch bindende rolclaims."
+    },
+    {
+      "id": "tsg-group-context",
+      "title": "TSG groeps- en transactiecontext gevonden",
+      "what_duesight_found": "Publieke bronnen koppelen NLIST herhaald aan The Specialist Group en aan een overname-/platformnarratief.",
+      "buyer_value": "Dit maakt de platform-fit, cross-sell en consolidatielogica zichtbaar, maar blijft geen aandeelhoudersbewijs.",
+      "claim_level": "high public transaction context",
+      "evidence_rows": 19,
+      "memo_safe_rows": 7,
+      "sources": [
+        "news.google.com",
+        "nlist.nl",
+        "thespecialistgroup.com",
+        "nl.linkedin.com",
+        "open identity reference",
+        "GLEIF",
+        "Public Website",
+        "archive discovery"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "KvK concernrelaties, aandeelhoudersregister, SPA/transaction document of Kyckr/Sayari/Company.info provider graph met bronhash."
+    },
+    {
+      "id": "market-scarcity",
+      "title": "Schaarste-thema rond technische profielen",
+      "what_duesight_found": "De publieke NLIST-positionering wijst op internationale technische professionals voor Nederlandse schaarsterollen en noemt een grote technische vacaturedruk.",
+      "buyer_value": "Dit geeft sales- en M&A-relevantie: vraag naar engineers, maintenance, field service, technische operations en IT-adjacent rollen.",
+      "claim_level": "commercial context",
+      "evidence_rows": 1,
+      "memo_safe_rows": 1,
+      "sources": [
+        "thespecialistgroup.com"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Vacancy mining, klantsectoranalyse, LinkedIn role clusters en seller pipeline data voor kwantitatieve marktclaim."
+    },
+    {
+      "id": "growth-award-context",
+      "title": "Groei-/awardcontext als lead signal",
+      "what_duesight_found": "De lokale intelligence-laag bevat FT1000/rank/CAGR context voor NLIST, maar nog zonder primaire award artifact in het report pack.",
+      "buyer_value": "Commercieel bruikbaar als signalering voor groei, niet als harde financiele claim.",
+      "claim_level": "review-only growth context",
+      "evidence_rows": 3,
+      "memo_safe_rows": 2,
+      "sources": [
+        "nlist.nl"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Primaire FT1000 awardpagina/PDF/artikel plus jaarrekening, seller P&L of provider finance document."
+    },
+    {
+      "id": "finance-close-route",
+      "title": "Finance route is bekend, cijfers nog niet officieel claimbaar",
+      "what_duesight_found": "Company.info/Creditsafe routes en DueSight finance modules zijn gevonden, maar er is geen target-specifieke jaarrekening/XBRL/P&L met bronhash attached.",
+      "buyer_value": "Het rapport kan de documentvraag scherp maken zonder revenue of resultaatcijfers te verzinnen.",
+      "claim_level": "blocked for official finance claim",
+      "evidence_rows": 5,
+      "memo_safe_rows": 0,
+      "sources": [
+        "Exa"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "KvK Dataservice jaarrekening, XBRL/PDF, management accounts of licensed provider document met source hash."
+    },
+    {
+      "id": "compliance-cyber-signal",
+      "title": "Compliance en cyber geven bruikbare triage, geen eindclearance",
+      "what_duesight_found": "Lokale sanctions/PEP routes gaven geen claim-safe target match; cyber route toont web exposure 80/443, DigitalOcean context en geen CVE-signaal in deze route.",
+      "buyer_value": "Goed voor snelle buyer triage: geen rode paniekclaim, wel duidelijke rerun op directors/UBO en asset-owned cyber scan.",
+      "claim_level": "guarded triage signal",
+      "evidence_rows": 5,
+      "memo_safe_rows": 3,
+      "sources": [
+        "sanctions screening route",
+        "Shodan InternetDB + RDAP"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Directors/UBO identifiers, official asset ownership, TLS/MX/DNS/subdomain/breach scan en full sanctions rerun."
+    },
+    {
+      "id": "research-routes",
+      "title": "Research routes voor verdere verdieping zijn concreet",
+      "what_duesight_found": "Exa, archive/Wayback, LinkedIn discovery, public acquisition and provider discovery routes zijn vastgelegd als vervolgroute.",
+      "buyer_value": "Dit voorkomt een lege gap: DueSight laat zien welke route de volgende euro aan onderzoek het meest waard maakt.",
+      "claim_level": "route-backed context",
+      "evidence_rows": 13,
+      "memo_safe_rows": 2,
+      "sources": [
+        "nl.linkedin.com",
+        "linkedin.com",
+        "archive discovery",
+        "Exa"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Official docs of paid provider output toevoegen en replay opnieuw draaien voor claim-level rapportage."
+    },
+    {
+      "id": "canonical-identity-resolution",
+      "title": "Canonical identity conflict resolved",
+      "what_duesight_found": "De reportconfig gebruikte KvK 85442410, terwijl publieke corroboratie NLIST B.V. koppelt aan KvK 85442410 en vestigingsnummer 000041173562.",
+      "buyer_value": "Dit voorkomt dat finance, registry en UBO-routes langs de juiste entiteit heen zoeken.",
+      "claim_level": "public aggregator corroboration; official KvK extract required for final reliance",
+      "evidence_rows": 2,
+      "memo_safe_rows": 1,
+      "sources": [
+        "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
+        "https://bizzy.org/nl/nl/85442410/nlist-bv",
+        "https://nlist.nl/en/contact"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Current KvK extract or licensed provider dossier with source hash."
+    },
+    {
+      "id": "management-operating-map",
+      "title": "Management en operating map uitgebreid",
+      "what_duesight_found": "De business-profile laag bevat 21 target-owned team/contactrollen, verdeeld over leadership, commercial delivery, sourcing en operations-support.",
+      "buyer_value": "Dit maakt zichtbaar of NLIST leadership, sales, delivery, recruitment, relocation en backoffice-capaciteit heeft.",
+      "claim_level": "target-owned public team context",
+      "evidence_rows": 21,
+      "memo_safe_rows": 21,
+      "sources": [
+        "https://nlist.nl/nl/team"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Current KvK/director extract or management schedule for legal/statutory role reliance."
+    },
+    {
+      "id": "competitor-market-map",
+      "title": "Concurrentie- en talentmarktkaart toegevoegd",
+      "what_duesight_found": "De commercial deep-research laag legt 5 relevante vergelijkingsroutes vast: Brunel Nederland, Trinamics, Sensor, SkilledPeople, RemoteNext.",
+      "buyer_value": "Dit verschuift het rapport van alleen target-profiel naar marktpositie, talentconcurrentie en sales/recruitment-context.",
+      "claim_level": "market context; refresh required before hard competitor metrics",
+      "evidence_rows": 5,
+      "memo_safe_rows": 5,
+      "sources": [
+        "https://www.brunel.net/nl-nl",
+        "https://www.trinamics.nl/",
+        "https://www.yoursensor.com/",
+        "https://skilledpeople.work/",
+        "https://www.remotenext.nl/"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Full competitor extraction with current address, management, revenue, employees and hiring source envelopes."
+    },
+    {
+      "id": "vacancy-skill-intelligence",
+      "title": "Vacature- en skills-intelligence zichtbaar",
+      "what_duesight_found": "De target-owned hiring route ondersteunt role families rond maintenance, engineering en IT, met skill buckets zoals elektrotechniek, werktuigbouw, service, software/IT en relocation/compliance.",
+      "buyer_value": "Voor recruitment, sales en DD toont dit welke profielen waarschijnlijk de economische motor en schaarsterisico's vormen.",
+      "claim_level": "target-owned hiring context; live vacancy count must be refreshed per replay",
+      "evidence_rows": 9,
+      "memo_safe_rows": 3,
+      "sources": [
+        "https://nlist.nl/nl/vacatures"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Live vacancy scrape with timestamp, role count, salary/level extraction and archived source copy."
+    },
+    {
+      "id": "customer-logo-sector-signal",
+      "title": "Klant- en sectorroute toegevoegd",
+      "what_duesight_found": "De publieke NLIST-laag geeft klant-/logo- en reviewroutes richting industriële, technische en IT-gerelateerde opdrachtgevers, waaronder GEA, Morssinkhof Plastics, DXC Technology, AkzoNobel, BAM.",
+      "buyer_value": "Dit ondersteunt klantsector-hypotheses en maakt klantconcentratie een concrete diligencevraag in plaats van een lege gap.",
+      "claim_level": "target-owned logo/review context; customer concentration requires seller/provider proof",
+      "evidence_rows": 7,
+      "memo_safe_rows": 1,
+      "sources": [
+        "https://nlist.nl/nl"
+      ],
+      "source_envelope": {
+        "required": [
+          "source",
+          "source_status",
+          "checked_at",
+          "freshness",
+          "fallback_used",
+          "confidence",
+          "limitation"
+        ],
+        "complete": true
+      },
+      "official_upgrade_required": "Seller customer list, revenue concentration, contract proof and client permission before hard customer claims."
+    }
+  ]
+}

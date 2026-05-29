@@ -1,0 +1,176 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "GetThere B.V.",
+    "domain": "getthere.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T09:49:03+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "claude_code",
+        "codex_cli",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 9,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://autoriteitpersoonsgegevens.nl",
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://careersourceflorida.com/wp-content/uploads/2025/12/CareerSource-Florida_Annual-Report_Pages-Web_Final.pdf",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+        "https://companyinfo.nl/companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-finiele-holdings/get-there-holding-b-v-leek-02066287-000020067046"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "claude_code",
+        "deep_research_crawl",
+        "glm_direct",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "minimax_search"
+      ],
+      "provider_count": 8,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+        "https://companyinfo.nl",
+        "https://companyinfo.nl/financials/02066287",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-ict-solutions-b-v-leek-02066287-000020067046",
+        "https://en.wikipedia.org/wiki/GetThere",
+        "https://getthere.nl",
+        "https://ir.avantorsciences.com/investors/financials/annual-reports/default.aspx",
+        "https://nl.linkedin.com/company/get-there",
+        "https://openkvk.nl/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "claude_code",
+        "codex_cli",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "minimax_search",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 8,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://autoriteitpersoonsgegevens.nl",
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://careersourceflorida.com/wp-content/uploads/2025/12/CareerSource-Florida_Annual-Report_Pages-Web_Final.pdf",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+        "https://companyinfo.nl/companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-finiele-holdings/get-there-holding-b-v-leek-02066287-000020067046"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "antigravity_codeassist",
+        "deep_research_crawl",
+        "minimax_highspeed_a"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+        "https://companyinfo.nl",
+        "https://companyinfo.nl/financials/02066287",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-ict-solutions-b-v-leek-02066287-000020067046",
+        "https://outlook.office.com/bookwithme/user/621d0903b3594baa8b77ba4aec17e1e7@getthere.nl/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ep=mCardFromTile",
+        "https://rocketreach.co/frank-hoving-email_46846626",
+        "https://rocketreach.co/get-there-email-format_b5cd1730f42e0adb",
+        "https://www.getthere.nl/",
+        "https://www.getthere.nl/case/datahub-dataplatform-datalake-data-analyse/",
+        "https://www.getthere.nl/case/preadyz/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "codex_cli",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://autoriteitpersoonsgegevens.nl",
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://careersourceflorida.com/wp-content/uploads/2025/12/CareerSource-Florida_Annual-Report_Pages-Web_Final.pdf",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+        "https://companyinfo.nl/companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-finiele-holdings/get-there-holding-b-v-leek-02066287-000020067046"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

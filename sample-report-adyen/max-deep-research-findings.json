@@ -1,0 +1,148 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "Adyen N.V.",
+    "domain": "adyen.com",
+    "kvk": "34259528",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T09:11:20+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "claude_code",
+        "codex_cli",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 8,
+      "source_urls": [
+        "https://adyen.com/",
+        "https://adyen.com/about",
+        "https://adyen.com/about/team",
+        "https://adyen.com/careers",
+        "https://adyen.com/contact",
+        "https://adyen.com/contact/sales",
+        "https://adyen.com/newsletter",
+        "https://adyen.com/partners",
+        "https://adyen.com/sitemap.xml",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen%20N.V.&page%5Bsize%5D=3\\",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V.&page%5Bsize%5D=3",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V.&page%5Bsize%5D=5",
+        "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+        "https://careers.adyen.com"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "local_xortron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "https://adyen.com",
+        "https://adyen.com/",
+        "https://adyen.com/about",
+        "https://adyen.com/about/team",
+        "https://adyen.com/careers",
+        "https://adyen.com/contact",
+        "https://adyen.com/contact/sales",
+        "https://adyen.com/newsletter",
+        "https://adyen.com/partners",
+        "https://adyen.com/sitemap.xml",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V.&page%5Bsize%5D=5",
+        "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+        "https://careers.adyen.com",
+        "https://careers.adyen.com/de_DE"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "https://adyen.com/",
+        "https://adyen.com/about",
+        "https://adyen.com/about/team",
+        "https://adyen.com/careers",
+        "https://adyen.com/contact",
+        "https://adyen.com/contact/sales",
+        "https://adyen.com/newsletter",
+        "https://adyen.com/partners",
+        "https://adyen.com/sitemap.xml",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V.&page%5Bsize%5D=5",
+        "https://ca-live.adyen.com/ca/ca/overview/default.shtml"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "minimax_highspeed_b"
+      ],
+      "provider_count": 1,
+      "source_urls": [],
+      "claim_level": "model-synthesis requires source attachment",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "antigravity_codeassist",
+        "codex_cli",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 7,
+      "source_urls": [
+        "https://adyen.com",
+        "https://adyen.com/",
+        "https://adyen.com/about",
+        "https://adyen.com/about/team",
+        "https://adyen.com/careers",
+        "https://adyen.com/contact",
+        "https://adyen.com/contact/sales",
+        "https://adyen.com/newsletter",
+        "https://adyen.com/partners",
+        "https://adyen.com/sitemap.xml",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Adyen+N.V.&page%5Bsize%5D=5",
+        "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+        "https://careers.adyen.com",
+        "https://careers.adyen.com/"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

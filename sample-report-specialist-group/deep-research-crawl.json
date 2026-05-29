@@ -1,0 +1,1082 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "The Specialist Group B.V.",
+    "domain": "thespecialistgroup.com",
+    "kvk": "93038948",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T10:46:03+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 24,
+  "queries_executed": 6,
+  "failed_or_skipped": 18,
+  "target_site_crawl": {
+    "pages_checked": 60,
+    "source_urls": [
+      "https://thespecialistgroup.com/",
+      "https://thespecialistgroup.com/en/about",
+      "https://thespecialistgroup.com/about",
+      "https://thespecialistgroup.com/nl/contact",
+      "https://thespecialistgroup.com/en/contact",
+      "https://thespecialistgroup.com/contact",
+      "https://thespecialistgroup.com/sitemap.xml",
+      "https://thespecialistgroup.com/governance",
+      "https://thespecialistgroup.com/news",
+      "https://thespecialistgroup.com/governance/attachment/tsg-esg-rapport-052024",
+      "https://thespecialistgroup.com/governance/attachment/tsg_sustainability_report_2022",
+      "https://thespecialistgroup.com/news/page/2",
+      "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand",
+      "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio",
+      "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad",
+      "https://thespecialistgroup.com/news/page/3",
+      "https://thespecialistgroup.com/news/page/4",
+      "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven",
+      "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist",
+      "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue",
+      "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges",
+      "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z",
+      "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success",
+      "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany",
+      "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand/feed",
+      "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio/feed",
+      "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad/feed",
+      "https://thespecialistgroup.com/news/shared-back-office-breda",
+      "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office",
+      "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow",
+      "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important",
+      "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast",
+      "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition",
+      "https://thespecialistgroup.com/news/despite-staff-shortages-star-supplies-technical-specialists-for-enhancing-sustainability-and-innovation",
+      "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star",
+      "https://thespecialistgroup.com/news/case-this-is-how-tsg-contributes-to-the-renewal-of-the-afsluitdijk",
+      "https://thespecialistgroup.com/news/tsg-to-be-acquired-by-oaktree-and-tsg-management",
+      "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven/feed",
+      "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/feed",
+      "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue/feed",
+      "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges/feed",
+      "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z/feed",
+      "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success/feed",
+      "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany/feed",
+      "https://thespecialistgroup.com/news/shared-back-office-breda/feed",
+      "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office/feed",
+      "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/feed",
+      "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important/feed",
+      "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast/feed",
+      "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition/feed"
+    ],
+    "pages": [
+      {
+        "url": "https://thespecialistgroup.com/",
+        "status": 200,
+        "title": "The Specialist Group, TSG - Our people produce progress",
+        "bytes": 118785
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/en/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/en/about",
+        "status": 200,
+        "title": "The Specialist Group - About",
+        "bytes": 61686
+      },
+      {
+        "url": "https://thespecialistgroup.com/about",
+        "status": 200,
+        "title": "The Specialist Group - About",
+        "bytes": 61686
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/careers",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/nl/contact",
+        "status": 200,
+        "title": "The Specialist Group - Contact",
+        "bytes": 55698
+      },
+      {
+        "url": "https://thespecialistgroup.com/en/contact",
+        "status": 200,
+        "title": "The Specialist Group - Contact",
+        "bytes": 55698
+      },
+      {
+        "url": "https://thespecialistgroup.com/contact",
+        "status": 200,
+        "title": "The Specialist Group - Contact",
+        "bytes": 55698
+      },
+      {
+        "url": "https://thespecialistgroup.com/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 682
+      },
+      {
+        "url": "https://thespecialistgroup.com/governance",
+        "status": 200,
+        "title": "The Specialist Group - Governance",
+        "bytes": 68835
+      },
+      {
+        "url": "https://thespecialistgroup.com/news",
+        "status": 200,
+        "title": "Latest news of The Specialist Group",
+        "bytes": 65445
+      },
+      {
+        "url": "https://thespecialistgroup.com/governance/attachment/tsg-esg-rapport-052024",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/governance/attachment/tsg_sustainability_report_2022",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/page/2",
+        "status": 200,
+        "title": "Latest news of The Specialist Group",
+        "bytes": 56770
+      },
+      {
+        "url": "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand",
+        "status": 200,
+        "title": "STAR expands into France to meet growing client demand - The Specialist Group",
+        "bytes": 44517
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio",
+        "status": 200,
+        "title": "The Specialist Group labels: connection, strengthening and growth",
+        "bytes": 44053
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad",
+        "status": 200,
+        "title": "The Specialist Group labels: connection, strengthening and growth",
+        "bytes": 47518
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/page/3",
+        "status": 200,
+        "title": "Latest news of The Specialist Group",
+        "bytes": 58842
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/page/4",
+        "status": 200,
+        "title": "Latest news of The Specialist Group",
+        "bytes": 51927
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven",
+        "status": 200,
+        "title": "Sensor opens Amsterdam office - The Specialist Group",
+        "bytes": 43975
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist",
+        "status": 200,
+        "title": "The Specialist Group Further Strengthens its Technical Talent Network with Acquisition of NLIST",
+        "bytes": 51134
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue",
+        "status": 200,
+        "title": "‘To me, it is not a final policy. DE&amp;I is a continuous dialogue.&#039;",
+        "bytes": 50621
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges",
+        "status": 200,
+        "title": "Overcoming Staff Shortages: TSG&#039;s Success in a Dynamic Market",
+        "bytes": 52233
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z",
+        "status": 200,
+        "title": "Team Operations, a personal approach from A to Z",
+        "bytes": 48771
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success",
+        "status": 200,
+        "title": "&quot;Sil Hoeve on TSG&#039;s Progress: Achievements and Future Challenge",
+        "bytes": 51085
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany",
+        "status": 200,
+        "title": "STAR Group acquires iks Engineering, further advancing its market position in Germany",
+        "bytes": 47944
+      },
+      {
+        "url": "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand/feed",
+        "status": 200,
+        "title": "Comments on: STAR expands into France to meet growing client demand",
+        "bytes": 934
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio/feed",
+        "status": 200,
+        "title": "Comments on: Robbie Sakkers joins The Specialist Group as CIO",
+        "bytes": 888
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad/feed",
+        "status": 200,
+        "title": "Comments on: Emanuel Peters appointed as Director Litecad",
+        "bytes": 882
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/shared-back-office-breda",
+        "status": 200,
+        "title": "New shared back office in Breda - The Specialist Group",
+        "bytes": 45444
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office",
+        "status": 200,
+        "title": "Sensor opens Amsterdam office - The Specialist Group",
+        "bytes": 44486
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow",
+        "status": 200,
+        "title": "The Specialist Group continues to grow - The Specialist Group",
+        "bytes": 47663
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important",
+        "status": 200,
+        "title": "Kim Tomassen: “The feeling that we are one is very important” - The Specialist Group",
+        "bytes": 42731
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast",
+        "status": 200,
+        "title": "Linda Verbunt: “It’s about being compliant and being fast.” - The Specialist Group",
+        "bytes": 42906
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition",
+        "status": 200,
+        "title": "STAR supplies technical specialists for energy transition - The Specialist Group",
+        "bytes": 48518
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/despite-staff-shortages-star-supplies-technical-specialists-for-enhancing-sustainability-and-innovation",
+        "status": 200,
+        "title": "STAR supplies technical specialists for sustainability and innovation - The Specialist Group",
+        "bytes": 45598
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star",
+        "status": 200,
+        "title": "Sil Hoeve about the next step for STAR - The Specialist Group",
+        "bytes": 45132
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/case-this-is-how-tsg-contributes-to-the-renewal-of-the-afsluitdijk",
+        "status": 200,
+        "title": "Case: this is how TSG contributes to the renewal of the Afsluitdijk - The Specialist Group",
+        "bytes": 45016
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/tsg-to-be-acquired-by-oaktree-and-tsg-management",
+        "status": 200,
+        "title": "TSG to be acquired by Oaktree and TSG Management - The Specialist Group",
+        "bytes": 44019
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven/feed",
+        "status": 200,
+        "title": "Comments on: Sensor opens new location in Eindhoven",
+        "bytes": 858
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/feed",
+        "status": 200,
+        "title": "Comments on: The Specialist Group Further Strengthens its Technical Talent Network with Acquisition of NLIST",
+        "bytes": 979
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue/feed",
+        "status": 200,
+        "title": "Comments on: “To me, DE&#038;I is not a finished policy; it’s a continuous dialogue.”",
+        "bytes": 934
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges/feed",
+        "status": 200,
+        "title": "Comments on: In a market in which staff shortages are the standard, TSG proves to be a reliable partner",
+        "bytes": 922
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z/feed",
+        "status": 200,
+        "title": "Comments on: Team Operations, a personal approach from A to Z",
+        "bytes": 858
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success/feed",
+        "status": 200,
+        "title": "Comments on: Sil Hoeve on the course plotted, results achieved and destinations ahead",
+        "bytes": 936
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany/feed",
+        "status": 200,
+        "title": "Comments on: STAR Group acquires iks Engineering, further advancing its market position in Germany",
+        "bytes": 997
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/shared-back-office-breda/feed",
+        "status": 200,
+        "title": "Comments on: The Specialist Group opens a single, shared back office in Breda",
+        "bytes": 856
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office/feed",
+        "status": 200,
+        "title": "Comments on: Sensor opens office in Amsterdam",
+        "bytes": 834
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/feed",
+        "status": 200,
+        "title": "Comments on: The Specialist Group continues to grow",
+        "bytes": 858
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important/feed",
+        "status": 200,
+        "title": "Comments on: Kim Tomassen: “The feeling that we are one is very important”",
+        "bytes": 921
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast/feed",
+        "status": 200,
+        "title": "Comments on: Linda Verbunt: “It’s about being compliant and being fast.”",
+        "bytes": 911
+      },
+      {
+        "url": "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition/feed",
+        "status": 200,
+        "title": "Comments on: STAR supplies technical specialists for energy transition",
+        "bytes": 915
+      }
+    ]
+  },
+  "source_urls_count": 77,
+  "source_urls": [
+    "https://thespecialistgroup.com/",
+    "https://thespecialistgroup.com/en/about",
+    "https://thespecialistgroup.com/about",
+    "https://thespecialistgroup.com/nl/contact",
+    "https://thespecialistgroup.com/en/contact",
+    "https://thespecialistgroup.com/contact",
+    "https://thespecialistgroup.com/sitemap.xml",
+    "https://thespecialistgroup.com/governance",
+    "https://thespecialistgroup.com/news",
+    "https://thespecialistgroup.com/governance/attachment/tsg-esg-rapport-052024",
+    "https://thespecialistgroup.com/governance/attachment/tsg_sustainability_report_2022",
+    "https://thespecialistgroup.com/news/page/2",
+    "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand",
+    "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio",
+    "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad",
+    "https://thespecialistgroup.com/news/page/3",
+    "https://thespecialistgroup.com/news/page/4",
+    "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven",
+    "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist",
+    "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue",
+    "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges",
+    "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z",
+    "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success",
+    "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany",
+    "https://thespecialistgroup.com/market-and-sectors/star-expands-into-france-to-meet-growing-client-demand/feed",
+    "https://thespecialistgroup.com/news/robbie-sakkers-joins-the-specialist-group-as-cio/feed",
+    "https://thespecialistgroup.com/news/emanuel-peters-appointed-as-director-of-litecad/feed",
+    "https://thespecialistgroup.com/news/shared-back-office-breda",
+    "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office",
+    "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow",
+    "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important",
+    "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast",
+    "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition",
+    "https://thespecialistgroup.com/news/despite-staff-shortages-star-supplies-technical-specialists-for-enhancing-sustainability-and-innovation",
+    "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star",
+    "https://thespecialistgroup.com/news/case-this-is-how-tsg-contributes-to-the-renewal-of-the-afsluitdijk",
+    "https://thespecialistgroup.com/news/tsg-to-be-acquired-by-oaktree-and-tsg-management",
+    "https://thespecialistgroup.com/news/sensor-opens-new-location-in-eindhoven/feed",
+    "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/feed",
+    "https://thespecialistgroup.com/news/to-me-it-is-not-a-final-policy-dei-is-a-continuous-dialogue/feed",
+    "https://thespecialistgroup.com/news/navigating-staff-shortages-market-challenges/feed",
+    "https://thespecialistgroup.com/news/a-personal-experience-from-a-to-z/feed",
+    "https://thespecialistgroup.com/news/sil-hoeve-leads-the-specialist-group-future-strategy-success/feed",
+    "https://thespecialistgroup.com/news/star-group-acquires-iks-engineering-further-advancing-its-market-position-in-germany/feed",
+    "https://thespecialistgroup.com/news/shared-back-office-breda/feed",
+    "https://thespecialistgroup.com/news/sensor-opens-amsterdam-office/feed",
+    "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/feed",
+    "https://thespecialistgroup.com/news/kim-tomassen-the-feeling-that-we-are-one-is-very-important/feed",
+    "https://thespecialistgroup.com/news/linda-verbunt-its-about-being-compliant-and-being-fast/feed",
+    "https://thespecialistgroup.com/news/star-supplies-technical-specialists-for-energy-transition/feed",
+    "https://www.cbinsights.com/company/the-specialist-group",
+    "https://at.linkedin.com/company/thespecialistgroup",
+    "https://pitchbook.com/profiles/company/57889-63",
+    "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+    "https://rocketreach.co/the-specialist-group-email-format_b79675e2c24f85ee",
+    "https://www.zoominfo.com/c/the-specialist-group/1313607487",
+    "https://be.linkedin.com/company/thespecialistgroup",
+    "https://stagemarkt.nl/leerbedrijven/the-specialist-group-bv_ddb8ea60-708e-11d5-94e6-009027dcdf20",
+    "https://thespecialistgroup.com/wp-content/uploads/2023/05/TSG_SUSTAINABILITY_REPORT_2022.pdf",
+    "https://star-specialists.com/wp-content/uploads/2024/08/TSG-ESG-rapport-052024.pdf",
+    "https://star-specialists.com/wp-content/uploads/2026/03/Algemene-voorwaarden-TSG-versie-01-2025-Engels.pdf",
+    "https://thespecialistgroup.com/governance/",
+    "https://thespecialistgroup.com/who-we-are/",
+    "https://www.ambitionbox.com/overview/the-specialists-group-overview",
+    "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star/",
+    "https://thespecialistgroup.com/ma/the-specialist-groups-flagship-label-star-to-acquire-stadlmann/",
+    "https://thespecialistgroup.com/wp-content/uploads/2023/05/TSG_privacy_statement_2021.pdf",
+    "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-acquires-litecad-the-activity-7036605877281284096-wMnY",
+    "https://thespecialistgroup.com/ma/the-specialist-group-acquires-umia-innovations-technical-staffing-business-unit-and-rebrands-it-into-altio/",
+    "https://thespecialistgroup.com/wp-content/uploads/2024/10/20241003_The-Specialist-Group-Privacy-Statement.pdf",
+    "https://www.linkedin.com/posts/rafael-de-haseth-89379018_the-specialist-group-acquires-litecad-the-activity-7036636590785355776-ttfc",
+    "https://prospeo.io/c/the-specialist-group-revenue",
+    "https://www.linkedin.com/posts/taravanderakt_the-specialist-group-our-people-produce-activity-6904334168952827905-FXm1",
+    "https://www.prnewswire.com/news-releases/star-acquires-iks-engineering-further-advancing-its-market-position-in-germany-302083367.html",
+    "https://www.morrisseygoodale.com/wp-content/uploads/2023/03/TSG_LCD.pdf",
+    "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+    "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-further-strengthens-activity-7302247577620500481-OWQh"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"The Specialist Group B.V.\" \"thespecialistgroup.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "failed",
+      "elapsed_s": 1.588,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"The Specialist Group B.V.\" acquisition overname parent group investor shareholder \"thespecialistgroup.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "failed",
+      "elapsed_s": 1.453,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"The Specialist Group B.V.\" vacancies careers jobs hiring skills competitors \"thespecialistgroup.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "failed",
+      "elapsed_s": 1.345,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"The Specialist Group B.V.\" revenue omzet growth FT1000 annual report ranking \"thespecialistgroup.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "failed",
+      "elapsed_s": 1.662,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"The Specialist Group B.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "failed",
+      "elapsed_s": 1.772,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.243,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.cbinsights.com/company/the-specialist-group",
+        "https://at.linkedin.com/company/thespecialistgroup",
+        "https://thespecialistgroup.com/",
+        "https://pitchbook.com/profiles/company/57889-63",
+        "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+        "https://rocketreach.co/the-specialist-group-email-format_b79675e2c24f85ee",
+        "https://www.zoominfo.com/c/the-specialist-group/1313607487",
+        "https://be.linkedin.com/company/thespecialistgroup",
+        "https://stagemarkt.nl/leerbedrijven/the-specialist-group-bv_ddb8ea60-708e-11d5-94e6-009027dcdf20"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "The Specialist Group - CB Insights",
+          "snippet": "Discover the right solution for your team. The CB Insights tech ... About Us · Upcoming Webinars · Contact Us · How We Help · Understand Tech ...",
+          "url": "https://www.cbinsights.com/company/the-specialist-group",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group | LinkedIn",
+          "snippet": "Our people produce progress. Website: https://thespecialistgroup.com ... team member from day one. Looking to strengthen your team with international ...",
+          "url": "https://at.linkedin.com/company/thespecialistgroup",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "The Specialist Group, TSG - Our people produce progress",
+          "snippet": "With a broad base of highly skilled technical specialists, we help industries move forward towards a sustainable future. How can we help?",
+          "url": "https://thespecialistgroup.com/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "The Specialist Group - Valuation, Funding & Investors - PitchBook",
+          "snippet": "Oaktree Capital Management has invested in The Specialist Group. Data Transparency. Meet our data hygiene team ... logo RGB-white.png. Follow Us.",
+          "url": "https://pitchbook.com/profiles/company/57889-63",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group to be sold to Oaktree and TSG Management",
+          "snippet": "... team in the years to come. ” Anouar Noudari, Board Member at The Specialist ... More information: https://www.thespecialistgroup.com/. About Oaktree",
+          "url": "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.675,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.521,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.244,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.172,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.147,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.218,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.272,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.113,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.153,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "partial_executed",
+      "elapsed_s": 1.459,
+      "discovered_urls_count": 3,
+      "source_urls": [
+        "https://thespecialistgroup.com/wp-content/uploads/2023/05/TSG_SUSTAINABILITY_REPORT_2022.pdf",
+        "https://star-specialists.com/wp-content/uploads/2024/08/TSG-ESG-rapport-052024.pdf",
+        "https://star-specialists.com/wp-content/uploads/2026/03/Algemene-voorwaarden-TSG-versie-01-2025-Engels.pdf"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "[PDF] Sustainability Report 2022 - The Specialist Group",
+          "snippet": "Rules and regulations. We adhere to the anti-bribery and corruption rules and ... thespecialistgroup.com. CONTENTS.",
+          "url": "https://thespecialistgroup.com/wp-content/uploads/2023/05/TSG_SUSTAINABILITY_REPORT_2022.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Environmental Social Governance Report 2023 - STAR Specialists",
+          "snippet": "a zero-tolerance policy for all forms of bribery and corruption. Prohibition ... thespecialistgroup.com.",
+          "url": "https://star-specialists.com/wp-content/uploads/2024/08/TSG-ESG-rapport-052024.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] General terms and conditions - STAR Specialists",
+          "snippet": "In case of liquidation, bankruptcy, full or partial ... privacy@thespecialistgroup.com. Article 14 ... the stay outside the country. Based on this.",
+          "url": "https://star-specialists.com/wp-content/uploads/2026/03/Algemene-voorwaarden-TSG-versie-01-2025-Engels.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@thespecialistgroup.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed",
+      "elapsed_s": 1.418,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://thespecialistgroup.com/governance/",
+        "https://thespecialistgroup.com/who-we-are/",
+        "https://www.ambitionbox.com/overview/the-specialists-group-overview",
+        "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star/",
+        "https://thespecialistgroup.com/ma/the-specialist-groups-flagship-label-star-to-acquire-stadlmann/",
+        "https://thespecialistgroup.com/wp-content/uploads/2023/05/TSG_privacy_statement_2021.pdf",
+        "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-acquires-litecad-the-activity-7036605877281284096-wMnY",
+        "https://thespecialistgroup.com/ma/the-specialist-group-acquires-umia-innovations-technical-staffing-business-unit-and-rebrands-it-into-altio/",
+        "https://thespecialistgroup.com/wp-content/uploads/2024/10/20241003_The-Specialist-Group-Privacy-Statement.pdf",
+        "https://www.linkedin.com/posts/rafael-de-haseth-89379018_the-specialist-group-acquires-litecad-the-activity-7036636590785355776-ttfc"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Governance - The Specialist Group",
+          "snippet": "Offering security of supply is the most important thing here. And we aim for maximum quality.\" Thomas Wester Group Director Sales STAR. \"Within The ...",
+          "url": "https://thespecialistgroup.com/governance/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Who we are - The Specialist Group",
+          "snippet": "Offering security of supply is the most important thing here. And we aim for maximum quality.\" Thomas Wester Group Director Sales STAR. \"Within The ...",
+          "url": "https://thespecialistgroup.com/who-we-are/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Life at The Specialists Group: Culture, Salary, Reviews, Interviews ...",
+          "snippet": "thespecialistgroup.com. Primary Industry. info icon ... Category Ratings. 5.0. Company culture. 5.0. Job security ... The company is highly rated for company ...",
+          "url": "https://www.ambitionbox.com/overview/the-specialists-group-overview",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Sil Hoeve about the next step for STAR - The Specialist Group",
+          "snippet": "“We're rapidly becoming the partner of choice for many companies precisely because we offer security of supply from a plentiful pool of specialists who ...",
+          "url": "https://thespecialistgroup.com/news/sil-hoeve-about-the-next-step-for-star/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "The Specialist Group's Flagship Label STAR to Acquire Stadlmann",
+          "snippet": "... security agenda. The acquisition will also expand STAR's presence in Austria and Germany, strengthening its ability to serve clients in the DACH region ...",
+          "url": "https://thespecialistgroup.com/ma/the-specialist-groups-flagship-label-star-to-acquire-stadlmann/",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"thespecialistgroup.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.475,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 19,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:github.com \"thespecialistgroup.com\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.463,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 20,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:gitlab.com \"thespecialistgroup.com\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.443,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 21,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:pastebin.com \"thespecialistgroup.com\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.343,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 22,
+      "taxonomy": "osint",
+      "provider": "official_registry",
+      "query": "\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\"",
+      "source_hint": "KvK/GLEIF/Zefix/official registry ladder",
+      "guardrail": "Registry facts must include source, checked_at, identifier, and limitation.",
+      "status": "executed",
+      "elapsed_s": 1.242,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.cbinsights.com/company/the-specialist-group",
+        "https://be.linkedin.com/company/thespecialistgroup",
+        "https://stagemarkt.nl/leerbedrijven/the-specialist-group-bv_ddb8ea60-708e-11d5-94e6-009027dcdf20",
+        "https://prospeo.io/c/the-specialist-group-revenue",
+        "https://pitchbook.com/profiles/company/57889-63",
+        "https://thespecialistgroup.com/",
+        "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+        "https://rocketreach.co/the-specialist-group-email-format_b79675e2c24f85ee",
+        "https://www.linkedin.com/posts/taravanderakt_the-specialist-group-our-people-produce-activity-6904334168952827905-FXm1"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "The Specialist Group - CB Insights",
+          "snippet": "The Specialist Group. Unclaimed. thespecialistgroup.com · Overview & Products · Financials · People · Alternatives & Competitors. Founded Year.",
+          "url": "https://www.cbinsights.com/company/the-specialist-group",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "The Specialist Group - LinkedIn",
+          "snippet": "Our people produce progress. Website: https://thespecialistgroup.com. External link for The Specialist Group. Industry: Staffing and Recruiting. Company size ...",
+          "url": "https://be.linkedin.com/company/thespecialistgroup",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Leerbedrijf The Specialist Group B.V. in Moerdijk - Stagemarkt",
+          "snippet": "Ben jij op zoek naar een leerbedrijf in Moerdijk? Bekijk alle stages bij The Specialist Group B.V. en solliciteer direct via Stagemarkt.nl!",
+          "url": "https://stagemarkt.nl/leerbedrijven/the-specialist-group-bv_ddb8ea60-708e-11d5-94e6-009027dcdf20",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group Revenue, Funding & Valuation - Prospeo",
+          "snippet": "The Specialist Group Revenue ; Headquarters, Vasteland 78, Rotterdam, South Holland 3011 BN, NL ; Phone number, +31888081500 ; Website. thespecialistgroup.com.",
+          "url": "https://prospeo.io/c/the-specialist-group-revenue",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "The Specialist Group - Valuation, Funding & Investors - PitchBook",
+          "snippet": "Website. www.thespecialistgroup.com. Ownership Status. Privately Held (backing). Financing Status. Private Equity-Backed. Corporate Office. Plaza 2; 4782 SK ...",
+          "url": "https://pitchbook.com/profiles/company/57889-63",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "taxonomy": "osint",
+      "provider": "search_cascade",
+      "query": "(\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\") (\"acquired\" OR \"acquisition\" OR \"overname\" OR \"acquisitie\" OR \"part of\" OR \"parent company\" OR \"The Specialist Group\")",
+      "source_hint": "official newsroom / transaction announcement / reputable trade press",
+      "guardrail": "Public acquisition narratives are business context only until transaction documents, registry output or licensed ownership graph confirms legal route.",
+      "status": "executed",
+      "elapsed_s": 1.26,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://prospeo.io/c/the-specialist-group-revenue",
+        "https://www.linkedin.com/posts/taravanderakt_the-specialist-group-our-people-produce-activity-6904334168952827905-FXm1",
+        "https://www.prnewswire.com/news-releases/star-acquires-iks-engineering-further-advancing-its-market-position-in-germany-302083367.html",
+        "https://thespecialistgroup.com/",
+        "https://pitchbook.com/profiles/company/57889-63",
+        "https://www.morrisseygoodale.com/wp-content/uploads/2023/03/TSG_LCD.pdf",
+        "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+        "https://www.zoominfo.com/c/the-specialist-group/1313607487",
+        "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+        "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-further-strengthens-activity-7302247577620500481-OWQh"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "The Specialist Group Revenue, Funding & Valuation - Prospeo",
+          "snippet": "The Specialist Group Revenue ; Headquarters, Vasteland 78, Rotterdam, South Holland 3011 BN, NL ; Phone number, +31888081500 ; Website. thespecialistgroup.com.",
+          "url": "https://prospeo.io/c/the-specialist-group-revenue",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Our people produce progress | Tara van de Rakt - LinkedIn",
+          "snippet": "The Specialist Group - Our people produce progress. ... For more information, visit our website: www.thespecialistgroup.com ...",
+          "url": "https://www.linkedin.com/posts/taravanderakt_the-specialist-group-our-people-produce-activity-6904334168952827905-FXm1",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "STAR acquires iks Engineering, further advancing its market ...",
+          "snippet": "The acquired entity will operate under TSG's flagship label STAR. The ... Sil Hoeve, CEO of The Specialist Group, said: \"This acquisition ...",
+          "url": "https://www.prnewswire.com/news-releases/star-acquires-iks-engineering-further-advancing-its-market-position-in-germany-302083367.html",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group, TSG - Our people produce progress",
+          "snippet": "Our people produce progress. The Specialist Group helps industries move forward by providing the right people for the job.",
+          "url": "https://thespecialistgroup.com/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "The Specialist Group - Valuation, Funding & Investors - PitchBook",
+          "snippet": "The Specialist Group. The Specialist Group Overview ... Website. www.thespecialistgroup.com. Ownership Status. Privately Held (backing).",
+          "url": "https://pitchbook.com/profiles/company/57889-63",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "taxonomy": "market_intel",
+      "provider": "search_cascade",
+      "query": "(\"The Specialist Group B.V.\" OR \"thespecialistgroup.com\" OR \"93038948\") (\"concurrenten\" OR \"competitors\" OR \"alternatives\" OR \"detacheerder\" OR \"recruitment\" OR \"staffing\" OR \"engineering\")",
+      "source_hint": "public web, trade press, company websites and market directories",
+      "guardrail": "Competitor output is market context until every competitor field has its own source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.968,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://thespecialistgroup.com/",
+        "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+        "https://be.linkedin.com/company/thespecialistgroup",
+        "https://www.cbinsights.com/company/the-specialist-group",
+        "https://www.zoominfo.com/c/the-specialist-group/1313607487",
+        "https://parcom.com/en/the-specialist-group-to-be-sold-to-oaktree-and-tsg-management/",
+        "https://pitchbook.com/profiles/company/57889-63",
+        "https://www.prnewswire.com/news-releases/star-acquires-iks-engineering-further-advancing-its-market-position-in-germany-302083367.html",
+        "https://prospeo.io/c/the-specialist-group-revenue"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "The Specialist Group, TSG - Our people produce progress",
+          "snippet": "We are the tailor made toolbox for the staffing of specialised technical projects of all sorts and sizes. Project or secondment based.",
+          "url": "https://thespecialistgroup.com/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "NLIST's - The Specialist Group",
+          "snippet": "Together, NLIST and TSG will be able to provide clients with more comprehensive technical staffing solutions. ... recruitment activities.",
+          "url": "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "The Specialist Group - LinkedIn",
+          "snippet": "FairPlay Engineering. Staffing and Recruiting. Hoofddorp ... Staffing and Recruiting. Meppel, Drenthe · g2 Recruitment. Staffing and Recruiting. Munich, Bavaria ...",
+          "url": "https://be.linkedin.com/company/thespecialistgroup",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group - CB Insights",
+          "snippet": "Alternatives & Competitors. Founded Year. 2001. Stage. Private Equity ... engineering and technology sectors. The company leverages the ...",
+          "url": "https://www.cbinsights.com/company/the-specialist-group",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "The Specialist Group - Overview, News & Similar companies ...",
+          "snippet": "View The Specialist Group (www.thespecialistgroup.com) location in North Brabant, Netherlands , revenue, industry and description. Find related and similar ...",
+          "url": "https://www.zoominfo.com/c/the-specialist-group/1313607487",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

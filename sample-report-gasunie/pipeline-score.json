@@ -1,0 +1,166 @@
+{
+  "aggregate_score_certified": true,
+  "investment_verdict_certified": false,
+  "score_kind": "DueSight Evidence Readiness Score",
+  "score_model": "duesight.sample_report_score_model.v2",
+  "score": 71,
+  "scale": "0-100",
+  "display_value": "71/100",
+  "verdict": "READY_WITH_LIMITATIONS",
+  "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
+  "score_confidence": "medium",
+  "computed_at": "2026-05-28T10:34:24+00:00",
+  "run_id": "certified-samples-rest-20260526-235449-gasunie",
+  "target": {
+    "slug": "sample-report-gasunie",
+    "company_name": "N.V. Nederlandse Gasunie",
+    "domain": "gasunie.nl",
+    "country": "NL",
+    "kvk_number": "02010556",
+    "ch_uid": "",
+    "tier": "standard",
+    "identity_resolution_path": "identity-resolution.json",
+    "identity_resolution_status": "configured_needs_official_extract",
+    "previous_configured_kvk_number": "02010556"
+  },
+  "inputs": {
+    "manifest_path": "pipeline-manifest.json",
+    "ledger_path": "evidence-ledger.json",
+    "evidence_rows": 50,
+    "source_envelope_complete": true,
+    "source_envelope_incomplete_rows": 0,
+    "provider_preflight_summary": {
+      "OK": 8,
+      "OPTIONAL_NOT_CONFIGURED": 4,
+      "HOSTED_FALLBACK_DEFERRED": 2
+    }
+  },
+  "components": [
+    {
+      "name": "evidence_integrity",
+      "label": "Evidence integrity",
+      "score": 22,
+      "max_score": 22,
+      "status": "strong",
+      "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
+      "evidence": [
+        "rows=50",
+        "source_envelope_complete=True",
+        "incomplete_rows=0",
+        "run_id=certified-samples-rest-20260526-235449-gasunie"
+      ],
+      "limitations": [
+        "Evidence completeness is not the same as business-risk completeness."
+      ]
+    },
+    {
+      "name": "source_readiness",
+      "label": "Source readiness",
+      "score": 7,
+      "max_score": 13,
+      "status": "yellow",
+      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "evidence": [
+        "preflight_ok=8",
+        "hosted_fallback_deferred=2",
+        "optional_not_configured=4",
+        "source_health=YELLOW"
+      ],
+      "limitations": [
+        "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
+      ]
+    },
+    {
+      "name": "compliance_media",
+      "label": "Compliance and media",
+      "score": 16,
+      "max_score": 18,
+      "status": "limited_clean",
+      "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
+      "evidence": [
+        "sanctions_status=clean",
+        "adverse_media_status=available",
+        "regulatory_status=available",
+        "hosted_fallback_deferred=2"
+      ],
+      "limitations": [
+        "No-hit is not proof of clean reputation.",
+        "UBOs/directors still need final sanctions and PEP screening before sign-off."
+      ]
+    },
+    {
+      "name": "ownership_governance",
+      "label": "Ownership and governance",
+      "score": 10,
+      "max_score": 15,
+      "status": "manual_review",
+      "rationale": "Ownership routes exist, but official UBO/shareholder evidence is not claim-safe in this replay.",
+      "evidence": [
+        "ownership_status=available",
+        "ownership_rows=2",
+        "fallback_or_review_only=False"
+      ],
+      "limitations": [
+        "Needs primary register extract, shareholder tree and acquisition documents before final UBO claims."
+      ]
+    },
+    {
+      "name": "finance_integrity",
+      "label": "Finance integrity",
+      "score": 5,
+      "max_score": 15,
+      "status": "source_limited",
+      "rationale": "Finance route is technically verified, but no memo-safe official filing or target-specific finance output is available.",
+      "evidence": [
+        "finance_status=available",
+        "finance_rows=2",
+        "official_finance_source_unavailable=True"
+      ],
+      "limitations": [
+        "Needs official jaarrekening/XBRL or seller P&L before revenue, EBITDA or margin claims."
+      ]
+    },
+    {
+      "name": "cyber_footprint",
+      "label": "Cyber footprint",
+      "score": 6,
+      "max_score": 10,
+      "status": "context_only",
+      "rationale": "External footprint evidence exists, but provider/CDN context is not target-owned exposure without asset proof.",
+      "evidence": [
+        "cyber_status=OK",
+        "cyber_rows=3",
+        "target_claim_safe=False"
+      ],
+      "limitations": [
+        "Not a penetration test, vulnerability assessment or security attestation."
+      ]
+    },
+    {
+      "name": "business_context",
+      "label": "Business context",
+      "score": 5,
+      "max_score": 7,
+      "status": "limited",
+      "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
+      "evidence": [
+        "business_profile_rows=17",
+        "award_rows=0",
+        "award_status=unknown",
+        "public_acquisition_rows=10",
+        "premium_source_rows=5",
+        "local_bulk_rows=8"
+      ],
+      "limitations": [
+        "Context-rich does not mean officially proven finance or ownership.",
+        "Award and public-web rows remain source-bound context unless primary artifacts are attached."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is an evidence-readiness score, not legal advice and not an investment recommendation.",
+    "The score is only valid for the recorded run_id and timestamp.",
+    "Deferred hosted fallback routes or optional missing providers reduce score confidence and must be recovered/backfilled before production completeness claims.",
+    "Material business conclusions still require primary documents and human diligence review."
+  ]
+}

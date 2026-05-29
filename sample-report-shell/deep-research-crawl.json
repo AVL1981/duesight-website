@@ -1,0 +1,1004 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "Shell plc",
+    "domain": "shell.com",
+    "kvk": "",
+    "country": "GB",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T10:05:36+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 14,
+  "failed_or_skipped": 4,
+  "target_site_crawl": {
+    "pages_checked": 35,
+    "source_urls": [
+      "https://shell.com/",
+      "https://shell.com/about",
+      "https://shell.com/careers",
+      "https://shell.com/contact",
+      "https://shell.com/sitemap.xml",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+      "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css",
+      "https://www.shell.com/careers.model.json",
+      "https://www.shell.com/careers.html",
+      "https://www.shell.com/who-we-are/contact-us.model.json",
+      "https://www.shell.com/who-we-are/contact-us.html",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+      "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css"
+    ],
+    "pages": [
+      {
+        "url": "https://shell.com/",
+        "status": 200,
+        "title": "Shell Global",
+        "bytes": 9131
+      },
+      {
+        "url": "https://shell.com/nl/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/en/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/en/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/about",
+        "status": 200,
+        "title": "Who we are | Shell Global",
+        "bytes": 9242
+      },
+      {
+        "url": "https://shell.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/careers",
+        "status": 200,
+        "title": "Careers at Shell | Shell Global",
+        "bytes": 9338
+      },
+      {
+        "url": "https://shell.com/nl/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/en/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/contact",
+        "status": 200,
+        "title": "Contact us | Shell Global",
+        "bytes": 8823
+      },
+      {
+        "url": "https://shell.com/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 369189
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+        "status": 200,
+        "title": "",
+        "bytes": 1957
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css",
+        "status": 200,
+        "title": "",
+        "bytes": 1732
+      },
+      {
+        "url": "https://www.shell.com/careers.model.json",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/careers.html",
+        "status": 200,
+        "title": "Careers at Shell | Shell Global",
+        "bytes": 9338
+      },
+      {
+        "url": "https://www.shell.com/who-we-are/contact-us.model.json",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/who-we-are/contact-us.html",
+        "status": 200,
+        "title": "Contact us | Shell Global",
+        "bytes": 8823
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+        "status": 200,
+        "title": "",
+        "bytes": 1957
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+        "status": 200,
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css",
+        "status": 200,
+        "title": "",
+        "bytes": 1732
+      }
+    ]
+  },
+  "source_urls_count": 83,
+  "source_urls": [
+    "https://shell.com/",
+    "https://shell.com/about",
+    "https://shell.com/careers",
+    "https://shell.com/contact",
+    "https://shell.com/sitemap.xml",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+    "https://shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css",
+    "https://www.shell.com/careers.model.json",
+    "https://www.shell.com/careers.html",
+    "https://www.shell.com/who-we-are/contact-us.model.json",
+    "https://www.shell.com/who-we-are/contact-us.html",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.ico",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/favicon.svg",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/apple-touch-icon.png",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/favicon/manifest.json",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/app.min.ACSHASH91e1bb9a653ab04d1599d20aaf847c85.js",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base/resources/fonts/shell-typeface-la-heavy-221208.woff2",
+    "https://www.shell.com/etc.clientlibs/amidala/clientlibs/theme-base.ACSHASHb291465fc8d3c7bcefde74d34044b698.css",
+    "https://www.leadnear.com/company/us/shell",
+    "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+    "https://uk.linkedin.com/in/hishamsiddiqui",
+    "https://www.shell.us/about-us/news-and-insights/media/_jcr_content/root/main/section_1223829208_c/call_to_action_copy__810874694/links/item0.stream/1731940335017/4b770f56821a46652fd61afe596e8ecfb3ccf789/2019-shell-usa-press-releases-archive.pdf",
+    "https://www.shell.com/investors/environmental-social-and-governance/_jcr_content/root/main/section/simple_913716519/list_1995953506/list_item_copy.multi.stream/1653374782393/82914f4065a9cf72bfd7bef87df5c80bf3d596d4/shell-ethics-and-compliance-manual-march-2021.pdf",
+    "https://www.shell.com/investors/results-and-reporting/annual-report/_jcr_content/root/main/section_2113846431/link_list/links/item0.stream/1774544186011/5727c329a58b5eb7a54442c0a03f562a5aef1159/shell-annual-report-2025-interactive.pdf",
+    "https://www.shell.com/investors/results-and-reporting/annual-report/_jcr_content/root/main/section_2113846431/link_list/links/item2.stream/1773292260473/1b4dd6bdb826c61b809e3c94988fa45581183869/governance-ar25.pdf",
+    "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab/text.multi.stream/1742905301176/ce28b952e201476287788cfcf35406e464f9785c/shell-annual-report-2023.pdf",
+    "https://www.shell.com/who-we-are/our-values/_jcr_content/root/main/section_874829968/list/list_item_copy.multi.stream/1752576274096/eb6d18269c7e9e79b6539e1b0780747d5e2c8b31/strategic-report-ar-two-four.pdf",
+    "https://www.facebook.com/groups/bposecretfiles/posts/219111373317673/",
+    "https://www.johndonovan.website/?p=156",
+    "https://royaldutchshellgroup.com/2016/09/19/88205/",
+    "https://dare.uva.nl/document/2/81261",
+    "https://www.shellnews.net/blog/links.html",
+    "https://www.iex.nl/Forum-Aandeel/210964/Topic/1069091/Royal-Dutch-Shell_Shell-nieuwtjes.aspx?page=260",
+    "https://builtin.com/job/shell-graduate-programme-2026-india/7118898",
+    "https://www.shell.com/who-we-are/our-history/our-company-history.html",
+    "https://bebee.com/gb/jobs/portfolio-analyst-product-trading-london-uk-shell-plc-london--techmap_gb_24139119",
+    "https://www.shell.com/sustainability/people/our-people.html",
+    "https://www.shell.com/careers/projects-and-technology.html",
+    "https://www.instagram.com/p/DXhGLU0gkR5/",
+    "https://www.eujobs.co/career-guides/shell-companies-career-guide",
+    "https://www.facebook.com/groups/1239227684930825/posts/1297906832396243/",
+    "https://www.quora.com/What-are-the-careers-opportunities-in-Shell-oil-company",
+    "https://www.shell.co.uk/about-us/sustainability/people-and-communities/energy-transition-jobs-and-skills.html",
+    "https://www.shell.com/news-and-insights/newsroom/news-and-media-releases/2026/shell-plc-publishes-2025-annual-report-and-accounts.html",
+    "https://www.shell.com/investors/results-and-reporting/quarterly-results.html",
+    "https://investor.ecovyst.com/sec-filings/all-sec-filings/content/0001140361-25-012748/0001140361-25-012748.pdf",
+    "https://www.shell.com/what-we-do/technology-and-innovation/shell-techxplorer-digest/shell-techxplorer-digest-2021/_jcr_content/root/main/section/simple/call_to_action_copy/links/item0.stream/1669901239768/eff002e392487177be763f9387fd09428ee98555/digest.pdf",
+    "https://en.wikipedia.org/wiki/Shell_plc",
+    "https://www.linkedin.com/company/shell",
+    "https://www.shell.com/",
+    "https://www.acm.nl/sites/default/files/old_publication/bijlagen/3665_Reactie_Shell.pdf",
+    "https://www.acm.nl/sites/default/files/old_publication/bijlagen/6945_12_17869.pdf",
+    "https://www.acm.nl/sites/default/files/old_publication/bijlagen/7027_23-02-2007_reactie_Shell_TTF.pdf",
+    "https://www.acm.nl/sites/default/files/old_publication/publicaties/12117_ontwerpbesluit-ontheffing-shell-nederland-chemie-bv-voor-elektriciteitsnet.pdf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdZmh+bL71dM42sx6roS3WRWNn7IFgdgZMf7W1F1i1UNhOpwPcOIddJvtdUumzCHEWbNb/AH7TSkHIiTesb3PLl+kf/oNo9M2EVMbmxwWdQywM6++RmFX9S3D5Cqy1rFQx+EbDGqJIyQC9qjWAkysTSL/GnMMsOpN3t2RR9MqaSR49tHDudkQELTrfPL0ssJFd/CJRXe6lHoxunMQWN/YXVjE7XM+Ir+61wFrO7JEw5sn8JRpodO/RWdJbUndTQMdF1+DgiQTKsDCuBOz6gQUi5w==",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhKsUX1FwaRU37cWOsos/Xe+cWKPavSXLYRvOh0f7QTvAtCwP/As00ZsTCKfdvDtP5HyfEVT+IYddcSTJafrw59nxzpyOoAHvV8XQPRlLlVjKW2aiBIIjB1ogRoo8Eb6BNrKQXgKocqaD5lzGYFnLrw==",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdRIVw9s2ycMA+f02Ogg9FB6WHICXnf+CqpNrEzgksOATftBUPFSCeBlkTrGMYYvSYd5t6tOQyR5vzPMRvib6vCLtMUvXVATnGVk87NeQZ7lS6pOcrgGaIH6SM7ee/sD14VRj5X49O+ayUeKU2hAMF+H1uN7j6mSThLdbDRlUHPv1MAOes+YAI3n9HKQtA5tzyQcl5Xe6r/o5WGl4Ioe6gS8VRdbKDM33iSt5VW7oSiSn6GAuQYFRntHCtNQRDXuohbQ+cwUH5APmf6tf9s1qDUg==",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdChCboEqiSvoqrNZm9yA0x4zCzP7s5vJ4LUgIaqaNGYfDEa1rdRgoY2uzhsZ+3x59PXWzN4i9XwBAYadpL3tfa+4lQOIX40nNznMXMzB2eF3npb1xj85VAZ8YyuREoxDrAwPhiHyJ6nnPehcaN2HMFA==",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlU7V52WPcDNhUBnnjl9cRfxV52HFK/kB3P/R2gdimWx1fPEKhvweuRCYutOJkMaNXaqjpb6Nx2JLXtJMgCCd2hPnqYlV2y5ZW3pJ8G/jvEtqxqHg9qvaGLVtZAOpm6VM5Jo217bII/H657rpUoDacqyTd7AM9l/4I4daBSnwiTdMl+KxF3unNvMk2Z53oOdTJB/T+9vQfe25MdIY4R1cyaPZpTT70i6eKhPHx7AwOCw=",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdTyp/cuqK9u2A7er37RJifGouwoAQ2cBYjv0AqtBP16OPbMsBvgsEsYAKSatVWl0MjCI/eBY0lYB8HNJQDvCwZ0PnQIHRIDLV/QC8xgvBZEVtVTXvXaeB8k4Re5AbddaghjszowBMaHDp5O2pKKUeyQ==",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpd51xFOLMxTGw1wD4BaJZALNa0ppVclwyXxwlMaxGyefmb80+sLJWD7UCHlCvMpdBJPNaSalbm1TOjuRK92qp/NiJ3z2uNriLbTkR7S4nuM6UpuSpnl6xsj5X2sM/gVsKNX+LboRFceIjbTBvX6CQiFx7rZm2FPwSDstsPETXeK7PHxgTCkbAQ9XdytQMfv9kz04wZyFtu1f9h0n0NnhOK7ZzBp6vLpXDht7jSvjRB+2g=",
+    "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5339",
+    "https://www.rechtspraak.nl/binaries/_rts_1776774699686/content/assets/wamca/2026/wamca-massaschade-vereniging-milieudefensie-vs-shell-plc.pdf",
+    "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5337",
+    "https://zoek.officielebekendmakingen.nl/ah-tk-20112012-2181.odt",
+    "https://zoek.officielebekendmakingen.nl/blg-1195646.pdf",
+    "https://zoek.officielebekendmakingen.nl/blg-91237.pdf",
+    "https://zoek.officielebekendmakingen.nl/stcrt-2026-13318.pdf",
+    "https://www.shell.com/investors/information-for-shareholders/share-information.html",
+    "https://www.shell.com/investors/information-for-shareholders/share-prices.html",
+    "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooh8NLLoeySqSN977U7Adg5MI6rLPOZlNkHhqDSgswUWsiEPm8C",
+    "https://royaldutchshellplc.com/",
+    "https://www.shell.com/investors/simplified-share-structure.html",
+    "https://finance.yahoo.com/quote/SHEL/",
+    "https://www.shell.com/investors/results-and-reporting/annual-report.html",
+    "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooZQs8N4sD99xc5hABD3G4nDSrJqRZJadKE0c6afypDvUevZDOk",
+    "https://amecorg.com/member/shell-plc/",
+    "https://live.euronext.com/en/products/equities/company-news/2025-03-25-shell-publishes-annual-report-and-accounts"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"Shell plc\" \"shell.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "partial_executed",
+      "elapsed_s": 1.482,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.leadnear.com/company/us/shell",
+        "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+        "https://uk.linkedin.com/in/hishamsiddiqui",
+        "https://www.shell.us/about-us/news-and-insights/media/_jcr_content/root/main/section_1223829208_c/call_to_action_copy__810874694/links/item0.stream/1731940335017/4b770f56821a46652fd61afe596e8ecfb3ccf789/2019-shell-usa-press-releases-archive.pdf",
+        "https://www.shell.com/investors/environmental-social-and-governance/_jcr_content/root/main/section/simple_913716519/list_1995953506/list_item_copy.multi.stream/1653374782393/82914f4065a9cf72bfd7bef87df5c80bf3d596d4/shell-ethics-and-compliance-manual-march-2021.pdf",
+        "https://www.shell.com/investors/results-and-reporting/annual-report/_jcr_content/root/main/section_2113846431/link_list/links/item0.stream/1774544186011/5727c329a58b5eb7a54442c0a03f562a5aef1159/shell-annual-report-2025-interactive.pdf",
+        "https://www.shell.com/investors/results-and-reporting/annual-report/_jcr_content/root/main/section_2113846431/link_list/links/item2.stream/1773292260473/1b4dd6bdb826c61b809e3c94988fa45581183869/governance-ar25.pdf",
+        "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab/text.multi.stream/1742905301176/ce28b952e201476287788cfcf35406e464f9785c/shell-annual-report-2023.pdf",
+        "https://www.shell.com/who-we-are/our-values/_jcr_content/root/main/section_874829968/list/list_item_copy.multi.stream/1752576274096/eb6d18269c7e9e79b6539e1b0780747d5e2c8b31/strategic-report-ar-two-four.pdf",
+        "https://www.facebook.com/groups/bposecretfiles/posts/219111373317673/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Shell: Company Overview, Leadership & Verified Contact Info",
+          "snippet": "Shell PLC. Shell. shell.com. Shell Oil Co. Get Email Now. Find verified emails ... @shell.com, Show Details. Jitesh Mishra, Controller, j****a@shell.com, Show ...",
+          "url": "https://www.leadnear.com/company/us/shell",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "20-F - SEC.gov",
+          "snippet": "Royal Dutch Shell plc (the Company) is a public limited company registered ... Company Secretary and can be found at www.shell.com/investor. Audit ...",
+          "url": "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Hisham Siddiqui - Shell | LinkedIn",
+          "snippet": "Experience: Shell · Education: London Business School · Location: London · 500 ... Websites. Company Website: http://www.Shell.com. Personal Website: http ...",
+          "url": "https://uk.linkedin.com/in/hishamsiddiqui",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 2019 Shell USA Press Releases",
+          "snippet": "to https://www.shell.com/energy-and-innovation/new-energies.html ... Shell Oil Company is an affiliate of Royal Dutch Shell plc, a global group of ...",
+          "url": "https://www.shell.us/about-us/news-and-insights/media/_jcr_content/root/main/section_1223829208_c/call_to_action_copy__810874694/links/item0.stream/1731940335017/4b770f56821a46652fd61afe596e8ecfb3ccf789/2019-shell-usa-press-releases-archive.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] shell-ethics-and-compliance-manual-march-2021.pdf",
+          "snippet": "sp.shell.com/sites/AAFAA5088/Pages/ rules-and- · requirements ... Any company in which Shell plc holds a controlling interest, either directly or indirectly.",
+          "url": "https://www.shell.com/investors/environmental-social-and-governance/_jcr_content/root/main/section/simple_913716519/list_1995953506/list_item_copy.multi.stream/1653374782393/82914f4065a9cf72bfd7bef87df5c80bf3d596d4/shell-ethics-and-compliance-manual-march-2021.pdf",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Shell plc\" acquisition overname parent group investor shareholder \"shell.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "executed",
+      "elapsed_s": 1.319,
+      "discovered_urls_count": 6,
+      "source_urls": [
+        "https://www.johndonovan.website/?p=156",
+        "https://royaldutchshellgroup.com/2016/09/19/88205/",
+        "https://dare.uva.nl/document/2/81261",
+        "https://www.shellnews.net/blog/links.html",
+        "https://www.iex.nl/Forum-Aandeel/210964/Topic/1069091/Royal-Dutch-Shell_Shell-nieuwtjes.aspx?page=260"
+      ],
+      "source_urls_count": 5,
+      "matched_results": [
+        {
+          "title": "Domain name battle with Shell resulting from the reserves scandal",
+          "snippet": "... parent companies and create a new company, Royal Dutch Shell PLC. In ... company will remain at www.shell.com. Alfred Donovan's son ...",
+          "url": "https://www.johndonovan.website/?p=156",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Links to several hundred articles by a host of different publishers ...",
+          "snippet": "Shell Transport & Trading Co and Royal Dutch Petroleum were unified into a single Dutch owned company - Royal Dutch Shell Plc. ... Shell.com ...",
+          "url": "https://royaldutchshellgroup.com/2016/09/19/88205/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Publicatieverplichtingen voor beursvennootschappen - UvA DARE",
+          "snippet": "... Shell plc.110 Het gevolg van deze transactie is niet alleen dat deze ... shell.com) te vinden, Listing Particulars. Daarin wordt op, p. 409, opgemerkt ...",
+          "url": "https://dare.uva.nl/document/2/81261",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "who has had frequent legal battles with Shell ... - ShellNews.net",
+          "snippet": "... shell.com/tellshell)also drew in commentary about controversial Shell ... Shell Plc' has nothing whatever to do with the said company. A disclaimer ...",
+          "url": "https://www.shellnews.net/blog/links.html",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Forum: Royal Dutch Shell » Shell nieuwtjes. » Pagina: 260 - IEX",
+          "snippet": "Forum, discussies en reacties van SHELL PLC. ... Overgenomen van Shell,com. Dec 2, 2021. The ... The transaction will take place through the 100% acquisition of ...",
+          "url": "https://www.iex.nl/Forum-Aandeel/210964/Topic/1069091/Royal-Dutch-Shell_Shell-nieuwtjes.aspx?page=260",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Shell plc\" vacancies careers jobs hiring skills competitors \"shell.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "executed",
+      "elapsed_s": 1.318,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://builtin.com/job/shell-graduate-programme-2026-india/7118898",
+        "https://www.shell.com/who-we-are/our-history/our-company-history.html",
+        "https://bebee.com/gb/jobs/portfolio-analyst-product-trading-london-uk-shell-plc-london--techmap_gb_24139119",
+        "https://www.shell.com/sustainability/people/our-people.html",
+        "https://www.shell.com/careers/projects-and-technology.html",
+        "https://www.instagram.com/p/DXhGLU0gkR5/",
+        "https://www.eujobs.co/career-guides/shell-companies-career-guide",
+        "https://www.facebook.com/groups/1239227684930825/posts/1297906832396243/",
+        "https://www.quora.com/What-are-the-careers-opportunities-in-Shell-oil-company",
+        "https://www.shell.co.uk/about-us/sustainability/people-and-communities/energy-transition-jobs-and-skills.html"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Shell Graduate Programme 2026 - India - Shell Plc - Built In",
+          "snippet": "... careers@shell.com . We strive to ensure that our process and workplace is ... 108 Employees. View all jobs at Shell Plc · View Shell Plc Profile. Report ...",
+          "url": "https://builtin.com/job/shell-graduate-programme-2026-india/7118898",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Our company history - Shell Global",
+          "snippet": "... Shell plc. Shell's innovation has continued at pace into the 21st ... Explore Shell.com. Our strategy · Our values · Our climate target · Our ...",
+          "url": "https://www.shell.com/who-we-are/our-history/our-company-history.html",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Portfolio Analyst- Product Trading | London, UK - Shell plc - BeBee",
+          "snippet": "Portfolio Analyst- Product Trading | London, UK. Technology. Shell plc ... careers@shell.com . We strive to ensure that our process and ...",
+          "url": "https://bebee.com/gb/jobs/portfolio-analyst-product-trading-london-uk-shell-plc-london--techmap_gb_24139119",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Our people | Shell Global",
+          "snippet": "The companies in which Shell plc directly and indirectly owns investments are separate legal entities. ... Explore Shell.com. Our strategy.",
+          "url": "https://www.shell.com/sustainability/people/our-people.html",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Technology to tackle the energy challenge - Shell Global",
+          "snippet": "The companies in which Shell plc directly and indirectly owns investments are separate legal entities. ... Explore Shell.com. Our strategy.",
+          "url": "https://www.shell.com/careers/projects-and-technology.html",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Shell plc\" revenue omzet growth FT1000 annual report ranking \"shell.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "executed",
+      "elapsed_s": 1.503,
+      "discovered_urls_count": 2,
+      "source_urls": [
+        "https://www.shell.com/news-and-insights/newsroom/news-and-media-releases/2026/shell-plc-publishes-2025-annual-report-and-accounts.html",
+        "https://www.shell.com/investors/results-and-reporting/quarterly-results.html"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "Shell plc publishes 2025 Annual Report and Accounts",
+          "snippet": "Shell plc published its Annual Report and Accounts for the year ended December 31, 2025 (“2025 Annual Report and Accounts”).",
+          "url": "https://www.shell.com/news-and-insights/newsroom/news-and-media-releases/2026/shell-plc-publishes-2025-annual-report-and-accounts.html",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Quarterly Results | Shell Global",
+          "snippet": "Shell plc's latest quarterly, half year and full year results and archived results since 2013.",
+          "url": "https://www.shell.com/investors/results-and-reporting/quarterly-results.html",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Shell plc\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed",
+      "elapsed_s": 1.474,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://investor.ecovyst.com/sec-filings/all-sec-filings/content/0001140361-25-012748/0001140361-25-012748.pdf",
+        "https://www.shell.com/what-we-do/technology-and-innovation/shell-techxplorer-digest/shell-techxplorer-digest-2021/_jcr_content/root/main/section/simple/call_to_action_copy/links/item0.stream/1669901239768/eff002e392487177be763f9387fd09428ee98555/digest.pdf"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "[PDF] Annual Report - Ecovyst Investor Relations",
+          "snippet": "... Shell plc. or “Shell”), supplies high technology specialty zeolites and zeolite-based catalysts to customers for refining of oil primarily ...",
+          "url": "https://investor.ecovyst.com/sec-filings/all-sec-filings/content/0001140361-25-012748/0001140361-25-012748.pdf",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "[PDF] Shell TechXplorer Digest 2021",
+          "snippet": "Chief Executive Officer, Royal Dutch Shell plc. New technologies can reshape ... engineering team lead for BSP. He is responsible for maturing fit-for ...",
+          "url": "https://www.shell.com/what-we-do/technology-and-innovation/shell-techxplorer-digest/shell-techxplorer-digest-2021/_jcr_content/root/main/section/simple/call_to_action_copy/links/item0.stream/1669901239768/eff002e392487177be763f9387fd09428ee98555/digest.pdf",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"Shell plc\" OR \"shell.com\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.51,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Shell_plc",
+        "https://www.linkedin.com/company/shell",
+        "https://www.shell.com/"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "Shell plc - Wikipedia",
+          "snippet": "www.shell.com · Edit this at Wikidata. Footnotes / references. a formerly known ... Name and logo. edit. The name Shell is linked to The \"Shell\" Transport ...",
+          "url": "https://en.wikipedia.org/wiki/Shell_plc",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Shell - LinkedIn",
+          "snippet": "About us ; Website: http://www.shell.com. External link for Shell ; Industry: Oil and Gas ; Company size: 10,001+ employees ; Headquarters: London, ...",
+          "url": "https://www.linkedin.com/company/shell",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Shell Global",
+          "snippet": "Shell plc first quarter 2026 results announcement · Featured content · How can we help? · Latest news · You may also be interested in · Explore Shell.com · Can we ...",
+          "url": "https://www.shell.com/",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.238,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.acm.nl/sites/default/files/old_publication/bijlagen/3665_Reactie_Shell.pdf",
+        "https://www.acm.nl/sites/default/files/old_publication/bijlagen/6945_12_17869.pdf",
+        "https://www.acm.nl/sites/default/files/old_publication/bijlagen/7027_23-02-2007_reactie_Shell_TTF.pdf",
+        "https://www.acm.nl/sites/default/files/old_publication/publicaties/12117_ontwerpbesluit-ontheffing-shell-nederland-chemie-bv-voor-elektriciteitsnet.pdf"
+      ],
+      "source_urls_count": 4,
+      "matched_results": [
+        {
+          "title": "[PDF] Dienst uitvoering en toezicht Energie t.a.v. ir. G.J.L. Zijl Postbus ...",
+          "snippet": "Internet http://www.shell.com. 22 april 2005. Onderwerp: Studie “Onderzoek Marktwerking Groothandelsmarkt Gas” en “Research Flexibility Services”.",
+          "url": "https://www.acm.nl/sites/default/files/old_publication/bijlagen/3665_Reactie_Shell.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 12 maart 2004",
+          "snippet": "Email erik.vliegenthart@shell.com c=ww;a=400net;p-shell;s=vliegenthart;g-erik. Internet http://www.shell.com. 10 maart 2004. Uw kenmerk ...",
+          "url": "https://www.acm.nl/sites/default/files/old_publication/bijlagen/6945_12_17869.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Shell Nederland BV",
+          "snippet": "Internet http://www.shell.com. Onderwerp: Document \"Accelerating TTF development\" (Referentie nummer: 102647). Geachte mevrouw De Kleijn ...",
+          "url": "https://www.acm.nl/sites/default/files/old_publication/bijlagen/7027_23-02-2007_reactie_Shell_TTF.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Ontwerpbesluit ontheffing Shell Nederland Chemie B.V. (voor ... - ACM",
+          "snippet": "... shell.com/chemicals/aboutshell/who-we-are/our- locations/manufacturing-locations/moerdijk.html. Page 11. Besluit. 11/18. 5 Beoordeling van de ontheffingaanvraag.",
+          "url": "https://www.acm.nl/sites/default/files/old_publication/publicaties/12117_ontwerpbesluit-ontheffing-shell-nederland-chemie-bv-voor-elektriciteitsnet.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.353,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdZmh+bL71dM42sx6roS3WRWNn7IFgdgZMf7W1F1i1UNhOpwPcOIddJvtdUumzCHEWbNb/AH7TSkHIiTesb3PLl+kf/oNo9M2EVMbmxwWdQywM6++RmFX9S3D5Cqy1rFQx+EbDGqJIyQC9qjWAkysTSL/GnMMsOpN3t2RR9MqaSR49tHDudkQELTrfPL0ssJFd/CJRXe6lHoxunMQWN/YXVjE7XM+Ir+61wFrO7JEw5sn8JRpodO/RWdJbUndTQMdF1+DgiQTKsDCuBOz6gQUi5w==",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhKsUX1FwaRU37cWOsos/Xe+cWKPavSXLYRvOh0f7QTvAtCwP/As00ZsTCKfdvDtP5HyfEVT+IYddcSTJafrw59nxzpyOoAHvV8XQPRlLlVjKW2aiBIIjB1ogRoo8Eb6BNrKQXgKocqaD5lzGYFnLrw==",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdRIVw9s2ycMA+f02Ogg9FB6WHICXnf+CqpNrEzgksOATftBUPFSCeBlkTrGMYYvSYd5t6tOQyR5vzPMRvib6vCLtMUvXVATnGVk87NeQZ7lS6pOcrgGaIH6SM7ee/sD14VRj5X49O+ayUeKU2hAMF+H1uN7j6mSThLdbDRlUHPv1MAOes+YAI3n9HKQtA5tzyQcl5Xe6r/o5WGl4Ioe6gS8VRdbKDM33iSt5VW7oSiSn6GAuQYFRntHCtNQRDXuohbQ+cwUH5APmf6tf9s1qDUg==",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdChCboEqiSvoqrNZm9yA0x4zCzP7s5vJ4LUgIaqaNGYfDEa1rdRgoY2uzhsZ+3x59PXWzN4i9XwBAYadpL3tfa+4lQOIX40nNznMXMzB2eF3npb1xj85VAZ8YyuREoxDrAwPhiHyJ6nnPehcaN2HMFA==",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlU7V52WPcDNhUBnnjl9cRfxV52HFK/kB3P/R2gdimWx1fPEKhvweuRCYutOJkMaNXaqjpb6Nx2JLXtJMgCCd2hPnqYlV2y5ZW3pJ8G/jvEtqxqHg9qvaGLVtZAOpm6VM5Jo217bII/H657rpUoDacqyTd7AM9l/4I4daBSnwiTdMl+KxF3unNvMk2Z53oOdTJB/T+9vQfe25MdIY4R1cyaPZpTT70i6eKhPHx7AwOCw=",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdTyp/cuqK9u2A7er37RJifGouwoAQ2cBYjv0AqtBP16OPbMsBvgsEsYAKSatVWl0MjCI/eBY0lYB8HNJQDvCwZ0PnQIHRIDLV/QC8xgvBZEVtVTXvXaeB8k4Re5AbddaghjszowBMaHDp5O2pKKUeyQ==",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpd51xFOLMxTGw1wD4BaJZALNa0ppVclwyXxwlMaxGyefmb80+sLJWD7UCHlCvMpdBJPNaSalbm1TOjuRK92qp/NiJ3z2uNriLbTkR7S4nuM6UpuSpnl6xsj5X2sM/gVsKNX+LboRFceIjbTBvX6CQiFx7rZm2FPwSDstsPETXeK7PHxgTCkbAQ9XdytQMfv9kz04wZyFtu1f9h0n0NnhOK7ZzBp6vLpXDht7jSvjRB+2g="
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "[PDF] Shell recommends ADS holders reject mini-tender offer - AFM",
+          "snippet": "Additional risk factors that may affect future results are contained in Shell plc's Form 20-F for the year ended December 31, 2021 (available at www.shell.com/ ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdZmh+bL71dM42sx6roS3WRWNn7IFgdgZMf7W1F1i1UNhOpwPcOIddJvtdUumzCHEWbNb/AH7TSkHIiTesb3PLl+kf/oNo9M2EVMbmxwWdQywM6++RmFX9S3D5Cqy1rFQx+EbDGqJIyQC9qjWAkysTSL/GnMMsOpN3t2RR9MqaSR49tHDudkQELTrfPL0ssJFd/CJRXe6lHoxunMQWN/YXVjE7XM+Ir+61wFrO7JEw5sn8JRpodO/RWdJbUndTQMdF1+DgiQTKsDCuBOz6gQUi5w==",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Publication of Prospectus - AFM",
+          "snippet": "Shell plc unaudited consolidated interim financial report as at and for the three month period ended 31 March 2026 https://www.shell.com ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhKsUX1FwaRU37cWOsos/Xe+cWKPavSXLYRvOh0f7QTvAtCwP/As00ZsTCKfdvDtP5HyfEVT+IYddcSTJafrw59nxzpyOoAHvV8XQPRlLlVjKW2aiBIIjB1ogRoo8Eb6BNrKQXgKocqaD5lzGYFnLrw==",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Shell Plc First Quarter 2025 Euro and GBP Equivalent Dividend ...",
+          "snippet": "... Shell plc's Form 20-F for the year ended December 31, 2024 (available at www.shell.com/investors/news-and-filings/sec-filings.html and www ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdRIVw9s2ycMA+f02Ogg9FB6WHICXnf+CqpNrEzgksOATftBUPFSCeBlkTrGMYYvSYd5t6tOQyR5vzPMRvib6vCLtMUvXVATnGVk87NeQZ7lS6pOcrgGaIH6SM7ee/sD14VRj5X49O+ayUeKU2hAMF+H1uN7j6mSThLdbDRlUHPv1MAOes+YAI3n9HKQtA5tzyQcl5Xe6r/o5WGl4Ioe6gS8VRdbKDM33iSt5VW7oSiSn6GAuQYFRntHCtNQRDXuohbQ+cwUH5APmf6tf9s1qDUg==",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Shell plc filed Form 20-F with SEC - AFM",
+          "snippet": "The 2022 Form 20-F can be downloaded from www.shell.com/investors/financial-reporting/sec-filings or www.sec.gov. Shell plc also published its Annual Report ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdChCboEqiSvoqrNZm9yA0x4zCzP7s5vJ4LUgIaqaNGYfDEa1rdRgoY2uzhsZ+3x59PXWzN4i9XwBAYadpL3tfa+4lQOIX40nNznMXMzB2eF3npb1xj85VAZ8YyuREoxDrAwPhiHyJ6nnPehcaN2HMFA==",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Shell plc announces changes to the Executive Committee - AFM",
+          "snippet": "Additional risk factors that may affect future results are contained in Shell plc's Form 20-F for the year ended December 31, 2023 (available at www.shell.com ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlU7V52WPcDNhUBnnjl9cRfxV52HFK/kB3P/R2gdimWx1fPEKhvweuRCYutOJkMaNXaqjpb6Nx2JLXtJMgCCd2hPnqYlV2y5ZW3pJ8G/jvEtqxqHg9qvaGLVtZAOpm6VM5Jo217bII/H657rpUoDacqyTd7AM9l/4I4daBSnwiTdMl+KxF3unNvMk2Z53oOdTJB/T+9vQfe25MdIY4R1cyaPZpTT70i6eKhPHx7AwOCw=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.224,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.367,
+      "discovered_urls_count": 6,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.359,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.177,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 2.119,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5339",
+        "https://www.rechtspraak.nl/binaries/_rts_1776774699686/content/assets/wamca/2026/wamca-massaschade-vereniging-milieudefensie-vs-shell-plc.pdf"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:RBDHA:2021:5339, Rechtbank Den Haag, C ... - Uitspraken",
+          "snippet": "ROYAL DUTCH SHELL PLC in The Hague,. defendant,. attorney-at-law mr. D ... 26 https://www.shell.com/energy-and-innovation/the-energy-future/what-is ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5339",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Dagvaarding Collectieve vordering ex artikel 3:305a BW",
+          "snippet": "... Shell plc, gevestigd te Shell. Centre, Londen, SE1 7NA, Verenigd ... shell.com/ is te zien dat Shell 12.380 locaties heeft in de ...",
+          "url": "https://www.rechtspraak.nl/binaries/_rts_1776774699686/content/assets/wamca/2026/wamca-massaschade-vereniging-milieudefensie-vs-shell-plc.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.328,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5339",
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5337"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:RBDHA:2021:5339, Rechtbank Den Haag, C ... - Uitspraken",
+          "snippet": "ROYAL DUTCH SHELL PLC in The Hague,. defendant,. attorney-at-law mr. D ... 26 https://www.shell.com/energy-and-innovation/the-energy-future/what-is ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5339",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "ECLI:NL:RBDHA:2021:5337, Rechtbank Den Haag, C ... - Uitspraken",
+          "snippet": "ROYAL DUTCH SHELL PLC te Den Haag,. gedaagde,. advocaat mr. D. Horeman te ... 26 https://www.shell.com/energy-and-innovation/the-energy-future/what-is ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBDHA:2021:5337",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"Shell plc\" OR \"shell.com\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.391,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://zoek.officielebekendmakingen.nl/ah-tk-20112012-2181.odt",
+        "https://zoek.officielebekendmakingen.nl/blg-1195646.pdf",
+        "https://zoek.officielebekendmakingen.nl/blg-91237.pdf",
+        "https://zoek.officielebekendmakingen.nl/stcrt-2026-13318.pdf"
+      ],
+      "source_urls_count": 4,
+      "matched_results": [
+        {
+          "title": "[ODF] Antwoord vragen Dikkers over het bericht dat Shell Chinees ...",
+          "snippet": "http://www.shell.com/home/content/media/speeches_and_webcasts/2012/voser_ceraweek_houston_07032012.html. verkondigd de lat bij schaliegaswerkzaamheden hoog ...",
+          "url": "https://zoek.officielebekendmakingen.nl/ah-tk-20112012-2181.odt",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Exploration of Transition Strategies in Dutch Refineries and Organic ...",
+          "snippet": "https://www.shell.com/business-customers/chemicals/media-releases/2022-media- releases/shell-. Shell, 2023a. Shell to deliver more value with ...",
+          "url": "https://zoek.officielebekendmakingen.nl/blg-1195646.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Economic Impact of the Dutch Gas Hub Strategy on the Netherlands",
+          "snippet": "shell.com/static/nam-en/downloads/flyer_NAMG50ENG.pdf. Nederlandse Aardolie Maatschappij BV (NAM) brochure, “Underground storage of national ...",
+          "url": "https://zoek.officielebekendmakingen.nl/blg-91237.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] STAATSCOURANT - officiële bekendmakingen | Overheid",
+          "snippet": "... shell.com/what- we-do/carbon-capture-and-storage/shell-offshore-carbon-storage-nl.html. Heeft u vragen over de procedure? Bel dan met telefoonnummer 088 042 ...",
+          "url": "https://zoek.officielebekendmakingen.nl/stcrt-2026-13318.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"Shell plc\" OR \"shell.com\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:GB",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.862,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Shell_plc",
+        "https://www.shell.com/investors/information-for-shareholders/share-information.html"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "Shell plc - Wikipedia",
+          "snippet": "www.shell.com · Edit this at Wikidata. Footnotes / references. a formerly known ... Shell plc to Shell plc. The company's name change was registered ...",
+          "url": "https://en.wikipedia.org/wiki/Shell_plc",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Share information | Shell Global",
+          "snippet": "Shell plc has an American Depositary Share (ADS) facility managed ... Fraud and scam alert · Contact us. Modify cookie preferences. About ...",
+          "url": "https://www.shell.com/investors/information-for-shareholders/share-information.html",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@shell.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.356,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.shell.com/investors/information-for-shareholders/share-prices.html",
+        "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooh8NLLoeySqSN977U7Adg5MI6rLPOZlNkHhqDSgswUWsiEPm8C",
+        "https://en.wikipedia.org/wiki/Shell_plc",
+        "https://www.shell.com/investors/results-and-reporting/quarterly-results.html",
+        "https://royaldutchshellplc.com/",
+        "https://www.shell.com/",
+        "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+        "https://www.shell.com/investors/simplified-share-structure.html",
+        "https://finance.yahoo.com/quote/SHEL/",
+        "https://www.shell.com/investors/results-and-reporting/annual-report.html"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Share prices | Shell Global",
+          "snippet": "... Shell plc, was completed. On 31 January 2022 Royal Dutch Shell plc completed ... Explore Shell.com. Our strategy · Our values · Our climate target · Our ...",
+          "url": "https://www.shell.com/investors/information-for-shareholders/share-prices.html",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Shell plc Profile - Business Structure, Industry & Snapshot",
+          "snippet": "Shell plc. Overview · Financial · In Reports · Products · History · News. Company ... Corporate Address: Shell Centre London SE1 7NA U.K. www.shell.com. Company ...",
+          "url": "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooh8NLLoeySqSN977U7Adg5MI6rLPOZlNkHhqDSgswUWsiEPm8C",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Shell plc - Wikipedia",
+          "snippet": "www.shell.com · Edit this at Wikidata ... Works by or about Shell plc at the Internet Archive · Works by Shell plc at LibriVox (public domain audiobooks) ...",
+          "url": "https://en.wikipedia.org/wiki/Shell_plc",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Quarterly Results | Shell Global",
+          "snippet": "Shell plc's latest quarterly, half year and full year results and ... Explore Shell.com. Our strategy · Our values · Our climate target · Our ...",
+          "url": "https://www.shell.com/investors/results-and-reporting/quarterly-results.html",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Royal Dutch Shell Plc .com",
+          "snippet": "Shell's current official website is indeed shell.com . But then comes the problem. Royal Dutch Shell plc is no longer the current legal name of the company.",
+          "url": "https://royaldutchshellplc.com/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"shell.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.773,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooZQs8N4sD99xc5hABD3G4nDSrJqRZJadKE0c6afypDvUevZDOk",
+        "https://en.wikipedia.org/wiki/Shell_plc",
+        "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+        "https://finance.yahoo.com/quote/SHEL/",
+        "https://www.shell.com/investors/simplified-share-structure.html",
+        "https://www.shell.com/",
+        "https://amecorg.com/member/shell-plc/",
+        "https://www.shell.com/investors/results-and-reporting/annual-report.html",
+        "https://live.euronext.com/en/products/equities/company-news/2025-03-25-shell-publishes-annual-report-and-accounts",
+        "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab/text.multi.stream/1742905301176/ce28b952e201476287788cfcf35406e464f9785c/shell-annual-report-2023.pdf"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Shell plc Profile - Business Structure, Industry & Snapshot",
+          "snippet": "Shell plc. Overview · Financial · In Reports · Products · History · News. Company ... Corporate Address: Shell Centre London SE1 7NA U.K. www.shell.com. Company ...",
+          "url": "https://www.bccresearch.com/company-index/profile/shell-plc?srsltid=AfmBOooZQs8N4sD99xc5hABD3G4nDSrJqRZJadKE0c6afypDvUevZDOk",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Shell plc - Wikipedia",
+          "snippet": "www.shell.com · Edit this at Wikidata ... Works by or about Shell plc at the Internet Archive · Works by Shell plc at LibriVox (public domain audiobooks) ...",
+          "url": "https://en.wikipedia.org/wiki/Shell_plc",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "20-F - SEC.gov",
+          "snippet": "Royal Dutch Shell plc (the Company) is a public limited company registered ... website (www.shell.com). Legislation in the UK governing the preparation ...",
+          "url": "https://www.sec.gov/Archives/edgar/data/1306965/000119312515088212/d798573d20f.htm",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Shell plc (SHEL) Stock Price, News, Quote & History - Yahoo Finance",
+          "snippet": "... Shell plc and changed its name to Shell plc in January 2022. Shell plc was founded in 1897 and is headquartered in London, United Kingdom. www.shell.com ... Index ...",
+          "url": "https://finance.yahoo.com/quote/SHEL/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Simplified Share Structure | Shell Global",
+          "snippet": "Flow diagram showing the Simplification from Royal Dutch Shell plc to Shell plc. ... Explore Shell.com. Our strategy · Our values · Our climate target · Our ...",
+          "url": "https://www.shell.com/investors/simplified-share-structure.html",
+          "match_basis": "target_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

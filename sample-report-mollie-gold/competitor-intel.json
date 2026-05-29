@@ -1,0 +1,14 @@
+{
+  "count": 1,
+  "records": [
+    {
+      "name": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor €1,1 mrd c...",
+      "why_relevant": "Business news signal",
+      "source": "news.google.com",
+      "claim_level": "market route context"
+    }
+  ],
+  "requested_field_slots": 60,
+  "filled_field_slots": 3,
+  "next_action": "Run full source-first competitor field extraction before claiming addresses, revenue, hiring count or employees."
+}

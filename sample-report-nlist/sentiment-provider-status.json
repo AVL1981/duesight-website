@@ -1,0 +1,246 @@
+{
+  "schema_version": "duesight.sentiment_provider_status.v1",
+  "target": {
+    "name": "NLIST B.V.",
+    "domain": "nlist.nl",
+    "kvk": "85442410",
+    "sector": "7810 Arbeidsbemiddeling",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T08:21:24+00:00",
+  "sentiment_scan": {
+    "status": "executed",
+    "elapsed_s": 124.951,
+    "result": {
+      "company": "NLIST B.V.",
+      "kvk": "85442410",
+      "composite_score": -0.1122,
+      "confidence": 0.433,
+      "confidence_pct": "43%",
+      "signal": "NEUTRAL",
+      "sources_active": 8,
+      "sources_total": 19,
+      "agreement_factor": 0.454,
+      "source_breakdown": {
+        "rechtspraak": -0.8,
+        "cbs_vertrouwen": 0.0667,
+        "cbs_sector": 0.0,
+        "kvk_mutaties": 0.1,
+        "xortron_raw": -0.805,
+        "linkedin_signals": -0.5,
+        "groq_sentiment": 0.0,
+        "twitter_sentiment": 1.0
+      },
+      "risk_factors": [
+        "⚖️ Rechtszaken gedetecteerd",
+        "🔓 Ongefilterde OSINT-analyse detecteert verborgen risico's",
+        "🏚️ Shell company indicatoren gedetecteerd (Xortron)"
+      ],
+      "timestamp": "2026-05-29T10:21:24.318227",
+      "signals": [
+        {
+          "source": "rechtspraak",
+          "score": -0.8,
+          "confidence": 0.85,
+          "weight": 0.04,
+          "cached": false,
+          "data": {
+            "cases_found": 10
+          }
+        },
+        {
+          "source": "cbs_vertrouwen",
+          "score": 0.0667,
+          "confidence": 0.7,
+          "weight": 0.04,
+          "cached": false,
+          "data": {
+            "consumentenvertrouwen": 2
+          }
+        },
+        {
+          "source": "cbs_sector",
+          "score": 0.0,
+          "confidence": 0.6,
+          "weight": 0.03,
+          "cached": false,
+          "data": {
+            "current_index": 100,
+            "previous_index": 100,
+            "change_pct": 0.0
+          }
+        },
+        {
+          "source": "kvk_mutaties",
+          "score": 0.1,
+          "confidence": 0.5,
+          "weight": 0.04,
+          "cached": false,
+          "data": {
+            "board_members": 3,
+            "kvk": "85442410",
+            "data_source": "gemini_grounding"
+          }
+        },
+        {
+          "source": "xortron_raw",
+          "score": -0.805,
+          "confidence": 0.65,
+          "weight": 0.05,
+          "cached": false,
+          "data": {
+            "model": "xortron3-fast:Q5_K_M (Xortron)",
+            "raw_score": -0.45,
+            "shell_company_risk": 0.75,
+            "integrity_risk": 0.65,
+            "hidden_risks": [
+              "KvK-nummer 85442410 is recent geregistreerd (2021), wat wijst op een jong bedrijf zonder lange geschiedenis",
+              "Geen duidelijke website of online aanwezigheid gevonden, wat kan wijzen op een brievenbusmaatschappij",
+              "Sector 7810 (Arbeidsbemiddeling) is gevoelig voor fraude en misbruik van uitkeringsgerechtigden",
+              "Geen recente headlines of nieuwsberichten beschikbaar, wat kan wijzen op een gebrek aan transparantie"
+            ],
+            "grey_area_signals": [
+              "Mogelijke stromannen of PEP-connecties niet gecontroleerd",
+              "Business model kan afhankelijk zijn van overheidssubsidies of uitkeringsgerechtigden",
+              "Geen duidelijke fysieke locatie of kantoorruimte gevonden"
+            ],
+            "reasoning": "NLIST B.V. heeft een hoge shell company risk score vanwege het ontbreken van een duidelijke online aanwezigheid en de recente registratie. De sector arbeidsbemiddeling is gevoelig voor fraude, en het ontbreken van headlines of nieuwsberichten versterkt dit beeld. De integriteitsrisico's zijn gemiddeld tot hoog, vooral vanwege het ontbreken van transparantie over bestuurders en de mogelijke afhankelijkheid van overheidssubsidies.",
+            "_raw_response": {
+              "raw_sentiment_score": -0.45,
+              "shell_company_risk": 0.75,
+              "integrity_risk": 0.65,
+              "hidden_risks": [
+                "KvK-nummer 85442410 is recent geregistreerd (2021), wat wijst op een jong bedrijf zonder lange geschiedenis",
+                "Geen duidelijke website of online aanwezigheid gevonden, wat kan wijzen op een brievenbusmaatschappij",
+                "Sector 7810 (Arbeidsbemiddeling) is gevoelig voor fraude en misbruik van uitkeringsgerechtigden",
+                "Geen recente headlines of nieuwsberichten beschikbaar, wat kan wijzen op een gebrek aan transparantie"
+              ],
+              "grey_area_signals": [
+                "Mogelijke stromannen of PEP-connecties niet gecontroleerd",
+                "Business model kan afhankelijk zijn van overheidssubsidies of uitkeringsgerechtigden",
+                "Geen duidelijke fysieke locatie of kantoorruimte gevonden"
+              ],
+              "reasoning": "NLIST B.V. heeft een hoge shell company risk score vanwege het ontbreken van een duidelijke online aanwezigheid en de recente registratie. De sector arbeidsbemiddeling is gevoelig voor fraude, en het ontbreken van headlines of nieuwsberichten versterkt dit beeld. De integriteitsrisico's zijn gemiddeld tot hoog, vooral vanwege het ontbreken van transparantie over bestuurders en de mogelijke afhankelijkheid van overheidssubsidies."
+            }
+          }
+        },
+        {
+          "source": "linkedin_signals",
+          "score": -0.5,
+          "confidence": 0.55,
+          "weight": 0.03,
+          "cached": false,
+          "data": {
+            "hiring_signals": 1,
+            "layoff_signals": 1,
+            "method": "gemini_grounding"
+          }
+        },
+        {
+          "source": "groq_sentiment",
+          "score": 0.0,
+          "confidence": 0.22,
+          "weight": 0.04,
+          "cached": false,
+          "data": {
+            "key_signals": [
+              "No headlines or Dutch‑specific news found for NLIST B.V.",
+              "Live search results primarily reference Netlist, Inc. (US) – a different entity",
+              "Absence of KvK, CBS, or Dutch regulatory filings in the provided data",
+              "Positive financial metrics reported for Netlist, Inc. are not applicable to NLIST B.V.",
+              "Data gap creates uncertainty about the company's current performance"
+            ],
+            "risk_flags": [
+              "Data insufficiency – no verifiable Dutch sources",
+              "Entity confusion – sources conflate NLIST B.V. with US‑based Netlist, Inc.",
+              "Regulatory compliance unknown (KvK registration, CBS reporting, NIS2 obligations)",
+              "Potential market perception risk due to name similarity"
+            ],
+            "outlook": "NEUTRAL"
+          }
+        },
+        {
+          "source": "twitter_sentiment",
+          "score": 1.0,
+          "confidence": 0.9,
+          "weight": 0.04,
+          "cached": false,
+          "data": {
+            "tweets_found": 10,
+            "positive_signals": 1,
+            "negative_signals": 0,
+            "top_snippets": [
+              " twitter javascript is not available · we’ve detected that javascript is disabled in this browser. please enable javascript or switch to a supported browser to continue using twitter.com. you can see ",
+              " nylist (@nylistofficial) / x javascript is not available · we’ve detected that javascript is disabled in this browser. please enable javascript or switch to a supported browser to continue using x.co",
+              " comex on x: \"okay, get this. llvm-nm, the default nm on darwin, which i always knew as 'the tool that dumps nlist entries', can synthesize symbols from objc runtime metadata. but only apple's private"
+            ]
+          }
+        }
+      ],
+      "contested": false,
+      "sovereign_intel": {}
+    },
+    "sources_active": 8,
+    "sources_total": 19,
+    "signal": "NEUTRAL",
+    "confidence": 0.433
+  },
+  "source_status": [
+    {
+      "source": "rechtspraak",
+      "score": -0.8,
+      "confidence": 0.85,
+      "weight": 0.04,
+      "cached": false
+    },
+    {
+      "source": "cbs_vertrouwen",
+      "score": 0.0667,
+      "confidence": 0.7,
+      "weight": 0.04,
+      "cached": false
+    },
+    {
+      "source": "cbs_sector",
+      "score": 0.0,
+      "confidence": 0.6,
+      "weight": 0.03,
+      "cached": false
+    },
+    {
+      "source": "kvk_mutaties",
+      "score": 0.1,
+      "confidence": 0.5,
+      "weight": 0.04,
+      "cached": false
+    },
+    {
+      "source": "xortron_raw",
+      "score": -0.805,
+      "confidence": 0.65,
+      "weight": 0.05,
+      "cached": false
+    },
+    {
+      "source": "linkedin_signals",
+      "score": -0.5,
+      "confidence": 0.55,
+      "weight": 0.03,
+      "cached": false
+    },
+    {
+      "source": "groq_sentiment",
+      "score": 0.0,
+      "confidence": 0.22,
+      "weight": 0.04,
+      "cached": false
+    },
+    {
+      "source": "twitter_sentiment",
+      "score": 1.0,
+      "confidence": 0.9,
+      "weight": 0.04,
+      "cached": false
+    }
+  ]
+}

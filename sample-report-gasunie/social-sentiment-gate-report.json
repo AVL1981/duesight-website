@@ -1,0 +1,57 @@
+{
+  "schema_version": "duesight.social_sentiment_gate_report.v1",
+  "target": {
+    "name": "N.V. Nederlandse Gasunie",
+    "domain": "gasunie.nl",
+    "kvk": "02010556",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:26:22+00:00",
+  "decision": "PASS",
+  "gates": [
+    {
+      "id": "S1",
+      "name": "Entity lock",
+      "status": "PASS",
+      "message": "Target name plus domain/KvK available."
+    },
+    {
+      "id": "S2",
+      "name": "Social route execution",
+      "status": "PASS",
+      "message": "SocialMediaEnricher completed or records deferred status."
+    },
+    {
+      "id": "S3",
+      "name": "Sentiment route execution",
+      "status": "PASS",
+      "message": "DDSentimentEngine completed or records deferred status."
+    },
+    {
+      "id": "S4",
+      "name": "Platform/source URLs",
+      "status": "PASS",
+      "message": "Social findings require source URLs before public promotion."
+    },
+    {
+      "id": "S5",
+      "name": "Guarded social rule",
+      "status": "PASS",
+      "message": "LinkedIn/social remains discovery or corroboration only."
+    },
+    {
+      "id": "S6",
+      "name": "Composite rule",
+      "status": "PASS",
+      "message": "Sentiment supports triage; it cannot become legal/finance/ownership proof."
+    },
+    {
+      "id": "S7",
+      "name": "Public hygiene",
+      "status": "PASS",
+      "message": "Public findings contain no raw provider diagnostics."
+    }
+  ],
+  "public_report_rule": "Promote only source-backed social context and guarded sentiment conclusions; keep provider errors internal."
+}

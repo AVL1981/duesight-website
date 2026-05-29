@@ -1,0 +1,816 @@
+{
+  "schema_version": "duesight.sample_report_pipeline_manifest.v1",
+  "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
+  "timestamp": "2026-05-26T21:59:42+00:00",
+  "target": {
+    "slug": "sample-report-mollie-gold",
+    "company_name": "Mollie B.V.",
+    "domain": "mollie.com",
+    "country": "NL",
+    "kvk_number": "30204462",
+    "ch_uid": "",
+    "tier": "gold",
+    "identity_resolution_path": "identity-resolution.json",
+    "identity_resolution_status": "configured_needs_official_extract",
+    "previous_configured_kvk_number": "30204462"
+  },
+  "status": "pipeline_certified_with_limitations",
+  "modules": [
+    {
+      "name": "cyber_infrastructure",
+      "status": "OK",
+      "rows": 1,
+      "source": "Cloudflare DoH + Shodan InternetDB + IANA/RIR RDAP",
+      "target_claim_safe": false,
+      "limitations": [
+        "Provider/CDN ports are not target-owned exposure without additional asset proof."
+      ]
+    },
+    {
+      "name": "sanctions_screening",
+      "status": "clean",
+      "rows": 1,
+      "source": "sanctions_enricher_v1",
+      "target_claim_safe": true,
+      "limitations": [
+        "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness."
+      ]
+    },
+    {
+      "name": "finance_forensics",
+      "status": "available",
+      "rows": 2,
+      "source": "DueSight Financial Bridge + Benford Analyzer + DE Register Filing Gate",
+      "target_claim_safe": false,
+      "limitations": [
+        "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
+        "This verifies that the Benford analyzer path works; it is not a target-specific finance finding and cannot support a memo conclusion."
+      ]
+    },
+    {
+      "name": "ownership_register",
+      "status": "available",
+      "rows": 2,
+      "source": "DueSight KvK/GLEIF/Zefix/Wikidata/UBO register routes",
+      "target_claim_safe": false,
+      "limitations": [
+        "Manual control-set output is not live official KVK output and cannot be used as a memo-safe identity anchor without official KVK or attached source evidence.",
+        "Partial tree context is not a complete UBO conclusion and must be reconciled against official/control documents."
+      ]
+    },
+    {
+      "name": "business_profile_intel",
+      "status": "available",
+      "rows": 19,
+      "source": "DueSight business profile source ladder",
+      "target_claim_safe": false,
+      "limitations": [
+        "Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.",
+        "Article metadata is source-backed; strategic interpretation requires corroboration and context review."
+      ]
+    },
+    {
+      "name": "company_intel_deep_research",
+      "status": "completed_with_warnings",
+      "rows": 7,
+      "source": "DueSight Business Profile Intelligence Agent + source-first query policy + 10/12-gate guard",
+      "target_claim_safe": false,
+      "limitations": [
+        "Public/contextual findings are reportable for demo and pre-DD triage.",
+        "Official finance, ownership and UBO claims require primary/provider documents with source hash."
+      ]
+    },
+    {
+      "name": "local_bulk_inventory",
+      "status": "available",
+      "rows": 8,
+      "source": "",
+      "target_claim_safe": false,
+      "limitations": [
+        "Inventory row only; exact sanctions/PEP conclusions require a target/person match row.",
+        "Inventory row only; exact entity/person screening still requires deterministic matching output.",
+        "Small cache; not enough for final UBO/shareholder closure without target-specific registry extract or graph provider output."
+      ]
+    },
+    {
+      "name": "regulatory_exposure",
+      "status": "available",
+      "rows": 1,
+      "source": "DueSight Regulatory Scanner",
+      "target_claim_safe": true,
+      "limitations": [
+        "Registration context is not a no-risk conclusion; scope, license class and exact legal entity must be verified."
+      ]
+    },
+    {
+      "name": "reputation_adverse_media",
+      "status": "available",
+      "rows": 1,
+      "source": "DueSight Adverse Media Scanner",
+      "target_claim_safe": false,
+      "limitations": [
+        "No-hit is point-in-time and source-limited; it is not proof of clean reputation."
+      ]
+    },
+    {
+      "name": "public_acquisition",
+      "status": "completed",
+      "rows": 10,
+      "source": "DueSight temporary_scrape_acquisition",
+      "target_claim_safe": false,
+      "limitations": [
+        "Rows are review-only and bounded by robots/public catalog access.",
+        "Catalog metadata only; underlying dataset must be evaluated before any target claim.",
+        "Open knowledge graph; use for entity hints and cross-links, not official registry claims."
+      ]
+    },
+    {
+      "name": "premium_source_discovery",
+      "status": "available",
+      "rows": 5,
+      "source": "app.services.premium_sources.premium_budget_evidence",
+      "target_claim_safe": false,
+      "limitations": [
+        "Discovery and routing layer; final report claims still require source-envelope corroboration.",
+        "Provider discovery row only; use it to route review and corroboration, not as standalone proof."
+      ]
+    },
+    {
+      "name": "source_health",
+      "status": "YELLOW",
+      "rows": 29,
+      "source": "tools.source_health_live.run_all",
+      "checked_at": "2026-05-26T21:55:52.701114+00:00",
+      "limitations": [
+        "Global source-health snapshot; not a target-specific completeness proof."
+      ]
+    },
+    {
+      "name": "provider_preflight",
+      "status": "go",
+      "rows": 14,
+      "source": "tools.sample_report_provider_preflight.run_preflight",
+      "checked_at": "2026-05-26T21:55:16+00:00",
+      "limitations": [
+        "Provider readiness probe; not target-specific evidence.",
+        "GDELT hosted fallback needs recovery or paid/local coverage before production use.",
+        "OpenSanctions hosted hosted fallback needs recovery or paid/local coverage before production use."
+      ]
+    },
+    {
+      "name": "llm_orchestrator_synthesis",
+      "status": "completed",
+      "rows": 1,
+      "source": "local_ollama",
+      "model": "ministral-3:14b",
+      "checked_at": "2026-05-26T22:00:42+00:00",
+      "limitations": [
+        "Guarded synthesis only; not an evidence source and not a production due-diligence opinion.",
+        "Uses only normalized evidence rows present in this sample replay."
+      ]
+    },
+    {
+      "name": "social_sentiment_intel",
+      "status": "completed",
+      "artifact": "social-sentiment-intel.json",
+      "gate_decision": "PASS",
+      "limitations": [
+        "Professional/social sources are corroboration or discovery unless independently source-backed.",
+        "Sentiment is a guarded signal layer and not legal/finance/ownership proof."
+      ]
+    }
+  ],
+  "intelligence_layers": [
+    {
+      "name": "OSINT",
+      "alias": "Umbrella intelligence layer",
+      "maps_to": "business_profile_intel · ownership_register · regulatory_exposure · reputation_adverse_media · cyber_infrastructure · public_acquisition",
+      "note": "Open-source / public-entity intelligence layer; not a separate evidence module yet."
+    },
+    {
+      "name": "reverse media",
+      "alias": "reputation_adverse_media",
+      "maps_to": "adverse media triage + verification",
+      "note": "Signal layer only; never treated as proof without source corroboration."
+    },
+    {
+      "name": "shadow",
+      "alias": "app/api/routers/shadow.py + duesight-agent/shadow_crawler.py",
+      "maps_to": "stealth public-web crawl with explicit opt-in",
+      "note": "Disabled by default and gated by env flags."
+    },
+    {
+      "name": "dorking",
+      "alias": "public_acquisition",
+      "maps_to": "search-discovery + archive/public catalog acquisition",
+      "note": "Review-only and bounded by robots/public access."
+    },
+    {
+      "name": "Xortron",
+      "alias": "local Ollama / adversarial synthesis route",
+      "maps_to": "llm_orchestrator_synthesis + sample-report Xortron adversarial copy",
+      "note": "Repo/docs show Xortron hooks; explicit 14B tagging was not confirmed in the current stack."
+    }
+  ],
+  "limitations": [
+    "Public/local authorized sources only; no auth bypass, no database export, no invasive scraping.",
+    "Demo/pre-DD preview only; no production completeness claim or legal advice.",
+    "Point-in-time source statuses can change and must be rerun before customer use.",
+    "Gold sample uses low-token replay evidence here; heavy synthesis is intentionally not part of this pass.",
+    "Gold/premium guarded local LLM synthesis completed; synthesis remains non-evidence and source-bound.",
+    "Hosted fallback readiness was not production-clean in preflight; local/alternative providers remain recorded and paid coverage is required before customer use."
+  ],
+  "provider_preflight": {
+    "status": "go",
+    "run_id": "sample-provider-preflight-20260526T215516Z",
+    "timestamp": "2026-05-26T21:55:16+00:00",
+    "summary": {
+      "OK": 8,
+      "OPTIONAL_NOT_CONFIGURED": 4,
+      "HOSTED_FALLBACK_DEFERRED": 2
+    },
+    "hard_blockers": [],
+    "results": [
+      {
+        "provider": "Exa",
+        "capability": "semantic OSINT / adverse-media discovery",
+        "status": "OK",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:51+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "Discovery layer only; individual claims still require source-envelope corroboration."
+      },
+      {
+        "provider": "Handelsregister.ai",
+        "capability": "DE registry / filings discovery",
+        "status": "OK",
+        "required": false,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:51+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "Review/triangulation layer unless official document hash or contract terms make output memo-safe."
+      },
+      {
+        "provider": "OpenRegister",
+        "capability": "DE register autocomplete / official-source wrapper",
+        "status": "OK",
+        "required": false,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:51+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "Country-specific DE source; not a global UBO graph replacement."
+      },
+      {
+        "provider": "GLEIF",
+        "capability": "LEI identity and Level-2 relationship corroboration",
+        "status": "OK",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:52+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "LEI relationship data is corroboration, not a complete UBO register."
+      },
+      {
+        "provider": "Shodan InternetDB",
+        "capability": "lightweight cyber exposure",
+        "status": "OK",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:52+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "Passive/free subset; absence of exposure is not a clean security attestation."
+      },
+      {
+        "provider": "Cloudflare DoH",
+        "capability": "domain DNS resolution",
+        "status": "OK",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:54:52+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "DNS resolution does not prove target-owned infrastructure."
+      },
+      {
+        "provider": "GDELT",
+        "capability": "adverse-media and public-news discovery",
+        "status": "HOSTED_FALLBACK_DEFERRED",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:55:14+00:00",
+        "fallback_used": false,
+        "confidence": 0.2,
+        "limitation": "Hosted fallback deferred; local source, recovery monitor or paid coverage required before production use."
+      },
+      {
+        "provider": "Yente local",
+        "capability": "self-hosted sanctions/PEP screening",
+        "status": "OK",
+        "required": true,
+        "configured": true,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.9,
+        "limitation": "Local readiness health only; matching still needs entity identifiers and policy thresholds."
+      },
+      {
+        "provider": "Sanctions hosted fallback",
+        "capability": "hosted sanctions/PEP fallback",
+        "status": "HOSTED_FALLBACK_DEFERRED",
+        "required": false,
+        "configured": true,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": true,
+        "confidence": 0.2,
+        "limitation": "Hosted fallback deferred; local source, recovery monitor or paid coverage required before production use."
+      },
+      {
+        "provider": "Ollama/local LLM",
+        "capability": "local synthesis readiness",
+        "status": "OK",
+        "required": false,
+        "configured": true,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.8,
+        "limitation": "Readiness probe only; does not confirm Xortron 14B or prompt quality."
+      },
+      {
+        "provider": "Firmenbuch/Wirtschafts-Compass",
+        "capability": "optional premium escalation",
+        "status": "OPTIONAL_NOT_CONFIGURED",
+        "required": false,
+        "configured": false,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.0,
+        "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
+      },
+      {
+        "provider": "Censys",
+        "capability": "optional premium escalation",
+        "status": "OPTIONAL_NOT_CONFIGURED",
+        "required": false,
+        "configured": false,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.0,
+        "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
+      },
+      {
+        "provider": "Kyckr",
+        "capability": "optional premium escalation",
+        "status": "OPTIONAL_NOT_CONFIGURED",
+        "required": false,
+        "configured": false,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.0,
+        "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
+      },
+      {
+        "provider": "Sayari",
+        "capability": "optional premium escalation",
+        "status": "OPTIONAL_NOT_CONFIGURED",
+        "required": false,
+        "configured": false,
+        "checked_at": "2026-05-26T21:55:16+00:00",
+        "fallback_used": false,
+        "confidence": 0.0,
+        "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
+      }
+    ]
+  },
+  "evidence": {
+    "normalizer": "report_output_normalizer.ensure_report_evidence_output",
+    "normalized_report_path": "pipeline-evidence.json",
+    "ledger_path": "evidence-ledger.json",
+    "row_count": 50,
+    "ledger_status": "available",
+    "source_envelope_complete": true,
+    "required_row_fields": [
+      "source",
+      "source_status",
+      "checked_at",
+      "freshness",
+      "fallback_used",
+      "confidence",
+      "limitation"
+    ],
+    "source_envelope_incomplete_rows": 0,
+    "source_envelope_issues": []
+  },
+  "verification": {
+    "desktop": "pending",
+    "mobile": "pending",
+    "print_pdf": "pending"
+  },
+  "source_policy": {
+    "allowed": [
+      "public acquisition",
+      "OpenSanctions/Yente where configured",
+      "KvK public/readiness/official routes when available",
+      "GLEIF",
+      "Wayback",
+      "source-health",
+      "adverse media",
+      "digital footprint",
+      "sanctions/PEP",
+      "evidence ledger"
+    ],
+    "blocked": [
+      "database export",
+      "auth bypass",
+      "invasive scraping"
+    ]
+  },
+  "score_policy": {
+    "aggregate_score_certified": true,
+    "investment_verdict_certified": false,
+    "score_kind": "DueSight Evidence Readiness Score",
+    "score_model": "duesight.sample_report_score_model.v2",
+    "score": 71,
+    "scale": "0-100",
+    "display_value": "71/100",
+    "verdict": "READY_WITH_LIMITATIONS",
+    "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
+    "score_confidence": "medium",
+    "computed_at": "2026-05-28T10:34:25+00:00",
+    "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
+    "target": {
+      "slug": "sample-report-mollie-gold",
+      "company_name": "Mollie B.V.",
+      "domain": "mollie.com",
+      "country": "NL",
+      "kvk_number": "30204462",
+      "ch_uid": "",
+      "tier": "gold",
+      "identity_resolution_path": "identity-resolution.json",
+      "identity_resolution_status": "configured_needs_official_extract",
+      "previous_configured_kvk_number": "30204462"
+    },
+    "inputs": {
+      "manifest_path": "pipeline-manifest.json",
+      "ledger_path": "evidence-ledger.json",
+      "evidence_rows": 50,
+      "source_envelope_complete": true,
+      "source_envelope_incomplete_rows": 0,
+      "provider_preflight_summary": {
+        "OK": 8,
+        "OPTIONAL_NOT_CONFIGURED": 4,
+        "HOSTED_FALLBACK_DEFERRED": 2
+      }
+    },
+    "components": [
+      {
+        "name": "evidence_integrity",
+        "label": "Evidence integrity",
+        "score": 22,
+        "max_score": 22,
+        "status": "strong",
+        "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
+        "evidence": [
+          "rows=50",
+          "source_envelope_complete=True",
+          "incomplete_rows=0",
+          "run_id=certified-samples-rest-20260526-235449-mollie-gold"
+        ],
+        "limitations": [
+          "Evidence completeness is not the same as business-risk completeness."
+        ]
+      },
+      {
+        "name": "source_readiness",
+        "label": "Source readiness",
+        "score": 7,
+        "max_score": 13,
+        "status": "yellow",
+        "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+        "evidence": [
+          "preflight_ok=8",
+          "hosted_fallback_deferred=2",
+          "optional_not_configured=4",
+          "source_health=YELLOW"
+        ],
+        "limitations": [
+          "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
+        ]
+      },
+      {
+        "name": "compliance_media",
+        "label": "Compliance and media",
+        "score": 16,
+        "max_score": 18,
+        "status": "limited_clean",
+        "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
+        "evidence": [
+          "sanctions_status=clean",
+          "adverse_media_status=available",
+          "regulatory_status=available",
+          "hosted_fallback_deferred=2"
+        ],
+        "limitations": [
+          "No-hit is not proof of clean reputation.",
+          "UBOs/directors still need final sanctions and PEP screening before sign-off."
+        ]
+      },
+      {
+        "name": "ownership_governance",
+        "label": "Ownership and governance",
+        "score": 10,
+        "max_score": 15,
+        "status": "manual_review",
+        "rationale": "Ownership routes exist, but official UBO/shareholder evidence is not claim-safe in this replay.",
+        "evidence": [
+          "ownership_status=available",
+          "ownership_rows=2",
+          "fallback_or_review_only=False"
+        ],
+        "limitations": [
+          "Needs primary register extract, shareholder tree and acquisition documents before final UBO claims."
+        ]
+      },
+      {
+        "name": "finance_integrity",
+        "label": "Finance integrity",
+        "score": 5,
+        "max_score": 15,
+        "status": "source_limited",
+        "rationale": "Finance route is technically verified, but no memo-safe official filing or target-specific finance output is available.",
+        "evidence": [
+          "finance_status=available",
+          "finance_rows=2",
+          "official_finance_source_unavailable=True"
+        ],
+        "limitations": [
+          "Needs official jaarrekening/XBRL or seller P&L before revenue, EBITDA or margin claims."
+        ]
+      },
+      {
+        "name": "cyber_footprint",
+        "label": "Cyber footprint",
+        "score": 6,
+        "max_score": 10,
+        "status": "context_only",
+        "rationale": "External footprint evidence exists, but provider/CDN context is not target-owned exposure without asset proof.",
+        "evidence": [
+          "cyber_status=OK",
+          "cyber_rows=1",
+          "target_claim_safe=False"
+        ],
+        "limitations": [
+          "Not a penetration test, vulnerability assessment or security attestation."
+        ]
+      },
+      {
+        "name": "business_context",
+        "label": "Business context",
+        "score": 5,
+        "max_score": 7,
+        "status": "limited",
+        "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
+        "evidence": [
+          "business_profile_rows=19",
+          "award_rows=0",
+          "award_status=unknown",
+          "public_acquisition_rows=10",
+          "premium_source_rows=5",
+          "local_bulk_rows=8"
+        ],
+        "limitations": [
+          "Context-rich does not mean officially proven finance or ownership.",
+          "Award and public-web rows remain source-bound context unless primary artifacts are attached."
+        ]
+      }
+    ],
+    "limitations": [
+      "This is an evidence-readiness score, not legal advice and not an investment recommendation.",
+      "The score is only valid for the recorded run_id and timestamp.",
+      "Deferred hosted fallback routes or optional missing providers reduce score confidence and must be recovered/backfilled before production completeness claims.",
+      "Material business conclusions still require primary documents and human diligence review."
+    ]
+  },
+  "context_strength": {
+    "path": "context-strength.json",
+    "status": "available",
+    "items": 6,
+    "updated_at": "2026-05-29T10:57:04+00:00"
+  },
+  "company_intel_deep_research": {
+    "status": "completed_with_warnings",
+    "path": "company-intel-deep-research.json",
+    "findings_path": "company-intel-findings.json",
+    "gate_report_path": "company-intel-gate-report.json",
+    "prompt_evaluation_path": "company-intel-prompt-evaluation.json",
+    "commercial_delta_path": "commercial-deep-research-delta.json",
+    "identity_resolution_path": "identity-resolution.json",
+    "competitor_intel_path": "competitor-intel.json",
+    "talent_intel_path": "talent-intel.json",
+    "prompt_version": "BUSINESS_PROFILE_INTEL_LAYER_20260521",
+    "query_policy_version": "deep_research_query_policy_20260526",
+    "models_used": [
+      "Codex/GPT renderer-gate",
+      "local_ollama:xortron3-fast:Q5_K_M"
+    ],
+    "model_routes_required_for_max_run": [
+      "Claude Code / Opus deep-research pass",
+      "Gemini / Antigravity grounded fast pass",
+      "Codex / GPT judge-synthesis pass",
+      "MiniMax / GLM / Hermes optional contradiction and enrichment passes"
+    ],
+    "tools_used": [
+      "business_profile_intel",
+      "commercial_deep_research_delta",
+      "competitor_intel",
+      "talent_intel",
+      "identity_resolution",
+      "deep_research_query_plan",
+      "local sanctions/Yente cache",
+      "OFAC DuckDB cache",
+      "premium_source_discovery",
+      "public_acquisition",
+      "source envelope normalizer"
+    ],
+    "deep_research_agent_required": true,
+    "candidate_prompt_decision": "adopt_as_market_talent_expansion_layer_not_replacement",
+    "measurable_added_information": {
+      "competitor_records": {
+        "minimum": 5,
+        "maximum": 10
+      },
+      "competitor_field_slots": {
+        "minimum": 60,
+        "maximum": 120,
+        "fields_per_competitor": [
+          "address",
+          "contact",
+          "website",
+          "ceo_or_management",
+          "revenue",
+          "employees_total",
+          "employees_nl",
+          "hr_or_recruiter",
+          "people_policy",
+          "hiring_status",
+          "open_roles",
+          "likely_roles"
+        ]
+      },
+      "talent_intelligence_buckets": 10,
+      "target_dna_fields": [
+        "relationships_or_partners",
+        "recent_projects",
+        "parent_sister_subsidiary_context",
+        "ads_or_campaign_signals",
+        "growth_indicators",
+        "sector_tags",
+        "hiring_status",
+        "positioning_insights"
+      ],
+      "fallback_attempts_per_missing_critical_field": 2,
+      "core_fields_requiring_double_verification": [
+        "legal identity",
+        "address",
+        "management",
+        "revenue/finance",
+        "employee count",
+        "hiring status"
+      ],
+      "actual_yield_formula": "filled_source_backed_fields / requested_fields, plus review_only and official_upgrade counts."
+    },
+    "gate_status": "publish_context_only_with_official_upgrade_route",
+    "verified_findings": 5,
+    "review_only_findings": 2,
+    "official_upgrade_required": 7,
+    "commercial_delta": {
+      "contacts_added_from_business_profile": 10,
+      "role_buckets_added": 1,
+      "competitor_records_added": 1,
+      "talent_buckets_added": 0,
+      "customer_examples_added": 0,
+      "identity_conflicts_detected": 0,
+      "source_layers_recorded": 15,
+      "distinct_source_labels": 15
+    },
+    "updated_at": "2026-05-29T10:57:04+00:00"
+  },
+  "social_sentiment_intel": {
+    "status": "completed",
+    "updated_at": "2026-05-29T08:35:39+00:00",
+    "gate_decision": "PASS",
+    "social_status": "executed",
+    "sentiment_status": "executed",
+    "platforms_checked": 443,
+    "profiles_found": 192,
+    "promoted_social_sources": 5,
+    "sentiment_sources_active": 7,
+    "sentiment_sources_total": 19,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "max_deep_research": {
+    "status": "completed",
+    "updated_at": "2026-05-29T08:45:52+00:00",
+    "providers_executed": [
+      "deep_research_crawl",
+      "minimax_search",
+      "minimax_highspeed_a",
+      "minimax_highspeed_b",
+      "glm_direct",
+      "local_xortron",
+      "hermes_deepseek",
+      "nvidia_nim_nemotron",
+      "antigravity_codeassist",
+      "claude_code",
+      "codex_cli"
+    ],
+    "providers_failed_or_skipped": [],
+    "provider_models_executed": [
+      "deep_research_crawl:query-plan-mmx-search",
+      "minimax_search:MiniMax search",
+      "minimax_highspeed_a:MiniMax-M2.5-highspeed",
+      "minimax_highspeed_b:MiniMax-M2.5-highspeed",
+      "glm_direct:glm-5.1",
+      "local_xortron:xortron3-fast:Q5_K_M",
+      "hermes_deepseek:deepseek-chat",
+      "nvidia_nim_nemotron:nvidia/llama-3.3-nemotron-super-49b-v1",
+      "antigravity_codeassist:gemini31_flash",
+      "claude_code:opus",
+      "codex_cli:gpt-5.5"
+    ],
+    "provider_freshness_summary": {
+      "fresh_current_run_count": 11,
+      "retained_previous_success_count": 0,
+      "failed_or_skipped_current_run_count": 0,
+      "strict_core_retained": [],
+      "health_gated_retained_or_skipped": []
+    },
+    "source_urls_count": 96,
+    "candidate_findings_count": 6,
+    "anti_hallucination_decision": "PASS",
+    "run_path": "max-deep-research-run.json",
+    "provider_status_path": "max-model-provider-status.json",
+    "provider_freshness_path": "max-provider-freshness-report.json",
+    "findings_path": "max-deep-research-findings.json",
+    "anti_hallucination_gates_path": "max-research-anti-hallucination-gates.json"
+  },
+  "business_intel_framework": {
+    "status": "active",
+    "artifact": "business-intel-framework.json",
+    "pillar_count": 7,
+    "execution_coverage_artifact": "execution-coverage-framework.json",
+    "source_urls_count": 96
+  },
+  "execution_coverage_framework": {
+    "status": "active",
+    "artifact": "execution-coverage-framework.json",
+    "execution_layers_total": 9,
+    "execution_layers_with_signal": 9,
+    "covered_boardroom_pillars": [
+      "cyber_compliance",
+      "finance_growth",
+      "identity_source_lock",
+      "market_talent_demand",
+      "operating_model",
+      "ownership_group",
+      "social_sentiment_reputation"
+    ],
+    "anti_hallucination_decision": "PASS"
+  },
+  "replay_mode": {
+    "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
+    "timestamp": "2026-05-26T21:59:42+00:00",
+    "target_slug": "sample-report-mollie-gold",
+    "mode": "orbit_max_stack_replay",
+    "llm_orchestrator_synthesis": "completed",
+    "orbit_max_stack": true,
+    "source_envelope": {
+      "required_row_fields": [
+        "source",
+        "source_status",
+        "checked_at",
+        "freshness",
+        "fallback_used",
+        "confidence",
+        "limitation"
+      ],
+      "source_envelope_complete": true
+    }
+  },
+  "data_quality_breakdown": {
+    "status": "active",
+    "artifact": "data-quality-breakdown.json",
+    "current_score": 71,
+    "missing_points": 29,
+    "official_proof_gate_count": 5,
+    "proof_ladder_version": "duesight.data_quality_breakdown.v1"
+  }
+}

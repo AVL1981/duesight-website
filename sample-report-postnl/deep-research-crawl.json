@@ -1,0 +1,1040 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "PostNL N.V.",
+    "domain": "postnl.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T09:53:34+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 14,
+  "failed_or_skipped": 4,
+  "target_site_crawl": {
+    "pages_checked": 40,
+    "source_urls": [
+      "https://postnl.nl/",
+      "https://postnl.nl/nl/",
+      "https://postnl.nl/en/",
+      "https://postnl.nl/nl/contact",
+      "https://postnl.nl/en/contact",
+      "https://postnl.nl/contact",
+      "https://postnl.nl/sitemap.xml",
+      "https://postnl.nl/klantenservice",
+      "https://www.postnl.nl/zakelijk/zakelijk-klant-worden",
+      "https://postnl.nl/over-postnl",
+      "https://newsroom.postnl.nl/nl-NL/pages/beleggers",
+      "https://newsroom.postnl.nl/nl-NL",
+      "https://www.postnl.nl/werkenbij",
+      "https://postnl.nl/en/about-postnl",
+      "https://newsroom.postnl.nl/en-NL/pages/investors",
+      "https://newsroom.postnl.nl/en-NL",
+      "https://www.postnl.nl/over-postnl/werkenbij",
+      "https://www.postnl.nl/klantenservice",
+      "https://postnl.nl/zakelijk/klantenservice",
+      "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode/wanneer-bezorgd",
+      "https://postnl.nl/klantenservice/niets-ontvangen/pakket-post-met-track-trace",
+      "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging/pakket",
+      "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode",
+      "https://postnl.nl/klantenservice/wanneer-komt-brief-kaart",
+      "https://postnl.nl/klantenservice/inklaringskosten",
+      "https://postnl.nl/klantenservice/bericht-van-aankomst",
+      "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging",
+      "https://postnl.nl/klantenservice/pakket-ophalen-bij-postnl-punt/pakket-ophalen-bij-postnl-punt",
+      "https://postnl.nl/klantenservice/mijn-post",
+      "https://postnl.nl/klantenservice/extra-at-home"
+    ],
+    "pages": [
+      {
+        "url": "https://postnl.nl/",
+        "status": 200,
+        "title": "PostNL: Jouw favoriete bezorger | PostNL",
+        "bytes": 167438
+      },
+      {
+        "url": "https://postnl.nl/nl/",
+        "status": 200,
+        "title": "PostNL: Jouw favoriete bezorger | PostNL",
+        "bytes": 167438
+      },
+      {
+        "url": "https://postnl.nl/en/",
+        "status": 200,
+        "title": "PostNL: your favourite deliverer | PostNL",
+        "bytes": 127513
+      },
+      {
+        "url": "https://postnl.nl/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/en/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/careers",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://postnl.nl/nl/contact",
+        "status": 200,
+        "title": "Klantenservice &amp; contact opnemen: hulp nodig? | PostNL",
+        "bytes": 196749
+      },
+      {
+        "url": "https://postnl.nl/en/contact",
+        "status": 200,
+        "title": "Customer service: The most frequently asked questions | PostNL",
+        "bytes": 127060
+      },
+      {
+        "url": "https://postnl.nl/contact",
+        "status": 200,
+        "title": "Klantenservice &amp; contact opnemen: hulp nodig? | PostNL",
+        "bytes": 196749
+      },
+      {
+        "url": "https://postnl.nl/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 259
+      },
+      {
+        "url": "https://postnl.nl/klantenservice",
+        "status": 200,
+        "title": "Klantenservice &amp; contact opnemen: hulp nodig? | PostNL",
+        "bytes": 196749
+      },
+      {
+        "url": "https://www.postnl.nl/zakelijk/zakelijk-klant-worden",
+        "status": 200,
+        "title": "Zakelijk klant worden: lage post- en pakketprijs | PostNL",
+        "bytes": 187992
+      },
+      {
+        "url": "https://postnl.nl/over-postnl",
+        "status": 200,
+        "title": "Wij zijn PostNL, de dienstverlener in post en logistiek | PostNL",
+        "bytes": 143182
+      },
+      {
+        "url": "https://newsroom.postnl.nl/nl-NL/pages/beleggers",
+        "status": 200,
+        "title": "Beleggers | PostNL Newsroom",
+        "bytes": 144046
+      },
+      {
+        "url": "https://newsroom.postnl.nl/nl-NL",
+        "status": 200,
+        "title": "PostNL Newsroom",
+        "bytes": 361360
+      },
+      {
+        "url": "https://www.postnl.nl/werkenbij",
+        "status": 200,
+        "title": "Werken bij PostNL: vacatures operatie en kantoor | PostNL",
+        "bytes": 139743
+      },
+      {
+        "url": "https://postnl.nl/en/about-postnl",
+        "status": 200,
+        "title": "About PostNL | PostNL",
+        "bytes": 129158
+      },
+      {
+        "url": "https://newsroom.postnl.nl/en-NL/pages/investors",
+        "status": 200,
+        "title": "Investors | PostNL Newsroom",
+        "bytes": 144462
+      },
+      {
+        "url": "https://newsroom.postnl.nl/en-NL",
+        "status": 200,
+        "title": "PostNL Newsroom",
+        "bytes": 338363
+      },
+      {
+        "url": "https://www.postnl.nl/over-postnl/werkenbij",
+        "status": 200,
+        "title": "Werken bij PostNL: vacatures operatie en kantoor | PostNL",
+        "bytes": 139743
+      },
+      {
+        "url": "https://www.postnl.nl/klantenservice",
+        "status": 200,
+        "title": "Klantenservice &amp; contact opnemen: hulp nodig? | PostNL",
+        "bytes": 196749
+      },
+      {
+        "url": "https://postnl.nl/zakelijk/klantenservice",
+        "status": 200,
+        "title": "Service &amp; Contact voor zakelijke klanten | PostNL",
+        "bytes": 182558
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode/wanneer-bezorgd",
+        "status": 200,
+        "title": "Wanneer komt mijn pakket of post? | PostNL",
+        "bytes": 143289
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/niets-ontvangen/pakket-post-met-track-trace",
+        "status": 200,
+        "title": "Pakket of post met track &amp; trace niet bezorgd | PostNL",
+        "bytes": 152663
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging/pakket",
+        "status": 200,
+        "title": "Niet thuis bij bezorging pakket | PostNL",
+        "bytes": 143711
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode",
+        "status": 200,
+        "title": "Volg je pakket of post met track &amp; trace | PostNL",
+        "bytes": 135447
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/wanneer-komt-brief-kaart",
+        "status": 200,
+        "title": "Wanneer komt mijn brief of kaart? | PostNL",
+        "bytes": 131985
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/inklaringskosten",
+        "status": 200,
+        "title": "Vragen over inklaringskosten | PostNL",
+        "bytes": 138981
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/bericht-van-aankomst",
+        "status": 200,
+        "title": "Bericht van aankomst | PostNL",
+        "bytes": 130736
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging",
+        "status": 200,
+        "title": "Niet thuis bij bezorging | PostNL",
+        "bytes": 132032
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/pakket-ophalen-bij-postnl-punt/pakket-ophalen-bij-postnl-punt",
+        "status": 200,
+        "title": "Pakket afhalen bij PostNL-punt | PostNL",
+        "bytes": 140955
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/mijn-post",
+        "status": 200,
+        "title": "Vragen over Mijn Post | PostNL",
+        "bytes": 132736
+      },
+      {
+        "url": "https://postnl.nl/klantenservice/extra-at-home",
+        "status": 200,
+        "title": "Extra@home | PostNL",
+        "bytes": 137217
+      }
+    ]
+  },
+  "source_urls_count": 84,
+  "source_urls": [
+    "https://postnl.nl/",
+    "https://postnl.nl/nl/",
+    "https://postnl.nl/en/",
+    "https://postnl.nl/nl/contact",
+    "https://postnl.nl/en/contact",
+    "https://postnl.nl/contact",
+    "https://postnl.nl/sitemap.xml",
+    "https://postnl.nl/klantenservice",
+    "https://www.postnl.nl/zakelijk/zakelijk-klant-worden",
+    "https://postnl.nl/over-postnl",
+    "https://newsroom.postnl.nl/nl-NL/pages/beleggers",
+    "https://newsroom.postnl.nl/nl-NL",
+    "https://www.postnl.nl/werkenbij",
+    "https://postnl.nl/en/about-postnl",
+    "https://newsroom.postnl.nl/en-NL/pages/investors",
+    "https://newsroom.postnl.nl/en-NL",
+    "https://www.postnl.nl/over-postnl/werkenbij",
+    "https://www.postnl.nl/klantenservice",
+    "https://postnl.nl/zakelijk/klantenservice",
+    "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode/wanneer-bezorgd",
+    "https://postnl.nl/klantenservice/niets-ontvangen/pakket-post-met-track-trace",
+    "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging/pakket",
+    "https://postnl.nl/klantenservice/volg-pakket-post-met-barcode",
+    "https://postnl.nl/klantenservice/wanneer-komt-brief-kaart",
+    "https://postnl.nl/klantenservice/inklaringskosten",
+    "https://postnl.nl/klantenservice/bericht-van-aankomst",
+    "https://postnl.nl/klantenservice/niet-thuis-bij-bezorging",
+    "https://postnl.nl/klantenservice/pakket-ophalen-bij-postnl-punt/pakket-ophalen-bij-postnl-punt",
+    "https://postnl.nl/klantenservice/mijn-post",
+    "https://postnl.nl/klantenservice/extra-at-home",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2021.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+    "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/02/24/Connect_postnl-annual-report-2024.pdf",
+    "https://www.postnl.nl/Images/postnl-annual-report-2018_tcm10-146271.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2022.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+    "https://www.postnl.nl/Images/20130225-postnl-2012-q4-persbericht_tcm10-15846.pdf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdzNh7nKy5SeyHi8qBMqpo80/Ue4W5FMX4oawyvRoQiejuTERerpV/ziIG5CVhE0huqZQlLni+a9cRs4HAqjdQ0pVDWDvozGO5sKdSolarWKI9zBhc6yFiG2gdZPEW71RHoUqqbR4IAhgqNoyeu9l22UWU8Tc/p0gKG2yD9mXoFmIWFC0AQKg833vojhL4hSoVgQfqihRMy920w6pqcdTrNI5E0hYWexfl2AwvOY6Irx4=",
+    "https://www.zoominfo.com/c/postnl-holding-bv/347338730",
+    "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/02/23/Connect_postnl-annual-report-2025.pdf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7lNw/cwgQez/e/r6ZTbF/4AGR0z7hXcSeHyok06VUGlkmrvs8QzpVyViz/ecldywzHJNNmBLZ8D128Hrx/KWkaQE8VdeZhR1YbEXjSRH714Do6J4YPclGq5gQsD4eFwVcGm19KS/YmOqWDVs24VvJ3I=",
+    "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2024.pdf",
+    "https://d21buns5ku92am.cloudfront.net/70257/documents/60150-1766075700-sustainability-linked-financing-framework-may-2024-1dcbdf.pdf",
+    "https://annualreport.postnl.nl/2025/financial-statements/6-corporate-financial-statements/6-4-other-notes",
+    "https://ndl.ethernet.edu.et/bitstream/123456789/76019/1/93.pdf",
+    "https://www.postnl.nl/en/about-postnl/about-us/our-company/our-employees/",
+    "https://au.finance.yahoo.com/quote/PSTNY/profile/",
+    "https://www.otcmarkets.com/stock/TNTFF/profile",
+    "https://www.trustpilot.com/review/postnl.nl",
+    "https://www.postnl.nl/en/customer-service/",
+    "https://www.glasslewis.com/article/controversy-alert-roundup-postnl-n-v",
+    "https://www.postnl.nl/en/about-postnl/",
+    "https://www.postnl.nl/en/about-postnl/about-us/",
+    "https://www.acm.nl/en/publications/summary-postnl-sandd-decision",
+    "https://www.acm.nl/sites/default/files/documents/2019-09/besluit-concentratieverbod-postnl-shm-beheer_0.pdf",
+    "https://www.acm.nl/nl/publicaties/cbb-vergunning-overname-postnl-van-sandd-terecht-geweigerd-door-acm",
+    "https://www.acm.nl/sites/default/files/documents/2019-04/concentratiebesluit-nader-onderzoek-nodig-naar-overname-sandd-door-postnl.pdf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpduvaZFW9osJ8RGffjJndy9byDTVX89SfaMLuhu20IaTZEKvA2YGF8SZzwgKa+e/a4vs1e/UnnsqSY3OHBxQHO9BTQOo+YUCG/KUZWipQ5I1Ijx83Wll+gRYnazBDLyZFozN64Z54Kqh5JrjaYk5QgDQFcCEmivk20i60fhYMnCqdTRNXOmxRW9QsWpYdbEJcd",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7ne1fXJiVhIZlMEmY6pEd4DnCjWnwV5Yl2+zV4raPdiv1YJcngUGFE95tO6s49MKy6ZH+qLC0iAZrF2cpvWNHs6iabcVS1Ey1X4eGfbUFay49fH25iVjCF/cxYA0C8XysfwPe0pGPlh+s36Vl6EO0eo=",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhYN3vyRtipHP4wjHGIjWfSaE9cRZj+La+rMuF281tdXxY0I6LAf4mebmAWYk+pK542Y0DDt9XDkoalab98rs7V8EkhImo+gIudntyZa4Vg94C9uQjk5X0tw6NqexlDzjIvhxZChGHrr959S6fUN8Qmr/xpKmLnhl68x8SVZsmrC6Jk9UPGduD8YRp7LLguNB",
+    "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHARL:2025:7153",
+    "https://zoek.officielebekendmakingen.nl/gmb-2025-117547.pdf",
+    "https://zoek.officielebekendmakingen.nl/gmb-2025-393808.pdf",
+    "https://zoek.officielebekendmakingen.nl/ah-tk-20242025-152.html",
+    "https://zoek.officielebekendmakingen.nl/kst-35261-24.html",
+    "https://zoek.officielebekendmakingen.nl/blg-903548.pdf",
+    "https://zoek.officielebekendmakingen.nl/kv-tk-2025Z19781.html",
+    "https://zoek.officielebekendmakingen.nl/kst-29502-183.html",
+    "https://zoek.officielebekendmakingen.nl/gmb-2026-164751.xml",
+    "https://www.postnl.nl/en/customer-service/sumbit-a-complaint/",
+    "https://www.postnl.nl/en/privacy-statement/",
+    "https://en.wikipedia.org/wiki/PostNL",
+    "https://www.postnl.nl/Images/Fraud%20prevention%20eng_tcm9-23795.pdf",
+    "https://www.postnl.nl/en/about-postnl/governance/",
+    "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+    "https://www.postnl.nl/en/about-postnl/governance/board-of-management/",
+    "https://www.postnl.nl/Images/20130225-postnl-corporate-governance-statement_tcm10-15603.pdf",
+    "https://www.acm.nl/sites/default/files/documents/2018-01/decision-significant-market-power-24-hours-business-mail-2018-01-12.pdf",
+    "https://live.euronext.com/en/product/equities/NL0009739416-XAMS/company-information"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"PostNL N.V.\" \"postnl.nl\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "executed",
+      "elapsed_s": 2.0,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2021.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+        "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/02/24/Connect_postnl-annual-report-2024.pdf",
+        "https://www.postnl.nl/Images/postnl-annual-report-2018_tcm10-146271.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2022.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "[PDF] PostNL Annual Report 2021",
+          "snippet": "... PostNL N.V. to the value of around €250 million, spread over 2022 and 2023 ... postnl.nl. Website: postnl.nl/en. Mailing address: PostNL Investor ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2021.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2025",
+          "snippet": "... PostNL N.V. is a limited liability company listed on Euronext ... postnl.nl. Website: postnl.nl/en. Mail address: PostNL Investor ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2020",
+          "snippet": "... PostNL N.V. since all members of the Board of Management and the Supervisory ... postnl.nl. Website: postnl.nl/en. PostNL Annual Report 2020. 124. Page 127 ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2024 - Euronext Markets",
+          "snippet": "... PostNL N.V. is a limited liability company listed on Euronext ... postnl.nl. Website: postnl.nl/en. Mail address: PostNL Investor ...",
+          "url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2025/02/24/Connect_postnl-annual-report-2024.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] postnl-annual-report-2018_tcm10-146271.pdf",
+          "snippet": "PostNL N.V. does not have any employees other than the Board of Management. 6.2.3 Salaries, pensions and social security contributions. In ...",
+          "url": "https://www.postnl.nl/Images/postnl-annual-report-2018_tcm10-146271.pdf",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"PostNL N.V.\" acquisition overname parent group investor shareholder \"postnl.nl\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "executed",
+      "elapsed_s": 1.276,
+      "discovered_urls_count": 2,
+      "source_urls": [
+        "https://www.postnl.nl/Images/20130225-postnl-2012-q4-persbericht_tcm10-15846.pdf",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdzNh7nKy5SeyHi8qBMqpo80/Ue4W5FMX4oawyvRoQiejuTERerpV/ziIG5CVhE0huqZQlLni+a9cRs4HAqjdQ0pVDWDvozGO5sKdSolarWKI9zBhc6yFiG2gdZPEW71RHoUqqbR4IAhgqNoyeu9l22UWU8Tc/p0gKG2yD9mXoFmIWFC0AQKg833vojhL4hSoVgQfqihRMy920w6pqcdTrNI5E0hYWexfl2AwvOY6Irx4="
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "[PDF] Resultaten 4 kwartaal & jaarcijfers 2012 met update 2015 Persbericht",
+          "snippet": "PostNL N.V.. Prinses Beatrixlaan 23. 2595 AK The Hague. The Netherlands. T: +31 88 86 86 161. Investor Relations ... E : marc.potma@postnl.nl.",
+          "url": "https://www.postnl.nl/Images/20130225-postnl-2012-q4-persbericht_tcm10-15846.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Persbericht: Resultaten 2e kwartaal en 1e halfjaar 2011 ... - AFM",
+          "snippet": "PostNL N.V. ('PostNL' or the 'Company', formerly ... Group Director Investor Relations and Treasury ... E: inge.steenvoorden@postnl.nl. Media Relations.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdzNh7nKy5SeyHi8qBMqpo80/Ue4W5FMX4oawyvRoQiejuTERerpV/ziIG5CVhE0huqZQlLni+a9cRs4HAqjdQ0pVDWDvozGO5sKdSolarWKI9zBhc6yFiG2gdZPEW71RHoUqqbR4IAhgqNoyeu9l22UWU8Tc/p0gKG2yD9mXoFmIWFC0AQKg833vojhL4hSoVgQfqihRMy920w6pqcdTrNI5E0hYWexfl2AwvOY6Irx4=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"PostNL N.V.\" vacancies careers jobs hiring skills competitors \"postnl.nl\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "executed",
+      "elapsed_s": 1.334,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+        "https://www.zoominfo.com/c/postnl-holding-bv/347338730",
+        "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/02/23/Connect_postnl-annual-report-2025.pdf",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7lNw/cwgQez/e/r6ZTbF/4AGR0z7hXcSeHyok06VUGlkmrvs8QzpVyViz/ecldywzHJNNmBLZ8D128Hrx/KWkaQE8VdeZhR1YbEXjSRH714Do6J4YPclGq5gQsD4eFwVcGm19KS/YmOqWDVs24VvJ3I=",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2024.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+        "https://d21buns5ku92am.cloudfront.net/70257/documents/60150-1766075700-sustainability-linked-financing-framework-may-2024-1dcbdf.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "[PDF] PostNL Annual Report 2019",
+          "snippet": "... Postnl.nl/werkenbij. In 2019 we introduced an improved job listings website ... PostNL N.V. is a limited liability company listed on Euronext. Amsterdam ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2025",
+          "snippet": "... PostNL N.V. is a limited liability company listed on Euronext ... postnl.nl. Website: postnl.nl/en. Mail address: PostNL Investor ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "PostNL - Overview, News & Similar companies | ZoomInfo.com",
+          "snippet": "View PostNL (postnl.nl) location in South Holland, Netherlands ... Popular SearchesPostNL Holding BVPostNLPostNL NVPostnl NLCendris Customer Information ...",
+          "url": "https://www.zoominfo.com/c/postnl-holding-bv/347338730",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2025 - Euronext Markets",
+          "snippet": "... in our ability to deliver on our Breakthrough 2028 ambition. ... PostNL N.V. is a limited liability company listed ... postnl.nl. Website: postnl.nl/en. Mail ...",
+          "url": "https://live.euronext.com/sites/default/files/company_press_releases/attachments/2026/02/23/Connect_postnl-annual-report-2025.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 10317951970-v30 55-41091872 PROSPECTUS DATED 30 ... - AFM",
+          "snippet": "https://annualreport.postnl.nl/2023/xmlpages/tan/files ... therewith) of PostNL N.V. (the \"Issuer\") are the subject of a fiscal ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7lNw/cwgQez/e/r6ZTbF/4AGR0z7hXcSeHyok06VUGlkmrvs8QzpVyViz/ecldywzHJNNmBLZ8D128Hrx/KWkaQE8VdeZhR1YbEXjSRH714Do6J4YPclGq5gQsD4eFwVcGm19KS/YmOqWDVs24VvJ3I=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"PostNL N.V.\" revenue omzet growth FT1000 annual report ranking \"postnl.nl\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "executed",
+      "elapsed_s": 1.7,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://annualreport.postnl.nl/2025/financial-statements/6-corporate-financial-statements/6-4-other-notes"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "6.4 Other notes - PostNL Reporting Center",
+          "snippet": "PostNL N.V. Appropriation of profit in € million. 2025. Result attributable to the shareholders. (16). Appropriation in accordance with the articles of ...",
+          "url": "https://annualreport.postnl.nl/2025/financial-statements/6-corporate-financial-statements/6-4-other-notes",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"PostNL N.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed",
+      "elapsed_s": 1.549,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://ndl.ethernet.edu.et/bitstream/123456789/76019/1/93.pdf"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "[PDF] Didem Cinar Konstantinos Gakis Panos M. Pardalos Editors",
+          "snippet": "• Sustainable operations: As a logistics company, PostNL NV continuously works ... tions Research and Financial Engineering. Springer, New York (2011). 9 ...",
+          "url": "https://ndl.ethernet.edu.et/bitstream/123456789/76019/1/93.pdf",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"PostNL N.V.\" OR \"postnl.nl\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.264,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.postnl.nl/en/about-postnl/about-us/our-company/our-employees/",
+        "https://au.finance.yahoo.com/quote/PSTNY/profile/",
+        "https://www.otcmarkets.com/stock/TNTFF/profile",
+        "https://www.trustpilot.com/review/postnl.nl",
+        "https://www.postnl.nl/en/customer-service/",
+        "https://www.glasslewis.com/article/controversy-alert-roundup-postnl-n-v",
+        "https://www.postnl.nl/en/about-postnl/",
+        "https://www.postnl.nl/en/about-postnl/about-us/"
+      ],
+      "source_urls_count": 8,
+      "matched_results": [
+        {
+          "title": "Our employees - PostNL",
+          "snippet": "At the team level, managers discuss team performance and talent development with the management team during appraisal and talent reviews. ... Postnl.nl © ...",
+          "url": "https://www.postnl.nl/en/about-postnl/about-us/our-company/our-employees/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "PostNL N.V. (PSTNY) company profile and facts - Yahoo Finance",
+          "snippet": "TEAM-logo. TEAM. 89.44. ( +2.26% ). W. WOW.AX. 34.21. ( +3.73% ). C. CBA.AX. 162.88 ... --, --, --. PostNL N.V.. Waldorpstraat 3. The Hague, 2521 CA. Netherlands.",
+          "url": "https://au.finance.yahoo.com/quote/PSTNY/profile/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "TNTFF - PostNL N.V. | Company Profile - OTC Markets",
+          "snippet": "PostNL N.V.. Prinses Beatrixlaan 23. The Hague 2595 AK. Netherlands. www.postnl.com+31 (0)88 868 6161ir@postnl.nl ... OTCQX Best Market Logo. NMTAY. + 40.00 %.",
+          "url": "https://www.otcmarkets.com/stock/TNTFF/profile",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Postnl Extra@Home Reviews - Trustpilot",
+          "snippet": "Postnl Extra@Home logo · Visit website. Claimed profile. Postnl Extra@Home ... About us · Jobs · Contact · Blog · How Trustpilot works · Press · Investor ...",
+          "url": "https://www.trustpilot.com/review/postnl.nl",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Customer service: The most frequently asked questions | PostNL",
+          "snippet": "What can you arrange at a post office? PostNL-point. Your information ... Postnl.nl © Koninklijke PostNL. Privacy statement · Cookie statement · Terms of use ...",
+          "url": "https://www.postnl.nl/en/customer-service/",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.192,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.acm.nl/en/publications/summary-postnl-sandd-decision",
+        "https://www.acm.nl/sites/default/files/documents/2019-09/besluit-concentratieverbod-postnl-shm-beheer_0.pdf",
+        "https://www.acm.nl/nl/publicaties/cbb-vergunning-overname-postnl-van-sandd-terecht-geweigerd-door-acm",
+        "https://www.acm.nl/sites/default/files/documents/2019-04/concentratiebesluit-nader-onderzoek-nodig-naar-overname-sandd-door-postnl.pdf"
+      ],
+      "source_urls_count": 4,
+      "matched_results": [
+        {
+          "title": "Summary of the PostNL-Sandd decision - ACM",
+          "snippet": "On 4 April 2019, ACM received a license application from PostNL N.V. (PostNL) for the acquisition of SBM Beheer II B.V. (Sandd). ACM ...",
+          "url": "https://www.acm.nl/en/publications/summary-postnl-sandd-decision",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "[PDF] Verbod van concentratie PostNL NV en SHM Beheer II BV",
+          "snippet": "ontvangen van PostNL N.V. (hierna: 'PostNL'). Deze aanvraag ziet op de ... 106 www.postnl.nl/over-postnl/beleggers/jaaroverzicht-201825 ...",
+          "url": "https://www.acm.nl/sites/default/files/documents/2019-09/besluit-concentratieverbod-postnl-shm-beheer_0.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "CBb: vergunning overname PostNL van Sandd terecht ... - ACM",
+          "snippet": "PostNL N.V.. Trefwoorden. Fusies en overnames. Onderwerpen. Post en pakketten. Help onze website verbeteren. Statusbericht. JavaScript moet ...",
+          "url": "https://www.acm.nl/nl/publicaties/cbb-vergunning-overname-postnl-van-sandd-terecht-geweigerd-door-acm",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "[PDF] Nader onderzoek nodig naar overname Sandd door PostNL - ACM",
+          "snippet": "1 PostNL N.V. (hierna: PostNL) en SHM Beheer II B.V. (hierna: Sandd), een dochteronderneming van Sandd Houdstermaatschappij B.V. (hierna ...",
+          "url": "https://www.acm.nl/sites/default/files/documents/2019-04/concentratiebesluit-nader-onderzoek-nodig-naar-overname-sandd-door-postnl.pdf",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.295,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpduvaZFW9osJ8RGffjJndy9byDTVX89SfaMLuhu20IaTZEKvA2YGF8SZzwgKa+e/a4vs1e/UnnsqSY3OHBxQHO9BTQOo+YUCG/KUZWipQ5I1Ijx83Wll+gRYnazBDLyZFozN64Z54Kqh5JrjaYk5QgDQFcCEmivk20i60fhYMnCqdTRNXOmxRW9QsWpYdbEJcd",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7ne1fXJiVhIZlMEmY6pEd4DnCjWnwV5Yl2+zV4raPdiv1YJcngUGFE95tO6s49MKy6ZH+qLC0iAZrF2cpvWNHs6iabcVS1Ey1X4eGfbUFay49fH25iVjCF/cxYA0C8XysfwPe0pGPlh+s36Vl6EO0eo=",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhYN3vyRtipHP4wjHGIjWfSaE9cRZj+La+rMuF281tdXxY0I6LAf4mebmAWYk+pK542Y0DDt9XDkoalab98rs7V8EkhImo+gIudntyZa4Vg94C9uQjk5X0tw6NqexlDzjIvhxZChGHrr959S6fUN8Qmr/xpKmLnhl68x8SVZsmrC6Jk9UPGduD8YRp7LLguNB",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7lNw/cwgQez/e/r6ZTbF/4AGR0z7hXcSeHyok06VUGlkmrvs8QzpVyViz/ecldywzHJNNmBLZ8D128Hrx/KWkaQE8VdeZhR1YbEXjSRH714Do6J4YPclGq5gQsD4eFwVcGm19KS/YmOqWDVs24VvJ3I="
+      ],
+      "source_urls_count": 5,
+      "matched_results": [
+        {
+          "title": "[PDF] POSTNL N.V. - AFM",
+          "snippet": "... postnl.nl/en/about- postnl/investors/). For more information about the Issuer, please contact: PostNL N.V.. Investor relations. Prinses ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] POSTNL N.V. ANNOUNCES A TENDER OFFER FOR ITS ... - AFM",
+          "snippet": "PostNL N.V. (the \"Offeror\") has today launched its invitation to holders of its outstanding €400,000,000 ... E: Dagna.hoogkamer@postnl.nl.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpduvaZFW9osJ8RGffjJndy9byDTVX89SfaMLuhu20IaTZEKvA2YGF8SZzwgKa+e/a4vs1e/UnnsqSY3OHBxQHO9BTQOo+YUCG/KUZWipQ5I1Ijx83Wll+gRYnazBDLyZFozN64Z54Kqh5JrjaYk5QgDQFcCEmivk20i60fhYMnCqdTRNXOmxRW9QsWpYdbEJcd",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 10281325268-v56 55-41071540 PROSPECTUS DATED 10 ... - AFM",
+          "snippet": "https://www.postnl.nl/api/assets/blt43aa441bfc1e29f2/bltd5a0c07a7a2079a7/postnl-press- · release-q1-2024.pdf, respectively. PostNL N.V.. 2022.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7ne1fXJiVhIZlMEmY6pEd4DnCjWnwV5Yl2+zV4raPdiv1YJcngUGFE95tO6s49MKy6ZH+qLC0iAZrF2cpvWNHs6iabcVS1Ey1X4eGfbUFay49fH25iVjCF/cxYA0C8XysfwPe0pGPlh+s36Vl6EO0eo=",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL and Mutares to sell Nexive's business to Poste Italiane - AFM",
+          "snippet": "PostNL N.V.. Prinses Beatrixlaan 23. 2595 AK The Hague. The Netherlands. T: +31 88 86 86 161. Investor Relations. Jochem van de ... E: tahira.limon@postnl.nl.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdhYN3vyRtipHP4wjHGIjWfSaE9cRZj+La+rMuF281tdXxY0I6LAf4mebmAWYk+pK542Y0DDt9XDkoalab98rs7V8EkhImo+gIudntyZa4Vg94C9uQjk5X0tw6NqexlDzjIvhxZChGHrr959S6fUN8Qmr/xpKmLnhl68x8SVZsmrC6Jk9UPGduD8YRp7LLguNB",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] 10317951970-v30 55-41091872 PROSPECTUS DATED 30 ... - AFM",
+          "snippet": "https://annualreport.postnl.nl/2023/xmlpages/tan/files ... therewith) of PostNL N.V. (the \"Issuer\") are the subject of a fiscal ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDR4DZG5JtAZQD7xJwt7jzR7lNw/cwgQez/e/r6ZTbF/4AGR0z7hXcSeHyok06VUGlkmrvs8QzpVyViz/ecldywzHJNNmBLZ8D128Hrx/KWkaQE8VdeZhR1YbEXjSRH714Do6J4YPclGq5gQsD4eFwVcGm19KS/YmOqWDVs24VvJ3I=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.097,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.332,
+      "discovered_urls_count": 2,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.28,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.297,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.143,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHARL:2025:7153"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:GHARL:2025:7153, Gerechtshof Arnhem-Leeuwarden ...",
+          "snippet": "3 www.postnl.nl/ontvangen/post-ontvangen/afhalen-op-postkantoor/. 4 vgl. de uitspraak van de Afdeling Bestuursrechtspraak van de Raad van ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHARL:2025:7153",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.156,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHARL:2025:7153"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:GHARL:2025:7153, Gerechtshof Arnhem-Leeuwarden ...",
+          "snippet": "3 www.postnl.nl/ontvangen/post-ontvangen/afhalen-op-postkantoor/. 4 vgl. de uitspraak van de Afdeling Bestuursrechtspraak van de Raad van ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:GHARL:2025:7153",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"PostNL N.V.\" OR \"postnl.nl\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.22,
+      "discovered_urls_count": 16,
+      "source_urls": [
+        "https://zoek.officielebekendmakingen.nl/gmb-2025-117547.pdf",
+        "https://zoek.officielebekendmakingen.nl/gmb-2025-393808.pdf",
+        "https://zoek.officielebekendmakingen.nl/ah-tk-20242025-152.html",
+        "https://zoek.officielebekendmakingen.nl/kst-35261-24.html",
+        "https://zoek.officielebekendmakingen.nl/blg-903548.pdf",
+        "https://zoek.officielebekendmakingen.nl/kv-tk-2025Z19781.html",
+        "https://zoek.officielebekendmakingen.nl/kst-29502-183.html",
+        "https://zoek.officielebekendmakingen.nl/gmb-2026-164751.xml"
+      ],
+      "source_urls_count": 8,
+      "matched_results": [
+        {
+          "title": "[PDF] Besluit nummeraanduiding (huisnummer) - Omgevingsvergunning",
+          "snippet": "kunt u de postcode opvragen op http://www.postnl.nl/. Nr. 117547. GEMEENTEBLAD 21 maart. 2025. Officiële uitgave van de gemeente Hulst.",
+          "url": "https://zoek.officielebekendmakingen.nl/gmb-2025-117547.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Besluit nummeraanduiding (huisnummer)",
+          "snippet": "http://www.postnl.nl/. Nr. 393808. GEMEENTEBLAD 12 september. 2025. Officiële uitgave van de gemeente Hulst. Gemeenteblad 2025 nr. 393808. 12 september 2025.",
+          "url": "https://zoek.officielebekendmakingen.nl/gmb-2025-393808.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Kamervragen (Aanhangsel) 2024-2025, nr. 152",
+          "snippet": "Externe link: https://annualreport.postnl.nl/2023/business-report/customer-value/we-accelerate-our-customers-success-and-ensure-consumers-can- ...",
+          "url": "https://zoek.officielebekendmakingen.nl/ah-tk-20242025-152.html",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Kamerstuk 35261, nr. 24 | Overheid.nl > Officiële bekendmakingen",
+          "snippet": "Zie artikel 13.3, eerste lid, algemene voorwaarden goederenvervoer 2022 (Externe link: https://www.postnl.nl/Images/av-goederenvervoer-postnl- ...",
+          "url": "https://zoek.officielebekendmakingen.nl/kst-35261-24.html",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL N.V. T.a.v. mevrouw Verhagen Prinses Beatrixlaan 23 2595 ...",
+          "snippet": "bijlage, kwartaalcijfers PostNL Q2 2019, https://www.postnl.nl/over ... PostNL N.V. zal niet meer dan 9% rendement (return on sales) behalen.",
+          "url": "https://zoek.officielebekendmakingen.nl/blg-903548.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"PostNL N.V.\" OR \"postnl.nl\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "partial_executed",
+      "elapsed_s": 1.379,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.postnl.nl/en/customer-service/sumbit-a-complaint/",
+        "https://www.postnl.nl/en/about-postnl/about-us/",
+        "https://www.postnl.nl/en/privacy-statement/",
+        "https://en.wikipedia.org/wiki/PostNL",
+        "https://www.postnl.nl/Images/Fraud%20prevention%20eng_tcm9-23795.pdf",
+        "https://www.postnl.nl/en/about-postnl/governance/",
+        "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+        "https://www.postnl.nl/en/about-postnl/governance/board-of-management/",
+        "https://www.postnl.nl/Images/20130225-postnl-corporate-governance-statement_tcm10-15603.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "How do I submit a complaint? - PostNL",
+          "snippet": "Postnl.nl. Sending Open submenu. More information about.",
+          "url": "https://www.postnl.nl/en/customer-service/sumbit-a-complaint/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "About us - PostNL",
+          "snippet": "Skip to content. EN. NL · EN. Shopping cart. Postnl.nl. About PostNL. About PostNL; Our company. Our company.",
+          "url": "https://www.postnl.nl/en/about-postnl/about-us/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "PostNL Privacy Statement",
+          "snippet": "Data on criminal offences, such as fraud, are also more sensitive in nature. We may process these special and sensitive personal data if: you have consented to ...",
+          "url": "https://www.postnl.nl/en/privacy-statement/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "PostNL - Wikipedia",
+          "snippet": "PostNL N.V., commonly known as PostNL (Dutch pronunciation: [ˈpɔst ... postnl.nl. Contents. 1 History; 2 Operations. 2.1 Netherlands; 2.2 Rest of Europe.",
+          "url": "https://en.wikipedia.org/wiki/PostNL",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL Group procedure",
+          "snippet": "This group procedure sets out the appropriate procedures to prevent fraud, bribery and corruption in our workplace as well as to assist PostNL in meeting its ...",
+          "url": "https://www.postnl.nl/Images/Fraud%20prevention%20eng_tcm9-23795.pdf",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@postnl.nl\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.416,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/PostNL",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+        "https://www.acm.nl/sites/default/files/documents/2018-01/decision-significant-market-power-24-hours-business-mail-2018-01-12.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+        "https://live.euronext.com/en/product/equities/NL0009739416-XAMS/company-information"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "PostNL - Wikipedia",
+          "snippet": "PostNL N.V., commonly known as PostNL (Dutch pronunciation: [ˈpɔst ɛnˌɛl] ... postnl.nl. Contents. 1 History; 2 Operations. 2.1 Netherlands; 2.2 Rest of ...",
+          "url": "https://en.wikipedia.org/wiki/PostNL",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2023",
+          "snippet": "... PostNL N.V. As such, no remuneration has been granted and/or allocated by ... postnl.nl. Website: postnl.nl/en. Mail address: PostNL Investor Relations.",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2020",
+          "snippet": "... PostNL N.V. since all members of the Board of Management and the Supervisory ... postnl.nl. Website: postnl.nl/en. PostNL Annual Report 2020. 124. Page 127 ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Annual Report 2012 - PostNL Reporting Center",
+          "snippet": "E-mail: ir@postnl.nl. Website: postnl.com. Financial calendar 2013. 25 ... PostNL N.V. is a public limited liability company with its registered seat ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] POSTNL N.V. - AFM",
+          "snippet": "therewith) of PostNL N.V. (the \"Issuer\") are the subject of a ... The Group's internet address is http://www.postnl.nl/. General. The ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"postnl.nl\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.302,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/PostNL",
+        "https://live.euronext.com/en/product/equities/NL0009739416-XAMS/company-information",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+        "https://www.acm.nl/sites/default/files/documents/2018-01/decision-significant-market-power-24-hours-business-mail-2018-01-12.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "PostNL - Wikipedia",
+          "snippet": "PostNL N.V., commonly known as PostNL (Dutch pronunciation: [ˈpɔst ɛnˌɛl] ... postnl.nl. Contents. 1 History; 2 Operations. 2.1 Netherlands; 2.2 Rest of ...",
+          "url": "https://en.wikipedia.org/wiki/PostNL",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "POSTNL | NL0009739416 | Company information - Euronext Markets",
+          "snippet": "Index Futures directory · Trading Index Futures. Close submenuIndex Options ... inge.laudy@postnl.nl. Source: PostNL N.V. - Last Update: 24 Feb 2026. Footer ...",
+          "url": "https://live.euronext.com/en/product/equities/NL0009739416-XAMS/company-information",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2020",
+          "snippet": "... PostNL N.V. since all members of the Board of Management and the Supervisory ... postnl.nl. Website: postnl.nl/en. PostNL Annual Report 2020. 124. Page 127 ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] PostNL Annual Report 2025",
+          "snippet": "... PostNL N.V. is a limited liability company listed on Euronext ... postnl.nl. Website: postnl.nl/en. Mail address: PostNL Investor ...",
+          "url": "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] POSTNL N.V. - AFM",
+          "snippet": "therewith) of PostNL N.V. (the \"Issuer\") are the subject of a ... The Group's internet address is http://www.postnl.nl/. General. The ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRIrEGiS8b60uRg6baPAyxizQ27Nn7bSG9GlitcAALtJ8cyM6n5g6QwXWFDjUhJw1OWiKKozXxmoMIhwjBZh2OixT8aVUnCZ6ZLhgAKnJboudhxZiiPD56ycol61ph7IOSejrk2tRZC8mVeuuB+G4Yop4X9gKo/9bUv4wAaP7Wc3c=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

@@ -1,0 +1,38 @@
+{
+  "count": 5,
+  "records": [
+    {
+      "name": "Brunel Nederland",
+      "why_relevant": "Schaalspeler in technische detachering en IT/engineering-talent.",
+      "source": "https://www.brunel.net/nl-nl",
+      "claim_level": "market context"
+    },
+    {
+      "name": "Trinamics",
+      "why_relevant": "High-tech engineering detacheerder met internationale kenniswerker-route.",
+      "source": "https://www.trinamics.nl/",
+      "claim_level": "market context"
+    },
+    {
+      "name": "Sensor",
+      "why_relevant": "TSG-zusterlabel in civiel, infra en technische specialismen.",
+      "source": "https://www.yoursensor.com/",
+      "claim_level": "group/market context"
+    },
+    {
+      "name": "SkilledPeople",
+      "why_relevant": "Directe niche rond internationale technische werving en relocatie.",
+      "source": "https://skilledpeople.work/",
+      "claim_level": "market context"
+    },
+    {
+      "name": "RemoteNext",
+      "why_relevant": "Internationale/remote engineering-route vanuit onder meer Zuid-Afrika en India.",
+      "source": "https://www.remotenext.nl/",
+      "claim_level": "market context"
+    }
+  ],
+  "requested_field_slots": 60,
+  "filled_field_slots": 15,
+  "next_action": "Run full source-first competitor field extraction before claiming addresses, revenue, hiring count or employees."
+}

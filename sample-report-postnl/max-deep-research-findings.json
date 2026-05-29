@@ -1,0 +1,139 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "PostNL N.V.",
+    "domain": "postnl.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T10:01:25+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "codex_cli",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "minimax_search"
+      ],
+      "provider_count": 7,
+      "source_urls": [
+        "https://annualreport.postnl.nl/",
+        "https://annualreport.postnl.nl/202",
+        "https://annualreport.postnl.nl/2025/",
+        "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+        "https://annualreport.postnl.nl/2025/business-report/financial-review",
+        "https://annualreport.postnl.nl/2025/business-report/our-operating-context/our-value-chain",
+        "https://annualreport.postnl.nl/2025/business-report/regulatory-developments",
+        "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
+        "https://annualreport.postnl.nl/2025/financial-statements/6-corporate-financial-statements/6-4-other-notes",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/board-structure-composition-and-responsibilities-2",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/business-conduct-policies-and-procedures",
+        "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
+        "https://annualreport.postnl.nl/2025/introduction/we-are-postnl/at-a-glance",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_search"
+      ],
+      "provider_count": 4,
+      "source_urls": [
+        "https://annualreport.postnl.nl/",
+        "https://annualreport.postnl.nl/2025/",
+        "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+        "https://annualreport.postnl.nl/2025/business-report/financial-review",
+        "https://annualreport.postnl.nl/2025/business-report/our-operating-context/our-value-chain",
+        "https://annualreport.postnl.nl/2025/business-report/regulatory-developments",
+        "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
+        "https://annualreport.postnl.nl/2025/financial-statements/6-corporate-financial-statements/6-4-other-notes",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/board-structure-composition-and-responsibilities-2",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2011.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2012.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2019.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2020.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2022.pdf",
+        "https://annualreport.postnl.nl/app/uploads/2026/01/PostNL-Annual-Report-2023.pdf"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "codex_cli",
+        "glm_direct",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "https://annualreport.postnl.nl/",
+        "https://annualreport.postnl.nl/202",
+        "https://annualreport.postnl.nl/2025/",
+        "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+        "https://annualreport.postnl.nl/2025/business-report/financial-review",
+        "https://annualreport.postnl.nl/2025/business-report/our-operating-context/our-value-chain",
+        "https://annualreport.postnl.nl/2025/business-report/regulatory-developments",
+        "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
+        "https://annualreport.postnl.nl/2025/financial-statements/",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/board-structure-composition-and-responsibilities-2",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/business-conduct-policies-and-procedures",
+        "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
+        "https://annualreport.postnl.nl/2025/introduction/we-are-postnl/at-a-glance",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=PostNL+N.V.&page%5Bsize%5D=5",
+        "https://au.finance.yahoo.com/quote/PSTNY/profile/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "codex_cli",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 6,
+      "source_urls": [
+        "https://annualreport.postnl.nl/",
+        "https://annualreport.postnl.nl/202",
+        "https://annualreport.postnl.nl/2025/",
+        "https://annualreport.postnl.nl/2025/appendices/4-list-of-group-entities",
+        "https://annualreport.postnl.nl/2025/business-report/financial-review",
+        "https://annualreport.postnl.nl/2025/business-report/our-operating-context/our-value-chain",
+        "https://annualreport.postnl.nl/2025/business-report/regulatory-developments",
+        "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
+        "https://annualreport.postnl.nl/2025/financial-statements/",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/board-structure-composition-and-responsibilities-2",
+        "https://annualreport.postnl.nl/2025/governance/corporate-governance/business-conduct-policies-and-procedures",
+        "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
+        "https://annualreport.postnl.nl/2025/introduction/we-are-postnl/at-a-glance",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=PostNL+N.V.&page%5Bsize%5D=5",
+        "https://au.finance.yahoo.com/quote/PSTNY/profile/"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

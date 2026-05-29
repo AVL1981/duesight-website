@@ -1,0 +1,74 @@
+[
+  {
+    "report": "adyen",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-adyen\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 45,\n  \"candidate_findings_count\": 5,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "bunq",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-bunq\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 48,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "gasunie",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-gasunie\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 48,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "getthere",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-getthere\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 45,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "mollie-gold",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-mollie-gold\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 44,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "multiselect",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-multiselect\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 44,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "nlist",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-nlist\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"antigravity_codeassist\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 54,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "postnl",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-postnl\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 37,\n  \"candidate_findings_count\": 5,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "shell",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-shell\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 34,\n  \"candidate_findings_count\": 5,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "specialist-group",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-specialist-group\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 30,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "truelegends",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-truelegends\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 38,\n  \"candidate_findings_count\": 6,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  },
+  {
+    "report": "wise",
+    "exit": 0,
+    "stdout_tail": "{\n  \"report_dir\": \"C:\\\\Users\\\\arian\\\\OneDrive\\\\Desktop\\\\DueSight website\\\\duesight-website\\\\sample-report-wise\",\n  \"providers_executed\": [\n    \"glm_direct\",\n    \"hermes_deepseek\",\n    \"nvidia_nim_nemotron\",\n    \"claude_code\",\n    \"minimax_search\",\n    \"minimax_highspeed_a\",\n    \"minimax_highspeed_b\",\n    \"local_xortron\",\n    \"antigravity_codeassist\",\n    \"codex_cli\"\n  ],\n  \"providers_failed_or_skipped\": [],\n  \"source_urls_count\": 30,\n  \"candidate_findings_count\": 5,\n  \"gate_decision\": \"PASS\"\n}\n",
+    "stderr_tail": ""
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "source": "getthere.nl",
+  "claim_level": "hiring and skill context; live counts require fresh archived replay",
+  "role_families": [
+    {
+      "family": "Hiring routes",
+      "signals": [
+        "LinkedIn Jack Anja Hektor is listed with role Recruitment & Coördin...",
+        "LinkedIn Anja Mark van der Molen is listed with role Recruiter for..."
+      ]
+    }
+  ],
+  "skill_buckets": [],
+  "source_rows": 2
+}

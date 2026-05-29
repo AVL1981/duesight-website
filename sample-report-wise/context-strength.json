@@ -1,0 +1,77 @@
+{
+  "schema_version": "duesight.context_strength.v1",
+  "run_id": "certified-samples-rest-20260526-235449-wise",
+  "target": "Wise plc",
+  "updated_at": "2026-05-29T10:57:05+00:00",
+  "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
+  "items": [
+    {
+      "topic": "Groeps- en transactiecontext",
+      "meaning": "DueSight beoordeelt eventuele groeps- of transactiecontext voor Wise plc alleen wanneer die uit targetrelevante bronnen komt.",
+      "strength": "Middel als onderbouwde context",
+      "evidence_rows": 10,
+      "sources": [
+        "open identity reference",
+        "GLEIF",
+        "Public Website",
+        "archive discovery"
+      ],
+      "safe_rows": 0,
+      "missing_for_official_claim": "Current registry extract, shareholder register, transaction document or licensed provider output with document hash."
+    },
+    {
+      "topic": "Management en aanspreekpunten",
+      "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor Wise plc gevonden.",
+      "strength": "Middel als onderbouwde context",
+      "evidence_rows": 6,
+      "sources": [
+        "wise.com",
+        "sanctions screening route"
+      ],
+      "safe_rows": 6,
+      "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
+    },
+    {
+      "topic": "Groei- en marktcontext",
+      "meaning": "Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.",
+      "strength": "Laag / discovery",
+      "evidence_rows": 1,
+      "sources": [
+        "audit artifact"
+      ],
+      "safe_rows": 0,
+      "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
+    },
+    {
+      "topic": "Professionele/sociale corroboratie",
+      "meaning": "LinkedIn/professional-profile routes leveren corroboratie en discovery-hints, geen zelfstandige ownership- of personeelsclaim.",
+      "strength": "Laag / discovery",
+      "evidence_rows": 0,
+      "sources": [],
+      "safe_rows": 0,
+      "missing_for_official_claim": "Official website, register or contracted provider corroboration for each people/company profile claim."
+    },
+    {
+      "topic": "Financiële claimbaarheid",
+      "meaning": "De finance-route is technisch aanwezig, maar de replay heeft geen target-specifieke officiële filing of P&L opgehaald.",
+      "strength": "Geblokkeerd voor officiële finance-claim",
+      "evidence_rows": 1,
+      "sources": [],
+      "safe_rows": 0,
+      "missing_for_official_claim": "KVK/Dataservice annual account, XBRL/PDF filing, seller P&L or licensed provider finance document with source hash."
+    },
+    {
+      "topic": "Juridische eigendom / UBO",
+      "meaning": "Publieke structuurcontext kan richting geven, maar juridisch eigendom/UBO blijft niet officieel bewezen in deze replay.",
+      "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
+      "evidence_rows": 5,
+      "sources": [
+        "sanctions screening route",
+        "GLEIF LEI Register",
+        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+      ],
+      "safe_rows": 2,
+      "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
+    }
+  ]
+}
