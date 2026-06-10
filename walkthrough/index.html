@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport Walkthrough — Wat zit er in een DueSight rapport? | DueSight</title>
+    <meta name="description" content="Stap-voor-stap uitleg van een DueSight Pre-Due Diligence rapport. Ontdek wat elke sectie betekent: van risicoscore tot Forensische data-analyse.">
+    <link rel="canonical" href="https://duesight.nl/walkthrough/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rapport Walkthrough — DueSight Intelligence">
+    <meta property="og:description" content="Stap-voor-stap uitleg van een DueSight Pre-Due Diligence rapport. Ontdek wat elke sectie betekent.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%236366f1' stroke-width='8'/%3E%3Cpath d='M30 50 L45 65 L70 35' fill='none' stroke='white' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Hoe lees je een DueSight Pre-DD rapport?",
+        "description": "Stap-voor-stap uitleg van de 8 kernsecties in een DueSight Intelligence rapport.",
+        "url": "https://duesight.nl/walkthrough/",
+        "step": [
+            {"@type": "HowToStep", "name": "Executive Summary & Score", "text": "De totaalscore en risicoroute (REVIEW/HOLD/ABSTAIN) in één oogopslag."},
+            {"@type": "HowToStep", "name": "multi-source review Dashboard", "text": "Hoe meerdere analyselagen onafhankelijk tot een betrouwbaar oordeel komen."},
+            {"@type": "HowToStep", "name": "Radar Chart", "text": "6-assig risicoprofiel over compliance, cyber, markt, financieel, ESG en AI-zichtbaarheid."},
+            {"@type": "HowToStep", "name": "UBO Structuur", "text": "Eigendomsketen tot de Ultimate Beneficial Owner, inclusief jurisdictie-vlaggen."},
+            {"@type": "HowToStep", "name": "Sanctiescreening", "text": "Resultaten van screening tegen 8 internationale sanctiedatabases."},
+            {"@type": "HowToStep", "name": "Cyber Exposure", "text": "Externe aanvalsoppervlakte-analyse via passive infrastructure exposure analysis en SecurityHeaders."},
+            {"@type": "HowToStep", "name": "forensische data-analyse", "text": "Forensische analyse van financiële cijferverdeling — detecteert potentiële manipulatie."},
+            {"@type": "HowToStep", "name": "Analyse Badges", "text": "Transparantie over welke analyselagen het rapport hebben gevalideerd."}
+        ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --bg: #06080f;
+            --bg-card: rgba(255,255,255,0.03);
+            --bg-card-hover: rgba(255,255,255,0.06);
+            --border: rgba(255,255,255,0.08);
+            --border-accent: rgba(0,200,180,0.3);
+            --text: #e8eaf0;
+            --text-sec: #8b92a5;
+            --text-muted: #555d73;
+            --accent: #00c8b4;
+            --accent-glow: rgba(0,200,180,0.12);
+            --font: 'Inter', -apple-system, sans-serif;
+        }
+        body { font-family: var(--font); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.7; }
+
+        /* Nav */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(6,8,15,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-size: 1.15rem; font-weight: 700; color: var(--accent); text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
+        .nav-back { color: var(--text-sec); text-decoration: none; font-size: 0.85rem; }
+        .nav-back:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero { padding: 120px 2rem 50px; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(0,200,180,0.06) 0%, transparent 60%); }
+        .hero-badge { display: inline-block; padding: 6px 16px; border: 1px solid var(--border-accent); border-radius: 100px; font-size: 0.72rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { max-width: 620px; margin: 0 auto; color: var(--text-sec); font-size: 1.02rem; }
+
+        /* Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem 80px; }
+
+        /* Step Counter */
+        .step-counter {
+            display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+            margin: 32px 0 48px; padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .step-dot {
+            width: 36px; height: 36px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.78rem; font-weight: 700;
+            background: rgba(0,200,180,0.06); border: 1px solid rgba(0,200,180,0.15);
+            color: var(--accent); cursor: pointer; transition: all 0.2s;
+            text-decoration: none;
+        }
+        .step-dot:hover { background: rgba(0,200,180,0.15); transform: translateY(-2px); }
+
+        /* Section Card */
+        .wt-section {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+            scroll-margin-top: 80px;
+        }
+        .wt-number {
+            width: 64px; height: 64px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: 800;
+            background: rgba(0,200,180,0.08);
+            border: 1px solid rgba(0,200,180,0.2);
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+        .wt-content { flex: 1; }
+        .wt-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.5px; }
+        .wt-subtitle { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+
+        .wt-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+        .wt-card:hover { border-color: rgba(0,200,180,0.15); }
+        .wt-card p { color: var(--text-sec); font-size: 0.92rem; margin-bottom: 12px; }
+        .wt-card p:last-child { margin-bottom: 0; }
+
+        /* Visual Mock */
+        .wt-mock {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+            text-align: center;
+        }
+        .mock-gauge {
+            position: relative;
+            display: inline-block;
+        }
+        .mock-gauge svg { display: block; }
+
+        /* Radar Mock */
+        .mock-radar {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+            margin: 12px 0;
+        }
+        .mock-radar-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.82rem; color: var(--text-sec);
+        }
+        .mock-radar-bar {
+            height: 6px; border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent), rgba(0,200,180,0.2));
+        }
+
+        /* Sanction Badge Grid */
+        .sanction-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+            margin: 12px 0;
+        }
+        .sanction-badge {
+            text-align: center; padding: 10px 6px;
+            background: rgba(0,200,180,0.04);
+            border: 1px solid rgba(0,200,180,0.1);
+            border-radius: 8px;
+        }
+        .sanction-badge .sb-icon { font-size: 1.2rem; margin-bottom: 4px; }
+        .sanction-badge .sb-name { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .sanction-badge .sb-status { font-size: 0.72rem; font-weight: 700; color: var(--accent); margin-top: 2px; }
+
+        /* Key Insight */
+        .key-insight {
+            border-left: 3px solid var(--accent);
+            padding: 12px 16px;
+            margin: 12px 0;
+            background: var(--accent-glow);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem; color: var(--text-sec);
+        }
+        .key-insight strong { color: var(--text); }
+
+        /* CTA */
+        .cta-section { text-align: center; padding: 48px 2rem; margin-top: 40px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; }
+        .cta-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+        .cta-section p { color: var(--text-sec); font-size: 0.95rem; margin-bottom: 24px; }
+        .cta-btn { display: inline-block; padding: 14px 36px; background: var(--accent); color: var(--bg); font-weight: 700; font-size: 0.95rem; border-radius: 10px; text-decoration: none; transition: all 0.3s; }
+        .cta-btn:hover { transform: scale(1.04); box-shadow: 0 10px 40px rgba(0,200,180,0.2); }
+        .cta-links { margin-top: 16px; font-size: 0.82rem; }
+        .cta-links a { color: var(--text-sec); text-decoration: none; margin: 0 8px; }
+        .cta-links a:hover { color: var(--accent); }
+
+        /* Footer */
+        .wt-footer { text-align: center; padding: 32px 2rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.75rem; }
+        .wt-footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .wt-section { grid-template-columns: 1fr; }
+            .wt-number { width: 48px; height: 48px; font-size: 1.2rem; }
+            .sanction-grid { grid-template-columns: repeat(2, 1fr); }
+            .mock-radar { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="../" class="nav-brand">
+        <svg width="28" height="28" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="url(#lgN)" stroke-width="8"/><path d="M30 50 L45 65 L70 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lgN" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient></defs></svg>
+        DueSight
+    </a>
+    <a href="../rapporten/" class="nav-back">← Alle rapporten</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">Rapport Walkthrough</div>
+    <h1>Wat zit er in een <span>DueSight</span> rapport?</h1>
+    <p>Stap-voor-stap door de 8 kernsecties van een Pre-Due Diligence analyse. Elk onderdeel uitgelegd in één zin.</p>
+</section>
+
+<!-- Step Counter -->
+<div class="step-counter">
+    <a href="#s1" class="step-dot">1</a>
+    <a href="#s2" class="step-dot">2</a>
+    <a href="#s3" class="step-dot">3</a>
+    <a href="#s4" class="step-dot">4</a>
+    <a href="#s5" class="step-dot">5</a>
+    <a href="#s6" class="step-dot">6</a>
+    <a href="#s7" class="step-dot">7</a>
+    <a href="#s8" class="step-dot">8</a>
+</div>
+
+<div class="container">
+
+    <!-- ════ STEP 1: Executive Summary ════ -->
+    <div class="wt-section" id="s1">
+        <div class="wt-number">1</div>
+        <div class="wt-content">
+            <div class="wt-title">Executive Summary & Score</div>
+            <div class="wt-subtitle">Het totaalplaatje in 3 seconden</div>
+            <div class="wt-card">
+                <div class="wt-mock">
+                    <svg width="160" height="100" viewBox="0 0 220 130">
+                        <circle cx="110" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="12" stroke-dasharray="220" stroke-dashoffset="0" transform="rotate(-90 110 90)"/>
+                        <circle cx="110" cy="90" r="70" fill="none" stroke="#10b981" stroke-width="12" stroke-dasharray="220" stroke-dashoffset="55" stroke-linecap="round" transform="rotate(-90 110 90)"/>
+                        <text x="110" y="98" text-anchor="middle" fill="#e8eaf0" font-family="Inter" font-size="32" font-weight="800">75</text>
+                        <text x="110" y="118" text-anchor="middle" fill="#8b92a5" font-family="Inter" font-size="10">/100</text>
+                    </svg>
+                    <div style="color:#10b981;font-weight:700;font-size:0.9rem;margin-top:8px">REVIEW — Epistemische Confidentie: 75%</div>
+                </div>
+                <p><strong>Wat u ziet:</strong> Een risicoscore van 0-100 en een duidelijke risicoroute (REVIEW, HOLD of ABSTAIN). De score is berekend op basis van alle gevonden datapunten, gewogen naar bron-betrouwbaarheid.</p>
+                <div class="key-insight">
+                    <strong>Waarom dit waardevol is:</strong> In 3 seconden weet u of dit bedrijf nader onderzoek verdient — voordat u uren investeert in een volledig DD-traject.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 2: multi-source review ════ -->
+    <div class="wt-section" id="s2">
+        <div class="wt-number">2</div>
+        <div class="wt-content">
+            <div class="wt-title">multi-source review Dashboard</div>
+            <div class="wt-subtitle">Meerdere engines, één betrouwbaar oordeel</div>
+            <div class="wt-card">
+                <div class="wt-mock">
+                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center">
+                        <div style="padding:12px 8px;background:rgba(0,200,180,0.06);border-radius:8px;border:1px solid rgba(0,200,180,0.1)">
+                            <div style="font-size:1.3rem;font-weight:800;color:#00c8b4">REVIEW</div>
+                            <div style="font-size:0.65rem;color:#555d73;margin-top:4px">MULTI-SOURCE</div>
+                        </div>
+                        <div style="padding:12px 8px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
+                            <div style="font-size:1.3rem;font-weight:800;color:#e8eaf0">2.800</div>
+                            <div style="font-size:0.65rem;color:#555d73;margin-top:4px">MEDEWERKERS</div>
+                        </div>
+                        <div style="padding:12px 8px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
+                            <div style="font-size:1.3rem;font-weight:800;color:#06b6d4">3</div>
+                            <div style="font-size:0.65rem;color:#555d73;margin-top:4px">MILESTONES</div>
+                        </div>
+                        <div style="padding:12px 8px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
+                            <div style="font-size:1.3rem;font-weight:800;color:#06b6d4">€150M+</div>
+                            <div style="font-size:0.65rem;color:#555d73;margin-top:4px">OMZET</div>
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Wat u ziet:</strong> Key metrics in één rij — het consensus-verdict, bedrijfsomvang, milestones en omzet. Alle data is geëxtraheerd en gekruist uit meerdere onafhankelijke bronnen.</p>
+                <div class="key-insight">
+                    <strong>Achter de schermen:</strong> Meerdere AI-providers analyseren het bedrijf onafhankelijk en parallel. Alleen waar een meerderheid tot dezelfde conclusie komt, wordt een feit opgenomen. Dit elimineert hallucinaties.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 3: Radar Chart ════ -->
+    <div class="wt-section" id="s3">
+        <div class="wt-number">3</div>
+        <div class="wt-content">
+            <div class="wt-title">6-Axis Radar Profiel</div>
+            <div class="wt-subtitle">Risico op zes dimensies tegelijk</div>
+            <div class="wt-card">
+                <div class="wt-mock">
+                    <div class="mock-radar">
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">9.0</span> Compliance <div class="mock-radar-bar" style="width:90%;height:6px"></div></div>
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">6.5</span> Cyber <div class="mock-radar-bar" style="width:65%;height:6px"></div></div>
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">8.5</span> Markt <div class="mock-radar-bar" style="width:85%;height:6px"></div></div>
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">6.5</span> Financieel <div class="mock-radar-bar" style="width:65%;height:6px"></div></div>
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">9.1</span> ESG <div class="mock-radar-bar" style="width:91%;height:6px"></div></div>
+                        <div class="mock-radar-item"><span style="color:var(--accent);font-weight:700;min-width:28px">4.0</span> AI Visib. <div class="mock-radar-bar" style="width:40%;height:6px"></div></div>
+                    </div>
+                </div>
+                <p><strong>Wat u ziet:</strong> Een 6-assig risicoprofiel met scores van 0-10. Compliance, Cyber, Markt, Financieel, ESG en AI-zichtbaarheid — elk beoordeeld door het volledige engine-ensemble.</p>
+                <div class="key-insight">
+                    <strong>Leestip:</strong> Een lage score op één as (bijv. Cyber 4.0) is een directe indicator voor nader onderzoek op dat specifieke domein. Het rapport licht elke afwijking toe in de detailsecties.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 4: UBO Structuur ════ -->
+    <div class="wt-section" id="s4">
+        <div class="wt-number">4</div>
+        <div class="wt-content">
+            <div class="wt-title">UBO Structuur</div>
+            <div class="wt-subtitle">Wie is de echte eigenaar?</div>
+            <div class="wt-card">
+                <div class="wt-mock" style="text-align:left;font-size:0.82rem">
+                    <div style="padding:8px 12px;background:rgba(0,200,180,0.06);border-radius:6px;margin-bottom:6px;border-left:3px solid #00c8b4">
+                        <strong>Target B.V.</strong> <span style="color:#555d73">— Holding, Nederland</span> <span style="color:#00c8b4;font-size:0.7rem;font-weight:600">ACTIEF</span>
+                    </div>
+                    <div style="padding:8px 12px 8px 28px;background:rgba(255,255,255,0.02);border-radius:6px;margin-bottom:6px;border-left:3px solid rgba(255,255,255,0.1)">
+                        <strong>Parent Holdings LP</strong> <span style="color:#555d73">— PE Fund, Cayman Islands</span> <span style="color:#f5a623;font-size:0.7rem;font-weight:600">PE-HELD</span>
+                    </div>
+                    <div style="padding:8px 12px 8px 28px;background:rgba(255,255,255,0.02);border-radius:6px;border-left:3px solid rgba(255,255,255,0.1)">
+                        <strong>Dochter B.V.</strong> <span style="color:#555d73">— Operationeel, Nederland</span> <span style="color:#00c8b4;font-size:0.7rem;font-weight:600">ACTIEF</span>
+                    </div>
+                </div>
+                <p><strong>Wat u ziet:</strong> De eigendomsketen van het bedrijf — van operationele entiteiten tot de <a href="../glossary/ubo/" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,200,180,0.3)">Ultimate Beneficial Owner (UBO)</a>. Jurisdictie-vlaggen markeren risico's bij buitenlandse structuren.</p>
+                <div class="key-insight">
+                    <strong>Red flag voorbeeld:</strong> Een Cayman Islands tussenholding (zoals hierboven) triggert automatisch een verhoogd risico-label. DueSight traceert UBO-ketens via GLEIF Level 2 + OpenKvK + OpenCorporates.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 5: Sanctiescreening ════ -->
+    <div class="wt-section" id="s5">
+        <div class="wt-number">5</div>
+        <div class="wt-content">
+            <div class="wt-title">Sanctiescreening</div>
+            <div class="wt-subtitle">uitgebreide screening, 0 compromissen</div>
+            <div class="wt-card">
+                <div class="sanction-grid">
+                    <div class="sanction-badge"><div class="sb-icon">🇪🇺</div><div class="sb-name">EU Sanctions</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">🇺🇸</div><div class="sb-name">OFAC SDN</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">🇺🇳</div><div class="sb-name">UN Security</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">🇬🇧</div><div class="sb-name">UK HMT</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">🌍</div><div class="sb-name">OpenSanctions</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">📄</div><div class="sb-name">ICIJ Leaks</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">⚖️</div><div class="sb-name">PEP Check</div><div class="sb-status">0 hits</div></div>
+                    <div class="sanction-badge"><div class="sb-icon">🔍</div><div class="sb-name">Rechtspraak</div><div class="sb-status">0 hits</div></div>
+                </div>
+                <p><strong>Wat u ziet:</strong> Screening tegen EU, OFAC, UN, UK, OpenSanctions, ICIJ Offshore Leaks, PEP-lijsten en Rechtspraak.nl. Eén hit = automatisch escalatie naar HOLD of ABSTAIN.</p>
+                <div class="key-insight">
+                    <strong>Nauwkeurigheid:</strong> Onze dual-model sanctiescreener behaalt F1=96.2% met een known-clean whitelist (Fortune 500) voor false positive preventie.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 6: Cyber Exposure ════ -->
+    <div class="wt-section" id="s6">
+        <div class="wt-number">6</div>
+        <div class="wt-content">
+            <div class="wt-title">Cyber Exposure</div>
+            <div class="wt-subtitle">Wat zien aanvallers van buitenaf?</div>
+            <div class="wt-card">
+                <div class="wt-mock" style="font-size:0.82rem;text-align:left">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                        <div style="padding:10px;background:rgba(0,200,180,0.04);border-radius:8px;border:1px solid rgba(0,200,180,0.1)">
+                            <div style="font-size:0.65rem;color:#555d73;text-transform:uppercase;letter-spacing:1px">Risk Score</div>
+                            <div style="font-size:1.6rem;font-weight:800;color:#00c8b4">4/100</div>
+                            <div style="font-size:0.72rem;color:#8b92a5">Zeer laag risico</div>
+                        </div>
+                        <div style="padding:10px;background:rgba(255,255,255,0.02);border-radius:8px;border:1px solid rgba(255,255,255,0.06)">
+                            <div style="font-size:0.65rem;color:#555d73;text-transform:uppercase;letter-spacing:1px">CVEs</div>
+                            <div style="font-size:1.6rem;font-weight:800;color:#e8eaf0">0</div>
+                            <div style="font-size:0.72rem;color:#8b92a5">Geen kwetsbaarheden</div>
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Wat u ziet:</strong> De externe aanvalsoppervlakte van het bedrijf — gemeten via <a href="../glossary/shodan/" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,200,180,0.3)">passive infrastructure exposure analysis</a> passive infrastructure exposure analysis en SecurityHeaders. Een hoge score (bijv. Shell: 60/100, 20+ CVEs) signaleert legacy infrastructuur.</p>
+                <div class="key-insight">
+                    <strong>Waarom dit ertoe doet:</strong> Bij een overname erft u het cyber-risico van het target. Een hoge exposure kan leiden tot NIS2-complianceproblemen en reputatieschade na closing.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 7: forensische data-analyse ════ -->
+    <div class="wt-section" id="s7">
+        <div class="wt-number">7</div>
+        <div class="wt-content">
+            <div class="wt-title">Forensische data-analyse</div>
+            <div class="wt-subtitle">Forensische fraude-detectie op financiële data</div>
+            <div class="wt-card">
+                <div class="wt-mock">
+                    <div style="display:flex;align-items:flex-end;justify-content:center;gap:6px;height:80px;padding-bottom:8px">
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:72px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:48px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:36px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:28px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:24px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:20px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:18px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:16px"></div>
+                        <div style="width:20px;background:linear-gradient(to top,#00c8b4,rgba(0,200,180,0.3));border-radius:3px 3px 0 0;height:14px"></div>
+                    </div>
+                    <div style="display:flex;justify-content:center;gap:6px;font-size:0.7rem;color:#555d73">
+                        <span style="width:20px;text-align:center">1</span><span style="width:20px;text-align:center">2</span><span style="width:20px;text-align:center">3</span><span style="width:20px;text-align:center">4</span><span style="width:20px;text-align:center">5</span><span style="width:20px;text-align:center">6</span><span style="width:20px;text-align:center">7</span><span style="width:20px;text-align:center">8</span><span style="width:20px;text-align:center">9</span>
+                    </div>
+                    <div style="color:#8b92a5;font-size:0.72rem;margin-top:8px">Leading digit distributie — verwacht vs. werkelijk</div>
+                </div>
+                <p><strong>Wat u ziet:</strong> <a href="../glossary/benfords-law/" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(0,200,180,0.3)">forensische data-analyse</a> voorspelt de verdeling van eerste cijfers in natuurlijke financiële datasets. Afwijkingen van dit patroon kunnen wijzen op gemanipuleerde cijfers.</p>
+                <div class="key-insight">
+                    <strong>Forensische waarde:</strong> Deze techniek wordt gebruikt door belastingdiensten, forensisch accountants en het OM wereldwijd. DueSight past het automatisch toe als standaard onderdeel van elk rapport.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════ STEP 8: Engine Badges ════ -->
+    <div class="wt-section" id="s8">
+        <div class="wt-number">8</div>
+        <div class="wt-content">
+            <div class="wt-title">Analyse Badges</div>
+            <div class="wt-subtitle">Volledige transparantie over bronnen</div>
+            <div class="wt-card">
+                <div class="wt-mock" style="font-size:0.8rem">
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+                        <span style="padding:4px 10px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.2);border-radius:6px;color:#4285f4;font-weight:600;font-size:0.72rem">specialist model</span>
+                        <span style="padding:4px 10px;background:rgba(217,143,64,0.1);border:1px solid rgba(217,143,64,0.2);border-radius:6px;color:#d98f40;font-weight:600;font-size:0.72rem">specialist model</span>
+                        <span style="padding:4px 10px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.2);border-radius:6px;color:#4285f4;font-weight:600;font-size:0.72rem">specialist model</span>
+                        <span style="padding:4px 10px;background:rgba(0,200,180,0.1);border:1px solid rgba(0,200,180,0.2);border-radius:6px;color:#00c8b4;font-weight:600;font-size:0.72rem">external model provider specialist model</span>
+                        <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#8b92a5;font-weight:600;font-size:0.72rem">passive infrastructure exposure analysis</span>
+                        <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#8b92a5;font-weight:600;font-size:0.72rem">GLEIF</span>
+                        <span style="padding:4px 10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#8b92a5;font-weight:600;font-size:0.72rem">OpenSanctions</span>
+                    </div>
+                </div>
+                <p><strong>Wat u ziet:</strong> Elke badge vertegenwoordigt een onafhankelijke bron of AI-provider die aan het rapport heeft bijgedragen. Dit is ons transparantie-principe: u weet altijd <em>wie</em> en <em>wat</em> de analyse heeft uitgevoerd.</p>
+                <div class="key-insight">
+                    <strong>mapped to EU AI Act obligations:</strong> Alle DueSight-rapporten zijn expliciet gemarkeerd als AI-gegenereerde output — conform de transparantievereisten van de EU AI Act.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CTA ═══ -->
+    <div class="cta-section">
+        <h2>Overtuigd? Bekijk een echt rapport.</h2>
+        <p>12 voorbeeldrapporten beschikbaar — van AEX-multinationals tot MKB.</p>
+        <a href="../rapporten/" class="cta-btn">Bekijk voorbeeldrapporten →</a>
+        <div class="cta-links">
+            <a href="../#scan-dashboard">Start uw eigen scan</a> ·
+            <a href="../faq/">Veelgestelde vragen</a> ·
+            <a href="../assurance/">Assurance</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="wt-footer">
+    <svg width="24" height="24" viewBox="0 0 100 100" style="vertical-align:middle;margin-right:6px;"><circle cx="50" cy="50" r="45" fill="none" stroke="#6366f1" stroke-width="8"/><path d="M30 50 L45 65 L70 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    DueSight Intelligence · <a href="../rapporten/">Rapporten</a> · <a href="../faq/">FAQ</a> · <a href="../glossary/">Glossary</a> · <a href="../">Platform</a><br>
+    Laatst bijgewerkt: maart 2026
+</footer>
+
+</body>
+</html>

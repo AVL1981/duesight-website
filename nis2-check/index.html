@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NIS2 Zelftest | DueSight &#8212; Val ik onder de NIS2-richtlijn?</title>
+<meta name="description" content="Gratis NIS2 zelftest: bepaal in 5 stappen of uw organisatie onder de NIS2-richtlijn valt. Gebaseerd op de Europese criteria voor essenti&#235;le en belangrijke entiteiten.">
+<link rel="canonical" href="https://duesight.nl/nis2-check">
+<meta property="og:title" content="NIS2 Zelftest | DueSight &#8212; Val ik onder NIS2?">
+<meta property="og:description" content="Bepaal in 5 stappen of uw organisatie onder de NIS2-richtlijn valt. Gratis tool, geen account vereist.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DueSight NIS2 Zelftest","url":"https://duesight.nl/nis2-check","description":"Gratis NIS2 compliance zelftest. Bepaal of uw organisatie kwalificeert als essenti\u00eble of belangrijke entiteit onder de NIS2-richtlijn.","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#091018;--surface:#0f1a28;--surface2:#152233;--border:rgba(255,255,255,0.06);--accent:#3b82f6;--accent-dim:rgba(59,130,246,0.1);--ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;--text:#e2e8f0;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(9,16,24,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}
+.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(59,130,246,0.25);border-radius:7px;color:#93c5fd;font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+main{max-width:680px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:540px;margin-bottom:36px;line-height:1.7}
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;margin-bottom:16px;animation:fadeUp 0.3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step-num{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.step-q{font-size:15px;font-weight:500;margin-bottom:6px;line-height:1.5}
+.step-info{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;font-size:13px}
+.opt:hover{border-color:rgba(59,130,246,0.3)}
+.opt.sel{border-color:var(--accent);background:var(--accent-dim)}
+.opt-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px;transition:all 0.15s}
+.opt.sel .opt-dot{border-color:var(--accent);background:var(--accent)}
+.opt-content{flex:1}
+.opt-label{font-weight:500;margin-bottom:2px}
+.opt-desc{font-size:11px;color:var(--muted)}
+.result-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;animation:fadeUp 0.3s ease}
+.result-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:24px;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:1px;margin-bottom:16px}
+.badge-ess{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
+.badge-imp{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:#fcd34d}
+.badge-out{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#86efac}
+.badge-unc{background:rgba(148,163,184,0.12);border:1px solid rgba(148,163,184,0.3);color:#94a3b8}
+.result-title{font-size:18px;font-weight:500;margin-bottom:8px}
+.result-desc{font-size:13px;color:var(--muted);line-height:1.6;max-width:520px;margin:0 auto 20px;text-align:left}
+.req-list{text-align:left;margin-bottom:20px}
+.req-item{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid var(--border);margin-bottom:6px;font-size:12px;line-height:1.5}
+.req-icon{flex-shrink:0;margin-top:2px}
+.cta-box{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:10px;background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.2);margin-top:20px;text-align:left}
+.cta-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}
+.cta-text strong{color:var(--text)}
+.cta-btn{flex-shrink:0;padding:8px 16px;background:var(--accent);border:none;border-radius:7px;color:#fff;font-family:var(--sans);font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.restart-btn{margin-top:16px;padding:10px 20px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;font-family:var(--sans);font-size:13px;transition:all 0.2s}
+.restart-btn:hover{border-color:rgba(255,255,255,0.15)}
+.disclaimer{margin-top:32px;font-size:11px;color:#1e2a3c;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#3b82f6" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DueSight</a>
+  <div class="nav-sep"></div><span class="nav-tool">NIS2 Zelftest</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+<main>
+  <div class="eyebrow">Gratis Compliance Tool</div>
+  <h1>NIS2 Zelftest &#8212; <strong>valt uw organisatie onder de NIS2-richtlijn?</strong></h1>
+  <p class="subtitle">De NIS2-richtlijn (EU 2022/2555) verplicht organisaties in kritieke sectoren tot cybersecurity-maatregelen en incidentmeldplicht. Beantwoord 5 vragen om te bepalen of uw organisatie kwalificeert.</p>
+  <div id="app"></div>
+  <p class="disclaimer">Deze zelftest is gebaseerd op de NIS2-richtlijn (EU 2022/2555) en de Cyberbeveiligingswet (implementatie NL). Het resultaat is indicatief en vervangt geen juridische beoordeling. DueSight slaat geen antwoorden op.</p>
+</main>
+<script>
+var SECTORS=[
+{id:'energy',name:'Energie',sub:'Elektriciteit, olie, gas, waterstof, stadsverwarming',cat:'essential'},
+{id:'transport',name:'Vervoer',sub:'Luchtvaart, spoor, water, weg',cat:'essential'},
+{id:'banking',name:'Bankwezen',sub:'Kredietinstellingen',cat:'essential'},
+{id:'finance',name:'Financi\u00eble marktinfrastructuur',sub:'Handelsplatformen, CCP\u2019s',cat:'essential'},
+{id:'health',name:'Gezondheidszorg',sub:'Ziekenhuizen, laboratoria, farma, medische hulpmiddelen',cat:'essential'},
+{id:'water',name:'Drinkwater & Afvalwater',sub:'Leveranciers en verwerkers',cat:'essential'},
+{id:'digital',name:'Digitale infrastructuur',sub:'DNS, TLD, datacenters, CDN, trust services, telecom',cat:'essential'},
+{id:'ict_service',name:'Beheer van ICT-diensten (B2B)',sub:'MSP\u2019s, MSSP\u2019s',cat:'essential'},
+{id:'gov',name:'Overheid',sub:'Centrale en regionale overheden',cat:'essential'},
+{id:'space',name:'Ruimtevaart',sub:'Exploitanten van grondinfrastructuur',cat:'essential'},
+{id:'postal',name:'Post- en koeriersdiensten',sub:'Aanbieders van postdiensten',cat:'important'},
+{id:'waste',name:'Afvalbeheer',sub:'Inzameling, verwerking, recycling',cat:'important'},
+{id:'chemicals',name:'Chemie',sub:'Productie, opslag en distributie',cat:'important'},
+{id:'food',name:'Voedsel',sub:'Productie, verwerking en distributie',cat:'important'},
+{id:'manufacturing',name:'Vervaardiging',sub:'Medische hulpmiddelen, elektronica, machines, motorvoertuigen',cat:'important'},
+{id:'digital_prov',name:'Digitale aanbieders',sub:'Online marktplaatsen, zoekmachines, social media',cat:'important'},
+{id:'research',name:'Onderzoek',sub:'Onderzoeksorganisaties',cat:'important'},
+{id:'none',name:'Geen van bovenstaande',sub:'Mijn sector staat niet in deze lijst',cat:'none'}
+];
+var state={step:0,sector:null,size:null,critical:null,supply:null};
+function render(){
+var app=document.getElementById('app');
+if(state.step===0){
+app.innerHTML='<div class="step-card"><div class="step-num">Stap 1 van 5 \u2014 Sector</div><div class="step-q">In welke sector is uw organisatie actief?</div><div class="step-info">De NIS2 deelt sectoren in als \u201cessentieel\u201d (Bijlage I) of \u201cbelangrijk\u201d (Bijlage II).</div><div class="opts" id="sectorOpts">'+
+SECTORS.map(function(s){return '<div class="opt'+(state.sector===s.id?' sel':'')+'" data-id="'+s.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+s.name+'</div><div class="opt-desc">'+s.sub+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#sectorOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.sector=this.dataset.id;if(state.sector==='none'){state.step=99;render();}else{state.step=1;render();}});});
+}else if(state.step===1){
+app.innerHTML='<div class="step-card"><div class="step-num">Stap 2 van 5 \u2014 Omvang</div><div class="step-q">Wat is de omvang van uw organisatie?</div><div class="step-info">NIS2 gebruikt de EU-definitie voor middelgroot en groot. Micro/klein zijn in principe uitgezonderd, tenzij ze kritieke diensten leveren.</div><div class="opts" id="sizeOpts">'+
+[{id:'large',l:'Groot',d:'>250 werknemers \u00f3f >50M omzet \u00f3f >43M balanstotaal'},{id:'medium',l:'Middelgroot',d:'50\u2013250 werknemers \u00f3f 10\u201350M omzet'},{id:'small',l:'Klein/Micro',d:'<50 werknemers \u00e9n <10M omzet'}].map(function(s){return '<div class="opt'+(state.size===s.id?' sel':'')+'" data-id="'+s.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+s.l+'</div><div class="opt-desc">'+s.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#sizeOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.size=this.dataset.id;state.step=2;render();});});
+}else if(state.step===2){
+app.innerHTML='<div class="step-card"><div class="step-num">Stap 3 van 5 \u2014 Kritieke dienst</div><div class="step-q">Levert uw organisatie een dienst die essentieel is voor het functioneren van de samenleving?</div><div class="step-info">Kleine organisaties die kritieke diensten leveren (bijv. DNS-diensten, trust services) vallen alsnog onder NIS2.</div><div class="opts" id="critOpts">'+
+[{id:'yes',l:'Ja',d:'Wij leveren diensten waarvan uitval maatschappelijke impact heeft'},{id:'no',l:'Nee',d:'Uitval van onze diensten heeft beperkte maatschappelijke impact'},{id:'unsure',l:'Onzeker',d:'Ik weet niet of onze dienst als kritiek wordt beschouwd'}].map(function(s){return '<div class="opt'+(state.critical===s.id?' sel':'')+'" data-id="'+s.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+s.l+'</div><div class="opt-desc">'+s.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#critOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.critical=this.dataset.id;state.step=3;render();});});
+}else if(state.step===3){
+app.innerHTML='<div class="step-card"><div class="step-num">Stap 4 van 5 \u2014 Toeleveringsketen</div><div class="step-q">Levert u ICT-diensten of producten aan organisaties in een NIS2-sector?</div><div class="step-info">NIS2 vereist ketenbeveiliging. U kunt indirect onder NIS2-vereisten vallen via contractuele verplichtingen van uw afnemers.</div><div class="opts" id="supOpts">'+
+[{id:'yes',l:'Ja',d:'Wij leveren aan energie, zorg, overheid, financi\u00eble sector etc.'},{id:'no',l:'Nee',d:'Onze klanten vallen niet in NIS2-sectoren'},{id:'unsure',l:'Onzeker',d:'Ik weet niet in welke sectoren mijn klanten vallen'}].map(function(s){return '<div class="opt'+(state.supply===s.id?' sel':'')+'" data-id="'+s.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+s.l+'</div><div class="opt-desc">'+s.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#supOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.supply=this.dataset.id;state.step=4;render();});});
+}else if(state.step===4){showResult();}
+else if(state.step===99){showExcluded();}
+}
+function showResult(){
+var sec=SECTORS.find(function(s){return s.id===state.sector;});
+var isEss=sec.cat==='essential';
+var isLarge=state.size==='large'||(state.size==='medium'&&isEss);
+var isSmallCrit=state.size==='small'&&state.critical==='yes';
+var inScope=state.size!=='small'||isSmallCrit;
+var cat,badge,title,desc,reqs;
+if(inScope&&isEss){cat='essential';badge='badge-ess';title='Essenti\u00eble Entiteit';desc='Uw organisatie kwalificeert waarschijnlijk als <strong>essenti\u00eble entiteit</strong> onder NIS2. Dit betekent proactief toezicht door de bevoegde autoriteit en de strengste verplichtingen.';
+reqs=['Verplichte incidentmelding binnen 24 uur (early warning) en 72 uur (volledig rapport)','Risicobeheermaatregelen implementeren (Art. 21 NIS2)','Bestuurlijke verantwoordelijkheid: management is persoonlijk aansprakelijk','Regelmatige security audits en pentests','Meldplicht bij CSIRT en bevoegde autoriteit','Boetes tot \u20ac10M of 2% wereldwijde omzet'];}
+else if(inScope){cat='important';badge='badge-imp';title='Belangrijke Entiteit';desc='Uw organisatie kwalificeert waarschijnlijk als <strong>belangrijke entiteit</strong> onder NIS2. U valt onder reactief toezicht en moet voldoen aan cybersecurity-maatregelen.';
+reqs=['Incidentmelding binnen 24/72 uur','Risicobeheermaatregelen (Art. 21 NIS2)','Bestuurlijke verantwoordelijkheid','Supply chain security vereisten','Boetes tot \u20ac7M of 1,4% wereldwijde omzet'];}
+else{cat='outside';badge='badge-out';title='Waarschijnlijk Buiten Scope';desc='Op basis van uw antwoorden valt uw organisatie <strong>waarschijnlijk niet direct</strong> onder NIS2. Let op: u kunt indirect via ketenverplichtingen alsnog geraakt worden.';
+reqs=state.supply!=='no'?['Contractuele NIS2-verplichtingen via ketenpartners mogelijk','Overweeg vrijwillige security-framework certificering','Monitor nationale implementatiewetgeving']:['Geen directe NIS2-verplichtingen','Monitor de Cyberbeveiligingswet voor wijzigingen'];}
+var h='<div class="result-box"><div class="result-badge '+badge+'">'+title.toUpperCase()+'</div><div class="result-title">'+title+'</div><div class="result-desc">'+desc+'<br><br><strong>Sector:</strong> '+sec.name+' ('+sec.cat+')<br><strong>Omvang:</strong> '+({large:'Groot',medium:'Middelgroot',small:'Klein/Micro'}[state.size])+'</div><div class="req-list">';
+reqs.forEach(function(r){h+='<div class="req-item"><span class="req-icon">'+(cat==='outside'?'\u2139':'\u26a0')+'</span>'+r+'</div>';});
+h+='</div><div class="cta-box"><div class="cta-text"><strong>NIS2-compliance in uw Pre-DD rapport:</strong> Een DueSight rapport bevat een volledige NIS2/cyberbeveiligingsbeoordeling inclusief MITRE ATT&CK-analyse, SecurityHeaders-scan en SSL-certificaatvalidatie.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div></div><button class="restart-btn" id="retryBtn">Opnieuw invullen</button>';
+document.getElementById('app').innerHTML=h;
+document.getElementById('retryBtn').addEventListener('click',function(){state={step:0,sector:null,size:null,critical:null,supply:null};render();});
+}
+function showExcluded(){
+document.getElementById('app').innerHTML='<div class="result-box"><div class="result-badge badge-out">BUITEN SCOPE</div><div class="result-title">Uw sector valt niet onder NIS2</div><div class="result-desc">Op basis van de sectorindeling in Bijlage I en II van de NIS2-richtlijn valt uw organisatie niet in een aangewezen sector.<br><br><strong>Let op:</strong> Lidstaten mogen de scope uitbreiden. Monitor de Nederlandse Cyberbeveiligingswet voor aanvullende sectoren.</div><div class="cta-box"><div class="cta-text"><strong>Toch cyberbeveiligingsrisico\u2019s in kaart brengen?</strong> DueSight\u2019s Pre-DD rapport bevat automatische NIS2-beoordeling, SecurityHeaders-analyse en SSL-validatie voor elke entiteit.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div></div><button class="restart-btn" id="retryBtn">Opnieuw invullen</button>';
+document.getElementById('retryBtn').addEventListener('click',function(){state={step:0,sector:null,size:null,critical:null,supply:null};render();});
+}
+render();
+</script>
+</body>
+</html>

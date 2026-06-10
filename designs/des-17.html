@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#050810;color:#dce8ff;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+canvas#bg{position:absolute;inset:0;z-index:0;}
+
+/* Bloomberg-style layout: full data density */
+.layout{
+  position:absolute;inset:0;z-index:10;
+  display:grid;
+  grid-template-rows:36px 1fr 44px;
+  grid-template-columns:1fr 1fr 320px;
+}
+
+/* Top status bar — Bloomberg orange */
+.topbar{
+  grid-column:1/-1;
+  background:#0a0f1e;
+  border-bottom:2px solid #f4801a;
+  display:flex;align-items:center;
+  padding:0 16px;gap:24px;
+}
+.tb-logo{
+  font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;color:#f4801a;
+  padding-right:24px;border-right:1px solid rgba(244,128,26,0.2);
+}
+.tb-item{font-size:8px;letter-spacing:1px;color:rgba(220,232,255,0.4);}
+.tb-item b{color:#f4801a;}
+.tb-live{
+  margin-left:auto;display:flex;align-items:center;gap:6px;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(244,128,26,0.7);
+}
+.tb-live-dot{width:5px;height:5px;border-radius:50%;background:#f4801a;animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+
+/* Main left — hero */
+.hero{
+  grid-row:2;grid-column:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:40px 40px 40px 48px;
+  border-right:1px solid rgba(255,255,255,0.05);
+}
+
+.segment-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:#f4801a;margin-bottom:24px;
+}
+.segment-tag::before{content:'';width:20px;height:1px;background:#f4801a;}
+
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:800;line-height:1.05;
+  letter-spacing:-1.5px;color:#fff;
+  margin-bottom:16px;
+}
+h1 span{color:#f4801a;}
+
+.subtext{
+  font-size:12px;color:rgba(180,200,240,0.5);
+  line-height:1.7;max-width:380px;margin-bottom:32px;
+}
+
+/* Deal input */
+.deal-input{
+  background:rgba(10,15,30,0.9);
+  border:1px solid rgba(244,128,26,0.2);
+  border-left:3px solid #f4801a;
+  display:flex;max-width:420px;
+}
+.di-label{
+  background:rgba(244,128,26,0.08);
+  padding:12px 14px;font-size:7px;letter-spacing:2px;
+  text-transform:uppercase;color:#f4801a;
+  white-space:nowrap;display:flex;align-items:center;
+  border-right:1px solid rgba(244,128,26,0.15);
+}
+.deal-input input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#dce8ff;font-family:'Space Grotesk',sans-serif;
+  font-size:11px;padding:12px 14px;
+}
+.deal-input input::placeholder{color:rgba(150,180,220,0.2);}
+.deal-input button{
+  background:rgba(244,128,26,0.12);border:none;border-left:1px solid rgba(244,128,26,0.15);
+  color:#f4801a;cursor:pointer;font-size:8px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;padding:12px 16px;white-space:nowrap;
+  transition:background 0.15s;
+}
+.deal-input button:hover{background:rgba(244,128,26,0.22);}
+
+/* Stats row */
+.stats-row{
+  display:flex;gap:24px;margin-top:28px;
+  padding-top:20px;border-top:1px solid rgba(255,255,255,0.04);
+}
+.stat{display:flex;flex-direction:column;gap:4px;}
+.stat-v{font-size:18px;font-weight:700;color:#f4801a;font-family:'Manrope',sans-serif;}
+.stat-l{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(150,180,220,0.3);}
+
+/* Center — live deal metrics */
+.metrics{
+  grid-row:2;grid-column:2;
+  padding:32px 32px;
+  border-right:1px solid rgba(255,255,255,0.05);
+  display:flex;flex-direction:column;gap:0;
+}
+.metric-header{
+  font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(244,128,26,0.5);margin-bottom:16px;
+  padding-bottom:8px;border-bottom:1px solid rgba(244,128,26,0.1);
+}
+.metric-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.035);
+}
+.mr-label{font-size:10px;color:rgba(180,200,240,0.5);}
+.mr-value{font-size:13px;font-weight:600;color:#dce8ff;}
+.mr-value.ok{color:#22c55e;}
+.mr-value.warn{color:#f59e0b;}
+.mr-value.alert{color:#ef4444;}
+.mr-value.orange{color:#f4801a;}
+
+/* Right — live feed */
+.feed-panel{
+  grid-row:2;grid-column:3;
+  background:rgba(5,8,16,0.8);
+  padding:16px;display:flex;flex-direction:column;gap:0;
+  overflow:hidden;
+}
+.feed-header{
+  font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(244,128,26,0.5);margin-bottom:12px;
+  padding-bottom:8px;border-bottom:1px solid rgba(244,128,26,0.08);
+}
+.feed-item{
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03);
+  display:flex;flex-direction:column;gap:3px;
+}
+.fi-name{font-size:10px;font-weight:600;color:#c8d8f0;}
+.fi-meta{font-size:8px;color:rgba(150,180,220,0.35);display:flex;justify-content:space-between;}
+.fi-score{color:#f4801a;font-weight:700;}
+
+/* Bottom */
+.bottombar{
+  grid-column:1/-1;grid-row:3;
+  background:#07091a;
+  border-top:1px solid rgba(244,128,26,0.12);
+  display:flex;align-items:center;padding:0 20px;gap:32px;
+  overflow:hidden;
+}
+.bb-item{font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(200,220,255,0.2);}
+.bb-item.hi{color:rgba(244,128,26,0.5);}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<div class="layout">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="tb-logo">DueSight</div>
+    <div class="tb-item">KvK <b>LIVE</b></div>
+    <div class="tb-item">SANCTIONS <b>SOURCE-SCOPED </b></div>
+    <div class="tb-item">LATENCY <b>14ms</b></div>
+    <div class="tb-item">ENGINES <b>11/11</b></div>
+    <div class="tb-item">COVERAGE <b>NL·DE·AT·CH·BE·UK</b></div>
+    <div class="tb-live"><div class="tb-live-dot"></div>LIVE INTELLIGENCE</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="segment-tag">M&amp;A · Private Equity · Deal Intelligence</div>
+    <h1>U sluit de deal.<br/>Wij leveren<br/>de<span> zekerheid.</span></h1>
+    <p class="subtext">
+      Pre-DD intelligence in &lt;3 minuten. meerdere bronnen.
+      Multi-source evidence review zodat u de onderhandeling ingaat met feiten, niet aannames.
+    </p>
+    <div class="deal-input">
+      <div class="di-label">Target</div>
+      <input type="text" placeholder="Bedrijfsnaam of KvK-nummer..."/>
+      <button>Analyseer →</button>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-v">&lt;3 min</div><div class="stat-l">Rapporttijd</div></div>
+      <div class="stat"><div class="stat-v">meerdere</div><div class="stat-l">Bronnen</div></div>
+      <div class="stat"><div class="stat-v">11</div><div class="stat-l">analyselagen</div></div>
+      <div class="stat"><div class="stat-v">€0</div><div class="stat-l">Retentie</div></div>
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric-header">Live Analyse Pipeline — TechFlow Systems B.V.</div>
+    <div class="metric-row"><span class="mr-label">KvK Inschrijving</span><span class="mr-value ok">Actief · 2019</span></div>
+    <div class="metric-row"><span class="mr-label">UBO-structuur</span><span class="mr-value ok">2 Geverifieerd</span></div>
+    <div class="metric-row"><span class="mr-label">Sanctiescreening</span><span class="mr-value ok">Geen treffer</span></div>
+    <div class="metric-row"><span class="mr-label">Faillissementen</span><span class="mr-value ok">0 gevonden</span></div>
+    <div class="metric-row"><span class="mr-label">Forensische Chi-kwadraat²</span><span class="mr-value ok">4.32 · PASS</span></div>
+    <div class="metric-row"><span class="mr-label">Cybersecurity Score</span><span class="mr-value warn">68/100</span></div>
+    <div class="metric-row"><span class="mr-label">NIS2 Scope</span><span class="mr-value warn">Essentieel</span></div>
+    <div class="metric-row"><span class="mr-label">GDELT Sentiment</span><span class="mr-value ok">+0.34 Positief</span></div>
+    <div class="metric-row"><span class="mr-label">Multi-source review score</span><span class="mr-value orange">87/100</span></div>
+    <div class="metric-row"><span class="mr-label">Rapport Status</span><span class="mr-value orange">Gereed · PDF/JSON</span></div>
+  </div>
+
+  <!-- Feed panel -->
+  <div class="feed-panel">
+    <div class="feed-header">Recente Scans Europa</div>
+    <div class="feed-item">
+      <div class="fi-name">Adyen N.V.</div>
+      <div class="fi-meta"><span>Fintech · AEX</span><span class="fi-score">85</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">ASML Holding</div>
+      <div class="fi-meta"><span>Semiconductor · AEX</span><span class="fi-score">92</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">Wirecard AG (arch.)</div>
+      <div class="fi-meta"><span>Fintech · DE</span><span style="color:#ef4444;font-weight:700">12 ALERT</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">Mollie B.V.</div>
+      <div class="fi-meta"><span>Payments · NL</span><span class="fi-score">79</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">N26 GmbH</div>
+      <div class="fi-meta"><span>Neobank · DE</span><span class="fi-score">71</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">Klarna Bank AB</div>
+      <div class="fi-meta"><span>BNPL · SE</span><span class="fi-score">77</span></div>
+    </div>
+    <div class="feed-item">
+      <div class="fi-name">Bunq B.V.</div>
+      <div class="fi-meta"><span>Neobank · NL</span><span class="fi-score">74</span></div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottombar">
+    <div class="bb-item hi">● SYSTEEM OPERATIONEEL</div>
+    <div class="bb-item">AVG ART. 25</div>
+    <div class="bb-item">ZERO-RETENTION</div>
+    <div class="bb-item">TLS 1.3 + AES-256</div>
+    <div class="bb-item">EU AI Act context</div>
+    <div class="bb-item">Wwft SCREENING</div>
+    <div class="bb-item">forensische data-analyse VERIFIED</div>
+    <div class="bb-item">meerdere bronnen</div>
+  </div>
+</div>
+
+<script>
+var c=document.getElementById('bg'),cx=c.getContext('2d');
+function r(){c.width=window.innerWidth;c.height=window.innerHeight;}r();
+window.addEventListener('resize',r);
+cx.fillStyle='#050810';cx.fillRect(0,0,c.width,c.height);
+// Subtle data grid
+cx.strokeStyle='rgba(244,128,26,0.04)';cx.lineWidth=0.5;
+for(var x=0;x<c.width;x+=40){cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,c.height);cx.stroke();}
+for(var y=0;y<c.height;y+=40){cx.beginPath();cx.moveTo(0,y);cx.lineTo(c.width,y);cx.stroke();}
+</script>
+</body>
+</html>

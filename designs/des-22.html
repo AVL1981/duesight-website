@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#010208;color:#dce8ff;font-family:'Space Grotesk',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 0%,rgba(1,2,8,0.4) 50%,rgba(1,2,8,0.95) 100%)}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:flex-end;padding:0 7% 80px 7%}
+.eyebrow{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(52,211,153,0.5);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.eb-dot{width:6px;height:6px;border-radius:50%;background:#34d399;animation:glow 2s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 4px #34d399}50%{box-shadow:0 0 16px #34d399}}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;color:#fff;margin-bottom:16px;max-width:700px}
+h1 span{color:transparent;background:linear-gradient(90deg,#34d399,#60a5fa,#a78bfa);-webkit-background-clip:text;background-clip:text}
+.desc{font-size:12px;color:rgba(180,220,200,0.5);line-height:1.8;max-width:500px;margin-bottom:32px}
+.row{display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap}
+.search{display:flex;background:rgba(5,15,20,0.8);border:1px solid rgba(52,211,153,0.2);max-width:480px;flex:1;backdrop-filter:blur(16px)}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:12px;padding:14px 16px}
+.search input::placeholder{color:rgba(150,200,180,0.2)}
+.search button{background:linear-gradient(135deg,#059669,#0d9488);border:none;color:#fff;cursor:pointer;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 22px;white-space:nowrap}
+.stats{display:flex;gap:32px}
+.stat{display:flex;flex-direction:column;gap:4px}
+.s-v{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:#34d399}
+.s-l{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(150,200,180,0.25)}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(1,2,8,0.9);border-top:1px solid rgba(52,211,153,0.08);display:flex;align-items:center;padding:0 24px;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(52,211,153,0.25)}
+.bi.live::before{content:'● ';color:#34d399}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="overlay"></div>
+<div class="content">
+  <div class="eyebrow"><div class="eb-dot"></div>Northern Intelligence Grid · Live</div>
+  <h1>Boven Europa<br/>waakt <span>DueSight.</span></h1>
+  <p class="desc">meerdere bronnen over 6 Europese jurisdicties. AI-powered pre-due diligence intelligence in minder dan 3 minuten. Zero data-retentie.</p>
+  <div class="row">
+    <div class="search"><input type="text" placeholder="Bedrijfsnaam of KvK-nummer..."/><button>Analyseer →</button></div>
+    <div class="stats">
+      <div class="stat"><div class="s-v">meerdere</div><div class="s-l">Bronnen</div></div>
+      <div class="stat"><div class="s-v">&lt;3m</div><div class="s-l">Rapport</div></div>
+      <div class="stat"><div class="s-v">11</div><div class="s-l">AI</div></div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bi live">Systeem Live</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+// Stars
+var stars=[];for(var i=0;i<500;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1+0.2,a:Math.random()*0.5+0.1,tw:Math.random()*0.02+0.005,p:Math.random()*Math.PI*2});
+// Aurora bands
+var bands=[];
+for(var i=0;i<5;i++){
+  var pts=[];for(var j=0;j<=20;j++)pts.push({x:j/20,y:0.15+Math.random()*0.15,amp:Math.random()*0.04+0.02,freq:Math.random()*2+1,phase:Math.random()*Math.PI*2});
+  bands.push({pts:pts,hue:120+i*30,alpha:0.15-i*0.02,width:0.08+Math.random()*0.06});
+}
+var t=0;
+function draw(){
+  t+=0.003;
+  ctx.fillStyle='rgba(1,2,8,0.08)';ctx.fillRect(0,0,W,H);
+  // Draw stars with twinkle
+  stars.forEach(function(s){
+    var tw=s.a*(0.5+Math.sin(t*10*s.tw+s.p)*0.5);
+    ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,230,255,'+tw+')';ctx.fill();
+  });
+  // Aurora bands
+  bands.forEach(function(band){
+    ctx.beginPath();
+    var pts=band.pts;
+    for(var j=0;j<pts.length;j++){
+      var p=pts[j];
+      var y=p.y+Math.sin(t*p.freq+p.phase+j*0.5)*p.amp;
+      var x=p.x;
+      if(j===0)ctx.moveTo(x*W,y*H);
+      else{
+        var prev=pts[j-1];
+        var prevY=prev.y+Math.sin(t*prev.freq+prev.phase+(j-1)*0.5)*prev.amp;
+        var cpx=(prev.x+x)/2*W;
+        var cpy=(prevY+y)/2*H;
+        ctx.quadraticCurveTo(prev.x*W,prevY*H,cpx,cpy);
+      }
+    }
+    // Close band shape
+    var lastP=pts[pts.length-1];
+    var lastY=lastP.y+Math.sin(t*lastP.freq+lastP.phase+(pts.length-1)*0.5)*lastP.amp;
+    ctx.lineTo(W,lastY*H+band.width*H);
+    for(var j=pts.length-1;j>=0;j--){
+      var p=pts[j];
+      var y=p.y+Math.sin(t*p.freq+p.phase+j*0.5)*p.amp+band.width;
+      if(j===pts.length-1)ctx.lineTo(p.x*W,y*H);
+      else{
+        var next=pts[j+1];
+        var nextY=next.y+Math.sin(t*next.freq+next.phase+(j+1)*0.5)*next.amp+band.width;
+        ctx.quadraticCurveTo(next.x*W,nextY*H,((p.x+next.x)/2)*W,((y+nextY)/2)*H);
+      }
+    }
+    ctx.closePath();
+    var g=ctx.createLinearGradient(0,0,W,0);
+    var h=band.hue+Math.sin(t)*20;
+    g.addColorStop(0,'hsla('+h+',80%,60%,0)');
+    g.addColorStop(0.3,'hsla('+h+',80%,60%,'+band.alpha+')');
+    g.addColorStop(0.5,'hsla('+(h+20)+',70%,50%,'+(band.alpha*1.5)+')');
+    g.addColorStop(0.7,'hsla('+(h+40)+',80%,60%,'+band.alpha+')');
+    g.addColorStop(1,'hsla('+h+',80%,60%,0)');
+    ctx.fillStyle=g;ctx.fill();
+  });
+  // Subtle horizon glow
+  var hg=ctx.createLinearGradient(0,H*0.6,0,H);
+  hg.addColorStop(0,'transparent');
+  hg.addColorStop(0.5,'rgba(5,20,40,0.3)');
+  hg.addColorStop(1,'rgba(1,2,8,0.95)');
+  ctx.fillStyle=hg;ctx.fillRect(0,H*0.6,W,H*0.4);
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

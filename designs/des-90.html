@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0806;color:#e8dcd0;font-family:'Space Grotesk',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 50% at 55% 50%,transparent 10%,rgba(10,8,6,0.6) 50%,rgba(10,8,6,0.95) 100%)}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+.seal{width:80px;height:80px;border-radius:50%;border:2px solid rgba(234,179,8,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative}
+.seal::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(234,179,8,0.15)}
+.seal-inner{font-family:'Cinzel Decorative',serif;font-size:20px;color:rgba(234,179,8,0.5)}
+h1{font-family:'Cinzel Decorative',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;line-height:1.1;color:#e8dcd0;margin-bottom:12px;letter-spacing:2px}
+h1 span{color:#eab308;text-shadow:0 0 30px rgba(234,179,8,0.2)}
+.desc{font-size:11px;color:rgba(232,220,208,0.35);line-height:1.9;max-width:480px;margin-bottom:32px}
+.search{display:flex;background:rgba(10,8,6,0.85);border:1px solid rgba(234,179,8,0.2);border-top:2px solid rgba(234,179,8,0.4);max-width:500px;width:100%;backdrop-filter:blur(12px)}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#e8dcd0;font-family:'Space Grotesk',sans-serif;font-size:12px;padding:14px 16px}
+.search input::placeholder{color:rgba(234,179,8,0.12)}
+.search button{background:rgba(234,179,8,0.08);border:none;border-left:1px solid rgba(234,179,8,0.15);color:#eab308;cursor:pointer;font-family:'Cinzel Decorative',serif;font-size:9px;padding:14px 22px;white-space:nowrap}
+.stats{display:flex;gap:40px;margin-top:28px}
+.stat{display:flex;flex-direction:column;align-items:center;gap:6px}
+.sv{font-family:'Cinzel Decorative',serif;font-size:24px;font-weight:700;color:#eab308;text-shadow:0 0 15px rgba(234,179,8,0.15)}
+.sr{width:24px;height:1px;background:rgba(234,179,8,0.2)}
+.sl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(234,179,8,0.25)}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(10,8,6,0.95);border-top:1px solid rgba(234,179,8,0.08);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(234,179,8,0.2)}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="overlay"></div>
+<div class="content">
+  <div class="seal"><div class="seal-inner">♛</div></div>
+  <h1>Bescherm<br/>uw <span>kroonjuwelen.</span></h1>
+  <p class="desc">Koninklijke veiligheid voor uw kostbaarste data. 47 databases, proprietary multi-model intelligence engine, zero data-retentie. Uw intelligence is heilig.</p>
+  <div class="search"><input type="text" placeholder="Entiteit of KvK-nummer..."/><button>Analyseer →</button></div>
+  <div class="stats">
+    <div class="stat"><div class="sv">47</div><div class="sr"></div><div class="sl">Databases</div></div>
+    <div class="stat"><div class="sv">&lt;III</div><div class="sr"></div><div class="sl">Minuten</div></div>
+    <div class="stat"><div class="sv">Multi</div><div class="sr"></div><div class="sl">Lagen</div></div>
+    <div class="stat"><div class="sv">∅</div><div class="sr"></div><div class="sl">Retentie</div></div>
+  </div>
+</div>
+<div class="bottom"><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div></div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+ctx.fillStyle='#0a0806';ctx.fillRect(0,0,W,H);
+var t=0;
+// Gemstone facets + golden particles
+var gems=[];
+for(var i=0;i<12;i++){
+  gems.push({x:0.3+Math.random()*0.5,y:0.2+Math.random()*0.6,size:20+Math.random()*60,sides:Math.floor(Math.random()*3)+5,rot:Math.random()*Math.PI*2,speed:(Math.random()-0.5)*0.002,alpha:Math.random()*0.05+0.02});
+}
+var sparkles=[];
+for(var i=0;i<30;i++) sparkles.push({x:Math.random(),y:Math.random(),a:Math.random()*0.3,p:Math.random()*Math.PI*2,s:Math.random()*0.02+0.005});
+function draw(){
+  t+=0.003;
+  ctx.fillStyle='rgba(10,8,6,0.05)';ctx.fillRect(0,0,W,H);
+  // Gemstone facets
+  gems.forEach(function(g){
+    g.rot+=g.speed;
+    var x=g.x*W,y=g.y*H;
+    ctx.beginPath();
+    for(var i=0;i<=g.sides;i++){
+      var a=g.rot+i*Math.PI*2/g.sides;
+      ctx.lineTo(x+Math.cos(a)*g.size,y+Math.sin(a)*g.size);
+    }
+    ctx.closePath();
+    ctx.strokeStyle='rgba(234,179,8,'+(g.alpha*(0.5+Math.sin(t*2+g.x*5)*0.5))+')';ctx.lineWidth=0.5;ctx.stroke();
+    // Internal facet lines
+    for(var i=0;i<g.sides;i+=2){
+      var a=g.rot+i*Math.PI*2/g.sides;
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(a)*g.size,y+Math.sin(a)*g.size);
+      ctx.strokeStyle='rgba(234,179,8,'+(g.alpha*0.3)+')';ctx.lineWidth=0.3;ctx.stroke();
+    }
+  });
+  // Golden sparkles
+  sparkles.forEach(function(s){
+    s.p+=s.s;
+    var a=s.a*(0.3+Math.sin(s.p)*0.7);
+    ctx.beginPath();ctx.arc(s.x*W,s.y*H,1,0,Math.PI*2);
+    ctx.fillStyle='rgba(234,179,8,'+a+')';ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

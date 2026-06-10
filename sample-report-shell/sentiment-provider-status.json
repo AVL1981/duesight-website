@@ -1,0 +1,18 @@
+{
+  "schema_version": "duesight.sentiment_provider_status.v1",
+  "target": {
+    "name": "Shell plc",
+    "domain": "shell.com",
+    "kvk": "",
+    "sector": "",
+    "country": "GB"
+  },
+  "updated_at": "2026-05-29T10:04:48+00:00",
+  "sentiment_scan": {
+    "status": "deferred",
+    "elapsed_s": 202.685,
+    "public_status": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context.",
+    "internal_error_class": "TimeoutError"
+  },
+  "source_status": []
+}

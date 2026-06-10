@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0c0a08;color:#d4c9b8;font-family:'Source Code Pro',monospace;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(12,10,8,0.85) 0%,rgba(12,10,8,0.4) 40%,rgba(12,10,8,0.7) 70%,rgba(12,10,8,0.95) 100%)}
+/* Film grain */
+.grain{position:absolute;inset:0;z-index:2;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;padding:0 8%;max-width:650px}
+.case-tag{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(180,160,130,0.4);margin-bottom:24px;border-bottom:1px solid rgba(180,160,130,0.1);padding-bottom:8px;display:inline-block}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1.05;color:#e8dfd0;margin-bottom:12px;letter-spacing:-0.5px}
+h1 em{font-style:italic;color:rgba(200,175,130,0.7)}
+.desc{font-size:11px;color:rgba(180,160,130,0.4);line-height:1.9;max-width:440px;margin-bottom:32px;font-weight:300}
+.search{display:flex;background:rgba(12,10,8,0.9);border-bottom:2px solid rgba(180,160,130,0.2);max-width:460px}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#d4c9b8;font-family:'Source Code Pro',monospace;font-size:11px;padding:14px 0 14px 16px;font-weight:300}
+.search input::placeholder{color:rgba(180,160,130,0.15)}
+.search button{background:none;border:none;color:rgba(180,160,130,0.4);cursor:pointer;font-family:'Playfair Display',serif;font-size:11px;font-style:italic;padding:14px 20px;white-space:nowrap}
+.search button:hover{color:rgba(200,175,130,0.7)}
+.evidence{display:flex;flex-direction:column;gap:8px;margin-top:32px;padding-top:20px;border-top:1px solid rgba(180,160,130,0.06)}
+.ev-row{display:flex;justify-content:space-between;font-size:9px;color:rgba(180,160,130,0.3);padding:4px 0}
+.ev-val{color:rgba(200,175,130,0.5)}
+/* Right: case file */
+.casefile{position:absolute;right:6%;top:50%;transform:translateY(-50%) rotate(1deg);z-index:10;width:240px;background:rgba(20,18,14,0.6);border:1px solid rgba(180,160,130,0.08);padding:24px;backdrop-filter:blur(8px)}
+.cf-stamp{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;color:rgba(180,80,60,0.5);text-transform:uppercase;letter-spacing:3px;border:2px solid rgba(180,80,60,0.3);padding:4px 12px;display:inline-block;transform:rotate(-5deg);margin-bottom:16px}
+.cf-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:rgba(200,185,160,0.6);margin-bottom:12px}
+.cf-line{font-size:9px;color:rgba(180,160,130,0.3);padding:4px 0;border-bottom:1px solid rgba(180,160,130,0.04);display:flex;justify-content:space-between}
+.cf-val{color:rgba(200,175,130,0.5)}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(12,10,8,0.95);border-top:1px solid rgba(180,160,130,0.05);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(180,160,130,0.12)}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="overlay"></div><div class="grain"></div>
+<div class="content">
+  <div class="case-tag">Dossier №—  Vertrouwelijk</div>
+  <h1>Elk bedrijf<br/>heeft een <em>verhaal.</em><br/>Wij lezen het.</h1>
+  <p class="desc">DueSight duikt diep in de archieven. KvK, rechtspraak, sanctielijsten, financiële patronen — elk spoor wordt gevolgd, elke anomalie onthuld.</p>
+  <div class="search"><input type="text" placeholder="Naam van het subject of KvK-nummer..."/><button>Onderzoek →</button></div>
+  <div class="evidence">
+    <div class="ev-row"><span>Databases doorzocht</span><span class="ev-val">47</span></div>
+    <div class="ev-row"><span>Analyselagen</span><span class="ev-val">multi-layer</span></div>
+    <div class="ev-row"><span>Rapporttijd</span><span class="ev-val">&lt; 3 minuten</span></div>
+    <div class="ev-row"><span>Bewijs bewaard</span><span class="ev-val">∅ Nul retentie</span></div>
+  </div>
+</div>
+<div class="casefile">
+  <div class="cf-stamp">Geclassificeerd</div>
+  <div class="cf-title">Subject: TechFlow B.V.</div>
+  <div class="cf-line"><span>KvK Status</span><span class="cf-val">Actief · 2019</span></div>
+  <div class="cf-line"><span>UBO's</span><span class="cf-val">2 geverifieerd</span></div>
+  <div class="cf-line"><span>Sancties</span><span class="cf-val">Clean ∅</span></div>
+  <div class="cf-line"><span>Faillissementen</span><span class="cf-val">0</span></div>
+  <div class="cf-line"><span>forensische data-analyse χ²</span><span class="cf-val">4.32 PASS</span></div>
+  <div class="cf-line"><span>Cybersecurity</span><span class="cf-val">68/100</span></div>
+  <div class="cf-line"><span>Multi-source review</span><span class="cf-val">87/100</span></div>
+</div>
+<div class="bottom">
+  <div class="bi">● Onderzoek Actief</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">Vertrouwelijk</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+var t=0;
+function draw(){
+  t+=0.003;
+  ctx.fillStyle='rgba(12,10,8,0.04)';ctx.fillRect(0,0,W,H);
+  if(!draw.init){
+    draw.init=true;
+    ctx.fillStyle='#0c0a08';ctx.fillRect(0,0,W,H);
+  }
+  // Venetian blind light rays from right side (film noir)
+  var numBlinds=12;
+  for(var i=0;i<numBlinds;i++){
+    var y=H*0.1+i*(H*0.7/numBlinds);
+    var blindWidth=H*0.03;
+    // Light beam through blind gap
+    ctx.beginPath();
+    ctx.moveTo(W,y);
+    ctx.lineTo(W*0.3,y+blindWidth*3);
+    ctx.lineTo(W*0.3,y+blindWidth*3+blindWidth*0.5);
+    ctx.lineTo(W,y+blindWidth);
+    ctx.closePath();
+    var alpha=0.02+Math.sin(t*0.5+i*0.3)*0.005;
+    var lg=ctx.createLinearGradient(W,y,W*0.3,y+blindWidth*3);
+    lg.addColorStop(0,'rgba(200,170,120,'+alpha*2+')');
+    lg.addColorStop(0.5,'rgba(200,170,120,'+alpha+')');
+    lg.addColorStop(1,'rgba(200,170,120,0)');
+    ctx.fillStyle=lg;ctx.fill();
+  }
+  // Dust particles in light beams
+  for(var i=0;i<8;i++){
+    var px=W*0.5+Math.sin(t*0.7+i*2)*W*0.3;
+    var py=H*0.2+Math.cos(t*0.5+i*1.7)*H*0.3;
+    var pa=0.15+Math.sin(t*2+i)*0.1;
+    ctx.beginPath();ctx.arc(px,py,1,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,180,140,'+pa+')';ctx.fill();
+  }
+  // Warm ambient from desk lamp area (bottom left)
+  var wg=ctx.createRadialGradient(W*0.15,H*0.8,0,W*0.15,H*0.8,W*0.3);
+  wg.addColorStop(0,'rgba(200,150,80,0.03)');wg.addColorStop(1,'transparent');
+  ctx.fillStyle=wg;ctx.fillRect(0,0,W,H);
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

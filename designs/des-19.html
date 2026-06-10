@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#f5f3ef;color:#1a1a1a;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+
+/* Split: cream left, deep navy right */
+.split{
+  position:absolute;inset:0;
+  display:grid;grid-template-columns:1fr 380px;
+}
+
+/* Left — cream/linen editorial */
+.left{
+  background:#f5f3ef;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:64px 56px;
+  position:relative;
+}
+
+/* Fine rule top */
+.top-rule{
+  position:absolute;top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,#1a2744,rgba(26,39,68,0.3),transparent);
+}
+
+/* Publication mark */
+.pub-mark{
+  display:flex;align-items:center;gap:12px;margin-bottom:48px;
+}
+.pub-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:600;letter-spacing:-0.5px;color:#1a2744;
+}
+.pub-sep{width:1px;height:20px;background:rgba(26,39,68,0.2);}
+.pub-sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(26,39,68,0.35);}
+
+/* Headline */
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4.5vw,4rem);
+  font-weight:300;line-height:1.08;
+  color:#1a1a1a;letter-spacing:-1px;
+  margin-bottom:24px;
+}
+h1 strong{font-weight:600;color:#1a2744;}
+
+/* Pull quote */
+.pull{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:14px;
+  color:rgba(26,26,26,0.5);
+  line-height:1.65;max-width:380px;
+  margin-bottom:40px;
+  padding-left:20px;
+  border-left:2px solid rgba(26,39,68,0.15);
+}
+
+/* Search — editorial minimal */
+.editorial-search{
+  display:flex;flex-direction:column;gap:8px;max-width:420px;
+}
+.es-label{
+  font-size:7px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(26,26,26,0.3);
+}
+.es-row{
+  display:flex;border-bottom:2px solid #1a2744;
+}
+.es-row input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#1a1a1a;font-family:'Space Grotesk',sans-serif;
+  font-size:13px;padding:10px 0;
+}
+.es-row input::placeholder{color:rgba(26,26,26,0.2);}
+.es-row button{
+  background:none;border:none;cursor:pointer;
+  font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:#1a2744;padding:10px 0 10px 16px;
+  transition:opacity 0.2s;
+}
+.es-row button:hover{opacity:0.6;}
+
+/* Editorial stats */
+.editorial-stats{
+  display:flex;gap:32px;margin-top:40px;
+  padding-top:32px;
+  border-top:1px solid rgba(26,26,26,0.08);
+}
+.es-stat{display:flex;flex-direction:column;gap:6px;}
+.es-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#1a2744;}
+.es-lbl{font-size:7px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(26,26,26,0.3);}
+
+/* Right — deep navy institutional */
+.right{
+  background:#0f1929;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:48px 36px;gap:0;
+}
+
+.right-header{
+  font-size:7px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(173,198,255,0.3);margin-bottom:24px;
+  padding-bottom:12px;border-bottom:1px solid rgba(173,198,255,0.08);
+}
+
+/* Credential cards */
+.cred-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.cred{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 16px;
+  background:rgba(173,198,255,0.04);
+  border:1px solid rgba(173,198,255,0.07);
+  border-left:2px solid rgba(173,198,255,0.25);
+}
+.cred-icon{
+  font-size:14px;margin-top:1px;flex-shrink:0;
+  color:rgba(173,198,255,0.5);
+}
+.cred-body{}
+.cred-title{
+  font-size:11px;font-weight:500;color:rgba(220,235,255,0.75);
+  margin-bottom:3px;line-height:1.3;
+}
+.cred-sub{font-size:8px;color:rgba(140,170,220,0.3);letter-spacing:0.3px;line-height:1.4;}
+
+/* Jurisdictions */
+.jur-section{
+  margin-top:20px;padding-top:20px;
+  border-top:1px solid rgba(173,198,255,0.06);
+}
+.jur-title{
+  font-size:7px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(173,198,255,0.25);margin-bottom:12px;
+}
+.jur-list{display:flex;flex-wrap:wrap;gap:6px;}
+.jur{
+  font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 10px;border:1px solid rgba(173,198,255,0.1);
+  color:rgba(173,198,255,0.35);
+}
+
+/* Bottom — editorial footer */
+.bottom-editorial{
+  position:absolute;bottom:0;left:0;right:380px;
+  padding:12px 56px;
+  border-top:1px solid rgba(26,26,26,0.06);
+  display:flex;gap:32px;align-items:center;
+}
+.be-item{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,26,26,0.25);}
+</style>
+</head>
+<body>
+
+<div class="split">
+  <!-- Left editorial -->
+  <div class="left">
+    <div class="top-rule"></div>
+
+    <div class="pub-mark">
+      <div class="pub-logo">DueSight</div>
+      <div class="pub-sep"></div>
+      <div class="pub-sub">Intelligence · Institutional</div>
+    </div>
+
+    <h1>Wat u niet weet<br/>kost u de<br/><strong>deal.</strong></h1>
+
+    <p class="pull">
+      "DueSight comprimeerde ons pre-screening proces
+      van drie dagen naar vier uur. Elke claim,
+      elke bron — transparant en controleerbaar."
+      <br/><br/>
+      — M&amp;A Director, mid-tier boutique, Amsterdam
+    </p>
+
+    <div class="editorial-search">
+      <div class="es-label">Target Analyse Starten</div>
+      <div class="es-row">
+        <input type="text" placeholder="Bedrijfsnaam of KvK-nummer..."/>
+        <button>Analyseer →</button>
+      </div>
+    </div>
+
+    <div class="editorial-stats">
+      <div class="es-stat"><div class="es-val">3 dag</div><div class="es-lbl">Bespaard</div></div>
+      <div class="es-stat"><div class="es-val">meerdere</div><div class="es-lbl">Bronnen</div></div>
+      <div class="es-stat"><div class="es-val">&lt;3 min</div><div class="es-lbl">Rapport</div></div>
+    </div>
+
+    <div class="bottom-editorial">
+      <div class="be-item">AVG Art. 25</div>
+      <div class="be-item">Zero-Retention</div>
+      <div class="be-item">EU AI Act</div>
+      <div class="be-item">Wwft Conform</div>
+    </div>
+  </div>
+
+  <!-- Right institutional -->
+  <div class="right">
+    <div class="right-header">Institutionele Verificatie</div>
+
+    <div class="cred-list">
+      <div class="cred">
+        <div class="cred-icon">⊛</div>
+        <div class="cred-body">
+          <div class="cred-title">Zero Data Retention Architectuur</div>
+          <div class="cred-sub">Uw zoekopdracht wordt niet opgeslagen. AVG Art. 25 by design. Vertrouwelijkheid gewaarborgd.</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-icon">⊞</div>
+        <div class="cred-body">
+          <div class="cred-title">Redundante analysevalidatie</div>
+          <div class="cred-sub">Meerdere onafhankelijke analyselagen valideren elke conclusie. Geen single point of failure.</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-icon">⊡</div>
+        <div class="cred-body">
+          <div class="cred-title">Volledige Bronherleidbaarheid</div>
+          <div class="cred-sub">SHA-256 audit trail per claim. Geschikt als compliance-onderbouwing.</div>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-icon">⊗</div>
+        <div class="cred-body">
+          <div class="cred-title">47 Institutionele databases</div>
+          <div class="cred-sub">KvK, Rechtspraak, GLEIF, OpenSanctions, Bundesanzeiger, Companies House en meer.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jur-section">
+      <div class="jur-title">Jurisdicties</div>
+      <div class="jur-list">
+        <div class="jur">Nederland</div>
+        <div class="jur">Deutschland</div>
+        <div class="jur">Österreich</div>
+        <div class="jur">Schweiz</div>
+        <div class="jur">België</div>
+        <div class="jur">UK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

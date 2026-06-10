@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#020509;color:#e0ecff;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+canvas#bg{position:absolute;inset:0;z-index:0;}
+
+/* The hybrid: combines data density of DES-17 with geographic power of DES-14 */
+/* and trust authority of DES-16 */
+.layout{
+  position:absolute;inset:0;z-index:10;
+  display:grid;
+  grid-template-rows:40px 1fr 36px;
+  grid-template-columns:1fr 340px;
+}
+
+/* Status bar */
+.statusbar{
+  grid-column:1/-1;
+  background:rgba(2,5,9,0.97);
+  border-bottom:1px solid rgba(96,165,250,0.12);
+  display:flex;align-items:center;padding:0 20px;gap:0;
+}
+.sb-logo{
+  font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;
+  letter-spacing:-0.3px;color:#fff;
+  padding-right:20px;margin-right:20px;
+  border-right:1px solid rgba(96,165,250,0.12);
+}
+.sb-ticker{
+  flex:1;display:flex;gap:24px;overflow:hidden;
+}
+.sb-item{
+  font-size:7.5px;letter-spacing:1px;
+  color:rgba(150,190,240,0.35);white-space:nowrap;
+}
+.sb-item b{color:rgba(96,165,250,0.65);}
+.sb-right{
+  display:flex;align-items:center;gap:12px;
+  padding-left:20px;border-left:1px solid rgba(96,165,250,0.1);
+}
+.sb-live{
+  display:flex;align-items:center;gap:5px;
+  font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(34,197,94,0.6);
+}
+.sb-dot{width:5px;height:5px;border-radius:50%;background:rgba(34,197,94,0.7);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:0.7;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+
+/* Main hero */
+.hero{
+  grid-row:2;grid-column:1;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:48px 52px;
+  position:relative;
+}
+
+/* Geographic anchor */
+.geo-badge{
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(96,165,250,0.5);
+}
+.geo-badge::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:rgba(96,165,250,0.5);
+  box-shadow:0 0 8px rgba(96,165,250,0.3);
+  animation:pulse 2s ease-in-out infinite;
+}
+
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(2rem,4vw,3.6rem);
+  font-weight:800;line-height:1.05;
+  letter-spacing:-1.5px;color:#fff;
+  margin-bottom:8px;
+}
+.h1-sub{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(1rem,2vw,1.8rem);
+  font-weight:300;color:rgba(173,198,255,0.45);
+  letter-spacing:-0.5px;margin-bottom:28px;
+}
+
+.body-text{
+  font-size:12px;color:rgba(160,195,240,0.5);
+  line-height:1.75;max-width:480px;margin-bottom:36px;
+}
+.body-text strong{color:rgba(173,198,255,0.75);font-weight:500;}
+
+/* Dual CTA */
+.cta-group{display:flex;gap:12px;flex-wrap:wrap;max-width:520px;}
+.cta-primary{
+  background:rgba(96,165,250,0.12);
+  border:1px solid rgba(96,165,250,0.3);
+  display:flex;flex:1;min-width:0;
+}
+.cta-input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#e0ecff;font-family:'Space Grotesk',sans-serif;
+  font-size:12px;padding:13px 16px;min-width:0;
+}
+.cta-input::placeholder{color:rgba(120,160,210,0.3);}
+.cta-btn{
+  background:linear-gradient(135deg,rgba(96,165,250,0.2),rgba(96,165,250,0.1));
+  border:none;border-left:1px solid rgba(96,165,250,0.2);
+  color:rgba(173,198,255,0.8);cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;padding:13px 20px;
+  transition:all 0.2s;white-space:nowrap;
+}
+.cta-btn:hover{background:rgba(96,165,250,0.2);color:#fff;}
+
+/* Finance cities badges */
+.cities{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;}
+.city{
+  display:flex;align-items:center;gap:6px;
+  font-size:8px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(120,160,210,0.4);
+  padding:5px 10px;border:1px solid rgba(96,165,250,0.08);
+}
+.city-dot{width:4px;height:4px;border-radius:50%;background:rgba(96,165,250,0.4);}
+
+/* KPI bar */
+.kpi-bar{
+  display:flex;gap:0;margin-top:36px;
+  border:1px solid rgba(96,165,250,0.08);
+}
+.kpi{
+  flex:1;padding:16px 20px;border-right:1px solid rgba(96,165,250,0.06);
+  display:flex;flex-direction:column;gap:4px;
+}
+.kpi:last-child{border-right:none;}
+.kpi-val{
+  font-family:'Manrope',sans-serif;font-size:20px;font-weight:800;
+  color:rgba(173,198,255,0.8);
+}
+.kpi-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(120,160,210,0.3);}
+
+/* Right — intelligence sidebar */
+.sidebar{
+  grid-row:2;grid-column:2;
+  background:rgba(4,8,18,0.85);
+  border-left:1px solid rgba(96,165,250,0.08);
+  display:flex;flex-direction:column;padding:24px 20px;gap:0;
+  overflow:hidden;
+}
+.sidebar-header{
+  font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(96,165,250,0.25);margin-bottom:16px;
+  padding-bottom:10px;border-bottom:1px solid rgba(96,165,250,0.07);
+}
+.sidebar-block{
+  padding:14px 0;border-bottom:1px solid rgba(96,165,250,0.05);
+}
+.sb-block-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.2);margin-bottom:8px;}
+.score-display{
+  display:flex;align-items:baseline;gap:6px;
+  font-family:'Manrope',sans-serif;
+}
+.score-num{font-size:32px;font-weight:800;color:rgba(96,165,250,0.7);}
+.score-max{font-size:12px;color:rgba(96,165,250,0.25);}
+.score-bar{height:3px;background:rgba(96,165,250,0.08);margin-top:8px;position:relative;overflow:hidden;}
+.score-fill{height:100%;background:rgba(96,165,250,0.4);transition:width 1s ease;}
+
+/* Source list compact */
+.source-list{display:flex;flex-direction:column;gap:5px;margin-top:4px;}
+.source-item{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:8px;color:rgba(130,170,220,0.35);
+}
+.source-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;}
+.source-dot.on{background:rgba(34,197,94,0.5);}
+.source-dot.off{background:rgba(96,165,250,0.2);}
+
+/* Bottom bar */
+.bottombar{
+  grid-column:1/-1;
+  background:rgba(2,5,9,0.97);
+  border-top:1px solid rgba(96,165,250,0.07);
+  display:flex;align-items:center;padding:0 20px;gap:24px;
+}
+.bb{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(100,140,200,0.2);}
+.bb.hi{color:rgba(96,165,250,0.4);}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<div class="layout">
+
+  <!-- Status bar -->
+  <div class="statusbar">
+    <div class="sb-logo">DueSight</div>
+    <div class="sb-ticker">
+      <div class="sb-item">ANALYSE PIPELINE <b>ACTIEF</b></div>
+      <div class="sb-item">meerdere <b>BRONNEN</b> GESYNCHRONISEERD</div>
+      <div class="sb-item">NL · DE · AT · CH · BE · UK</div>
+      <div class="sb-item">LATENCY <b>14ms</b></div>
+      <div class="sb-item">MULTI-SOURCE <b>11/11</b></div>
+      <div class="sb-item">AVG ART. 25 <b>CONFORM</b></div>
+    </div>
+    <div class="sb-right">
+      <div class="sb-live"><div class="sb-dot"></div>LIVE</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="geo-badge">Amsterdam · Frankfurt · Zürich · Wien · Brussel</div>
+
+    <h1>Van bedrijfsnaam<br/>naar zekerheid.</h1>
+    <div class="h1-sub">In minder dan 3 minuten.</div>
+
+    <p class="body-text">
+      <strong>DueSight</strong> verbindt 47 Europese databases
+      via een proprietary multi-model intelligence engine. Het resultaat: een herleidbaar,
+      auditbaar pre-DD rapport dat uw adviseurs <strong>3 dagen bespaart</strong>
+      en uw liability dekt conform AVG Art. 25 en EU AI Act.
+    </p>
+
+    <div class="cta-group">
+      <div class="cta-primary">
+        <input class="cta-input" type="text" placeholder="Bedrijfsnaam of KvK-nummer..."/>
+        <button class="cta-btn">Analyseer →</button>
+      </div>
+    </div>
+
+    <div class="cities">
+      <div class="city"><div class="city-dot"></div>Amsterdam</div>
+      <div class="city"><div class="city-dot"></div>Frankfurt</div>
+      <div class="city"><div class="city-dot"></div>Zürich</div>
+      <div class="city"><div class="city-dot"></div>Wien</div>
+      <div class="city"><div class="city-dot"></div>Brussel</div>
+      <div class="city"><div class="city-dot"></div>London</div>
+    </div>
+
+    <div class="kpi-bar">
+      <div class="kpi"><div class="kpi-val">meerdere</div><div class="kpi-lbl">Bronnen</div></div>
+      <div class="kpi"><div class="kpi-val">11</div><div class="kpi-lbl">analyselagen</div></div>
+      <div class="kpi"><div class="kpi-val">&lt;3 min</div><div class="kpi-lbl">Rapport</div></div>
+      <div class="kpi"><div class="kpi-val">∅</div><div class="kpi-lbl">Retentie</div></div>
+      <div class="kpi"><div class="kpi-val">6</div><div class="kpi-lbl">Jurisdicties</div></div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">Intelligence Overzicht</div>
+
+    <div class="sidebar-block">
+      <div class="sb-block-label">bronsterkte-indicatie</div>
+      <div class="score-display">
+        <div class="score-num">87</div>
+        <div class="score-max">/100</div>
+      </div>
+      <div class="score-bar"><div class="score-fill" style="width:87%"></div></div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sb-block-label">Actieve Databronnen</div>
+      <div class="source-list">
+        <div class="source-item"><span>KvK Handelsregister</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>Rechtspraak.nl</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>OpenSanctions (OFAC/UN/EU)</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>GLEIF / LEI Database</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>Bundesanzeiger</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>Companies House</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>GDELT News API</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>SEC EDGAR</span><div class="source-dot off"></div></div>
+        <div class="source-item"><span>Passive exposure and CVE sources</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>+55 meer bronnen</span><div class="source-dot on"></div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sb-block-label">Compliance Status</div>
+      <div class="source-list">
+        <div class="source-item"><span>AVG Art. 25 — Privacy by Design</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>EU AI Act — Laag Risico Klasse</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>Wwft / AML Conform</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>Zero Data Retention</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>DPIA Uitgevoerd</span><div class="source-dot on"></div></div>
+        <div class="source-item"><span>TLS 1.3 + AES-256</span><div class="source-dot on"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottombar">
+    <div class="bb hi">● Alle Systemen Operationeel</div>
+    <div class="bb">AVG Art. 25</div>
+    <div class="bb">Zero-Retention</div>
+    <div class="bb">EU AI Act</div>
+    <div class="bb">Wwft Conform</div>
+    <div class="bb">TLS 1.3 + AES-256</div>
+    <div class="bb">SHA-256 Audit Trail</div>
+    <div class="bb">DPIA Uitgevoerd</div>
+    <div class="bb">forensische data-analyse Verified</div>
+  </div>
+</div>
+
+<script>
+// Subtle neural network background
+var c=document.getElementById('bg'),ctx=c.getContext('2d');
+function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+
+var nodes=[];
+for(var i=0;i<40;i++){
+  nodes.push({
+    x:Math.random(),y:Math.random(),
+    vx:(Math.random()-0.5)*0.0002,
+    vy:(Math.random()-0.5)*0.0002
+  });
+}
+
+function draw(){
+  ctx.fillStyle='rgba(2,5,9,0.15)';ctx.fillRect(0,0,c.width,c.height);
+
+  // Update and draw nodes
+  nodes.forEach(function(n){
+    n.x=(n.x+n.vx+1)%1;n.y=(n.y+n.vy+1)%1;
+    var px=n.x*c.width,py=n.y*c.height;
+    // Connections
+    nodes.forEach(function(m){
+      var dx=(n.x-m.x)*c.width,dy=(n.y-m.y)*c.height;
+      var dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<150){
+        ctx.beginPath();ctx.moveTo(px,py);
+        ctx.lineTo(m.x*c.width,m.y*c.height);
+        ctx.strokeStyle='rgba(59,130,246,'+(0.06*(1-dist/150))+')';
+        ctx.lineWidth=0.5;ctx.stroke();
+      }
+    });
+    ctx.beginPath();ctx.arc(px,py,1.5,0,Math.PI*2);
+    ctx.fillStyle='rgba(96,165,250,0.25)';ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+ctx.fillStyle='#020509';ctx.fillRect(0,0,c.width,c.height);
+draw();
+</script>
+</body>
+</html>

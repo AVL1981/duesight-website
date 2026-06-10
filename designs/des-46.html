@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0c;color:#c0c0c0;font-family:'Space Grotesk',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 50% at 55% 50%,transparent 10%,rgba(10,10,12,0.5) 50%,rgba(10,10,12,0.95) 100%)}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;padding:0 7%;max-width:600px}
+.tag{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.tag-gear{width:18px;height:18px;border:1.5px solid rgba(192,192,192,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:rgba(192,192,192,0.4);animation:spin 10s linear infinite}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.tag-text{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(192,192,192,0.3)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.1;color:#e0e0e0;margin-bottom:14px;letter-spacing:-0.5px}
+h1 span{color:#c0c0c0;font-style:italic}
+.desc{font-size:11px;color:rgba(192,192,192,0.35);line-height:1.9;max-width:440px;margin-bottom:32px;font-weight:300}
+.search{display:flex;background:rgba(10,10,12,0.9);border-bottom:1px solid rgba(192,192,192,0.15);max-width:460px}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#c0c0c0;font-family:'Cormorant Garamond',serif;font-size:14px;padding:14px 16px;font-weight:300}
+.search input::placeholder{color:rgba(192,192,192,0.12)}
+.search button{background:none;border:none;border-left:1px solid rgba(192,192,192,0.08);color:rgba(192,192,192,0.4);cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:12px;font-style:italic;padding:14px 20px;white-space:nowrap}
+.stats{display:flex;gap:36px;margin-top:28px}
+.stat{display:flex;flex-direction:column;gap:4px}
+.sv{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:rgba(192,192,192,0.7)}
+.sl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(192,192,192,0.2)}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(10,10,12,0.95);border-top:1px solid rgba(192,192,192,0.05);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(192,192,192,0.15)}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="overlay"></div>
+<div class="content">
+  <div class="tag"><div class="tag-gear">⚙</div><div class="tag-text">Swiss Precision · Zeitgeist</div></div>
+  <h1>Precisie<br/>tot de<br/><span>seconde.</span></h1>
+  <p class="desc">Zwitserse horlogemaker-nauwkeurigheid in due diligence. Elk tandwiel draait, elk datapunt klopt, elk rapport is op de seconde nauwkeurig.</p>
+  <div class="search"><input type="text" placeholder="Entiteit of KvK-nummer..."/><button>Analyseer →</button></div>
+  <div class="stats"><div class="stat"><div class="sv">meerdere</div><div class="sl">Bronnen</div></div><div class="stat"><div class="sv">&lt;3m</div><div class="sl">Rapport</div></div><div class="stat"><div class="sv">11</div><div class="sl">analyselagen</div></div><div class="stat"><div class="sv">∅</div><div class="sl">Retentie</div></div></div>
+</div>
+<div class="bottom"><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div></div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+ctx.fillStyle='#0a0a0c';ctx.fillRect(0,0,W,H);
+var t=0;
+function draw(){
+  t+=0.005;
+  ctx.fillStyle='rgba(10,10,12,0.04)';ctx.fillRect(0,0,W,H);
+  var cx=W*0.62,cy=H*0.5;
+  // Main gear
+  for(var g=0;g<3;g++){
+    var r=60+g*50,teeth=8+g*4,dir=g%2===0?1:-1,speed=0.3-g*0.08;
+    ctx.beginPath();
+    for(var i=0;i<teeth*2;i++){
+      var a=t*dir*speed+i*Math.PI/teeth;
+      var rr=i%2===0?r:r-10;
+      ctx.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr);
+    }
+    ctx.closePath();
+    ctx.strokeStyle='rgba(192,192,192,'+(0.12-g*0.03)+')';ctx.lineWidth=1;ctx.stroke();
+    // Inner circle
+    ctx.beginPath();ctx.arc(cx,cy,r-15,0,Math.PI*2);
+    ctx.strokeStyle='rgba(192,192,192,'+(0.06-g*0.015)+')';ctx.lineWidth=0.5;ctx.stroke();
+  }
+  // Second hand
+  var secAngle=t*2;
+  ctx.beginPath();ctx.moveTo(cx,cy);
+  ctx.lineTo(cx+Math.cos(secAngle)*100,cy+Math.sin(secAngle)*100);
+  ctx.strokeStyle='rgba(192,192,192,0.15)';ctx.lineWidth=0.8;ctx.stroke();
+  // Minute hand
+  var minAngle=t*0.1;
+  ctx.beginPath();ctx.moveTo(cx,cy);
+  ctx.lineTo(cx+Math.cos(minAngle)*80,cy+Math.sin(minAngle)*80);
+  ctx.strokeStyle='rgba(192,192,192,0.1)';ctx.lineWidth=1.5;ctx.stroke();
+  // Center dot
+  ctx.beginPath();ctx.arc(cx,cy,3,0,Math.PI*2);
+  ctx.fillStyle='rgba(192,192,192,0.3)';ctx.fill();
+  // Hash marks
+  for(var i=0;i<60;i++){
+    var a=i*Math.PI*2/60;
+    var inner=i%5===0?r+35:r+40;
+    var outer=r+45;
+    ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*inner,cy+Math.sin(a)*inner);
+    ctx.lineTo(cx+Math.cos(a)*outer,cy+Math.sin(a)*outer);
+    ctx.strokeStyle=i%5===0?'rgba(192,192,192,0.12)':'rgba(192,192,192,0.04)';
+    ctx.lineWidth=i%5===0?1:0.5;ctx.stroke();
+  }
+  var r=160; // use outer ring radius for hash marks
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

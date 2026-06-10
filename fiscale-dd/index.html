@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiscale Due Diligence Check | DueSight &#8212; Belastingrisico Analyse</title>
+<meta name="description" content="Gratis fiscale due diligence tool: identificeer de top belastingrisico's voor uw M&amp;A transactie. Pillar Two, verrekenprijzen, fiscale eenheid, Tax Plan 2026. Geen account vereist.">
+<link rel="canonical" href="https://duesight.nl/fiscale-dd">
+<meta property="og:title" content="Fiscale DD Check | DueSight &#8212; Belastingrisico Analyse">
+<meta property="og:description" content="Identificeer fiscale risico's bij overnames in 5 stappen. Pillar Two, verrekenprijzen, innovatiebox, Tax Plan 2026.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DueSight Fiscale Due Diligence Check","url":"https://duesight.nl/fiscale-dd","description":"Gratis fiscale due diligence risico-analyse. Identificeer belastingrisico's bij M&A transacties op basis van groepsomvang, jurisdictie en structuur. Pillar Two, verrekenprijzen, fiscale eenheid, innovatiebox.","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0a14;--surface:#14112a;--surface2:#1e1a3a;--border:rgba(255,255,255,0.06);--accent:#8b5cf6;--accent-dim:rgba(139,92,246,0.1);--ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;--text:#e8eaf6;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(12,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(139,92,246,0.25);border-radius:7px;color:#c4b5fd;font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+main{max-width:740px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:560px;margin-bottom:36px;line-height:1.7}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;margin-bottom:16px;animation:fadeUp 0.3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card-num{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card-q{font-size:15px;font-weight:500;margin-bottom:6px;line-height:1.5}
+.card-info{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;font-size:13px}
+.opt:hover{border-color:rgba(139,92,246,0.3)}
+.opt.sel{border-color:var(--accent);background:var(--accent-dim)}
+.opt-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px;transition:all 0.15s}
+.opt.sel .opt-dot{border-color:var(--accent);background:var(--accent)}
+.opt-content{flex:1}.opt-label{font-weight:500;margin-bottom:2px}.opt-desc{font-size:11px;color:var(--muted)}
+.result-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;animation:fadeUp 0.3s ease}
+.result-icon{width:64px;height:64px;border-radius:50%;background:var(--accent-dim);border:2px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.result-title{text-align:center;font-size:18px;font-weight:500;margin-bottom:16px}
+.risk-cat{margin-bottom:16px}
+.risk-cat-header{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.risk-item{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid var(--border);margin-bottom:6px;font-size:12px;line-height:1.5}
+.risk-sev{flex-shrink:0;margin-top:4px;width:8px;height:8px;border-radius:50%}
+.sev-h{background:var(--danger);box-shadow:0 0 6px rgba(239,68,68,0.4)}.sev-m{background:var(--warn);box-shadow:0 0 6px rgba(245,158,11,0.3)}.sev-l{background:#64748b}
+.risk-body{flex:1}.risk-title-txt{font-weight:500;margin-bottom:2px}.risk-detail{font-size:11px;color:var(--muted)}
+.score-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-family:var(--mono);font-size:12px;font-weight:600;margin-bottom:16px}
+.sb-high{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
+.sb-mid{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:#fcd34d}
+.sb-low{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#86efac}
+.cta-box{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:10px;background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.2);margin-top:20px}
+.cta-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}.cta-text strong{color:var(--text)}
+.cta-btn{flex-shrink:0;padding:8px 16px;background:var(--accent);border:none;border-radius:7px;color:#fff;font-family:var(--sans);font-size:12px;font-weight:500;text-decoration:none}
+.restart-btn{display:block;margin:16px auto 0;padding:10px 20px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;font-family:var(--sans);font-size:13px}
+.restart-btn:hover{border-color:rgba(255,255,255,0.15)}
+.disclaimer{margin-top:32px;font-size:11px;color:#1e2a3c;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DueSight</a>
+  <div class="nav-sep"></div><span class="nav-tool">Fiscale DD Check</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+<main>
+  <div class="eyebrow">Gratis M&amp;A Tool</div>
+  <h1>Fiscale Due Diligence Check &#8212; <strong>identificeer belastingrisico's bij overnames</strong></h1>
+  <p class="subtitle">Selecteer de kenmerken van de doelvennootschap. DueSight genereert een geprioriteerd fiscaal risicoprofiel op basis van actuele wetgeving (Belastingplan 2026, Pillar Two, ATAD). Geen account vereist.</p>
+  <div id="app"></div>
+  <p class="disclaimer">Deze tool is gebaseerd op Nederlands fiscaal recht per maart 2026, inclusief Belastingplan 2026 en de Wet minimumbelasting 2024 (Pillar Two). Het resultaat is indicatief en vervangt geen professioneel fiscaal advies. DueSight slaat geen gegevens op.</p>
+</main>
+<script>
+var state={step:0,structure:null,size:null,intl:null,innovation:null,fiscalUnity:null};
+
+function render(){
+var app=document.getElementById('app');
+if(state.step===0){
+app.innerHTML='<div class="card"><div class="card-num">Stap 1 van 5 \u2014 Structuur</div><div class="card-q">Wat is de juridische structuur van het doelwit?</div><div class="card-info">De fiscale structuur bepaalt welke belastingrisico\u2019s relevant zijn. Holdingstructuren en groepsfinancieringen vereisen extra analyse.</div><div class="opts" id="structOpts">'+
+[{id:'single_bv',l:'Enkele B.V.',d:'Standalone vennootschap zonder groepsstructuur'},
+{id:'holding',l:'Holding + Werk-BV',d:'DGA-structuur met holdingvennootschap en operationele BV'},
+{id:'group',l:'Groep (3+ vennootschappen)',d:'Meerdere BV\u2019s, mogelijk met fiscale eenheid'},
+{id:'intl_group',l:'Internationale groep',d:'Nederlandse entiteit als onderdeel van buitenlandse groep'},
+{id:'pe',l:'PE/VC portfolio-vennootschap',d:'Vennootschap met private equity of venture capital aandeelhouder'}
+].map(function(o){return '<div class="opt'+(state.structure===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#structOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.structure=this.dataset.id;state.step=1;render();});});
+}else if(state.step===1){
+app.innerHTML='<div class="card"><div class="card-num">Stap 2 van 5 \u2014 Omvang</div><div class="card-q">Wat is de geconsolideerde groepsomzet?</div><div class="card-info">De groepsomzet bepaalt of Pillar Two (Wet minimumbelasting 2024) van toepassing is. Drempel: \u20ac750M geconsolideerde groepsomzet.</div><div class="opts" id="sizeOpts">'+
+[{id:'gt750m',l:'> \u20ac750M',d:'Boven Pillar Two drempel \u2014 minimumbelasting van toepassing'},
+{id:'gt50m',l:'\u20ac50M \u2013 \u20ac750M',d:'Middelgroot \u2014 geen Pillar Two, wel verrekenprijsrisico'},
+{id:'gt10m',l:'\u20ac10M \u2013 \u20ac50M',d:'MKB \u2014 focus op innovatiebox en fiscale eenheid'},
+{id:'lt10m',l:'< \u20ac10M',d:'Klein \u2014 focus op DGA-fiscaliteit en box 2'}
+].map(function(o){return '<div class="opt'+(state.size===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#sizeOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.size=this.dataset.id;state.step=2;render();});});
+}else if(state.step===2){
+app.innerHTML='<div class="card"><div class="card-num">Stap 3 van 5 \u2014 Internationaal</div><div class="card-q">Heeft het doelwit grensoverschrijdende transacties of buitenlandse groepsentiteiten?</div><div class="card-info">Intercompany-transacties (management fees, royalty\u2019s, leningen) zijn een primaire focus van de Belastingdienst en vereisen arm\u2019s length documentatie.</div><div class="opts" id="intlOpts">'+
+[{id:'complex',l:'Ja, complexe internationale structuur',d:'Meerdere jurisdicties, royalty-stromen, intercompany-leningen'},
+{id:'simple',l:'Ja, beperkt internationaal',d:'Import/export, \u00e9\u00e9n buitenlandse dochter of leverancier'},
+{id:'domestic',l:'Nee, volledig Nederlands',d:'Alle activiteiten en entiteiten in Nederland'},
+].map(function(o){return '<div class="opt'+(state.intl===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#intlOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.intl=this.dataset.id;state.step=3;render();});});
+}else if(state.step===3){
+app.innerHTML='<div class="card"><div class="card-num">Stap 4 van 5 \u2014 Innovatie & IP</div><div class="card-q">Maakt het doelwit gebruik van de innovatiebox of heeft het significant IP?</div><div class="card-info">De innovatiebox (9% Vpb) en WBSO/RDA zijn aantrekkelijk maar vereisen robuuste administratie. IP-migratie bij overnames is een red flag voor de Belastingdienst.</div><div class="opts" id="innOpts">'+
+[{id:'active',l:'Ja, actief gebruik innovatiebox + WBSO',d:'R&D-intensief, S&O-verklaringen, IP-bezit'},
+{id:'ip_only',l:'Significant IP maar geen innovatiebox',d:'Merkrechten, patenten, software-licenties'},
+{id:'none',l:'Geen significant IP of innovatiebox',d:'Dienstverlening, handel, productie zonder eigen IP'}
+].map(function(o){return '<div class="opt'+(state.innovation===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#innOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.innovation=this.dataset.id;state.step=4;render();});});
+}else if(state.step===4){
+app.innerHTML='<div class="card"><div class="card-num">Stap 5 van 5 \u2014 Fiscale Eenheid</div><div class="card-q">Maakt het doelwit deel uit van een fiscale eenheid voor de Vpb?</div><div class="card-info">Bij verbreking van een fiscale eenheid (bijv. door overname) treden sanctiebepalingen in werking. Latente belastingclaims kunnen materieel zijn.</div><div class="opts" id="fuOpts">'+
+[{id:'yes',l:'Ja, fiscale eenheid met moeder',d:'Geconsolideerde Vpb-aangifte met moedervennootschap'},
+{id:'yes_complex',l:'Ja, complexe fiscale eenheid',d:'Meerdere dochters, horizontale fiscale eenheid, of grensoverschrijdend'},
+{id:'no',l:'Nee, zelfstandige Vpb-aangifte',d:'Doelwit doet eigen belastingaangifte'},
+{id:'unknown',l:'Onzeker',d:'Niet duidelijk of er een fiscale eenheid bestaat'}
+].map(function(o){return '<div class="opt'+(state.fiscalUnity===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#fuOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.fiscalUnity=this.dataset.id;state.step=5;render();});});
+}else if(state.step===5){showResult();}
+}
+
+function showResult(){
+var risks=[];
+// Pillar Two
+if(state.size==='gt750m'){
+risks.push({cat:'Pillar Two / Minimumbelasting',sev:'h',title:'Wet minimumbelasting 2024 van toepassing',detail:'Geconsolideerde groepsomzet >\u20ac750M triggert de bijheffing tot 15% effectief tarief. Vereist: GloBE Information Return, berekening effectieve belastingdruk per jurisdictie, en kwalificerende binnenlandse bijheffing (QDMTT).'});
+risks.push({cat:'Pillar Two / Minimumbelasting',sev:'m',title:'Safe harbour toetsing vereist',detail:'Transitional safe harbour (op basis van CbCR-data) verlaagt compliance-last als ETR >15% in elke jurisdictie. Verifieer of doelwit hiervan kan profiteren.'});
+}
+// Transfer pricing
+if(state.intl==='complex'){
+risks.push({cat:'Verrekenprijzen',sev:'h',title:'Materieel verrekenprijsrisico',detail:'Complexe internationale structuur met intercompany-transacties. Arm\u2019s length documentatie (Art. 8b Wet Vpb), master file/local file (BEPS Action 13), en CbCR bij groepen >\u20ac750M. Naheffingsrisico 5\u201310 jaar.'});
+risks.push({cat:'Verrekenprijzen',sev:'h',title:'Management fees en royalty-stromen',detail:'Belastingdienst focust op: intercompany management fees zonder zakelijke grondslag, royalty\u2019s naar laagbelaste jurisdicties, en overmatige groepsfinanciering. Vereist: benchmarkanalyse.'});
+}else if(state.intl==='simple'){
+risks.push({cat:'Verrekenprijzen',sev:'m',title:'Beperkt verrekenprijsrisico',detail:'Enkele buitenlandse transacties. Controleer of arm\u2019s length documentatie beschikbaar is. Let op afroommethode bij beperkte functies en risico\u2019s.'});
+}
+// Fiscal unity
+if(state.fiscalUnity==='yes'||state.fiscalUnity==='yes_complex'){
+risks.push({cat:'Fiscale Eenheid',sev:'h',title:'Verbreking fiscale eenheid bij overname',detail:'Bij wijziging van het belang in de dochter wordt de fiscale eenheid verbroken (Art. 15 Wet Vpb). Dit kan leiden tot: herwaardering van activa, vrijval van intercompany-voorzieningen, en sanctiebepalingen op eerdere verliesverrekening.'});
+if(state.fiscalUnity==='yes_complex'){
+risks.push({cat:'Fiscale Eenheid',sev:'h',title:'Complexe ontvoeging \u2014 latente claims',detail:'Bij complexe fiscale eenheden: check op horizontale verrekening, binnenlandse vaste inrichtingen, en contingent liabilities uit voorgaande jaren. Draagplichtovereenkomsten zijn cruciaal.'});
+}
+}else if(state.fiscalUnity==='unknown'){
+risks.push({cat:'Fiscale Eenheid',sev:'m',title:'Status fiscale eenheid onduidelijk',detail:'Urgent vast te stellen v\u00f3\u00f3r signing: impact op waardering, vrijval reserves, en toerekening van belastingposities. Vraag Vpb-beschikkingen op bij de Belastingdienst.'});
+}
+// Innovation box
+if(state.innovation==='active'){
+risks.push({cat:'Innovatiebox & IP',sev:'m',title:'Innovatiebox-kwalificatie na overname',detail:'De innovatiebox (9% Vpb-tarief) vereist een S&O-verklaring en eigen R&D-inspanningen. Bij overname: verifieer dat IP daadwerkelijk door de doelwit-BV is ontwikkeld (substance) en niet is ge\u00efmigreerd.'});
+risks.push({cat:'Innovatiebox & IP',sev:'m',title:'WBSO-continu\u00efteit',detail:'S&O-afdrachtvermindering (WBSO) is gekoppeld aan de werkgever. Bij overname kan de beschikking veranderen. Controleer lopende projecten en resterende budgetten.'});
+}else if(state.innovation==='ip_only'){
+risks.push({cat:'Innovatiebox & IP',sev:'m',title:'IP-waardering en fiscale positie',detail:'Significante IP zonder innovatiebox: controleer de fiscale boekwaarde, herinvesteringsreserves, en eventuele stakingswinst bij overdracht. IP-migratie naar buitenland is een red flag.'});
+}
+// Holding / DGA
+if(state.structure==='holding'||state.structure==='single_bv'){
+risks.push({cat:'Box 2 & DGA-fiscaliteit',sev:'m',title:'Excessief lenen (Wet excessief lenen)',detail:'Per 2023 worden leningen van een BV aan de DGA boven \u20ac500.000 belast in box 2. Controleer de stand van de rekening-courant en achtergestelde leningen.'});
+risks.push({cat:'Box 2 & DGA-fiscaliteit',sev:'m',title:'Belastingplan 2026: hoog box 2 tarief (33%)',detail:'Bij dividend of verkoopwinst: twee schijven box 2 (24,5% tot \u20ac67.000, daarboven 33%). Overweeg timing van winstuitkering v\u00f3\u00f3r of na closing.'});
+}
+// PE/VC specific
+if(state.structure==='pe'){
+risks.push({cat:'PE/VC Structuur',sev:'h',title:'Renteaftrekbeperking (ATAD)',detail:'Earnings stripping regel (Art. 15b Wet Vpb): saldo rentelasten aftrekbaar tot 20% van EBITDA (per 2025 verlaagd van 24,5%). Bij leveraged buyouts materieel risico.'});
+risks.push({cat:'PE/VC Structuur',sev:'m',title:'Hybride mismatches',detail:'ATAD II anti-hybride bepalingen: controleer op deduction/no-inclusion mismatches bij cross-border financieringsstructuren.'});
+}
+// Universal risks
+risks.push({cat:'Belastingplan 2026',sev:'m',title:'Vpb-tarief wijzigingen monitoren',detail:'Huidig tarief: 19% (tot \u20ac200K) en 25,8% (daarboven). Belastingplan 2026 kan wijzigingen introduceren: controleer impact op DCF-waardering en earn-out berekeningen.'});
+risks.push({cat:'Compliance & Historie',sev:'m',title:'Open belastingaanslagen en bezwaarprocedures',detail:'Opvragen: definitieve aanslagen Vpb/BTW/LB over afgelopen 5 jaar, lopende bezwaar- en beroepsprocedures, en correspondentie met de Belastingdienst (horizontaal toezicht?).'});
+if(state.intl!=='domestic'){
+risks.push({cat:'Compliance & Historie',sev:'l',title:'DAC6/DAC7 meldingsplicht',detail:'Zijn er grensoverschrijdende fiscale constructies gemeld onder DAC6? Check of het doelwit als intermediair of relevant belastingplichtige een meldplicht heeft (gehad).'});
+}
+// Score
+var highCount=risks.filter(function(r){return r.sev==='h';}).length;
+var midCount=risks.filter(function(r){return r.sev==='m';}).length;
+var score=highCount*25+midCount*10;
+var scoreLabel=score>=60?'HOOG RISICO':score>=30?'MIDDEL RISICO':'LAAG RISICO';
+var scoreClass=score>=60?'sb-high':score>=30?'sb-mid':'sb-low';
+// Group risks by category
+var categories={};
+risks.forEach(function(r){if(!categories[r.cat])categories[r.cat]=[];categories[r.cat].push(r);});
+var h='<div class="result-box"><div class="result-icon">\ud83d\udcca</div>';
+h+='<div class="result-title">Fiscaal Risicoprofiel</div>';
+h+='<div style="text-align:center"><div class="score-badge '+scoreClass+'">'+scoreLabel+' \u2014 '+risks.length+' risicofactoren</div></div>';
+Object.keys(categories).forEach(function(cat){
+h+='<div class="risk-cat"><div class="risk-cat-header">'+cat+'<span style="font-family:var(--sans);background:var(--accent-dim);padding:1px 7px;border-radius:10px;font-size:10px;color:#c4b5fd">'+categories[cat].length+'</span></div>';
+categories[cat].forEach(function(r){
+h+='<div class="risk-item"><div class="risk-sev sev-'+r.sev+'"></div><div class="risk-body"><div class="risk-title-txt">'+r.title+'</div><div class="risk-detail">'+r.detail+'</div></div></div>';
+});
+h+='</div>';
+});
+h+='<div class="cta-box"><div class="cta-text"><strong>Fiscale DD in uw Pre-DD rapport:</strong> DueSight analyseert automatisch de vennootschapsstructuur, fiscale eenheid, intercompany-transacties en belastingposities. Inclusief Pillar Two toetsing en verrekenprijsrisicobeoordeling.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div>';
+h+='</div><button class="restart-btn" id="retryBtn">Opnieuw invullen</button>';
+document.getElementById('app').innerHTML=h;
+document.getElementById('retryBtn').addEventListener('click',function(){state={step:0,structure:null,size:null,intl:null,innovation:null,fiscalUnity:null};render();});
+}
+render();
+</script>
+</body>
+</html>

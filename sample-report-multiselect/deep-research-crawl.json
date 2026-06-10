@@ -1,0 +1,579 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "Multiselect B.V.",
+    "domain": "multiselect.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T08:49:45+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 3,
+  "failed_or_skipped": 15,
+  "target_site_crawl": {
+    "pages_checked": 22,
+    "source_urls": [
+      "https://multiselect.nl/",
+      "https://multiselect.nl/team",
+      "https://multiselect.nl/contact",
+      "https://multiselect.nl/sitemap.xml",
+      "https://multiselect.nl/vacatures-van-multiselect",
+      "https://multiselect.nl/contact-met-multiselect",
+      "https://multiselect.nl/team/ewout-viergever-198",
+      "https://multiselect.nl/team/bart-sibelt-3",
+      "https://multiselect.nl/team/quinten-zondervan-5"
+    ],
+    "pages": [
+      {
+        "url": "https://multiselect.nl/",
+        "status": 200,
+        "title": "Multiselect.nl - Ingenieurs in bouw, civiel & techniek",
+        "bytes": 600000
+      },
+      {
+        "url": "https://multiselect.nl/nl/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/en/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/team",
+        "status": 200,
+        "title": "Contact opnemen met Multiselect - Multiselect.nl",
+        "bytes": 600000
+      },
+      {
+        "url": "https://multiselect.nl/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/en/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/careers",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/nl/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/en/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://multiselect.nl/contact",
+        "status": 200,
+        "title": "Contact opnemen met Multiselect - Multiselect.nl",
+        "bytes": 600000
+      },
+      {
+        "url": "https://multiselect.nl/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 20549
+      },
+      {
+        "url": "https://multiselect.nl/vacatures-van-multiselect",
+        "status": 200,
+        "title": "Alle vacatures in de Bouw - Multiselect.nl",
+        "bytes": 600000
+      },
+      {
+        "url": "https://multiselect.nl/contact-met-multiselect",
+        "status": 200,
+        "title": "Contact opnemen met Multiselect - Multiselect.nl",
+        "bytes": 600000
+      },
+      {
+        "url": "https://multiselect.nl/team/ewout-viergever-198",
+        "status": 200,
+        "title": "Ewout Viergever - Multiselect.nl",
+        "bytes": 599999
+      },
+      {
+        "url": "https://multiselect.nl/team/bart-sibelt-3",
+        "status": 200,
+        "title": "Bart Sibelt - Multiselect.nl",
+        "bytes": 599999
+      },
+      {
+        "url": "https://multiselect.nl/team/quinten-zondervan-5",
+        "status": 200,
+        "title": "Quinten Zondervan - Multiselect.nl",
+        "bytes": 599996
+      }
+    ]
+  },
+  "source_urls_count": 34,
+  "source_urls": [
+    "https://multiselect.nl/",
+    "https://multiselect.nl/team",
+    "https://multiselect.nl/contact",
+    "https://multiselect.nl/sitemap.xml",
+    "https://multiselect.nl/vacatures-van-multiselect",
+    "https://multiselect.nl/contact-met-multiselect",
+    "https://multiselect.nl/team/ewout-viergever-198",
+    "https://multiselect.nl/team/bart-sibelt-3",
+    "https://multiselect.nl/team/quinten-zondervan-5",
+    "https://www.instagram.com/reel/DXrgUM1CDX3/",
+    "https://www.facebook.com/p/Multiselect-Next-61575048720520/",
+    "https://www.crunchbase.com/organization/multiselect",
+    "https://multiselectpubliek.nl/team",
+    "https://multiselect.nl.atlaq.com/",
+    "https://www.yelp.com/biz/multiselect-arnhem",
+    "https://www.multiselect.nl/vacature/commercieel-medewerker-met-een-creatieve-knipoog-34321",
+    "https://www.instagram.com/reel/DYhWjTSsnK3/",
+    "https://nl.linkedin.com/in/monique-visser",
+    "https://multiselecttechniek.nl/",
+    "https://www.instagram.com/reel/DT-bh_eifVe/",
+    "https://www.instagram.com/p/DYAM2WXDNdq/",
+    "https://www.instagram.com/p/DXokmwIAgCY/",
+    "https://www.instagram.com/reel/DSH4w3ygPEQ/",
+    "https://www.instagram.com/reel/DWV4LrIs3S7/",
+    "https://www.facebook.com/groups/288221731281767/posts/24774358118908121/",
+    "https://www.instagram.com/p/DYjbN3YN09e/",
+    "https://www.instagram.com/reel/DUzzJ1wlBwU/",
+    "https://www.similarweb.com/website/multiselect.nl/vs/fondsen.org/",
+    "https://www.multiselect.nl/solliciteer-bij-multiselect/nieuwe-vacature-69965",
+    "https://www.facebook.com/61575048720520/videos/-pushing-beyond-limitsnathan-had-a-stable-job-and-a-home-he-worked-hard-for-but-/2311991189306337/",
+    "https://www.instagram.com/p/DYpZjRtgP1J/",
+    "https://www.multiselect.nl/vacature/nieuwe-vacature-69965",
+    "https://theirstack.com/es/company/multiselect~JIKOTIOQvvu7GngkQR_YvQ==",
+    "https://www.instagram.com/reel/DVQI9quFRNN/"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"Multiselect B.V.\" \"multiselect.nl\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "failed",
+      "elapsed_s": 1.596,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Multiselect B.V.\" acquisition overname parent group investor shareholder \"multiselect.nl\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "failed",
+      "elapsed_s": 1.297,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Multiselect B.V.\" vacancies careers jobs hiring skills competitors \"multiselect.nl\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "failed",
+      "elapsed_s": 1.509,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Multiselect B.V.\" revenue omzet growth FT1000 annual report ranking \"multiselect.nl\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "failed",
+      "elapsed_s": 1.547,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Multiselect B.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "failed",
+      "elapsed_s": 1.706,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"Multiselect B.V.\" OR \"multiselect.nl\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.311,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.instagram.com/reel/DXrgUM1CDX3/",
+        "https://www.facebook.com/p/Multiselect-Next-61575048720520/",
+        "https://www.crunchbase.com/organization/multiselect",
+        "https://multiselectpubliek.nl/team",
+        "https://multiselect.nl.atlaq.com/",
+        "https://www.yelp.com/biz/multiselect-arnhem",
+        "https://www.multiselect.nl/vacature/commercieel-medewerker-met-een-creatieve-knipoog-34321",
+        "https://www.instagram.com/reel/DYhWjTSsnK3/",
+        "https://nl.linkedin.com/in/monique-visser",
+        "https://multiselecttechniek.nl/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "multiselectnext - Instagram",
+          "snippet": "... multiselect.nl www.multiselectnext.nl #MeetTheTeam #Recruitment ... Contact us and we will help build a team that fits the pace of your business ...",
+          "url": "https://www.instagram.com/reel/DXrgUM1CDX3/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Multiselect Next | Breda - Facebook",
+          "snippet": "⚡️ We're celebrating the incredible moms of our team who have fueled our ambition and shared in our pride. ... m.visser@multiselect.nl www ...",
+          "url": "https://www.facebook.com/p/Multiselect-Next-61575048720520/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Multiselect - Crunchbase Company Profile & Funding",
+          "snippet": "Private Ruinerwold, Drenthe, The Netherlands 101-250 www.multiselect.nl · Civil Engineering · Construction · Consulting · Staffing Agency. Multiselect Logo ...",
+          "url": "https://www.crunchbase.com/organization/multiselect",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Team - MultiselectPubliek.nl",
+          "snippet": "Team ; Redmer Strikwerda · R.strikwerda@multiselect.nl 06 - 51 55 26 78 ; Karst Sieffers · k.sieffers@multiselect.nl 06 - 82 29 87 18 ; Edgar Pals · e.pals@ ...",
+          "url": "https://multiselectpubliek.nl/team",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "buildings",
+          "snippet": "The logo of ATLAQ. Preview. buildings. multiselect.nl is currently an active website, according to alexa, multiselect.nl doesn't have a global rank. Open ...",
+          "url": "https://multiselect.nl.atlaq.com/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.078,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.164,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.095,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.175,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.119,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.32,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.053,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.204,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"Multiselect B.V.\" OR \"multiselect.nl\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.258,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"Multiselect B.V.\" OR \"multiselect.nl\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.603,
+      "discovered_urls_count": 8,
+      "source_urls": [
+        "https://www.instagram.com/reel/DT-bh_eifVe/",
+        "https://www.instagram.com/p/DYAM2WXDNdq/",
+        "https://www.instagram.com/p/DXokmwIAgCY/",
+        "https://www.instagram.com/reel/DSH4w3ygPEQ/",
+        "https://www.instagram.com/reel/DWV4LrIs3S7/",
+        "https://www.facebook.com/groups/288221731281767/posts/24774358118908121/",
+        "https://www.instagram.com/p/DYjbN3YN09e/",
+        "https://www.instagram.com/reel/DUzzJ1wlBwU/"
+      ],
+      "source_urls_count": 8,
+      "matched_results": [
+        {
+          "title": "When opportunity meets talent, success follows. At Molymet Belgium ...",
+          "snippet": "r.vanrossum@multiselect.nl www.multiselectnext.nl #MeetTheTeam ... “This is a scam, and we have all the proof for it.” April 30.",
+          "url": "https://www.instagram.com/reel/DT-bh_eifVe/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "The Netherlands is full of opportunities — also outside ... - Instagram",
+          "snippet": "“This is a scam, and we have all the proof for it.” April 30. OCR ... multiselect.nl +31 6 82 08 14 76. expatrelocation.nl's profile ...",
+          "url": "https://www.instagram.com/p/DYAM2WXDNdq/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Industrial Electrician - JOB IN GERMANY - Instagram",
+          "snippet": "Contact Monique via: m.visser@multiselect.nl +31 6 82 08 14 76 ... Don't fall for this scam. May 6. OCR. ANDHRA PRADESH STATE SKILL ...",
+          "url": "https://www.instagram.com/p/DXokmwIAgCY/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Thinking about building a skilled and secure career in Germany ...",
+          "snippet": "Skill Interntional Programmes. more. View 1 comment · sameersha1k. Don't fall for this scam ... Contact Monique via: m.visser@multiselect.nl +31 6 ...",
+          "url": "https://www.instagram.com/reel/DSH4w3ygPEQ/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Stronger Together For Cameron and Trisha, moving abroad was a ...",
+          "snippet": "Watch Cameron & Trisha's journey and be reminded that we are always stronger, together. Contact us today to start your journey. m.visser@multiselect.nl",
+          "url": "https://www.instagram.com/reel/DWV4LrIs3S7/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@multiselect.nl\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed",
+      "elapsed_s": 1.268,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://nl.linkedin.com/in/monique-visser",
+        "https://www.similarweb.com/website/multiselect.nl/vs/fondsen.org/",
+        "https://www.multiselect.nl/solliciteer-bij-multiselect/nieuwe-vacature-69965",
+        "https://www.facebook.com/61575048720520/videos/-pushing-beyond-limitsnathan-had-a-stable-job-and-a-home-he-worked-hard-for-but-/2311991189306337/",
+        "https://www.instagram.com/p/DYpZjRtgP1J/",
+        "https://multiselect.nl.atlaq.com/",
+        "https://www.multiselect.nl/vacature/nieuwe-vacature-69965",
+        "https://theirstack.com/es/company/multiselect~JIKOTIOQvvu7GngkQR_YvQ==",
+        "https://www.instagram.com/reel/DVQI9quFRNN/"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "Monique Visser - Recruitment and relocation consultant +31 682 ...",
+          "snippet": "Recruitment and relocation consultant +31 682 0814 76 m.visser@multiselect.nl · As a Recruitment & Relocation Consultant at Multiselect Next, I help ...",
+          "url": "https://nl.linkedin.com/in/monique-visser",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "multiselect.nl vs fondsen.org Traffic Comparison | Similarweb",
+          "snippet": "Compare multiselect.nl vs ... Compare multiselect.nl Marketing Channels vs fondsen.org. Analyze multiselect.nl ... Security · Terms · Equal Pay; Manage Cookies",
+          "url": "https://www.similarweb.com/website/multiselect.nl/vs/fondsen.org/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Sollicitatie vacature Onderhoudscoördinator Security – Vitale ...",
+          "snippet": "Sollicitatie vacature Onderhoudscoördinator Security – Vitale Infrastructuur. Ik reageer op de functie van: Onderhoudscoördinator Security – Vitale ...",
+          "url": "https://www.multiselect.nl/solliciteer-bij-multiselect/nieuwe-vacature-69965",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Pushing Beyond Limits Nathan had a stable job and a home he ...",
+          "snippet": "... multiselect.nl Watch our stories to see real ... security. So the assurance of a stable income ... Uh when I arrived in the Netherlands, they covered my first ...",
+          "url": "https://www.facebook.com/61575048720520/videos/-pushing-beyond-limitsnathan-had-a-stable-job-and-a-home-he-worked-hard-for-but-/2311991189306337/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Ready for your next opportunity in the Netherlands? We are looking ...",
+          "snippet": "... multiselect.nl +31 (0)6 820 814 76 www ... Data Engineers Software Engineers secure jobs across Sounds Engineers Security Engineers companies ...",
+          "url": "https://www.instagram.com/p/DYpZjRtgP1J/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"multiselect.nl\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.297,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

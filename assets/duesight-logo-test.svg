@@ -1,0 +1,33 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e3a5f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0a0f1e" stop-opacity="0.95"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="url(#hubGlow)" stroke="rgba(59,130,246,0.4)" stroke-width="2"/>
+  
+  <!-- Eye shape - outer -->
+  <path d="M60 200 Q200 80 340 200 Q200 320 60 200 Z" 
+        fill="none" stroke="white" stroke-width="18" stroke-linejoin="round"/>
+  
+  <!-- Eye pupil circle -->
+  <circle cx="200" cy="200" r="55" fill="none" stroke="white" stroke-width="16"/>
+  
+  <!-- Checkmark inside pupil -->
+  <path d="M168 200 L190 222 L235 175" 
+        fill="none" stroke="white" stroke-width="16" 
+        stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- DueSight text -->
+  <text x="200" y="310" 
+        font-family="'Space Grotesk', Arial, sans-serif" 
+        font-size="52" font-weight="800" 
+        fill="white" text-anchor="middle" letter-spacing="-1">DueSight</text>
+</svg>

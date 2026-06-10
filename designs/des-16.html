@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#0d0d0f;
+  color:#c8c8c8;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+
+/* Swiss precision grid lines */
+canvas#bg{position:absolute;inset:0;z-index:0;}
+
+/* Platinum overlay */
+.platinum-veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg,
+    rgba(13,13,15,0.92) 0%,
+    rgba(13,13,15,0.75) 45%,
+    rgba(13,13,15,0.88) 100%
+  );
+}
+
+/* Layout: left content, right discreet data */
+.layout{
+  position:absolute;inset:0;z-index:10;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  grid-template-rows:1fr auto;
+  gap:0;
+}
+
+/* Left panel */
+.left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:60px 48px 60px 64px;
+  border-right:1px solid rgba(200,200,200,0.06);
+}
+
+/* Swiss cross mark */
+.swiss-mark{
+  display:flex;align-items:center;gap:14px;margin-bottom:40px;
+}
+.cross{
+  width:18px;height:18px;position:relative;
+  flex-shrink:0;
+}
+.cross::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;
+  width:2px;background:rgba(200,200,200,0.5);transform:translateX(-50%);
+}
+.cross::after{
+  content:'';position:absolute;top:50%;left:0;right:0;
+  height:2px;background:rgba(200,200,200,0.5);transform:translateY(-50%);
+}
+.institution-name{
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(200,200,200,0.35);
+}
+
+/* Headline */
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4.2vw,3.8rem);
+  font-weight:300;
+  line-height:1.12;
+  color:#e8e8e8;
+  letter-spacing:-0.5px;
+  margin-bottom:6px;
+}
+h1 em{
+  font-style:italic;
+  color:rgba(210,210,210,0.7);
+}
+
+.rule{
+  width:40px;height:1px;
+  background:rgba(200,200,200,0.2);
+  margin:24px 0;
+}
+
+.descriptor{
+  font-size:11px;
+  color:rgba(180,180,180,0.45);
+  line-height:1.9;
+  max-width:400px;
+  letter-spacing:0.3px;
+  font-weight:300;
+}
+
+/* Search — understated */
+.search{
+  margin-top:36px;
+  display:flex;
+  border-bottom:1px solid rgba(200,200,200,0.15);
+  max-width:420px;
+  align-items:center;gap:12px;
+  padding-bottom:12px;
+}
+.search-label{
+  font-size:8px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(180,180,180,0.3);white-space:nowrap;
+}
+.search input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#d0d0d0;font-family:'Space Grotesk',sans-serif;
+  font-size:12px;padding:4px 0;
+}
+.search input::placeholder{color:rgba(160,160,160,0.25);}
+.search-btn{
+  background:none;border:none;cursor:pointer;
+  font-size:8px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(180,180,180,0.4);padding:0;
+  transition:color 0.2s;white-space:nowrap;
+}
+.search-btn:hover{color:rgba(200,200,200,0.7);}
+
+/* Mandate list */
+.mandates{
+  margin-top:40px;display:flex;gap:32px;
+}
+.mandate{
+  display:flex;flex-direction:column;gap:6px;
+}
+.mandate-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:300;color:#d0d0d0;
+  letter-spacing:-0.5px;
+}
+.mandate-lbl{
+  font-size:7px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(160,160,160,0.3);
+}
+
+/* Right data panel — discreet */
+.right{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:48px 40px;gap:20px;
+  background:rgba(255,255,255,0.018);
+}
+
+.data-module{
+  padding:18px 0;
+  border-bottom:1px solid rgba(200,200,200,0.05);
+}
+.data-module:last-child{border-bottom:none;}
+.dm-label{
+  font-size:7px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(180,180,180,0.25);margin-bottom:10px;
+}
+.dm-value{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:300;color:#c0c0c0;
+  letter-spacing:-0.5px;margin-bottom:4px;
+}
+.dm-sub{
+  font-size:9px;color:rgba(150,150,150,0.35);letter-spacing:0.5px;
+}
+
+/* Source indicators */
+.sources{
+  display:flex;flex-direction:column;gap:6px;margin-top:8px;
+}
+.source-row{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:8px;letter-spacing:1px;
+  color:rgba(160,160,160,0.3);
+}
+.source-status{
+  width:4px;height:4px;border-radius:50%;
+  background:rgba(160,160,160,0.3);flex-shrink:0;
+}
+.source-status.live{background:rgba(140,180,140,0.5);}
+
+/* Bottom bar — extremely subtle */
+.bottom{
+  grid-column:1/-1;
+  height:32px;
+  border-top:1px solid rgba(200,200,200,0.04);
+  display:flex;align-items:center;padding:0 64px;
+  gap:48px;
+}
+.bottom-item{
+  font-size:7px;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(150,150,150,0.2);
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="platinum-veil"></div>
+
+<div class="layout">
+  <!-- Left -->
+  <div class="left">
+    <div class="swiss-mark">
+      <div class="cross"></div>
+      <div class="institution-name">DueSight Intelligence · Zürich / Amsterdam</div>
+    </div>
+
+    <h1>Diskretion.<br/>Präzision.<br/><em>Integriteit.</em></h1>
+
+    <div class="rule"></div>
+
+    <p class="descriptor">
+      Institutionele intelligence voor de Europese private markets.<br/>
+      64 geverifieerde bronnen. Zero data-retentie. AVG Art. 25 by design.<br/>
+      Vertrouwelijk, traceerbaar, herleidbaar.
+    </p>
+
+    <div class="search">
+      <div class="search-label">Entiteit</div>
+      <input type="text" placeholder="Naam of KvK-nummer..."/>
+      <button class="search-btn">Analyseer</button>
+    </div>
+
+    <div class="mandates">
+      <div class="mandate">
+        <div class="mandate-val">47</div>
+        <div class="mandate-lbl">Databases</div>
+      </div>
+      <div class="mandate">
+        <div class="mandate-val">NL · DE · AT · CH</div>
+        <div class="mandate-lbl">Jurisdicties</div>
+      </div>
+      <div class="mandate">
+        <div class="mandate-val">∅</div>
+        <div class="mandate-lbl">Retentie</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="right">
+    <div class="data-module">
+      <div class="dm-label">Analyse Pipeline</div>
+      <div class="dm-value">&lt; 3 min</div>
+      <div class="dm-sub">Proprietary multi-model intelligence engine</div>
+    </div>
+
+    <div class="data-module">
+      <div class="dm-label">Actieve Databronnen</div>
+      <div class="sources">
+        <div class="source-row">
+          <span>KvK Handelsregister</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>Bundesanzeiger</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>GLEIF / LEI Database</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>OpenSanctions OFAC/UN/EU</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>Rechtspraak.nl</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>Companies House UK</span>
+          <div class="source-status live"></div>
+        </div>
+        <div class="source-row">
+          <span>SEC EDGAR</span>
+          <div class="source-status"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="data-module">
+      <div class="dm-label">Compliance Framework</div>
+      <div class="sources">
+        <div class="source-row"><span>AVG Art. 25 Privacy by Design</span><div class="source-status live"></div></div>
+        <div class="source-row"><span>EU AI Act — Laag Risico</span><div class="source-status live"></div></div>
+        <div class="source-row"><span>Wwft / AML Screening</span><div class="source-status live"></div></div>
+        <div class="source-row"><span>Zero Data Retention</span><div class="source-status live"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="bottom">
+    <div class="bottom-item">Vertrouwelijk</div>
+    <div class="bottom-item">AVG Art. 25</div>
+    <div class="bottom-item">Zero-Retention</div>
+    <div class="bottom-item">TLS 1.3 + AES-256</div>
+    <div class="bottom-item">EU AI Act context</div>
+    <div class="bottom-item">NL · DE · AT · CH · BE · UK</div>
+  </div>
+</div>
+
+<script>
+// Subtle Swiss grid background
+var c = document.getElementById('bg');
+var cx = c.getContext('2d');
+function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+
+function draw(){
+  cx.clearRect(0,0,c.width,c.height);
+  cx.fillStyle='#0c0c0e';cx.fillRect(0,0,c.width,c.height);
+
+  // Fine grid
+  var step=60;
+  cx.strokeStyle='rgba(200,200,200,0.025)';cx.lineWidth=0.5;
+  for(var x=0;x<c.width;x+=step){
+    cx.beginPath();cx.moveTo(x,0);cx.lineTo(x,c.height);cx.stroke();
+  }
+  for(var y=0;y<c.height;y+=step){
+    cx.beginPath();cx.moveTo(0,y);cx.lineTo(c.width,y);cx.stroke();
+  }
+
+  // Diagonal precision lines (Swiss watchmaking aesthetic)
+  cx.strokeStyle='rgba(200,200,200,0.015)';cx.lineWidth=0.5;
+  for(var d=-c.height;d<c.width;d+=120){
+    cx.beginPath();cx.moveTo(d,0);cx.lineTo(d+c.height,c.height);cx.stroke();
+  }
+
+  // Subtle right-panel highlight
+  var rg=cx.createLinearGradient(c.width-380,0,c.width,0);
+  rg.addColorStop(0,'rgba(255,255,255,0)');
+  rg.addColorStop(1,'rgba(255,255,255,0.012)');
+  cx.fillStyle=rg;cx.fillRect(c.width-380,0,380,c.height);
+}
+draw();
+</script>
+</body>
+</html>

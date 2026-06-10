@@ -1,0 +1,174 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "Get There ICT Solutions B.V.",
+    "domain": "getthere.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-06-02T10:29:40+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "antigravity_codeassist",
+        "claude_code",
+        "codex_cli",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 10,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://2getthere.eu",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Get+There+ICT+Solutions+B.V.&page%5Bsize%5D=5",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://autoriteitpersoonsgegevens.nl",
+        "https://careersourceflorida.com",
+        "https://careersourceflorida.com/wp-content/uploads/2025/12/CareerSource-Florida_Annual-Report_Pages-Web_Final.pdf",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+vergabe&rows=5",
+        "https://companyinfo.nl"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "claude_code",
+        "deep_research_crawl",
+        "glm_direct",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "minimax_search"
+      ],
+      "provider_count": 8,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://2getthere.eu",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22",
+        "https://companyinfo.nl",
+        "https://en.wikipedia.org/wiki/GetThere",
+        "https://getthere.com",
+        "https://getthere.nl",
+        "https://getthere.nl/",
+        "https://getthere.nl/about",
+        "https://getthere.nl/careers",
+        "https://getthere.nl/en/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "claude_code",
+        "codex_cli",
+        "minimax_search"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-finiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-ict-solutions-b-v-leek-02066288",
+        "https://en.wikipedia.org/wiki/GetThere",
+        "https://getthere.nl",
+        "https://internationalmedicalcorps.org/work-with-us/",
+        "https://nl.linkedin.com/company/get-there",
+        "https://noorderlink.nl/werken-bij/get-there",
+        "https://openkvk.nl/company/hoofdvestiging-get-there-ict-solutions-bv-02066288-15958205",
+        "https://report.adidas-group.com/2024/en/_assets/downloads/annual-report-adidas-ar24.pdf",
+        "https://s23.q4cdn.com/407969754/files/doc_financials/2025/Stockholders2025/2024-Annual-Report.pdf",
+        "https://www.2getthere.eu/careers/",
+        "https://www.cengagegroup.com/edtech-research/employability-report/",
+        "https://www.darktrace.com/careers"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "deep_research_crawl",
+        "local_xortron",
+        "minimax_highspeed_b",
+        "minimax_search"
+      ],
+      "provider_count": 4,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://career.org/common/Uploaded%20files/Publications/Annual%20Report%202025%20Web.pdf",
+        "https://en.wikipedia.org/wiki/GetThere",
+        "https://getthere.nl/",
+        "https://getthere.nl/about",
+        "https://getthere.nl/careers",
+        "https://getthere.nl/en/",
+        "https://getthere.nl/en/about",
+        "https://getthere.nl/en/contact",
+        "https://getthere.nl/en/jobs",
+        "https://getthere.nl/en/team",
+        "https://getthere.nl/nl/",
+        "https://getthere.nl/nl/contact"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "codex_cli",
+        "glm_direct",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 6,
+      "source_urls": [
+        "http://beta.tendersinfo.com/Result/ResultList?searchtext=Cegeka%20Nederland%20B.V",
+        "https://ar.linkedin.com/company/get-there",
+        "https://ar.linkedin.com/company/get-there?trk=public_profile_profile-section-card_subtitle-click",
+        "https://companyinfo.nl",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-financiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-finiele-holdings/get-there-holding-b-v-leek-02066287-000020067046",
+        "https://companyinfo.nl/organisatieprofiel/ontwerpen-van-computerprogrammas/get-there-ict-solutions-b-v-leek-02066288",
+        "https://getthere.nl",
+        "https://getthere.nl/c",
+        "https://nl.linkedin.com/company/get-there",
+        "https://noorderlink.nl/werken-bij/get-there",
+        "https://openkvk.nl/company/hoofdvestiging-get-there-ict-solutions-bv-02066288-15958205",
+        "https://www.dutchitchannel.nl/news/730212/duo-gunt-raamovereenkomst-voor-inhuur-ict-specialisten",
+        "https://www.getthere.nl/",
+        "https://www.getthere.nl/carriere/werken-bij-get-there/"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

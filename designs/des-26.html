@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0c12;color:#e0e8f0;font-family:'IBM Plex Mono',monospace;overflow:hidden;height:100vh;width:100vw}
+.layout{position:absolute;inset:0;z-index:10;display:grid;grid-template-rows:28px 36px 1fr 36px}
+/* Ticker */
+.ticker{background:#111520;border-bottom:1px solid rgba(34,197,94,0.15);overflow:hidden;display:flex;align-items:center}
+.ticker-track{display:flex;gap:32px;animation:scroll 40s linear infinite;white-space:nowrap}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tick{font-size:10px;display:flex;gap:6px;align-items:center}
+.tick-name{color:rgba(200,210,220,0.5);font-weight:500}
+.tick-val{font-weight:700}
+.tick-val.up{color:#22c55e}
+.tick-val.down{color:#ef4444}
+.tick-chg{font-size:9px}
+/* Topbar */
+.topbar{background:#0d1018;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;padding:0 20px;gap:20px}
+.tb-brand{font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;color:#fff;text-transform:uppercase}
+.tb-sep{width:1px;height:18px;background:rgba(255,255,255,0.1)}
+.tb-item{font-size:8px;letter-spacing:1px;color:rgba(180,200,220,0.3)}
+.tb-item b{color:rgba(34,197,94,0.6)}
+.tb-clock{margin-left:auto;font-size:10px;color:rgba(200,210,220,0.4);font-weight:500}
+/* Main */
+.main{display:grid;grid-template-columns:1fr 320px}
+.hero{display:flex;flex-direction:column;justify-content:center;padding:48px}
+.market-tag{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(34,197,94,0.5);margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.mt-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:800;line-height:1.08;letter-spacing:-1.5px;color:#fff;margin-bottom:16px}
+h1 span{color:#22c55e}
+.desc{font-size:11px;color:rgba(180,200,220,0.4);line-height:1.8;max-width:440px;margin-bottom:32px}
+.search{display:flex;background:rgba(10,15,25,0.9);border:1px solid rgba(34,197,94,0.2);border-left:3px solid #22c55e;max-width:460px}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#e0e8f0;font-family:'IBM Plex Mono',monospace;font-size:11px;padding:13px 14px}
+.search input::placeholder{color:rgba(150,180,200,0.2)}
+.search button{background:rgba(34,197,94,0.1);border:none;border-left:1px solid rgba(34,197,94,0.15);color:#22c55e;cursor:pointer;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 18px;white-space:nowrap}
+.stats{display:flex;gap:28px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.04)}
+.stat{display:flex;flex-direction:column;gap:3px}
+.sv{font-size:18px;font-weight:700;color:#22c55e;font-family:'Manrope',sans-serif}
+.sl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(150,180,200,0.2)}
+/* Right panel — recent scans */
+.panel{border-left:1px solid rgba(255,255,255,0.04);padding:20px;display:flex;flex-direction:column;gap:0;overflow:hidden;background:rgba(255,255,255,0.01)}
+.panel-header{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(34,197,94,0.4);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(34,197,94,0.08)}
+.scan-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center}
+.si-left{display:flex;flex-direction:column;gap:2px}
+.si-name{font-size:11px;font-weight:600;color:rgba(200,210,220,0.7)}
+.si-meta{font-size:8px;color:rgba(150,180,200,0.3)}
+.si-score{font-size:12px;font-weight:700}
+.si-score.high{color:#22c55e}
+.si-score.mid{color:#f59e0b}
+.si-score.low{color:#ef4444}
+/* Bottom */
+.bottombar{background:#080a10;border-top:1px solid rgba(34,197,94,0.08);display:flex;align-items:center;padding:0 20px;gap:28px}
+.bi{font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(150,180,200,0.15)}
+.bi.hi{color:rgba(34,197,94,0.35)}
+</style></head>
+<body>
+<div class="layout">
+  <div class="ticker"><div class="ticker-track">
+    <div class="tick"><span class="tick-name">ASML</span><span class="tick-val up">€892.40</span><span class="tick-chg up">+2.3%</span></div>
+    <div class="tick"><span class="tick-name">ADYEN</span><span class="tick-val up">€1,456.20</span><span class="tick-chg up">+1.1%</span></div>
+    <div class="tick"><span class="tick-name">SHELL</span><span class="tick-val down">€28.94</span><span class="tick-chg down">-0.4%</span></div>
+    <div class="tick"><span class="tick-name">ING</span><span class="tick-val up">€16.82</span><span class="tick-chg up">+0.8%</span></div>
+    <div class="tick"><span class="tick-name">SAP</span><span class="tick-val up">€214.50</span><span class="tick-chg up">+1.5%</span></div>
+    <div class="tick"><span class="tick-name">SIEMENS</span><span class="tick-val down">€178.30</span><span class="tick-chg down">-0.2%</span></div>
+    <div class="tick"><span class="tick-name">UNILEVER</span><span class="tick-val up">€52.18</span><span class="tick-chg up">+0.6%</span></div>
+    <div class="tick"><span class="tick-name">DSM</span><span class="tick-val up">€108.60</span><span class="tick-chg up">+0.9%</span></div>
+    <div class="tick"><span class="tick-name">ASML</span><span class="tick-val up">€892.40</span><span class="tick-chg up">+2.3%</span></div>
+    <div class="tick"><span class="tick-name">ADYEN</span><span class="tick-val up">€1,456.20</span><span class="tick-chg up">+1.1%</span></div>
+    <div class="tick"><span class="tick-name">SHELL</span><span class="tick-val down">€28.94</span><span class="tick-chg down">-0.4%</span></div>
+    <div class="tick"><span class="tick-name">ING</span><span class="tick-val up">€16.82</span><span class="tick-chg up">+0.8%</span></div>
+    <div class="tick"><span class="tick-name">SAP</span><span class="tick-val up">€214.50</span><span class="tick-chg up">+1.5%</span></div>
+    <div class="tick"><span class="tick-name">SIEMENS</span><span class="tick-val down">€178.30</span><span class="tick-chg down">-0.2%</span></div>
+  </div></div>
+  <div class="topbar">
+    <div class="tb-brand">DueSight</div><div class="tb-sep"></div>
+    <div class="tb-item">EXCHANGE <b>LIVE</b></div>
+    <div class="tb-item">ENGINES <b>11/11</b></div>
+    <div class="tb-item">COVERAGE <b>6 EU</b></div>
+    <div class="tb-clock" id="clock">14:32:07 CET</div>
+  </div>
+  <div class="main">
+    <div class="hero">
+      <div class="market-tag"><div class="mt-dot"></div>Markets Open · Pre-DD Intelligence Active</div>
+      <h1>De markt<br/>beweegt snel.<br/><span>Uw DD sneller.</span></h1>
+      <p class="desc">Pre-due diligence in &lt;3 minuten. Van AEX tot DAX — elk bedrijf doorgelicht op integriteit, compliance en financiële gezondheid.</p>
+      <div class="search"><input type="text" placeholder="Target bedrijf of KvK-nummer..."/><button>Screen →</button></div>
+      <div class="stats">
+        <div class="stat"><div class="sv">&lt;3m</div><div class="sl">Rapport</div></div>
+        <div class="stat"><div class="sv">meerdere</div><div class="sl">Bronnen</div></div>
+        <div class="stat"><div class="sv">11</div><div class="sl">analyselagen</div></div>
+        <div class="stat"><div class="sv">∅</div><div class="sl">Retentie</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-header">Recente Pre-DD Screens</div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">ASML Holding N.V.</div><div class="si-meta">Semiconductor · AEX · 3m ago</div></div><div class="si-score high">92</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">Adyen N.V.</div><div class="si-meta">Fintech · AEX · 12m ago</div></div><div class="si-score high">85</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">Wirecard AG</div><div class="si-meta">Fintech · DE · 18m ago</div></div><div class="si-score low">12</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">Mollie B.V.</div><div class="si-meta">Payments · NL · 24m ago</div></div><div class="si-score high">79</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">N26 GmbH</div><div class="si-meta">Neobank · DE · 31m ago</div></div><div class="si-score mid">71</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">Klarna Bank AB</div><div class="si-meta">BNPL · SE · 45m ago</div></div><div class="si-score mid">77</div></div>
+      <div class="scan-item"><div class="si-left"><div class="si-name">Bunq B.V.</div><div class="si-meta">Neobank · NL · 52m ago</div></div><div class="si-score mid">74</div></div>
+    </div>
+  </div>
+  <div class="bottombar">
+    <div class="bi hi">● EXCHANGE LIVE</div><div class="bi">AVG ART. 25</div><div class="bi">ZERO-RETENTION</div><div class="bi">AES-256</div><div class="bi">EU AI ACT</div><div class="bi">Wwft SCREENING</div>
+  </div>
+</div>
+<script>
+setInterval(function(){
+  var n=new Date();
+  document.getElementById('clock').textContent=n.toTimeString().substring(0,8)+' CET';
+},1000);
+</script>
+</body></html>

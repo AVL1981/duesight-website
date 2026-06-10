@@ -1,0 +1,799 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "Mollie B.V.",
+    "domain": "mollie.com",
+    "kvk": "30204462",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T08:36:40+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 9,
+  "failed_or_skipped": 9,
+  "target_site_crawl": {
+    "pages_checked": 40,
+    "source_urls": [
+      "https://mollie.com/",
+      "https://mollie.com/nl/",
+      "https://mollie.com/en/",
+      "https://mollie.com/en/about",
+      "https://mollie.com/about",
+      "https://mollie.com/nl/contact",
+      "https://mollie.com/en/contact",
+      "https://mollie.com/contact",
+      "https://mollie.com/sitemap.xml",
+      "https://mollie.com/contact/sales",
+      "https://mollie.com/nl/contact/sales",
+      "https://mollie.com/en/contact/sales",
+      "https://www.mollie.com/about",
+      "https://www.mollie.com/bg/about",
+      "https://www.mollie.com/cz/about",
+      "https://www.mollie.com/dk/about",
+      "https://www.mollie.com/de/about",
+      "https://www.mollie.com/at/about",
+      "https://www.mollie.com/et/about",
+      "https://www.mollie.com/el/about",
+      "https://www.mollie.com/gb/about",
+      "https://www.mollie.com/es/about",
+      "https://www.mollie.com/be-fr/about",
+      "https://www.mollie.com/fr/about",
+      "https://www.mollie.com/hr/about",
+      "https://www.mollie.com/is/about",
+      "https://www.mollie.com/it/about",
+      "https://www.mollie.com/lv/about",
+      "https://www.mollie.com/lt/about",
+      "https://www.mollie.com/hu/about",
+      "https://www.mollie.com/be/about",
+      "https://www.mollie.com/nl/about"
+    ],
+    "pages": [
+      {
+        "url": "https://mollie.com/",
+        "status": 200,
+        "title": "Mollie – Online and in-person payments built for businesses of every size",
+        "bytes": 599908
+      },
+      {
+        "url": "https://mollie.com/nl/",
+        "status": 200,
+        "title": "Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang",
+        "bytes": 599918
+      },
+      {
+        "url": "https://mollie.com/en/",
+        "status": 200,
+        "title": "Mollie – Online and in-person payments built for businesses of every size",
+        "bytes": 599908
+      },
+      {
+        "url": "https://mollie.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/en/about",
+        "status": 200,
+        "title": "About Mollie",
+        "bytes": 599841
+      },
+      {
+        "url": "https://mollie.com/about",
+        "status": 200,
+        "title": "About Mollie",
+        "bytes": 599841
+      },
+      {
+        "url": "https://mollie.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/careers",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://mollie.com/nl/contact",
+        "status": 200,
+        "title": "Neem eenvoudig contact op met Mollie – We helpen u graag!",
+        "bytes": 599835
+      },
+      {
+        "url": "https://mollie.com/en/contact",
+        "status": 200,
+        "title": "Contact us | Mollie",
+        "bytes": 599843
+      },
+      {
+        "url": "https://mollie.com/contact",
+        "status": 200,
+        "title": "Contact us | Mollie",
+        "bytes": 599843
+      },
+      {
+        "url": "https://mollie.com/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 2106
+      },
+      {
+        "url": "https://mollie.com/contact/sales",
+        "status": 200,
+        "title": "Get a quote - Contact our Sales team | Mollie",
+        "bytes": 599843
+      },
+      {
+        "url": "https://mollie.com/nl/contact/sales",
+        "status": 200,
+        "title": "Vraag een offerte aan – Mollie Sales Team staat klaar!",
+        "bytes": 599828
+      },
+      {
+        "url": "https://mollie.com/en/contact/sales",
+        "status": 200,
+        "title": "Get a quote - Contact our Sales team | Mollie",
+        "bytes": 599843
+      },
+      {
+        "url": "https://www.mollie.com/about",
+        "status": 200,
+        "title": "About Mollie",
+        "bytes": 599841
+      },
+      {
+        "url": "https://www.mollie.com/bg/about",
+        "status": 200,
+        "title": "За Mollie",
+        "bytes": 592908
+      },
+      {
+        "url": "https://www.mollie.com/cz/about",
+        "status": 200,
+        "title": "O Mollie",
+        "bytes": 599150
+      },
+      {
+        "url": "https://www.mollie.com/dk/about",
+        "status": 200,
+        "title": "Om Mollie",
+        "bytes": 599759
+      },
+      {
+        "url": "https://www.mollie.com/de/about",
+        "status": 200,
+        "title": "Mollie – Über uns",
+        "bytes": 599715
+      },
+      {
+        "url": "https://www.mollie.com/at/about",
+        "status": 200,
+        "title": "Mollie – Über uns",
+        "bytes": 599711
+      },
+      {
+        "url": "https://www.mollie.com/et/about",
+        "status": 200,
+        "title": "Mollie kohta",
+        "bytes": 599713
+      },
+      {
+        "url": "https://www.mollie.com/el/about",
+        "status": 200,
+        "title": "Σχετικά με τη Mollie",
+        "bytes": 592136
+      },
+      {
+        "url": "https://www.mollie.com/gb/about",
+        "status": 200,
+        "title": "About Mollie",
+        "bytes": 599841
+      },
+      {
+        "url": "https://www.mollie.com/es/about",
+        "status": 200,
+        "title": "Sobre Mollie",
+        "bytes": 599729
+      },
+      {
+        "url": "https://www.mollie.com/be-fr/about",
+        "status": 200,
+        "title": "Mollie – À propos",
+        "bytes": 599648
+      },
+      {
+        "url": "https://www.mollie.com/fr/about",
+        "status": 200,
+        "title": "Mollie – À propos",
+        "bytes": 599648
+      },
+      {
+        "url": "https://www.mollie.com/hr/about",
+        "status": 200,
+        "title": "O Mollie",
+        "bytes": 599591
+      },
+      {
+        "url": "https://www.mollie.com/is/about",
+        "status": 200,
+        "title": "Um Mollie",
+        "bytes": 599086
+      },
+      {
+        "url": "https://www.mollie.com/it/about",
+        "status": 200,
+        "title": "Mollie – Informazioni",
+        "bytes": 599812
+      },
+      {
+        "url": "https://www.mollie.com/lv/about",
+        "status": 200,
+        "title": "Par Mollie",
+        "bytes": 599082
+      },
+      {
+        "url": "https://www.mollie.com/lt/about",
+        "status": 200,
+        "title": "Apie Mollie",
+        "bytes": 599368
+      },
+      {
+        "url": "https://www.mollie.com/hu/about",
+        "status": 200,
+        "title": "A Mollie-ról",
+        "bytes": 598939
+      },
+      {
+        "url": "https://www.mollie.com/be/about",
+        "status": 200,
+        "title": "Over Mollie: Innovatieve betaaloplossingen voor bedrijven",
+        "bytes": 599834
+      },
+      {
+        "url": "https://www.mollie.com/nl/about",
+        "status": 200,
+        "title": "Over Mollie: Innovatieve betaaloplossingen voor bedrijven",
+        "bytes": 599838
+      }
+    ]
+  },
+  "source_urls_count": 55,
+  "source_urls": [
+    "https://mollie.com/",
+    "https://mollie.com/nl/",
+    "https://mollie.com/en/",
+    "https://mollie.com/en/about",
+    "https://mollie.com/about",
+    "https://mollie.com/nl/contact",
+    "https://mollie.com/en/contact",
+    "https://mollie.com/contact",
+    "https://mollie.com/sitemap.xml",
+    "https://mollie.com/contact/sales",
+    "https://mollie.com/nl/contact/sales",
+    "https://mollie.com/en/contact/sales",
+    "https://www.mollie.com/about",
+    "https://www.mollie.com/bg/about",
+    "https://www.mollie.com/cz/about",
+    "https://www.mollie.com/dk/about",
+    "https://www.mollie.com/de/about",
+    "https://www.mollie.com/at/about",
+    "https://www.mollie.com/et/about",
+    "https://www.mollie.com/el/about",
+    "https://www.mollie.com/gb/about",
+    "https://www.mollie.com/es/about",
+    "https://www.mollie.com/be-fr/about",
+    "https://www.mollie.com/fr/about",
+    "https://www.mollie.com/hr/about",
+    "https://www.mollie.com/is/about",
+    "https://www.mollie.com/it/about",
+    "https://www.mollie.com/lv/about",
+    "https://www.mollie.com/lt/about",
+    "https://www.mollie.com/hu/about",
+    "https://www.mollie.com/be/about",
+    "https://www.mollie.com/nl/about",
+    "https://www.wheego-mobility.com/en/privacy-policy/",
+    "https://www.mollie.com/legal/impressum",
+    "https://www.scribd.com/document/616166415/List-of-Companies-That-Sponsor-Work-Visas",
+    "https://www.mollie.com/resources",
+    "https://thebanks.eu/emis/mollie-355474",
+    "https://nl.linkedin.com/company/mollie",
+    "https://www.preqin.com/data/profile/asset/mollie-b-v-/188037",
+    "https://www.trustpilot.com/review/mollie.com",
+    "https://appexchange.salesforce.com/appxListingDetail?listingId=36c467bc-e5ba-47e0-b72d-3f7c49333f70",
+    "https://www.dnb.nl/en/public-register/?s=mollie&p=1&l=20",
+    "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTEG&relationNumber=F0038",
+    "https://www.dnb.nl/en/public-register/register-of-electronic-money-institutions/?s=mollie&p=1&l=10",
+    "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf",
+    "https://zoek.officielebekendmakingen.nl/stcrt-2022-23450.pdf",
+    "https://www.mollie.com/growth",
+    "https://pypi.org/project/mollie-api-python/",
+    "https://de.wikipedia.org/wiki/Mollie",
+    "https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Yufei-Wang.pdf",
+    "https://www.mollie.com/nl/",
+    "https://www.reveliolabs.com/companies/mollie/employees/",
+    "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+    "https://github.com/mollie/mollie-reaction-commerce",
+    "https://www.tigerandtech.com/en/business-directory/mollie_b_v/"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"Mollie B.V.\" \"mollie.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "partial_executed",
+      "elapsed_s": 1.537,
+      "discovered_urls_count": 2,
+      "source_urls": [
+        "https://www.wheego-mobility.com/en/privacy-policy/"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Privacy policy | wheego",
+          "snippet": "Mollie: Zahlungsdienstleistungen (technische Anbindung von Online-Bezahlmethoden); Dienstanbieter: Mollie B.V. ... b) DSGVO); Website: https://www.mollie.com/de; ...",
+          "url": "https://www.wheego-mobility.com/en/privacy-policy/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Mollie B.V.\" acquisition overname parent group investor shareholder \"mollie.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "executed",
+      "elapsed_s": 1.521,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.mollie.com/legal/impressum"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Impressum - Mollie",
+          "snippet": "Mollie BV (Mollie), registered with the Dutch Chamber of Commerce under registration number 30204462, is a payment service provider, licensed by the Dutch ...",
+          "url": "https://www.mollie.com/legal/impressum",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Mollie B.V.\" vacancies careers jobs hiring skills competitors \"mollie.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "failed",
+      "elapsed_s": 1.471,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Mollie B.V.\" revenue omzet growth FT1000 annual report ranking \"mollie.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "failed",
+      "elapsed_s": 1.686,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Mollie B.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed",
+      "elapsed_s": 1.303,
+      "discovered_urls_count": 3,
+      "source_urls": [
+        "https://www.scribd.com/document/616166415/List-of-Companies-That-Sponsor-Work-Visas"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "List of Companies That Sponsor Work Visas | PDF - Scribd",
+          "snippet": "Engineering Analysis Services Ltd Engineering Design Consultants London ... Mollie B.V.. Mollie B.V.. Molnlycke Healthcare Moloco UK limited. Moloco UK ...",
+          "url": "https://www.scribd.com/document/616166415/List-of-Companies-That-Sponsor-Work-Visas",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.326,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.mollie.com/resources",
+        "https://thebanks.eu/emis/mollie-355474",
+        "https://nl.linkedin.com/company/mollie",
+        "https://www.mollie.com/about",
+        "https://www.preqin.com/data/profile/asset/mollie-b-v-/188037",
+        "https://www.trustpilot.com/review/mollie.com",
+        "https://appexchange.salesforce.com/appxListingDetail?listingId=36c467bc-e5ba-47e0-b72d-3f7c49333f70"
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "Mollie Resources",
+          "snippet": "This pack contains the Mollie logo in multiple formats and includes guidelines for its correct usage. ... Mollie B.V. is licensed and registered as an ...",
+          "url": "https://www.mollie.com/resources",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Mollie B.V. (Netherlands) - Company Profile and Review",
+          "snippet": "Mollie B.V.. Mollie B.V. Logo. TheBanks.eu Rating Very Good (4.12). Business ... Mollie B.V. is registered in the Netherlands with company number 30204462.",
+          "url": "https://thebanks.eu/emis/mollie-355474",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Mollie - LinkedIn",
+          "snippet": "Over ons. Mollie offers a single platform for businesses to get paid ... team built something that didn't just cut costs, but fueled ...",
+          "url": "https://nl.linkedin.com/company/mollie",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "About Mollie",
+          "snippet": "And we're a 1,000-strong team of product, finance, support, commerce, and ... Mollie B.V. is licensed and registered as an electronic money institution ...",
+          "url": "https://www.mollie.com/about",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Mollie B.V. Asset Profile | Preqin",
+          "snippet": "Website. www.mollie.com. Verticals. Cloud Computing, FinTech. Company Stage. Series C. Total Amount Raised. Subscriber access only. Mollie B.V. - timeline of ...",
+          "url": "https://www.preqin.com/data/profile/asset/mollie-b-v-/188037",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.363,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.153,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.265,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.162,
+      "discovered_urls_count": 8,
+      "source_urls": [
+        "https://www.dnb.nl/en/public-register/?s=mollie&p=1&l=20",
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTEG&relationNumber=F0038",
+        "https://www.dnb.nl/en/public-register/register-of-electronic-money-institutions/?s=mollie&p=1&l=10"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "Public register - De Nederlandsche Bank (DNB)",
+          "snippet": "Mollie B.V.. Trade name. Mollie B.V.. Register. Electronic money institutions ... AMSTERDAM, NEDERLAND; CoC30204462; LEI code98450064AC9753611E09; Relation number ...",
+          "url": "https://www.dnb.nl/en/public-register/?s=mollie&p=1&l=20",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Information detail | Mollie B.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "Mollie B.V., AMSTERDAM, NEDERLAND, 30204462, 98450064AC9753611E09, F0038, Elektronischgeldinstelling. ... Internet address. URL: https://www.mollie.com/nl/.",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTEG&relationNumber=F0038",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Register of electronic money institutions | De Nederlandsche Bank",
+          "snippet": "CoC30204462; LEI code98450064AC9753611E09; Relation number DNBF0038; CategoryElektronischgeldinstelling. Statutory name. Mollie B.V. ... Mollie B.V.. Register.",
+          "url": "https://www.dnb.nl/en/public-register/register-of-electronic-money-institutions/?s=mollie&p=1&l=10",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.288,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.141,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.266,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "[PDF] Tweede dagvaarding Consumenten Competition Claims vs Apple ...",
+          "snippet": "https://www.mollie.com/en/pricing. 352. Productie SCCC - 0036: Brattle, Consumer Harm Resulting from Apple's Anticompetitive Practices related ...",
+          "url": "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.279,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.345,
+      "discovered_urls_count": 4,
+      "source_urls": [
+        "https://zoek.officielebekendmakingen.nl/stcrt-2022-23450.pdf"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "[PDF] STAATSCOURANT - officiële bekendmakingen | Overheid",
+          "snippet": "Mollie B.V.. 27-06-2022. Skylark Industries Corporation. B.V.. Bandbreedte 10%–20% rechtstreeks. June Technologies B.V.. 27-06-2022. Waard, de ...",
+          "url": "https://zoek.officielebekendmakingen.nl/stcrt-2022-23450.pdf",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"Mollie B.V.\" OR \"mollie.com\" OR \"30204462\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "failed",
+      "elapsed_s": 1.351,
+      "discovered_urls_count": 2,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@mollie.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.67,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://www.mollie.com/growth",
+        "https://pypi.org/project/mollie-api-python/",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Yufei-Wang.pdf",
+        "https://thebanks.eu/emis/mollie-355474",
+        "https://www.mollie.com/nl/",
+        "https://www.reveliolabs.com/companies/mollie/employees/",
+        "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+        "https://github.com/mollie/mollie-reaction-commerce",
+        "https://www.tigerandtech.com/en/business-directory/mollie_b_v/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Guides and Insights | Mollie",
+          "snippet": "Mollie B.V. is licensed and registered as an electronic money institution with the Dutch Central Bank (relationship number: F0038). Mollie UK Ltd is ...",
+          "url": "https://www.mollie.com/growth",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "mollie-api-python - PyPI",
+          "snippet": "Copyright (c) 2014-2022, Mollie B.V.. Support. Contact: www.mollie.com — info@mollie.com — +31 20 820 20 70 ...",
+          "url": "https://pypi.org/project/mollie-api-python/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Mollie - Wikipedia",
+          "snippet": "~850 (2025). Umsatz, 214 Mio. € (2024). Branche · Zahlungsdienstleister. Website, mollie.com ... Public Register DNB: Mollie B.V. In: De Nederlandsche Bank.",
+          "url": "https://de.wikipedia.org/wiki/Mollie",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Optimizing Payment Systems with Microservices and Event-Driven ...",
+          "snippet": "[1] Mollie B.V. Official Website. https://www.mollie.com/. Accessed: 2024-09-03. 1. [2] Aathira S Nair and P Kannan. Digital Payment Methods ...",
+          "url": "https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Yufei-Wang.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Mollie B.V. (Netherlands) - Company Profile and Review",
+          "snippet": "Explore Mollie B.V., an e-money institution in the ... Contacts. address Keizersgracht 126, 1015CW, AMSTERDAM, Netherlands. website https://www.mollie.com/ ...",
+          "url": "https://thebanks.eu/emis/mollie-355474",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"mollie.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.352,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://pypi.org/project/mollie-api-python/",
+        "https://www.mollie.com/growth",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Yufei-Wang.pdf",
+        "https://thebanks.eu/emis/mollie-355474",
+        "https://www.reveliolabs.com/companies/mollie/employees/",
+        "https://github.com/mollie/mollie-reaction-commerce",
+        "https://www.mollie.com/nl/",
+        "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+        "https://www.tigerandtech.com/en/business-directory/mollie_b_v/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "mollie-api-python - PyPI",
+          "snippet": "Copyright (c) 2014-2022, Mollie B.V.. Support. Contact: www.mollie.com — info@mollie.com — +31 20 820 20 70 ...",
+          "url": "https://pypi.org/project/mollie-api-python/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Guides and Insights | Mollie",
+          "snippet": "Mollie B.V. is licensed and registered as an electronic money institution with the Dutch Central Bank (relationship number: F0038). Mollie UK Ltd is ...",
+          "url": "https://www.mollie.com/growth",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Mollie - Wikipedia",
+          "snippet": "~850 (2025). Umsatz, 214 Mio. € (2024). Branche · Zahlungsdienstleister. Website, mollie.com ... Public Register DNB: Mollie B.V. In: De Nederlandsche Bank.",
+          "url": "https://de.wikipedia.org/wiki/Mollie",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Optimizing Payment Systems with Microservices and Event-Driven ...",
+          "snippet": "[1] Mollie B.V. Official Website. https://www.mollie.com/. Accessed: 2024-09-03. 1. [2] Aathira S Nair and P Kannan. Digital Payment Methods ...",
+          "url": "https://staff.fnwi.uva.nl/a.s.z.belloum/MSctheses/MScthesis_Yufei-Wang.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Mollie B.V. (Netherlands) - Company Profile and Review",
+          "snippet": "Explore Mollie B.V., an e-money institution in the ... Contacts. address Keizersgracht 126, 1015CW, AMSTERDAM, Netherlands. website https://www.mollie.com/ ...",
+          "url": "https://thebanks.eu/emis/mollie-355474",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

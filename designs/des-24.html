@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#00ff41;font-family:'Space Grotesk',monospace;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.85) 100%)}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;color:#fff;margin-bottom:10px;text-shadow:0 0 40px rgba(0,255,65,0.15)}
+h1 span{color:#00ff41;text-shadow:0 0 20px rgba(0,255,65,0.4)}
+.sub{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(0,255,65,0.4);margin-bottom:32px}
+.search-wrap{position:relative;max-width:520px;width:100%;margin-bottom:28px}
+.search{display:flex;background:rgba(0,10,2,0.85);border:1px solid rgba(0,255,65,0.2)}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#00ff41;font-family:'Space Grotesk',monospace;font-size:12px;padding:14px 16px}
+.search input::placeholder{color:rgba(0,255,65,0.15)}
+.search button{background:rgba(0,255,65,0.1);border:none;border-left:1px solid rgba(0,255,65,0.2);color:#00ff41;cursor:pointer;font-family:'Space Grotesk',monospace;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 22px;white-space:nowrap;transition:background 0.15s}
+.search button:hover{background:rgba(0,255,65,0.2)}
+.stats{display:flex;gap:40px;margin-bottom:24px}
+.stat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.sv{font-family:'Manrope',sans-serif;font-size:24px;font-weight:800;color:#00ff41;text-shadow:0 0 10px rgba(0,255,65,0.3)}
+.sl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,255,65,0.2)}
+.jur{display:flex;gap:8px}
+.j{font-size:8px;letter-spacing:2px;padding:4px 10px;border:1px solid rgba(0,255,65,0.15);color:rgba(0,255,65,0.35)}
+.j.a{border-color:rgba(0,255,65,0.3);color:rgba(0,255,65,0.6)}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(0,5,1,0.9);border-top:1px solid rgba(0,255,65,0.1);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,255,65,0.2)}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="veil"></div>
+<div class="content">
+  <h1>Zie de <span>data.</span><br/>Niet de ruis.</h1>
+  <div class="sub">Sovereign Intelligence · Pre-Due Diligence · Europa</div>
+  <div class="search-wrap"><div class="search"><input type="text" placeholder="SCAN:// entiteit of KvK-nummer..."/><button>Decodeer →</button></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sv">meerdere</div><div class="sl">Bronnen</div></div>
+    <div class="stat"><div class="sv">&lt;3m</div><div class="sl">Rapport</div></div>
+    <div class="stat"><div class="sv">11</div><div class="sl">analyselagen</div></div>
+    <div class="stat"><div class="sv">∅</div><div class="sl">Retentie</div></div>
+  </div>
+  <div class="jur"><div class="j a">NL</div><div class="j a">DE</div><div class="j a">AT</div><div class="j a">CH</div><div class="j">BE</div><div class="j">UK</div></div>
+</div>
+<div class="bottom">
+  <div class="bi">● Systeem Live</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+// Matrix rain with financial/compliance terms
+var chars='KvKUBOAVGAMLWwftCijfersSanctieNIS2LEIGLEIFAES256TLS0123456789ABCDEF€£$¥αβγδεζ';
+var terms=['KvK:12345678','UBO:VERIFIED','AVG:CONFORM','AML:CLEAN','CHI²:4.32','forensische data-analyse:PASS','NIS2:OK','SANCTIONS:∅','GDELT:+0.34','SCORE:87/100'];
+var cols=Math.floor(W/14);
+var drops=[];
+for(var i=0;i<cols;i++) drops.push({y:Math.random()*-100,speed:Math.random()*4+2,len:Math.random()*20+10});
+function draw(){
+  ctx.fillStyle='rgba(0,0,0,0.06)';
+  ctx.fillRect(0,0,W,H);
+  ctx.font='12px Space Grotesk';
+  for(var i=0;i<drops.length;i++){
+    var d=drops[i];
+    var x=i*14;
+    // Draw trail
+    for(var j=0;j<d.len;j++){
+      var y=d.y-j*14;
+      if(y<0||y>H) continue;
+      var alpha=1-j/d.len;
+      if(j===0){
+        ctx.fillStyle='rgba(180,255,180,'+alpha+')';
+        ctx.shadowColor='#00ff41';ctx.shadowBlur=8;
+      } else {
+        ctx.fillStyle='rgba(0,255,65,'+(alpha*0.6)+')';
+        ctx.shadowBlur=0;
+      }
+      var ch=chars[Math.floor(Math.random()*chars.length)];
+      ctx.fillText(ch,x,y);
+      ctx.shadowBlur=0;
+    }
+    d.y+=d.speed;
+    if(d.y-d.len*14>H){
+      d.y=Math.random()*-200;
+      d.speed=Math.random()*4+2;
+      d.len=Math.random()*20+10;
+    }
+  }
+  // Occasional highlighted terms
+  if(Math.random()>0.97){
+    var term=terms[Math.floor(Math.random()*terms.length)];
+    var tx=Math.random()*(W-200);
+    var ty=Math.random()*H;
+    ctx.font='bold 11px Space Grotesk';
+    ctx.fillStyle='rgba(0,255,65,0.8)';
+    ctx.shadowColor='#00ff41';ctx.shadowBlur=12;
+    ctx.fillText(term,tx,ty);
+    ctx.shadowBlur=0;
+    ctx.font='12px Space Grotesk';
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

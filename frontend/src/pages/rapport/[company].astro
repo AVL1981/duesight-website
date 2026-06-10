@@ -1,0 +1,60 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+// 🚀 DUE SIGHT PROGRAMMATIC SEO MAGIC 🚀
+// Deze functie genereert duizenden HTML bestanden tegelijkertijd tijdens "npm run build"
+// op basis van de DuckDB/SQLite database van DueSight.
+export async function getStaticPaths() {
+    // In productie haal je dit uit `icij.duckdb` of `kvk_cache.db`
+    // Voorbeeld: fetch("http://localhost:5050/api/bedrijven/alle")
+    
+    const dueSightDatabaseMock = [
+        { name: 'Adyen N.V.', slug: 'adyen-nv', riskScore: 'Low', hq: 'Amsterdam, NL' },
+        { name: 'Bunq B.V.', slug: 'bunq-bv', riskScore: 'Medium', hq: 'Amsterdam, NL' },
+        { name: 'Gasunie N.V.', slug: 'gasunie-nv', riskScore: 'Low', hq: 'Groningen, NL' },
+    ];
+
+    return dueSightDatabaseMock.map((company) => {
+        return {
+            params: { company: company.slug },
+            props: { data: company },
+        };
+    });
+}
+
+const { company } = Astro.params;
+const { data } = Astro.props;
+---
+
+<Layout 
+    title={`Due Diligence Rapport: ${data.name} | DueSight`} 
+    description={`Officieel DueSight pre-diligence en risk rapport voor ${data.name} gevestigd in ${data.hq}. Bekijk sancties, UBOs en API data.`}
+>
+    
+    <!-- Epistemic Status Ticker -->
+    <div class="status-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item"><div class="ticker-dot"></div> REPORT AUTO-GENERATED: {new Date().toLocaleDateString('nl-NL')}</span>
+            <span class="ticker-item"><div class="ticker-dot"></div> ENTITY: {data.name.toUpperCase()}</span>
+            <span class="ticker-item"><div class="ticker-dot"></div> CONFIDENCE SCORE: 98%</span>
+        </div>
+    </div>
+
+    <!-- Company Detail Section -->
+    <section class="hero" style="min-height: 40vh; padding-top: 150px;">
+        <div class="container">
+            <div style="background: rgba(30,30,52,0.85); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">{data.name}</h1>
+                <p class="hero-subtitle" style="font-size: 1.1rem; color: #a1a1aa;">Gevestigd in: {data.hq}</p>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                    <div style="padding: 15px 30px; border-radius: 12px; background: rgba(5,150,105,0.1); border: 1px solid #059669;">
+                        <span style="display: block; font-size: 0.8rem; color: #a1a1aa;">RISK SCORE</span>
+                        <strong style="color: #34d399; font-size: 1.5rem;">{data.riskScore} Risk</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</Layout>

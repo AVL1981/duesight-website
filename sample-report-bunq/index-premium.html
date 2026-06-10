@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>DueSight — Pre-Diligence Intelligence Memorandum · bunq B.V.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f3ec;--paper-2:#fbf9f4;--ink:#1a1d22;--ink-2:#3f454e;--muted:#7a8089;
+--line:#ddd6c8;--line-2:#e9e3d6;--teal:#0f5b62;--teal-soft:#e3efee;--brass:#9a7b3f;
+--ok:#3f7d52;--warn:#a9762a;--bad:#a23f3f;--serif:'Fraunces',Georgia,serif;
+--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;}
+*{box-sizing:border-box}html{-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;
+background-image:radial-gradient(circle at 88% -5%,rgba(15,91,98,.06),transparent 42%);}
+.sheet{max-width:940px;margin:0 auto;padding:0 40px 80px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:500}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid var(--line)}
+.letterhead{display:flex;justify-content:space-between;align-items:flex-end;padding:30px 0 16px;border-bottom:2px solid var(--ink);margin-bottom:2px}
+.wordmark{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:-.01em}.wordmark b{color:var(--teal)}
+.lh-right{text-align:right;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.7}
+.doctype{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.classif{color:var(--brass)}
+.masthead{display:grid;grid-template-columns:1fr 250px;gap:34px;padding:38px 0 30px;align-items:start;border-bottom:1px solid var(--line)}
+.subject .eyebrow{display:block;margin-bottom:13px}
+.subject h1{font-family:var(--serif);font-weight:600;font-size:clamp(38px,6vw,58px);line-height:.97;letter-spacing:-.02em;margin:0 0 16px}
+.identity{display:flex;flex-wrap:wrap;gap:10px 16px;font-family:var(--mono);font-size:12px;color:var(--ink-2);align-items:flex-start}
+.id-chip{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;max-width:100%;padding-bottom:2px}
+.id-chip b{color:var(--muted);font-weight:500}.id-value{color:var(--ink-2)}
+.claim-chip{font-size:9px;line-height:1;font-style:normal;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:2px;border:1px solid var(--line);background:var(--paper-2)}
+.claim-confirmed{color:var(--ok);border-color:#bcd6c2;background:#e7f0e9}.claim-attributed{color:var(--teal);border-color:#b9d2d0;background:var(--teal-soft)}
+.claim-declared,.claim-ambiguous{color:var(--warn);border-color:#dcc7a0;background:#f6edda}.claim-unresolved{color:var(--muted);border-color:var(--line);background:var(--paper-2)}
+.identity-note{width:100%;margin-top:2px;font-size:10.5px;color:var(--muted);line-height:1.45}
+.verdict{border:1px solid var(--line);background:var(--paper-2);border-radius:3px;padding:22px 22px 20px;box-shadow:0 1px 0 #fff inset,0 18px 40px -28px rgba(26,29,34,.5)}
+.verdict .eyebrow{display:block;margin-bottom:14px}
+.score-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.score-num{font-family:var(--serif);font-weight:600;font-size:62px;line-height:.8;letter-spacing:-.02em}
+.score-den{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.score-bar{height:5px;background:var(--line-2);border-radius:3px;margin:16px 0 14px;overflow:hidden}
+.score-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),#1c7b83)}
+.vline{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;padding:5px 0;border-top:1px solid var(--line-2);color:var(--ink-2)}
+.vline b{color:var(--muted);font-weight:500}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:2px;border:1px solid}
+.tag.cond{color:var(--warn);border-color:#dcc7a0;background:#f6edda}.tag.ok{color:var(--ok);border-color:#bcd6c2;background:#e7f0e9}
+section{padding:30px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.02em;margin:0 0 18px;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:12px}
+h2::before{content:"";width:9px;height:9px;background:var(--brass);display:inline-block;transform:rotate(45deg)}
+.lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--ink);font-weight:400;max-width:62ch;margin:0 0 6px}
+.lede em{font-style:italic;color:var(--teal)}
+.verify{margin-top:22px;border-left:2px solid var(--teal);padding:2px 0 2px 20px}
+.verify .eyebrow{display:block;margin-bottom:12px;color:var(--teal)}
+.verify ol{margin:0;padding:0;list-style:none;counter-reset:v}
+.verify li{counter-increment:v;position:relative;padding:9px 0 9px 34px;border-top:1px solid var(--line-2);font-size:14px}
+.verify li:first-child{border-top:0}
+.verify li::before{content:counter(v,decimal-leading-zero);position:absolute;left:0;top:9px;font-family:var(--mono);font-size:11px;color:var(--brass);font-weight:600}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.pillar{background:var(--paper-2);padding:20px 22px}
+.pillar-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.pillar-h h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;margin:0}
+.pillar-h .pscore{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.pstatus{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px;display:inline-block;margin-bottom:10px}
+.s-ok{color:var(--ok);background:#e7f0e9}.s-warn{color:var(--warn);background:#f6edda}.s-ctx{color:var(--teal);background:var(--teal-soft)}
+.pillar p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:24px}
+.meta div{border-top:2px solid var(--ink)}.meta .eyebrow{display:block;padding-top:8px}
+.meta b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;margin-top:5px;letter-spacing:-.01em}
+.meta small{color:var(--muted);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:0 14px 10px;border-bottom:1px solid var(--ink)}
+tbody td{padding:13px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.5}
+tbody tr td:first-child{font-weight:600;color:var(--ink)}
+.conf{font-family:var(--mono);font-size:11px;font-weight:500}.conf.h{color:var(--ok)}.conf.m{color:var(--warn)}.conf.l{color:var(--muted)}
+.need{color:var(--muted);font-size:12.5px}
+.method{display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:start}
+.method p{margin:0 0 12px;font-size:14px;color:var(--ink-2);max-width:54ch}
+.badges{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:5px 10px;border:1px solid var(--line);border-radius:2px;background:var(--paper-2);color:var(--ink-2)}
+.badge.k{border-color:var(--teal);color:var(--teal)}
+footer{padding:26px 0 0;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8}
+footer .disc{max-width:70ch;margin-top:8px}
+@media(max-width:760px){.sheet{padding:0 20px 60px}.masthead,.method{grid-template-columns:1fr}.pillars,.meta{grid-template-columns:1fr}.meta{gap:14px}}
+@media print{body{background:#fff}.sheet{max-width:none;padding:0}section,.masthead{break-inside:avoid}}
+</style></head>
+<body><div class="sheet">
+<div class="letterhead"><div class="wordmark">Due<b>Sight</b></div>
+<div class="lh-right">PRE-DILIGENCE INTELLIGENCE<br>Reference · DS-2026-54992060</div></div>
+<div class="doctype"><span>Confidential Memorandum</span><span class="classif">For intended recipient only</span><span>Evidence snapshot · 2026-05-28</span></div>
+<div class="masthead"><div class="subject"><span class="eyebrow">Target Entity · Pre-Data-Room Screening</span>
+<h1>bunq B.V.</h1><div class="identity"><span class="id-chip" title="source-bound target record"><b>Domain</b> <span class="id-value">bunq.com</span> <i class="claim-chip claim-confirmed">confirmed</i></span><span class="id-chip" title="source-bound artifact value; register verification not attached"><b>KvK</b> <span class="id-value">54992060</span> <i class="claim-chip claim-declared">declared · unverified</i></span><span class="id-chip" title="source-bound target record"><b>Jurisdiction</b> <span class="id-value">NL</span> <i class="claim-chip claim-confirmed">confirmed</i></span><span class="identity-note">Identifiers are shown with source tier; only target-confirmed or official primary values are claim-safe.</span></div></div>
+<div class="verdict"><span class="eyebrow">Evidence Readiness</span>
+<div class="score-row"><span class="score-num">71</span><span class="score-den">/ 100</span></div>
+<div class="score-bar"><i style="width:71%"></i></div>
+<span class="tag cond">Conditional — scope-gated</span>
+<div class="vline" style="margin-top:14px"><b>Confidence</b><span>Medium</span></div>
+<div class="vline"><b>Evidence rows</b><span>51 · source-bound</span></div>
+<div class="vline"><b>Sanctions/PEP</b><span>0 candidates</span></div></div></div>
+<section><h2>Executive Summary</h2><p class="lede"><em>bunq B.V.</em> — pre-data-room screening across four pillars. Cross-pillar screening returned <em>zero sanctions/PEP candidate matches in checked sources</em> and <em>target-owned cyber exposure not established from checked footprint (external footprint resolves to third-party cloud edge)</em>. Financial and ownership/UBO positions are deliberately held at context-only: no revenue, margin or beneficial-ownership claim is asserted without primary register or filing documents.</p>
+<div class="verify"><span class="eyebrow">Priority verification before data room</span><ol><li>Confirm CDN/WAF/hosting provider scope and whether any origin servers bypass this edge layer.</li><li>Confirm legal name, registration number, UBOs and directors before final compliance sign-off.</li><li>Are UBOs, directors and material related parties also in scope for sanctions/PEP screening?</li><li>Collect official jaarrekening/XBRL output or seller P&amp;L export before relying on finance findings.</li></ol></div></section>
+<section><h2>Pillar Assessment</h2><div class="pillars"><div class="pillar"><div class="pillar-h"><h3>Legal &amp; Sanctions</h3><span class="pscore">26 / 33</span></div><span class="pstatus s-ok">Scoped screening</span><p>Sanctions screening returned no source-supported match, while adverse media remains point-in-time and source-limited. Ownership routes exist, but official UBO/shareholder evidence is not source-supported in this replay.</p></div><div class="pillar"><div class="pillar-h"><h3>Financial Integrity</h3><span class="pscore">5 / 15</span></div><span class="pstatus s-warn">Attention / gated</span><p>Finance route is technically verified, but no publication-ready official filing or target-specific finance output is available.</p></div><div class="pillar"><div class="pillar-h"><h3>Cyber &amp; NIS2</h3><span class="pscore">6 / 10</span></div><span class="pstatus s-ctx">Context</span><p>External footprint evidence exists, but provider/CDN context is not target-owned exposure without asset proof.</p></div><div class="pillar"><div class="pillar-h"><h3>Operational Context</h3><span class="pscore">5 / 7</span></div><span class="pstatus s-warn">Attention / gated</span><p>Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.</p></div></div>
+<div class="meta"><div><span class="eyebrow">Evidence integrity</span><b>22<small> / 22</small></b><small>Manifest, run ID, timestamp &amp; envelope</small></div><div><span class="eyebrow">Source coverage</span><b>7<small> / 13</small></b><small>Source-bound routes per pillar</small></div><div><span class="eyebrow">Evidence rows</span><b>51</b><small>Source-bound &amp; auditable</small></div></div></section>
+<section><h2>Evidence Overview</h2><table><thead><tr>
+<th style="width:19%">Subject</th><th style="width:35%">What DueSight can state</th><th style="width:18%">Source class</th><th style="width:10%">Confidence</th><th style="width:18%">Required for an official claim</th></tr></thead>
+<tbody><tr><td>Sanctions &amp; PEP</td><td>No source-supported sanctions/PEP match was found for bunq B.V. .</td><td>Official sanctions &amp; PEP screening</td><td class="conf l">Gated</td><td class="need">Re-screen confirmed directors and UBOs.</td></tr><tr><td>Identity &amp; ownership</td><td>Ownership/register evidence for bunq B.V. found candidate context that needs official register confirmation.</td><td>Official registers (NL/EU)</td><td class="conf m">Medium</td><td class="need">Lawful UBO / shareholder extract.</td></tr><tr><td>Regulatory exposure</td><td>Regulatory exposure for bunq B.V. includes registration context, not a no-risk conclusion.</td><td>Regulatory exposure analysis</td><td class="conf l">Gated</td><td class="need">Confirm licence / registration scope.</td></tr><tr><td>Reputation / adverse media</td><td>Reputation evidence for bunq B.V. includes target-relevant adverse-media signals requiring source review.</td><td>Adverse-media analysis</td><td class="conf m">Medium</td><td class="need">Periodic re-run; point-in-time signal.</td></tr><tr><td>Financial position</td><td>Finance forensic evidence for bunq B.V. records source unavailability while the statistical pattern analysis route itself is verified only as a techn…</td><td>Forensic finance analysis</td><td class="conf m">Medium</td><td class="need">KvK/XBRL annual accounts with source hash.</td></tr><tr><td>Operational / market</td><td>Business profile intelligence is source-backed context, not a substitute for official register evidence.</td><td>Public media &amp; company context</td><td class="conf m">Medium</td><td class="need">Corroboration &amp; context review.</td></tr><tr><td>Cyber footprint</td><td>2 infrastructure item(s) are classified as third-party edge/provider context, not target-owned exposure.</td><td>Infrastructure / exposure analysis</td><td class="conf h">High (context)</td><td class="need">Confirm origin-server / CDN scope.</td></tr></tbody></table></section>
+<section><h2>Verified Pass Upgrade Path</h2><p class="lede" style="font-size:17px">Verified Pass maps all eight DD topics into evidence-closure scenarios. Finance and ownership/UBO stay sequenced behind identity lock where the current sample has no authoritative entity lock.</p><table><thead><tr>
+<th style="width:22%">Claim area</th><th style="width:27%">Base report language</th><th style="width:30%">Required verification</th><th style="width:21%">Scenario range</th></tr></thead>
+<tbody><tr><td>Identity lock</td><td>configured and source-route context; official extract required for final reliance</td><td>Current official register extract for the scoped legal entity; Domain, trade name and address reconciliation against the authoritative identifier</td><td class="conf m">High priority<br>Conservative: 0-1 of 2 required artifacts, 0-40%, 1-2 business days, EUR 49-80; Normal: 1-2 of 2 required artifacts, 40-75%, 2-3 business days, EUR 80-120; Optimistic: 2 of 2 required artifacts, 75-100%, 3-5 business days, EUR 120-149. Not a score or outcome forecast.</td></tr><tr><td>Finance evidence</td><td>Finance forensic evidence for bunq B.V. records source unavailability while the statistical pattern analysis route itself is verified only as a technical path.</td><td>Recent official annual accounts, XBRL/PDF filing, audited statements, management accounts or seller P&amp;L; Debt, tax, cash, working-capital and off-balance-sheet schedules tied to the scoped legal entity</td><td class="conf m">Blocked until identity lock<br>Conservative: 0 of 2 topic artifacts until identity is locked, 0-20%, 2-5 business days, EUR 249-450; Normal: 0-1 of 2 topic artifacts after identity lock, 20-60%, 5-10 business days, EUR 450-600; Optimistic: 1-2 of 2 topic artifacts after identity lock, 60-100%, 10-15 business days, EUR 600-799. Not a score or outcome forecast.</td></tr><tr><td>Ownership and UBO</td><td>Ownership/register evidence for bunq B.V. found candidate context that needs official register confirmation.</td><td>Lawful UBO extract, shareholder register, current KvK extract, LEI Level 2 record or licensed ownership graph; Identifier disambiguation before any director, shareholder, UBO or group-control statement is promoted</td><td class="conf m">Blocked until identity lock<br>Conservative: 0 of 2 topic artifacts until identity is locked, 0-20%, 2-5 business days, EUR 149-250; Normal: 0-1 of 2 topic artifacts after identity lock, 20-60%, 5-10 business days, EUR 250-400; Optimistic: 1-2 of 2 topic artifacts after identity lock, 60-100%, 10-15 business days, EUR 400-499. Not a score or outcome forecast.</td></tr><tr><td>Sanctions and PEP</td><td>No source-supported sanctions/PEP match was found for bunq B.V. .</td><td>Sanctions/PEP screening result with checked_at timestamp and dataset version; Identifier disambiguation for the legal entity and relevant persons before stronger absence-of-match wording</td><td class="conf m">Evidence closure<br>Conservative: 0-1 of 2 required artifacts, 0-40%, same day, EUR 49-80; Normal: 1-2 of 2 required artifacts, 40-75%, 1-2 business days, EUR 80-120; Optimistic: 2 of 2 required artifacts, 75-100%, 2-5 business days, EUR 120-149. Not a score or outcome forecast.</td></tr><tr><td>Litigation and regulatory</td><td>Regulatory exposure for bunq B.V. includes registration context, not a no-risk conclusion.</td><td>Official court, regulator, licence or enforcement-register record with entity lock and checked_at timestamp; Counsel or analyst reconciliation note for ambiguous entity or jurisdiction matches</td><td class="conf m">Evidence closure<br>Conservative: 0-1 of 2 required artifacts, 0-40%, 2-4 business days, EUR 199-350; Normal: 1-2 of 2 required artifacts, 40-75%, 5-10 business days, EUR 350-550; Optimistic: 2 of 2 required artifacts, 75-100%, 10-20 business days, EUR 550-699. Not a score or outcome forecast.</td></tr><tr><td>Adverse media</td><td>Reputation evidence for bunq B.V. includes target-relevant adverse-media signals requiring source review.</td><td>Archived article/page artifact or primary document confirming the factual event; Publication date, target relevance, source hash and relevance note for each promoted media claim</td><td class="conf m">Evidence closure<br>Conservative: 0-1 of 2 required artifacts, 0-40%, 1-3 business days, EUR 149-250; Normal: 1-2 of 2 required artifacts, 40-75%, 3-7 business days, EUR 250-400; Optimistic: 2 of 2 required artifacts, 75-100%, 7-15 business days, EUR 400-499. Not a score or outcome forecast.</td></tr><tr><td>Cyber exposure</td><td>2 infrastructure item(s) are classified as third-party edge/provider context, not target-owned exposure.</td><td>Timestamped reproducible scan evidence with scan configuration and source hash; Asset-ownership proof before any exposed asset is attributed to the scoped target</td><td class="conf m">Evidence closure<br>Conservative: 0-1 of 2 required artifacts, 0-40%, 1-2 business days, EUR 299-550; Normal: 1-2 of 2 required artifacts, 40-75%, 3-7 business days, EUR 550-750; Optimistic: 2 of 2 required artifacts, 75-100%, 7-15 business days, EUR 750-999. Not a score or outcome forecast.</td></tr><tr><td>Business profile</td><td>Business profile intelligence is source-backed context, not a substitute for official register evidence.</td><td>Target-owned website artifact, official register extract, contract schedule or two independent source-bound corroborations; Timestamped source capture for market-position, product, customer or award claims</td><td class="conf m">Evidence closure<br>Conservative: 0-1 of 2 required artifacts, 0-40%, same day, EUR 49-80; Normal: 1-2 of 2 required artifacts, 40-75%, 1-3 business days, EUR 80-120; Optimistic: 2 of 2 required artifacts, 75-100%, 3-7 business days, EUR 120-149. Not a score or outcome forecast.</td></tr></tbody></table></section>
+<section><h2>Methodology &amp; Provenance</h2><div class="method"><div>
+<p>Every line in this memorandum is source-bound — recorded with source, status, recency, confidence and limitation. Risk signals are <strong>never</strong> promoted to a claim without authoritative primary documents and identifier confidence.</p>
+<p>Findings are redundantly validated across multiple independent analysis layers of DueSight's proprietary multi-model intelligence engine. The full audit trail is available as a machine-readable evidence ledger.</p>
+<p style="color:var(--muted);font-size:12.5px">Positioning: pre-DD screening — go/no-go before the data room, in minutes. Not document review or clause-level analysis.</p></div>
+<div><span class="eyebrow" style="display:block;margin-bottom:11px">Assurance</span><div class="badges">
+<span class="badge k">Privacy-by-design workflow</span><span class="badge k">AI transparency workflow</span><span class="badge">Benchmark manifest available</span><span class="badge">Auditable calculations</span><span class="badge">Source-bound evidence</span></div></div></div></section>
+<footer>DueSight · Pre-Diligence Intelligence Memorandum · Ref DS-2026-54992060 · Evidence snapshot 2026-05-28 · Rendered 2026-06-08<br>
+<span class="disc">Public and authorised sources only. This memorandum is pre-diligence screening and does not constitute investment, legal or tax advice. Sanctions, finance and ownership findings remain source-bound context until primary documents with a source hash are attached. Full substantiation in the accompanying evidence ledger.</span></footer>
+</div></body></html>

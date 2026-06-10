@@ -1,0 +1,153 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "Mollie B.V.",
+    "domain": "mollie.com",
+    "kvk": "30204462",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T08:45:52+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "codex_cli",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 7,
+      "source_urls": [
+        "https://api.gleif.org/",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Mollie+B.V.&page%5Bsize%5D=5",
+        "https://appexchange.salesforce.com/appxListingDetail?",
+        "https://appexchange.salesforce.com/appxListingDetail?listingId=36c467bc-e5ba-47e0-b72d-3f7c49333f70",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=Mollie+B.V.&rows=5",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://en.wikipedia.org/wiki/Mollie_(company",
+        "https://european-alternatives.eu/alternative-to-stripe",
+        "https://european-alternatives.eu/alternative-to/stripe",
+        "https://github.com/mollie/mollie-reaction-commerce",
+        "https://help.mollie.com/hc/en-us/articles/19315617471250"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "hermes_deepseek",
+        "local_xortron",
+        "minimax_highspeed_a"
+      ],
+      "provider_count": 4,
+      "source_urls": [
+        "https://api.gleif.org/",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Mollie+B.V.&page%5Bsize%5D=5",
+        "https://appexchange.salesforce.com/appxListingDetail?",
+        "https://appexchange.salesforce.com/appxListingDetail?listingId=36c467bc-e5ba-47e0-b72d-3f7c49333f70",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=Mollie+B.V.&rows=5",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://en.wikipedia.org/wiki/Mollie_(company",
+        "https://european-alternatives.eu/alternative-to-stripe",
+        "https://european-alternatives.eu/alternative-to/stripe"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "antigravity_codeassist",
+        "glm_direct",
+        "local_xortron"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "https://api.gleif.org/",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Mollie+B.V.&page%5Bsize%5D=5",
+        "https://appexchange.salesforce.com/appxListingDetail?",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://european-alternatives.eu/alternative-to/stripe"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "competitors",
+      "providers": [
+        "claude_code"
+      ],
+      "provider_count": 1,
+      "source_urls": [
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Mollie+B.V.&page%5Bsize%5D=5"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 1,
+      "source_urls": [
+        "https://help.mollie.com/hc/en-us/articles/19315617471250",
+        "https://mollie.com"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "claude_code",
+        "codex_cli",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 7,
+      "source_urls": [
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Mollie+B.V.&page%5Bsize%5D=5",
+        "https://appexchange.salesforce.com/appxListingDetail?listingId=36c467bc-e5ba-47e0-b72d-3f7c49333f70",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22Mollie+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=Mollie+B.V.&rows=5",
+        "https://de.wikipedia.org/wiki/Mollie",
+        "https://en.wikipedia.org/wiki/Mollie_(company",
+        "https://european-alternatives.eu/alternative-to-stripe",
+        "https://european-alternatives.eu/alternative-to/stripe",
+        "https://example.org/study\\",
+        "https://example.org\\",
+        "https://help.mollie.com/hc/en-us/articles/19315617471250",
+        "https://help.mollie.com/hc/en-us/articles/19315617471250-What-does-PCI-DSS-mean-for-me"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

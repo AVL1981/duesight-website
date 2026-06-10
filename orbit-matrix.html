@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>DueSight Orbit — Matrix Variant</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#040d1c;font-family:'Space Grotesk',system-ui,sans-serif;color:#fff;overflow-x:hidden}
+.demo-header{text-align:center;padding:40px 20px 16px;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase}
+.demo-header strong{color:#60a5fa;display:block;font-size:20px;margin-bottom:6px;letter-spacing:-0.5px;text-transform:none}
+.spacer{height:80vh;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.15);font-size:13px;letter-spacing:3px}
+#orbit-section{padding:60px 20px 100px}
+.section-label{text-align:center;margin-bottom:48px}
+.section-label h2{font-size:30px;font-weight:700;margin-bottom:14px;background:linear-gradient(135deg,#fff,rgba(255,255,255,0.65));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-label p{color:rgba(255,255,255,0.45);font-size:14px;max-width:620px;margin:0 auto;line-height:1.65}
+#orbit-stage{position:relative;width:880px;height:520px;max-width:100%;margin:0 auto;}
+#pause-hint{position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:11px;color:rgba(96,165,250,0.5);letter-spacing:1px;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:300;}
+#orbit-stage:hover #pause-hint{opacity:1;}
+#ds-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:155px;height:155px;border-radius:50%;background:linear-gradient(145deg,#0d1f40,#060d1e);border:2.5px solid rgba(96,165,250,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;box-shadow:0 0 0 10px rgba(96,165,250,0.05),0 0 40px rgba(96,165,250,0.18);cursor:default;}
+
+.ds-orbit-card{position:absolute;width:128px;height:128px;cursor:pointer;z-index:10;}
+
+/* VOORKANT = DONKER + bedrijfslogo in kleur */
+.ds-orbit-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;border-radius:50%;
+  background:linear-gradient(145deg,#1a2d50,#0d1a30);
+  border:2px solid rgba(96,165,250,0.3);
+  box-shadow:0 6px 24px rgba(0,0,0,0.35);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:transform 0.45s ease-in-out;
+}
+.ds-orbit-card.ds-flipped .ds-orbit-inner{transform:rotateY(180deg)}
+.ds-orbit-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent;}
+.ds-orbit-icon img{width:38px;height:38px;object-fit:contain;display:block;}
+.ds-orbit-name{font-size:11.5px;color:rgba(255,255,255,0.95);margin-top:5px;text-align:center;font-weight:700;white-space:nowrap;font-family:'Space Grotesk',system-ui;}
+.ds-orbit-model-label{font-size:9.5px;color:rgba(148,180,255,0.7);margin-top:1px;text-align:center;font-weight:500;font-family:'Space Grotesk',system-ui;}
+.ds-orbit-icon,.ds-orbit-name,.ds-orbit-model-label{backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+
+/* ACHTERKANT = WIT + productlogo in kleur */
+.ds-orbit-back-face{
+  position:absolute;inset:0;border-radius:50%;
+  background:#ffffff;border:2px solid rgba(0,0,0,0.07);
+  box-shadow:0 6px 24px rgba(0,0,0,0.15);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  transform:rotateY(180deg);padding:0 8px;
+}
+.ds-orbit-back-icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:transparent;margin-bottom:4px;}
+.ds-orbit-back-icon img{width:36px;height:36px;object-fit:contain;display:block;}
+.ds-orbit-brand{font-size:12px;font-weight:800;text-align:center;line-height:1.2;}
+.ds-orbit-back-sub{font-size:9px;color:#64748b;margin-top:2px;text-align:center;font-weight:500;}
+
+#ds-tooltip{position:fixed;display:none;background:rgba(8,18,42,0.97);border:1px solid rgba(96,165,250,0.28);border-radius:12px;padding:14px 18px;pointer-events:none;z-index:9999;min-width:185px;max-width:245px;backdrop-filter:blur(12px);}
+#tt-name{font-size:15px;font-weight:700;margin-bottom:3px}
+#tt-front{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.tt-div{height:1px;background:rgba(96,165,250,0.15);margin-bottom:8px}
+.tt-lbl{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(96,165,250,0.5);margin-bottom:3px}
+#tt-back{font-size:14px;font-weight:700}
+#orbit-canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:5;}
+</style>
+</head>
+<body>
+<div class="demo-header">
+  <strong>DueSight Orbit — Matrix Variant</strong>
+  Scroll omlaag · Hover = pauzeren
+</div>
+<div class="spacer">↓ &nbsp; Scroll naar beneden &nbsp; ↓</div>
+<div id="orbit-section">
+  <div class="section-label">
+    <h2>Multi-Agent Ensemble</h2>
+    <p>Elk AI-model valideert onafhankelijk zonder uw klantdata te ontvangen. Resultaat: een gekruist, herleidbaar rapport zonder single point of failure.</p>
+  </div>
+  <div id="orbit-stage">
+    <canvas id="orbit-canvas"></canvas>
+    <div id="pause-hint">⏸ GEPAUZEERD</div>
+    <div id="ds-hub">
+      <svg viewBox="0 0 130 130" width="122" height="122" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 62 Q42 22 65 22 Q88 22 116 62" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+        <path d="M14 62 Q42 102 65 102 Q88 102 116 62" fill="none" stroke="white" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="65" cy="62" r="25" fill="none" stroke="white" stroke-width="7"/>
+        <path d="M50 62 L62 75 L83 50" fill="none" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="65" y="122" font-family="'Space Grotesk',Arial,sans-serif" font-size="13.5" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-0.3">DueSight</text>
+      </svg>
+    </div>
+    <div id="ds-tooltip">
+      <div id="tt-name"></div><div id="tt-front"></div>
+      <div class="tt-div"></div>
+      <div class="tt-lbl">Product</div>
+      <div id="tt-back"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+
+var FAV='https://www.google.com/s2/favicons?domain=';
+
+var PAIRS=[
+  {name:'external model provider',     label:'EU Privacy',  productName:'Le Chat',   color:'#FF7000',
+   frontImg:FAV+'external model provider.ai&sz=64',        backImg:FAV+'chat.external model provider.ai&sz=64'},
+  {name:'external model provider',   label:'Nauwkeurig',  productName:'external model provider',    color:'#D97757',
+   frontImg:FAV+'provider-b.example&sz=64',     backImg:FAV+'specialist model.ai&sz=64'},
+  {name:'Meta',        label:'Open Source', productName:'specialist model',     color:'#0081FB',
+   frontImg:FAV+'meta.com&sz=64',          backImg:FAV+'provider-c.example&sz=64'},
+  {name:'Google',      label:'Web & Data',  productName:'external model provider',    color:'#4285F4',
+   frontImg:FAV+'google.com&sz=64',        backImg:FAV+'specialist model.google.com&sz=64'},
+  {name:'xAI',         label:'Actueel',     productName:'external model provider',      color:'#8B5CF6',
+   frontImg:FAV+'x.ai&sz=64',              backImg:FAV+'provider-e-chat.example&sz=64'},
+  {name:'NVIDIA',      label:'GPU Kracht',  productName:'NIM',       color:'#76B900',
+   frontImg:FAV+'nvidia.com&sz=64',        backImg:FAV+'build.nvidia.com&sz=64'},
+  {name:'external model provider',      label:'Ultra Smart', productName:'ChatGPT',   color:'#10a37f',
+   frontImg:FAV+'provider-f.example&sz=64',        backImg:FAV+'chatgpt.com&sz=64'},
+  {name:'Groq',        label:'Razendsnel',  productName:'GroqCloud', color:'#F55036',
+   frontImg:FAV+'groq.com&sz=64',          backImg:FAV+'console.groq.com&sz=64'},
+  {name:'OpenRouter',  label:'Multi-Model', productName:'API Hub',   color:'#6366f1',
+   frontImg:FAV+'openrouter.ai&sz=64',     backImg:FAV+'openrouter.ai&sz=64'},
+  {name:'GitHub',      label:'Open Source', productName:'Copilot',   color:'#6e40c9',
+   frontImg:FAV+'github.com&sz=64',        backImg:FAV+'githubcopilot.com&sz=64'},
+  {name:'Model Hub',    label:'AI Models',   productName:'Hub',       color:'#FF9D00',
+   frontImg:FAV+'modelhub.example&sz=64',  backImg:FAV+'modelhub.example&sz=64'},
+];
+
+var N=PAIRS.length;
+var stage=document.getElementById('orbit-stage');
+var cv=document.getElementById('orbit-canvas');
+var hub=document.getElementById('ds-hub');
+var tip=document.getElementById('ds-tooltip');
+var ctx=cv.getContext('2d');
+var CX=0,CY=0,RX=0,RY=0,CS=64;
+
+var isPaused=false;
+stage.addEventListener('mouseenter',function(){isPaused=true;});
+stage.addEventListener('mouseleave',function(){isPaused=false;hideTip();});
+
+function updateCenter(){
+  var sr=stage.getBoundingClientRect();
+  var hr=hub.getBoundingClientRect();
+  CX=hr.left-sr.left+hr.width/2;
+  CY=hr.top-sr.top+hr.height/2;
+  RX=sr.width*0.42;
+  RY=sr.height*0.30;
+}
+updateCenter();
+window.addEventListener('resize',function(){updateCenter();resize();});
+
+var cards=[];
+PAIRS.forEach(function(p,i){
+  var d=document.createElement('div');
+  d.className='ds-orbit-card';
+  d.innerHTML=
+    '<div class="ds-orbit-inner">'+
+      '<div class="ds-orbit-icon"><img src="'+p.frontImg+'" alt="'+p.name+'" width="38" height="38" onerror="this.style.opacity=0.4"></div>'+
+      '<div class="ds-orbit-name">'+p.name+'</div>'+
+      '<div class="ds-orbit-model-label">'+p.label+'</div>'+
+      '<div class="ds-orbit-back-face">'+
+        '<div class="ds-orbit-back-icon"><img src="'+p.backImg+'" alt="'+p.productName+'" width="36" height="36" onerror="this.onerror=null;this.src=\''+p.frontImg+'\'"></div>'+
+        '<div class="ds-orbit-brand" style="color:'+p.color+'">'+p.productName+'</div>'+
+        '<div class="ds-orbit-back-sub">'+p.name+'</div>'+
+      '</div>'+
+    '</div>';
+  d.style.cssText='position:absolute;opacity:0;';
+  d.addEventListener('mouseenter',function(e){showTip(p,e);});
+  d.addEventListener('mousemove',function(e){moveTip(e);});
+  d.addEventListener('mouseleave',function(){hideTip();});
+  stage.appendChild(d);
+  cards.push(d);
+});
+
+var baseAngles=PAIRS.map(function(_,i){return 2*Math.PI*i/N;});
+function resize(){var r=stage.getBoundingClientRect();cv.width=r.width||880;cv.height=r.height||520;}
+resize();
+
+function showTip(p,e){
+  document.getElementById('tt-name').textContent=p.name;
+  document.getElementById('tt-name').style.color=p.color;
+  document.getElementById('tt-front').textContent=p.label;
+  document.getElementById('tt-back').textContent=p.productName;
+  document.getElementById('tt-back').style.color=p.color;
+  moveTip(e);tip.style.display='block';
+}
+function moveTip(e){var x=e.clientX+16,y=e.clientY-12;if(x+250>window.innerWidth)x=e.clientX-260;tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.style.display='none';}
+function eOutEl(t){if(t<=0)return 0;if(t>=1)return 1;return Math.pow(2,-10*t)*Math.sin((t*10-.75)*(2*Math.PI/3))+1;}
+function heartPulse(t){var c=t%1;if(c<.08)return c/.08;if(c<.18)return 1-(c-.08)/.10;if(c<.26)return(c-.18)/.08*.35;if(c<.36)return .35-(c-.26)/.10*.35;return 0;}
+
+var state='idle',stateStart=0;
+var orbitAngle=0,flipped=new Array(N).fill(false),heartbeat=0;
+var matrixParticles=[],shockwaves=[],implodeParticles=[],whiteFlash=0;
+var MCHARS='アイウエオカキクケコDUESIGHT0110100{}[]<>()=>;:!@#ABCDEFGHIJKLMNabcde';
+var prevCos=new Array(N).fill(-1);
+
+// ═══ ORBIT RING TEKENFUNCTIE ═══
+function drawOrbitRing(){
+  ctx.save();
+  ctx.translate(CX,CY);
+  // Dashed ellipse — de baan van de kaarten
+  ctx.beginPath();
+  ctx.ellipse(0,0,RX,RY,0,0,Math.PI*2);
+  ctx.strokeStyle='rgba(96,165,250,0.18)';
+  ctx.lineWidth=1.5;
+  ctx.setLineDash([6,8]);
+  ctx.lineDashOffset=orbitAngle*-200; // beweegt mee met orbit
+  ctx.stroke();
+  // Subtiele gloed eromheen
+  ctx.beginPath();
+  ctx.ellipse(0,0,RX,RY,0,0,Math.PI*2);
+  ctx.strokeStyle='rgba(96,165,250,0.05)';
+  ctx.lineWidth=8;
+  ctx.setLineDash([]);
+  ctx.stroke();
+  ctx.restore();
+}
+
+function triggerImplosion(){
+  if(state!=='idle')return;
+  updateCenter();state='implode';stateStart=performance.now();
+  implodeParticles=[];
+  for(var i=0;i<85;i++){
+    var a=Math.random()*Math.PI*2,d=RX*0.8+Math.random()*RX*0.8;
+    implodeParticles.push({x:CX+Math.cos(a)*d,y:CY+Math.sin(a)*d,
+      ch:MCHARS[Math.floor(Math.random()*MCHARS.length)],
+      color:Math.random()>.55?'#fff':(Math.random()>.5?'#7dd3fc':'#86efac'),
+      sz:9+Math.random()*8,al:.5+Math.random()*.5,spd:.55+Math.random()*.45});
+  }
+}
+
+function triggerExplosion(){
+  state='explode';stateStart=performance.now();whiteFlash=1.0;
+  matrixParticles=[];
+  var csets=[['D','U','E','S','I','G','H','T'],['0','1'],['{','}','[',']','<','>','(',')',';'],['ア','イ','ウ','エ','オ','カ','キ']];
+  for(var i=0;i<155;i++){
+    var a=Math.random()*Math.PI*2,spd=85+Math.random()*295;
+    var cs=csets[Math.floor(Math.random()*csets.length)];
+    matrixParticles.push({x:CX,y:CY,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,ax:Math.cos(a)*(-22),ay:Math.sin(a)*(-22),
+      chars:Array.from({length:3+Math.floor(Math.random()*5)},function(){return cs[Math.floor(Math.random()*cs.length)];}),
+      color:Math.random()>.32?'#fff':(Math.random()>.5?'#7dd3fc':'#86efac'),
+      sz:8+Math.random()*10,al:1,life:.42+Math.random()*.58,age:0,trail:[]});
+  }
+  shockwaves=[
+    {r:10,maxR:Math.max(RX,RY)*1.5,a:1.0,spd:460,col:'255,255,255',w:5},
+    {r:10,maxR:Math.max(RX,RY)*1.25,a:.72,spd:350,col:'210,235,255',w:3},
+    {r:10,maxR:Math.max(RX,RY)*1.0,a:.48,spd:260,col:'160,210,255',w:1.5},
+  ];
+}
+
+function setCard(card,i,phase,ep,ee){
+  updateCenter();
+  var ang=baseAngles[i]+orbitAngle;
+  var cosAng=Math.cos(ang),sinAng=Math.sin(ang);
+  var t=(sinAng+1)/2;
+  var tx=CX+RX*cosAng-CS,ty=CY+RY*sinAng-CS;
+  var lx,ly,sc,op;
+  if(phase==='idle'){lx=CX-CS;ly=CY-CS;sc=0.03;op=0;}
+  else if(phase==='launch'){lx=(CX-CS)+(tx-(CX-CS))*ee;ly=(CY-CS)+(ty-(CY-CS))*ee;sc=0.08+ee*0.92;op=Math.min(1,ep*2.5);}
+  else{
+    lx=tx;ly=ty;sc=0.55+0.45*t;op=0.28+0.72*t;
+    var pc=prevCos[i];
+    if(pc<=0&&cosAng>0&&!flipped[i]){flipped[i]=true;card.classList.add('ds-flipped');}
+    if(pc>=0&&cosAng<0&&flipped[i]){flipped[i]=false;card.classList.remove('ds-flipped');}
+    prevCos[i]=cosAng;
+  }
+  card.style.left=lx.toFixed(1)+'px';card.style.top=ly.toFixed(1)+'px';
+  card.style.width=card.style.height='128px';
+  card.style.transform='scale('+sc.toFixed(3)+')';card.style.transformOrigin='64px 64px';
+  card.style.opacity=op.toFixed(3);card.style.zIndex=Math.round(t*10+(phase==='launch'?20:0));card.style.transition='none';
+}
+
+var lastT=null;
+function frame(ts){
+  if(!lastT)lastT=ts;
+  var dt=Math.min((ts-lastT)/1000,.05);lastT=ts;
+  resize();ctx.clearRect(0,0,cv.width,cv.height);
+  var el=(ts-stateStart)/1000;
+
+  if(whiteFlash>0){ctx.fillStyle='rgba(255,255,255,'+whiteFlash.toFixed(3)+')';ctx.fillRect(0,0,cv.width,cv.height);whiteFlash=Math.max(0,whiteFlash-dt*3.2);}
+
+  if(state==='idle') cards.forEach(function(c,i){setCard(c,i,'idle',0,0);});
+
+  if(state==='implode'){
+    var prog=Math.min(1,el/1.3);
+    implodeParticles.forEach(function(p){
+      var t2=Math.pow(prog*p.spd,2);
+      var x=p.x+(CX-p.x)*Math.min(1,t2),y=p.y+(CY-p.y)*Math.min(1,t2);
+      ctx.save();ctx.globalAlpha=p.al*(1-prog*.35);ctx.fillStyle=p.color;
+      ctx.font='bold '+Math.round(p.sz)+'px monospace';ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(p.ch,x,y);if(Math.random()<.08)p.ch=MCHARS[Math.floor(Math.random()*MCHARS.length)];ctx.restore();
+    });
+    hub.style.transform='translate(-50%,-50%) scale('+(1+Math.sin(el*8)*.03*(1-prog))+')';
+    hub.style.boxShadow='0 0 '+(20+prog*80)+'px rgba(96,165,250,'+(0.1+prog*.5)+')';
+    cards.forEach(function(c,i){setCard(c,i,'idle',0,0);});
+    if(prog>=1)triggerExplosion();
+  }
+
+  if(state==='explode'){
+    var prog=Math.min(1,el/2.2);
+    matrixParticles.forEach(function(p){
+      p.age+=dt;if(p.age>p.life)return;
+      p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx+=p.ax*dt;p.vy+=p.ay*dt;
+      p.trail.push({x:p.x,y:p.y});if(p.trail.length>8)p.trail.shift();
+      var a=(1-p.age/p.life);a*=a;
+      for(var ti=0;ti<p.trail.length-1;ti++){
+        ctx.save();ctx.globalAlpha=a*(ti/p.trail.length)*.5;ctx.strokeStyle=p.color;ctx.lineWidth=1.5;
+        ctx.beginPath();ctx.moveTo(p.trail[ti].x,p.trail[ti].y);ctx.lineTo(p.trail[ti+1].x,p.trail[ti+1].y);ctx.stroke();ctx.restore();
+      }
+      p.chars.forEach(function(ch,ci){
+        var ca=a*(1-ci/p.chars.length);if(ca<.02)return;
+        ctx.save();ctx.globalAlpha=ca;ctx.fillStyle=ci===0?'#fff':p.color;
+        ctx.font='bold '+Math.round(p.sz*(1-ci*.08))+'px monospace';ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText(ch,p.x,(p.y+ci*p.sz*1.1));ctx.restore();
+      });
+    });
+    shockwaves.forEach(function(w){
+      w.r+=w.spd*dt;w.a=Math.max(0,1-(w.r/w.maxR));if(w.a<=0)return;
+      ctx.beginPath();ctx.arc(CX,CY,w.r,0,6.28);
+      ctx.strokeStyle='rgba('+w.col+','+w.a.toFixed(3)+')';ctx.lineWidth=w.w;ctx.stroke();
+    });
+    hub.style.boxShadow='0 0 '+(40+Math.max(0,1-prog*2)*110)+'px rgba(210,235,255,'+Math.max(0,1-prog*2).toFixed(2)+')';
+    if(prog>.12){var cp=Math.min(1,(prog-.12)/.88),ee=eOutEl(cp);cards.forEach(function(c,i){setCard(c,i,'launch',cp,ee);});}
+    if(prog>=1){state='orbit';stateStart=ts;hub.style.boxShadow='0 0 0 10px rgba(96,165,250,0.05),0 0 30px rgba(96,165,250,0.15)';}
+  }
+
+  if(state==='orbit'){
+    if(!isPaused)orbitAngle+=0.000155*16*dt*60;
+
+    // ═══ TEKEN ORBIT RING ═══
+    drawOrbitRing();
+
+    heartbeat+=dt*.85;
+    var hb=heartPulse(heartbeat),hs=1+hb*.028;
+    hub.style.transform='translate(-50%,-50%) scale('+hs.toFixed(4)+')';
+    hub.style.boxShadow='0 0 '+(14+hb*28)+'px rgba(96,165,250,'+(0.10+hb*.25)+'),0 0 '+(22+hb*45)+'px rgba(96,165,250,'+(hb*.08)+'),0 0 0 10px rgba(96,165,250,'+(0.03+hb*.05)+')';
+    if(hb>.04){
+      ctx.beginPath();ctx.arc(CX,CY,82+hb*22,0,6.28);
+      ctx.strokeStyle='rgba(96,165,250,'+(hb*.18).toFixed(3)+')';ctx.lineWidth=1.2+hb*1.2;ctx.stroke();
+      ctx.beginPath();ctx.arc(CX,CY,98+hb*32,0,6.28);
+      ctx.strokeStyle='rgba(96,165,250,'+(hb*.06).toFixed(3)+')';ctx.lineWidth=0.8;ctx.stroke();
+    }
+    cards.forEach(function(c,i){setCard(c,i,'orbit',1,1);});
+  }
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+var triggered=false;
+var obs=new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting&&!triggered){
+    triggered=true;obs.disconnect();
+    setTimeout(function(){updateCenter();triggerImplosion();},400);
+  }
+},{threshold:.25});
+obs.observe(document.getElementById('orbit-section'));
+
+})();
+</script>
+</body>
+</html>

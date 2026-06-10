@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DueSight — Sales Intelligence Tool</title>
+<!-- MOLLIE PAYMENT LINKS — vervang deze URLs met je echte Mollie payment link URLs -->
+<script>
+  var MOLLIE = {
+    compact:  'https://buy.mollie.com/JOUW_COMPACT_LINK',    // €79 Compact Scan
+    predd:    'https://buy.mollie.com/JOUW_PREDD_LINK',     // €399 Pre-DD Rapport
+    mon:      'https://buy.mollie.com/JOUW_MONITORING_LINK', // €19/mnd per bedrijf
+    // Volume-packs: op aanvraag tot checkout/delivery/tests zijn ingericht
+    // compact5:  'Op aanvraag 5+ credits Compact',
+    // compact10: 'Op aanvraag 10+ credits Compact',
+    // predd3:    'Op aanvraag 3x Pre-DD',
+    // predd5:    'Op aanvraag 5x Pre-DD',
+  };
+  var SCAN_URL = 'https://duesight.nl/#scan-d'; // link naar de live scan op homepage
+</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2306080f' stroke='%233b82f6' stroke-width='3'/%3E%3Cpath d='M9 16l5 5 9-11' fill='none' stroke='%23f8fafc' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0a0a19;--bg2:#13131f;--bg3:#1a1a28;--bg4:#1f1f2e;
+    --text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;
+    --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);
+    --accent:#7c87f3;--accent-light:#bdc2ff;--accent-bg:rgba(124,135,243,0.08);--accent-border:rgba(124,135,243,0.3);
+    --green:#4ade80;--green-bg:rgba(34,197,94,0.08);--green-border:rgba(34,197,94,0.2);
+    --red:#f87171;--red-bg:rgba(239,68,68,0.08);
+    --amber:#fbbf24;--amber-bg:rgba(245,158,11,0.08);--amber-border:rgba(245,158,11,0.2);
+    --radius-lg:12px;--radius-md:8px;--radius-sm:6px;
+  }
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:13px;line-height:1.5}
+
+  /* TOP BAR */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--border);background:rgba(0,0,0,0.3);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100}
+  .topbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .topbar-logo svg{width:28px;height:28px}
+  .topbar-name{font-size:16px;font-weight:700;background:linear-gradient(135deg,#e2e8f0,#a5b4fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .topbar-badge{font-size:10px;padding:3px 10px;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.25);border-radius:20px;color:#fb923c;font-weight:600;letter-spacing:.5px}
+  .back-link{font-size:12px;color:var(--text2);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+  .back-link:hover{color:var(--text)}
+
+  /* LAYOUT */
+  .container{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+  .page-title{font-size:1.6rem;font-weight:700;margin-bottom:4px}
+  .page-sub{font-size:13px;color:var(--text2);margin-bottom:32px}
+
+  /* TABS */
+  .ps-tabs{display:flex;gap:2px;margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:0;overflow-x:auto}
+  .ps-tab{padding:10px 18px;font-size:12px;font-weight:500;cursor:pointer;color:var(--text2);border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s}
+  .ps-tab:hover{color:var(--text)}
+  .ps-tab.active{color:var(--text);border-bottom-color:var(--accent-light)}
+  .ps-panel{display:none}.ps-panel.active{display:block}
+
+  /* SECTION LABEL */
+  .section-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;margin-top:4px}
+
+  /* ANCHOR GRID */
+  .anchor-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+  @media(max-width:640px){.anchor-grid{grid-template-columns:1fr}}
+  .anchor-card{background:var(--bg3);border-radius:var(--radius-lg);padding:16px;border:1px solid var(--border)}
+  .anchor-card.hl{border:1.5px solid var(--accent-border);background:var(--bg4)}
+  .anchor-name{font-size:10px;font-weight:600;color:var(--text2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+  .anchor-name.hl{color:var(--accent-light)}
+  .anchor-price{font-size:22px;font-weight:700;margin-bottom:3px}
+  .anchor-sub{font-size:10px;color:var(--text2);margin-bottom:12px}
+  .anchor-feat{list-style:none;font-size:11px;color:var(--text2);line-height:2}
+  .anchor-feat li{display:flex;align-items:center;gap:6px}
+  .check-y{color:var(--green);font-weight:700}
+  .check-n{color:var(--red)}
+  .check-p{color:var(--amber)}
+
+  /* INFO BOX */
+  .info-box{background:var(--accent-bg);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:14px 18px;font-size:12px;color:var(--text2);line-height:1.8;border-left:3px solid var(--accent);margin-bottom:0}
+  .info-box strong{color:var(--text)}
+
+  /* TIER GRID */
+  .tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+  @media(max-width:560px){.tier-grid{grid-template-columns:1fr}}
+  .tier-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column}
+  .tier-card.feat{border:1.5px solid var(--accent-border)}
+  .tier-badge{font-size:10px;padding:3px 12px;border-radius:20px;background:var(--accent-bg);color:var(--accent-light);display:inline-block;margin-bottom:10px;font-weight:600;border:1px solid var(--accent-border)}
+  .tier-name{font-size:15px;font-weight:700;margin-bottom:3px}
+  .tier-desc{font-size:11px;color:var(--text2);margin-bottom:14px;line-height:1.6}
+  .tier-price{font-size:28px;font-weight:700;margin-bottom:2px}
+  .tier-price-sub{font-size:11px;color:var(--text2);margin-bottom:14px}
+  .tier-feats{font-size:11px;color:var(--text2);line-height:2;border-top:1px solid var(--border);padding-top:12px;margin-bottom:16px;flex:1;list-style:none}
+  .tier-feats li{display:flex;gap:7px;align-items:flex-start}
+  .tier-btn{width:100%;padding:10px;border:1px solid var(--border2);border-radius:var(--radius-md);background:transparent;color:var(--text);font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+  .tier-btn:hover{border-color:var(--accent-border);color:var(--accent-light)}
+  .tier-btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#0d0d17;border:none;font-weight:700}
+  .tier-btn.primary:hover{box-shadow:0 6px 20px rgba(124,135,243,0.35);transform:translateY(-1px)}
+
+  /* VOL STRIP */
+  .vol-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px}
+  @media(max-width:560px){.vol-strip{grid-template-columns:1fr 1fr}}
+  .vol-card{background:var(--bg3);border-radius:var(--radius-md);padding:11px 14px;border:1px solid var(--border);cursor:pointer;transition:all .2s}
+  .vol-card:hover{border-color:var(--border2)}
+  .vol-card.sel{border-color:var(--accent-border);background:var(--accent-bg)}
+  .vol-label{font-size:10px;color:var(--text2);margin-bottom:4px}
+  .vol-price{font-size:15px;font-weight:700}
+  .vol-save{font-size:10px;color:var(--green);margin-top:3px;min-height:14px}
+
+  /* MONITORING BAR */
+  .mon-bar{display:flex;align-items:center;gap:16px;background:var(--bg3);border-radius:var(--radius-lg);padding:16px;margin-bottom:20px;border:1px solid var(--border);flex-wrap:wrap}
+  .mon-info{flex:1;min-width:200px}
+  .mon-title{font-size:13px;font-weight:600;margin-bottom:3px}
+  .mon-desc{font-size:11px;color:var(--text2);line-height:1.5}
+  .mon-price{text-align:right;min-width:70px}
+  .mon-amount{font-size:20px;font-weight:700}
+  .mon-sub{font-size:10px;color:var(--text2)}
+  .mon-btn{padding:9px 18px;border:1px solid var(--border2);border-radius:var(--radius-md);background:transparent;color:var(--text);font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:'Inter',sans-serif}
+  .mon-btn:hover{border-color:var(--green-border);color:var(--green)}
+  .mon-btn.on{background:var(--green-bg);border-color:var(--green-border);color:var(--green)}
+
+  /* CHECKOUT */
+  .checkout-box{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:16px}
+  .checkout-hd{background:var(--bg3);padding:11px 16px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text2)}
+  .addon-row{display:grid;grid-template-columns:1fr 70px 100px;gap:10px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border)}
+  .addon-row:last-child{border-bottom:none}
+  .addon-name{font-size:12px;font-weight:600}
+  .addon-desc{font-size:10px;color:var(--text2);margin-top:2px;line-height:1.5}
+  .addon-price{font-size:12px;font-weight:600;color:var(--text2)}
+  .addon-btn{font-size:10px;padding:5px 12px;border:1px solid var(--border2);border-radius:var(--radius-sm);background:transparent;color:var(--text);cursor:pointer;white-space:nowrap;text-align:center;transition:all .2s;font-family:'Inter',sans-serif}
+  .addon-btn:hover{border-color:var(--accent-border)}
+  .addon-btn.on{background:var(--green-bg);border-color:var(--green-border);color:var(--green)}
+  .total-row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--bg3);border-radius:var(--radius-md);margin-bottom:12px;border:1px solid var(--border)}
+  .total-lbl{font-size:12px;color:var(--text2)}
+  .total-items{font-size:10px;color:var(--text3);margin-top:3px}
+  .total-amt{font-size:22px;font-weight:700}
+  .checkout-cta{width:100%;padding:12px;background:linear-gradient(135deg,var(--accent),var(--accent-light));color:#0d0d17;border:none;border-radius:var(--radius-md);font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;margin-bottom:10px}
+  .checkout-cta:hover{box-shadow:0 8px 24px rgba(124,135,243,0.35);transform:translateY(-1px)}
+  .pay-note{font-size:10px;color:var(--text3);text-align:center}
+
+  /* SALES TALK */
+  .talk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  @media(max-width:640px){.talk-grid{grid-template-columns:1fr}}
+  .talk-card{background:var(--bg3);border-radius:var(--radius-lg);padding:16px;border:1px solid var(--border);cursor:pointer;transition:all .2s}
+  .talk-card:hover{border-color:var(--border2)}
+  .talk-card.open{border-color:var(--accent-border);background:var(--bg4)}
+  .talk-q{font-size:12px;font-weight:600;margin-bottom:0;line-height:1.5}
+  .talk-a{font-size:11px;color:var(--text2);line-height:1.8;margin-top:12px;border-top:1px solid var(--border);padding-top:12px;display:none}
+  .talk-card.open .talk-a{display:block}
+  .talk-icp{font-size:10px;padding:2px 9px;border-radius:20px;background:var(--accent-bg);color:var(--accent-light);display:inline-block;margin-bottom:8px;font-weight:600;border:1px solid var(--accent-border)}
+  .talk-icp.c{background:var(--green-bg);color:var(--green);border-color:var(--green-border)}
+  .talk-icp.n{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
+  .opening-box{background:var(--bg3);border-radius:0 var(--radius-lg) var(--radius-lg) 0;padding:16px 18px;font-size:12px;color:var(--text2);line-height:1.9;border-left:3px solid var(--accent)}
+
+  /* LTV */
+  .ltv-calc{background:var(--bg3);border-radius:var(--radius-lg);padding:20px;margin-bottom:16px;border:1px solid var(--border)}
+  .ltv-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .ltv-label{font-size:12px;color:var(--text2);min-width:180px}
+  .ltv-row input[type=range]{flex:1;accent-color:var(--accent)}
+  .ltv-val{font-size:13px;font-weight:700;min-width:55px;text-align:right}
+  .ltv-result{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px;border-top:1px solid var(--border);padding-top:18px}
+  @media(max-width:560px){.ltv-result{grid-template-columns:1fr 1fr}}
+  .ltv-metric{background:var(--bg2);border-radius:var(--radius-md);padding:12px;border:1px solid var(--border)}
+  .ltv-metric.hl{background:var(--accent-bg);border-color:var(--accent-border)}
+  .ltv-metric-label{font-size:10px;color:var(--text2);margin-bottom:4px;font-weight:500}
+  .ltv-metric.hl .ltv-metric-label{color:var(--accent-light)}
+  .ltv-metric-value{font-size:18px;font-weight:700}
+  .ltv-metric.hl .ltv-metric-value{color:var(--accent-light)}
+  .ltv-footnote{font-size:11px;color:var(--text3);line-height:1.7}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="/" class="topbar-logo">
+    <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="url(#lg)"/><path d="M10 16l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#7c87f3"/><stop offset="1" stop-color="#bdc2ff"/></linearGradient></defs></svg>
+    <span class="topbar-name">DueSight</span>
+  </a>
+  <span class="topbar-badge">🔒 INTERN · VERTROUWELIJK</span>
+  <a href="/" class="back-link">← Terug naar website</a>
+</div>
+
+<div class="container">
+  <div class="page-title">Sales Intelligence Tool</div>
+  <p class="page-sub">Waarde-anker · Pricing · Bezwaar-scripts · LTV-rekenmachine — voor intern gebruik en live demos</p>
+
+  <div class="ps-tabs">
+    <button class="ps-tab active" onclick="showTab(this,'anchor')">💡 Waarde-anker</button>
+    <button class="ps-tab" onclick="showTab(this,'pricing')">💳 Pricing + Checkout</button>
+    <button class="ps-tab" onclick="showTab(this,'salestalk')">🎯 Sales Talk</button>
+    <button class="ps-tab" onclick="showTab(this,'ltv')">📊 LTV-rekenmachine</button>
+  </div>
+
+  <!-- TAB 1: WAARDE-ANKER -->
+  <div id="tab-anchor" class="ps-panel active">
+    <div class="section-label">Competitief anker — waarom DueSight wint op waarde</div>
+    <div class="anchor-grid">
+      <div class="anchor-card">
+        <div class="anchor-name">Handmatig (nu)</div>
+        <div class="anchor-price">4–6 uur</div>
+        <div class="anchor-sub">per target screening</div>
+        <ul class="anchor-feat">
+          <li><span class="check-p">~</span> KvK uittreksel</li>
+          <li><span class="check-p">~</span> Google News scan</li>
+          <li><span class="check-n">✗</span> Sanctie / UBO check</li>
+          <li><span class="check-n">✗</span> NIS2 / cyber analyse</li>
+          <li><span class="check-n">✗</span> forensische analyse</li>
+          <li><span class="check-n">✗</span> Gestructureerd rapport</li>
+        </ul>
+      </div>
+      <div class="anchor-card hl">
+        <div class="anchor-name hl">DueSight</div>
+        <div class="anchor-price" style="background:linear-gradient(135deg,#e2e8f0,#a5b4fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">€79–399</div>
+        <div class="anchor-sub">per rapport · 3 minuten</div>
+        <ul class="anchor-feat">
+          <li><span class="check-y">✓</span> 47 databases</li>
+          <li><span class="check-y">✓</span> Sanctie + UBO + Wwft</li>
+          <li><span class="check-y">✓</span> NIS2 + cyberscan</li>
+          <li><span class="check-y">✓</span> forensische data-analyse</li>
+          <li><span class="check-y">✓</span> Bronsterkte-indicatie</li>
+          <li><span class="check-y">✓</span> Bronvermelding per claim</li>
+        </ul>
+      </div>
+      <div class="anchor-card">
+        <div class="anchor-name">Creditsafe / alternatieven</div>
+        <div class="anchor-price">€2.000+</div>
+        <div class="anchor-sub">per jaar, abonnement</div>
+        <ul class="anchor-feat">
+          <li><span class="check-y">✓</span> Kredietscore</li>
+          <li><span class="check-p">~</span> Basisgegevens</li>
+          <li><span class="check-n">✗</span> Cyber / NIS2</li>
+          <li><span class="check-n">✗</span> forensische analyse</li>
+          <li><span class="check-n">✗</span> Bronsterkte-indicatie</li>
+          <li><span class="check-n">✗</span> Pre-DD kwaliteit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-box">
+      <strong>Het waarde-anker voor de sales call:</strong> "Een gemiddeld MKB-overnametraject kost uw klant €150.000–€250.000 aan adviseursfees. Een DueSight Pre-DD rapport is €399 — minder dan 0,3% van uw fee. Als dat rapport één risico ontdekt dat de deal beïnvloedt, heeft het zichzelf honderdvoudig terugverdiend."
+    </div>
+  </div>
+
+  <!-- TAB 2: PRICING + CHECKOUT -->
+  <div id="tab-pricing" class="ps-panel">
+    <div class="section-label">Kernrapportages</div>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Compact</div>
+        <div class="tier-desc">Leverancier, klant of concurrent — directe risicobeoordeling conform Wwft/KYC</div>
+        <div class="tier-price">€79</div>
+        <div class="tier-price-sub">per rapport · resultaat in 3 min.</div>
+        <ul class="tier-feats">
+          <li><span class="check-y">✓</span> Sancties, UBO &amp; Wwft screening</li>
+          <li><span class="check-y">✓</span> Financiële gezondheid &amp; sectorpositie</li>
+          <li><span class="check-y">✓</span> NIS2 basiscyberbeoordeling</li>
+          <li><span class="check-y">✓</span> Digitale aanwezigheid &amp; reputatie</li>
+          <li><span class="check-y">✓</span> Bronsterkte-indicatie + bronvermelding</li>
+        </ul>
+        <button class="tier-btn" onclick="startDemo('compact')">▶ Demo starten →</button>
+      </div>
+      <div class="tier-card feat">
+        <div class="tier-badge">Aanbevolen voor M&amp;A</div>
+        <div class="tier-name">Pre-DD</div>
+        <div class="tier-desc">Volledige pre-due diligence — 11 analyseclusters, forensisch niveau</div>
+        <div class="tier-price">€399</div>
+        <div class="tier-price-sub">per rapport · resultaat in 3–5 min.</div>
+        <ul class="tier-feats">
+          <li><span class="check-y">✓</span> Alles uit Compact</li>
+          <li><span class="check-y">✓</span> forensische data-analyse</li>
+          <li><span class="check-y">✓</span> MITRE ATT&amp;CK mapping</li>
+          <li><span class="check-y">✓</span> Management profiling</li>
+          <li><span class="check-y">✓</span> Audio-rapport inbegrepen</li>
+          <li><span class="check-y">✓</span> Zero-retention dropzone [beta]</li>
+        </ul>
+        <button class="tier-btn primary" onclick="startDemo('predd')">▶ Demo starten →</button>
+      </div>
+    </div>
+
+    <div class="section-label">Volumepakketten — bespaar op herhaling</div>
+    <div class="vol-strip">
+      <div class="vol-card sel" onclick="selVol(this,79,'1 rapport','compact')"><div class="vol-label">Compact · los</div><div class="vol-price">€79</div><div class="vol-save">&nbsp;</div></div>
+      <div class="vol-card" onclick="selVol(this,79,'5+ credits','compact')"><div class="vol-label">Compact · 5+ credits</div><div class="vol-price">Op aanvraag</div><div class="vol-save">volumekorting</div></div>
+    </div>
+    <div class="vol-strip">
+      <div class="vol-card" onclick="selVol(this,399,'1 Pre-DD','predd')"><div class="vol-label">Pre-DD · los</div><div class="vol-price">€399</div><div class="vol-save">&nbsp;</div></div>
+      <div class="vol-card" onclick="selVol(this,399,'3+ credits','predd')"><div class="vol-label">Pre-DD · 3+ credits</div><div class="vol-price">Op aanvraag</div><div class="vol-save">volumekorting</div></div>
+    </div>
+      <div class="mon-info">
+        <div class="mon-title">Monitoring</div>
+        <div class="mon-desc">Continue bewaking — sanctie-alerts, KvK-mutaties, delta-rapportage. Per bedrijf activeren.</div>
+      </div>
+      <div class="mon-price"><div class="mon-amount">€19</div><div class="mon-sub">/mnd per bedrijf</div></div>
+      <button class="mon-btn" id="mon-toggle" onclick="toggleMon()">+ Activeren</button>
+    </div>
+
+    <div id="checkout-area" style="display:none">
+      <div class="section-label">Toevoegen bij afrekenen</div>
+      <div class="checkout-box">
+        <div class="checkout-hd" id="co-hd">Uitbreidingsmodules — optioneel</div>
+        <div id="addons-container"></div>
+      </div>
+      <div class="total-row">
+        <div><div class="total-lbl">Totaal</div><div class="total-items" id="co-items">—</div></div>
+        <div class="total-amt" id="co-total">€0</div>
+      </div>
+      <div style="margin-bottom:16px">
+        <label style="font-size:11px;color:#94a3b8;display:block;margin-bottom:6px;">Bedrijfsnaam of KvK-nummer van het te analyseren bedrijf</label>
+        <input type="text" id="co-company" placeholder="bijv. Acme B.V. of 12345678" style="width:100%;padding:11px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius-md);color:var(--text);font-size:13px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(124,135,243,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+      </div>
+      <button class="checkout-cta" onclick="goToPayment()">🔒 Doorgaan naar betaling via Mollie →</button>
+      <div class="pay-note">iDEAL · Visa · Mastercard · SEPA-factuur · Geen abonnement verplicht · Rapport binnen 3 minuten</div>
+      <div style="margin-top:10px;text-align:center"><a href="/" style="font-size:11px;color:#64748b;text-decoration:none">← Of start eerst de teaser scan op duesight.nl</a></div>
+    </div>
+  </div>
+
+  <!-- TAB 3: SALES TALK -->
+  <div id="tab-salestalk" class="ps-panel">
+    <div class="section-label">Bezwaar-scripts — klik om te openen</div>
+    <div class="talk-grid">
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp">M&amp;A boutique</div>
+        <div class="talk-q">"We doen dit al handmatig met KvK en Google."</div>
+        <div class="talk-a">Begrijpelijk — dat doen de meeste adviseurs. Maar handmatig mist u structureel drie dingen: sanctie-screening via OpenSanctions (wettelijk verplicht onder Wwft), NIS2-cyberbeoordeling (direct relevant voor koopprijs), en forensische data-analyse op jaarrekeningen. Dat zijn precies de risico's die pas laat in het traject opduiken — na significante investering van uw tijd. DueSight checkt dit in drie minuten voor €79. Mag ik u een live scan tonen van een bedrijf dat u al kent?</div>
+      </div>
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp">M&amp;A boutique</div>
+        <div class="talk-q">"Wij gebruiken al Creditsafe."</div>
+        <div class="talk-a">Creditsafe is uitstekend voor kredietscoring — het vertelt u of een bedrijf zijn rekeningen kan betalen. DueSight is iets anders: pre-due diligence intelligence. Het vertelt u of u überhaupt zaken wilt doen met dit bedrijf. Cyber-risicoprofiel, sanctie-exposure, managementintegriteit, financieel forensisch — dat zit niet in Creditsafe. Beide tools vullen elkaar aan. Veel adviseurs gebruiken ons naast Creditsafe.</div>
+      </div>
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp c">Compliance</div>
+        <div class="talk-q">"Is dit privacy-aligned? Wij mogen geen klantdata delen."</div>
+        <div class="talk-a">Absoluut. DueSight verwerkt uitsluitend openbare bedrijfsinformatie — geen persoonsgegevens van uw klanten. U geeft ons alleen een KvK-nummer. We hebben een verwerkersovereenkomst conform AVG art. 28, een uitgevoerde DPIA, en zero-retention protocol. De DPA kunt u nu downloaden op duesight.nl/dpa.</div>
+      </div>
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp c">Compliance</div>
+        <div class="talk-q">"Hoe betrouwbaar zijn de data?"</div>
+        <div class="talk-a">Elke claim heeft een directe bronvermelding — u ziet precies welke database de informatie geleverd heeft. De confidence-indicatie geeft per sectie aan hoe sterk de bronbasis is. De multi-source evidence review valideert bevindingen over meerdere onafhankelijke analyselagen. Geen black box: u behoudt altijd uw professioneel oordeel.</div>
+      </div>
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp n">Notaris</div>
+        <div class="talk-q">"€79 per akte is te duur bij honderd aktes."</div>
+        <div class="talk-a">Dan is een volumepakket interessant: bij honderd Wwft-plichtige aktes per jaar bieden we scherpe tarieven op maat. Tegenover handmatig: 30–45 minuten per akte à uw uurtarief. Bij €150/uur kost u datzelfde al €7.500, exclusief het risico van een gemiste sanctiematch. Bovendien is het rapport direct inzetbaar als bewijs van cliëntenonderzoek in uw Wwft-dossier. Neem contact op voor een offerte.</div>
+      </div>
+      <div class="talk-card" onclick="this.classList.toggle('open')">
+        <div class="talk-icp">M&amp;A boutique</div>
+        <div class="talk-q">"Laat me er even over nadenken."</div>
+        <div class="talk-a">Volkomen begrijpelijk. Geef me het KvK-nummer van het bedrijf dat u nu het meest bezighoudt — een lopend dossier of target die u binnenkort benadert. Ik laat u binnen vijf minuten een live rapport zien, gratis en zonder verplichtingen. Als het niets toevoegt, zegt u dat gewoon. Anders weet u precies wat u krijgt.</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:24px">Opening — de eerste 60 seconden</div>
+    <div class="opening-box">
+      "U begeleidt gemiddeld [X] transacties per jaar. Voor elke transactie screent u meerdere targets. Dat kost uw team [Y] uur per week aan handmatige checks die geen toegevoegde waarde leveren voor uw klant — alleen risicobeheersing voor uzelf. DueSight comprimeert dat naar drie minuten per check, met bronvermelding die direct in uw dossier past. Mag ik u tonen hoe dat eruitziet op een bedrijf dat u kent?"
+    </div>
+  </div>
+
+  <!-- TAB 4: LTV CALCULATOR -->
+  <div id="tab-ltv" class="ps-panel">
+    <div class="section-label">LTV-rekenmachine — jaarwaarde per klantprofiel</div>
+    <div class="ltv-calc">
+      <div class="ltv-row">
+        <div class="ltv-label">Deals per jaar</div>
+        <input type="range" min="5" max="150" value="50" step="5" oninput="calcLtv()" id="sl-deals">
+        <div class="ltv-val" id="lv-deals">50</div>
+      </div>
+      <div class="ltv-row">
+        <div class="ltv-label">Compact-scans per deal</div>
+        <input type="range" min="1" max="10" value="4" step="1" oninput="calcLtv()" id="sl-compact">
+        <div class="ltv-val" id="lv-compact">4</div>
+      </div>
+      <div class="ltv-row">
+        <div class="ltv-label">Pre-DD per deal</div>
+        <input type="range" min="0" max="3" value="1" step="1" oninput="calcLtv()" id="sl-predd">
+        <div class="ltv-val" id="lv-predd">1</div>
+      </div>
+      <div class="ltv-row">
+        <div class="ltv-label">Monitoring (bedrijven)</div>
+        <input type="range" min="0" max="50" value="10" step="1" oninput="calcLtv()" id="sl-mon">
+        <div class="ltv-val" id="lv-mon">10</div>
+      </div>
+      <div class="ltv-result">
+        <div class="ltv-metric"><div class="ltv-metric-label">Compact / jaar</div><div class="ltv-metric-value" id="lv-rc">€15.800</div></div>
+        <div class="ltv-metric"><div class="ltv-metric-label">Pre-DD / jaar</div><div class="ltv-metric-value" id="lv-rp">€19.950</div></div>
+        <div class="ltv-metric"><div class="ltv-metric-label">Monitoring / jaar</div><div class="ltv-metric-value" id="lv-rm">€2.280</div></div>
+        <div class="ltv-metric hl"><div class="ltv-metric-label">Jaarlijkse LTV</div><div class="ltv-metric-value" id="lv-total">€38.030</div></div>
+        <div class="ltv-metric"><div class="ltv-metric-label">Uren bespaard</div><div class="ltv-metric-value" id="lv-hrs">400 uur</div></div>
+        <div class="ltv-metric"><div class="ltv-metric-label">Break-even bij</div><div class="ltv-metric-value" id="lv-be">1 rapport</div></div>
+      </div>
+    </div>
+    <div class="ltv-footnote">Aannames: Compact effectief €65/rapport (10-pack), Pre-DD €399/rapport, Monitoring €19/mnd/bedrijf. Uren bespaard = 45 min. per handmatige check. Break-even = 1e rapport dat 1 risicogebeurtenis detecteert die anders gemist was.</div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+function showTab(btn, id) {
+  document.querySelectorAll('.ps-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.ps-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// ── Deeplink Handler: ?product=compact|predd&company=Naam auto-opens checkout ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var product = params.get('product');
+  var company = params.get('company') || '';
+  if (product === 'compact' || product === 'predd') {
+    // Switch to pricing tab
+    var pricingBtn = document.querySelectorAll('.ps-tab')[1];
+    if (pricingBtn) showTab(pricingBtn, 'pricing');
+    // Auto-open checkout after short delay (let DOM render)
+    setTimeout(function() {
+      openCheckout(product);
+      // Pre-fill company name if provided
+      if (company) {
+        var input = document.getElementById('co-company');
+        if (input) input.value = decodeURIComponent(company);
+      }
+    }, 400);
+    // Scroll to checkout
+    setTimeout(function() {
+      var el = document.getElementById('checkout-area');
+      if (el) el.scrollIntoView({behavior: 'smooth', block: 'center'});
+    }, 600);
+  }
+})();
+
+var curTier = null, curBase = 0, addons = {};
+var addonDefs = {
+  compact: [
+    {id:'mon', name:'Monitoring activeren', desc:'Continu bewaken — sanctie-alerts, KvK-mutaties, delta-rapportage per bedrijf', price:19, unit:'/mnd'},
+    {id:'comp', name:'Concurrentie-analyse', desc:'Marktpositie, SWOT, SEO-vergelijking vs. 3 directe concurrenten', price:49}
+  ],
+  predd: [
+    {id:'mon', name:'Monitoring activeren', desc:'Continue bewaking na de transactie — sanctie-alerts, KvK-mutaties, delta-rapport', price:19, unit:'/mnd'},
+    {id:'cyber', name:'Cyber & post-quantum deep-dive', desc:'Volledige MITRE ATT&CK mapping, CVE-register scan, PQC-readiness, NIS2 compliance review', price:79},
+    {id:'client', name:'Klantintelligentie module', desc:'Portfolio-overlap, churn-signalen, technographics, customer base kwaliteit voor de koper', price:59}
+  ]
+};
+
+function openCheckout(tier) {
+  curTier = tier; addons = {};
+  curBase = tier === 'compact' ? 79 : 399;
+  curMollieKey = tier; // sync payment link key with selected tier
+  const area = document.getElementById('checkout-area');
+  area.style.display = 'block';
+  document.getElementById('co-hd').textContent = tier === 'compact'
+    ? 'Uitbreidingsmodules bij Compact — optioneel'
+    : 'Uitbreidingsmodules bij Pre-DD — optioneel';
+  const c = document.getElementById('addons-container'); c.innerHTML = '';
+  addonDefs[tier].forEach(a => {
+    const row = document.createElement('div'); row.className = 'addon-row';
+    row.innerHTML = `<div><div class="addon-name">${a.name}</div><div class="addon-desc">${a.desc}</div></div>
+      <div class="addon-price">${a.unit ? '+€' + a.price + a.unit : '+€' + a.price}</div>
+      <button class="addon-btn" id="ab-${a.id}" onclick="toggleAddon('${a.id}',${a.price},this)">+ Toevoegen</button>`;
+    c.appendChild(row);
+  });
+  updateTotal();
+  area.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function toggleAddon(id, price, btn) {
+  if (addons[id]) { delete addons[id]; btn.textContent = '+ Toevoegen'; btn.classList.remove('on'); }
+  else { addons[id] = price; btn.textContent = '✓ Toegevoegd'; btn.classList.add('on'); }
+  updateTotal();
+}
+
+function updateTotal() {
+  let t = curBase, parts = [curTier === 'compact' ? 'Compact' : 'Pre-DD'];
+  const labels = {mon:'Monitoring', cyber:'Cyber deep-dive', client:'Klantintelligentie', comp:'Concurrentie'};
+  for (const k in addons) { t += addons[k]; parts.push(labels[k]); }
+  document.getElementById('co-total').textContent = '€' + t.toLocaleString('nl-NL');
+  document.getElementById('co-items').textContent = parts.join(' + ');
+}
+
+var curMollieKey = 'compact';
+
+function startDemo(tier) {
+  window.open(SCAN_URL, '_blank');
+  openCheckout(tier);
+}
+
+function goToPayment() {
+  var company = (document.getElementById('co-company') || {}).value || '';
+  if (!company.trim()) {
+    var input = document.getElementById('co-company');
+    if (input) { input.style.borderColor = '#ef4444'; input.focus(); }
+    alert('Vul een bedrijfsnaam of KvK-nummer in voor de analyse.');
+    return;
+  }
+
+  // Store order details for post-payment processing
+  var order = {
+    product: curTier,
+    mollieKey: curMollieKey,
+    company: company.trim(),
+    basePrice: curBase,
+    addons: Object.keys(addons),
+    addonTotal: Object.values(addons).reduce(function(a,b){return a+b;}, 0),
+    total: curBase + Object.values(addons).reduce(function(a,b){return a+b;}, 0),
+    timestamp: new Date().toISOString()
+  };
+  try { localStorage.setItem('ds_pending_order', JSON.stringify(order)); } catch(e) {}
+  console.log('[DueSight] Order created:', order);
+
+  var url = MOLLIE[curMollieKey] || MOLLIE['compact'];
+  if (url.indexOf('JOUW_') !== -1) {
+    alert('⚠️ Betaallinks worden binnenkort geactiveerd.\n\nUw bestelling is genoteerd:\n' + order.product.toUpperCase() + ' — ' + company + '\nTotaal: €' + order.total + '\n\nWij nemen binnen 24 uur contact met u op.');
+    // Fallback: send order details via mailto
+    var subject = encodeURIComponent('DueSight Bestelling: ' + order.product + ' - ' + company);
+    var body = encodeURIComponent('Product: ' + order.product + '\nBedrijf: ' + company + '\nTotaal: \u20ac' + order.total + '\nAdd-ons: ' + (order.addons.length > 0 ? order.addons.join(', ') : 'geen') + '\nTijdstip: ' + order.timestamp);
+    window.location.href = 'mailto:info@duesight.nl?subject=' + subject + '&body=' + body;
+    return;
+  }
+  window.open(url, '_blank');
+}
+
+function selVol(el, price, label, mollieKey) {
+  document.querySelectorAll('.vol-card').forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel');
+  if (mollieKey) curMollieKey = mollieKey;
+}
+
+function toggleMon() {
+  const btn = document.getElementById('mon-toggle');
+  const on = btn.classList.toggle('on');
+  btn.textContent = on ? '✓ Actief' : '+ Activeren';
+}
+
+function calcLtv() {
+  const deals = +document.getElementById('sl-deals').value;
+  const compact = +document.getElementById('sl-compact').value;
+  const predd = +document.getElementById('sl-predd').value;
+  const mon = +document.getElementById('sl-mon').value;
+  document.getElementById('lv-deals').textContent = deals;
+  document.getElementById('lv-compact').textContent = compact;
+  document.getElementById('lv-predd').textContent = predd;
+  document.getElementById('lv-mon').textContent = mon;
+  const rc = deals * compact * 65;
+  const rp = deals * predd * 399;
+  const rm = mon * 19 * 12;
+  const total = rc + rp + rm;
+  const hrs = Math.round(deals * (compact + predd) * 0.75);
+  const fmt = n => '€' + Math.round(n).toLocaleString('nl-NL');
+  document.getElementById('lv-rc').textContent = fmt(rc);
+  document.getElementById('lv-rp').textContent = fmt(rp);
+  document.getElementById('lv-rm').textContent = fmt(rm);
+  document.getElementById('lv-total').textContent = fmt(total);
+  document.getElementById('lv-hrs').textContent = hrs + ' uur';
+  document.getElementById('lv-be').textContent = '1 rapport';
+}
+calcLtv();
+</script>
+</body>
+</html>

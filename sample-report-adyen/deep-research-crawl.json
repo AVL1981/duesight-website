@@ -1,0 +1,1005 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "Adyen N.V.",
+    "domain": "adyen.com",
+    "kvk": "34259528",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T09:02:27+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 12,
+  "failed_or_skipped": 6,
+  "target_site_crawl": {
+    "pages_checked": 40,
+    "source_urls": [
+      "https://adyen.com/",
+      "https://adyen.com/about",
+      "https://adyen.com/careers",
+      "https://adyen.com/contact",
+      "https://adyen.com/sitemap.xml",
+      "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+      "https://adyen.com/contact/sales",
+      "https://careers.adyen.com",
+      "https://investors.adyen.com",
+      "https://adyen.com/partners",
+      "https://adyen.com/newsletter",
+      "https://www.adyen.com/about",
+      "https://www.adyen.com/en_AU/about",
+      "https://www.adyen.com/zh_CN/about",
+      "https://www.adyen.com/ja_JP/about",
+      "https://www.adyen.com/nl_NL/over-adyen",
+      "https://www.adyen.com/en_AE/about",
+      "https://www.adyen.com/en_SG/about",
+      "https://www.adyen.com/en_GB/about",
+      "https://careers.adyen.com/formula",
+      "https://adyen.com/about/team",
+      "https://careers.adyen.com/pt_BR",
+      "https://careers.adyen.com/de_DE",
+      "https://careers.adyen.com/es_ES",
+      "https://careers.adyen.com/fr_FR",
+      "https://careers.adyen.com/ja_JP"
+    ],
+    "pages": [
+      {
+        "url": "https://adyen.com/",
+        "status": 200,
+        "title": "Adyen: Fintech platform for enterprises - Adyen",
+        "bytes": 599856
+      },
+      {
+        "url": "https://adyen.com/nl/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/en/",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/en/about",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/about",
+        "status": 200,
+        "title": "Platform built to help businesses grow faster - Adyen",
+        "bytes": 599788
+      },
+      {
+        "url": "https://adyen.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/en/jobs",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/careers",
+        "status": 200,
+        "title": "Careers - Adyen",
+        "bytes": 206730
+      },
+      {
+        "url": "https://adyen.com/nl/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/en/contact",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://adyen.com/contact",
+        "status": 200,
+        "title": "Contact us for tailored payment solutions - Adyen",
+        "bytes": 599631
+      },
+      {
+        "url": "https://adyen.com/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 2034
+      },
+      {
+        "url": "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+        "status": 200,
+        "title": "Authn",
+        "bytes": 972
+      },
+      {
+        "url": "https://adyen.com/contact/sales",
+        "status": 200,
+        "title": "Contact sales for financial technology solutions - Adyen",
+        "bytes": 599635
+      },
+      {
+        "url": "https://careers.adyen.com",
+        "status": 200,
+        "title": "Careers - Adyen",
+        "bytes": 206730
+      },
+      {
+        "url": "https://investors.adyen.com",
+        "status": 200,
+        "title": "Investor relations - Adyen",
+        "bytes": 181799
+      },
+      {
+        "url": "https://adyen.com/partners",
+        "status": 200,
+        "title": "Grow your business as an Adyen partner - Adyen",
+        "bytes": 599783
+      },
+      {
+        "url": "https://adyen.com/newsletter",
+        "status": 200,
+        "title": "Payments content you&#x27;ll want to read - Adyen",
+        "bytes": 599637
+      },
+      {
+        "url": "https://www.adyen.com/about",
+        "status": 200,
+        "title": "Platform built to help businesses grow faster - Adyen",
+        "bytes": 599788
+      },
+      {
+        "url": "https://www.adyen.com/en_AU/about",
+        "status": 200,
+        "title": "Learn About Adyen | Adyen Australia - Adyen",
+        "bytes": 463629
+      },
+      {
+        "url": "https://www.adyen.com/zh_CN/about",
+        "status": 200,
+        "title": "品牌故事 - Adyen",
+        "bytes": 317600
+      },
+      {
+        "url": "https://www.adyen.com/ja_JP/about",
+        "status": 200,
+        "title": "Adyen（アディエン）について - Adyen",
+        "bytes": 335028
+      },
+      {
+        "url": "https://www.adyen.com/nl_NL/over-adyen",
+        "status": 200,
+        "title": "Het platform dat bedrijven helpt ambities realiseren - Adyen",
+        "bytes": 378272
+      },
+      {
+        "url": "https://www.adyen.com/en_AE/about",
+        "status": 200,
+        "title": "From Payment to Financial Technology Platform | Adyen UAE - Adyen",
+        "bytes": 464340
+      },
+      {
+        "url": "https://www.adyen.com/en_SG/about",
+        "status": 200,
+        "title": "The platform built to help businesses grow - Adyen",
+        "bytes": 473126
+      },
+      {
+        "url": "https://www.adyen.com/en_GB/about",
+        "status": 200,
+        "title": "The platform built to help businesses grow faster - Adyen",
+        "bytes": 481045
+      },
+      {
+        "url": "https://careers.adyen.com/formula",
+        "status": 200,
+        "title": "The Adyen Formula - Adyen",
+        "bytes": 164335
+      },
+      {
+        "url": "https://adyen.com/about/team",
+        "status": 200,
+        "title": "Meet the leadership and global team - Adyen",
+        "bytes": 599776
+      },
+      {
+        "url": "https://adyen.com/_nuxt/careers-vacancies-list.BuvB5AX8.css",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://careers.adyen.com/pt_BR",
+        "status": 200,
+        "title": "Trabalhe na Adyen - Adyen",
+        "bytes": 195423
+      },
+      {
+        "url": "https://careers.adyen.com/de_DE",
+        "status": 200,
+        "title": "Karriere bei Adyen - Adyen",
+        "bytes": 199762
+      },
+      {
+        "url": "https://careers.adyen.com/es_ES",
+        "status": 200,
+        "title": "Oportunidades laborales en Adyen - Adyen",
+        "bytes": 201632
+      },
+      {
+        "url": "https://careers.adyen.com/fr_FR",
+        "status": 200,
+        "title": "Carrières chez Adyen - Adyen",
+        "bytes": 202294
+      },
+      {
+        "url": "https://careers.adyen.com/ja_JP",
+        "status": 200,
+        "title": "Adyenでのキャリア - Adyen",
+        "bytes": 149299
+      },
+      {
+        "url": "https://adyen.com/career-types/student",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      }
+    ]
+  },
+  "source_urls_count": 78,
+  "source_urls": [
+    "https://adyen.com/",
+    "https://adyen.com/about",
+    "https://adyen.com/careers",
+    "https://adyen.com/contact",
+    "https://adyen.com/sitemap.xml",
+    "https://ca-live.adyen.com/ca/ca/overview/default.shtml",
+    "https://adyen.com/contact/sales",
+    "https://careers.adyen.com",
+    "https://investors.adyen.com",
+    "https://adyen.com/partners",
+    "https://adyen.com/newsletter",
+    "https://www.adyen.com/about",
+    "https://www.adyen.com/en_AU/about",
+    "https://www.adyen.com/zh_CN/about",
+    "https://www.adyen.com/ja_JP/about",
+    "https://www.adyen.com/nl_NL/over-adyen",
+    "https://www.adyen.com/en_AE/about",
+    "https://www.adyen.com/en_SG/about",
+    "https://www.adyen.com/en_GB/about",
+    "https://careers.adyen.com/formula",
+    "https://adyen.com/about/team",
+    "https://careers.adyen.com/pt_BR",
+    "https://careers.adyen.com/de_DE",
+    "https://careers.adyen.com/es_ES",
+    "https://careers.adyen.com/fr_FR",
+    "https://careers.adyen.com/ja_JP",
+    "https://issuu.com/chicago_reader/docs/060624-small",
+    "https://zeroproject.org/fileadmin/root_zeroproject/Downloads/Publications/2026_Zero-Project-Report_Accessibility-ICT-CrisisR_accessible.pdf",
+    "https://www.adyen.com/llms.txt",
+    "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+    "https://seekingalpha.com/article/4666372-adyen-the-best-run-payments-company",
+    "https://investors.adyen.com/financials/h2-2022",
+    "https://financialreports.eu/filings/adyen-nv/annual-report-esef/2025/5829992/",
+    "https://www.utwente.nl/.uc/f6c6dc1f50102727f8301f7067e0271fc889698c65e1f00/Annual-report%202022%20UT%201.1.pdf",
+    "https://safewalkwaysusa.com/wp-content/uploads/2024/02/Redacted-Contract_RFP-10089831-22-V-Shared-Mobility-Devices-Spin.pdf",
+    "https://dokumen.pub/plunketts-e-commerce-amp-internet-business-almanac-2023-e-commerce-amp-internet-business-industry-market-research-statistics-trends-and-leading-companies-1628316497-9781628316490.html",
+    "https://www.adyen.com/press-and-media/founders-sell-15-percent-holdings",
+    "https://investors.adyen.com/",
+    "https://chicagoreader.com/wp-content/uploads/2024/10/Classifieds-4.18.24-tear.pdf",
+    "https://me.sh/profile/pieter-berlijn",
+    "https://www.adyen.com/accounts",
+    "https://www.accc.gov.au/system/files/public-registers/documents/44.%20Adyen%202019%20Annual%20Report.pdf",
+    "https://www.marc-cain.com/en/Information/Legal/Data-Protection/",
+    "https://evolveetfs.com/2024/12/why-innovation-in-cloud-computing-cybersecurity-and-fintech-is-shaping-the-future/",
+    "https://www.getsmartresume.com/article/adyen-graduate-program",
+    "https://wutis.at/wp-content/uploads/Adyen-Final-Pitch-WS25_26.pdf",
+    "https://www.lawpay.com/terms/financial-service-terms/adyen-addendum/",
+    "https://en.wikipedia.org/wiki/Adyen",
+    "https://www.zoominfo.com/c/adyen-nv/353569735",
+    "https://www.alphaspread.com/security/aex/adyen/investor-relations",
+    "https://financialreports.eu/companies/adyen-nv/",
+    "https://www.facebook.com/forbes/posts/adyens-shares-fell-thursday-after-the-global-provider-of-commercial-payment-syst/10160483201352509/",
+    "https://conf.researchr.org/track/icse-2025/icse-2025-software-engineering-in-practice",
+    "https://collaborate.unpri.org/system/files/supporting-materials/2024-08/Prosus-annual-report.pdf",
+    "https://www.openbanking.org.uk/regulated-providers/adyen-n-v/",
+    "https://www.adyen.com/",
+    "https://www.linkedin.com/company/adyen",
+    "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=F0001",
+    "https://thebanks.eu/banks/18838",
+    "https://finance.yahoo.com/quote/ADYEN.AS/",
+    "https://www.acm.nl/sites/default/files/documents/big-techs-in-het-betalingsverkeer.pdf",
+    "https://www.acm.nl/sites/default/files/documents/acm-report-on-big-techs-in-the-payment-system.pdf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpd5T99CWZQohK40aqWdDWNBhwaginZ8kT00shuHzKoIkOgxDp69vW00T8f/Hjlpp3H+ayh3viJifmPrIVagfdZ7UGGGL3HHwRiD9E/vw4FblgkAqjZGVpKK5TA/c3VxY7gdElx0tNjNMesodMRKXDubUQGYFcx0G1jFKxStbJu8hU=",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlFmMGnwjTxjnDf2s+KTlMju+wDfykSwFDkigo4AJDTmd6bbJG3apJYjcF1NOqrokpSa/wl8lZF1Y6hMYOsviFekpJxxjyWSZBQvfIgEp7/jJ+kjq5nBm8SCL0QRrwqbA+1uX+C2CAIcyaQhyQJ0Qfv8Kd6jz8or0x/WFC02v/0+Sh5GU15UmRdR/ABJAVa68uY5EaB9mwLX3YiTj9Mz+Yy4TLtLNUxkpzdwQ4ybDZAwxivWEShbf5r0ruZFrPfVsYCB1Sc7auELrGbu9KiG0G7bn/H1N9IWimum3EWbO2C3hHEvVg/eb+azB4ScYwTAvnzpejNqitW+qQ+UI86YQ6dTT54PVhvNY5nQbBGiU7gvAo4jo8z6DgQEZki4QXKRj",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdNJ3NJUOEpfKS7pVpfp3Oy/KyfqQAvjTBf44Q6CXwZKNVVxGOH18XoSpxWYU+IboQ2BsjHpb+FB/+xZGz9PVRGbQDhifgZDLU0U1W2pzA7esMmmNrMtlg+muMpLmB6OU1alXjxnkl4hBmsMRihBDhlmTsJGeNHUCKYYnjCsUoxj4pKo2/DUmDd90uJVRkU5jweoYssWvTacTjzb0WAdYf/UWFHIQw8VcIbekrO5v+FgD/voW2VH1m8r/5kcS57+u63F564hX1FEJda1X7qw8Wj9EPzTrTjiYQHVocaVTW/b4HKFPUvLq/DA8ZUy+Z0mE3Ay2mpN/3WN7r7Ioq6wFBPCk1YE7Ts9N9JJE6cdd11qjX0dAHxHAyzQ8dXa48p1Wf",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdFTZARUuu2WpuHRcMgEv27MlSHfcvcSYO8ARoNeUTLPttKsRAwJ0dVXNNy4+1rL0iNkYxrw2U8UVgt9uaEY5Z9HzV98XurjugTiVvBgUNUIN6bmUcWwzaFpg2CqQFJkOlu5mPpMYd5B9vR+ixB49DUy0MxWMeYn6eFvNuvdN7RXL/kAbm4EBZ4Sz3bFSpw+pMy/31wWwhu4JGxRv5G52C1ozX8zn5ScSnxs5V+LFTKK3MaDr/AfQJzr6fuG77MzPjNRQzwY1bT6hQ1zH97WQBuPSWGYCfCGRW9TvtIY4Ikd8=",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdim4BiyId87qEXk3rt4o/+MM+TlfJCo8PRZF1UgdgfiWvDj6MnUDquPFy7nE/++z7cc6zJ9hx3JghAEWJ7e75iZmTfpNbVFgd+8PAsbJ9FefIEf6l+c/KMbvPE0QbSKGMGZk5Gq3Cwxm0H6Gq+RELDsaqsk+0ajW4siTRmoD2wVTeoBqzrz7uyi8vrtae3LCQH5MAKs7G8sirg790WuChjVsNOc4Odqk/VhegK6Cd+PQ=",
+    "https://www.dnb.nl/en/public-register/dutch-deposit-guarantee-scheme-register/",
+    "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=F0001",
+    "https://www.dnb.nl/openbaar-register/?p=1&l=20&rc=V0ZUS0Y",
+    "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+    "https://www.dnb.nl/nl-nl/registerdownload/csv/wftdg",
+    "https://www.dnb.nl/nl-nl/registerdownload/xml/wftdg",
+    "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf",
+    "https://www.stockopedia.com/share-prices/adyen-nv-AMS:ADYEN/",
+    "https://live.euronext.com/en/ipo-showcase/adyen-nv",
+    "https://www.morningstar.com/stocks/xams/adyen/quote",
+    "https://www.marketbeat.com/stocks/OTCMKTS/ADYEY/"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"Adyen N.V.\" \"adyen.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "executed",
+      "elapsed_s": 1.398,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://issuu.com/chicago_reader/docs/060624-small",
+        "https://zeroproject.org/fileadmin/root_zeroproject/Downloads/Publications/2026_Zero-Project-Report_Accessibility-ICT-CrisisR_accessible.pdf",
+        "https://www.adyen.com/llms.txt",
+        "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+        "https://seekingalpha.com/article/4666372-adyen-the-best-run-payments-company",
+        "https://investors.adyen.com/financials/h2-2022",
+        "https://financialreports.eu/filings/adyen-nv/annual-report-esef/2025/5829992/",
+        "https://www.utwente.nl/.uc/f6c6dc1f50102727f8301f7067e0271fc889698c65e1f00/Annual-report%202022%20UT%201.1.pdf",
+        "https://safewalkwaysusa.com/wp-content/uploads/2024/02/Redacted-Contract_RFP-10089831-22-V-Shared-Mobility-Devices-Spin.pdf",
+        "https://dokumen.pub/plunketts-e-commerce-amp-internet-business-almanac-2023-e-commerce-amp-internet-business-industry-market-research-statistics-trends-and-leading-companies-1628316497-9781628316490.html"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Chicago Reader print issue of June 6, 2024 (Vol. 53, No. 18) - Issuu",
+          "snippet": "Software Engineer (Adyen N.V.; Chicago, IL) (Multiple Positions): ... Send resume to resumes@adyen.com. QUANTITATIVE TRADING ANALYST DRW ...",
+          "url": "https://issuu.com/chicago_reader/docs/060624-small",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Zero Project Report 2026",
+          "snippet": "shuai.zhang@adyen.com – www.adyen.com. Cash terminals ... In 2023, Adyen N. V. – a leading company in financial technology, headquartered in Amsterdam –.",
+          "url": "https://zeroproject.org/fileadmin/root_zeroproject/Downloads/Publications/2026_Zero-Project-Report_Accessibility-ICT-CrisisR_accessible.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "llms.txt - Adyen",
+          "snippet": "... Adyen N.V. is licensed by De Nederlandsche Bank to provide cross-border services ... - [Zadig&Voltaire leads new generation retail](https://www.adyen.com ...",
+          "url": "https://www.adyen.com/llms.txt",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] ADYEN N.V. - Euronext",
+          "snippet": "Page 1. ADYEN N.V.. (a public company with limited liability (naamloze ... Company's website at www.Adyen.com. The Offer Price and the exact number of ...",
+          "url": "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen Stock: The Best-Run Payments Company (ADYEY)",
+          "snippet": "Rowan Street - Adyen: The Best-Run Payments ... I missed this news Jan 10th announcing CTO will not renew his job end of 2024. www.adyen.com/... [[ “I have ...",
+          "url": "https://seekingalpha.com/article/4666372-adyen-the-best-run-payments-company",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Adyen N.V.\" acquisition overname parent group investor shareholder \"adyen.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "executed",
+      "elapsed_s": 1.338,
+      "discovered_urls_count": 2,
+      "source_urls": [
+        "https://www.adyen.com/press-and-media/founders-sell-15-percent-holdings",
+        "https://investors.adyen.com/"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "Adyen founders sell approximately 15% of their holdings",
+          "snippet": "Adyen N.V. [Euronext: ADYEN] confirms that founders Pieter van der Does (CEO) and Arnout Schuijff (CTO) have announced to be selling 497,041 Adyen shares, ...",
+          "url": "https://www.adyen.com/press-and-media/founders-sell-15-percent-holdings",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Investor relations - Adyen",
+          "snippet": "All resolutions adopted at Adyen N.V.'s 2026 AGM. Amsterdam · May 28th, 2026 ; Adyen CFO Ethan Tandowsky to Step Down to Pursue Opportunity Outside Fintech.",
+          "url": "https://investors.adyen.com/",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Adyen N.V.\" vacancies careers jobs hiring skills competitors \"adyen.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "partial_executed",
+      "elapsed_s": 1.745,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://chicagoreader.com/wp-content/uploads/2024/10/Classifieds-4.18.24-tear.pdf",
+        "https://www.adyen.com/llms.txt",
+        "https://me.sh/profile/pieter-berlijn",
+        "https://www.adyen.com/accounts",
+        "https://www.accc.gov.au/system/files/public-registers/documents/44.%20Adyen%202019%20Annual%20Report.pdf",
+        "https://www.marc-cain.com/en/Information/Legal/Data-Protection/",
+        "https://evolveetfs.com/2024/12/why-innovation-in-cloud-computing-cybersecurity-and-fintech-is-shaping-the-future/",
+        "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+        "https://www.getsmartresume.com/article/adyen-graduate-program"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "[PDF] CLASSIFIEDS - Chicago Reader",
+          "snippet": "Xiong at 510 W 172nd St.,. South Holland, IL 60473. Software Engineer. (Adyen N.V.; Chicago, ... adyen.com. Gastroenterologist Sinai. Medical Group seeks.",
+          "url": "https://chicagoreader.com/wp-content/uploads/2024/10/Classifieds-4.18.24-tear.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "llms.txt - Adyen",
+          "snippet": "... Adyen N.V. is licensed by De Nederlandsche Bank to provide cross-border services ... - [Improving guest experience in hospitality](https://www.adyen.com ...",
+          "url": "https://www.adyen.com/llms.txt",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Pieter Berlijn - LinkedIn - Mesh",
+          "snippet": "Jan 1 · adyen.com. Our story - Adyen. Apr 12 · bulletin.webull.com. Adyen NV Corporate Analyst Meeting - Webull ... in their careers who are meeting many new ...",
+          "url": "https://me.sh/profile/pieter-berlijn",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Offer business bank accounts to users on your platform - Adyen",
+          "snippet": "³ Except if explicitly stated otherwise, Adyen N.V., not the platform, provides the account. ... Careers · Investor Relations · Partner with us · Contact.",
+          "url": "https://www.adyen.com/accounts",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] Annual report - ACCC",
+          "snippet": "adyen.com/ir). All Supervisory Directors have a standing ... We are independent of Adyen N.V. in accordance with the European Union Regulation on specific.",
+          "url": "https://www.accc.gov.au/system/files/public-registers/documents/44.%20Adyen%202019%20Annual%20Report.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"Adyen N.V.\" revenue omzet growth FT1000 annual report ranking \"adyen.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "executed_retry",
+      "elapsed_s": 1.901,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://wutis.at/wp-content/uploads/Adyen-Final-Pitch-WS25_26.pdf",
+        "https://www.adyen.com/llms.txt",
+        "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+        "https://www.lawpay.com/terms/financial-service-terms/adyen-addendum/",
+        "https://en.wikipedia.org/wiki/Adyen",
+        "https://www.zoominfo.com/c/adyen-nv/353569735",
+        "https://investors.adyen.com/financials/h2-2022",
+        "https://www.alphaspread.com/security/aex/adyen/investor-relations",
+        "https://financialreports.eu/companies/adyen-nv/",
+        "https://www.facebook.com/forbes/posts/adyens-shares-fell-thursday-after-the-global-provider-of-commercial-payment-syst/10160483201352509/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "[PDF] ER Slide Master - WUTIS",
+          "snippet": "Embedded finance growth (Accounts, Capital, Issuing) – Banking licenses and ... https://www.adyen.com/press-and-media/adyen ... Adyen N.V.. ENXTAM:ADYEN.",
+          "url": "https://wutis.at/wp-content/uploads/Adyen-Final-Pitch-WS25_26.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "llms.txt - Adyen",
+          "snippet": "... adyen.com/): Run payments, manage your data, and offer financial products in ... Adyen N.V. is licensed by De Nederlandsche Bank to provide cross ...",
+          "url": "https://www.adyen.com/llms.txt",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "[PDF] ADYEN N.V. - Euronext",
+          "snippet": "Adyen N.V. (which at the date of the Prospectus is still a private ... Adyen.com. The Offer Price and the exact number of Offer Shares will be set ...",
+          "url": "https://www.euronext.com/sites/default/files/3.3.22.32.5.2_nash_-_afm_final_approval_version_prospectus.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen Addendum | LawPay",
+          "snippet": "Adyen N.V., a company registered in Amsterdam under number 34259528 and having its seat at Simon Carmiggeltstraat 6-50, 1011 DJ in Amsterdam, the Netherlands.",
+          "url": "https://www.lawpay.com/terms/financial-service-terms/adyen-addendum/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen - Wikipedia",
+          "snippet": "Adyen N.V.. Company type. Naamloze vennootschap · Traded as · Euronext Amsterdam ... adyen.com. Footnotes / references. Adyen offers merchants online ...",
+          "url": "https://en.wikipedia.org/wiki/Adyen",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"Adyen N.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed",
+      "elapsed_s": 1.284,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://conf.researchr.org/track/icse-2025/icse-2025-software-engineering-in-practice",
+        "https://collaborate.unpri.org/system/files/supporting-materials/2024-08/Prosus-annual-report.pdf"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "ICSE 2025 - Software Engineering in Practice (SEIP)",
+          "snippet": "Objective: This study examines the impact of LLM-based automated code review tools in an industry setting. ... Adyen N.V.. Netherlands · Max Kanat-Alexander.",
+          "url": "https://conf.researchr.org/track/icse-2025/icse-2025-software-engineering-in-practice",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "[PDF] Improving everyday life for billions of people through technology",
+          "snippet": "... Adyen N.V., Airbnb, Alphabet, Amazon, Auto Trader, Bajaj Finance, Block, Booking.com, Chewy, Coupang, Deliveroo plc., DoorDash, eBay, Etsy ...",
+          "url": "https://collaborate.unpri.org/system/files/supporting-materials/2024-08/Prosus-annual-report.pdf",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed",
+      "elapsed_s": 1.294,
+      "discovered_urls_count": 8,
+      "source_urls": [
+        "https://www.openbanking.org.uk/regulated-providers/adyen-n-v/",
+        "https://www.adyen.com/",
+        "https://www.linkedin.com/company/adyen",
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=F0001",
+        "https://thebanks.eu/banks/18838",
+        "https://finance.yahoo.com/quote/ADYEN.AS/"
+      ],
+      "source_urls_count": 6,
+      "matched_results": [
+        {
+          "title": "Adyen N.V. - Open Banking",
+          "snippet": "Adyen N.V.. Adyen logo. Adyen is a ... Registered office: 8th Floor, 100 Bishopsgate, London EC2N 4AG United Kingdom. About us > · About OBL · OBL leadership team ...",
+          "url": "https://www.openbanking.org.uk/regulated-providers/adyen-n-v/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "Adyen: Fintech platform for enterprises - Adyen",
+          "snippet": "... bank on. One platform for payments, data, and financial products. Built to scale with the world's leading businesses. Talk to our teamTalk to our team ...",
+          "url": "https://www.adyen.com/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Adyen - LinkedIn",
+          "snippet": "About us ; Website: https://www.adyen.com. External link for Adyen ; Industry: Financial Services ; Company size: 1,001-5,000 employees.",
+          "url": "https://www.linkedin.com/company/adyen",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Information detail | Adyen N.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "Statutory name: Adyen N.V. · Trade name: Adyen N.V. · Statutory seat: AMSTERDAM, NEDERLAND · Chamber of Commerce: 34259528 · LEI code: 724500973ODKK3IFQ447 ...",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=F0001",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen NV (Netherlands) - Bank Profile - TheBanks.eu",
+          "snippet": "website https://www.adyen.com/. Adyen NV is headquartered in AMSTERDAM. Social Networks. Adyen NV has profiles at the following social networks: facebook ...",
+          "url": "https://thebanks.eu/banks/18838",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.143,
+      "discovered_urls_count": 4,
+      "source_urls": [
+        "https://www.acm.nl/sites/default/files/documents/big-techs-in-het-betalingsverkeer.pdf",
+        "https://www.acm.nl/sites/default/files/documents/acm-report-on-big-techs-in-the-payment-system.pdf"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "[PDF] Big Techs in het betalingsverkeer - ACM",
+          "snippet": "Op basis van antwoorden op het informatieverzoek van de ACM aan Amazon. 78. Zie: https://www.adyen.com/nl_NL/press-and-media/2020/adyen ...",
+          "url": "https://www.acm.nl/sites/default/files/documents/big-techs-in-het-betalingsverkeer.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] ACM Report on Big Techs in the payment system",
+          "snippet": "Based on responses to ACM's information request to Amazon. 78. See: https://www.adyen.com/nl_NL/press-and-media/2020/adyen-announces-the ...",
+          "url": "https://www.acm.nl/sites/default/files/documents/acm-report-on-big-techs-in-the-payment-system.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed_retry",
+      "elapsed_s": 1.291,
+      "discovered_urls_count": 6,
+      "source_urls": [
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpd5T99CWZQohK40aqWdDWNBhwaginZ8kT00shuHzKoIkOgxDp69vW00T8f/Hjlpp3H+ayh3viJifmPrIVagfdZ7UGGGL3HHwRiD9E/vw4FblgkAqjZGVpKK5TA/c3VxY7gdElx0tNjNMesodMRKXDubUQGYFcx0G1jFKxStbJu8hU=",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlFmMGnwjTxjnDf2s+KTlMju+wDfykSwFDkigo4AJDTmd6bbJG3apJYjcF1NOqrokpSa/wl8lZF1Y6hMYOsviFekpJxxjyWSZBQvfIgEp7/jJ+kjq5nBm8SCL0QRrwqbA+1uX+C2CAIcyaQhyQJ0Qfv8Kd6jz8or0x/WFC02v/0+Sh5GU15UmRdR/ABJAVa68uY5EaB9mwLX3YiTj9Mz+Yy4TLtLNUxkpzdwQ4ybDZAwxivWEShbf5r0ruZFrPfVsYCB1Sc7auELrGbu9KiG0G7bn/H1N9IWimum3EWbO2C3hHEvVg/eb+azB4ScYwTAvnzpejNqitW+qQ+UI86YQ6dTT54PVhvNY5nQbBGiU7gvAo4jo8z6DgQEZki4QXKRj",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdNJ3NJUOEpfKS7pVpfp3Oy/KyfqQAvjTBf44Q6CXwZKNVVxGOH18XoSpxWYU+IboQ2BsjHpb+FB/+xZGz9PVRGbQDhifgZDLU0U1W2pzA7esMmmNrMtlg+muMpLmB6OU1alXjxnkl4hBmsMRihBDhlmTsJGeNHUCKYYnjCsUoxj4pKo2/DUmDd90uJVRkU5jweoYssWvTacTjzb0WAdYf/UWFHIQw8VcIbekrO5v+FgD/voW2VH1m8r/5kcS57+u63F564hX1FEJda1X7qw8Wj9EPzTrTjiYQHVocaVTW/b4HKFPUvLq/DA8ZUy+Z0mE3Ay2mpN/3WN7r7Ioq6wFBPCk1YE7Ts9N9JJE6cdd11qjX0dAHxHAyzQ8dXa48p1Wf",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdFTZARUuu2WpuHRcMgEv27MlSHfcvcSYO8ARoNeUTLPttKsRAwJ0dVXNNy4+1rL0iNkYxrw2U8UVgt9uaEY5Z9HzV98XurjugTiVvBgUNUIN6bmUcWwzaFpg2CqQFJkOlu5mPpMYd5B9vR+ixB49DUy0MxWMeYn6eFvNuvdN7RXL/kAbm4EBZ4Sz3bFSpw+pMy/31wWwhu4JGxRv5G52C1ozX8zn5ScSnxs5V+LFTKK3MaDr/AfQJzr6fuG77MzPjNRQzwY1bT6hQ1zH97WQBuPSWGYCfCGRW9TvtIY4Ikd8=",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdim4BiyId87qEXk3rt4o/+MM+TlfJCo8PRZF1UgdgfiWvDj6MnUDquPFy7nE/++z7cc6zJ9hx3JghAEWJ7e75iZmTfpNbVFgd+8PAsbJ9FefIEf6l+c/KMbvPE0QbSKGMGZk5Gq3Cwxm0H6Gq+RELDsaqsk+0ajW4siTRmoD2wVTeoBqzrz7uyi8vrtae3LCQH5MAKs7G8sirg790WuChjVsNOc4Odqk/VhegK6Cd+PQ="
+      ],
+      "source_urls_count": 5,
+      "matched_results": [
+        {
+          "title": "[PDF] Adyen to acquire Talon.One to enable real-time decisioning across ...",
+          "snippet": "investors.adyen.com/events. ... Forward-looking statements are not facts and only represent the current views and assumptions of Adyen N.V. ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpd5T99CWZQohK40aqWdDWNBhwaginZ8kT00shuHzKoIkOgxDp69vW00T8f/Hjlpp3H+ayh3viJifmPrIVagfdZ7UGGGL3HHwRiD9E/vw4FblgkAqjZGVpKK5TA/c3VxY7gdElx0tNjNMesodMRKXDubUQGYFcx0G1jFKxStbJu8hU=",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Ingo Uytdehaage to become Adyen's co-CEO, Ethan Tandowsky to ...",
+          "snippet": "... English or that Adyen NV otherwise satisfies the exemption criteria set forth in Exchange Act Rule 12g3-2(b). Contact details press@adyen.com. IR@adyen.com.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdlFmMGnwjTxjnDf2s+KTlMju+wDfykSwFDkigo4AJDTmd6bbJG3apJYjcF1NOqrokpSa/wl8lZF1Y6hMYOsviFekpJxxjyWSZBQvfIgEp7/jJ+kjq5nBm8SCL0QRrwqbA+1uX+C2CAIcyaQhyQJ0Qfv8Kd6jz8or0x/WFC02v/0+Sh5GU15UmRdR/ABJAVa68uY5EaB9mwLX3YiTj9Mz+Yy4TLtLNUxkpzdwQ4ybDZAwxivWEShbf5r0ruZFrPfVsYCB1Sc7auELrGbu9KiG0G7bn/H1N9IWimum3EWbO2C3hHEvVg/eb+azB4ScYwTAvnzpejNqitW+qQ+UI86YQ6dTT54PVhvNY5nQbBGiU7gvAo4jo8z6DgQEZki4QXKRj",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Adyen proposes to reappoint Joep van Beurden to the Supervisory ...",
+          "snippet": "The convening notice for this meeting, including the agenda items, can be found on Adyen's website (adyen.com/ir). ... Adyen N.V. (the “Shares”), ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdNJ3NJUOEpfKS7pVpfp3Oy/KyfqQAvjTBf44Q6CXwZKNVVxGOH18XoSpxWYU+IboQ2BsjHpb+FB/+xZGz9PVRGbQDhifgZDLU0U1W2pzA7esMmmNrMtlg+muMpLmB6OU1alXjxnkl4hBmsMRihBDhlmTsJGeNHUCKYYnjCsUoxj4pKo2/DUmDd90uJVRkU5jweoYssWvTacTjzb0WAdYf/UWFHIQw8VcIbekrO5v+FgD/voW2VH1m8r/5kcS57+u63F564hX1FEJda1X7qw8Wj9EPzTrTjiYQHVocaVTW/b4HKFPUvLq/DA8ZUy+Z0mE3Ay2mpN/3WN7r7Ioq6wFBPCk1YE7Ts9N9JJE6cdd11qjX0dAHxHAyzQ8dXa48p1Wf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Adyen publishes H1 2021 financial results - AFM",
+          "snippet": "On this same webpage, a recording will be made available shortly following the conference. Contact press@adyen.com ir@adyen.com ... Adyen NV does not represent to ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdFTZARUuu2WpuHRcMgEv27MlSHfcvcSYO8ARoNeUTLPttKsRAwJ0dVXNNy4+1rL0iNkYxrw2U8UVgt9uaEY5Z9HzV98XurjugTiVvBgUNUIN6bmUcWwzaFpg2CqQFJkOlu5mPpMYd5B9vR+ixB49DUy0MxWMeYn6eFvNuvdN7RXL/kAbm4EBZ4Sz3bFSpw+pMy/31wWwhu4JGxRv5G52C1ozX8zn5ScSnxs5V+LFTKK3MaDr/AfQJzr6fuG77MzPjNRQzwY1bT6hQ1zH97WQBuPSWGYCfCGRW9TvtIY4Ikd8=",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[DOC] https://www.afm.nl/downloadregisterfile.aspx?type=...",
+          "snippet": "Adyen N.V. (“Adyen” or “Company”) [AMS: ADYEN], announces that its Extraordinary General Meeting (EGM) ... press@adyen.com. Investor Relations. ir@adyen.com.",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=openbaarmaking-voorwetenschap&enc=7Rpj0BBaMD5lzfwUlyQ9TIe+XbKYS1JE7+GVfXY2PxNqAT3NVNKp3QCQcI2WUb5gS/PYmhvg5EA+E7FpgiengZj0NLAMUDbP/oPnUtKH27VA0/CZGu7E4hLGdYYwwWpdim4BiyId87qEXk3rt4o/+MM+TlfJCo8PRZF1UgdgfiWvDj6MnUDquPFy7nE/++z7cc6zJ9hx3JghAEWJ7e75iZmTfpNbVFgd+8PAsbJ9FefIEf6l+c/KMbvPE0QbSKGMGZk5Gq3Cwxm0H6Gq+RELDsaqsk+0ajW4siTRmoD2wVTeoBqzrz7uyi8vrtae3LCQH5MAKs7G8sirg790WuChjVsNOc4Odqk/VhegK6Cd+PQ=",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.325,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.344,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=F0001",
+        "https://www.dnb.nl/en/public-register/dutch-deposit-guarantee-scheme-register/",
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=F0001",
+        "https://www.dnb.nl/openbaar-register/?p=1&l=20&rc=V0ZUS0Y",
+        "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+        "https://www.dnb.nl/nl-nl/registerdownload/csv/wftdg",
+        "https://www.dnb.nl/nl-nl/registerdownload/xml/wftdg"
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "Information detail | Adyen N.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "Adyen N.V., AMSTERDAM, NEDERLAND, 34259528, 724500973ODKK3IFQ447, F0001, Bank - CI. ... Netherlands. Internet address. URL: https://www.adyen.com. Application ...",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=F0001",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Dutch deposit guarantee scheme register | De Nederlandsche Bank",
+          "snippet": "Adyen N.V.. Trade name. Adyen N.V.. Register. Dutch deposit guarantee. Country. NEDERLAND. More detailsAdyen N.V.. Statury seatAMSTERDAM, NEDERLAND; CoC34259528 ...",
+          "url": "https://www.dnb.nl/en/public-register/dutch-deposit-guarantee-scheme-register/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Information detail | Adyen N.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "Adyen N.V., AMSTERDAM, NEDERLAND, 34259528, 724500973ODKK3IFQ447, F0001, Bank - CI. ... URL: https://www.adyen.com. EU-passport (out) Application. EU-passport ...",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=F0001",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Openbaar register - De Nederlandsche Bank (DNB)",
+          "snippet": "Adyen N.V.. Handelsnaam. Adyen N.V.. Register. Banken. Land. NEDERLAND. Meer detailsAdyen N.V.. Statutaire zetelAMSTERDAM, NEDERLAND; KvK34259528; LEI-code ...",
+          "url": "https://www.dnb.nl/openbaar-register/?p=1&l=20&rc=V0ZUS0Y",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+          "snippet": "... Adyen N.V.\";\"Simon Carmiggeltstraat 6\";\"1011DJ\";\"AMSTERDAM\";\"Netherlands\";\"NL\";\"Postbus 10095\";\"AMSTERDAM\";\"Netherlands\";\"NL\";\"34259528 ... Adyen N.V. ...",
+          "url": "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.263,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.347,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.164,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "[PDF] Tweede dagvaarding Consumenten Competition Claims vs Apple ...",
+          "snippet": "https://www.adyen.com/our-solution/in-app-payments#customerexperience en https://www.paypal.com/nl/business/platforms-and-marketplaces. 291.",
+          "url": "https://www.rechtspraak.nl/binaries/content/assets/wamca/2022/wamca-2022-2e-dagvaarding-sccc-vs-apple-distr-intl-ltd-cs.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.382,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.169,
+      "discovered_urls_count": 2,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"Adyen N.V.\" OR \"adyen.com\" OR \"34259528\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "failed",
+      "elapsed_s": 1.296,
+      "discovered_urls_count": 5,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@adyen.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.56,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.adyen.com/llms.txt",
+        "https://www.zoominfo.com/c/adyen-nv/353569735",
+        "https://en.wikipedia.org/wiki/Adyen",
+        "https://www.stockopedia.com/share-prices/adyen-nv-AMS:ADYEN/",
+        "https://finance.yahoo.com/quote/ADYEN.AS/",
+        "https://financialreports.eu/companies/adyen-nv/",
+        "https://live.euronext.com/en/ipo-showcase/adyen-nv",
+        "https://www.morningstar.com/stocks/xams/adyen/quote",
+        "https://www.marketbeat.com/stocks/OTCMKTS/ADYEY/",
+        "https://www.openbanking.org.uk/regulated-providers/adyen-n-v/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "llms.txt - Adyen",
+          "snippet": "... adyen.com/): Run payments, manage your data, and offer financial products in ... Adyen N.V. is licensed by De Nederlandsche Bank to provide cross ...",
+          "url": "https://www.adyen.com/llms.txt",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Adyen - Overview, News & Similar companies | ZoomInfo.com",
+          "snippet": "Popular SearchesAdyen NVadyen.comAdyen IncAdyenAdyen BVSIC Code 60,609NAICS ... Adyen's official website is www.adyen.com What is Adyen's Revenue?",
+          "url": "https://www.zoominfo.com/c/adyen-nv/353569735",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen - Wikipedia",
+          "snippet": "Adyen N.V.. Company type. Naamloze vennootschap · Traded as · Euronext Amsterdam ... adyen.com. Footnotes / references. Adyen offers merchants online ...",
+          "url": "https://en.wikipedia.org/wiki/Adyen",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen NV Share Price - Financials - Stockopedia",
+          "snippet": "Adyen NV (AMS:ADYEN) share price: €957.90. +14.9 (+1.58%) today. Chart ... https://www.adyen.com/; Phone: +31 202401680; Contact: Maggie O'Donnell; Auditors ...",
+          "url": "https://www.stockopedia.com/share-prices/adyen-nv-AMS:ADYEN/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen N.V. (ADYEN.AS) Stock Price, News, Quote & History",
+          "snippet": "Adyen N.V. (ADYEN.AS) Stock Price, News, Quote & History ... The company was incorporated in 2006 and is based in Amsterdam, the Netherlands. www.adyen.com.",
+          "url": "https://finance.yahoo.com/quote/ADYEN.AS/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"adyen.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.507,
+      "discovered_urls_count": 12,
+      "source_urls": [
+        "https://www.adyen.com/llms.txt",
+        "https://www.zoominfo.com/c/adyen-nv/353569735",
+        "https://www.stockopedia.com/share-prices/adyen-nv-AMS:ADYEN/",
+        "https://en.wikipedia.org/wiki/Adyen",
+        "https://www.morningstar.com/stocks/xams/adyen/quote",
+        "https://www.marketbeat.com/stocks/OTCMKTS/ADYEY/",
+        "https://www.openbanking.org.uk/regulated-providers/adyen-n-v/",
+        "https://finance.yahoo.com/quote/ADYEN.AS/",
+        "https://live.euronext.com/en/ipo-showcase/adyen-nv",
+        "https://financialreports.eu/companies/adyen-nv/"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "llms.txt - Adyen",
+          "snippet": "... adyen.com/): Run payments, manage your data, and offer financial products in ... Adyen N.V. is licensed by De Nederlandsche Bank to provide cross ...",
+          "url": "https://www.adyen.com/llms.txt",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Adyen - Overview, News & Similar companies | ZoomInfo.com",
+          "snippet": "Popular SearchesAdyen NVadyen.comAdyen IncAdyenAdyen BVSIC Code 60,609NAICS ... Adyen's official website is www.adyen.com What is Adyen's Revenue?",
+          "url": "https://www.zoominfo.com/c/adyen-nv/353569735",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen NV Share Price - Financials - Stockopedia",
+          "snippet": "Adyen NV (AMS:ADYEN) share price: €957.90. +14.9 (+1.58%) today. Chart ... https://www.adyen.com/; Phone: +31 202401680; Contact: Maggie O'Donnell; Auditors ...",
+          "url": "https://www.stockopedia.com/share-prices/adyen-nv-AMS:ADYEN/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Adyen - Wikipedia",
+          "snippet": "Adyen N.V.. Company type. Naamloze vennootschap · Traded as · Euronext Amsterdam ... adyen.com. Footnotes / references. Adyen offers merchants online ...",
+          "url": "https://en.wikipedia.org/wiki/Adyen",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "ADYEN Stock Price Quote | Morningstar",
+          "snippet": "See the latest Adyen NV stock price (ADYEN:XAMS), related news, valuation, dividends ... adyen.com. Competitors. PayPal Holdings Inc. PYPL · Block Inc Class A.",
+          "url": "https://www.morningstar.com/stocks/xams/adyen/quote",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

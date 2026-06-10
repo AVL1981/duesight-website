@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020308;color:#e0ecff;font-family:'JetBrains Mono',monospace;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(2,3,8,0.7) 0%,rgba(2,3,8,0.3) 40%,rgba(2,3,8,0.5) 70%,rgba(2,3,8,0.9) 100%)}
+.layout{position:absolute;inset:0;z-index:10;display:grid;grid-template-columns:1fr 280px;grid-template-rows:40px 1fr 36px}
+.topbar{grid-column:1/-1;background:rgba(2,3,8,0.8);border-bottom:1px solid rgba(96,165,250,0.15);display:flex;align-items:center;padding:0 24px;gap:20px}
+.tb-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:#60a5fa;text-transform:uppercase}
+.tb-sep{width:1px;height:16px;background:rgba(96,165,250,0.2)}
+.tb-item{font-size:8px;letter-spacing:1.5px;color:rgba(180,200,240,0.3)}
+.tb-item b{color:rgba(96,165,250,0.7)}
+.tb-live{margin-left:auto;font-size:8px;letter-spacing:2px;color:rgba(34,197,94,0.6);display:flex;align-items:center;gap:6px}
+.tb-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;animation:blink 1.2s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero{display:flex;flex-direction:column;justify-content:center;padding:48px;border-right:1px solid rgba(96,165,250,0.06)}
+.tag{display:flex;align-items:center;gap:8px;margin-bottom:28px}
+.tag-line{width:28px;height:1px;background:rgba(96,165,250,0.4)}
+.tag-text{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(96,165,250,0.5)}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-1.5px;color:#fff;margin-bottom:16px}
+h1 span{color:transparent;background:linear-gradient(90deg,#60a5fa,#34d399);-webkit-background-clip:text;background-clip:text}
+.desc{font-size:11px;color:rgba(180,200,240,0.4);line-height:1.8;max-width:440px;margin-bottom:32px;font-weight:300}
+.search{display:flex;background:rgba(5,10,25,0.8);border:1px solid rgba(96,165,250,0.2);max-width:460px;backdrop-filter:blur(16px)}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#e0ecff;font-family:'JetBrains Mono',monospace;font-size:11px;padding:13px 16px}
+.search input::placeholder{color:rgba(150,180,220,0.2)}
+.search button{background:linear-gradient(135deg,#2563eb,#1d4ed8);border:none;color:#fff;cursor:pointer;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:13px 20px;white-space:nowrap}
+.metrics{display:flex;gap:28px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(96,165,250,0.06)}
+.metric{display:flex;flex-direction:column;gap:4px}
+.m-val{font-size:20px;font-weight:700;color:#60a5fa;font-family:'Manrope',sans-serif}
+.m-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(150,180,220,0.25)}
+.sidebar{display:flex;flex-direction:column;justify-content:center;padding:24px;gap:16px;background:rgba(255,255,255,0.015)}
+.data-block{padding:14px 0;border-bottom:1px solid rgba(96,165,250,0.05)}
+.db-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.3);margin-bottom:8px}
+.db-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:9px}
+.db-name{color:rgba(180,200,240,0.4)}
+.db-status{display:flex;align-items:center;gap:4px;font-size:8px;font-weight:500}
+.db-status.ok{color:rgba(34,197,94,0.6)}
+.db-status.ok::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(34,197,94,0.5)}
+.db-val{font-size:16px;font-weight:700;color:#60a5fa;font-family:'Manrope',sans-serif;margin-bottom:2px}
+.db-sub{font-size:8px;color:rgba(150,180,220,0.3)}
+.bottom{grid-column:1/-1;background:rgba(2,3,8,0.9);border-top:1px solid rgba(96,165,250,0.08);display:flex;align-items:center;padding:0 24px;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.2)}
+.bi.hi{color:rgba(34,197,94,0.4)}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="veil"></div>
+<div class="layout">
+  <div class="topbar">
+    <div class="tb-brand">DueSight</div><div class="tb-sep"></div>
+    <div class="tb-item">Quantum Lattice <b>v3.0</b></div>
+    <div class="tb-item">NODE: <b>AMS_01</b></div>
+    <div class="tb-item">VALIDATIE: <b>MULTI-LAYER</b></div>
+    <div class="tb-live"><div class="tb-dot"></div>LIVE INTELLIGENCE</div>
+  </div>
+  <div class="hero">
+    <div class="tag"><div class="tag-line"></div><div class="tag-text">Pre-Due Diligence Intelligence</div></div>
+    <h1>Elke laag.<br/>Elk risico.<br/><span>Zichtbaar.</span></h1>
+    <p class="desc">Multi-dimensionale analyse via een proprietary multi-model intelligence engine. Van sanctiescreening tot forensische data-analyse — elk datapunt redundant gevalideerd over 47 databases.</p>
+    <div class="search"><input type="text" placeholder="KvK-nummer of bedrijfsnaam..."/><button>Analyseer →</button></div>
+    <div class="metrics">
+      <div class="metric"><div class="m-val">47</div><div class="m-lbl">Databases</div></div>
+      <div class="metric"><div class="m-val">&lt;3m</div><div class="m-lbl">Rapport</div></div>
+      <div class="metric"><div class="m-val">Multi</div><div class="m-lbl">Lagen</div></div>
+      <div class="metric"><div class="m-val">∅</div><div class="m-lbl">Retentie</div></div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <div class="data-block">
+      <div class="db-label">Analyse Pipeline</div>
+      <div class="db-row"><span class="db-name">KvK Register</span><span class="db-status ok">14ms</span></div>
+      <div class="db-row"><span class="db-name">Rechtspraak.nl</span><span class="db-status ok">22ms</span></div>
+      <div class="db-row"><span class="db-name">GLEIF / LEI</span><span class="db-status ok">31ms</span></div>
+      <div class="db-row"><span class="db-name">Bundesanzeiger</span><span class="db-status ok">18ms</span></div>
+      <div class="db-row"><span class="db-name">OpenSanctions</span><span class="db-status ok">9ms</span></div>
+    </div>
+    <div class="data-block">
+      <div class="db-label">Analysevalidatie</div>
+      <div class="db-val">94.7%</div>
+      <div class="db-sub">meerdere analyselagen akkoord</div>
+    </div>
+    <div class="data-block">
+      <div class="db-label">Jurisdicties</div>
+      <div style="display:flex;gap:6px;margin-top:6px">
+        <span style="font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(96,165,250,0.2);color:rgba(96,165,250,0.6)">NL</span>
+        <span style="font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(96,165,250,0.2);color:rgba(96,165,250,0.6)">DE</span>
+        <span style="font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(96,165,250,0.2);color:rgba(96,165,250,0.6)">AT</span>
+        <span style="font-size:8px;letter-spacing:1px;padding:3px 8px;border:1px solid rgba(96,165,250,0.2);color:rgba(96,165,250,0.6)">CH</span>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="bi hi">● Operationeel</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div>
+  </div>
+</div>
+<script>
+var c=document.getElementById('bg'),x=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+// 3D Perspective grid — quantum lattice
+var t=0,gridSize=50,perspective=800;
+function draw(){
+  t+=0.003;
+  x.fillStyle='rgba(2,3,8,0.12)';x.fillRect(0,0,W,H);
+  var cx=W/2,cy=H*0.55;
+  // Horizontal grid lines with perspective
+  for(var z=0;z<20;z++){
+    var depth=z*gridSize+((t*100)%gridSize);
+    var scale=perspective/(perspective+depth);
+    var y=cy+depth*scale*0.6;
+    if(y>H) continue;
+    var width=W*scale*1.5;
+    var lx=cx-width/2,rx=cx+width/2;
+    var alpha=Math.max(0,0.15*(1-z/20));
+    x.beginPath();x.moveTo(lx,y);x.lineTo(rx,y);
+    x.strokeStyle='rgba(96,165,250,'+alpha+')';x.lineWidth=0.6;x.stroke();
+  }
+  // Vertical grid lines
+  for(var i=-15;i<=15;i++){
+    x.beginPath();
+    var first=true;
+    for(var z=0;z<20;z++){
+      var depth=z*gridSize;
+      var scale=perspective/(perspective+depth);
+      var px=cx+i*gridSize*scale;
+      var py=cy+depth*scale*0.6;
+      if(py>H) break;
+      if(first){x.moveTo(px,py);first=false}
+      else x.lineTo(px,py);
+    }
+    x.strokeStyle='rgba(96,165,250,0.06)';x.lineWidth=0.5;x.stroke();
+  }
+  // Glowing intersection points
+  for(var z=1;z<12;z++){
+    var depth=z*gridSize+((t*100)%gridSize);
+    var scale=perspective/(perspective+depth);
+    var y=cy+depth*scale*0.6;
+    if(y>H) continue;
+    for(var i=-8;i<=8;i+=2){
+      var px=cx+i*gridSize*scale;
+      var intensity=Math.max(0,(1-z/12)*0.6);
+      var pulse=Math.sin(t*3+z+i)*0.3+0.7;
+      var g=x.createRadialGradient(px,y,0,px,y,3*scale);
+      g.addColorStop(0,'rgba(96,165,250,'+(intensity*pulse)+')');
+      g.addColorStop(1,'rgba(96,165,250,0)');
+      x.beginPath();x.arc(px,y,3*scale,0,Math.PI*2);x.fillStyle=g;x.fill();
+    }
+  }
+  // Top nebula
+  var ng=x.createRadialGradient(W*0.3,H*0.2,0,W*0.3,H*0.2,W*0.4);
+  ng.addColorStop(0,'rgba(96,165,250,0.04)');ng.addColorStop(1,'transparent');
+  x.fillStyle=ng;x.fillRect(0,0,W,H);
+  var ng2=x.createRadialGradient(W*0.7,H*0.15,0,W*0.7,H*0.15,W*0.3);
+  ng2.addColorStop(0,'rgba(139,92,246,0.03)');ng2.addColorStop(1,'transparent');
+  x.fillStyle=ng2;x.fillRect(0,0,W,H);
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

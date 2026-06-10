@@ -1,0 +1,292 @@
+{
+  "schema_version": "duesight.sample_report_max_company_intel_replay.v1",
+  "started_at": "2026-06-02T10:56:32+00:00",
+  "reports_requested": [
+    "sample-report-adyen",
+    "sample-report-bunq",
+    "sample-report-gasunie",
+    "sample-report-getthere",
+    "sample-report-mollie-gold",
+    "sample-report-multiselect",
+    "sample-report-nlist",
+    "sample-report-postnl",
+    "sample-report-shell",
+    "sample-report-specialist-group",
+    "sample-report-truelegends",
+    "sample-report-wise"
+  ],
+  "providers": [],
+  "render": false,
+  "dry_run": false,
+  "sanitize_only": true,
+  "results": [
+    {
+      "report": "sample-report-adyen",
+      "target": {
+        "name": "Adyen N.V.",
+        "domain": "adyen.com",
+        "kvk": "34259528",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 32,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:32+00:00"
+    },
+    {
+      "report": "sample-report-bunq",
+      "target": {
+        "name": "bunq B.V.",
+        "domain": "bunq.com",
+        "kvk": "54992060",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:32+00:00"
+    },
+    {
+      "report": "sample-report-gasunie",
+      "target": {
+        "name": "N.V. Nederlandse Gasunie",
+        "domain": "gasunie.nl",
+        "kvk": "02010556",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 34,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:32+00:00"
+    },
+    {
+      "report": "sample-report-getthere",
+      "target": {
+        "name": "GetThere B.V.",
+        "domain": "getthere.nl",
+        "kvk": "",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:32+00:00"
+    },
+    {
+      "report": "sample-report-mollie-gold",
+      "target": {
+        "name": "Mollie B.V.",
+        "domain": "mollie.com",
+        "kvk": "30204462",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:32+00:00"
+    },
+    {
+      "report": "sample-report-multiselect",
+      "target": {
+        "name": "Multiselect B.V.",
+        "domain": "multiselect.nl",
+        "kvk": "",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:32+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-nlist",
+      "target": {
+        "name": "NLIST B.V.",
+        "domain": "nlist.nl",
+        "kvk": "85442410",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 43,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-postnl",
+      "target": {
+        "name": "PostNL N.V.",
+        "domain": "postnl.nl",
+        "kvk": "",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-shell",
+      "target": {
+        "name": "Shell plc",
+        "domain": "shell.com",
+        "kvk": "",
+        "country": "GB",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-specialist-group",
+      "target": {
+        "name": "The Specialist Group B.V.",
+        "domain": "thespecialistgroup.com",
+        "kvk": "93038948",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-truelegends",
+      "target": {
+        "name": "True Legends IT B.V.",
+        "domain": "truelegendsit.nl",
+        "kvk": "",
+        "country": "NL",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    },
+    {
+      "report": "sample-report-wise",
+      "target": {
+        "name": "Wise plc",
+        "domain": "wise.com",
+        "kvk": "",
+        "country": "GB",
+        "city": "",
+        "sector": ""
+      },
+      "started_at": "2026-06-02T10:56:33+00:00",
+      "steps": {
+        "claim_artifact_sanitize": {
+          "status": "ok",
+          "scanned_files": 31,
+          "changed_files": [],
+          "changed_count": 0
+        }
+      },
+      "status": "sanitized",
+      "finished_at": "2026-06-02T10:56:33+00:00"
+    }
+  ],
+  "finished_at": "2026-06-02T10:56:33+00:00",
+  "completed": 0,
+  "failed": 0,
+  "skipped": 0
+}

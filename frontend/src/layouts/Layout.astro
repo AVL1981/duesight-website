@@ -1,0 +1,61 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Geautomatiseerde institutionele pre-DD intelligence." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="nl" data-theme="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		
+		<!-- SEO: Canonical URL -->
+		<link rel="canonical" href={Astro.url} />
+		
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:site_name" content="DueSight Intelligence" />
+		<meta property="og:locale" content="nl_NL" />
+		
+		<!-- Flag Icons CDN -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
+		
+		<!-- Performance: preconnect -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Animated Background -->
+		<div class="bg-gradient"></div>
+
+		<!-- Metallic SVG Definitions -->
+		<svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+			<defs>
+				<!-- Chrome gradients definition -->
+				<linearGradient id="grad-chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+					<stop offset="0%" style="stop-color:#e2e8f0;stop-opacity:1" />
+					<stop offset="20%" style="stop-color:#f8fafc;stop-opacity:1" />
+					<stop offset="40%" style="stop-color:#94a3b8;stop-opacity:1" />
+					<stop offset="50%" style="stop-color:#f1f5f9;stop-opacity:1" />
+					<stop offset="60%" style="stop-color:#94a3b8;stop-opacity:1" />
+					<stop offset="80%" style="stop-color:#f8fafc;stop-opacity:1" />
+					<stop offset="100%" style="stop-color:#64748b;stop-opacity:1" />
+				</linearGradient>
+			</defs>
+		</svg>
+
+		<slot />
+		
+	</body>
+</html>

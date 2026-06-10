@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-processor Lijst | DueSight</title>
+  <meta name="description" content="Publieke sub-processor lijst van DueSight voor hosting, betalingen, e-mail en optionele AI-inference routes.">
+  <link rel="canonical" href="https://duesight.nl/subprocessors/">
+  <link rel="stylesheet" href="../assets/trust-authority.css">
+</head>
+<body>
+  <div class="topbar">AVG documentatiepack - sub-processors</div>
+  <nav class="nav">
+    <a class="brand" href="../"><span class="mark">D</span><span>DueSight</span></a>
+    <div class="navlinks">
+      <a href="../privacy/">Privacy</a>
+      <a href="../dpa/">DPA</a>
+      <a href="../dataretentie/">Retentie</a>
+      <a href="../security/">Security</a>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span>Sub-processors</div>
+      <h1>Publiek register voor <em>verwerkers</em></h1>
+      <p class="lead">Niet elke provider wordt in elk rapport gebruikt. Deze lijst beschrijft de categorieen en named providers die DueSight kan inzetten voor levering, betaling, e-mail, hosting en optionele AI-routes.</p>
+    </section>
+
+    <div class="answer">
+      <p><strong>Antwoord in het kort:</strong> DueSight gebruikt sub-processors alleen voor concrete functies. Klanten kunnen in de DPA of order vastleggen welke AI- of cloudroutes wel of niet toegestaan zijn. Nieuwe materiele sub-processors worden via deze pagina gepubliceerd.</p>
+    </div>
+
+    <section class="section">
+      <h2>Actuele lijst</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Provider</th><th>Functie</th><th>Regio / doorgifte</th><th>Status</th><th>Opmerking</th></tr></thead>
+          <tbody>
+            <tr><td>Mollie B.V.</td><td>Betalingen en betaalstatus.</td><td>EU/NL.</td><td><span class="badge">Actief waar betaald</span></td><td>Alleen voor checkout, facturatie en terugbetalingen.</td></tr>
+            <tr><td>Hostnet B.V.</td><td>Domein, mail of basis hosting-routes waar geconfigureerd.</td><td>EU/NL.</td><td><span class="badge">Actief waar geconfigureerd</span></td><td>Functioneel voor contact- en deliverability-routes.</td></tr>
+            <tr><td>Supabase</td><td>Applicatiedatabase, auth of opslag waar de webapp dit gebruikt.</td><td>Regio volgens projectconfiguratie.</td><td><span class="badge warn">Conditioneel</span></td><td>Niet elk rapportpad gebruikt applicatieopslag.</td></tr>
+            <tr><td>Google Cloud / Google AI API</td><td>Optionele AI-inference, documentanalyse of zoekroute.</td><td>Afhankelijk van gekozen endpoint en contract.</td><td><span class="badge warn">Conditioneel</span></td><td>Alleen waar klant/order of route dit toestaat.</td></tr>
+            <tr><td>External model provider (synthese)</td><td>Optionele AI-inference voor synthese of review.</td><td>Afhankelijk van providercontract.</td><td><span class="badge warn">Conditioneel</span></td><td>Geen zelfstandige bewijsbron; output blijft source-gated.</td></tr>
+            <tr><td>External model provider (tekstverwerking)</td><td>Optionele AI-inference voor tekstverwerking.</td><td>Afhankelijk van providercontract.</td><td><span class="badge warn">Conditioneel</span></td><td>Alleen als route expliciet is ingeschakeld.</td></tr>
+            <tr><td>OpenRouter</td><td>Optionele modelrouting voor AI-inference.</td><td>Afhankelijk van downstream provider.</td><td><span class="badge warn">Conditioneel</span></td><td>Kan door klant worden uitgesloten.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid two section">
+      <div class="card">
+        <h2>Wijzigingsproces</h2>
+        <ul>
+          <li>Materiele nieuwe sub-processors worden op deze pagina toegevoegd.</li>
+          <li>Klanten met DPA kunnen bezwaar maken volgens hun contracttermijn.</li>
+          <li>Een no-cloud of provider-exclusion afspraak hoort in de order of DPA te staan.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Geen bewijsuitbreiding</h2>
+        <p>AI- of cloudproviders leveren verwerking, geen bewijs. Een rapportclaim wordt pas buyer-safe wanneer de bronlaag, source envelope en claim-safe gate dit toestaan.</p>
+      </div>
+    </section>
+
+    <footer class="footer">Vibe The Code (KvK 99920301) - DueSight productnaam - legal@duesight.nl - bijgewerkt op 2026-06-08</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DueSight Orbit</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#040d1c;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;font-family:system-ui}
+canvas{display:block;max-width:100%;cursor:default}
+#ctr{display:flex;gap:8px;align-items:center;margin-top:12px;width:540px;max-width:100%}
+button{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.6);border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer}
+input[type=range]{flex:1;accent-color:#60a5fa}
+#lb{font-size:12px;color:rgba(255,255,255,0.35);min-width:60px}
+#tip{position:fixed;display:none;background:#0d1e38;border:1px solid rgba(100,160,255,0.25);border-radius:12px;padding:14px 18px;pointer-events:none;z-index:999;min-width:180px}
+#tip-name{font-size:16px;font-weight:700;color:#fff;margin-bottom:3px}
+#tip-front{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:8px}
+#tip-divider{height:1px;background:rgba(100,160,255,0.15);margin-bottom:8px}
+#tip-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(100,160,255,0.5);margin-bottom:3px}
+#tip-back{font-size:15px;font-weight:700}
+</style>
+</head>
+<body>
+<div style="position:relative">
+  <canvas id="cv" width="540" height="410"></canvas>
+  <div id="tip">
+    <div id="tip-name"></div>
+    <div id="tip-front"></div>
+    <div id="tip-divider"></div>
+    <div id="tip-label">Technische waarde</div>
+    <div id="tip-back"></div>
+  </div>
+</div>
+<div id="ctr">
+  <button id="pb" onclick="toggleP()">⏸ Pauzeer</button>
+  <button onclick="restart()">↺ Herstart</button>
+  <input type="range" id="sl" min="1" max="5" value="3" oninput="setSpd(this.value)">
+  <span id="lb">normaal</span>
+</div>
+<script>
+var cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+var tip=document.getElementById('tip');
+var W=540,H=410,CX=270,CY=205,RX=190,RY=70,CS=44;
+
+var P=[
+  {name:'Modelroute Redeneren',   f:'Ultra Smart', b:'Redeneren',    c:[16,163,127]},
+  {name:'Modelroute Nauwkeurig',f:'Nauwkeurig',  b:'Veilig & Snel',c:[217,119,87]},
+  {name:'Google',   f:'Web & Data',  b:'Grounding',    c:[66,133,244]},
+  {name:'Meta',     f:'Open Source', b:'Flexibel',     c:[0,129,251]},
+  {name:'Modelroute Privacy',  f:'EU Privacy',  b:'GDPR-proof',   c:[255,112,0],eu:1},
+  {name:'Groq',     f:'Razendsnel',  b:'Low Latency',  c:[245,80,54]},
+  {name:'Modelroute Snelheid', f:'Max Speed',   b:'Real-time',    c:[232,66,11]},
+  {name:'NVIDIA',   f:'GPU Kracht',  b:'Schaalbaar',   c:[118,185,0]},
+  {name:'xAI',      f:'Actueel',     b:'Live Data',    c:[139,92,246]},
+  {name:'Lokaal',   f:'100% Privé',  b:'On-Premise',   c:[13,148,136]}
+];
+var N=P.length;
+
+var SPDS={1:.0001,2:.00016,3:.00022,4:.00034,5:.00054};
+var LBLS={1:'rustig',2:'langzaam',3:'normaal',4:'snel',5:'turbo'};
+var spd=SPDS[3],paused=false;
+var baseAngs=P.map(function(_,i){return 2*Math.PI*i/N;});
+var fl=new Array(N).fill(false);
+var cardRects=new Array(N).fill(null);
+
+// ============================================================
+// TIMING — lang genoeg om duidelijk te zien
+var WAIT = 2000;   // 2s alleen hub zichtbaar
+var EDUR = 4500;   // 4.5s vlucht — ruim zichtbaar
+// GEEN stagger — alle kaarten schieten tegelijk bij explosie
+// ============================================================
+
+var t0=null,orb=0,lt=null,expl=false,wav=[];
+var hoverIdx=-1;
+var st=[];
+for(var i=0;i<60;i++) st.push([Math.random()*W,Math.random()*H,Math.random()*.8+.15]);
+
+// Pure lineaire easing — constante snelheid door hele baan, altijd zichtbaar
+function linear(t){return Math.max(0,Math.min(1,t));}
+
+function clr(c,a){return 'rgba('+c[0]+','+c[1]+','+c[2]+','+(a||1)+')';}
+function rr(x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);
+  ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
+  ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);
+  ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);
+  ctx.closePath();
+}
+
+function drawHub(el){
+  var r=44;
+  ctx.beginPath();ctx.arc(CX,CY,r,0,6.28);
+  ctx.fillStyle='#0b1f3a';ctx.fill();
+  ctx.strokeStyle='rgba(100,160,255,.28)';ctx.lineWidth=1.5;ctx.stroke();
+  var p=(el/1800)%1;
+  for(var i=0;i<2;i++){
+    var pp=(p+i*.5)%1;
+    ctx.beginPath();ctx.arc(CX,CY,r+pp*68,0,6.28);
+    ctx.strokeStyle='rgba(100,160,255,'+(0.5*(1-pp)).toFixed(2)+')';
+    ctx.lineWidth=1;ctx.stroke();
+  }
+  ctx.fillStyle='#60a5fa';
+  ctx.font='bold 22px Georgia,serif';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText('DS',CX,CY-7);
+  ctx.fillStyle='rgba(148,180,255,.55)';
+  ctx.font='600 10px system-ui';
+  ctx.fillText('DueSight',CX,CY+12);
+}
+
+function drawWaves(){
+  for(var i=wav.length-1;i>=0;i--){
+    var w=wav[i];
+    w.r+=7;w.a=Math.max(0,w.a-.016);
+    if(w.a<=0){wav.splice(i,1);continue;}
+    ctx.beginPath();ctx.arc(CX,CY,w.r,0,6.28);
+    ctx.strokeStyle='rgba(120,190,255,'+w.a.toFixed(2)+')';
+    ctx.lineWidth=3;ctx.stroke();
+  }
+}
+
+function drawCard(p,idx,ang,el){
+  var cw=CS*2,ch=CS*2;
+  var tx=CX+RX*Math.cos(ang)-CS;
+  var ty=CY+RY*Math.sin(ang)-CS;
+
+  var cel=el-WAIT;
+  var ep=linear(cel/EDUR);  // 0→1 lineair over EDUR ms
+  var dep=Math.sin(ang),t=(dep+1)/2;
+  var sx,sy,sc,op;
+
+  if(el<WAIT){
+    cardRects[idx]=null;
+    return; // nog niet zichtbaar
+  }
+
+  if(ep<1){
+    // ---- VLIEGFASE ----
+    sx=CX-CS+(tx-(CX-CS))*ep;
+    sy=CY-CS+(ty-(CY-CS))*ep;
+    sc=0.25+ep*0.75;   // groeit van 25% naar 100%
+    op=0.3+ep*0.5;     // altijd zichtbaar (30%→80%)
+
+    // Duidelijke kleurstaart over hele afgelegde pad
+    var prev=Math.max(0,ep-0.15);
+    var bx=CX-CS+(tx-(CX-CS))*prev+CS;
+    var by=CY-CS+(ty-(CY-CS))*prev+CS;
+    ctx.beginPath();ctx.moveTo(bx,by);ctx.lineTo(sx+CS,sy+CS);
+    ctx.strokeStyle=clr(p.c,0.6);
+    ctx.lineWidth=7;ctx.lineCap='round';ctx.stroke();ctx.lineCap='butt';
+
+    cardRects[idx]=null;
+  } else {
+    // ---- ORBITFASE ----
+    sx=tx;sy=ty;
+    sc=0.5+0.5*t;
+    op=0.22+0.78*t;
+    var rect=cv.getBoundingClientRect();
+    cardRects[idx]={
+      cx:rect.left+sx+CS,
+      cy:rect.top+sy+CS,
+      sc:sc,i:idx
+    };
+  }
+
+  ctx.save();
+  ctx.globalAlpha=op;
+  ctx.translate(sx+CS,sy+CS);ctx.scale(sc,sc);ctx.translate(-CS,-CS);
+
+  var side=ep>=1&&t>0.82;
+  var isHov=(hoverIdx===idx&&ep>=1);
+
+  rr(0,0,cw,ch,13);
+  ctx.fillStyle=side?'#060f1e':'#0a1525';ctx.fill();
+  ctx.strokeStyle=isHov?clr(p.c,.7):(side?clr(p.c,.28):'rgba(255,255,255,.1)');
+  ctx.lineWidth=isHov?1.5:.5;ctx.stroke();
+
+  // Kleurcirkel
+  var icy=ch/2-10;
+  ctx.beginPath();ctx.arc(cw/2,icy,20,0,6.28);
+  ctx.fillStyle=clr(p.c,side?.45:.28);ctx.fill();
+  ctx.beginPath();ctx.arc(cw/2,icy,8,0,6.28);
+  ctx.fillStyle=clr(p.c,side?.9:.65);ctx.fill();
+
+  if(p.eu&&!side){
+    ctx.fillStyle='#FF7000';ctx.font='bold 7px system-ui';
+    ctx.textAlign='right';ctx.textBaseline='top';
+    ctx.fillText('EU',cw-4,3);
+  }
+
+  // Label
+  ctx.beginPath();ctx.moveTo(8,ch-26);ctx.lineTo(cw-8,ch-26);
+  ctx.strokeStyle=side?clr(p.c,.2):'rgba(255,255,255,.07)';ctx.lineWidth=.5;ctx.stroke();
+
+  var lbl=side?p.b:p.f;
+  ctx.fillStyle=side?clr(p.c,1):'rgba(255,255,255,.88)';
+  ctx.font=(side?'700 ':'600 ')+'11px system-ui';
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.fillText(lbl,cw/2,ch-13);
+
+  ctx.restore();
+}
+
+function frame(ts){
+  if(!t0){t0=ts;lt=ts;}
+  var el=ts-t0;
+  var dt=Math.min(ts-(lt||ts),80);lt=ts;
+  if(!paused&&el>WAIT) orb+=spd*dt;
+
+  // Explosie precies op WAIT
+  if(!expl&&el>=WAIT){
+    expl=true;
+    wav.push({r:44,a:1.0});
+    setTimeout(function(){wav.push({r:44,a:.75});},120);
+    setTimeout(function(){wav.push({r:44,a:.5});},240);
+    setTimeout(function(){wav.push({r:44,a:.28});},360);
+  }
+
+  ctx.clearRect(0,0,W,H);
+  ctx.fillStyle='#040d1c';ctx.fillRect(0,0,W,H);
+
+  // Sterren
+  st.forEach(function(s){
+    ctx.beginPath();ctx.arc(s[0],s[1],s[2]*.7,0,6.28);
+    ctx.fillStyle='rgba(200,220,255,'+(s[2]*.18).toFixed(2)+')';ctx.fill();
+  });
+
+  // Orbit ring
+  ctx.beginPath();ctx.ellipse(CX,CY,RX,RY,0,0,6.28);
+  ctx.strokeStyle='rgba(100,160,255,.06)';ctx.lineWidth=1;
+  ctx.setLineDash([3,9]);ctx.stroke();ctx.setLineDash([]);
+
+  // Z-sort
+  var items=P.map(function(p,i){
+    var ang=baseAngs[i]+orb;
+    var dep=Math.sin(ang);
+    var cel=el-WAIT,ep=linear(cel/EDUR);
+    if(ep>=1){
+      if(dep>0.82&&!fl[i])fl[i]=true;
+      else if(dep<0.15&&fl[i])fl[i]=false;
+    }
+    return{p:p,i:i,ang:ang,dep:dep};
+  }).sort(function(a,b){return a.dep-b.dep;});
+
+  items.forEach(function(it){drawCard(it.p,it.i,it.ang,el);});
+  drawWaves();
+  drawHub(el);
+  requestAnimationFrame(frame);
+}
+
+// Tooltip
+cv.addEventListener('mousemove',function(e){
+  var rect=cv.getBoundingClientRect();
+  var mx=e.clientX-rect.left,my=e.clientY-rect.top;
+  var found=-1;
+  for(var i=0;i<cardRects.length;i++){
+    var r=cardRects[i];if(!r)continue;
+    var cx=r.cx-rect.left,cy=r.cy-rect.top;
+    if(Math.sqrt((mx-cx)*(mx-cx)+(my-cy)*(my-cy))<CS*r.sc){found=i;break;}
+  }
+  hoverIdx=found;
+  if(found>=0){
+    var p=P[found];
+    document.getElementById('tip-name').textContent=p.name;
+    document.getElementById('tip-name').style.color=clr(p.c,1);
+    document.getElementById('tip-front').textContent=p.f;
+    document.getElementById('tip-back').textContent=p.b;
+    document.getElementById('tip-back').style.color=clr(p.c,1);
+    var tx=e.clientX+18,ty=e.clientY-16;
+    if(tx+220>window.innerWidth)tx=e.clientX-230;
+    tip.style.left=tx+'px';tip.style.top=ty+'px';tip.style.display='block';
+  } else {
+    tip.style.display='none';
+  }
+});
+cv.addEventListener('mouseleave',function(){hoverIdx=-1;tip.style.display='none';});
+
+requestAnimationFrame(frame);
+
+window.toggleP=function(){
+  paused=!paused;
+  document.getElementById('pb').textContent=paused?'▶ Hervat':'⏸ Pauzeer';
+};
+window.setSpd=function(v){
+  spd=SPDS[v];
+  document.getElementById('lb').textContent=LBLS[v];
+};
+window.restart=function(){
+  t0=null;orb=0;lt=null;expl=false;wav=[];
+  fl=new Array(N).fill(false);
+  cardRects=new Array(N).fill(null);
+};
+</script>
+</body>
+</html>

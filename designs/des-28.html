@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020610;color:#c0d8ff;font-family:'Rajdhani',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+.holo-tag{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(100,180,255,0.4);margin-bottom:20px;font-weight:300}
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;color:#fff;margin-bottom:12px;text-shadow:0 0 50px rgba(100,180,255,0.1)}
+h1 span{color:transparent;background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);-webkit-background-clip:text;background-clip:text}
+.sub{font-size:12px;color:rgba(150,190,230,0.4);margin-bottom:36px;font-weight:300;letter-spacing:1px}
+.search{display:flex;background:rgba(5,12,30,0.6);border:1px solid rgba(100,180,255,0.15);max-width:520px;width:100%;backdrop-filter:blur(20px);position:relative;overflow:hidden}
+.search::before{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.05),transparent);animation:scan 4s linear infinite}
+@keyframes scan{0%{left:-100%}100%{left:200%}}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#c0d8ff;font-family:'Rajdhani',sans-serif;font-size:14px;padding:15px 18px;font-weight:400;letter-spacing:0.5px}
+.search input::placeholder{color:rgba(100,180,255,0.2)}
+.search button{background:linear-gradient(135deg,rgba(56,189,248,0.2),rgba(129,140,248,0.2));border:none;border-left:1px solid rgba(100,180,255,0.1);color:#38bdf8;cursor:pointer;font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:15px 24px;white-space:nowrap}
+.metrics{display:flex;gap:48px;margin-top:36px}
+.metric{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+.metric::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:30px;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,0.3),transparent)}
+.mv{font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#38bdf8;text-shadow:0 0 15px rgba(56,189,248,0.3)}
+.ml{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(100,180,255,0.2);font-weight:300}
+/* Floating holo panels */
+.holo-panel{position:absolute;z-index:8;background:rgba(5,15,40,0.4);border:1px solid rgba(100,180,255,0.1);backdrop-filter:blur(8px);padding:14px 16px;pointer-events:none}
+.hp-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(100,180,255,0.3);margin-bottom:6px}
+.hp-value{font-size:14px;font-weight:700;color:rgba(56,189,248,0.7)}
+.hp-sub{font-size:8px;color:rgba(100,180,255,0.2);margin-top:2px}
+.hp1{top:15%;right:12%;animation:float1 6s ease-in-out infinite}
+.hp2{top:25%;left:8%;animation:float2 7s ease-in-out infinite}
+.hp3{bottom:22%;right:8%;animation:float3 5s ease-in-out infinite}
+.hp4{bottom:18%;left:12%;animation:float1 8s ease-in-out infinite;animation-delay:1s}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(0.5deg)}50%{transform:translateY(-12px) rotate(-0.5deg)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(-0.3deg)}50%{transform:translateY(-8px) rotate(0.3deg)}}
+@keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(2,6,16,0.9);border-top:1px solid rgba(100,180,255,0.06);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(100,180,255,0.15);font-weight:300}
+</style></head>
+<body>
+<canvas id="bg"></canvas>
+<div class="holo-panel hp1"><div class="hp-label">KvK Status</div><div class="hp-value">ACTIEF</div><div class="hp-sub">Geverifieerd · 14ms</div></div>
+<div class="holo-panel hp2"><div class="hp-label">Sanctie Check</div><div class="hp-value">CLEAN ∅</div><div class="hp-sub">OFAC · UN · EU</div></div>
+<div class="holo-panel hp3"><div class="hp-label">forensische data-analyse Analysis</div><div class="hp-value">χ² 4.32</div><div class="hp-sub">p=0.89 · PASS</div></div>
+<div class="holo-panel hp4"><div class="hp-label">Multi-source review</div><div class="hp-value">11/11</div><div class="hp-sub">Score: 94.7%</div></div>
+<div class="content">
+  <div class="holo-tag">◇ Holographic Intelligence Interface ◇</div>
+  <h1>Intelligence<br/>die <span>zweeft.</span></h1>
+  <div class="sub">Pre-due diligence visualisatie · 47 databases · 6 jurisdicties</div>
+  <div class="search"><input type="text" placeholder="Projecteer entiteit of KvK-nummer..."/><button>Projecteer →</button></div>
+  <div class="metrics">
+    <div class="metric"><div class="mv">meerdere</div><div class="ml">Bronnen</div></div>
+    <div class="metric"><div class="mv">&lt;3m</div><div class="ml">Rapport</div></div>
+    <div class="metric"><div class="mv">11</div><div class="ml">Engines</div></div>
+    <div class="metric"><div class="mv">∅</div><div class="ml">Retentie</div></div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bi">● Holo Active</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+var t=0;
+// Holographic particles
+var particles=[];
+for(var i=0;i<120;i++){
+  particles.push({x:Math.random(),y:Math.random(),z:Math.random(),vx:(Math.random()-0.5)*0.001,vy:-Math.random()*0.002-0.0005,
+    r:Math.random()*2+0.5,hue:200+Math.random()*60,a:Math.random()*0.5+0.2});
+}
+function draw(){
+  t+=0.005;
+  ctx.fillStyle='rgba(2,6,16,0.08)';ctx.fillRect(0,0,W,H);
+  // Central holographic projection cone
+  ctx.beginPath();
+  ctx.moveTo(W*0.5,H*0.9);
+  ctx.lineTo(W*0.3,H*0.15);
+  ctx.lineTo(W*0.7,H*0.15);
+  ctx.closePath();
+  var cg=ctx.createLinearGradient(W*0.5,H*0.9,W*0.5,H*0.15);
+  cg.addColorStop(0,'rgba(56,189,248,0.04)');
+  cg.addColorStop(0.5,'rgba(100,180,255,0.02)');
+  cg.addColorStop(1,'rgba(129,140,248,0.01)');
+  ctx.fillStyle=cg;ctx.fill();
+  // Horizontal scan lines through cone
+  for(var i=0;i<20;i++){
+    var y=H*0.2+i*(H*0.65/20);
+    var progress=(y-H*0.15)/(H*0.75);
+    var halfW=W*0.2*(1-progress*0.4);
+    var alpha=0.03+Math.sin(t*3+i*0.5)*0.01;
+    ctx.beginPath();ctx.moveTo(W*0.5-halfW,y);ctx.lineTo(W*0.5+halfW,y);
+    ctx.strokeStyle='rgba(100,180,255,'+alpha+')';ctx.lineWidth=0.5;ctx.stroke();
+  }
+  // Particles floating up
+  particles.forEach(function(p){
+    p.y+=p.vy;p.x+=p.vx;
+    if(p.y<0){p.y=1;p.x=Math.random()}
+    if(p.x<0||p.x>1)p.vx*=-1;
+    var x=p.x*W,y=p.y*H;
+    var pulse=p.a*(0.5+Math.sin(t*3+p.z*10)*0.5);
+    var g=ctx.createRadialGradient(x,y,0,x,y,p.r*3);
+    g.addColorStop(0,'hsla('+p.hue+',80%,70%,'+pulse+')');
+    g.addColorStop(1,'hsla('+p.hue+',80%,70%,0)');
+    ctx.beginPath();ctx.arc(x,y,p.r*3,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    ctx.beginPath();ctx.arc(x,y,p.r*0.5,0,Math.PI*2);
+    ctx.fillStyle='hsla('+p.hue+',80%,85%,'+pulse+')';ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

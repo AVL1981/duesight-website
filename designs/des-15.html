@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="dark" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#080504;color:#d4af6a;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+
+/* Marble texture background */
+canvas#marble{position:absolute;inset:0;z-index:0;}
+
+/* Dark overlay */
+.veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(8,5,4,0.75) 0%, rgba(8,5,4,0.5) 50%, rgba(8,5,4,0.85) 100%);
+}
+
+/* Gold filigree borders */
+.border-top,.border-bottom{
+  position:absolute;left:0;right:0;z-index:20;height:3px;
+  background:linear-gradient(90deg, transparent, rgba(212,175,106,0.6), rgba(212,175,106,1), rgba(212,175,106,0.6), transparent);
+}
+.border-top{top:0}
+.border-bottom{bottom:0}
+
+/* Side ornaments */
+.side-ornament{
+  position:absolute;top:50%;z-index:20;
+  transform:translateY(-50%);
+  width:60px;height:200px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.side-ornament.left{left:24px}
+.side-ornament.right{right:24px}
+.orn-line{width:1px;flex:1;background:linear-gradient(180deg,transparent,rgba(212,175,106,0.4),transparent);}
+.orn-diamond{width:8px;height:8px;border:1px solid rgba(212,175,106,0.6);transform:rotate(45deg);}
+
+/* Content */
+.content{
+  position:absolute;inset:0;z-index:10;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;padding:40px 120px;
+}
+
+/* Imperial seal */
+.seal{
+  width:80px;height:80px;border-radius:50%;
+  border:2px solid rgba(212,175,106,0.3);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  position:relative;
+}
+.seal::before{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:1px solid rgba(212,175,106,0.15);
+}
+.seal-inner{
+  width:56px;height:56px;border-radius:50%;
+  border:1px solid rgba(212,175,106,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+}
+
+/* Title */
+.pre-title{
+  font-family:'Cinzel',serif;
+  font-size:8px;letter-spacing:6px;text-transform:uppercase;
+  color:rgba(212,175,106,0.4);margin-bottom:16px;
+}
+h1{
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(1.8rem,4vw,3.5rem);
+  font-weight:900;letter-spacing:2px;
+  color:#d4af6a;
+  text-shadow:0 0 60px rgba(212,175,106,0.15), 0 2px 4px rgba(0,0,0,0.5);
+  margin-bottom:8px;line-height:1.1;
+}
+.sub-rule{
+  display:flex;align-items:center;gap:16px;margin:16px auto;max-width:400px;
+}
+.rule-line{flex:1;height:1px;background:rgba(212,175,106,0.2);}
+.rule-diamond{width:6px;height:6px;border:1px solid rgba(212,175,106,0.4);transform:rotate(45deg);flex-shrink:0;}
+.tagline{
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;
+  color:rgba(212,175,106,0.5);text-transform:uppercase;margin-bottom:36px;
+}
+
+/* Search — velluem style */
+.vellum-search{
+  background:rgba(4,3,2,0.85);
+  border:1px solid rgba(212,175,106,0.2);
+  border-top:1px solid rgba(212,175,106,0.4);
+  display:flex;max-width:520px;width:100%;
+  position:relative;
+}
+.vellum-search::before{
+  content:'ENTITEIT';
+  position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+  font-family:'Cinzel',serif;font-size:6px;letter-spacing:3px;
+  color:rgba(212,175,106,0.4);background:rgba(4,3,2,0.9);padding:0 10px;
+}
+.vellum-search input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#d4af6a;font-family:'Space Grotesk',sans-serif;
+  font-size:11px;padding:14px 16px;letter-spacing:0.5px;
+}
+.vellum-search input::placeholder{color:rgba(212,175,106,0.2);}
+.vellum-search button{
+  background:rgba(212,175,106,0.08);
+  border:none;border-left:1px solid rgba(212,175,106,0.15);
+  color:#d4af6a;cursor:pointer;
+  font-family:'Cinzel',serif;
+  font-size:7px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  padding:14px 22px;transition:background 0.2s;
+}
+.vellum-search button:hover{background:rgba(212,175,106,0.15);}
+
+/* Stats — inscribed style */
+.inscription{
+  display:flex;gap:40px;margin-top:36px;
+}
+.inscr-item{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.inscr-value{
+  font-family:'Cinzel Decorative',serif;font-size:24px;font-weight:700;
+  color:#d4af6a;text-shadow:0 0 20px rgba(212,175,106,0.2);
+}
+.inscr-rule{width:30px;height:1px;background:rgba(212,175,106,0.3);}
+.inscr-label{font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;text-transform:uppercase;color:rgba(212,175,106,0.35);}
+
+/* DACH jurisdictions */
+.scrolls{
+  display:flex;gap:12px;margin-top:28px;
+}
+.scroll{
+  font-family:'Cinzel',serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;
+  border:1px solid rgba(212,175,106,0.15);
+  color:rgba(212,175,106,0.4);
+  position:relative;
+}
+.scroll.prime{border-color:rgba(212,175,106,0.35);color:rgba(212,175,106,0.7);}
+</style>
+</head>
+<body>
+
+<canvas id="marble"></canvas>
+<div class="veil"></div>
+<div class="border-top"></div>
+<div class="border-bottom"></div>
+
+<div class="side-ornament left">
+  <div class="orn-line"></div>
+  <div class="orn-diamond"></div>
+  <div class="orn-line"></div>
+  <div class="orn-diamond"></div>
+  <div class="orn-line"></div>
+</div>
+<div class="side-ornament right">
+  <div class="orn-line"></div>
+  <div class="orn-diamond"></div>
+  <div class="orn-line"></div>
+  <div class="orn-diamond"></div>
+  <div class="orn-line"></div>
+</div>
+
+<div class="content">
+  <div class="seal">
+    <div class="seal-inner">⊕</div>
+  </div>
+
+  <div class="pre-title">Institutioneel Vertrouwen · Europa</div>
+
+  <h1>DueSight</h1>
+
+  <div class="sub-rule">
+    <div class="rule-line"></div>
+    <div class="rule-diamond"></div>
+    <div class="rule-diamond"></div>
+    <div class="rule-diamond"></div>
+    <div class="rule-line"></div>
+  </div>
+
+  <div class="tagline">Intelligence · Integriteit · Imperium</div>
+
+  <div class="vellum-search">
+    <input type="text" placeholder="Voer entiteitsnaam of KvK-nummer in..."/>
+    <button>Consuleer</button>
+  </div>
+
+  <div class="inscription">
+    <div class="inscr-item">
+      <div class="inscr-value">LXIV+</div>
+      <div class="inscr-rule"></div>
+      <div class="inscr-label">Bronnen</div>
+    </div>
+    <div class="inscr-item">
+      <div class="inscr-value">XI</div>
+      <div class="inscr-rule"></div>
+      <div class="inscr-label">Engines</div>
+    </div>
+    <div class="inscr-item">
+      <div class="inscr-value">VI</div>
+      <div class="inscr-rule"></div>
+      <div class="inscr-label">Jurisdicties</div>
+    </div>
+    <div class="inscr-item">
+      <div class="inscr-value">∅</div>
+      <div class="inscr-rule"></div>
+      <div class="inscr-label">Retentie</div>
+    </div>
+  </div>
+
+  <div class="scrolls">
+    <div class="scroll prime">Nederland</div>
+    <div class="scroll prime">Deutschland</div>
+    <div class="scroll prime">Schweiz</div>
+    <div class="scroll">Österreich</div>
+    <div class="scroll">België</div>
+    <div class="scroll">Britannia</div>
+  </div>
+</div>
+
+<script>
+// Marble texture
+var c = document.getElementById('marble');
+var cx = c.getContext('2d');
+function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
+resize();
+window.addEventListener('resize',resize);
+
+function drawMarble(){
+  var W=c.width,H=c.height;
+  cx.fillStyle='#0c0906';
+  cx.fillRect(0,0,W,H);
+  
+  // Marble veins
+  for(var i=0;i<30;i++){
+    cx.beginPath();
+    var x0=Math.random()*W, y0=0;
+    var x1=x0+(Math.random()-0.5)*W*0.4, y1=H;
+    cx.moveTo(x0,y0);
+    // Bezier vein
+    cx.bezierCurveTo(
+      x0+(Math.random()-0.5)*200, H*0.3,
+      x1+(Math.random()-0.5)*200, H*0.7,
+      x1,y1
+    );
+    var alpha=Math.random()*0.06+0.02;
+    var warm=Math.random()>0.7;
+    cx.strokeStyle=warm?
+      'rgba(200,160,80,'+alpha+')':
+      'rgba(160,140,120,'+alpha+')';
+    cx.lineWidth=Math.random()*3+0.5;
+    cx.stroke();
+  }
+  
+  // Subtle radial depth
+  var r=cx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.8);
+  r.addColorStop(0,'rgba(25,18,12,0)');
+  r.addColorStop(1,'rgba(5,3,2,0.4)');
+  cx.fillStyle=r;cx.fillRect(0,0,W,H);
+}
+drawMarble();
+</script>
+</body>
+</html>

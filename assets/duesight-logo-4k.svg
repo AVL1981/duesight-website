@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="1120" height="840" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="52%">
+      <stop offset="0%" stop-color="#1b3a6e"/>
+      <stop offset="100%" stop-color="#060b18"/>
+    </radialGradient>
+    <filter id="glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="560" height="420" fill="url(#bg)" rx="0"/>
+
+  <!-- ═══ EYE OUTLINE ═══ -->
+  <!-- Upper lid -->
+  <path d="M 55 205 Q 90 130 195 95 Q 280 70 365 95 Q 468 128 505 205"
+        fill="none" stroke="white" stroke-width="19"
+        stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Lower lid -->
+  <path d="M 55 205 Q 90 280 195 315 Q 280 340 365 315 Q 468 282 505 205"
+        fill="none" stroke="white" stroke-width="19"
+        stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- ═══ IRIS CIRCLE ═══ -->
+  <circle cx="280" cy="205" r="78"
+          fill="none" stroke="white" stroke-width="19"
+          filter="url(#glow)"/>
+
+  <!-- ═══ CHECKMARK ═══ -->
+  <!-- The checkmark is angled — left bottom going right-up then turning right-down -->
+  <path d="M 242 207 L 268 234 L 322 170"
+        fill="none" stroke="white" stroke-width="20"
+        stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#glow)"/>
+
+  <!-- ═══ DUESIGHT TEXT ═══ -->
+  <text x="280" y="388"
+        font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+        font-size="70" font-weight="800"
+        fill="white" text-anchor="middle"
+        letter-spacing="-1">DueSight</text>
+</svg>

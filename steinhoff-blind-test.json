@@ -1,0 +1,52 @@
+{
+  "test": "DueSight Full Stack Blind Test",
+  "company": "Steinhoff International Holdings",
+  "domain": "steinhoff.com",
+  "blind_year": 2016,
+  "actual_fraud_discovered": "December 2017",
+  "fraud_amount": "EUR 20B+",
+  "generated_at": "2026-03-30T18:00:32.199395",
+  "scores": {
+    "due_sight_score": 105,
+    "max": 100,
+    "verdict": "EXTREME FRAUD RISK \u2014 DO NOT INVEST"
+  },
+  "layers": {
+    "layer1": {},
+    "layer2": {},
+    "layer3": {},
+    "layer4": {},
+    "layer5": {},
+    "layer6": {},
+    "layer7": {},
+    "layer8": {}
+  },
+  "financials_2016": {
+    "total_assets": 38000000000,
+    "revenue": 14000000000,
+    "ebitda": 1600000000,
+    "net_income": 300000000,
+    "total_equity": 4000000000,
+    "total_debt": 12000000000,
+    "current_assets": 6000000000,
+    "current_liabilities": 5500000000,
+    "inventory": 2000000000,
+    "working_capital": 1800000000,
+    "market_cap": 2000000000
+  },
+  "ratios": {
+    "altman_z": 0.6442,
+    "ev_ebitda": 2.5,
+    "debt_equity": 3.0,
+    "current_ratio": 1.0909,
+    "ebitda_margin": 11.43
+  },
+  "red_flags": [
+    "Altman Z-Score 0.64 in DISTRESS zone \u2014 CRITICAL",
+    "Debt/Equity 3.00x \u2014 CRITICAL leverage (normal: <1.0x for retail)",
+    "EV/EBITDA 2.5x \u2014 suspiciously LOW for retail sector",
+    "Monte Carlo Fan Width 4.73x \u2014 EXTREME revenue volatility",
+    "Benford's Law anomaly \u2014 Chi-Sq 0.340, digit 1 at 23.3% vs 11.1% expected",
+    "NLP Negative Sentiment: -0.253"
+  ]
+}

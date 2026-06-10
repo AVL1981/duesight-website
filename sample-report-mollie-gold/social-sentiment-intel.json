@@ -1,0 +1,93 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-mollie-b.v.-20260529T083539Z",
+  "target": {
+    "name": "Mollie B.V.",
+    "domain": "mollie.com",
+    "kvk": "30204462",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T08:35:39+00:00",
+  "summary": {
+    "status": "completed",
+    "updated_at": "2026-05-29T08:35:39+00:00",
+    "gate_decision": "PASS",
+    "social_status": "executed",
+    "sentiment_status": "executed",
+    "platforms_checked": 443,
+    "profiles_found": 192,
+    "promoted_social_sources": 5,
+    "sentiment_sources_active": 7,
+    "sentiment_sources_total": 19,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "Mollie B.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=mollie.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "source_status": "source-bound",
+        "checked_at": "2026-05-29T08:35:39+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=mollie.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
+        "https://www.github.com/mollie",
+        "https://www.youtube.com/@mollie",
+        "http://www.linkedin.com/company/mollie-b.v.",
+        "https://www.instagram.com/mollieb_music/"
+      ],
+      "raw_profiles_found_internal": 192,
+      "promoted_sources_count": 5
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment produced POSITIVE with 7/19 active DueSight sources.",
+      "claim_level": "guarded signal layer",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "model-composite",
+        "checked_at": "2026-05-29T08:35:39+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "46%",
+        "limitation": "Composite sentiment supports triage and prioritization; it is not legal, finance or ownership proof."
+      },
+      "source_breakdown": {
+        "rechtspraak": -0.8,
+        "cbs_vertrouwen": 0.0667,
+        "kvk_mutaties": 0.1,
+        "xortron_raw": 0.785,
+        "linkedin_signals": 0.6,
+        "groq_sentiment": 0.85,
+        "twitter_sentiment": 0.0
+      },
+      "risk_factors": [
+        "⚖️ Rechtszaken gedetecteerd"
+      ]
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=mollie.com%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      "null, \"ebitda_estimate\": null, \"debt_equity_ratio\": null, \"current_ratio\": null, \"revenue_per_fte\": 16101.0, \"source\": \"linkedin_public\", \"confidence\": 0.6, \"data_grade\": \"C\", \"is_real_data\": true, \"raw\": {\"slug\": \"mollie\", \"founded\": null, \"description\": \"Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud pr"
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

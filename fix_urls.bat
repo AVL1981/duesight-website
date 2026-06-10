@@ -1,0 +1,6 @@
+@echo off
+echo Fixing localhost URLs in index.html...
+powershell -Command "(Get-Content 'index.html' -Raw) -replace 'http://localhost:8081/index.html#', '#' -replace 'http://localhost:8081/', '' -replace 'http://localhost:8000/', '' | Set-Content 'index.html' -NoNewline"
+echo Done! Checking remaining localhost references...
+powershell -Command "(Get-Content 'index.html' -Raw | Select-String -Pattern 'localhost' -AllMatches).Matches.Count"
+pause

@@ -1,0 +1,86 @@
+{
+  "schema_version": "duesight.company_intel_gate_report.v1",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-truelegends",
+  "target": "True Legends IT B.V.",
+  "updated_at": "2026-06-10T16:06:29+00:00",
+  "decision": "publish_context_only_with_official_upgrade_route",
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Data freshness",
+      "status": "PASS",
+      "message": "Replay timestamp and source envelopes are present."
+    },
+    {
+      "id": "G2",
+      "name": "Source count",
+      "status": "PASS",
+      "message": "13 distinct source labels in ledger rows."
+    },
+    {
+      "id": "G3",
+      "name": "Minimum confidence",
+      "status": "PASS",
+      "message": "Public context uses confidence and limitation labels."
+    },
+    {
+      "id": "G4",
+      "name": "Uncertainty ceiling",
+      "status": "WARN",
+      "message": "Finance and UBO remain context-only until official documents are attached."
+    },
+    {
+      "id": "G5",
+      "name": "Data completeness",
+      "status": "WARN",
+      "message": "Enough for demo/pre-DD triage, not enough for production reliance."
+    },
+    {
+      "id": "G6",
+      "name": "KvK verification",
+      "status": "WARN",
+      "message": "KvK identifier is configured, but current extract is not attached as a source-hashed document."
+    },
+    {
+      "id": "G7",
+      "name": "Financial data",
+      "status": "WARN",
+      "message": "Finance route found, but no target-specific official filing/P&L population attached."
+    },
+    {
+      "id": "G8",
+      "name": "Multi-model synthesis",
+      "status": "PASS",
+      "message": "Manifest records guarded local synthesis; AI is advisory, not primary proof."
+    },
+    {
+      "id": "G9",
+      "name": "Error hygiene",
+      "status": "PASS",
+      "message": "Raw provider diagnostics stay out of public HTML."
+    },
+    {
+      "id": "G10",
+      "name": "Code integrity",
+      "status": "PASS",
+      "message": "Rendered output keeps source-envelope and official-claim gates."
+    },
+    {
+      "id": "G11",
+      "name": "Live grounding",
+      "status": "PASS",
+      "message": "Findings are tied to source-bound ledger rows or marked as route/context."
+    },
+    {
+      "id": "G12",
+      "name": "Template integrity",
+      "status": "PASS",
+      "message": "Public report separates findings, evidence level and official upgrade path."
+    }
+  ],
+  "blocked_claims": [
+    "official_finance_source",
+    "official_ownership_ubo"
+  ],
+  "public_language_rule": "State what DueSight found, label proof strength, and route hard claims to official-proof upgrade."
+}

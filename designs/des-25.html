@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#e0ecff;font-family:'Space Grotesk',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.hud{position:absolute;inset:0;z-index:5;pointer-events:none}
+/* HUD corners */
+.hud-corner{position:absolute;width:60px;height:60px;z-index:5}
+.hud-corner.tl{top:16px;left:16px;border-top:2px solid rgba(96,165,250,0.4);border-left:2px solid rgba(96,165,250,0.4)}
+.hud-corner.tr{top:16px;right:16px;border-top:2px solid rgba(96,165,250,0.4);border-right:2px solid rgba(96,165,250,0.4)}
+.hud-corner.bl{bottom:48px;left:16px;border-bottom:2px solid rgba(96,165,250,0.4);border-left:2px solid rgba(96,165,250,0.4)}
+.hud-corner.br{bottom:48px;right:16px;border-bottom:2px solid rgba(96,165,250,0.4);border-right:2px solid rgba(96,165,250,0.4)}
+/* Orbital rings */
+.orbital{position:absolute;border:1px solid rgba(96,165,250,0.08);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:2}
+.o1{width:500px;height:500px;animation:spin 60s linear infinite}
+.o2{width:700px;height:700px;animation:spin 90s linear infinite reverse}
+.o3{width:900px;height:900px;animation:spin 120s linear infinite}
+@keyframes spin{0%{transform:translate(-50%,-50%) rotate(0deg)}100%{transform:translate(-50%,-50%) rotate(360deg)}}
+/* Content */
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5%}
+.station-id{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:6px;text-transform:uppercase;color:rgba(96,165,250,0.4);margin-bottom:24px}
+h1{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,4.5vw,3.8rem);font-weight:900;line-height:1.1;letter-spacing:2px;color:#fff;margin-bottom:12px;text-transform:uppercase}
+h1 span{color:#60a5fa;text-shadow:0 0 30px rgba(96,165,250,0.3)}
+.tagline{font-size:11px;color:rgba(180,200,240,0.4);letter-spacing:2px;margin-bottom:36px;max-width:500px}
+.search{display:flex;background:rgba(0,8,25,0.8);border:1px solid rgba(96,165,250,0.25);max-width:500px;width:100%;backdrop-filter:blur(12px);pointer-events:auto}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#e0ecff;font-family:'Space Grotesk',sans-serif;font-size:12px;padding:14px 16px}
+.search input::placeholder{color:rgba(150,180,220,0.2)}
+.search button{background:rgba(96,165,250,0.15);border:none;border-left:1px solid rgba(96,165,250,0.2);color:#60a5fa;cursor:pointer;font-family:'Orbitron',sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 20px;white-space:nowrap;pointer-events:auto}
+.metrics{display:flex;gap:36px;margin-top:28px}
+.metric{display:flex;flex-direction:column;align-items:center;gap:4px}
+.mv{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:800;color:#60a5fa}
+.ml{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.25)}
+/* Side telemetry */
+.telemetry{position:absolute;left:24px;top:50%;transform:translateY(-50%);z-index:10;display:flex;flex-direction:column;gap:20px}
+.tel{display:flex;flex-direction:column;gap:3px}
+.tel-l{font-family:'Orbitron',sans-serif;font-size:6px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.3)}
+.tel-v{font-size:12px;font-weight:600;color:rgba(96,165,250,0.6)}
+.tel-bar{width:60px;height:2px;background:rgba(96,165,250,0.1);position:relative}
+.tel-fill{height:100%;background:rgba(96,165,250,0.4);transition:width 0.5s}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:36px;background:rgba(0,4,15,0.9);border-top:1px solid rgba(96,165,250,0.1);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-family:'Orbitron',sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.2)}
+.bi.live::before{content:'◉ ';color:#22c55e}
+</style></head>
+<body>
+<canvas id="bg"></canvas>
+<div class="hud">
+  <div class="hud-corner tl"></div><div class="hud-corner tr"></div>
+  <div class="hud-corner bl"></div><div class="hud-corner br"></div>
+</div>
+<div class="orbital o1"></div><div class="orbital o2"></div><div class="orbital o3"></div>
+<div class="telemetry">
+  <div class="tel"><div class="tel-l">SYS Load</div><div class="tel-v" id="sys-load">23%</div><div class="tel-bar"><div class="tel-fill" style="width:23%"></div></div></div>
+  <div class="tel"><div class="tel-l">Latency</div><div class="tel-v">14ms</div><div class="tel-bar"><div class="tel-fill" style="width:14%"></div></div></div>
+  <div class="tel"><div class="tel-l">Engines</div><div class="tel-v">11/11</div><div class="tel-bar"><div class="tel-fill" style="width:100%"></div></div></div>
+  <div class="tel"><div class="tel-l">Coverage</div><div class="tel-v">6 EU</div><div class="tel-bar"><div class="tel-fill" style="width:75%"></div></div></div>
+  <div class="tel"><div class="tel-l">Uptime</div><div class="tel-v">99.97%</div><div class="tel-bar"><div class="tel-fill" style="width:99%"></div></div></div>
+</div>
+<div class="content">
+  <div class="station-id">◈ DueSight Orbital · Station AMS-01 ◈</div>
+  <h1>Overzicht.<br/><span>Vanaf elke hoogte.</span></h1>
+  <p class="tagline">Institutionele intelligence vanuit een orbitaal perspectief. Elk Europees datapunt zichtbaar, geverifieerd, herleidbaar.</p>
+  <div class="search"><input type="text" placeholder="Target entity of KvK-nummer..."/><button>Scan ↗</button></div>
+  <div class="metrics">
+    <div class="metric"><div class="mv">meerdere</div><div class="ml">Sources</div></div>
+    <div class="metric"><div class="mv">&lt;3M</div><div class="ml">Report</div></div>
+    <div class="metric"><div class="mv">11</div><div class="ml">Engines</div></div>
+    <div class="metric"><div class="mv">∅</div><div class="ml">Retention</div></div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bi live">Orbital Active</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div><div class="bi">EU AI Act</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+// Stars + Earth curvature at bottom
+var stars=[];for(var i=0;i<600;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.2+0.2,a:Math.random()*0.5+0.1,tw:Math.random()*0.03+0.005,p:Math.random()*Math.PI*2});
+var t=0;
+function draw(){
+  t+=0.003;
+  ctx.fillStyle='rgba(0,0,0,0.08)';ctx.fillRect(0,0,W,H);
+  // Stars
+  stars.forEach(function(s){
+    var tw=s.a*(0.5+Math.sin(t*10*s.tw+s.p)*0.5);
+    ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,220,255,'+tw+')';ctx.fill();
+  });
+  // Earth curvature at bottom — blue atmosphere glow
+  var earthY=H*0.92;
+  var earthR=W*2;
+  // Atmosphere layers
+  for(var i=0;i<5;i++){
+    var offset=i*8;
+    var alpha=0.08-i*0.015;
+    ctx.beginPath();
+    ctx.arc(W/2,earthY+earthR,earthR-offset,Math.PI,0);
+    ctx.strokeStyle='rgba(60,140,255,'+alpha+')';
+    ctx.lineWidth=3;ctx.stroke();
+  }
+  // Earth surface glow
+  var eg=ctx.createRadialGradient(W/2,earthY+earthR*0.98,earthR*0.95,W/2,earthY+earthR,earthR);
+  eg.addColorStop(0,'rgba(20,60,150,0.15)');
+  eg.addColorStop(0.5,'rgba(10,30,80,0.08)');
+  eg.addColorStop(1,'transparent');
+  ctx.fillStyle=eg;ctx.fillRect(0,earthY-200,W,H-earthY+200);
+  // Scanning beam sweeping across
+  var beamAngle=t*0.5;
+  var beamX=W/2+Math.cos(beamAngle)*W*0.4;
+  var beamY=H/2+Math.sin(beamAngle)*H*0.3;
+  var bg=ctx.createRadialGradient(beamX,beamY,0,beamX,beamY,100);
+  bg.addColorStop(0,'rgba(96,165,250,0.06)');bg.addColorStop(1,'transparent');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  // HUD crosshair at center
+  var cx2=W/2,cy2=H/2;
+  ctx.strokeStyle='rgba(96,165,250,0.08)';ctx.lineWidth=0.5;
+  ctx.beginPath();ctx.moveTo(cx2-30,cy2);ctx.lineTo(cx2-10,cy2);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx2+10,cy2);ctx.lineTo(cx2+30,cy2);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx2,cy2-30);ctx.lineTo(cx2,cy2-10);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx2,cy2+10);ctx.lineTo(cx2,cy2+30);ctx.stroke();
+  requestAnimationFrame(draw);
+}
+draw();
+// Animate sys load
+setInterval(function(){
+  var load=20+Math.floor(Math.random()*15);
+  document.getElementById('sys-load').textContent=load+'%';
+},3000);
+</script>
+</body></html>

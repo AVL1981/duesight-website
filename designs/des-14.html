@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="dark" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#01060f;color:#dce8ff;
+  font-family:'Space Grotesk',sans-serif;
+  overflow:hidden;height:100vh;width:100vw;
+}
+
+/* Night Europe satellite view */
+canvas#night{position:absolute;inset:0;z-index:0;}
+
+/* Overlay */
+.overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(135deg, rgba(1,6,15,0.9) 0%, rgba(1,6,15,0.5) 40%, rgba(1,6,15,0.2) 60%, rgba(1,6,15,0.8) 100%);
+}
+
+/* Content */
+.content{
+  position:absolute;inset:0;z-index:10;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 6% 0 7%;
+  max-width:600px;
+}
+
+.eyebrow{
+  display:flex;align-items:center;gap:10px;margin-bottom:24px;
+}
+.eyebrow-line{flex:1;max-width:40px;height:1px;background:rgba(100,160,255,0.4);}
+.eyebrow-text{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(100,160,255,0.6);}
+
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(2rem,4.5vw,3.8rem);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-1.5px;
+  color:#fff;
+  margin-bottom:16px;
+}
+h1 em{
+  font-style:normal;
+  color:transparent;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa);
+  -webkit-background-clip:text;background-clip:text;
+}
+
+.desc{
+  font-size:13px;color:rgba(180,200,240,0.55);
+  line-height:1.75;max-width:440px;margin-bottom:32px;
+}
+
+/* Search */
+.search{
+  display:flex;
+  background:rgba(5,15,35,0.8);
+  border:1px solid rgba(96,165,250,0.2);
+  max-width:480px;
+  backdrop-filter:blur(24px);
+}
+.search input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#fff;font-family:'Space Grotesk',sans-serif;
+  font-size:12px;padding:13px 16px;
+}
+.search input::placeholder{color:rgba(150,180,220,0.3);}
+.search button{
+  background:rgba(96,165,250,0.15);border:none;border-left:1px solid rgba(96,165,250,0.15);
+  color:#60a5fa;cursor:pointer;font-family:'Space Grotesk',sans-serif;
+  font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:13px 20px;transition:background 0.2s;white-space:nowrap;
+}
+.search button:hover{background:rgba(96,165,250,0.25);}
+
+/* Capital network badges */
+.capitals{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px;}
+.cap{
+  display:flex;align-items:center;gap:6px;
+  font-size:9px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(150,180,220,0.5);
+  padding:5px 10px;border:1px solid rgba(96,165,250,0.1);
+}
+.cap-dot{width:4px;height:4px;border-radius:50%;background:#60a5fa;opacity:0.6;}
+
+/* Right side — data panel */
+.data-panel{
+  position:absolute;right:6%;top:50%;transform:translateY(-50%);z-index:10;
+  width:220px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.data-card{
+  background:rgba(5,12,28,0.8);
+  border:1px solid rgba(96,165,250,0.1);
+  border-left:3px solid rgba(96,165,250,0.4);
+  padding:14px 16px;
+  backdrop-filter:blur(16px);
+}
+.data-card-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.4);margin-bottom:6px;}
+.data-card-value{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:#60a5fa;}
+.data-card-sub{font-size:9px;color:rgba(150,180,220,0.4);margin-top:2px;}
+
+/* Bottom bar */
+.bottom-bar{
+  position:absolute;bottom:0;left:0;right:0;z-index:20;
+  height:32px;background:rgba(1,6,15,0.9);
+  border-top:1px solid rgba(96,165,250,0.08);
+  display:flex;align-items:center;padding:0 24px;gap:32px;
+}
+.bottom-item{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(96,165,250,0.3);}
+.bottom-item.live::before{content:'● ';color:#22c55e;font-size:8px;}
+</style>
+</head>
+<body>
+
+<canvas id="night"></canvas>
+<div class="overlay"></div>
+
+<!-- Left content -->
+<div class="content">
+  <div class="eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text">Nacht-Europa Intelligence</div>
+  </div>
+
+  <h1>Waar licht<br/>brandt,<br/><em>brandt geld.</em></h1>
+
+  <p class="desc">
+    DueSight analyseert de Europese financiële centra in real-time.
+    Van Amsterdam tot Zürich — elk risico zichtbaar, elke transactie traceerbaar.
+  </p>
+
+  <div class="search">
+    <input type="text" placeholder="Entiteit, jurisdictie of KvK-nummer..."/>
+    <button>Analyseer</button>
+  </div>
+
+  <div class="capitals">
+    <div class="cap"><div class="cap-dot"></div>Amsterdam</div>
+    <div class="cap"><div class="cap-dot"></div>Frankfurt</div>
+    <div class="cap"><div class="cap-dot"></div>Zürich</div>
+    <div class="cap"><div class="cap-dot"></div>Wien</div>
+    <div class="cap"><div class="cap-dot"></div>Brussel</div>
+    <div class="cap"><div class="cap-dot"></div>London</div>
+  </div>
+</div>
+
+<!-- Right data panel -->
+<div class="data-panel">
+  <div class="data-card">
+    <div class="data-card-label">Actieve Scans</div>
+    <div class="data-card-value" id="scan-count">247</div>
+    <div class="data-card-sub">Europa · vandaag</div>
+  </div>
+  <div class="data-card">
+    <div class="data-card-label">Gemiddelde Rapporttijd</div>
+    <div class="data-card-value">&lt;3 min</div>
+    <div class="data-card-sub">Proprietary multi-model intelligence engine</div>
+  </div>
+  <div class="data-card">
+    <div class="data-card-label">Databronnen Live</div>
+    <div class="data-card-value">meerdere</div>
+    <div class="data-card-sub">NL · DE · AT · CH · BE · UK</div>
+  </div>
+  <div class="data-card" style="border-left-color:rgba(168,85,247,0.5)">
+    <div class="data-card-label">Evidence review</div>
+    <div class="data-card-value" style="color:#a855f7">11/11</div>
+    <div class="data-card-sub">Onafhankelijke validatie</div>
+  </div>
+</div>
+
+<!-- Bottom bar -->
+<div class="bottom-bar">
+  <div class="bottom-item live">KvK Register Online</div>
+  <div class="bottom-item live">OpenSanctions Gesynchroniseerd</div>
+  <div class="bottom-item">AVG Art. 25 Conform</div>
+  <div class="bottom-item">Zero-Retention Architectuur</div>
+  <div class="bottom-item live">EU AI Act context</div>
+</div>
+
+<script>
+var canvas = document.getElementById('night');
+var ctx = canvas.getContext('2d');
+var W,H;
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();
+window.addEventListener('resize',resize);
+
+// City lights of Europe at night
+var cityLights = [
+  // Netherlands cluster
+  {x:0.455,y:0.38,r:12,intensity:0.9,name:'Amsterdam'},
+  {x:0.46,y:0.39,r:6,intensity:0.5},
+  // DACH
+  {x:0.50,y:0.43,r:14,intensity:0.95,name:'Frankfurt'},
+  {x:0.505,y:0.42,r:8,intensity:0.6},
+  {x:0.50,y:0.44,r:6,intensity:0.4},
+  {x:0.495,y:0.49,r:10,intensity:0.85,name:'Zürich'},
+  {x:0.49,y:0.455,r:7,intensity:0.6,name:'Stuttgart'},
+  {x:0.51,y:0.46,r:8,intensity:0.65,name:'München'},
+  {x:0.525,y:0.51,r:10,intensity:0.8,name:'Wien'},
+  // Belgium/France
+  {x:0.445,y:0.40,r:9,intensity:0.75,name:'Brussel'},
+  {x:0.44,y:0.43,r:14,intensity:0.9,name:'Paris'},
+  {x:0.44,y:0.42,r:6,intensity:0.4},
+  // UK
+  {x:0.40,y:0.36,r:16,intensity:1.0,name:'London'},
+  {x:0.39,y:0.35,r:8,intensity:0.5},
+  {x:0.395,y:0.37,r:6,intensity:0.4},
+  // Scandinavia
+  {x:0.48,y:0.29,r:7,intensity:0.6,name:'Copenhagen'},
+  {x:0.465,y:0.28,r:8,intensity:0.65,name:'Oslo'},
+  {x:0.495,y:0.27,r:7,intensity:0.55,name:'Stockholm'},
+  // Other major
+  {x:0.50,y:0.41,r:7,intensity:0.55,name:'Düsseldorf'},
+  {x:0.50,y:0.38,r:7,intensity:0.5,name:'Hamburg'},
+  {x:0.50,y:0.40,r:8,intensity:0.6,name:'Berlin'},
+  {x:0.515,y:0.40,r:6,intensity:0.45,name:'Prague'},
+  {x:0.475,y:0.45,r:7,intensity:0.5,name:'Lyon'},
+  {x:0.455,y:0.49,r:9,intensity:0.7,name:'Milan'},
+  {x:0.46,y:0.48,r:7,intensity:0.5},
+  {x:0.475,y:0.52,r:8,intensity:0.6,name:'Rome'},
+  // Spain
+  {x:0.41,y:0.48,r:9,intensity:0.7,name:'Madrid'},
+  {x:0.435,y:0.47,r:8,intensity:0.6,name:'Barcelona'},
+  {x:0.38,y:0.47,r:6,intensity:0.45,name:'Lisbon'},
+  // Eastern EU
+  {x:0.525,y:0.40,r:7,intensity:0.55,name:'Warsaw'},
+  {x:0.52,y:0.44,r:6,intensity:0.45,name:'Budapest'},
+  {x:0.51,y:0.42,r:6,intensity:0.4,name:'Bratislava'},
+  {x:0.48,y:0.44,r:8,intensity:0.6,name:'Zurich'},
+  // Turkey/Med
+  {x:0.57,y:0.50,r:11,intensity:0.8,name:'Istanbul'},
+  {x:0.50,y:0.52,r:7,intensity:0.5,name:'Athens'},
+];
+
+// Connection lines (financial corridors)
+var connections = [
+  [0,1],[0,5],[0,6],[1,2],[1,3],[2,3],[2,7],[3,4],[4,7],[5,6],[0,12],[3,12],[1,12]
+];
+
+var t = 0;
+function draw(){
+  t += 0.005;
+  ctx.clearRect(0,0,W,H);
+
+  // Deep space background
+  ctx.fillStyle='#000508';
+  ctx.fillRect(0,0,W,H);
+
+  // Star field
+  if(!draw.stars){
+    draw.stars=[];
+    for(var i=0;i<400;i++) draw.stars.push({x:Math.random(),y:Math.random(),r:Math.random()*0.8+0.1,a:Math.random()*0.4+0.1});
+  }
+  draw.stars.forEach(function(s){
+    ctx.beginPath();ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,220,255,'+s.a+')';ctx.fill();
+  });
+
+  // Very subtle Europe landmass (dark, just visible)
+  // Simple rectangle approximation for Europe shape
+  ctx.beginPath();
+  ctx.ellipse(W*0.48,H*0.44,W*0.12,H*0.18,0.15,0,Math.PI*2);
+  ctx.fillStyle='rgba(5,15,35,0.6)';ctx.fill();
+
+  // Draw connection lines
+  var keyLights = [cityLights[0],cityLights[4],cityLights[8],cityLights[10],cityLights[12],cityLights[7]];
+  for(var i=0;i<keyLights.length;i++){
+    for(var j=i+1;j<keyLights.length;j++){
+      var a=keyLights[i], b=keyLights[j];
+      var pulse=(Math.sin(t*2+i+j)+1)/2;
+      ctx.beginPath();
+      ctx.moveTo(a.x*W,a.y*H);
+      ctx.lineTo(b.x*W,b.y*H);
+      ctx.strokeStyle='rgba(96,165,250,'+(0.05+pulse*0.08)+')';
+      ctx.lineWidth=0.8;ctx.stroke();
+    }
+  }
+
+  // City lights
+  cityLights.forEach(function(city,i){
+    var x=city.x*W, y=city.y*H;
+    var pulse=1+(Math.sin(t*1.5+i*0.7)*0.15);
+    var r=city.r*pulse;
+
+    // Outer glow
+    var g1=ctx.createRadialGradient(x,y,0,x,y,r*3);
+    g1.addColorStop(0,'rgba(255,200,80,'+(city.intensity*0.25)+')');
+    g1.addColorStop(0.3,'rgba(255,160,40,'+(city.intensity*0.12)+')');
+    g1.addColorStop(1,'rgba(255,120,0,0)');
+    ctx.beginPath();ctx.arc(x,y,r*3,0,Math.PI*2);
+    ctx.fillStyle=g1;ctx.fill();
+
+    // Inner warm light
+    var g2=ctx.createRadialGradient(x,y,0,x,y,r);
+    g2.addColorStop(0,'rgba(255,230,180,'+(city.intensity*0.9)+')');
+    g2.addColorStop(0.5,'rgba(255,180,60,'+(city.intensity*0.5)+')');
+    g2.addColorStop(1,'rgba(255,100,0,0)');
+    ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);
+    ctx.fillStyle=g2;ctx.fill();
+
+    // Core white dot
+    ctx.beginPath();ctx.arc(x,y,Math.max(1,r*0.3),0,Math.PI*2);
+    ctx.fillStyle='rgba(255,250,240,'+(city.intensity*0.8)+')';ctx.fill();
+  });
+
+  // Atmosphere at edges
+  var atmo=ctx.createRadialGradient(W/2,H/2,W*0.3,W/2,H/2,W*0.6);
+  atmo.addColorStop(0,'transparent');
+  atmo.addColorStop(1,'rgba(1,6,15,0.4)');
+  ctx.fillStyle=atmo;ctx.fillRect(0,0,W,H);
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+// Animate scan counter
+var scanCount=247;
+setInterval(function(){
+  if(Math.random()>0.7) scanCount++;
+  document.getElementById('scan-count').textContent=scanCount;
+},3000);
+</script>
+</body>
+</html>

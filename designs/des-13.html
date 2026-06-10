@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#000;color:#00ff41;
+  font-family:'Space Grotesk',monospace;
+  overflow:hidden;height:100vh;width:100vw;
+}
+
+canvas#crt{position:absolute;inset:0;z-index:0;}
+
+/* CRT scan lines */
+.scanlines{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+}
+/* CRT vignette */
+.crt-vignette{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse 80% 80% at 50% 50%, transparent 50%, rgba(0,0,0,0.7) 100%);
+}
+/* CRT flicker */
+@keyframes flicker{0%{opacity:1}92%{opacity:1}93%{opacity:0.97}94%{opacity:1}96%{opacity:0.98}100%{opacity:1}}
+body{animation:flicker 8s infinite;}
+
+/* Layout */
+.terminal{position:absolute;inset:0;z-index:10;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;gap:0;padding:20px;}
+
+/* Header bar */
+.header-bar{
+  grid-column:1/-1;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(0,255,65,0.3);
+  padding-bottom:12px;margin-bottom:12px;
+}
+.sys-id{font-size:9px;letter-spacing:3px;color:rgba(0,255,65,0.6);}
+.sys-status{display:flex;gap:16px;align-items:center;}
+.status-dot{width:6px;height:6px;border-radius:50%;background:#00ff41;animation:blink 1s step-end infinite;}
+.status-dot.warn{background:#ffb800;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.status-text{font-size:8px;letter-spacing:2px;color:rgba(0,255,65,0.5);}
+
+/* Left panel — radar/map */
+.left-panel{
+  border:1px solid rgba(0,255,65,0.2);
+  padding:16px;
+  position:relative;
+  display:flex;flex-direction:column;gap:12px;
+}
+.panel-label{font-size:7px;letter-spacing:3px;color:rgba(0,255,65,0.4);margin-bottom:8px;}
+canvas#radar{width:100%;height:220px;display:block;}
+
+/* Right panel — data feeds */
+.right-panel{
+  border:1px solid rgba(0,255,65,0.2);
+  border-left:none;
+  padding:16px;
+  overflow:hidden;
+}
+.data-feed{margin-bottom:20px;}
+.feed-header{font-size:7px;letter-spacing:3px;color:rgba(0,255,65,0.4);margin-bottom:8px;display:flex;justify-content:space-between;}
+.feed-line{
+  font-size:10px;color:rgba(0,255,65,0.7);
+  line-height:1.8;letter-spacing:0.5px;
+  animation:type-in 0.1s ease;
+}
+.feed-line .hi{color:#00ff41;}
+.feed-line .warn{color:#ffb800;}
+.feed-line .ok{color:#00ff41;}
+
+/* Main command area */
+.command-area{
+  grid-column:1/-1;
+  border-top:1px solid rgba(0,255,65,0.2);
+  padding-top:16px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.prompt-line{
+  display:flex;align-items:center;gap:12px;
+}
+.prompt-sym{color:rgba(0,255,65,0.6);font-size:12px;}
+.prompt-input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#00ff41;font-family:'Space Grotesk',monospace;
+  font-size:12px;letter-spacing:0.5px;caret-color:#00ff41;
+}
+.prompt-input::placeholder{color:rgba(0,255,65,0.2);}
+.prompt-btn{
+  background:rgba(0,255,65,0.1);border:1px solid rgba(0,255,65,0.3);
+  color:#00ff41;cursor:pointer;font-family:'Space Grotesk',monospace;
+  font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 16px;transition:background 0.2s;
+}
+.prompt-btn:hover{background:rgba(0,255,65,0.2);}
+
+.sys-stats{display:flex;gap:24px;}
+.sys-stat{display:flex;flex-direction:column;gap:3px;}
+.sys-stat-val{font-size:18px;font-weight:700;color:#00ff41;font-family:'Manrope',sans-serif;}
+.sys-stat-lbl{font-size:7px;letter-spacing:2px;color:rgba(0,255,65,0.35);}
+
+/* Jurisdiction grid */
+.jur-grid{display:flex;gap:8px;flex-wrap:wrap;}
+.jur-tag{
+  font-size:7px;letter-spacing:2px;padding:4px 10px;
+  border:1px solid rgba(0,255,65,0.2);color:rgba(0,255,65,0.5);
+}
+.jur-tag.active{border-color:rgba(0,255,65,0.5);color:#00ff41;}
+</style>
+</head>
+<body>
+
+<canvas id="crt"></canvas>
+<div class="scanlines"></div>
+<div class="crt-vignette"></div>
+
+<div class="terminal">
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="sys-id">DUESIGHT INTELLIGENCE TERMINAL // v2.4.1 // NODE: AMS_01</div>
+    <div class="sys-status">
+      <div class="status-dot"></div>
+      <div class="status-text">SYSTEEM OPERATIONEEL</div>
+      <div class="status-dot warn" style="animation-delay:0.5s"></div>
+      <div class="status-text" style="color:rgba(255,184,0,0.5)">3 ALERTS PENDING</div>
+    </div>
+  </div>
+
+  <!-- Left: Radar -->
+  <div class="left-panel">
+    <div class="panel-label">EUROPA INTELLIGENCE GRID // LIVE</div>
+    <canvas id="radar"></canvas>
+    <div class="jur-grid">
+      <div class="jur-tag active">NL</div>
+      <div class="jur-tag active">DE</div>
+      <div class="jur-tag active">AT</div>
+      <div class="jur-tag active">CH</div>
+      <div class="jur-tag">BE</div>
+      <div class="jur-tag">UK</div>
+    </div>
+  </div>
+
+  <!-- Right: Data feeds -->
+  <div class="right-panel">
+    <div class="data-feed">
+      <div class="feed-header"><span>LIVE INTELLIGENCE FEED</span><span id="feed-time">00:00:00</span></div>
+      <div id="feed-lines"></div>
+    </div>
+    <div class="data-feed">
+      <div class="feed-header"><span>ANALYSE PIPELINE STATUS</span></div>
+      <div class="feed-line">› KvK Register <span class="ok">[ONLINE]</span> — Latency: <span class="hi">14ms</span></div>
+      <div class="feed-line">› Rechtspraak.nl <span class="ok">[ONLINE]</span> — Latency: <span class="hi">22ms</span></div>
+      <div class="feed-line">› GLEIF Database <span class="ok">[ONLINE]</span> — Latency: <span class="hi">31ms</span></div>
+      <div class="feed-line">› Bundesanzeiger <span class="ok">[ONLINE]</span> — Latency: <span class="hi">18ms</span></div>
+      <div class="feed-line">› OpenSanctions <span class="ok">[ONLINE]</span> — Latency: <span class="hi">9ms</span></div>
+      <div class="feed-line">› GDELT News <span class="warn">[DEGRADED]</span> — Latency: <span style="color:#ffb800">847ms</span></div>
+    </div>
+  </div>
+
+  <!-- Command -->
+  <div class="command-area">
+    <div class="sys-stats">
+      <div class="sys-stat"><div class="sys-stat-val">meerdere</div><div class="sys-stat-lbl">Bronnen actief</div></div>
+      <div class="sys-stat"><div class="sys-stat-val">11</div><div class="sys-stat-lbl">analyselagen</div></div>
+      <div class="sys-stat"><div class="sys-stat-val">&lt;3m</div><div class="sys-stat-lbl">Rapporttijd</div></div>
+      <div class="sys-stat"><div class="sys-stat-val">0</div><div class="sys-stat-lbl">Data retentie</div></div>
+    </div>
+    <div class="prompt-line">
+      <span class="prompt-sym">SCAN://</span>
+      <input class="prompt-input" type="text" placeholder="Voer entiteitsnaam of KvK-nummer in..." autocomplete="off"/>
+      <button class="prompt-btn">INITIEER</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// CRT background — green phosphor glow
+var crt = document.getElementById('crt');
+var cc = crt.getContext('2d');
+function resizeCRT(){crt.width=window.innerWidth;crt.height=window.innerHeight;}
+resizeCRT();
+window.addEventListener('resize',resizeCRT);
+function drawCRT(){
+  cc.fillStyle='rgba(0,10,2,0.97)';
+  cc.fillRect(0,0,crt.width,crt.height);
+  // subtle green radial glow
+  var g=cc.createRadialGradient(crt.width/2,crt.height/2,0,crt.width/2,crt.height/2,crt.width*0.7);
+  g.addColorStop(0,'rgba(0,50,15,0.15)');g.addColorStop(1,'transparent');
+  cc.fillStyle=g;cc.fillRect(0,0,crt.width,crt.height);
+}
+drawCRT();
+
+// Radar canvas
+var radar = document.getElementById('radar');
+var rc = radar.getContext('2d');
+radar.width=radar.offsetWidth*2; radar.height=220*2; rc.scale(2,2);
+var rW=radar.offsetWidth, rH=110;
+var sweepAngle=0;
+
+function drawRadar(){
+  rc.clearRect(0,0,rW,rH);
+  var cx=rW/2, cy=rH/2, R=Math.min(cx,cy)-10;
+  // Grid rings
+  for(var i=1;i<=3;i++){
+    rc.beginPath();rc.arc(cx,cy,R*i/3,0,Math.PI*2);
+    rc.strokeStyle='rgba(0,255,65,0.15)';rc.lineWidth=0.5;rc.stroke();
+  }
+  // Grid crosshair
+  rc.beginPath();rc.moveTo(cx-R,cy);rc.lineTo(cx+R,cy);
+  rc.moveTo(cx,cy-R);rc.lineTo(cx,cy+R);
+  rc.strokeStyle='rgba(0,255,65,0.1)';rc.stroke();
+  // Sweep trail
+  for(var t=0;t<20;t++){
+    var a=sweepAngle-t*0.05;
+    rc.beginPath();rc.moveTo(cx,cy);
+    rc.arc(cx,cy,R,a-0.05,a,false);rc.lineTo(cx,cy);
+    rc.fillStyle='rgba(0,255,65,'+(0.003*(20-t))+')';rc.fill();
+  }
+  // Sweep line
+  rc.beginPath();rc.moveTo(cx,cy);
+  rc.lineTo(cx+R*Math.cos(sweepAngle),cy+R*Math.sin(sweepAngle));
+  rc.strokeStyle='rgba(0,255,65,0.7)';rc.lineWidth=1.5;rc.stroke();
+  // Cities as blips
+  var cities=[
+    {x:0.52,y:0.42,label:'AMS',active:true},
+    {x:0.58,y:0.52,label:'FRA',active:true},
+    {x:0.56,y:0.62,label:'ZRH',active:true},
+    {x:0.66,y:0.58,label:'VIE',active:false},
+    {x:0.5,y:0.5,label:'BRU',active:false},
+    {x:0.35,y:0.38,label:'LON',active:false}
+  ];
+  cities.forEach(function(c){
+    var bx=cx+(c.x-0.5)*R*2, by=cy+(c.y-0.5)*R*2;
+    rc.beginPath();rc.arc(bx,by,3,0,Math.PI*2);
+    rc.fillStyle=c.active?'#00ff41':'rgba(0,255,65,0.3)';rc.fill();
+    if(c.active){
+      rc.beginPath();rc.arc(bx,by,6+Math.sin(Date.now()/300)*2,0,Math.PI*2);
+      rc.strokeStyle='rgba(0,255,65,0.3)';rc.lineWidth=0.5;rc.stroke();
+    }
+    rc.font='6px Space Grotesk';rc.fillStyle='rgba(0,255,65,0.6)';
+    rc.fillText(c.label,bx+5,by-3);
+  });
+  sweepAngle=(sweepAngle+0.02)%(Math.PI*2);
+  requestAnimationFrame(drawRadar);
+}
+drawRadar();
+
+// Live feed
+var feedLines=[
+  'SCAN_INIT // TechFlow Systems B.V. // KvK: 12345678',
+  'KvK_CHECK // Status: <span class="ok">ACTIEF</span> // Inschrijving: 2019-03-14',
+  'UBO_SCAN // Beneficial owners: <span class="hi">2 gevonden</span>',
+  'SANCTIONS // OFAC, UN, EU: <span class="ok">GEEN TREFFER</span>',
+  'RECHTSPRAAK // Faillissementen: <span class="ok">0</span> // Beslagen: <span class="ok">0</span>',
+  'FORENSIC_DIGITS // ChiÂ²: 4.32 // p-waarde: <span class="ok">0.89 PASS</span>',
+  'GDELT_NEWS // 12 artikelen // Sentiment: <span class="hi">+0.34 POSITIEF</span>',
+  'NIS2_CHECK // Scope: <span class="warn">ESSENTIEEL</span> // Gaps: 3',
+  'AI_CONSENSUS // meerdere analyselagen akkoord // Score: <span class="ok">87/100</span>',
+  'RAPPORT_GEREED // Exporteer naar: PDF / JSON / API',
+];
+var feedIdx=0;
+var feedContainer=document.getElementById('feed-lines');
+function addFeedLine(){
+  if(feedIdx>=feedLines.length)feedIdx=0;
+  var d=document.createElement('div');
+  d.className='feed-line';d.innerHTML='› '+feedLines[feedIdx++];
+  feedContainer.appendChild(d);
+  if(feedContainer.children.length>6) feedContainer.removeChild(feedContainer.firstChild);
+  setTimeout(addFeedLine,1800+Math.random()*1200);
+}
+setTimeout(addFeedLine,800);
+
+// Clock
+function updateClock(){
+  var now=new Date();
+  document.getElementById('feed-time').textContent=
+    now.toTimeString().substring(0,8);
+}
+setInterval(updateClock,1000);updateClock();
+</script>
+</body>
+</html>

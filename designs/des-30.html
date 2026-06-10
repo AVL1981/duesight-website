@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#060a12;color:#d0e0f8;font-family:'Outfit',sans-serif;overflow:hidden;height:100vh;width:100vw}
+canvas#bg{position:absolute;inset:0;z-index:0}
+.overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 60% 55% at 55% 45%,transparent 0%,rgba(6,10,18,0.5) 50%,rgba(6,10,18,0.95) 100%)}
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;padding:0 7%;max-width:620px}
+.crystal-tag{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(140,200,255,0.35);margin-bottom:24px;font-weight:300}
+h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:#fff;margin-bottom:14px}
+h1 span{color:transparent;background:linear-gradient(135deg,#7dd3fc,#c4b5fd,#e0f2fe);-webkit-background-clip:text;background-clip:text}
+.desc{font-size:12px;color:rgba(160,190,220,0.4);line-height:1.8;max-width:460px;margin-bottom:32px;font-weight:300}
+.search-wrap{position:relative;max-width:500px;width:100%;margin-bottom:28px}
+.search-refract{position:absolute;inset:-3px;background:linear-gradient(135deg,rgba(125,211,252,0.15),rgba(196,181,253,0.1),rgba(224,242,254,0.15));filter:blur(8px);opacity:0.4;animation:refract 4s ease-in-out infinite}
+@keyframes refract{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.5;transform:scale(1.02)}}
+.search{position:relative;display:flex;background:rgba(6,12,25,0.8);border:1px solid rgba(140,200,255,0.15);backdrop-filter:blur(16px)}
+.search input{flex:1;background:transparent;border:none;outline:none;color:#d0e0f8;font-family:'Outfit',sans-serif;font-size:13px;padding:14px 18px;font-weight:300}
+.search input::placeholder{color:rgba(140,200,255,0.15)}
+.search button{background:linear-gradient(135deg,rgba(125,211,252,0.15),rgba(196,181,253,0.15));border:none;border-left:1px solid rgba(140,200,255,0.1);color:#7dd3fc;cursor:pointer;font-family:'Outfit',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:14px 22px;white-space:nowrap}
+.facets{display:flex;gap:20px;flex-wrap:wrap}
+.facet{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 18px;background:rgba(6,12,25,0.5);border:1px solid rgba(140,200,255,0.06);backdrop-filter:blur(8px);position:relative;overflow:hidden}
+.facet::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(140,200,255,0.3),transparent)}
+.f-val{font-size:22px;font-weight:800;color:#7dd3fc;text-shadow:0 0 15px rgba(125,211,252,0.2)}
+.f-lbl{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(140,200,255,0.2);font-weight:300}
+.bottom{position:absolute;bottom:0;left:0;right:0;z-index:20;height:32px;background:rgba(6,10,18,0.95);border-top:1px solid rgba(140,200,255,0.05);display:flex;align-items:center;justify-content:center;gap:32px}
+.bi{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(140,200,255,0.15);font-weight:300}
+</style></head>
+<body>
+<canvas id="bg"></canvas><div class="overlay"></div>
+<div class="content">
+  <div class="crystal-tag">◈ Crystal-Grade Intelligence ◈</div>
+  <h1>Helder als<br/><span>kristal.</span></h1>
+  <p class="desc">DueSight brengt absolute helderheid in complexe bedrijfsstructuren. Elk facet belicht — van UBO tot sancties, van forensische data-analyse tot NIS2.</p>
+  <div class="search-wrap"><div class="search-refract"></div><div class="search"><input type="text" placeholder="Entiteit of KvK-nummer..."/><button>Analyseer →</button></div></div>
+  <div class="facets">
+    <div class="facet"><div class="f-val">meerdere</div><div class="f-lbl">Bronnen</div></div>
+    <div class="facet"><div class="f-val">&lt;3m</div><div class="f-lbl">Rapport</div></div>
+    <div class="facet"><div class="f-val">11</div><div class="f-lbl">analyselagen</div></div>
+    <div class="facet"><div class="f-val">∅</div><div class="f-lbl">Retentie</div></div>
+    <div class="facet"><div class="f-val">6</div><div class="f-lbl">Jurisdicties</div></div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="bi">● Crystal Active</div><div class="bi">AVG Art. 25</div><div class="bi">Zero-Retention</div><div class="bi">AES-256</div>
+</div>
+<script>
+var c=document.getElementById('bg'),ctx=c.getContext('2d'),W,H;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+var t=0;
+// Crystal facets — rotating geometric shapes
+var crystals=[];
+for(var i=0;i<15;i++){
+  crystals.push({
+    x:0.4+Math.random()*0.5,y:0.2+Math.random()*0.6,
+    size:30+Math.random()*80,sides:Math.floor(Math.random()*3)+5,
+    rot:Math.random()*Math.PI*2,speed:(Math.random()-0.5)*0.003,
+    alpha:Math.random()*0.06+0.02,hue:200+Math.random()*40
+  });
+}
+function draw(){
+  t+=0.003;
+  ctx.fillStyle='rgba(6,10,18,0.06)';ctx.fillRect(0,0,W,H);
+  if(!draw.init){
+    draw.init=true;ctx.fillStyle='#060a12';ctx.fillRect(0,0,W,H);
+    // Static stars
+    for(var i=0;i<200;i++){
+      ctx.beginPath();ctx.arc(Math.random()*W,Math.random()*H,Math.random()*0.8+0.2,0,Math.PI*2);
+      ctx.fillStyle='rgba(180,210,255,'+(Math.random()*0.2+0.05)+')';ctx.fill();
+    }
+  }
+  // Draw crystal facets
+  crystals.forEach(function(cr){
+    cr.rot+=cr.speed;
+    var x=cr.x*W,y=cr.y*H;
+    ctx.beginPath();
+    for(var i=0;i<=cr.sides;i++){
+      var angle=cr.rot+i*Math.PI*2/cr.sides;
+      var px=x+Math.cos(angle)*cr.size;
+      var py=y+Math.sin(angle)*cr.size;
+      if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);
+    }
+    ctx.closePath();
+    // Facet fill with light refraction
+    var pulse=cr.alpha*(0.5+Math.sin(t*2+cr.x*10)*0.5);
+    ctx.strokeStyle='hsla('+cr.hue+',60%,70%,'+(pulse*1.5)+')';ctx.lineWidth=0.5;ctx.stroke();
+    // Internal lines (facet divisions)
+    for(var i=0;i<cr.sides;i+=2){
+      var angle=cr.rot+i*Math.PI*2/cr.sides;
+      ctx.beginPath();ctx.moveTo(x,y);
+      ctx.lineTo(x+Math.cos(angle)*cr.size,y+Math.sin(angle)*cr.size);
+      ctx.strokeStyle='hsla('+cr.hue+',50%,60%,'+(pulse*0.5)+')';ctx.lineWidth=0.3;ctx.stroke();
+    }
+    // Light refraction spots
+    var rx=x+Math.cos(t+cr.x*5)*cr.size*0.3;
+    var ry=y+Math.sin(t+cr.y*5)*cr.size*0.3;
+    var rg=ctx.createRadialGradient(rx,ry,0,rx,ry,cr.size*0.4);
+    rg.addColorStop(0,'hsla('+cr.hue+',70%,80%,'+(pulse*0.3)+')');
+    rg.addColorStop(1,'transparent');
+    ctx.beginPath();ctx.arc(rx,ry,cr.size*0.4,0,Math.PI*2);ctx.fillStyle=rg;ctx.fill();
+  });
+  // Central diamond — large prominent crystal
+  var cx=W*0.6,cy=H*0.45,dSize=120;
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(t*0.2);
+  ctx.beginPath();
+  // Diamond shape (octagon stretched)
+  var dPts=[[0,-dSize],[dSize*0.6,-dSize*0.3],[dSize*0.6,dSize*0.3],[0,dSize],[-dSize*0.6,dSize*0.3],[-dSize*0.6,-dSize*0.3]];
+  dPts.forEach(function(p,i){if(i===0)ctx.moveTo(p[0],p[1]);else ctx.lineTo(p[0],p[1])});
+  ctx.closePath();
+  var dpulse=0.06+Math.sin(t*1.5)*0.02;
+  ctx.strokeStyle='rgba(125,211,252,'+dpulse*2+')';ctx.lineWidth=1;ctx.stroke();
+  // Internal facet lines
+  dPts.forEach(function(p){
+    ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(p[0],p[1]);
+    ctx.strokeStyle='rgba(196,181,253,'+dpulse+')';ctx.lineWidth=0.3;ctx.stroke();
+  });
+  // Center glow
+  var dg=ctx.createRadialGradient(0,0,0,0,0,dSize*0.5);
+  dg.addColorStop(0,'rgba(125,211,252,'+dpulse+')');dg.addColorStop(1,'transparent');
+  ctx.beginPath();ctx.arc(0,0,dSize*0.5,0,Math.PI*2);ctx.fillStyle=dg;ctx.fill();
+  ctx.restore();
+  // Prismatic light rays from diamond
+  for(var i=0;i<6;i++){
+    var angle=t*0.3+i*Math.PI/3;
+    var len=W*0.15;
+    ctx.beginPath();ctx.moveTo(cx,cy);
+    ctx.lineTo(cx+Math.cos(angle)*len,cy+Math.sin(angle)*len);
+    var hue=200+i*20;
+    ctx.strokeStyle='hsla('+hue+',60%,70%,0.03)';ctx.lineWidth=2;ctx.stroke();
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body></html>

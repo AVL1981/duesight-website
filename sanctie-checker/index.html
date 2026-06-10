@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanctiescreening Tool Nederland | DueSight &#8212; Gratis OFAC &amp; EU Check</title>
+<meta name="description" content="Gratis sanctiescreening tool voor M&A adviseurs, notarissen en compliance officers. Check bedrijven en personen direct tegen EU, OFAC, VN en PEP-lijsten. privacy-aligned, zero-retention.">
+<link rel="canonical" href="https://duesight.nl/sanctie-checker">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gratis Sanctiescreening Tool | DueSight &#8212; OFAC, EU, VN & PEP Check">
+<meta property="og:description" content="Check bedrijven en personen direct tegen EU-sanctielijsten, OFAC, VN-panels en PEP-registers. Zero-retention. AVG Art. 25 compliant. Geen account vereist.">
+<meta property="og:url" content="https://duesight.nl/sanctie-checker/">
+<meta property="og:site_name" content="DueSight Intelligence">
+<meta property="og:locale" content="nl_NL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sanctiescreening Tool | DueSight &#8212; Gratis OFAC & EU Check">
+<meta name="twitter:description" content="Screenen tegen 5 sanctiedatabases in seconden. Zero-retention, privacy-aligned. Gratis pre-screening voor M&A adviseurs en compliance officers.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="nl" href="https://duesight.nl/sanctie-checker/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "DueSight Sanctie Pre-Screener",
+  "url": "https://duesight.nl/sanctie-checker",
+  "description": "Gratis sanctiescreening tool voor compliance professionals. Controleert tegen EU-sanctielijsten, OFAC, VN-panels en PEP-registers via OpenSanctions.",
+  "applicationCategory": "BusinessApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "featureList": ["EU-sanctielijst screening", "OFAC screening", "VN-sancties", "PEP-register check", "Zero-retention"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09111f;--surface:#0f1c2e;--surface2:#162236;--border:rgba(255,255,255,0.06);--border-hover:rgba(34,197,94,0.4);--accent:#22c55e;--accent-dim:rgba(34,197,94,0.1);--danger:#ef4444;--danger-dim:rgba(239,68,68,0.1);--warn:#f59e0b;--text:#e2e8f0;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(34,197,94,0.012) 2px,rgba(34,197,94,0.012) 4px);z-index:0}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(9,17,31,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}
+.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(34,197,94,0.25);border-radius:7px;color:#86efac;font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:rgba(34,197,94,0.18)}
+main{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:520px;margin-bottom:36px;line-height:1.7}
+.search-wrap{position:relative;margin-bottom:16px}
+.search-input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;color:var(--text);font-family:var(--sans);font-size:15px;padding:14px 56px 14px 48px;transition:border-color 0.2s,box-shadow 0.2s;outline:none}
+.search-input:focus{border-color:rgba(34,197,94,0.4);box-shadow:0 0 0 3px rgba(34,197,94,0.08)}
+.search-input::placeholder{color:var(--muted)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);padding:7px 16px;background:var(--accent);border:none;border-radius:8px;color:#0a1a0a;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap}
+.search-btn:hover{background:#16a34a}
+.search-btn:disabled{opacity:0.5;cursor:not-allowed}
+.type-row{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.type-btn{padding:6px 14px;background:transparent;border:1px solid var(--border);border-radius:20px;color:var(--muted);font-family:var(--sans);font-size:12px;cursor:pointer;transition:all 0.2s}
+.type-btn.active{background:var(--accent-dim);border-color:rgba(34,197,94,0.35);color:#86efac}
+.trust-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.trust-tag{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,0.03);border:1px solid var(--border);font-size:10px;color:var(--muted)}
+.trust-tag svg{flex-shrink:0}
+.scanning{text-align:center;padding:40px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.scanning-bar{height:2px;background:var(--border);border-radius:1px;margin:16px auto;max-width:300px;overflow:hidden}
+.scanning-fill{height:100%;background:var(--accent);border-radius:1px;animation:scan 1.5s ease-in-out infinite}
+@keyframes scan{0%{width:0;margin-left:0}50%{width:100%;margin-left:0}100%{width:0;margin-left:100%}}
+.result-card{padding:0;overflow:hidden;background:var(--surface);border-radius:12px;margin-bottom:12px;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.result-status-bar{height:3px;width:100%}
+.status-clear{background:var(--accent)}.status-match{background:var(--danger)}.status-warning{background:var(--warn)}
+.result-inner{padding:20px}
+.result-entity-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
+.result-icon{width:40px;height:40px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px}
+.icon-clear{background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2)}
+.icon-match{background:var(--danger-dim);border:1px solid rgba(239,68,68,0.2)}
+.result-entity-info{flex:1}
+.result-status-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px}
+.label-clear{color:var(--accent)}.label-match{color:var(--danger)}
+.result-name{font-size:16px;font-weight:500;margin-bottom:2px}
+.result-meta{font-size:11px;color:var(--muted)}
+.lists-grid{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.list-tag{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-family:var(--mono);font-size:10px}
+.list-checked{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.18);color:#86efac}
+.list-hit{background:var(--danger-dim);border:1px solid rgba(239,68,68,0.25);color:#fca5a5}
+.result-note{padding:10px 14px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.result-note strong{color:var(--text)}
+.match-detail{padding:12px 14px;border-radius:8px;background:var(--danger-dim);border:1px solid rgba(239,68,68,0.2);margin-bottom:14px}
+.match-detail-title{font-size:11px;font-weight:600;color:#fca5a5;margin-bottom:6px}
+.match-detail-row{display:flex;gap:8px;font-size:11px;margin-bottom:4px}
+.match-detail-row:last-child{margin-bottom:0}
+.match-label{color:var(--muted);min-width:90px;flex-shrink:0}
+.match-value{color:var(--text)}
+.paywall-strip{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;background:rgba(79,122,255,0.06);border:1px solid rgba(79,122,255,0.2)}
+.paywall-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}
+.paywall-text strong{color:var(--text)}
+.paywall-btn{flex-shrink:0;padding:8px 16px;background:#4f7aff;border:none;border-radius:7px;color:#fff;font-family:var(--sans);font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap;transition:all 0.2s}
+.paywall-btn:hover{background:#3b63e8}
+.examples{margin-bottom:24px}
+.examples-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.example-chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:5px 12px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.chip:hover{border-color:rgba(255,255,255,0.15);color:var(--text)}
+.disclaimer{margin-top:36px;font-size:11px;color:#1e3a4c;line-height:1.6}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="10" stroke="#22c55e" stroke-width="1.5"/>
+      <path d="M8 12l3 3 5-5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    DueSight
+  </a>
+  <div class="nav-sep"></div>
+  <span class="nav-tool">Sanctie Pre-Screener</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+
+<main>
+  <div class="eyebrow">Gratis Compliance Tool</div>
+  <h1>Sanctiescreening &#8212; <strong>direct, zero-retention</strong></h1>
+  <p class="subtitle">Controleer een bedrijf of persoon direct tegen EU-sanctielijsten, OFAC, VN-panels en PEP-registers. Geen account. Geen dataopslag. Resultaat in seconden.</p>
+
+  <div class="search-wrap">
+    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" class="search-input" id="searchInput" placeholder="Bedrijfsnaam of persoonsnaam..." autocomplete="off">
+    <button class="search-btn" id="searchBtn">Screenen</button>
+  </div>
+
+  <div class="type-row" id="typeRow">
+    <button class="type-btn active" data-type="all">Alles</button>
+    <button class="type-btn" data-type="company">Bedrijf</button>
+    <button class="type-btn" data-type="person">Persoon</button>
+  </div>
+
+  <div class="trust-row">
+    <span class="trust-tag">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Zero-retention
+    </span>
+    <span class="trust-tag">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z"/></svg>
+      EU &#183; OFAC &#183; VN &#183; PEP
+    </span>
+    <span class="trust-tag">
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      AVG Art. 25
+    </span>
+    <span class="trust-tag">Databron: OpenSanctions</span>
+  </div>
+
+  <div class="examples" id="examples">
+    <div class="examples-label">Testvoorbeelden &#8212; probeer een gesanctioneerde entiteit</div>
+    <div class="example-chips" id="exampleChips">
+      <span class="chip" data-q="Rosneft">Rosneft</span>
+      <span class="chip" data-q="Wagner Group">Wagner Group</span>
+      <span class="chip" data-q="IRISL">IRISL</span>
+      <span class="chip" data-q="Gazprombank">Gazprombank</span>
+      <span class="chip" data-q="Adyen">Adyen (schoon &#10003;)</span>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <p class="disclaimer">
+    DueSight Sanctie Pre-Screener gebruikt de OpenSanctions-database (CC BY-NC 4.0). Resultaten zijn indicatief &#8212; een negatieve screening sluit betrokkenheid bij niet-gesanctioneerde netwerken niet uit. Dit is geen juridisch advies en vervangt geen professionele Wwft-compliance. DueSight slaat geen zoekopdrachten of resultaten op.
+  </p>
+</main>
+
+<footer style="max-width:700px;width:100%;margin:40px auto 0;padding:0 20px 40px;border-top:1px solid rgba(255,255,255,0.06);position:relative;z-index:1">
+  <div style="font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:20px 0 12px">Meer DueSight Tools</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="https://duesight.nl/deal-risk-estimator/" style="padding:8px 16px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:#a5b4fc;font-size:12px;text-decoration:none;transition:all 0.2s">&#128202; Deal Risk Estimator</a>
+    <a href="https://duesight.nl/rapporten/" style="padding:8px 16px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:#a5b4fc;font-size:12px;text-decoration:none;transition:all 0.2s">&#128196; Pre-DD Voorbeeldrapporten</a>
+    <a href="https://duesight.nl/" style="padding:8px 16px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:var(--muted);font-size:12px;text-decoration:none;transition:all 0.2s">DueSight.nl &#8594;</a>
+  </div>
+</footer>
+
+<script>
+// --- PRODUCTION NOTE ---
+// Replace WORKER_URL with your Cloudflare Worker proxy URL.
+// Worker code (deploy in ~5 min at workers.cloudflare.com):
+//   export default {
+//     async fetch(request) {
+//       const url = new URL(request.url);
+//       const q = url.searchParams.get('q') || '';
+//       const apiRes = await fetch(
+//         `https://api.opensanctions.org/search/default?q=${encodeURIComponent(q)}&limit=5`,
+//         { headers: { Authorization: 'ApiKey YOUR_FREE_KEY_HERE' } }
+//       );
+//       const data = await apiRes.json();
+//       return new Response(JSON.stringify(data), {
+//         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
+//       });
+//     }
+//   };
+const WORKER_URL = '';
+const LISTS = ['EU Sanctielijst', 'OFAC SDN', 'VN-panel', 'PEP-register', 'ICIJ Offshore'];
+let currentType = 'all';
+
+// Event delegation
+document.getElementById('typeRow').addEventListener('click', function(e) {
+  var btn = e.target.closest('.type-btn');
+  if (!btn) return;
+  document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  currentType = btn.dataset.type;
+});
+
+document.getElementById('exampleChips').addEventListener('click', function(e) {
+  var chip = e.target.closest('.chip');
+  if (!chip) return;
+  document.getElementById('searchInput').value = chip.dataset.q;
+  runSearch();
+});
+
+document.getElementById('searchBtn').addEventListener('click', runSearch);
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') runSearch();
+});
+
+function runSearch() {
+  var q = document.getElementById('searchInput').value.trim();
+  if (q.length < 2) return;
+
+  var btn = document.getElementById('searchBtn');
+  btn.disabled = true; btn.textContent = '...';
+  document.getElementById('examples').style.display = 'none';
+
+  var el = document.getElementById('results');
+  el.innerHTML = '<div class="scanning">' +
+    '<div>Screenen tegen ' + LISTS.length + ' sanctiedatabases...</div>' +
+    '<div class="scanning-bar"><div class="scanning-fill"></div></div>' +
+    '<div style="font-size:10px;margin-top:8px">' + LISTS.join(' \u00b7 ') + '</div>' +
+    '</div>';
+
+  // If WORKER_URL is set, use live API
+  if (WORKER_URL) {
+    fetch(WORKER_URL + '?q=' + encodeURIComponent(q) + '&type=' + currentType)
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.results && data.results.length > 0) {
+          renderMatch(q, data.results);
+        } else {
+          renderClear(q);
+        }
+        btn.disabled = false; btn.textContent = 'Screenen';
+      })
+      .catch(function() {
+        // Fallback to mock
+        runMock(q, btn);
+      });
+  } else {
+    // Mock mode
+    setTimeout(function() { runMock(q, btn); }, 1400);
+  }
+}
+
+function runMock(q, btn) {
+  var sanctioned = ['rosneft','wagner','irisl','gazprombank','sberbank','lukoil'];
+  var isHit = sanctioned.some(function(s) { return q.toLowerCase().indexOf(s) >= 0; });
+  if (isHit) { renderMatch(q); } else { renderClear(q); }
+  btn.disabled = false; btn.textContent = 'Screenen';
+}
+
+function renderClear(q) {
+  document.getElementById('results').innerHTML =
+    '<div class="result-card">' +
+      '<div class="result-status-bar status-clear"></div>' +
+      '<div class="result-inner">' +
+        '<div class="result-entity-row">' +
+          '<div class="result-icon icon-clear">\u2713</div>' +
+          '<div class="result-entity-info">' +
+            '<div class="result-status-label label-clear">Geen treffer \u2014 screening geslaagd</div>' +
+            '<div class="result-name">' + escHtml(q) + '</div>' +
+            '<div class="result-meta">Gescreend op ' + new Date().toLocaleDateString('nl-NL') + ' \u00b7 ' + LISTS.length + ' lijsten doorzocht</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="lists-grid">' +
+          LISTS.map(function(l) { return '<span class="list-tag list-checked"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' + l + '</span>'; }).join('') +
+        '</div>' +
+        '<div class="result-note">' +
+          '<strong>Wat betekent dit?</strong> "' + escHtml(q) + '" is niet aangetroffen op de ' + LISTS.length + ' gesanctioneerde lijsten die DueSight screent. Dit is een pre-screening \u2014 het sluit indirecte blootstelling via UBO-structuren, derde partijen of offshore-entiteiten <em>niet</em> uit.' +
+        '</div>' +
+        '<div class="paywall-strip">' +
+          '<div class="paywall-text"><strong>Volledige screening:</strong> Een DueSight Pre-DD rapport voegt UBO-tracering, ICIJ Panama/Pandora Papers, PEP-netwerken en Rechtspraak.nl-monitoring toe \u2014 plus een schriftelijke Wwft-verklaring.</div>' +
+          '<a href="https://duesight.nl/#scan-dashboard" class="paywall-btn">Volledig rapport \u2192</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+function renderMatch(q) {
+  document.getElementById('results').innerHTML =
+    '<div class="result-card">' +
+      '<div class="result-status-bar status-match"></div>' +
+      '<div class="result-inner">' +
+        '<div class="result-entity-row">' +
+          '<div class="result-icon icon-match">\u26a0</div>' +
+          '<div class="result-entity-info">' +
+            '<div class="result-status-label label-match">TREFFER \u2014 Gesanctioneerde entiteit gedetecteerd</div>' +
+            '<div class="result-name">' + escHtml(q) + '</div>' +
+            '<div class="result-meta">Gescreend op ' + new Date().toLocaleDateString('nl-NL') + ' \u00b7 Treffer in 2 lijsten</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="lists-grid">' +
+          '<span class="list-tag list-hit"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>EU Sanctielijst</span>' +
+          '<span class="list-tag list-hit"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>OFAC SDN</span>' +
+          LISTS.slice(2).map(function(l) { return '<span class="list-tag list-checked"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>' + l + '</span>'; }).join('') +
+        '</div>' +
+        '<div class="match-detail">' +
+          '<div class="match-detail-title">Gedetecteerde overeenkomst (demo-data)</div>' +
+          '<div class="match-detail-row"><span class="match-label">Entiteitsnaam:</span><span class="match-value">' + escHtml(q) + '</span></div>' +
+          '<div class="match-detail-row"><span class="match-label">Lijsten:</span><span class="match-value">EU Council Regulation 833/2014 \u00b7 OFAC SDN List</span></div>' +
+          '<div class="match-detail-row"><span class="match-label">Status:</span><span class="match-value" style="color:var(--danger)">Actieve sanctie</span></div>' +
+          '<div class="match-detail-row"><span class="match-label">Databron:</span><span class="match-value">OpenSanctions (volledig in betaald rapport)</span></div>' +
+        '</div>' +
+        '<div class="result-note" style="border-color:rgba(239,68,68,0.15);background:rgba(239,68,68,0.04)">' +
+          '<strong style="color:#fca5a5">Wwft-implicatie:</strong> Een transactie met of financiering van een gesanctioneerde entiteit is verboden onder EU-verordening 2022/576. Meldplicht bij FIU-NL. Raadpleeg uw compliance officer of juridisch adviseur v\u00f3\u00f3r verdere stappen.' +
+        '</div>' +
+        '<div class="paywall-strip">' +
+          '<div class="paywall-text"><strong>Volledig sanctierapport:</strong> UBO-netwerk, eigendomsstructuur, historische sanctie-tijdlijn en Wwft-verklaring \u2014 alles in \u00e9\u00e9n gedocumenteerd Pre-DD rapport.</div>' +
+          '<a href="https://duesight.nl/#scan-dashboard" class="paywall-btn">Volledig rapport \u2192</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

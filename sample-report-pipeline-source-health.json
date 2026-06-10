@@ -1,0 +1,1032 @@
+{
+  "version": "v1_20260428",
+  "ts": "2026-06-10T15:52:32.597194+00:00",
+  "overall": "GREEN",
+  "summary": {
+    "total": 29,
+    "ok": 28,
+    "failed": 0,
+    "ok_rate_pct": 96.6,
+    "critical_failures": []
+  },
+  "sources": [
+    {
+      "name": "Yente",
+      "category": "sanctions",
+      "critical": true,
+      "status": "OK",
+      "detail": "catalog=ok, datasets=366, searchable=true, stale=True",
+      "latency_ms": 1137.6,
+      "rate_limit_policy_key": "",
+      "rate_limit": {}
+    },
+    {
+      "name": "OpenSanctions",
+      "category": "sanctions",
+      "critical": false,
+      "status": "SKIPPED_LOCAL_PRIMARY",
+      "detail": "hosted fallback not probed; local Yente is the primary production sanctions path",
+      "latency_ms": 0.0,
+      "rate_limit_policy_key": "opensanctions_hosted",
+      "rate_limit": {
+        "policy": {
+          "key": "opensanctions_hosted",
+          "name": "OpenSanctions hosted API",
+          "docs_url": "https://www.opensanctions.org/docs/api/",
+          "min_interval_s": 0.75,
+          "max_attempts": 1,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 5.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 180.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 1800,
+          "notes": "Hosted API limits can vary by key/plan. DueSight uses local Yente first, does not probe hosted fallback when Yente is healthy, and honors Retry-After via recovery backfill."
+        }
+      }
+    },
+    {
+      "name": "GLEIF",
+      "category": "ownership",
+      "critical": true,
+      "status": "OK",
+      "detail": "2854b",
+      "latency_ms": 589.9,
+      "rate_limit_policy_key": "gleif",
+      "rate_limit": {
+        "provider_key": "gleif",
+        "policy": {
+          "key": "gleif",
+          "name": "GLEIF API",
+          "docs_url": "https://documenter.getpostman.com/view/7679680/SVYrrxuU",
+          "min_interval_s": 0.5,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 30.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 1800,
+          "notes": "Public LEI API; DueSight uses lightweight page-size probes and honors Retry-After."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "ICIJ",
+      "category": "leaks",
+      "critical": true,
+      "status": "OK",
+      "detail": "814344 entities, 5 tables, 402MB",
+      "latency_ms": 15.7,
+      "rate_limit_policy_key": "",
+      "rate_limit": {}
+    },
+    {
+      "name": "rechtspraak",
+      "category": "legal",
+      "critical": true,
+      "status": "OK",
+      "detail": "3892b",
+      "latency_ms": 387.5,
+      "rate_limit_policy_key": "rechtspraak",
+      "rate_limit": {
+        "provider_key": "rechtspraak",
+        "policy": {
+          "key": "rechtspraak",
+          "name": "Rechtspraak public search API",
+          "docs_url": "https://uitspraken.rechtspraak.nl/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 1800,
+          "notes": "Official/public legal source; conservative pacing for health probes."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "KvK",
+      "category": "registry",
+      "critical": true,
+      "status": "OK",
+      "detail": "public_search 127KB",
+      "latency_ms": 522.5,
+      "rate_limit_policy_key": "kvk_public",
+      "rate_limit": {
+        "provider_key": "kvk_public",
+        "policy": {
+          "key": "kvk_public",
+          "name": "KvK public search",
+          "docs_url": "https://www.kvk.nl/",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Public website route; not used for invasive scraping and slowed aggressively."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "EPO_OPS",
+      "category": "patent",
+      "critical": true,
+      "status": "OK",
+      "detail": "token issued, ttl=1199s",
+      "latency_ms": 463.5,
+      "rate_limit_policy_key": "epo_ops",
+      "rate_limit": {
+        "provider_key": "epo_ops",
+        "policy": {
+          "key": "epo_ops",
+          "name": "EPO OPS",
+          "docs_url": "https://developers.epo.org/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Patent API with fair-use limits; health probes use token endpoint only."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "Staatscourant",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "3342b",
+      "latency_ms": 649.5,
+      "rate_limit_policy_key": "staatscourant",
+      "rate_limit": {
+        "provider_key": "staatscourant",
+        "policy": {
+          "key": "staatscourant",
+          "name": "Officiele Bekendmakingen SRU",
+          "docs_url": "https://zoek.officielebekendmakingen.nl/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Official public SRU source; conservative health-check pacing."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "CBS",
+      "category": "macro",
+      "critical": false,
+      "status": "OK",
+      "detail": "10438b",
+      "latency_ms": 389.9,
+      "rate_limit_policy_key": "cbs",
+      "rate_limit": {
+        "provider_key": "cbs",
+        "policy": {
+          "key": "cbs",
+          "name": "CBS OData API",
+          "docs_url": "https://www.cbs.nl/",
+          "min_interval_s": 0.5,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 30.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Public statistics API; lightweight metadata probes."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "AFM",
+      "category": "regulator",
+      "critical": false,
+      "status": "OK",
+      "detail": "register page 50881b",
+      "latency_ms": 578.5,
+      "rate_limit_policy_key": "afm",
+      "rate_limit": {
+        "provider_key": "afm",
+        "policy": {
+          "key": "afm",
+          "name": "AFM public register",
+          "docs_url": "https://www.afm.nl/nl-nl/sector/registers",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Public register web route; conservative server-side health probes."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "DNB",
+      "category": "regulator",
+      "critical": false,
+      "status": "OK",
+      "detail": "api-guide reachable 9847b",
+      "latency_ms": 387.8,
+      "rate_limit_policy_key": "dnb",
+      "rate_limit": {
+        "provider_key": "dnb",
+        "policy": {
+          "key": "dnb",
+          "name": "DNB public register",
+          "docs_url": "https://www.dnb.nl/openbaar-register/",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Official register/API routes can be gated; probes avoid repeated pressure."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "Bundesanzeiger",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "deutschland pkg ok, SAP returned 19 reports",
+      "latency_ms": 8598.2,
+      "rate_limit_policy_key": "bundesanzeiger",
+      "rate_limit": {
+        "policy": {
+          "key": "bundesanzeiger",
+          "name": "Bundesanzeiger",
+          "docs_url": "https://www.bundesanzeiger.de/",
+          "min_interval_s": 10.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 600.0,
+          "default_retry_after_s": 300.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 7200,
+          "notes": "DE official publication source; slow health cadence due bot/captcha sensitivity."
+        }
+      }
+    },
+    {
+      "name": "Zefix",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "linked_data uid=CHE109376417",
+      "latency_ms": 711.4,
+      "rate_limit_policy_key": "zefix",
+      "rate_limit": {
+        "policy": {
+          "key": "zefix",
+          "name": "Zefix / Swiss register",
+          "docs_url": "https://www.zefix.admin.ch/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Swiss public register route; official/public access only."
+        }
+      }
+    },
+    {
+      "name": "BCE_KBO",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "8964b",
+      "latency_ms": 428.2,
+      "rate_limit_policy_key": "bce_kbo",
+      "rate_limit": {
+        "provider_key": "bce_kbo",
+        "policy": {
+          "key": "bce_kbo",
+          "name": "BCE/KBO public search",
+          "docs_url": "https://kbopub.economie.fgov.be/kbopub/",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Belgian public register page; conservative browser-like health probe."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "CompaniesHouse",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "endpoint reachable (HTTP_401)",
+      "latency_ms": 357.5,
+      "rate_limit_policy_key": "companies_house",
+      "rate_limit": {
+        "provider_key": "companies_house",
+        "policy": {
+          "key": "companies_house",
+          "name": "Companies House API",
+          "docs_url": "https://developer.company-information.service.gov.uk/",
+          "min_interval_s": 0.75,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "UK registry API; unauthenticated reachability probe only."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "SIRENE",
+      "category": "registry",
+      "critical": false,
+      "status": "OK",
+      "detail": "endpoint reachable (HTTP_401)",
+      "latency_ms": 346.2,
+      "rate_limit_policy_key": "sirene",
+      "rate_limit": {
+        "provider_key": "sirene",
+        "policy": {
+          "key": "sirene",
+          "name": "INSEE SIRENE API",
+          "docs_url": "https://api.insee.fr/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "French registry API; auth-gated status is treated as reachable."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "HIBP",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "200 OK",
+      "latency_ms": 357.8,
+      "rate_limit_policy_key": "hibp",
+      "rate_limit": {
+        "provider_key": "hibp",
+        "policy": {
+          "key": "hibp",
+          "name": "Have I Been Pwned API",
+          "docs_url": "https://haveibeenpwned.com/API/v3",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Breach catalog source; no customer emails queried in sample health probes."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "EUVD",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "4 latest vulnerabilities",
+      "latency_ms": 208.2,
+      "rate_limit_policy_key": "euvd",
+      "rate_limit": {
+        "provider_key": "euvd",
+        "policy": {
+          "key": "euvd",
+          "name": "ENISA EUVD API",
+          "docs_url": "https://euvd.enisa.europa.eu/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "European vulnerability database health probe."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "NVD",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "335 keyword results",
+      "latency_ms": 665.3,
+      "rate_limit_policy_key": "nvd",
+      "rate_limit": {
+        "provider_key": "nvd",
+        "policy": {
+          "key": "nvd",
+          "name": "NIST NVD API",
+          "docs_url": "https://nvd.nist.gov/developers",
+          "min_interval_s": 6.5,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "NVD API keyless route has low limits; DueSight uses conservative pacing."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "NVD_CPE",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "1 exact CPE results",
+      "latency_ms": 814.4,
+      "rate_limit_policy_key": "nvd_cpe",
+      "rate_limit": {
+        "provider_key": "nvd_cpe",
+        "policy": {
+          "key": "nvd_cpe",
+          "name": "NIST CPE API",
+          "docs_url": "https://nvd.nist.gov/developers",
+          "min_interval_s": 6.5,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Shares NVD pacing expectations; used for tiny dictionary probe only."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "CISA_KEV",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "200 OK",
+      "latency_ms": 245.7,
+      "rate_limit_policy_key": "cisa_kev",
+      "rate_limit": {
+        "provider_key": "cisa_kev",
+        "policy": {
+          "key": "cisa_kev",
+          "name": "CISA KEV feed",
+          "docs_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Static public JSON feed; cached/polite health probe."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "URLScan",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "1 passive results",
+      "latency_ms": 1014.2,
+      "rate_limit_policy_key": "urlscan",
+      "rate_limit": {
+        "provider_key": "urlscan",
+        "policy": {
+          "key": "urlscan",
+          "name": "urlscan.io API",
+          "docs_url": "https://urlscan.io/docs/api/",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 300.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Passive search API; health probes respect 429 and Retry-After."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "CertSpotter",
+      "category": "cyber",
+      "critical": false,
+      "status": "RATE_LIMIT",
+      "detail": "throttled",
+      "latency_ms": 4.3,
+      "rate_limit_policy_key": "certspotter",
+      "rate_limit": {
+        "provider_key": "certspotter",
+        "policy": {
+          "key": "certspotter",
+          "name": "SSLMate CertSpotter API",
+          "docs_url": "https://sslmate.com/help/reference/ct_search_api_v1",
+          "min_interval_s": 10.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 600.0,
+          "default_retry_after_s": 300.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 7200,
+          "notes": "Often rate-limits unauthenticated CT searches; slow recovery cadence."
+        },
+        "attempts": 0,
+        "pre_call_wait_seconds": 31.785,
+        "inline_retry_count": 0,
+        "retry_after_seconds": 31.785,
+        "next_retry_at": "2026-06-10T15:52:51+00:00",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "ShodanInternetDB",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "2 ports, 0 vulns",
+      "latency_ms": 139.6,
+      "rate_limit_policy_key": "shodan_internetdb",
+      "rate_limit": {
+        "provider_key": "shodan_internetdb",
+        "policy": {
+          "key": "shodan_internetdb",
+          "name": "Shodan InternetDB",
+          "docs_url": "https://internetdb.shodan.io/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Keyless passive exposure API; tiny known-IP probe only."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "IANA_RDAP",
+      "category": "cyber",
+      "critical": false,
+      "status": "OK",
+      "detail": "5 RDAP services",
+      "latency_ms": 147.5,
+      "rate_limit_policy_key": "iana_rdap",
+      "rate_limit": {
+        "provider_key": "iana_rdap",
+        "policy": {
+          "key": "iana_rdap",
+          "name": "IANA RDAP bootstrap",
+          "docs_url": "https://data.iana.org/rdap/",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 86400,
+          "notes": "Static bootstrap JSON; very low refresh need."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "Wayback",
+      "category": "historical",
+      "critical": false,
+      "status": "OK",
+      "detail": "48b",
+      "latency_ms": 13370.7,
+      "rate_limit_policy_key": "wayback",
+      "rate_limit": {
+        "provider_key": "wayback",
+        "policy": {
+          "key": "wayback",
+          "name": "Internet Archive Wayback API",
+          "docs_url": "https://archive.org/help/wayback_api.php",
+          "min_interval_s": 5.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 900.0,
+          "default_retry_after_s": 300.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 7200,
+          "notes": "Public archive route; defer aggressively after 429."
+        },
+        "attempts": 2,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 1,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "GDELT",
+      "category": "media",
+      "critical": false,
+      "status": "SKIPPED_RECOVERY_CADENCE",
+      "detail": "GDELT public API health is checked by source recovery cadence, not every sample/source-health run",
+      "latency_ms": 0.0,
+      "rate_limit_policy_key": "gdelt_doc_api",
+      "rate_limit": {
+        "policy": {
+          "key": "gdelt_doc_api",
+          "name": "GDELT DOC 2.0 API",
+          "docs_url": "https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/",
+          "min_interval_s": 10.0,
+          "max_attempts": 1,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 5.0,
+          "max_backoff_s": 1800.0,
+          "default_retry_after_s": 1800.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 1800,
+          "notes": "Public DOC API; DueSight applies a conservative 1 request per 10 seconds per host/process, does not retry 429 inline, and backs off to recovery cadence after 429."
+        }
+      }
+    },
+    {
+      "name": "Wikidata",
+      "category": "entities",
+      "critical": false,
+      "status": "OK",
+      "detail": "479b",
+      "latency_ms": 348.1,
+      "rate_limit_policy_key": "wikidata_api",
+      "rate_limit": {
+        "provider_key": "wikidata_api",
+        "policy": {
+          "key": "wikidata_api",
+          "name": "Wikidata MediaWiki API",
+          "docs_url": "https://www.mediawiki.org/wiki/API:Etiquette",
+          "min_interval_s": 1.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 60.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "MediaWiki API with explicit User-Agent; health probes are lightweight."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    },
+    {
+      "name": "DuckDuckGo",
+      "category": "search",
+      "critical": false,
+      "status": "OK",
+      "detail": "1252b",
+      "latency_ms": 248.8,
+      "rate_limit_policy_key": "duckduckgo",
+      "rate_limit": {
+        "provider_key": "duckduckgo",
+        "policy": {
+          "key": "duckduckgo",
+          "name": "DuckDuckGo Instant Answer API",
+          "docs_url": "https://duckduckgo.com/api",
+          "min_interval_s": 2.0,
+          "max_attempts": 2,
+          "retry_statuses": [
+            429,
+            500,
+            502,
+            503,
+            504
+          ],
+          "base_backoff_s": 2.0,
+          "max_backoff_s": 60.0,
+          "default_retry_after_s": 120.0,
+          "max_inline_retry_wait_s": 15.0,
+          "recovery_poll_interval_s": 3600,
+          "notes": "Fallback search API; no scraping or result-page crawling."
+        },
+        "attempts": 1,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 0,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
+        "rate_limit_handled": true
+      }
+    }
+  ]
+}

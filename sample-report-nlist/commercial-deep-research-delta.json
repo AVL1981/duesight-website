@@ -1,0 +1,248 @@
+{
+  "schema_version": "duesight.commercial_deep_research_delta.v1",
+  "target": "NLIST B.V.",
+  "identity_resolution": {
+    "status": "aligned",
+    "configured_kvk": "85442410",
+    "canonical_kvk": "85442410",
+    "establishment_number": "000041173562",
+    "sbi": "7810 Arbeidsbemiddeling",
+    "address": "Grote Oever 34H, 7941 BJ Meppel",
+    "claim_level": "public aggregator corroboration; official KvK extract required for final reliance",
+    "sources": [
+      "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
+      "https://bizzy.org/nl/nl/85442410/nlist-bv",
+      "https://nlist.nl/en/contact"
+    ],
+    "official_upgrade_required": "Current KvK extract or licensed provider dossier with source hash."
+  },
+  "target_contacts": {
+    "count": 21,
+    "role_buckets": {
+      "leadership": 3,
+      "commercial_delivery": 7,
+      "sourcing": 2,
+      "operations_support": 9
+    },
+    "source": "https://nlist.nl/nl/team",
+    "claim_level": "target-owned public team context",
+    "sample": [
+      {
+        "name": "Anne-Jan Geertsma",
+        "role": "Managing partner",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Dennis Kuiper",
+        "role": "Managing partner",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Stephanie van der Toorn – Faas",
+        "role": "Managing partner",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Roy Beekman",
+        "role": "New business manager",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Céleste Romijn – Ter Haar",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Eduann Potgieter",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Lyselotte Bakhuis",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Jac van der Linde",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Jelle Swagerman",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Joost Klaver",
+        "role": "Managing consultant",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Chétika du Preez",
+        "role": "Recruiter",
+        "source": "https://nlist.nl/nl/team"
+      },
+      {
+        "name": "Michelle Dye",
+        "role": "Recruiter",
+        "source": "https://nlist.nl/nl/team"
+      }
+    ]
+  },
+  "competitor_intel": {
+    "count": 5,
+    "records": [
+      {
+        "name": "Brunel Nederland",
+        "why_relevant": "Schaalspeler in technische detachering en IT/engineering-talent.",
+        "source": "https://www.brunel.net/nl-nl",
+        "claim_level": "market context"
+      },
+      {
+        "name": "Trinamics",
+        "why_relevant": "High-tech engineering detacheerder met internationale kenniswerker-route.",
+        "source": "https://www.trinamics.nl/",
+        "claim_level": "market context"
+      },
+      {
+        "name": "Sensor",
+        "why_relevant": "TSG-zusterlabel in civiel, infra en technische specialismen.",
+        "source": "https://www.yoursensor.com/",
+        "claim_level": "group/market context"
+      },
+      {
+        "name": "SkilledPeople",
+        "why_relevant": "Directe niche rond internationale technische werving en relocatie.",
+        "source": "https://skilledpeople.work/",
+        "claim_level": "market context"
+      },
+      {
+        "name": "RemoteNext",
+        "why_relevant": "Internationale/remote engineering-route vanuit onder meer Zuid-Afrika en India.",
+        "source": "https://www.remotenext.nl/",
+        "claim_level": "market context"
+      }
+    ],
+    "requested_field_slots": 60,
+    "filled_field_slots": 15,
+    "next_action": "Run full source-first competitor field extraction before claiming addresses, revenue, hiring count or employees."
+  },
+  "talent_intel": {
+    "source": "https://nlist.nl/nl/vacatures",
+    "claim_level": "target-owned hiring context; live vacancy count must be refreshed per replay",
+    "role_families": [
+      {
+        "family": "Maintenance",
+        "signals": [
+          "allround monteur",
+          "koelmonteur",
+          "monteur E+I",
+          "HVAC",
+          "service"
+        ]
+      },
+      {
+        "family": "Engineering",
+        "signals": [
+          "electrical engineer",
+          "hardware engineer",
+          "mechanical design",
+          "structural"
+        ]
+      },
+      {
+        "family": "IT",
+        "signals": [
+          "DevOps",
+          ".NET",
+          "full stack"
+        ]
+      }
+    ],
+    "skill_buckets": [
+      "elektrotechniek",
+      "werktuigbouw",
+      "maintenance/service",
+      "industriele automatisering",
+      "software/IT",
+      "relocation/compliance"
+    ]
+  },
+  "customer_signal": {
+    "source": "https://nlist.nl/nl",
+    "claim_level": "target-owned logo/review context; customer concentration requires seller/provider proof",
+    "examples": [
+      "GEA",
+      "Morssinkhof Plastics",
+      "DXC Technology",
+      "AkzoNobel",
+      "BAM",
+      "Cargill",
+      "Tetra Pak"
+    ]
+  },
+  "source_layer_passes": {
+    "modules_recorded": [
+      "cyber_infrastructure",
+      "sanctions_screening",
+      "finance_forensics",
+      "ownership_register",
+      "business_profile_intel",
+      "company_intel_deep_research",
+      "award_intelligence",
+      "local_bulk_inventory",
+      "regulatory_exposure",
+      "reputation_adverse_media",
+      "public_acquisition",
+      "premium_source_discovery",
+      "source_health",
+      "provider_preflight",
+      "llm_orchestrator_synthesis"
+    ],
+    "source_labels": [
+      "Financial Times FT1000",
+      "open identity reference",
+      "international entity register route",
+      "Public Website",
+      "archive discovery",
+      "provider discovery route",
+      "infrastructure exposure route + network registry route",
+      "sanctions screening route",
+      "nlist.nl",
+      "thespecialistgroup.com",
+      "nl.linkedin.com",
+      "linkedin.com",
+      "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
+      "news discovery route / Google News RSS / Rechtspraak metadata (news discovery route:PAS..."
+    ],
+    "tools_expected": [
+      "business_profile_intel",
+      "commercial_deep_research_delta",
+      "competitor_intel",
+      "talent_intel",
+      "identity_resolution",
+      "deep_research_query_plan",
+      "public_acquisition",
+      "premium_source_discovery",
+      "source envelope normalizer"
+    ]
+  },
+  "measurable_delta": {
+    "contacts_added_from_business_profile": 21,
+    "role_buckets_added": 4,
+    "competitor_records_added": 5,
+    "talent_buckets_added": 6,
+    "customer_examples_added": 7,
+    "identity_conflicts_detected": 0,
+    "source_layers_recorded": 15,
+    "distinct_source_labels": 14
+  },
+  "guardrails": [
+    "LinkedIn/social is discovery or corroboration only.",
+    "Competitor and hiring metrics remain market context until refreshed and source-enveloped.",
+    "Finance, ownership and UBO stay gated until official/provider documents with source hash are attached.",
+    "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
+  ],
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
+  "updated_at": "2026-06-10T16:06:29+00:00"
+}

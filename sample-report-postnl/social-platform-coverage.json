@@ -1,0 +1,47 @@
+{
+  "schema_version": "duesight.social_platform_coverage.v1",
+  "target": {
+    "name": "PostNL N.V.",
+    "domain": "postnl.nl",
+    "kvk": "",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-05-29T09:52:31+00:00",
+  "social_scan": {
+    "status": "executed",
+    "elapsed_s": 63.417,
+    "result": {
+      "social_status": "NOT_FOUND",
+      "social_platforms_checked": 443,
+      "social_profiles_found": 0,
+      "social_trust_badge": {
+        "badge": "NONE",
+        "score": 0,
+        "platforms": 0
+      },
+      "social_breach_check_passed": false,
+      "social_breach_count": 0,
+      "social_risk_level": "MEDIUM",
+      "social_risk_signals": [
+        "No social media presence detected (could indicate fake/persona)"
+      ],
+      "social_profiles": []
+    },
+    "profiles": [],
+    "platforms_checked": 443,
+    "profiles_found": 0,
+    "risk_level": "MEDIUM"
+  },
+  "existing_social_context": {
+    "source_files_checked": [
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=postnl.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest"
+    ],
+    "snippets": [
+      "s source-backed context, not a substitute for official register evidence.\", \"privacy_policy\": \"Business-role data only; social/search snippets remain discovery hints unless corroborated.\", \"website_profile\": {\"status\": \"available\", \"website\": \"https://postnl.nl\", \"website_pages\": [{\"url\": \"https://www.postnl.nl/\", \"path\": \"/\", \"title\": \"PostNL: Wij bezorgen bijzondere momenten! | PostNL\", \"descrip"
+    ]
+  }
+}

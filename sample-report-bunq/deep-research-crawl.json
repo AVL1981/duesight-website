@@ -1,0 +1,944 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "bunq B.V.",
+    "domain": "bunq.com",
+    "kvk": "54992060",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T09:15:51+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 18,
+  "queries_executed": 12,
+  "failed_or_skipped": 6,
+  "target_site_crawl": {
+    "pages_checked": 40,
+    "source_urls": [
+      "https://bunq.com/",
+      "https://bunq.com/nl/",
+      "https://bunq.com/en/",
+      "https://bunq.com/en/about",
+      "https://bunq.com/about",
+      "https://bunq.com/en/jobs",
+      "https://bunq.com/careers",
+      "https://bunq.com/nl/contact",
+      "https://bunq.com/en/contact",
+      "https://bunq.com/contact",
+      "https://bunq.com/sitemap.xml",
+      "https://bunq.com/personal-account/banking-use-cases/students",
+      "https://bunq.com/personal-account/banking-use-cases/expats",
+      "https://bunq.com/personal-account/banking-use-cases/couples",
+      "https://bunq.com/personal-account/banking-use-cases/parents",
+      "https://bunq.com/nl/personal-account/banking-use-cases/students",
+      "https://bunq.com/nl/personal-account/banking-use-cases/expats",
+      "https://bunq.com/nl/personal-account/banking-use-cases/couples",
+      "https://bunq.com/nl/personal-account/banking-use-cases/parents",
+      "https://bunq.com/en/personal-account/banking-use-cases/students",
+      "https://bunq.com/en/personal-account/banking-use-cases/expats",
+      "https://bunq.com/en/personal-account/banking-use-cases/couples",
+      "https://bunq.com/en/personal-account/banking-use-cases/parents",
+      "https://www.bunq.com/about",
+      "https://www.bunq.com/en-us/about",
+      "https://www.bunq.com/en-nl/about",
+      "https://www.bunq.com/en-de/about",
+      "https://www.bunq.com/en-fr/about",
+      "https://www.bunq.com/en-es/about",
+      "https://www.bunq.com/en-ie/about",
+      "https://www.bunq.com/nl-nl/about",
+      "https://www.bunq.com/de-de/about",
+      "https://www.bunq.com/fr-fr/about",
+      "https://www.bunq.com/es-es/about"
+    ],
+    "pages": [
+      {
+        "url": "https://bunq.com/",
+        "status": 200,
+        "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/nl/",
+        "status": 200,
+        "title": "Online bankieren makkelijk gemaakt | Meld je in 5 minuten bij bunq aan",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/en/",
+        "status": 200,
+        "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/nl/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/en/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/team",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/nl/over-nlist",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/nl/over-ons",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/en/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://bunq.com/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://bunq.com/nl/vacatures",
+        "status": "fetch_failed",
+        "title": "",
+        "bytes": 0
+      },
+      {
+        "url": "https://bunq.com/en/jobs",
+        "status": 200,
+        "title": "Careers | bunq",
+        "bytes": 599953
+      },
+      {
+        "url": "https://bunq.com/careers",
+        "status": 200,
+        "title": "Careers | bunq",
+        "bytes": 599953
+      },
+      {
+        "url": "https://bunq.com/nl/contact",
+        "status": 200,
+        "title": "Neem contact met ons op | bunq",
+        "bytes": 599993
+      },
+      {
+        "url": "https://bunq.com/en/contact",
+        "status": 200,
+        "title": "Contact Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://bunq.com/contact",
+        "status": 200,
+        "title": "Contact Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://bunq.com/sitemap.xml",
+        "status": 200,
+        "title": "",
+        "bytes": 1222
+      },
+      {
+        "url": "https://bunq.com/personal-account/banking-use-cases/students",
+        "status": 200,
+        "title": "Banking That Gets Your Student Life | bunq | bunq",
+        "bytes": 599993
+      },
+      {
+        "url": "https://bunq.com/personal-account/banking-use-cases/expats",
+        "status": 200,
+        "title": "Banking for Expats | Seamless Banking Wherever You Go | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/personal-account/banking-use-cases/couples",
+        "status": 200,
+        "title": "Simplify Finances with a Shared Account for Couples | bunq | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/personal-account/banking-use-cases/parents",
+        "status": 200,
+        "title": "Banking for Modern Parents | bunq | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/nl/personal-account/banking-use-cases/students",
+        "status": 200,
+        "title": "Bankieren dat bij je studentenleven past | bunq | bunq",
+        "bytes": 599993
+      },
+      {
+        "url": "https://bunq.com/nl/personal-account/banking-use-cases/expats",
+        "status": 200,
+        "title": "Bankieren voor expats | Zorgeloos bankieren waar je ook bent | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/nl/personal-account/banking-use-cases/couples",
+        "status": 200,
+        "title": "Shared Banking for Couples in the Netherlands | bunq | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/nl/personal-account/banking-use-cases/parents",
+        "status": 200,
+        "title": "Bankieren voor moderne ouders | bunq | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://bunq.com/en/personal-account/banking-use-cases/students",
+        "status": 200,
+        "title": "Banking That Gets Your Student Life | bunq | bunq",
+        "bytes": 599993
+      },
+      {
+        "url": "https://bunq.com/en/personal-account/banking-use-cases/expats",
+        "status": 200,
+        "title": "Banking for Expats | Seamless Banking Wherever You Go | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/en/personal-account/banking-use-cases/couples",
+        "status": 200,
+        "title": "Simplify Finances with a Shared Account for Couples | bunq | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://bunq.com/en/personal-account/banking-use-cases/parents",
+        "status": 200,
+        "title": "Banking for Modern Parents | bunq | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://www.bunq.com/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-us/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-nl/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-de/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-fr/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-es/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/en-ie/about",
+        "status": 200,
+        "title": "About Us | bunq",
+        "bytes": 599981
+      },
+      {
+        "url": "https://www.bunq.com/nl-nl/about",
+        "status": 200,
+        "title": "Over Ons | bunq",
+        "bytes": 599987
+      },
+      {
+        "url": "https://www.bunq.com/de-de/about",
+        "status": 200,
+        "title": "Über uns | bunq",
+        "bytes": 599956
+      },
+      {
+        "url": "https://www.bunq.com/fr-fr/about",
+        "status": 200,
+        "title": "À propos de nous | bunq",
+        "bytes": 599922
+      },
+      {
+        "url": "https://www.bunq.com/es-es/about",
+        "status": 200,
+        "title": "Sobre Nosotros | bunq",
+        "bytes": 599963
+      }
+    ]
+  },
+  "source_urls_count": 70,
+  "source_urls": [
+    "https://bunq.com/",
+    "https://bunq.com/nl/",
+    "https://bunq.com/en/",
+    "https://bunq.com/en/about",
+    "https://bunq.com/about",
+    "https://bunq.com/en/jobs",
+    "https://bunq.com/careers",
+    "https://bunq.com/nl/contact",
+    "https://bunq.com/en/contact",
+    "https://bunq.com/contact",
+    "https://bunq.com/sitemap.xml",
+    "https://bunq.com/personal-account/banking-use-cases/students",
+    "https://bunq.com/personal-account/banking-use-cases/expats",
+    "https://bunq.com/personal-account/banking-use-cases/couples",
+    "https://bunq.com/personal-account/banking-use-cases/parents",
+    "https://bunq.com/nl/personal-account/banking-use-cases/students",
+    "https://bunq.com/nl/personal-account/banking-use-cases/expats",
+    "https://bunq.com/nl/personal-account/banking-use-cases/couples",
+    "https://bunq.com/nl/personal-account/banking-use-cases/parents",
+    "https://bunq.com/en/personal-account/banking-use-cases/students",
+    "https://bunq.com/en/personal-account/banking-use-cases/expats",
+    "https://bunq.com/en/personal-account/banking-use-cases/couples",
+    "https://bunq.com/en/personal-account/banking-use-cases/parents",
+    "https://www.bunq.com/about",
+    "https://www.bunq.com/en-us/about",
+    "https://www.bunq.com/en-nl/about",
+    "https://www.bunq.com/en-de/about",
+    "https://www.bunq.com/en-fr/about",
+    "https://www.bunq.com/en-es/about",
+    "https://www.bunq.com/en-ie/about",
+    "https://www.bunq.com/nl-nl/about",
+    "https://www.bunq.com/de-de/about",
+    "https://www.bunq.com/fr-fr/about",
+    "https://www.bunq.com/es-es/about",
+    "https://www.linkedin.com/company/bunq?ref=rivalsense.co",
+    "https://www.eujobs.co/career-guides/bunq-bv-career-guide",
+    "https://fintechcompass.net/business-banking/bunq/",
+    "https://www.bunq.com/es-es/blog/part-time-jobs-vs-freelancing-which-path-is-right-for-you",
+    "https://www.zoominfo.com/c/bunq/359022689",
+    "https://journals.um.si/index.php/oe/article/view/5056/3278",
+    "https://www.bunq.com/documents/business-account-terms-conditions",
+    "https://www.pappers.fr/entreprise/bunq-bv-893970970/comptes/BUNQ%20B.V.%20-%20Comptes%20sociaux%202024%2029-07-2025.pdf",
+    "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf",
+    "https://www.diva-portal.org/smash/get/diva2:1879810/FULLTEXT01.pdf",
+    "https://www.researchgate.net/publication/390503735_Neobanks'_Footprint_on_the_Transformative_Path_of_the_Austrian_and_the_Slovenian_Banking_Market/fulltext/67f0e59703b8d7280e258cfc/Neobanks-Footprint-on-the-Transformative-Path-of-the-Austrian-and-the-Slovenian-Banking-Market.pdf?origin=scientificContributions",
+    "https://fr.wikipedia.org/wiki/Bunq",
+    "https://www.wikidata.org/wiki/Q24084541",
+    "https://assets-global.website-files.com/626045a016f5877e36f83ad3/63458e4898bad56cce03994c_20221010_Terms_bunq_business_EN.pdf",
+    "https://www.mastercard.com/ca/en/business/support/payment-facilitators.html",
+    "https://www.mastercard.com/mea/fr/business/support/payment-facilitators.html",
+    "https://www.bunq.com/documents/personal-account-terms-conditions",
+    "https://www.afm.nl/export.aspx?type=8f59acf7-047b-4009-9fa7-90a264e6f3ef&format=csv",
+    "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRkb7KY0GCU53uVBp0R1nGhAJ6yTel/6fudMQcLq3w+0ymU/4npin6h+FG+cy8GYEIaKkMyIaKIKq6KSTzv4yN11yRjtVxNAT03tZXD6Ue/XRWjVMcWwMluGZr+GWJeCFrvU2O3AspcM9NcBiztE48B77T0thgszCrbwo4VZaiEg0=",
+    "https://www.afm.nl/export.aspx?Filter1=2&type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+    "https://www.afm.nl/export.aspx?type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+    "https://www.afm.nl/nl-nl/sector/registers/vergunningenregisters/financiele-dienstverleners/details?id=30442328-0861-E411-A3EB-005056BE011D",
+    "https://www.afm.nl/nl-nl/sector/registers/vergunningenregisters/beleggingsondernemingen/details?id=30442328-0861-E411-A3EB-005056BE011D",
+    "https://www.afm.nl/en/sector/registers/vergunningenregisters/beleggingsondernemingen/details?id=30442328-0861-E411-A3EB-005056BE011D",
+    "https://www.dnb.nl/media/rfqifhsf/bestuurlijke-boete-wwft-bunq-b-v.pdf",
+    "https://www.dnb.nl/openbaar-register/register-nederlandse-depositogarantie/?s=bunq&p=1&l=10",
+    "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+    "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=R127999",
+    "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=R127999",
+    "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBAMS:2022:5379",
+    "https://www.reddit.com/r/Bogleheads/comments/1sqpjhv/germany_taxing_unrealized_gains_does_it_change/",
+    "https://play.google.com/store/apps/details?id=com.bunq.android&hl=en_US",
+    "https://www.reveliolabs.com/companies/bunq/employees/",
+    "https://www.bunq.com/es-es/blog/bunq-working-abroad-index-2024-what-you-need-to-know-about-rising-costs-in-europe",
+    "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+    "https://eujobs.co/lobbying-entities/bunq-bv"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"bunq B.V.\" \"bunq.com\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "executed",
+      "elapsed_s": 1.315,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.linkedin.com/company/bunq?ref=rivalsense.co"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "bunq | LinkedIn",
+          "snippet": "Go to bunq.com/business and find out how we can help your business ... bunq B.V. is licensed by the Dutch Central Bank (DNB) and the ...",
+          "url": "https://www.linkedin.com/company/bunq?ref=rivalsense.co",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"bunq B.V.\" acquisition overname parent group investor shareholder \"bunq.com\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "failed",
+      "elapsed_s": 1.191,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"bunq B.V.\" vacancies careers jobs hiring skills competitors \"bunq.com\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "executed",
+      "elapsed_s": 1.113,
+      "discovered_urls_count": 3,
+      "source_urls": [
+        "https://www.eujobs.co/career-guides/bunq-bv-career-guide",
+        "https://fintechcompass.net/business-banking/bunq/",
+        "https://www.bunq.com/es-es/blog/part-time-jobs-vs-freelancing-which-path-is-right-for-you"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "How to Get a Job at bunq BV - Complete Career Guide - EUJobs.co",
+          "snippet": "Email: careers@bunq.com (for general inquiries). • Brussels Office: inquire ... How do I apply for jobs at bunq BV? Check EUJobs.co regularly for the ...",
+          "url": "https://www.eujobs.co/career-guides/bunq-bv-career-guide",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq for Business Banking: Complete Review (2025)",
+          "snippet": "bunq.com. Personal Banking, Free plan available. Business Banking, Free plan available. Sign-up Bonus, 30 days free. Web Client, ✔️. Exclusive ...",
+          "url": "https://fintechcompass.net/business-banking/bunq/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Part-Time Jobs vs. Freelancing: Which Path Is Right for You? - Bunq",
+          "snippet": "Part-time roles often offer hands-on experience, allowing you to develop skills that stand out in the job market. ... bunq B.V. se encuentra ...",
+          "url": "https://www.bunq.com/es-es/blog/part-time-jobs-vs-freelancing-which-path-is-right-for-you",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"bunq B.V.\" revenue omzet growth FT1000 annual report ranking \"bunq.com\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "executed_retry",
+      "elapsed_s": 1.304,
+      "discovered_urls_count": 4,
+      "source_urls": [
+        "https://www.zoominfo.com/c/bunq/359022689",
+        "https://www.eujobs.co/career-guides/bunq-bv-career-guide",
+        "https://journals.um.si/index.php/oe/article/view/5056/3278"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "Bunq - Overview, News & Similar companies | ZoomInfo.com",
+          "snippet": "View Bunq (www.bunq.com) location in North Holland, Netherlands , revenue, industry and description ... Popular SearchesBunqbunq - Bank of The Freebunq BV ...",
+          "url": "https://www.zoominfo.com/c/bunq/359022689",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "How to Get a Job at bunq BV - Complete Career Guide - EUJobs.co",
+          "snippet": "How to Get a Job at bunq BV – Complete Career Guide (2024 Edition). FAQ SECTION: Top 12 Most Frequently Asked Questions About Careers at bunq BV.",
+          "url": "https://www.eujobs.co/career-guides/bunq-bv-career-guide",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "[PDF] Neobanks' Footprint on the Transformative Path of the Austrian and ...",
+          "snippet": "bunq B.V. (2024). Break through banking: Our milestones. Retrieved from: https://www.bunq.com/about. Citterio, A., Marques, B. P., & Tanda, A. (2024). The ...",
+          "url": "https://journals.um.si/index.php/oe/article/view/5056/3278",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"bunq B.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "executed_retry",
+      "elapsed_s": 1.444,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.bunq.com/documents/business-account-terms-conditions",
+        "https://www.zoominfo.com/c/bunq/359022689",
+        "https://www.pappers.fr/entreprise/bunq-bv-893970970/comptes/BUNQ%20B.V.%20-%20Comptes%20sociaux%202024%2029-07-2025.pdf",
+        "https://journals.um.si/index.php/oe/article/view/5056/3278",
+        "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf",
+        "https://www.diva-portal.org/smash/get/diva2:1879810/FULLTEXT01.pdf"
+      ],
+      "source_urls_count": 6,
+      "matched_results": [
+        {
+          "title": "Business Account Terms & Conditions - Bunq",
+          "snippet": "bunq B.V. also trades under bunq, bunq.com. This means that all deposits with one or more of these trademarks are in total covered up to EUR ...",
+          "url": "https://www.bunq.com/documents/business-account-terms-conditions",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "Bunq - Overview, News & Similar companies | ZoomInfo.com",
+          "snippet": "Popular SearchesBunqbunq - Bank of The Freebunq BV ... What is Bunq's official website? Bunq's official website is www.bunq.com. Sign Up For FreeTo access ...",
+          "url": "https://www.zoominfo.com/c/bunq/359022689",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] bunq B.V. états financiers consolidés - Pappers",
+          "snippet": "notre site web (https://www.bunq.com/documents/privacy). Le DPO ... bunq B.V. (the 'Company') was incorporated on March 26th, 2012, and ...",
+          "url": "https://www.pappers.fr/entreprise/bunq-bv-893970970/comptes/BUNQ%20B.V.%20-%20Comptes%20sociaux%202024%2029-07-2025.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Neobanks' Footprint on the Transformative Path of the Austrian and ...",
+          "snippet": "bunq B.V. (2024). Break through banking: Our milestones. Retrieved from: https://www.bunq.com/about. Citterio, A., Marques, B. P., & Tanda, A. (2024). The ...",
+          "url": "https://journals.um.si/index.php/oe/article/view/5056/3278",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] bunq B.V. consolidated Annual Report 2023 draft SB Approved V1.2",
+          "snippet": "https://together.bunq.com/d/57059-whats-my-co2-footprint ... DAC are subsidiaries of bunq B.V. in which the Company holds a 100% ownership.",
+          "url": "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "executed_retry",
+      "elapsed_s": 1.351,
+      "discovered_urls_count": 14,
+      "source_urls": [
+        "https://www.pappers.fr/entreprise/bunq-bv-893970970/comptes/BUNQ%20B.V.%20-%20Comptes%20sociaux%202024%2029-07-2025.pdf",
+        "https://www.researchgate.net/publication/390503735_Neobanks'_Footprint_on_the_Transformative_Path_of_the_Austrian_and_the_Slovenian_Banking_Market/fulltext/67f0e59703b8d7280e258cfc/Neobanks-Footprint-on-the-Transformative-Path-of-the-Austrian-and-the-Slovenian-Banking-Market.pdf?origin=scientificContributions",
+        "https://fr.wikipedia.org/wiki/Bunq",
+        "https://www.wikidata.org/wiki/Q24084541",
+        "https://assets-global.website-files.com/626045a016f5877e36f83ad3/63458e4898bad56cce03994c_20221010_Terms_bunq_business_EN.pdf",
+        "https://www.mastercard.com/ca/en/business/support/payment-facilitators.html",
+        "https://www.mastercard.com/mea/fr/business/support/payment-facilitators.html",
+        "https://www.bunq.com/documents/personal-account-terms-conditions",
+        "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "[PDF] bunq B.V. états financiers consolidés - Pappers",
+          "snippet": "bunq B.V. dispose d'un modèle de conseil d'administration à ... notre site web (https://www.bunq.com/documents/privacy). Le DPO rend ...",
+          "url": "https://www.pappers.fr/entreprise/bunq-bv-893970970/comptes/BUNQ%20B.V.%20-%20Comptes%20sociaux%202024%2029-07-2025.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] Neobanks' Footprint on the Transformative Path of the Austrian and ...",
+          "snippet": "bunq B.V. (2024). Break through banking: Our milestones. Retrieved from: https://www.bunq.com/about. Citterio, A., Marques, B. P., & Tanda, A. (2024). The ...",
+          "url": "https://www.researchgate.net/publication/390503735_Neobanks'_Footprint_on_the_Transformative_Path_of_the_Austrian_and_the_Slovenian_Banking_Market/fulltext/67f0e59703b8d7280e258cfc/Neobanks-Footprint-on-the-Transformative-Path-of-the-Austrian-and-the-Slovenian-Banking-Market.pdf?origin=scientificContributions",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Bunq - Wikipédia",
+          "snippet": "bunq B.V. (communément appelée bunq ou bunq-bank of The Free) est une ... Voir et modifier les données sur Wikidata · Site web · bunq.com/fr/ · Bilan ...",
+          "url": "https://fr.wikipedia.org/wiki/Bunq",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq - Wikidata",
+          "snippet": "bunq. Dutch, internationally active bank. bunq.com; bunq B.V.. In more languages.",
+          "url": "https://www.wikidata.org/wiki/Q24084541",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] bunq Business - Terms and Conditions",
+          "snippet": "bunq B.V., a Dutch ... On request we can provide you with the Dutch version or you can find it on our website www.bunq.com/en/terms.",
+          "url": "https://assets-global.website-files.com/626045a016f5877e36f83ad3/63458e4898bad56cce03994c_20221010_Terms_bunq_business_EN.pdf",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.269,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.151,
+      "discovered_urls_count": 8,
+      "source_urls": [
+        "https://www.afm.nl/export.aspx?type=8f59acf7-047b-4009-9fa7-90a264e6f3ef&format=csv",
+        "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRkb7KY0GCU53uVBp0R1nGhAJ6yTel/6fudMQcLq3w+0ymU/4npin6h+FG+cy8GYEIaKkMyIaKIKq6KSTzv4yN11yRjtVxNAT03tZXD6Ue/XRWjVMcWwMluGZr+GWJeCFrvU2O3AspcM9NcBiztE48B77T0thgszCrbwo4VZaiEg0=",
+        "https://www.afm.nl/export.aspx?Filter1=2&type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+        "https://www.afm.nl/export.aspx?type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+        "https://www.afm.nl/nl-nl/sector/registers/vergunningenregisters/financiele-dienstverleners/details?id=30442328-0861-E411-A3EB-005056BE011D",
+        "https://www.afm.nl/nl-nl/sector/registers/vergunningenregisters/beleggingsondernemingen/details?id=30442328-0861-E411-A3EB-005056BE011D",
+        "https://www.afm.nl/en/sector/registers/vergunningenregisters/beleggingsondernemingen/details?id=30442328-0861-E411-A3EB-005056BE011D"
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "Export as CSV (opens in a new window) - AFM",
+          "snippet": "... bunq B.V.\";\"bunq,bunq B.V.,bunq.com\";\"Amsterdam\";\"Nederland\" \"Bustelberg B.V.\";\"Bustelberg B.V.\";\"Breda\";\"Nederland\" \"BUX B.V.\";\"BUX B.V.\";\"Amsterdam ...",
+          "url": "https://www.afm.nl/export.aspx?type=8f59acf7-047b-4009-9fa7-90a264e6f3ef&format=csv",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "[PDF] PROSPECTUS DATED 9 AUGUST 2021 Solitaire I B.V. as Issuer",
+          "snippet": "bunq B.V. was incorporated as a private company with limited liability (besloten vennootschap met ... 54992060;. +. Business Day means (i) when ...",
+          "url": "https://www.afm.nl/downloadregisterfile.aspx?type=goedgekeurde-prospectussen&enc=W3+45r/EgSt+MtL1GWvLPP7mQ/n8IZj/g7Fp9Vjz8+QZ64QdY4KEaVTOaE3zmyxrRttWWytrga/ZRoh73nr9m+I+SaFG7tZJnPPxwySGYPmYp3hhSmorXeCdgrw0SfDRkb7KY0GCU53uVBp0R1nGhAJ6yTel/6fudMQcLq3w+0ymU/4npin6h+FG+cy8GYEIaKkMyIaKIKq6KSTzv4yN11yRjtVxNAT03tZXD6Ue/XRWjVMcWwMluGZr+GWJeCFrvU2O3AspcM9NcBiztE48B77T0thgszCrbwo4VZaiEg0=",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "https://www.afm.nl/export.aspx?Filter1=2&type=04ef...",
+          "snippet": "... bunq B.V.\";\"bunq,bunq B.V.,bunq.com\";\"AMSTERDAM\" \"REVIEW Way Personal Finance B.V.\";\"REVIEW Way Personal Finance B.V.,Directa,Directa.nl,EuroQuo Bijzonder Beheer ...",
+          "url": "https://www.afm.nl/export.aspx?Filter1=2&type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Export as CSV (opens in a new window) - AFM",
+          "snippet": "... bunq B.V.\";\"bunq,bunq B.V.,bunq.com\";\"AMSTERDAM\" \"BURCHT Verzekeringen & Hypotheken\";\"BURCHT Verzekeringen & Hypotheken\";\"Leimuiden\" \"Bureau Bewust ...",
+          "url": "https://www.afm.nl/export.aspx?type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq BV - Resultaat uit register financiële dienstverleners - AFM",
+          "snippet": "Statutaire naam bunq B.V.. Handelsnaam bunq,bunq B.V.,bunq.com. Vergunningnummer 12043457. Adres Basisweg 32, 1043AP, Amsterdam. Land Nederland. KvK 54992060.",
+          "url": "https://www.afm.nl/nl-nl/sector/registers/vergunningenregisters/financiele-dienstverleners/details?id=30442328-0861-E411-A3EB-005056BE011D",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.265,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.251,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.dnb.nl/media/rfqifhsf/bestuurlijke-boete-wwft-bunq-b-v.pdf",
+        "https://www.dnb.nl/openbaar-register/register-nederlandse-depositogarantie/?s=bunq&p=1&l=10",
+        "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=R127999",
+        "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=R127999"
+      ],
+      "source_urls_count": 5,
+      "matched_results": [
+        {
+          "title": "[PDF] | DNB PUBLIC |",
+          "snippet": "Besluit tot het opleggen van een bestuurlijke boete aan bunq B.V. ... is ingeschreven in het handelsregister van de KvK onder nummer 54992060.",
+          "url": "https://www.dnb.nl/media/rfqifhsf/bestuurlijke-boete-wwft-bunq-b-v.pdf",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Register Nederlandse Depositogarantie | De Nederlandsche Bank",
+          "snippet": "bunq B.V.. Handelsnaam. bunq B.V., bunq .com, bunq. Register. Nederlandse depositogarantie. Land. NEDERLAND. Meer detailsbunq B.V. ... KvK54992060; LEI-code ...",
+          "url": "https://www.dnb.nl/openbaar-register/register-nederlandse-depositogarantie/?s=bunq&p=1&l=10",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+          "snippet": "... bunq B.V., bunq.com, bunq\";\"Basisweg 32\";\"1043AP\";\"AMSTERDAM\";\"Netherlands\";\"NL\";\"Basisweg 32\";\"AMSTERDAM\";\"Netherlands\";\"NL\";\"54992060 ... bunq B.V. ...",
+          "url": "https://www.dnb.nl/en-gb/registerdownload/csv/wftdg",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Information detail | bunq B.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "Statutory name: bunq B.V. ; Trade name: bunq B.V., bunq.com, bunq ; Statutory seat: AMSTERDAM, NEDERLAND ; Chamber of Commerce: 54992060 ; LEI code: ...",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTDG&relationNumber=R127999",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Information detail | bunq B.V. - De Nederlandsche Bank (DNB)",
+          "snippet": "bunq B.V., AMSTERDAM, NEDERLAND, 54992060, 7245002ZUXNOEJ0QPZ44, R127999, Bank - CI. ... Statutory name: bunq B.V.; Trade name: bunq B.V., bunq.com, bunq ...",
+          "url": "https://www.dnb.nl/en/public-register/information-detail/?registerCode=WFTKF&relationNumber=R127999",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.469,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.074,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.111,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBAMS:2022:5379"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:RBAMS:2022:5379, Rechtbank Amsterdam, C ... - Uitspraken",
+          "snippet": "BUNQ B.V.,. gevestigd te Amsterdam,. gedaagde,. advocaat mr. F.M.A. ... bunq.com/d/47187 We'll let you know as soon as your account is up ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBAMS:2022:5379",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "executed",
+      "elapsed_s": 1.181,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBAMS:2022:5379"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "ECLI:NL:RBAMS:2022:5379, Rechtbank Amsterdam, C ... - Uitspraken",
+          "snippet": "BUNQ B.V.,. gevestigd te Amsterdam,. gedaagde,. advocaat mr. F.M.A. ... bunq.com/d/47187 We'll let you know as soon as your account is up ...",
+          "url": "https://uitspraken.rechtspraak.nl/details?id=ECLI:NL:RBAMS:2022:5379",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.258,
+      "discovered_urls_count": 5,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"bunq B.V.\" OR \"bunq.com\" OR \"54992060\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.469,
+      "discovered_urls_count": 2,
+      "source_urls": [
+        "https://www.reddit.com/r/Bogleheads/comments/1sqpjhv/germany_taxing_unrealized_gains_does_it_change/"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Germany taxing unrealized gains - does it change the strategy?",
+          "snippet": "Oh, and not an iota of risk of medical bankruptcy ... https://help.bunq.com/articles/vorabpauschale. This link makes it ...",
+          "url": "https://www.reddit.com/r/Bogleheads/comments/1sqpjhv/germany_taxing_unrealized_gains_does_it_change/",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@bunq.com\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.692,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://www.wikidata.org/wiki/Q24084541",
+        "https://play.google.com/store/apps/details?id=com.bunq.android&hl=en_US",
+        "https://www.reveliolabs.com/companies/bunq/employees/",
+        "https://www.bunq.com/documents/business-account-terms-conditions",
+        "https://www.bunq.com/es-es/blog/bunq-working-abroad-index-2024-what-you-need-to-know-about-rising-costs-in-europe",
+        "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+        "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf",
+        "https://assets-global.website-files.com/626045a016f5877e36f83ad3/63458e4898bad56cce03994c_20221010_Terms_bunq_business_EN.pdf",
+        "https://eujobs.co/lobbying-entities/bunq-bv"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "bunq - Wikidata",
+          "snippet": "bunq. Dutch, internationally active bank. bunq.com; bunq B.V.. In more languages. Spanish. bunq. No description defined. Traditional Chinese. bunq. No ...",
+          "url": "https://www.wikidata.org/wiki/Q24084541",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq - Apps on Google Play",
+          "snippet": "For quick support, use our in-app chat or email support@bunq.com. We're here ... bunq B.V.. onlinereputation@bunq.com. Basisweg 32 1043 AP Amsterdam ...",
+          "url": "https://play.google.com/store/apps/details?id=com.bunq.android&hl=en_US",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "How many employees work at bunq? - Revelio Labs",
+          "snippet": "bunq BV has 919 employees as of December 2025. Explore headcount trends ... If that sounds like your kind of challenge, go to bunq.com/jobs get the ball rolling.",
+          "url": "https://www.reveliolabs.com/companies/bunq/employees/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Business Account Terms & Conditions - Bunq",
+          "snippet": "bunq B.V. also trades under bunq, bunq.com. This means that all deposits with one or more of these trademarks are in total covered up to EUR ...",
+          "url": "https://www.bunq.com/documents/business-account-terms-conditions",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "bunq Working Abroad Index 2024: What You Need to Know About ...",
+          "snippet": "bunq B.V. se encuentra adherida al Fondo de Garantía de Depósitos Neerlandés. El importe máximo garantizado asciende a 100.000 € por usuario ...",
+          "url": "https://www.bunq.com/es-es/blog/bunq-working-abroad-index-2024-what-you-need-to-know-about-rising-costs-in-europe",
+          "match_basis": "target_domain"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"bunq.com\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.386,
+      "discovered_urls_count": 13,
+      "source_urls": [
+        "https://www.reveliolabs.com/companies/bunq/employees/",
+        "https://eujobs.co/lobbying-entities/bunq-bv",
+        "https://play.google.com/store/apps/details?id=com.bunq.android&hl=en_US",
+        "https://www.wikidata.org/wiki/Q24084541",
+        "https://www.bunq.com/documents/business-account-terms-conditions",
+        "https://assets-global.website-files.com/626045a016f5877e36f83ad3/63458e4898bad56cce03994c_20221010_Terms_bunq_business_EN.pdf",
+        "https://www.bunq.com/es-es/blog/bunq-working-abroad-index-2024-what-you-need-to-know-about-rising-costs-in-europe",
+        "https://www.mastercard.com/us/en/business/support/payment-facilitators.html",
+        "https://www.persberichten.com/Bestanden/Bedrijven/7389/bijlages/_20240328__bunq_B.V._consolidated_Annual_Report_2023_final.pdf"
+      ],
+      "source_urls_count": 9,
+      "matched_results": [
+        {
+          "title": "How many employees work at bunq? - Revelio Labs",
+          "snippet": "bunq BV has 919 employees as of December 2025. Explore headcount trends ... If that sounds like your kind of challenge, go to bunq.com/jobs get the ball rolling.",
+          "url": "https://www.reveliolabs.com/companies/bunq/employees/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq BV - EU Lobbying Entity - EUJobs.co",
+          "snippet": "bunq BV. bunq. Career Guide for bunq BV. How to get hired ... Website. bunq.com. Interest Represented. Promotes their own interests ...",
+          "url": "https://eujobs.co/lobbying-entities/bunq-bv",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq - Apps on Google Play",
+          "snippet": "For quick support, use our in-app chat or email support@bunq.com. We're here ... bunq B.V.. onlinereputation@bunq.com. Basisweg 32 1043 AP Amsterdam ...",
+          "url": "https://play.google.com/store/apps/details?id=com.bunq.android&hl=en_US",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "bunq - Wikidata",
+          "snippet": "bunq. Dutch, internationally active bank. bunq.com; bunq B.V.. In more languages. Spanish. bunq. No description defined. Traditional Chinese. bunq. No ...",
+          "url": "https://www.wikidata.org/wiki/Q24084541",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Business Account Terms & Conditions - Bunq",
+          "snippet": "bunq B.V. also trades under bunq, bunq.com. This means that all deposits with one or more of these trademarks are in total covered up to EUR ...",
+          "url": "https://www.bunq.com/documents/business-account-terms-conditions",
+          "match_basis": "target_domain"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

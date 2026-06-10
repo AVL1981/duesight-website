@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Due Diligence Checklist Generator | DueSight &#8212; Gratis DD Checklist per Sector</title>
+<meta name="description" content="Gratis due diligence checklist generator per sector en transactietype. Genereer een kant-en-klare DD-checklist voor M&amp;A, vastgoed, PE of compliance trajecten. Geen account vereist.">
+<link rel="canonical" href="https://duesight.nl/dd-checklist">
+<meta property="og:title" content="DD Checklist Generator | DueSight &#8212; Due Diligence Checklist">
+<meta property="og:description" content="Genereer een kant-en-klare due diligence checklist per sector en transactietype. Gratis, geen account.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DueSight DD Checklist Generator","url":"https://duesight.nl/dd-checklist","description":"Gratis due diligence checklist generator. Genereer een sector-specifieke DD-checklist voor M&A, PE-transacties en compliance trajecten.","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0e18;--surface:#111827;--surface2:#1c2333;--border:rgba(255,255,255,0.06);--accent:#10b981;--accent-dim:rgba(16,185,129,0.1);--text:#e8eaf6;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(11,14,24,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(16,185,129,0.25);border-radius:7px;color:#6ee7b7;font-size:12px;font-weight:500;text-decoration:none}
+main{max-width:760px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:540px;margin-bottom:36px;line-height:1.7}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+@media(max-width:500px){.form-grid{grid-template-columns:1fr}}
+.field label{display:block;font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field select{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--sans);font-size:13px;padding:10px 14px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+.field select:focus{outline:none;border-color:rgba(16,185,129,0.4)}
+.gen-btn{width:100%;padding:14px;background:var(--accent);border:none;border-radius:10px;color:#0a1a1a;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s;margin-bottom:32px}
+.gen-btn:hover{background:#059669;transform:translateY(-1px)}
+#results{display:none}
+#results.visible{display:block}
+.checklist-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.ch-title{font-size:16px;font-weight:500}
+.ch-meta{font-size:11px;color:var(--muted)}
+.ch-actions{display:flex;gap:8px}
+.ch-action{padding:6px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;color:var(--muted);font-size:11px;cursor:pointer;transition:all 0.15s;font-family:var(--sans)}
+.ch-action:hover{border-color:rgba(255,255,255,0.15);color:var(--text)}
+.category{margin-bottom:20px}
+.cat-header{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.cat-count{font-family:var(--sans);background:var(--accent-dim);padding:1px 7px;border-radius:10px;font-size:10px;color:#6ee7b7}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-radius:8px;margin-bottom:4px;cursor:pointer;transition:background 0.15s;font-size:13px;line-height:1.5}
+.check-item:hover{background:rgba(255,255,255,0.02)}
+.check-box{width:16px;height:16px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:2px;transition:all 0.15s;display:flex;align-items:center;justify-content:center}
+.check-item.checked .check-box{border-color:var(--accent);background:var(--accent)}
+.check-item.checked .check-box::after{content:'\2713';color:#fff;font-size:10px}
+.check-item.checked .check-text{text-decoration:line-through;color:var(--muted)}
+.check-text{flex:1}
+.check-prio{flex-shrink:0;font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:10px}
+.prio-h{background:rgba(239,68,68,0.1);color:#fca5a5}.prio-m{background:rgba(245,158,11,0.1);color:#fcd34d}.prio-l{background:rgba(148,163,184,0.1);color:#94a3b8}
+.progress-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s}
+.cta-box{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:10px;background:var(--accent-dim);border:1px solid rgba(16,185,129,0.2);margin-top:20px}
+.cta-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}.cta-text strong{color:var(--text)}
+.cta-btn{flex-shrink:0;padding:8px 16px;background:var(--accent);border:none;border-radius:7px;color:#0a1a1a;font-family:var(--sans);font-size:12px;font-weight:600;text-decoration:none}
+.disclaimer{margin-top:32px;font-size:11px;color:#1e2a3c;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DueSight</a>
+  <div class="nav-sep"></div><span class="nav-tool">DD Checklist Generator</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+<main>
+  <div class="eyebrow">Gratis M&amp;A Tool</div>
+  <h1>DD Checklist Generator &#8212; <strong>sector-specifiek, direct bruikbaar</strong></h1>
+  <p class="subtitle">Genereer een kant-en-klare due diligence checklist op basis van sector en transactietype. Interactief afvinkbaar. Kopieer naar clipboard of gebruik als startpunt voor uw eigen DD-proces.</p>
+  <div class="form-grid">
+    <div class="field"><label>Sector</label><select id="sector">
+      <option value="">&#8212; Selecteer &#8212;</option>
+      <option value="tech">IT &amp; Software</option>
+      <option value="finance">Financi&#235;le dienstverlening</option>
+      <option value="healthcare">Healthcare &amp; Farma</option>
+      <option value="manufacturing">Industrie &amp; Productie</option>
+      <option value="retail">Retail &amp; E-commerce</option>
+      <option value="real_estate">Vastgoed</option>
+      <option value="professional">Zakelijke dienstverlening</option>
+      <option value="energy">Energie &amp; Utilities</option>
+    </select></div>
+    <div class="field"><label>Transactietype</label><select id="txtype">
+      <option value="">&#8212; Selecteer &#8212;</option>
+      <option value="acquisition">Overname (100%)</option>
+      <option value="majority">Meerderheidsbelang</option>
+      <option value="minority">Minderheidsbelang / PE</option>
+      <option value="merger">Fusie</option>
+      <option value="asset">Asset Deal</option>
+    </select></div>
+  </div>
+  <button class="gen-btn" id="genBtn">Checklist genereren &#8594;</button>
+  <div id="results"></div>
+  <p class="disclaimer">Deze checklist is indicatief en gebaseerd op sectorpatronen. Het vervangt geen professioneel juridisch, fiscaal of financi\u00eble advies. DueSight slaat geen data op.</p>
+</main>
+<script>
+var CORE=[
+{cat:'Financi\u00eble Due Diligence',items:[
+{t:'Jaarrekeningen laatste 3 jaar (geauditeerd)',p:'h'},{t:'Tussentijdse cijfers lopend boekjaar',p:'h'},{t:'Management accounts / rapportages',p:'h'},{t:'Werkkapitaalanalyse (debiteurenomloop, crediteuren, voorraad)',p:'h'},{t:'Schuldenstructuur en financieringsovereenkomsten',p:'m'},{t:'Belastingaangiften Vpb/BTW/LB laatste 3 jaar',p:'h'},{t:'Off-balance verplichtingen en garantiestellingen',p:'h'},{t:'Cash flow prognose komende 12 maanden',p:'m'},{t:'Intercompany-transacties en verrekenprijzen',p:'m'}]},
+{cat:'Juridische Due Diligence',items:[
+{t:'Statuten en aandeelhoudersovereenkomst',p:'h'},{t:'Overzicht lopende rechtszaken, claims en geschillen',p:'h'},{t:'Materieel contractenregister (top 10 klanten/leveranciers)',p:'h'},{t:'IP-portefeuille: merken, patenten, licenties, domeinnamen',p:'m'},{t:'Arbeidsovereenkomsten sleutelpersoneel + concurrentiebedingen',p:'m'},{t:'CAO-naleving en pensioenverplichtingen',p:'m'},{t:'Vergunningen en goedkeuringen',p:'h'},{t:'Privacy/AVG compliance: verwerkingsregister, DPO',p:'m'}]},
+{cat:'Compliance & Governance',items:[
+{t:'UBO-register verificatie',p:'h'},{t:'Sanctiescreening (EU, OFAC, VN, PEP)',p:'h'},{t:'Wwft-compliance en klantacceptatiebeleid',p:'h'},{t:'Anti-corruptie beleid en incidentenregister',p:'m'},{t:'Bestuursnotulen laatste 24 maanden',p:'m'},{t:'Insurance review: D&O, beroepsaansprakelijkheid, cyber',p:'m'}]},
+{cat:'Operationele Due Diligence',items:[
+{t:'Organisatiestructuur en FTE-overzicht',p:'m'},{t:'Klantconcentratie: top 10 klanten als % omzet',p:'h'},{t:'Leveranciersconcentratie: single-source risico\u2019s',p:'m'},{t:'IT-infrastructuur en cybersecurity assessment',p:'m'},{t:'Business continuity plan en disaster recovery',p:'l'},{t:'ESG-beleid en duurzaamheidsrapportage',p:'l'}]},
+{cat:'HR & Cultuur',items:[
+{t:'Personeelsoverzicht: functies, salarissen, anciënniteit',p:'m'},{t:'Verlof- en overwerksaldi',p:'l'},{t:'Verloop en retentiecijfers laatste 3 jaar',p:'m'},{t:'Change-of-control clausules in arbeidsovereenkomsten',p:'h'},{t:'Pensioenverplichtingen en -achterstanden',p:'m'}]}
+];
+var SECTOR_EXTRA={
+tech:[{cat:'Technology & IP',items:[{t:'Source code audit: kwaliteit, technische schuld, coverage',p:'h'},{t:'SaaS metrics: ARR, MRR, churn, LTV/CAC',p:'h'},{t:'API-afhankelijkheden en third-party licenties',p:'m'},{t:'Data-architectuur en migratie-complexiteit',p:'m'},{t:'Roadmap evaluatie en R&D-pipeline',p:'m'},{t:'Securitycertificering en assurance-status',p:'m'}]}],
+finance:[{cat:'Financi\u00eble Regulering',items:[{t:'AFM/DNB vergunningen en change-of-control procedure',p:'h'},{t:'AML/KYC-dossierbeheersysteem audit',p:'h'},{t:'Kapitaalvereisten en solvabiliteitsbuffers',p:'h'},{t:'FIU-meldingen overzicht',p:'m'},{t:'Stress-test resultaten',p:'m'}]}],
+healthcare:[{cat:'Zorgregulering',items:[{t:'IGJ-inspectierapporten en verbeterplannen',p:'h'},{t:'BIG-registraties sleutelpersoneel',p:'h'},{t:'Zorginkoopcontracten en tariefafspraken',p:'h'},{t:'NEN 7510 certificering',p:'m'},{t:'Wachttijden en capaciteitsanalyse',p:'m'}]}],
+manufacturing:[{cat:'Productie & Milieu',items:[{t:'Milieuvergunningen en bodemonderzoek',p:'h'},{t:'Machinestaat en CAPEX-forecast',p:'h'},{t:'Export control / dual-use classificatie',p:'m'},{t:'Keten-aansprakelijkheid (onderaannemers)',p:'m'},{t:'PFAS/asbest inventarisatie',p:'m'}]}],
+retail:[{cat:'Retail Specifiek',items:[{t:'Huurcontracten: looptijd, exit, change-of-control',p:'h'},{t:'Voorraadwaardering en afschrijvingsanalyse',p:'h'},{t:'E-commerce metrics: conversie, retourpercentage, reviews',p:'m'},{t:'Platformafhankelijkheid analyse',p:'m'}]}],
+real_estate:[{cat:'Vastgoed Specifiek',items:[{t:'Taxatierapporten (max 12 maanden oud)',p:'h'},{t:'Bestemmingsplan en bouwvergunningen',p:'h'},{t:'Huurcontractenportefeuille met bezettingsgraad',p:'h'},{t:'Energielabel-compliance (C/A verplichting)',p:'h'},{t:'VvE-structuur en reservefonds',p:'m'},{t:'Stikstof/AERIUS-berekeningen',p:'m'}]}],
+professional:[{cat:'Professional Services',items:[{t:'Klantretentie-analyse per partner',p:'h'},{t:'Goodwill-onderbouwing en earn-out structuur',p:'h'},{t:'Beroepsaansprakelijkheidsclaims (5 jaar)',p:'m'},{t:'Relatiebedingen en non-compete analyse',p:'m'}]}],
+energy:[{cat:'Energie Specifiek',items:[{t:'SDE++-subsidies en overdrachtsvoorwaarden',p:'h'},{t:'Netaansluitingscontracten en congestierisico',p:'h'},{t:'PPA-contracten evaluatie',p:'m'},{t:'Asset degradatiemodellen',p:'m'},{t:'Milieueffectrapportages',p:'m'}]}]
+};
+var TX_EXTRA={
+acquisition:[{t:'Share Purchase Agreement (SPA) condities',p:'h',cat:'Transactie'},{t:'W&I verzekering scope',p:'m',cat:'Transactie'},{t:'R\u00e9p & Warranties catalogus',p:'h',cat:'Transactie'}],
+majority:[{t:'Minderheidsrechten en vetorechten resterend',p:'h',cat:'Transactie'},{t:'Tag-along / Drag-along clausules',p:'h',cat:'Transactie'}],
+minority:[{t:'Board seat en informatierechten',p:'h',cat:'Transactie'},{t:'Anti-dilutie bescherming',p:'h',cat:'Transactie'},{t:'Liquidatiepreferentie en waterval',p:'m',cat:'Transactie'}],
+merger:[{t:'Ruilverhouding onderbouwing',p:'h',cat:'Transactie'},{t:'Mededingingsrechtelijke goedkeuring (ACM)',p:'h',cat:'Transactie'},{t:'Culturele integratie-assessment',p:'m',cat:'Transactie'}],
+asset:[{t:'Asset inventory en waardering',p:'h',cat:'Transactie'},{t:'Overgang van personeel (Art. 7:662 BW)',p:'h',cat:'Transactie'},{t:'Contractmigratie analyse',p:'m',cat:'Transactie'}]
+};
+
+document.getElementById('genBtn').addEventListener('click', generate);
+
+function generate(){
+var sector=document.getElementById('sector').value;
+var tx=document.getElementById('txtype').value;
+if(!sector||!tx){alert('Selecteer sector en transactietype.');return;}
+var cats=JSON.parse(JSON.stringify(CORE));
+if(SECTOR_EXTRA[sector]){cats=cats.concat(SECTOR_EXTRA[sector]);}
+if(TX_EXTRA[tx]){
+var txItems=TX_EXTRA[tx];
+var txCat={cat:'Transactiestructuur',items:txItems.map(function(i){return {t:i.t,p:i.p};})};
+cats.push(txCat);
+}
+var totalItems=0;cats.forEach(function(c){totalItems+=c.items.length;});
+var sectorName=document.getElementById('sector').options[document.getElementById('sector').selectedIndex].text;
+var txName=document.getElementById('txtype').options[document.getElementById('txtype').selectedIndex].text;
+var h='<div class="checklist-header"><div><div class="ch-title">'+sectorName+' \u00b7 '+txName+'</div><div class="ch-meta">'+totalItems+' checkpunten \u00b7 Gegenereerd op '+new Date().toLocaleDateString('nl-NL')+'</div></div><div class="ch-actions"><button class="ch-action" id="copyBtn">\ud83d\udccb Kopieer als tekst</button></div></div>';
+h+='<div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0"></div></div>';
+cats.forEach(function(c){
+h+='<div class="category"><div class="cat-header">'+c.cat+'<span class="cat-count">'+c.items.length+'</span></div>';
+c.items.forEach(function(item,idx){
+var pClass=item.p==='h'?'prio-h':item.p==='m'?'prio-m':'prio-l';
+var pLabel=item.p==='h'?'HOOG':item.p==='m'?'MID':'LAAG';
+h+='<div class="check-item" data-checked="0"><div class="check-box"></div><span class="check-text">'+item.t+'</span><span class="check-prio '+pClass+'">'+pLabel+'</span></div>';
+});
+h+='</div>';
+});
+h+='<div class="cta-box"><div class="cta-text"><strong>Automatisch invullen?</strong> Een DueSight Pre-DD rapport dekt '+Math.round(totalItems*0.7)+' van deze '+totalItems+' checkpunten automatisch \u2014 inclusief bronvermelding per bevinding.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div>';
+var el=document.getElementById('results');
+el.innerHTML=h;el.classList.add('visible');
+el.querySelectorAll('.check-item').forEach(function(item){item.addEventListener('click',function(){
+var c=this.dataset.checked==='1';this.dataset.checked=c?'0':'1';
+if(c){this.classList.remove('checked');}else{this.classList.add('checked');}
+updateProgress();
+});});
+document.getElementById('copyBtn').addEventListener('click',function(){
+var lines=['Due Diligence Checklist: '+sectorName+' \u00b7 '+txName,'Gegenereerd via DueSight (duesight.nl/dd-checklist)','Datum: '+new Date().toLocaleDateString('nl-NL'),''];
+cats.forEach(function(c){lines.push('\n## '+c.cat);c.items.forEach(function(i){
+var done=false;lines.push('[ ] '+i.t+' ['+i.p.toUpperCase()+']');});});
+navigator.clipboard.writeText(lines.join('\n')).then(function(){
+var btn=document.getElementById('copyBtn');btn.textContent='\u2713 Gekopieerd!';setTimeout(function(){btn.textContent='\ud83d\udccb Kopieer als tekst';},1500);
+});});
+}
+function updateProgress(){
+var all=document.querySelectorAll('.check-item');
+var done=document.querySelectorAll('.check-item.checked');
+var pct=Math.round(done.length/all.length*100);
+document.getElementById('progressFill').style.width=pct+'%';
+}
+</script>
+</body>
+</html>

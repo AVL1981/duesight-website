@@ -1,0 +1,5 @@
+[submodule "website_src"]
+	path = website_src
+	url = https://github.com/AVL1981/duesight-website.git
+	branch = master
+	ignore = dirty

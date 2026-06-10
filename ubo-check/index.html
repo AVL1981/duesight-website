@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UBO Bepalen | DueSight &#8212; Wie is de UBO? Gratis Decision Tree</title>
+<meta name="description" content="Gratis UBO-bepaler: bepaal in 4 stappen wie de Ultimate Beneficial Owner is van uw organisatie. Op basis van de Wwft en het UBO-register. Geen account vereist.">
+<link rel="canonical" href="https://duesight.nl/ubo-check">
+<meta property="og:title" content="UBO Bepalen | DueSight &#8212; Wie is de UBO?">
+<meta property="og:description" content="Bepaal in 4 stappen wie de UBO is van uw organisatie. Gratis tool op basis van Wwft-criteria.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DueSight UBO Bepaler","url":"https://duesight.nl/ubo-check","description":"Gratis tool om de Ultimate Beneficial Owner (UBO) te bepalen op basis van de Wwft en het UBO-register. Decision tree voor B.V., N.V., stichting, VOF en andere rechtsvormen.","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1c;--surface:#111a2c;--surface2:#172442;--border:rgba(255,255,255,0.06);--accent:#f59e0b;--accent-dim:rgba(245,158,11,0.1);--ok:#22c55e;--text:#e8eaf6;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(10,15,28,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(245,158,11,0.25);border-radius:7px;color:#fcd34d;font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+main{max-width:680px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:540px;margin-bottom:36px;line-height:1.7}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;margin-bottom:16px;animation:fadeUp 0.3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card-num{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card-q{font-size:15px;font-weight:500;margin-bottom:6px;line-height:1.5}
+.card-info{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;font-size:13px}
+.opt:hover{border-color:rgba(245,158,11,0.3)}
+.opt.sel{border-color:var(--accent);background:var(--accent-dim)}
+.opt-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px}
+.opt.sel .opt-dot{border-color:var(--accent);background:var(--accent)}
+.opt-content{flex:1}.opt-label{font-weight:500;margin-bottom:2px}.opt-desc{font-size:11px;color:var(--muted)}
+.result-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;animation:fadeUp 0.3s ease}
+.result-icon{width:64px;height:64px;border-radius:50%;background:var(--accent-dim);border:2px solid rgba(245,158,11,0.3);display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 16px}
+.result-title{text-align:center;font-size:18px;font-weight:500;margin-bottom:16px}
+.ubo-box{padding:16px;background:rgba(245,158,11,0.04);border:1px solid rgba(245,158,11,0.15);border-radius:10px;margin-bottom:16px}
+.ubo-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.ubo-text{font-size:13px;line-height:1.6}
+.legal-ref{font-size:11px;color:var(--muted);padding:10px 14px;background:rgba(255,255,255,0.02);border-radius:8px;margin-bottom:16px;line-height:1.5}
+.cta-box{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:10px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);margin-top:16px}
+.cta-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}
+.cta-text strong{color:var(--text)}
+.cta-btn{flex-shrink:0;padding:8px 16px;background:var(--accent);border:none;border-radius:7px;color:#1a1a1a;font-family:var(--sans);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.restart-btn{display:block;margin:16px auto 0;padding:10px 20px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;font-family:var(--sans);font-size:13px}
+.disclaimer{margin-top:32px;font-size:11px;color:#1e2a3c;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f59e0b" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>DueSight</a>
+  <div class="nav-sep"></div><span class="nav-tool">UBO Bepaler</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+<main>
+  <div class="eyebrow">Gratis Compliance Tool</div>
+  <h1>UBO Bepaler &#8212; <strong>wie is de Ultimate Beneficial Owner?</strong></h1>
+  <p class="subtitle">Bepaal in 4 stappen wie kwalificeert als UBO op basis van de Wwft, het Uitvoeringsbesluit Wwft 2018 en het UBO-register. Resultaat met wettelijke referenties.</p>
+  <div id="app"></div>
+  <p class="disclaimer">Deze tool is gebaseerd op de Wwft en het Uitvoeringsbesluit Wwft 2018. Het resultaat is indicatief en vervangt geen juridisch advies. DueSight slaat geen gegevens op.</p>
+</main>
+<script>
+var FORMS=[
+{id:'bv',name:'B.V. / N.V.',desc:'Besloten of naamloze vennootschap',threshold:25,ubo:'Natuurlijk persoon met >25% aandelenbelang, stemrecht, of feitelijke zeggenschap. Bij ontbreken: pseudo-UBO (hoger leidinggevend).',law:'Art. 3 lid 1 sub b Wwft jo. Art. 3 Uitvoeringsbesluit Wwft 2018'},
+{id:'stichting',name:'Stichting / Vereniging',desc:'Stichting, vereniging, co\u00f6peratie',threshold:25,ubo:'Natuurlijk persoon met >25% eigendomsbelang of stemrecht in het bestuur, of feitelijke zeggenschap over het vermogen. Bij ontbreken: alle bestuursleden.',law:'Art. 3 lid 1 sub b Wwft jo. Art. 4 Uitvoeringsbesluit Wwft 2018'},
+{id:'vof',name:'V.O.F. / Maatschap / C.V.',desc:'Personenvennootschap',threshold:25,ubo:'Alle vennoten/maten met >25% economisch belang of stemrecht. Bij C.V.: beherend vennoten.',law:'Art. 3 lid 1 sub b Wwft jo. Art. 5 Uitvoeringsbesluit Wwft 2018'},
+{id:'trust',name:'Trust / Soortgelijke constructie',desc:'Trust, fonds voor gemene rekening',threshold:0,ubo:'Oprichter, trustee, protector, begunstigden en natuurlijk personen met feitelijke zeggenschap.',law:'Art. 3 lid 1 sub b Wwft jo. Art. 6 Uitvoeringsbesluit Wwft 2018'},
+{id:'eenmanszaak',name:'Eenmanszaak',desc:'',threshold:100,ubo:'De eigenaar is per definitie de UBO (100% belang).',law:'Art. 3 Wwft \u2014 directe identificatie'},
+{id:'buitenlands',name:'Buitenlandse rechtspersoon',desc:'Buitenlands equivalent van bovenstaande',threshold:25,ubo:'Dezelfde criteria als het NL-equivalent. Let op: verificatie via buitenlands register kan afwijken.',law:'Art. 3 Wwft \u2014 vergelijkbaar met NL-rechtsvorm'}
+];
+var state={step:0,form:null,hasOwner25:null,hasPseudo:null};
+function render(){
+var app=document.getElementById('app');
+if(state.step===0){
+app.innerHTML='<div class="card"><div class="card-num">Stap 1 van 4 \u2014 Rechtsvorm</div><div class="card-q">Wat is de rechtsvorm van de entiteit?</div><div class="card-info">De UBO-definitie verschilt per rechtsvorm conform het Uitvoeringsbesluit Wwft 2018.</div><div class="opts" id="formOpts">'+
+FORMS.map(function(f){return '<div class="opt'+(state.form===f.id?' sel':'')+'" data-id="'+f.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+f.name+'</div>'+(f.desc?'<div class="opt-desc">'+f.desc+'</div>':'')+'</div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#formOpts .opt').forEach(function(el){el.addEventListener('click',function(){
+state.form=this.dataset.id;
+var f=FORMS.find(function(x){return x.id===state.form;});
+if(f.id==='eenmanszaak'||f.id==='trust'){state.step=3;render();}
+else{state.step=1;render();}
+});});
+}else if(state.step===1){
+var f=FORMS.find(function(x){return x.id===state.form;});
+app.innerHTML='<div class="card"><div class="card-num">Stap 2 van 4 \u2014 Aandelenbelang</div><div class="card-q">Is er een natuurlijk persoon met meer dan '+f.threshold+'% aandelenbezit, stemrecht of economisch belang?</div><div class="card-info">Het gaat om direct \u00e9n indirect belang (via tussenhoudsters).</div><div class="opts" id="ownerOpts">'+
+[{id:'yes',l:'Ja',d:'Er is minimaal \u00e9\u00e9n persoon met >'+f.threshold+'% belang'},{id:'no',l:'Nee',d:'Niemand houdt >'+f.threshold+'% belang'},{id:'unsure',l:'Onzeker / complexe structuur',d:'Meerdere lagen, buitenlandse entiteiten of nominee-aandeelhouders'}].map(function(o){return '<div class="opt'+(state.hasOwner25===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#ownerOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.hasOwner25=this.dataset.id;state.step=2;render();});});
+}else if(state.step===2){
+app.innerHTML='<div class="card"><div class="card-num">Stap 3 van 4 \u2014 Feitelijke zeggenschap</div><div class="card-q">Is er een natuurlijk persoon met feitelijke zeggenschap over de entiteit?</div><div class="card-info">Feitelijke zeggenschap kan bestaan uit: vetorecht, statutaire bevoegdheden, bindende stemovereenkomsten of andere wijzen van overwegende invloed.</div><div class="opts" id="pseudoOpts">'+
+[{id:'yes',l:'Ja',d:'Er is iemand met feitelijke zeggenschap (niet via aandelen)'},{id:'no',l:'Nee',d:'Zeggenschap is evenredig verdeeld'},{id:'unsure',l:'Onzeker',d:'De machtsstructuur is niet helemaal helder'}].map(function(o){return '<div class="opt'+(state.hasPseudo===o.id?' sel':'')+'" data-id="'+o.id+'"><div class="opt-dot"></div><div class="opt-content"><div class="opt-label">'+o.l+'</div><div class="opt-desc">'+o.d+'</div></div></div>';}).join('')+'</div></div>';
+document.querySelectorAll('#pseudoOpts .opt').forEach(function(el){el.addEventListener('click',function(){state.hasPseudo=this.dataset.id;state.step=3;render();});});
+}else if(state.step===3){showResult();}
+}
+function showResult(){
+var f=FORMS.find(function(x){return x.id===state.form;});
+var uboType,uboDesc;
+if(f.id==='eenmanszaak'){uboType='directe UBO';uboDesc='De eigenaar van de eenmanszaak is per definitie de UBO met 100% belang.';}
+else if(f.id==='trust'){uboType='trustpartijen';uboDesc=f.ubo;}
+else if(state.hasOwner25==='yes'){uboType='aandeelhouders-UBO';uboDesc='De natuurlijke perso(o)n(en) met >'+f.threshold+'% aandelenbezit, stemrecht of economisch belang kwalifice(e)r(en) als UBO.';}
+else if(state.hasPseudo==='yes'){uboType='feitelijke zeggenschaps-UBO';uboDesc='De natuurlijke persoon met feitelijke zeggenschap (niet via aandelen) kwalificeert als UBO.';}
+else{uboType='pseudo-UBO';uboDesc='Bij ontbreken van een \u201cechte\u201d UBO geldt het hoger leidinggevend personeel (statutair bestuurder) als pseudo-UBO. Dit moet als zodanig worden geregistreerd in het UBO-register.';}
+var h='<div class="result-box"><div class="result-icon">\ud83d\udc64</div><div class="result-title">UBO-classificatie: '+uboType+'</div>';
+h+='<div class="ubo-box"><div class="ubo-label">Resultaat</div><div class="ubo-text">'+uboDesc+'</div></div>';
+h+='<div class="ubo-box"><div class="ubo-label">UBO-definitie voor '+f.name+'</div><div class="ubo-text">'+f.ubo+'</div></div>';
+h+='<div class="legal-ref"><strong>Wettelijke basis:</strong> '+f.law+'</div>';
+h+='<div class="legal-ref"><strong>UBO-register:</strong> Registratie bij de Kamer van Koophandel is verplicht. Niet-naleving kan leiden tot een last onder dwangsom, boete of strafrechtelijke vervolging (Art. 15a Handelsregisterwet).</div>';
+h+='<div class="cta-box"><div class="cta-text"><strong>Automatische UBO-tracering:</strong> DueSight traceert de volledige eigendomsstructuur via KvK, GLEIF en OpenCorporates \u2014 inclusief indirecte belangen via tussenhoudsters.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div></div><button class="restart-btn" id="retryBtn">Opnieuw invullen</button>';
+document.getElementById('app').innerHTML=h;
+document.getElementById('retryBtn').addEventListener('click',function(){state={step:0,form:null,hasOwner25:null,hasPseudo:null};render();});
+}
+render();
+</script>
+</body>
+</html>

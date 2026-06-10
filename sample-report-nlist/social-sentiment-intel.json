@@ -1,0 +1,133 @@
+{
+  "schema_version": "duesight.social_sentiment_intel.v1",
+  "run_id": "social-sentiment-nlist-b.v.-20260602T100826Z",
+  "target": {
+    "name": "NLIST B.V.",
+    "domain": "nlist.nl",
+    "kvk": "85442410",
+    "sector": "7810 Arbeidsbemiddeling",
+    "country": "NL"
+  },
+  "updated_at": "2026-06-02T10:08:26+00:00",
+  "summary": {
+    "status": "completed_with_review",
+    "updated_at": "2026-06-02T10:08:26+00:00",
+    "gate_decision": "REVIEW",
+    "social_status": "executed",
+    "sentiment_status": "deferred",
+    "platforms_checked": 443,
+    "profiles_found": 90,
+    "promoted_social_sources": 12,
+    "sentiment_sources_active": 0,
+    "sentiment_sources_total": 0,
+    "artifact": "social-sentiment-intel.json",
+    "platform_coverage_path": "social-platform-coverage.json",
+    "provider_status_path": "sentiment-provider-status.json",
+    "gate_report_path": "social-sentiment-gate-report.json"
+  },
+  "findings": [
+    {
+      "topic": "professional_social_footprint",
+      "finding": "NLIST B.V. has source-enveloped professional/social discovery routes, led by LinkedIn and group-context references where available.",
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "source_envelope": {
+        "source": "https://www.linkedin.com/company/nlist1/",
+        "source_status": "source-bound",
+        "checked_at": "2026-06-02T10:08:26+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": false,
+        "confidence": "Medium",
+        "limitation": "Professional/social pages are discovery or corroboration only, not primary legal proof."
+      },
+      "supporting_urls": [
+        "https://www.linkedin.com/company/nlist1/",
+        "https://nl.linkedin.com/company/thespecialistgroup",
+        "https://www.linkedin.com/company/thespecialistgroup/",
+        "https://nl.linkedin.com/company/thespecialistgroup#main-content",
+        "https://nl.linkedin.com/company/thespecialistgroup?trk=nav_type_overview",
+        "https://nl.linkedin.com/company/thespecialistgroup/jobs?trk=nav_type_jobs",
+        "https://nl.linkedin.com/company/thespecialistgroup/life?trk=nav_type_life",
+        "https://uk.linkedin.com/in/francesco-giuliani-4b26522?trk=org-employees",
+        "https://nl.linkedin.com/in/babsvanderwaal?trk=org-employees",
+        "https://nl.linkedin.com/in/sil-hoeve-141a364?trk=org-employees",
+        "https://nl.linkedin.com/in/henk-driessen-mba-a597a57?trk=org-employees",
+        "https://www.linkedin.com/posts/thespecialistgroup_never-a-dull-moment-sil-en-anne-marie-activity-7464979831802261506-6_1w"
+      ],
+      "raw_profiles_found_internal": 90,
+      "promoted_sources_count": 20
+    },
+    {
+      "topic": "composite_sentiment",
+      "finding": "Composite sentiment was not promoted in this replay.",
+      "claim_level": "not promoted",
+      "public_report_allowed": false,
+      "source_envelope": {
+        "source": "DueSight DDSentimentEngine",
+        "source_status": "deferred",
+        "checked_at": "2026-06-02T10:08:26+00:00",
+        "freshness": "point-in-time",
+        "fallback_used": true,
+        "confidence": "Low",
+        "limitation": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context."
+      }
+    }
+  ],
+  "existing_context": {
+    "source_files_checked": [
+      "business_profile_intel_latest.json",
+      "business_profile_intel_latest.json",
+      "business_profile_intel_20260526_223919.json",
+      "business_profile_intel_20260526_223228.json",
+      "business_profile_intel_20260526_222948.json",
+      "business_profile_intel_20260526_222858.json",
+      "business_profile_intel_20260526_222743.json",
+      "business_profile_intel_20260526_222610.json",
+      "business_profile_intel_20260526_222448.json",
+      "pipeline-evidence.json"
+    ],
+    "social_urls": [
+      "https://www.linkedin.com/company/nlist1/",
+      "https://nl.linkedin.com/company/thespecialistgroup",
+      "https://www.linkedin.com/company/thespecialistgroup/",
+      "https://nl.linkedin.com/company/thespecialistgroup#main-content",
+      "https://nl.linkedin.com/company/thespecialistgroup?trk=nav_type_overview",
+      "https://nl.linkedin.com/company/thespecialistgroup/jobs?trk=nav_type_jobs",
+      "https://nl.linkedin.com/company/thespecialistgroup/life?trk=nav_type_life",
+      "https://uk.linkedin.com/in/francesco-giuliani-4b26522?trk=org-employees",
+      "https://nl.linkedin.com/in/babsvanderwaal?trk=org-employees",
+      "https://nl.linkedin.com/in/sil-hoeve-141a364?trk=org-employees",
+      "https://nl.linkedin.com/in/henk-driessen-mba-a597a57?trk=org-employees",
+      "https://www.linkedin.com/posts/thespecialistgroup_never-a-dull-moment-sil-en-anne-marie-activity-7464979831802261506-6_1w",
+      "https://nl.linkedin.com/company/thespecialistgroup?trk=organization_guest_main-feed-card_feed-actor-image",
+      "https://nl.linkedin.com/company/thespecialistgroup?trk=organization_guest_main-feed-card_feed-actor-name",
+      "https://nl.linkedin.com/company/starspecialists?trk=organization_guest_main-feed-card-text",
+      "https://nl.linkedin.com/in/sil-hoeve-141a364?trk=organization_guest_main-feed-card-text",
+      "https://nl.linkedin.com/in/anne-marie-huijsmans-19528b161?trk=organization_guest_main-feed-card-text",
+      "https://nl.linkedin.com/company/starspecialists?trk=organization_guest_main-feed-card_reshare_feed-actor-image",
+      "https://nl.linkedin.com/company/starspecialists?trk=organization_guest_main-feed-card_reshare_feed-actor-name",
+      "https://nl.linkedin.com/in/sil-hoeve-141a364?trk=organization_guest_main-feed-card_reshare-text",
+      "https://nl.linkedin.com/in/anne-marie-huijsmans-19528b161?trk=organization_guest_main-feed-card_reshare-text",
+      "https://nl.linkedin.com/company/starspecialists?trk=organization_guest_main-feed-card_reshare-text",
+      "https://www.linkedin.com/posts/thespecialistgroup_one-year-after-joining-the-specialist-group-activity-7457704972152078336-xoXq",
+      "https://nl.linkedin.com/company/nlist1?trk=organization_guest_main-feed-card-text",
+      "https://nl.linkedin.com/in/stephanie-van-der-toorn-faas-7041a149?trk=organization_guest_main-feed-card-text",
+      "https://nl.linkedin.com/in/roy-beekman?trk=organization_guest_main-feed-card-text",
+      "https://www.linkedin.com/posts/thespecialistgroup_star-specialists-star-part-of-the-specialist-activity-7455571445725745152-8oOu",
+      "https://be.linkedin.com/in/robertpronk?trk=organization_guest_main-feed-card-text",
+      "https://www.linkedin.com/posts/thespecialistgroup_%F0%9D%97%A6%F0%9D%97%A7%F0%9D%97%94%F0%9D%97%A5-%F0%9D%97%9A%F0%9D%97%B2%F0%9D%97%BF%F0%9D%97%BA%F0%9D%97%AE%F0%9D%97%BB%F0%9D%98%86-%F0%9D%97%A5%F0%9D%97%B2%F0%9D%97%B0%F0%9D%97%BC%F0%9D%97%B4%F0%9D%97%BB%F0%9D%97%B6%F0%9D%98%87%F0%9D%97%B2%F0%9D%97%B1-activity-7437855292454813697-EQbj",
+      "https://www.linkedin.com/posts/thespecialistgroup_in-our-latest-article-thomas-wester-group-activity-7415032078527926273-XZoe"
+    ],
+    "snippets": [
+      "utory directors, shareholders and UBO status require official register, transaction pack or licensed graph evidence.\", \"LinkedIn and other professional social pages are corroboration only and are not primary legal proof.\"]}, \"phases\": {\"enrichment\": {\"business_profile_intel\": {\"schema_version\": \"duesight.business_profile_intel.v1\", \"company_name\": \"NLIST B.V.\", \"website\": \"https://nlist.nl\", \"coun",
+      "utory directors, shareholders and UBO status require official register, transaction pack or licensed graph evidence.\", \"LinkedIn and other professional social pages are corroboration only and are not primary legal proof.\"]}, \"phases\": {\"enrichment\": {\"business_profile_intel\": {\"schema_version\": \"duesight.business_profile_intel.v1\", \"company_name\": \"NLIST B.V.\", \"website\": \"https://nlist.nl\", \"coun",
+      "utory directors, shareholders and UBO status require official register, transaction pack or licensed graph evidence.\", \"LinkedIn and other professional social pages are corroboration only and are not primary legal proof.\"]}, \"phases\": {\"enrichment\": {\"business_profile_intel\": {\"schema_version\": \"duesight.business_profile_intel.v1\", \"company_name\": \"NLIST B.V.\", \"website\": \"https://nlist.nl\", \"coun",
+      "ernal_links\": [{\"url\": \"https://thespecialistgroup.com/\", \"text\": \"Part of The Specialist Group\"}, {\"url\": \"https://www.linkedin.com/company/nlist1/\", \"text\": \"Follow us on LinkedIn\"}], \"team_contacts_found\": 0}, {\"url\": \"https://nlist.nl/nl\", \"path\": \"/nl\", \"title\": \"NLIST\", \"description\": \"\", \"status_code\": 200, \"source_type\": \"company_website\", \"checked_at\": \"2026-05-26T20:32:15+00:00\", \"freshn",
+      "ernal_links\": [{\"url\": \"https://thespecialistgroup.com/\", \"text\": \"Part of The Specialist Group\"}, {\"url\": \"https://www.linkedin.com/company/nlist1/\", \"text\": \"Follow us on LinkedIn\"}], \"team_contacts_found\": 0}, {\"url\": \"https://nlist.nl/nl\", \"path\": \"/nl\", \"title\": \"NLIST\", \"description\": \"\", \"status_code\": 200, \"source_type\": \"company_website\", \"checked_at\": \"2026-05-26T20:29:43+00:00\", \"freshn",
+      "ernal_links\": [{\"url\": \"https://thespecialistgroup.com/\", \"text\": \"Part of The Specialist Group\"}, {\"url\": \"https://www.linkedin.com/company/nlist1/\", \"text\": \"Follow us on LinkedIn\"}], \"team_contacts_found\": 0}, {\"url\": \"https://nlist.nl/nl\", \"path\": \"/nl\", \"title\": \"NLIST\", \"description\": \"\", \"status_code\": 200, \"source_type\": \"company_website\", \"checked_at\": \"2026-05-26T20:28:41+00:00\", \"freshn",
+      "ernal_links\": [{\"url\": \"https://thespecialistgroup.com/\", \"text\": \"Part of The Specialist Group\"}, {\"url\": \"https://www.linkedin.com/company/nlist1/\", \"text\": \"Volg ons op LinkedIn\"}], \"team_contacts_found\": 2}, {\"url\": \"https://nlist.nl/en\", \"path\": \"/en\", \"title\": \"NLIST\", \"description\": \"\", \"status_code\": 200, \"source_type\": \"company_website\", \"checked_at\": \"2026-05-26T20:27:38+00:00\", \"freshne",
+      "ernal_links\": [{\"url\": \"https://thespecialistgroup.com/\", \"text\": \"Part of The Specialist Group\"}, {\"url\": \"https://www.linkedin.com/company/nlist1/\", \"text\": \"Follow us on LinkedIn\"}], \"team_contacts_found\": 0}, {\"url\": \"https://nlist.nl/nl\", \"path\": \"/nl\", \"title\": \"NLIST\", \"description\": \"\", \"status_code\": 200, \"source_type\": \"company_website\", \"checked_at\": \"2026-05-26T20:26:04+00:00\", \"freshn"
+    ]
+  },
+  "public_language_policy": "Report may say what DueSight found, with evidence level and official-upgrade route; no raw provider errors in public HTML."
+}

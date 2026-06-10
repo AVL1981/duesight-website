@@ -1,0 +1,69 @@
+{
+  "schema_version": "duesight.official_claim_ladder.v1",
+  "target": "Mollie B.V.",
+  "updated_at": "2026-06-10T15:43:32+00:00",
+  "rule": "Demo/context rows may explain why a number or signal is plausible; official finance_source and ownership_ubo claims require primary document/provider evidence with source hash or lawful gated extract.",
+  "ladder": [
+    {
+      "rank": 1,
+      "provider": "KVK financial statements / Dataservice",
+      "closes": "finance_source for NL",
+      "use": "Official filings, XBRL/PDF, source hash",
+      "claim_level": "Primary official",
+      "nlist_status": "not_attached"
+    },
+    {
+      "rank": 2,
+      "provider": "KVK UBO extract/API",
+      "closes": "ownership_ubo for NL",
+      "use": "Only with lawful access or client-supplied extract",
+      "claim_level": "Primary official / gated",
+      "nlist_status": "not_attached"
+    },
+    {
+      "rank": 3,
+      "provider": "Kyckr",
+      "closes": "Finance docs, register docs, UBO workflow, cross-border",
+      "use": "Best first paid vendor test",
+      "claim_level": "Official-register provider",
+      "nlist_status": "OPTIONAL_NOT_CONFIGURED"
+    },
+    {
+      "rank": 4,
+      "provider": "Sayari",
+      "closes": "Deep ownership graph, trade/sanctions context",
+      "use": "Premium high-stakes add-on",
+      "claim_level": "Licensed graph / enhanced DD",
+      "nlist_status": "OPTIONAL_NOT_CONFIGURED"
+    },
+    {
+      "rank": 5,
+      "provider": "Company.info / Webservices.nl",
+      "closes": "NL dossiers, positions, org tree, annual statement methods",
+      "use": "Pilot if document bytes/hash and ToS are cleared",
+      "claim_level": "Enrichment to primary, or primary only if source docs hashable",
+      "nlist_status": "not_configured_in_current_replay"
+    },
+    {
+      "rank": 6,
+      "provider": "Creditsafe / D&B",
+      "closes": "Credit, directors, linkages, financial summaries",
+      "use": "Commercial enrichment and monitoring",
+      "claim_level": "Enrichment unless contract grants source proof",
+      "nlist_status": "not_configured_in_current_replay"
+    },
+    {
+      "rank": 7,
+      "provider": "Companies House / GLEIF / Open data",
+      "closes": "UK filings/PSC, LEI parent/child",
+      "use": "Free corroboration",
+      "claim_level": "Official/open corroboration",
+      "nlist_status": "OK"
+    }
+  ],
+  "current_blockers": [
+    "finance_source",
+    "ownership_ubo"
+  ],
+  "upsell": "Official claims package: attach KvK/Dataservice finance filings, lawful UBO extract or Kyckr/Sayari/Company.info evidence with document hash, then run the evidence replay again."
+}

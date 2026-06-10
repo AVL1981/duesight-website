@@ -1,0 +1,18 @@
+{
+  "schema_version": "duesight.sentiment_provider_status.v1",
+  "target": {
+    "name": "Get There ICT Solutions B.V.",
+    "domain": "getthere.nl",
+    "kvk": "",
+    "sector": "",
+    "country": "NL"
+  },
+  "updated_at": "2026-06-02T10:21:09+00:00",
+  "sentiment_scan": {
+    "status": "deferred",
+    "elapsed_s": 187.232,
+    "public_status": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context.",
+    "internal_error_class": "TimeoutError"
+  },
+  "source_status": []
+}

@@ -1,0 +1,116 @@
+name: Deploy & Index DueSight
+
+on:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build and gate public Pages artifact
+        run: python tools/public_surface_gate.py --root _pages --build-from . --strict
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_pages'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  index:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build public Pages artifact
+        run: python tools/public_surface_gate.py --root _pages --build-from . --strict
+
+      # IndexNow - Instant indexing on Bing, Yandex, Seznam, Naver
+      - name: IndexNow Ping (Bing + Yandex + DuckDuckGo + Yahoo)
+        run: |
+          SITE_URL="https://avl1981.github.io/duesight-website"
+          KEY="duesight2026indexnow"
+          
+          # Collect all HTML files as URLs
+          URLS=$(find _pages -name "*.html" | sed "s|^_pages/|${SITE_URL}/|g" | head -50)
+          
+          # Also add key pages explicitly
+          KEY_PAGES=(
+            "${SITE_URL}/index.html"
+            "${SITE_URL}/trust.html"
+            "${SITE_URL}/vergelijk/"
+            "${SITE_URL}/blog/"
+            "${SITE_URL}/glossary/"
+            "${SITE_URL}/llms.txt"
+            "${SITE_URL}/sitemap.xml"
+          )
+          
+          # Build JSON payload for IndexNow batch API
+          URL_LIST=""
+          for page in "${KEY_PAGES[@]}"; do
+            URL_LIST="${URL_LIST}\"${page}\","
+          done
+          URL_LIST="${URL_LIST%,}"
+          
+          PAYLOAD="{\"host\":\"avl1981.github.io\",\"key\":\"${KEY}\",\"keyLocation\":\"${SITE_URL}/${KEY}.txt\",\"urlList\":[${URL_LIST}]}"
+          
+          echo "Submitting to IndexNow..."
+          echo "$PAYLOAD" | python3 -m json.tool
+          
+          # Submit to Bing IndexNow
+          curl -s -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" \
+            -o /dev/null -w "IndexNow response: %{http_code}\n"
+          
+          echo "IndexNow submitted!"
+
+      # Google Sitemap Ping
+      - name: Google Sitemap Ping
+        run: |
+          echo "Pinging Google with sitemap..."
+          curl -s "https://www.google.com/ping?sitemap=https://avl1981.github.io/duesight-website/sitemap.xml" \
+            -o /dev/null -w "Google ping response: %{http_code}\n"
+          echo "Google pinged!"
+
+      # Bing Webmaster Sitemap Ping  
+      - name: Bing Sitemap Ping
+        run: |
+          echo "Pinging Bing with sitemap..."
+          curl -s "https://www.bing.com/ping?sitemap=https://avl1981.github.io/duesight-website/sitemap.xml" \
+            -o /dev/null -w "Bing ping response: %{http_code}\n"
+          echo "Bing pinged!"
+
+      - name: Summary
+        run: |
+          echo "## 🚀 Deploy & Index Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Deployed to GitHub Pages" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ IndexNow submitted (Bing, Yandex, DuckDuckGo, Yahoo)" >> $GITHUB_STEP_SUMMARY  
+          echo "- ✅ Google Sitemap pinged" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Bing Sitemap pinged" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Pages indexed:" >> $GITHUB_STEP_SUMMARY
+          find _pages -name "*.html" | wc -l | xargs -I{} echo "- {} HTML pages" >> $GITHUB_STEP_SUMMARY

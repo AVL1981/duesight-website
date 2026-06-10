@@ -1,0 +1,34 @@
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+---
+
+<Layout title="DueSight | Institutionele Pre-Due Diligence">
+    <!-- Epistemic Status Ticker -->
+    <div class="status-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item"><div class="ticker-dot"></div> ACTIVE PIPELINE: KVK.NL (0ms)</span>
+            <span class="ticker-item"><div class="ticker-dot"></div> ACTIVE PIPELINE: EU SANCTIONS LIST (34ms)</span>
+            <span class="ticker-item"><div class="ticker-dot"></div> ACTIVE PIPELINE: SHODAN CYBER (12ms)</span>
+            <span class="ticker-item"><div class="ticker-dot"></div> ACTIVE PIPELINE: COMPANIES HOUSE UK (8ms)</span>
+        </div>
+    </div>
+
+    <!-- Hero Section Placeholder -->
+    <section class="hero">
+        <video class="hero-video-bg" autoplay loop muted playsinline>
+            <source src="/scene2_paperstorm.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1>Institutionele Inzichten<br>Zonder Ruis.</h1>
+            <p class="hero-subtitle">Geautomatiseerde Due Diligence scanning via de nieuwe generatie AI.</p>
+            
+            <form action="/api/scan" method="GET" class="ds-search-bar" id="hero-scan-form">
+                <input type="text" name="company" placeholder="Zoek een bedrijf (ex: Adyen N.V.)..." required />
+                <button type="submit">Start Scan ⚡</button>
+            </form>
+        </div>
+    </section>
+
+</Layout>

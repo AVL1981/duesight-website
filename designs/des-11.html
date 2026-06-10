@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="dark" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000408;color:#e2eeff;font-family:'Space Grotesk',sans-serif;overflow:hidden;height:100vh;width:100vw}
+
+/* Globe container */
+#globe-canvas{position:absolute;inset:0;z-index:0}
+
+/* Star field */
+.stars{position:absolute;inset:0;z-index:0}
+
+/* Overlay gradient */
+.globe-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse 60% 60% at 35% 50%, transparent 30%, rgba(0,4,8,0.7) 70%, rgba(0,4,8,0.95) 100%);
+}
+
+/* Content */
+.content{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:center;padding:0 8% 0 8%}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(100,160,255,0.7);margin-bottom:24px;
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#4d8eff;animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3);box-shadow:0 0 8px #4d8eff}}
+
+h1{
+  font-family:'Manrope',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  font-weight:800;
+  line-height:1.0;
+  letter-spacing:-2px;
+  color:#fff;
+  margin-bottom:20px;
+}
+h1 span{color:transparent;background:linear-gradient(135deg,#adc6ff,#4d8eff,#7dd3fc);-webkit-background-clip:text;background-clip:text;}
+
+.subtitle{
+  font-size:13px;color:rgba(180,200,240,0.6);
+  max-width:480px;line-height:1.7;margin-bottom:36px;
+  font-weight:400;letter-spacing:0.3px;
+}
+
+.search-bar{
+  display:flex;align-items:center;gap:0;
+  background:rgba(10,20,40,0.85);
+  border:1px solid rgba(77,142,255,0.25);
+  border-radius:4px;
+  max-width:520px;
+  backdrop-filter:blur(20px);
+  overflow:hidden;
+}
+.search-bar input{
+  flex:1;background:transparent;border:none;outline:none;
+  color:#fff;font-family:'Space Grotesk',sans-serif;
+  font-size:13px;padding:14px 18px;
+  placeholder-color:rgba(255,255,255,0.3);
+}
+.search-bar input::placeholder{color:rgba(150,180,220,0.4);}
+.search-bar button{
+  background:linear-gradient(135deg,#4d8eff,#2563eb);
+  color:#fff;border:none;cursor:pointer;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;padding:14px 24px;
+  transition:opacity 0.2s;white-space:nowrap;
+}
+.search-bar button:hover{opacity:0.85}
+
+/* Data nodes on globe */
+.node{
+  position:absolute;z-index:8;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  pointer-events:none;
+}
+.node-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#4d8eff;
+  box-shadow:0 0 0 0 rgba(77,142,255,0.4);
+  animation:node-pulse 3s ease-in-out infinite;
+}
+.node-dot.gold{background:#f59e0b;box-shadow:0 0 0 0 rgba(245,158,11,0.4);}
+@keyframes node-pulse{
+  0%{box-shadow:0 0 0 0 rgba(77,142,255,0.5)}
+  70%{box-shadow:0 0 0 10px rgba(77,142,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(77,142,255,0)}
+}
+.node-label{
+  font-size:8px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(173,198,255,0.7);
+  white-space:nowrap;
+}
+
+/* Stats strip */
+.stats{
+  display:flex;gap:32px;margin-top:32px;
+  border-top:1px solid rgba(77,142,255,0.1);
+  padding-top:24px;
+}
+.stat-item{display:flex;flex-direction:column;gap:4px;}
+.stat-value{font-family:'Manrope',sans-serif;font-size:22px;font-weight:800;color:#adc6ff;}
+.stat-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(150,180,220,0.45);}
+
+/* Orbital ring decoration */
+.orbital-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(77,142,255,0.08);
+  pointer-events:none;z-index:2;
+}
+
+/* Trust ticker */
+.ticker{
+  position:absolute;bottom:0;left:0;right:0;z-index:20;
+  height:36px;background:rgba(2,8,20,0.9);
+  border-top:1px solid rgba(77,142,255,0.1);
+  display:flex;align-items:center;overflow:hidden;
+}
+.ticker-track{
+  display:flex;gap:48px;white-space:nowrap;
+  animation:ticker-scroll 30s linear infinite;
+}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(100,140,200,0.5);}
+.ticker-item.active{color:rgba(77,142,255,0.8);}
+</style>
+</head>
+<body>
+
+<!-- Star field canvas -->
+<canvas id="globe-canvas"></canvas>
+<div class="globe-overlay"></div>
+
+<!-- Orbital rings (decorative) -->
+<div class="orbital-ring" style="width:600px;height:600px;top:50%;left:55%;transform:translate(-50%,-50%) rotateX(75deg)"></div>
+<div class="orbital-ring" style="width:800px;height:800px;top:50%;left:55%;transform:translate(-50%,-50%) rotateX(75deg)"></div>
+
+<!-- City nodes (positioned to match globe) -->
+<div class="node" style="top:38%;left:61%">
+  <div class="node-dot" style="animation-delay:0s"></div>
+  <div class="node-label">Amsterdam</div>
+</div>
+<div class="node" style="top:42%;left:64%">
+  <div class="node-dot gold" style="animation-delay:0.8s"></div>
+  <div class="node-label">Frankfurt</div>
+</div>
+<div class="node" style="top:47%;left:63%">
+  <div class="node-dot gold" style="animation-delay:1.4s"></div>
+  <div class="node-label">Zürich</div>
+</div>
+<div class="node" style="top:35%;left:59%">
+  <div class="node-dot" style="animation-delay:2s"></div>
+  <div class="node-label">London</div>
+</div>
+<div class="node" style="top:40%;left:65%">
+  <div class="node-dot" style="animation-delay:0.4s"></div>
+  <div class="node-label">Brussel</div>
+</div>
+<div class="node" style="top:45%;left:67%">
+  <div class="node-dot gold" style="animation-delay:1.8s"></div>
+  <div class="node-label">Wien</div>
+</div>
+
+<!-- Main content -->
+<div class="content">
+  <div class="eyebrow">
+    <div class="eyebrow-dot"></div>
+    Europese Intelligence Infrastructuur
+  </div>
+
+  <h1>De wereld<br/>in kaart.<br/><span>Elk risico</span><br/>zichtbaar.</h1>
+
+  <p class="subtitle">
+    DueSight verbindt meerdere bronnen over 6 Europese jurisdicties.
+    Real-time intelligence voor M&amp;A, PE en compliance professionals.
+  </p>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Voer bedrijfsnaam of KvK-nummer in..."/>
+    <button>Analyseer →</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-value">meerdere</div>
+      <div class="stat-label">Bronnen</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Jurisdicties</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">&lt;3 min</div>
+      <div class="stat-label">Rapport</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Zero-Retention</div>
+    </div>
+  </div>
+</div>
+
+<!-- Trust ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item active">● AVG Art. 25</span>
+    <span class="ticker-item">● Zero-Retention</span>
+    <span class="ticker-item">● NL · DE · AT · CH · BE · UK</span>
+    <span class="ticker-item active">● Multi-Agent Consensus</span>
+    <span class="ticker-item">● meerdere bronnen</span>
+    <span class="ticker-item">● TLS 1.3 + AES-256</span>
+    <span class="ticker-item active">● EU AI Act context</span>
+    <span class="ticker-item">● forensische data-analyse Verified</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item active">● AVG Art. 25</span>
+    <span class="ticker-item">● Zero-Retention</span>
+    <span class="ticker-item">● NL · DE · AT · CH · BE · UK</span>
+    <span class="ticker-item active">● Multi-Agent Consensus</span>
+    <span class="ticker-item">● meerdere bronnen</span>
+    <span class="ticker-item">● TLS 1.3 + AES-256</span>
+    <span class="ticker-item active">● EU AI Act context</span>
+    <span class="ticker-item">● forensische data-analyse Verified</span>
+  </div>
+</div>
+
+<script>
+// Render a stylized globe with Europe visible
+var canvas = document.getElementById('globe-canvas');
+var ctx = canvas.getContext('2d');
+var W, H, cx, cy, R;
+
+function resize(){
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  cx = W * 0.65; cy = H * 0.5; R = Math.min(W,H) * 0.36;
+}
+resize();
+window.addEventListener('resize', resize);
+
+var starField = [];
+for(var i=0;i<300;i++){
+  starField.push({
+    x: Math.random(),
+    y: Math.random(),
+    r: Math.random() * 1.2 + 0.2,
+    a: Math.random() * 0.6 + 0.2
+  });
+}
+
+// Europe landmass simplified paths (normalized -1..1 in lon/lat space projected)
+// Using simple orthographic projection centered on ~10°E, 50°N (Central Europe)
+function lonLatToXY(lon, lat, rotOffset) {
+  var lon0 = (10 + rotOffset) * Math.PI/180;
+  var lat0 = 50 * Math.PI/180;
+  var lonR = lon * Math.PI/180;
+  var latR = lat * Math.PI/180;
+  var cosC = Math.sin(lat0)*Math.sin(latR) + Math.cos(lat0)*Math.cos(latR)*Math.cos(lonR-lon0);
+  if(cosC < 0) return null;
+  var x = cx + R * Math.cos(latR)*Math.sin(lonR-lon0);
+  var y = cy - R * (Math.cos(lat0)*Math.sin(latR) - Math.sin(lat0)*Math.cos(latR)*Math.cos(lonR-lon0));
+  return {x:x, y:y, depth: cosC};
+}
+
+// Simplified Europe/DACH coastline points [lon, lat]
+var europeCoast = [
+  // UK south coast
+  [-5.7,50],[0.5,51.5],[1.8,51.2],[1.4,50.9],
+  // Netherlands/Belgium
+  [4.2,51.5],[4.5,52.4],[5.2,53.4],[6.9,53.4],[8.6,53.7],
+  // Germany north
+  [8.6,54.9],[10.0,55.0],[12.5,56.1],[15.0,54.5],[14.3,53.0],
+  // Poland
+  [16.0,54.0],[18.5,54.5],[21.0,55.3],[24.0,57.0],
+  // Germany east to Austria
+  [15.0,51.0],[14.0,50.5],[13.5,48.5],[12.0,47.5],
+  // Switzerland/Austria
+  [10.0,47.3],[8.5,47.5],[7.5,47.5],[6.5,46.4],[7.0,43.8],
+  // France south
+  [6.0,43.1],[3.0,43.3],[0.3,44.0],[-1.8,43.4],[-3.5,43.5],
+  // Spain
+  [-8.0,43.8],[-9.3,42.8],[-8.9,41.0],[-8.5,38.0],[-6.5,36.0],
+  [-5.0,36.1],[-0.5,37.5],[1.0,38.5],[2.5,40.5],[3.2,42.0],
+  // Italy rough
+  [7.5,43.8],[9.0,44.2],[12.0,44.0],[14.0,41.0],[16.0,38.0],[15.5,37.0],[14.0,37.5],
+  [12.5,37.0],[11.0,38.0],[8.5,39.5],[9.0,41.0],
+  // back up Adriatic
+  [13.0,45.8],[14.0,45.0],[16.0,46.5],[18.0,43.0],[20.0,42.0],[21.5,40.5],
+  [26.0,41.0],[28.0,41.2],[29.5,40.5],[28.5,38.0],[27.0,37.0],[26.0,38.0],
+  [23.0,38.5],[22.0,37.5],[23.5,36.5],[25.0,35.5],[26.0,35.2],
+  // Greece
+  [22.0,37.3],[20.0,38.5],[20.5,40.5],[19.5,42.0],
+  // Scandinavia rough
+  [5.0,57.5],[4.5,58.5],[5.5,59.0],[7.5,58.0],[8.0,58.0],[10.0,57.7],[12.0,56.0],
+  [11.5,55.5],[8.5,55.5],[8.3,54.9],
+  // Norway
+  [7.0,58.0],[5.5,59.0],[5.0,61.0],[6.0,62.0],[7.0,63.5],[8.5,64.5],[10.5,65.0],
+  [12.0,65.5],[14.5,67.0],[18.0,68.0],[17.5,69.5],[20.0,70.0],[28.0,71.0],
+  // Finland/Baltic
+  [28.0,70.0],[30.0,65.0],[28.0,62.0],[25.0,60.0],[22.0,59.5],[20.0,57.5],
+  [18.0,58.0],[16.5,56.5],[14.0,56.0],[12.0,56.0]
+];
+
+var rotAngle = 0;
+
+function drawGlobe(rot) {
+  ctx.clearRect(0,0,W,H);
+
+  // Stars
+  starField.forEach(function(s){
+    ctx.beginPath();
+    ctx.arc(s.x*W, s.y*H, s.r, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(200,220,255,'+s.a+')';
+    ctx.fill();
+  });
+
+  // Globe atmosphere glow
+  var atmo = ctx.createRadialGradient(cx,cy,R*0.92, cx,cy,R*1.12);
+  atmo.addColorStop(0,'rgba(30,80,180,0.15)');
+  atmo.addColorStop(0.5,'rgba(20,60,140,0.08)');
+  atmo.addColorStop(1,'rgba(10,30,80,0)');
+  ctx.beginPath();ctx.arc(cx,cy,R*1.12,0,Math.PI*2);
+  ctx.fillStyle=atmo; ctx.fill();
+
+  // Globe base (ocean)
+  var oceanGrad = ctx.createRadialGradient(cx-R*0.2,cy-R*0.15,R*0.1, cx,cy,R);
+  oceanGrad.addColorStop(0,'rgba(8,30,70,0.95)');
+  oceanGrad.addColorStop(0.4,'rgba(4,18,50,0.98)');
+  oceanGrad.addColorStop(1,'rgba(2,8,25,1)');
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);
+  ctx.fillStyle=oceanGrad; ctx.fill();
+
+  // Latitude grid lines
+  for(var lat=-60;lat<=80;lat+=20){
+    ctx.beginPath();
+    var first=true;
+    for(var lon=-180;lon<=180;lon+=3){
+      var pt=lonLatToXY(lon,lat,rot);
+      if(!pt){first=true;continue;}
+      if(first){ctx.moveTo(pt.x,pt.y);first=false;}
+      else ctx.lineTo(pt.x,pt.y);
+    }
+    ctx.strokeStyle='rgba(40,80,160,0.12)';ctx.lineWidth=0.5;ctx.stroke();
+  }
+  // Longitude grid lines
+  for(var lon2=-180;lon2<=180;lon2+=20){
+    ctx.beginPath();
+    var first2=true;
+    for(var lat2=-80;lat2<=80;lat2+=3){
+      var pt2=lonLatToXY(lon2,lat2,rot);
+      if(!pt2){first2=true;continue;}
+      if(first2){ctx.moveTo(pt2.x,pt2.y);first2=false;}
+      else ctx.lineTo(pt2.x,pt2.y);
+    }
+    ctx.strokeStyle='rgba(40,80,160,0.12)';ctx.lineWidth=0.5;ctx.stroke();
+  }
+
+  // Europe landmass
+  ctx.beginPath();
+  var firstLand=true;
+  europeCoast.forEach(function(p){
+    var pt=lonLatToXY(p[0],p[1],rot);
+    if(!pt){firstLand=true;return;}
+    if(firstLand){ctx.moveTo(pt.x,pt.y);firstLand=false;}
+    else ctx.lineTo(pt.x,pt.y);
+  });
+  ctx.closePath();
+  var landGrad = ctx.createLinearGradient(cx-R*0.3,cy-R*0.3,cx+R*0.3,cy+R*0.3);
+  landGrad.addColorStop(0,'rgba(15,50,120,0.8)');
+  landGrad.addColorStop(1,'rgba(10,35,90,0.85)');
+  ctx.fillStyle=landGrad;
+  ctx.fill();
+  ctx.strokeStyle='rgba(60,120,220,0.3)';ctx.lineWidth=0.8;ctx.stroke();
+
+  // Connection lines between DACH cities
+  var cities = [
+    [4.9,52.4,0],   // Amsterdam
+    [8.7,50.1,0.8], // Frankfurt
+    [8.5,47.4,1.4], // Zürich
+    [16.4,48.2,1.8],// Wien
+    [4.3,50.8,2.0], // Brussel
+    [11.6,48.1,1.2] // München
+  ];
+  cities.forEach(function(c1,i){
+    cities.forEach(function(c2,j){
+      if(j<=i) return;
+      var p1=lonLatToXY(c1[0],c1[1],rot);
+      var p2=lonLatToXY(c2[0],c2[1],rot);
+      if(!p1||!p2) return;
+      ctx.beginPath();ctx.moveTo(p1.x,p1.y);ctx.lineTo(p2.x,p2.y);
+      ctx.strokeStyle='rgba(77,142,255,0.15)';ctx.lineWidth=0.8;ctx.stroke();
+    });
+  });
+
+  // City dots
+  cities.forEach(function(c){
+    var pt=lonLatToXY(c[0],c[1],rot);
+    if(!pt) return;
+    var glow=ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,6);
+    glow.addColorStop(0,'rgba(173,198,255,0.9)');
+    glow.addColorStop(1,'rgba(77,142,255,0)');
+    ctx.beginPath();ctx.arc(pt.x,pt.y,6,0,Math.PI*2);
+    ctx.fillStyle=glow;ctx.fill();
+    ctx.beginPath();ctx.arc(pt.x,pt.y,2.5,0,Math.PI*2);
+    ctx.fillStyle='rgba(200,220,255,0.95)';ctx.fill();
+  });
+
+  // Globe edge shadow
+  var edgeShadow = ctx.createRadialGradient(cx,cy,R*0.85,cx,cy,R);
+  edgeShadow.addColorStop(0,'transparent');
+  edgeShadow.addColorStop(1,'rgba(0,4,15,0.6)');
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);
+  ctx.fillStyle=edgeShadow;ctx.fill();
+
+  // Globe highlight (light source top-left)
+  var highlight=ctx.createRadialGradient(cx-R*0.35,cy-R*0.35,0,cx-R*0.2,cy-R*0.2,R*0.6);
+  highlight.addColorStop(0,'rgba(80,130,255,0.12)');
+  highlight.addColorStop(1,'transparent');
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);
+  ctx.fillStyle=highlight;ctx.fill();
+
+  // Globe border
+  ctx.beginPath();ctx.arc(cx,cy,R,0,Math.PI*2);
+  ctx.strokeStyle='rgba(50,100,200,0.25)';ctx.lineWidth=1.5;ctx.stroke();
+}
+
+var animFrame;
+function animate(ts){
+  rotAngle = (ts/30000) * 360; // slow rotation: 30s per full turn
+  drawGlobe(rotAngle % 360 - 180);
+  animFrame = requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
+</script>
+</body>
+</html>

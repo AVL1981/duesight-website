@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institutional Ledger | Compliance &amp; Authority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>tailwind.config={darkMode:"class",theme:{extend:{colors:{"background":"#0f131c","surface":"#0f131c","primary":"#adc6ff","primary-container":"#4d8eff","on-primary":"#002e6a","on-surface":"#dfe2ef","on-surface-variant":"#c2c6d6","outline":"#8c909f","outline-variant":"#424754","surface-container":"#1c2029","surface-container-low":"#181b25","surface-container-high":"#262a34","error":"#ffb4ab","tertiary":"#ffb786"},fontFamily:{"headline":["Manrope"],"body":["Inter"],"label":["Inter"]}}}};</script>
+<style>.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24}.glass-panel{background:rgba(49,53,63,0.2);backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.05)}.blueprint-bg{background-image:linear-gradient(rgba(173,198,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(173,198,255,0.05) 1px,transparent 1px);background-size:40px 40px}</style>
+</head>
+<body class="bg-[#0f131c] font-['Inter'] text-[#dfe2ef] min-h-screen">
+<nav class="fixed top-0 w-full border-b border-white/10 bg-[#0f131c]/80 backdrop-blur-xl z-50 flex justify-between items-center px-8 py-4"><div class="text-xl font-bold tracking-tighter text-slate-100 uppercase font-['Manrope']">Institutional Ledger</div><div class="hidden md:flex items-center space-x-8"><a class="font-bold text-sm text-blue-400 border-b-2 border-blue-400 pb-1" href="#">Compliance</a><a class="font-bold text-sm text-slate-400 hover:text-slate-100" href="#">Security</a><a class="font-bold text-sm text-slate-400 hover:text-slate-100" href="#">Architecture</a><a class="font-bold text-sm text-slate-400 hover:text-slate-100" href="#">Methodology</a></div><button class="bg-[#4d8eff] text-[#002e6a] font-bold text-sm px-6 py-2 rounded-sm">Access Terminal</button></nav>
+<main class="pt-24 min-h-screen">
+<section class="px-8 md:px-12 py-16 max-w-7xl mx-auto"><div class="flex items-center justify-between mb-12"><h2 class="font-['Manrope'] font-extrabold text-3xl tracking-tight uppercase">Regulatory Alignment</h2><div class="h-px flex-grow ml-8 bg-[#424754]/20"></div><span class="ml-8 text-[10px] uppercase tracking-widest text-[#8c909f]">Section 01 // Legal-Framework</span></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-panel p-8 hover:bg-white/5 transition-all"><div class="text-xs text-[#adc6ff] mb-2 uppercase tracking-widest">Article 25</div><h3 class="font-['Manrope'] font-bold text-xl leading-tight">GDPR — Privacy by Design</h3><p class="mt-4 text-[#c2c6d6] text-sm leading-relaxed">Mandatory implementation of technical and organizational measures for data protection principles at the core of technical infrastructure.</p></div>
+<div class="glass-panel p-8 hover:bg-white/5 transition-all"><div class="text-xs text-[#adc6ff] mb-2 uppercase tracking-widest">Compliance Audit</div><h3 class="font-['Manrope'] font-bold text-xl leading-tight">Dutch Civil Code 6:193c Compliant</h3><p class="mt-4 text-[#c2c6d6] text-sm leading-relaxed">Rigorous adherence to Dutch consumer protection and transparency requirements for algorithmic processing and reporting.</p></div>
+<div class="glass-panel p-8 hover:bg-white/5 transition-all"><div class="text-xs text-[#ffb786] mb-2 uppercase tracking-widest">Risk Assessment</div><h3 class="font-['Manrope'] font-bold text-xl leading-tight">EU AI Act Mapping</h3><p class="mt-4 text-[#c2c6d6] text-sm leading-relaxed">Mapped to European Union Artificial Intelligence Act obligations for high-risk system transparency and accountability.</p></div>
+</div></section>
+<section class="relative py-24 bg-[#181b25] overflow-hidden"><div class="blueprint-bg absolute inset-0 opacity-40"></div><div class="px-8 md:px-12 max-w-7xl mx-auto relative z-10"><div class="flex items-center justify-between mb-20"><h2 class="font-['Manrope'] font-extrabold text-3xl tracking-tight uppercase">Security Architecture</h2><span class="text-[10px] uppercase tracking-widest text-[#8c909f]">Section 02 // Data-Lifecycle</span></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+<div class="flex flex-col items-center text-center p-6 border border-white/5 bg-[#0f131c]/80 rounded-sm"><div class="font-bold text-sm uppercase">Client</div><div class="text-[10px] text-[#8c909f] mt-1">INITIATE REQUEST</div></div>
+<div class="hidden md:flex h-px bg-gradient-to-r from-[#adc6ff]/50 to-transparent"></div>
+<div class="flex flex-col items-center text-center p-6 border border-white/5 bg-[#0f131c]/80 rounded-sm"><div class="font-bold text-sm uppercase">AES-256-GCM</div><div class="text-[10px] text-[#8c909f] mt-1">ENCRYPTION LAYER</div></div>
+<div class="hidden md:flex h-px bg-gradient-to-r from-[#adc6ff]/50 to-transparent"></div>
+<div class="flex flex-col items-center text-center p-6 border border-[#adc6ff]/20 bg-[#adc6ff]/5 rounded-sm"><div class="font-bold text-sm uppercase">Zero-Retention</div><div class="text-[10px] text-[#8c909f] mt-1">VOLATILE PROCESSING</div></div>
+</div></div></section>
+<section class="px-8 md:px-12 py-24 max-w-7xl mx-auto"><div class="flex flex-col items-center mb-16"><h2 class="font-['Manrope'] font-extrabold text-3xl tracking-tight uppercase text-center">Trusted Methodology</h2><p class="text-[#c2c6d6] text-sm mt-4 text-center max-w-2xl">A multi-layered analytical framework ensuring the highest standards of data integrity and regulatory compliance through empirical validation.</p></div>
+<div class="flex flex-wrap justify-center gap-12 md:gap-24 opacity-80">
+<div class="flex flex-col items-center"><div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-4"><span class="text-2xl">📊</span></div><span class="text-[11px] uppercase tracking-[0.2em] text-[#8c909f] text-center">Forensische Data-Analyse</span></div>
+<div class="flex flex-col items-center"><div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-4"><span class="text-2xl">🛡️</span></div><span class="text-[11px] uppercase tracking-[0.2em] text-[#8c909f] text-center">Adversarial AI Validation</span></div>
+<div class="flex flex-col items-center"><div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-4"><span class="text-2xl">🔗</span></div><span class="text-[11px] uppercase tracking-[0.2em] text-[#8c909f] text-center">Multi-Source Cross-Check</span></div>
+<div class="flex flex-col items-center"><div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-4"><span class="text-2xl">👁️</span></div><span class="text-[11px] uppercase tracking-[0.2em] text-[#8c909f] text-center">Epistemic Rigor Assessment</span></div>
+<div class="flex flex-col items-center"><div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center mb-4"><span class="text-2xl">✅</span></div><span class="text-[11px] uppercase tracking-[0.2em] text-[#8c909f] text-center">CBS Benchmark Validation</span></div>
+</div></section>
+</main>
+</body></html>

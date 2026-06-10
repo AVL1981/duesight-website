@@ -1,0 +1,576 @@
+{
+  "schema_version": "duesight.deep_research_crawl.v1",
+  "target": {
+    "name": "True Legends IT B.V.",
+    "domain": "truelegendsit.nl",
+    "kvk": "",
+    "country": "NL",
+    "city": ""
+  },
+  "updated_at": "2026-06-02T09:59:23+00:00",
+  "route": "query-plan:mmx-search",
+  "query_policy_version": "deep_research_query_policy_20260526",
+  "queries_attempted": 24,
+  "queries_executed": 3,
+  "failed_or_skipped": 21,
+  "target_site_crawl": {
+    "pages_checked": 17,
+    "source_urls": [
+      "https://truelegendsit.nl/",
+      "https://truelegendsit.nl/nl/",
+      "https://truelegendsit.nl/en/",
+      "https://truelegendsit.nl/nl/team",
+      "https://truelegendsit.nl/en/team",
+      "https://truelegendsit.nl/team",
+      "https://truelegendsit.nl/nl/over-nlist",
+      "https://truelegendsit.nl/nl/over-ons",
+      "https://truelegendsit.nl/en/about",
+      "https://truelegendsit.nl/about",
+      "https://truelegendsit.nl/nl/vacatures",
+      "https://truelegendsit.nl/en/jobs",
+      "https://truelegendsit.nl/careers",
+      "https://truelegendsit.nl/nl/contact",
+      "https://truelegendsit.nl/en/contact",
+      "https://truelegendsit.nl/contact",
+      "https://truelegendsit.nl/sitemap.xml"
+    ],
+    "pages": [
+      {
+        "url": "https://truelegendsit.nl/",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/en/",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/team",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/en/team",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/team",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/over-nlist",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/over-ons",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/en/about",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/about",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/vacatures",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/en/jobs",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/careers",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/nl/contact",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/en/contact",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/contact",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      },
+      {
+        "url": "https://truelegendsit.nl/sitemap.xml",
+        "status": 200,
+        "title": "Placeholder - Antagonist",
+        "bytes": 529
+      }
+    ]
+  },
+  "source_urls_count": 23,
+  "source_urls": [
+    "https://truelegendsit.nl/",
+    "https://truelegendsit.nl/nl/",
+    "https://truelegendsit.nl/en/",
+    "https://truelegendsit.nl/nl/team",
+    "https://truelegendsit.nl/en/team",
+    "https://truelegendsit.nl/team",
+    "https://truelegendsit.nl/nl/over-nlist",
+    "https://truelegendsit.nl/nl/over-ons",
+    "https://truelegendsit.nl/en/about",
+    "https://truelegendsit.nl/about",
+    "https://truelegendsit.nl/nl/vacatures",
+    "https://truelegendsit.nl/en/jobs",
+    "https://truelegendsit.nl/careers",
+    "https://truelegendsit.nl/nl/contact",
+    "https://truelegendsit.nl/en/contact",
+    "https://truelegendsit.nl/contact",
+    "https://truelegendsit.nl/sitemap.xml",
+    "https://cloudlegends.nl/en/about/",
+    "https://experiencetrue.com/about-true/",
+    "https://truegroup.net/",
+    "https://truelegends.nl/",
+    "https://www.instagram.com/truelegends_it/",
+    "https://magnet.me/en/company/true-legends-it-professionals"
+  ],
+  "queries": [
+    {
+      "index": 1,
+      "taxonomy": "company_intel",
+      "provider": "deep_research_crawl",
+      "query": "\"True Legends IT B.V.\" \"truelegendsit.nl\" team management founders directors recruiters new business manager",
+      "source_hint": "target-owned website and public professional discovery",
+      "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
+      "status": "failed",
+      "elapsed_s": 1.427,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 2,
+      "taxonomy": "transaction_context",
+      "provider": "deep_research_crawl",
+      "query": "\"True Legends IT B.V.\" acquisition overname parent group investor shareholder \"truelegendsit.nl\"",
+      "source_hint": "public transaction and group-context sources",
+      "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
+      "status": "failed",
+      "elapsed_s": 1.275,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 3,
+      "taxonomy": "talent_market",
+      "provider": "deep_research_crawl",
+      "query": "\"True Legends IT B.V.\" vacancies careers jobs hiring skills competitors \"truelegendsit.nl\"",
+      "source_hint": "target careers pages, job boards and public market sources",
+      "guardrail": "Hiring data is a point-in-time public signal.",
+      "status": "failed",
+      "elapsed_s": 1.311,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 4,
+      "taxonomy": "growth_finance_context",
+      "provider": "deep_research_crawl",
+      "query": "\"True Legends IT B.V.\" revenue omzet growth FT1000 annual report ranking \"truelegendsit.nl\"",
+      "source_hint": "growth and finance context routes",
+      "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
+      "status": "failed",
+      "elapsed_s": 1.354,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 5,
+      "taxonomy": "competitor_market",
+      "provider": "deep_research_crawl",
+      "query": "\"True Legends IT B.V.\" competitors concurrenten market analysis sector staffing recruitment engineering",
+      "source_hint": "public competitor and market-context sources",
+      "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
+      "status": "failed",
+      "elapsed_s": 2.065,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 6,
+      "taxonomy": "reverse_media",
+      "provider": "search_cascade",
+      "query": "(\"True Legends IT B.V.\" OR \"truelegendsit.nl\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
+      "source_hint": "public web/media index",
+      "guardrail": "Reverse media is context/provenance support, not identity proof.",
+      "status": "partial_executed",
+      "elapsed_s": 1.437,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://cloudlegends.nl/en/about/",
+        "https://experiencetrue.com/about-true/",
+        "https://truegroup.net/",
+        "https://truelegends.nl/"
+      ],
+      "source_urls_count": 4,
+      "matched_results": [
+        {
+          "title": "About Cloud Legends - Crafting cloud solutions you can be proud of",
+          "snippet": "About us. Cloud Legends is dedicated to delivering top-of-the-line cloud solutions that are tailored to meet the unique needs of your business. Our team of ...",
+          "url": "https://cloudlegends.nl/en/about/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "This is the True Story - About True Insurtech Solutions",
+          "snippet": "About Us · True Story · True Leadership · True Careers · Solutions · Policy ... team's deep expertise to drive meaningful change. Our mission is simple: to ...",
+          "url": "https://experiencetrue.com/about-true/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "True Group, Inc. – The Best Kept Secret in Transformation",
+          "snippet": "Whether you are seeking a full-service desk support experience or are simply looking to supplement your current team, True is a trusted partner you can rely on ...",
+          "url": "https://truegroup.net/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "True Legends - Bright minds & forward thinkers",
+          "snippet": "Bright minds & forward thinkers in IT. Bekijk vacatures. Meer over ons ... Wij zorgen voor een goed salaris, opleidingen die je verder helpen en een team dat ...",
+          "url": "https://truelegends.nl/",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:acm.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:acm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.264,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 8,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:afm.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:afm.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.164,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 9,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:autoriteitpersoonsgegevens.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:autoriteitpersoonsgegevens.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.23,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 10,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:dnb.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:dnb.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.23,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 11,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:insolventies.rechtspraak.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:insolventies.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.113,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 12,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:kvk.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:kvk.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.261,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 13,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:rechtspraak.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.212,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 14,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:uitspraken.rechtspraak.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:uitspraken.rechtspraak.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.151,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 15,
+      "taxonomy": "dorking",
+      "provider": "search_cascade",
+      "query": "site:zoek.officielebekendmakingen.nl (\"True Legends IT B.V.\" OR \"truelegendsit.nl\")",
+      "source_hint": "site:zoek.officielebekendmakingen.nl",
+      "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
+      "status": "failed",
+      "elapsed_s": 1.182,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 16,
+      "taxonomy": "adverse_media",
+      "provider": "gdelt_doc_api",
+      "query": "(\"True Legends IT B.V.\" OR \"truelegendsit.nl\") (\"fraude\" OR \"oplichting\" OR \"witwassen\" OR \"omkoping\" OR \"corruptie\" OR \"faillissement\" OR \"surseance\" OR \"curator\" OR \"fraud\" OR \"scam\" OR \"money laundering\" OR \"bribery\" OR \"corruption\" OR \"bankruptcy\" OR \"insolvency\" OR \"liquidation\" OR \"Betrug\" OR \"Geldwaesche\" OR \"Bestechung\" OR \"Korruption\" OR \"Insolvenz\" OR \"Konkurs\") sourcecountry:NL",
+      "source_hint": "GDELT DOC 2.0",
+      "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
+      "status": "failed",
+      "elapsed_s": 1.401,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 17,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"@truelegendsit.nl\" (\"security\" OR \"leak\" OR \"breach\" OR \"datalek\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed",
+      "elapsed_s": 1.679,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.instagram.com/truelegends_it/",
+        "https://magnet.me/en/company/true-legends-it-professionals"
+      ],
+      "source_urls_count": 2,
+      "matched_results": [
+        {
+          "title": "True Legends IT Professionals (@truelegends_it) - Instagram",
+          "snippet": "108 followers · 33 posts · IT jobs voor Trainees, Starters en ervaren IT Specialisten. Software Development//Data//Cyber Security//more Word jij onze nieuwe ...",
+          "url": "https://www.instagram.com/truelegends_it/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "Jobs at True Legends IT Professionals - Magnet.me",
+          "snippet": "True Legends richt zich op het werven, opleiden en detacheren van IT Professionals binnen de sectoren Software Development, Cyber Security, Agile/Scrum, ...",
+          "url": "https://magnet.me/en/company/true-legends-it-professionals",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "\"truelegendsit.nl\" (\"security.txt\" OR \"bug bounty\" OR \"responsible disclosure\")",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.376,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 19,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:github.com \"truelegendsit.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.27,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 20,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:gitlab.com \"truelegendsit.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.167,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 21,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:pastebin.com \"truelegendsit.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "failed",
+      "elapsed_s": 1.225,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 22,
+      "taxonomy": "osint",
+      "provider": "official_registry",
+      "query": "\"True Legends IT B.V.\" OR \"truelegendsit.nl\"",
+      "source_hint": "KvK/GLEIF/Zefix/official registry ladder",
+      "guardrail": "Registry facts must include source, checked_at, identifier, and limitation.",
+      "status": "failed",
+      "elapsed_s": 1.496,
+      "discovered_urls_count": 0,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 23,
+      "taxonomy": "osint",
+      "provider": "search_cascade",
+      "query": "(\"True Legends IT B.V.\" OR \"truelegendsit.nl\") (\"acquired\" OR \"acquisition\" OR \"overname\" OR \"acquisitie\" OR \"part of\" OR \"parent company\" OR \"The Specialist Group\")",
+      "source_hint": "official newsroom / transaction announcement / reputable trade press",
+      "guardrail": "Public acquisition narratives are business context only until transaction documents, registry output or licensed ownership graph confirms legal route.",
+      "status": "failed",
+      "elapsed_s": 1.127,
+      "discovered_urls_count": 10,
+      "source_urls": [],
+      "source_urls_count": 0,
+      "matched_results": []
+    },
+    {
+      "index": 24,
+      "taxonomy": "market_intel",
+      "provider": "search_cascade",
+      "query": "(\"True Legends IT B.V.\" OR \"truelegendsit.nl\") (\"concurrenten\" OR \"competitors\" OR \"alternatives\" OR \"detacheerder\" OR \"recruitment\" OR \"staffing\" OR \"engineering\")",
+      "source_hint": "public web, trade press, company websites and market directories",
+      "guardrail": "Competitor output is market context until every competitor field has its own source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.295,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://truelegends.nl/",
+        "https://experiencetrue.com/about-true/",
+        "https://truegroup.net/"
+      ],
+      "source_urls_count": 3,
+      "matched_results": [
+        {
+          "title": "True Legends - Bright minds & forward thinkers",
+          "snippet": "Dat klinkt misschien als het verhaal van elke IT-detacheerder? Maar wie ... Wij verbinden professionals met uitdagende projecten in data engineering, data analyse ...",
+          "url": "https://truelegends.nl/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "This is the True Story - About True Insurtech Solutions",
+          "snippet": "True Insurtech Solutions is reshaping workers' compensation insurance with a people-first approach to innovative, cloud-based insurance technology.",
+          "url": "https://experiencetrue.com/about-true/",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "True Group, Inc. – The Best Kept Secret in Transformation",
+          "snippet": "Workforce Management & Quality Assurance. Ensure full coverage staffing schedules. Flexible Customer Interfaces. Including call, email, and self-service.",
+          "url": "https://truegroup.net/",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    }
+  ],
+  "public_report_rule": "Discovery URLs are not claims. They become report content only after source envelope and claim-level gating."
+}

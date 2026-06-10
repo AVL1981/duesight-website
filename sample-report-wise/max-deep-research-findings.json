@@ -1,0 +1,159 @@
+{
+  "schema_version": "duesight.max_deep_research_findings.v1",
+  "target": {
+    "name": "Wise plc",
+    "domain": "wise.com",
+    "kvk": "",
+    "country": "GB",
+    "city": ""
+  },
+  "updated_at": "2026-05-29T08:18:11+00:00",
+  "findings": [
+    {
+      "topic": "identity",
+      "providers": [
+        "deep_research_crawl",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b"
+      ],
+      "provider_count": 3,
+      "source_urls": [
+        "https://anchor.fm/s/34e2d888/podcast/rss",
+        "https://cdn.prod.website-files.com/5e1533c83b28b3131344ab22/69cad958d8bd2caea326782f_i-Select%20Superannuation%20Scheme%20Investment%20Options%20Supplement%2031.03.2026.pdf",
+        "https://digikogu.taltech.ee/et/Download/3ccc0f5b-efb5-41fb-9e2d-aeba36aba0b7",
+        "https://en.wikipedia.org/wiki/Wise_(company)",
+        "https://finance.yahoo.com/quote/WISE.L/",
+        "https://infobytes.orrick.com/wp-content/uploads/RENEWED-MOTION-TO-INTERVENE.pdf",
+        "https://newsroom.wise.com/en-NAM/assets/228784/",
+        "https://owners.wise.com/investor-relations",
+        "https://owners.wise.com/static-files/77d43fbe-0fd6-47ab-bb1d-63cee6d41624",
+        "https://owners.wise.com/static-files/c80f329d-a678-4de2-82a5-49a0c799af64",
+        "https://telescopeinvesting.com/should-you-review-in-wise/",
+        "https://wise.com/",
+        "https://wise.com/about",
+        "https://wise.com/ca/about/our-story",
+        "https://wise.com/careers"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "management",
+      "providers": [
+        "antigravity_codeassist",
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "local_xortron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "https://anchor.fm/s/34e2d888/podcast/rss",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Wise+",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Wise+plc&page%5Bsize%5D=5",
+        "https://api.gleif.org/api/v1/lei-records?filter[fulltext",
+        "https://cdn.prod.website-files.com/...i-Select...031.2026.pdf",
+        "https://cdn.prod.website-files.com/5e1533c83b28b3131344ab22/69cad958d8bd2caea326782f_i-Select%20Superannuation%20Scheme%20Investment%20Options%20Supplement%2031.03.2026.pdf",
+        "https://ck",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+Jahresabschluss",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+insolvenz",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+sanktionen",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+vergabe",
+        "https://ckan.govdata.de/...q=Wise+plc",
+        "https://ckan.govdata.de/api/3/action/package_search?q=Wise+plc&rows=5",
+        "https://dfpi.ca.gov/",
+        "https://dfpi.ca.gov/press_release/california-joins-4-2-million-multistate-enforcement-action-against-wise-us-inc-for-bsa-aml-violations/"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "group_context",
+      "providers": [
+        "antigravity_codeassist",
+        "codex_cli",
+        "local_xortron",
+        "minimax_search",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 5,
+      "source_urls": [
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Wise+plc&page%5Bsize%5D=5",
+        "https://dfpi.ca.gov/press_release/california-joins-4-2-million-multistate-enforcement-action-against-wise-us-inc-for-bsa-aml-violations/",
+        "https://docs.wise.com/",
+        "https://en.wikipedia.org/wiki/Wise_(company",
+        "https://find-and-update.company-information.service.gov.uk/company/13211214",
+        "https://owners.wise.com/about-wise",
+        "https://owners.wise.com/financials/financial-results",
+        "https://owners.wise.com/investor-relations",
+        "https://owners.wise.com/news-releases/news-release-details/scheme-arrangement",
+        "https://wise.com",
+        "https://wise.com/gb/safety-and-security/",
+        "https://wise.com/help/articles/1Tyvn34K9tp08aZ0y0Hqe0/data-breach-at-evolve-bank-trust-in-the-us",
+        "https://wise.com/help/articles/2932699/who-is-the-fca",
+        "https://wise.com/imaginary-v2/Wise-Annual-Report-Accounts-FY2023.pdf",
+        "https://wise.com/imaginary-v2/images/15c3575f774bd7ad32b08df7dcfb5722-WiseGroupplc-UKProspectus%2813April2026%29.pdf"
+      ],
+      "claim_level": "source-backed context",
+      "public_report_allowed": true,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "competitors",
+      "providers": [
+        "minimax_highspeed_b"
+      ],
+      "provider_count": 1,
+      "source_urls": [],
+      "claim_level": "model-synthesis requires source attachment",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "talent",
+      "providers": [
+        "minimax_highspeed_a"
+      ],
+      "provider_count": 1,
+      "source_urls": [],
+      "claim_level": "model-synthesis requires source attachment",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Attach source envelope and rerender report."
+    },
+    {
+      "topic": "finance_ubo_gate",
+      "providers": [
+        "antigravity_codeassist",
+        "codex_cli",
+        "hermes_deepseek",
+        "minimax_highspeed_a",
+        "minimax_highspeed_b",
+        "minimax_search",
+        "nvidia_nim_nemotron"
+      ],
+      "provider_count": 7,
+      "source_urls": [
+        "https://anchor.fm/s/34e2d888/podcast/rss",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Wise+",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Wise+plc&page%5Bsize%5D=5",
+        "https://api.gleif.org/api/v1/lei-records?filter[fulltext",
+        "https://cdn.prod.website-files.com/...i-Select...031.2026.pdf",
+        "https://ck",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+Jahresabschluss",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+insolvenz",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+sanktionen",
+        "https://ckan.govdata.de/...q=%22Wise+plc%22+vergabe",
+        "https://ckan.govdata.de/...q=Wise+plc",
+        "https://ckan.govdata.de/api/3/action/package_search?q=Wise+plc&rows=5",
+        "https://dfpi.ca.gov/",
+        "https://dfpi.ca.gov/press_release/california-joins-4-2-million-multistate-enforcement-action-against-wise-us-inc-for-bsa-aml-violations/",
+        "https://docs.wise.com/"
+      ],
+      "claim_level": "official-proof gated",
+      "public_report_allowed": false,
+      "official_upgrade_required": "Primary/provider document with source hash required before hard finance/ownership/UBO claim."
+    }
+  ]
+}

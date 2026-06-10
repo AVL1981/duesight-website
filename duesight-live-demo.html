@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- DueSight Intelligence Panel — Standalone Drop-in Component -->
+<!-- Gegenereerd door sessie 10 | 2026-03-24 -->
+<!-- 
+  Dit bestand bevat de Intelligence Panel HTML die in index.html is
+  geïnjecteerd via id="ds-teaser-placeholder".
+  
+  Gebruik: embed de .scan-dashboard div in elke pagina die de CSS-klassen
+  uit index.html heeft (.metric-card, .scan-dashboard, .dmi-section, etc.)
+  en laad scan_client.js — die injecteert automatisch het scanformulier
+  in .scan-dashboard-header.
+-->
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DueSight Intelligence Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0d17;
+      --bg-card: rgba(15,23,42,0.55);
+      --border-glass: rgba(255,255,255,0.1);
+      --accent-primary: #6366f1;
+      --accent-secondary: #22d3ee;
+      --text-primary: #e4e1f0;
+      --text-secondary: rgba(228,225,240,0.7);
+      --text-muted: rgba(228,225,240,0.5);
+      --success: #22c55e;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-primary); margin: 0; padding: 40px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .scan-dashboard { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 20px; padding: 28px; position: relative; overflow: hidden; }
+    .scan-dashboard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #22d3ee); }
+    .scan-dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .scan-dashboard-header h4 { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0; }
+    .scan-dashboard-header h4::before { content: ''; width: 3px; height: 16px; border-radius: 2px; background: linear-gradient(180deg, #6366f1, #22d3ee); }
+    .scan-live-badge { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #22c55e; font-weight: 600; padding: 4px 12px; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.15); border-radius: 20px; }
+    .scan-status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; animation: pulseDot 2s ease-in-out infinite; }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1);box-shadow:0 0 0 0 rgba(34,197,94,0.5)} 50%{opacity:0.6;transform:scale(1.5);box-shadow:0 0 0 6px rgba(34,197,94,0)} }
+    .metric-cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .metric-card { background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 16px; padding: 16px 14px; display: flex; align-items: flex-start; gap: 12px; }
+    .metric-gauge { flex-shrink: 0; width: 56px; height: 56px; position: relative; }
+    .metric-gauge svg { width: 56px; height: 56px; }
+    .gauge-orbit { position: absolute; width: 4px; height: 4px; background: rgba(34,211,238,0.6); border-radius: 50%; top: 50%; left: 50%; margin: -2px 0 0 -2px; animation: orbitParticle 4s linear infinite; }
+    @keyframes orbitParticle { 0%{transform:rotate(0deg) translateX(32px) rotate(0deg)} 100%{transform:rotate(360deg) translateX(32px) rotate(-360deg)} }
+    .gauge-track { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 5; }
+    .gauge-fill { fill: none; stroke-width: 5; stroke-linecap: round; transform: rotate(-90deg); transform-origin: center; }
+    .gauge-value { font-family: 'Inter', sans-serif; font-weight: 800; }
+    .metric-info { flex: 1; min-width: 0; }
+    .metric-info h5 { font-size: 12px; font-weight: 700; margin: 0 0 2px 0; color: var(--text-primary); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .metric-icon { font-size: 13px; }
+    .metric-desc { font-size: 10px; color: var(--text-muted); line-height: 1.45; margin-bottom: 8px; }
+    .metric-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 20px; margin-left: auto; }
+    .metric-badge.good { background: rgba(34,197,94,0.12); color: #22c55e; }
+    .metric-badge.warn { background: rgba(245,158,11,0.12); color: #f59e0b; }
+    .metric-badge.great { background: rgba(34,211,238,0.12); color: #22d3ee; }
+    .metric-bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .metric-bar-track { flex: 1; height: 7px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+    .metric-bar-fill { height: 100%; border-radius: 4px; }
+    .metric-score { font-size: 13px; font-weight: 700; min-width: 55px; text-align: right; }
+    .metric-grounding { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding: 4px 8px; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12); border-radius: 8px; font-size: 9px; color: var(--text-muted); }
+    .grounding-score { font-weight: 800; }
+    .grounding-score.high { color: #22c55e; }
+    .grounding-score.mid { color: #f59e0b; }
+    .grounding-sources { opacity: 0.7; font-size: 8px; }
+    .dmi-section { margin-top: 20px; padding: 20px; background: rgba(99,102,241,0.04); border: 1px solid rgba(99,102,241,0.12); border-radius: 16px; position: relative; overflow: hidden; }
+    .dmi-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,#6366f1,#22d3ee,#22c55e,#f59e0b); }
+    .dmi-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .dmi-header h4 { font-size: 13px; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 8px; margin: 0; }
+    .dmi-composite-score { font-size: 22px; font-weight: 800; background: linear-gradient(135deg,#6366f1,#22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .dmi-bars { display: flex; flex-direction: column; gap: 10px; }
+    .dmi-bar-row { display: flex; align-items: center; gap: 10px; }
+    .dmi-bar-label { font-size: 10px; color: var(--text-muted); min-width: 110px; font-weight: 600; }
+    .dmi-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+    .dmi-bar-fill { height: 100%; border-radius: 4px; }
+    .dmi-bar-value { font-size: 11px; font-weight: 800; min-width: 36px; text-align: right; }
+    .dmi-footnote { margin-top: 14px; padding: 10px 14px; background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.15); border-radius: 10px; font-size: 10px; color: var(--text-muted); line-height: 1.6; }
+    .eu-ai-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); border-radius: 20px; font-size: 8px; font-weight: 700; color: #a78bfa; letter-spacing: 0.5px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div style="text-align:center;margin-bottom:32px;">
+    <h1 style="font-size:1.8rem;font-weight:700;color:#e4e1f0;margin:0 0 8px;">DueSight Intelligence Panel</h1>
+    <p style="color:#908fa0;">Standalone drop-in component — geïntegreerd in index.html via id="ds-teaser-placeholder"</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTELLIGENCE PANEL — drop-in HTML
+       Vereiste CSS-klassen aanwezig in index.html stylesheet.
+       scan_client.js injecteert automatisch het scanformulier.
+       ═══════════════════════════════════════════════════════ -->
+  <div class="scan-dashboard">
+    <div class="scan-dashboard-header">
+      <h4>Live Scan Dashboard</h4>
+      <div class="scan-live-badge"><span class="scan-status-dot"></span> LIVE</div>
+    </div>
+
+    <div class="metric-cards-grid">
+      <!-- Metric 1: Web Presence Score -->
+      <div class="metric-card" data-metric="domain-authority">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#6366f1" stroke-dasharray="0 138" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#e4e1f0" font-size="11">&mdash;</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">🌐</span> Web Presence Score <span class="metric-badge great">&mdash;</span></h5>
+          <div class="metric-desc">Domeinautoriteit · marktdominantie proxy · cryptografische integriteit.</div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width:0%;background:linear-gradient(90deg,#6366f1,#818cf8);"></div></div>
+            <span class="metric-score" style="color:#818cf8;">&mdash;</span>
+          </div>
+          <div class="metric-grounding"><span class="grounding-score high">&mdash;</span><span class="grounding-sources">wacht op scan</span></div>
+        </div>
+      </div>
+
+      <!-- Metric 2: Infrastructure Resilience -->
+      <div class="metric-card" data-metric="pagespeed">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#22d3ee" stroke-dasharray="0 138" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#e4e1f0" font-size="11">&mdash;</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">⚡</span> Infrastructuur Veerkracht <span class="metric-badge great">&mdash;</span></h5>
+          <div class="metric-desc">Systeemsnelheid · operationeel M&amp;A integratie-risico.</div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width:0%;background:linear-gradient(90deg,#22d3ee,#67e8f9);"></div></div>
+            <span class="metric-score" style="color:#22d3ee;">&mdash;</span>
+          </div>
+          <div class="metric-grounding"><span class="grounding-score high">&mdash;</span><span class="grounding-sources">wacht op scan</span></div>
+        </div>
+      </div>
+
+      <!-- Metric 3: Cyber Vulnerability Index -->
+      <div class="metric-card" data-metric="security-headers">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#f59e0b" stroke-dasharray="0 138" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#e4e1f0" font-size="11">&mdash;</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">🛡️</span> Cyber Kwetsbaarheidsindex <span class="metric-badge warn">&mdash;</span></h5>
+          <div class="metric-desc">Security headers · aanvalsoppervlak · NIS2 compliance indicatie.</div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width:0%;background:linear-gradient(90deg,#f59e0b,#fcd34d);"></div></div>
+            <span class="metric-score" style="color:#f59e0b;">&mdash;</span>
+          </div>
+          <div class="metric-grounding"><span class="grounding-score mid">&mdash;</span><span class="grounding-sources">wacht op scan</span></div>
+        </div>
+      </div>
+
+      <!-- Metric 4: Commercial Traction -->
+      <div class="metric-card" data-metric="serp-visibility">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#22c55e" stroke-dasharray="0 138" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#e4e1f0" font-size="11">&mdash;</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">📈</span> Commerciële Tractie-index <span class="metric-badge good">&mdash;</span></h5>
+          <div class="metric-desc">Organische footprint · CAC-risico · marktpositie validatie.</div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width:0%;background:linear-gradient(90deg,#22c55e,#4ade80);"></div></div>
+            <span class="metric-score" style="color:#22c55e;">&mdash;</span>
+          </div>
+          <div class="metric-grounding"><span class="grounding-score high">&mdash;</span><span class="grounding-sources">wacht op scan</span></div>
+        </div>
+      </div>
+
+      <!-- Metric 5: Public Reputation & ESG -->
+      <div class="metric-card" data-metric="sentiment">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#a78bfa" stroke-dasharray="0 138" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#e4e1f0" font-size="11">&mdash;</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">💬</span> Reputatie &amp; ESG-signalen <span class="metric-badge great">&mdash;</span></h5>
+          <div class="metric-desc">Publieke perceptie · ESG-risico · sentiment analyse.</div>
+          <div class="metric-bar-wrap">
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width:0%;background:linear-gradient(90deg,#a78bfa,#c4b5fd);"></div></div>
+            <span class="metric-score" style="color:#a78bfa;">&mdash;</span>
+          </div>
+          <div class="metric-grounding"><span class="grounding-score high">&mdash;</span><span class="grounding-sources">wacht op scan</span></div>
+        </div>
+      </div>
+
+      <!-- Metric 6: Threat Intelligence Status -->
+      <div class="metric-card" data-metric="safe-browsing">
+        <div class="metric-gauge">
+          <svg viewBox="0 0 56 56">
+            <circle class="gauge-track" cx="28" cy="28" r="22" transform="rotate(-90 28 28)"/>
+            <circle class="gauge-fill" cx="28" cy="28" r="22" stroke="#34d399" stroke-dasharray="138 0" transform="rotate(-90 28 28)"/>
+            <text class="gauge-value" x="28" y="33" text-anchor="middle" fill="#34d399" font-size="9">OK</text>
+          </svg>
+          <div class="gauge-orbit"></div>
+        </div>
+        <div class="metric-info">
+          <h5><span class="metric-icon">🔍</span> Threat Intelligence Status <span class="metric-badge good">✔ Clean</span></h5>
+          <div class="metric-desc">Internationale threat databases · direct red-flag bij match.</div>
+          <div class="metric-grounding"><span class="grounding-score high">OSINT</span><span class="grounding-sources">Safe Browsing · OpenSanctions · ICIJ</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Digital Maturity Index -->
+    <div class="dmi-section" style="margin-top:20px;">
+      <div class="dmi-header">
+        <h4>📊 Digital Maturity Index <span class="eu-ai-badge">EU AI Act</span></h4>
+        <div class="dmi-composite-score">&mdash;</div>
+      </div>
+      <div class="dmi-bars">
+        <div class="dmi-bar-row"><span class="dmi-bar-label">🌐 Visibility</span><div class="dmi-bar-track"><div class="dmi-bar-fill" style="width:0%;background:linear-gradient(90deg,#6366f1,#818cf8);"></div></div><span class="dmi-bar-value" style="color:#818cf8;">&mdash;</span></div>
+        <div class="dmi-bar-row"><span class="dmi-bar-label">🔒 Trust &amp; Security</span><div class="dmi-bar-track"><div class="dmi-bar-fill" style="width:0%;background:linear-gradient(90deg,#22d3ee,#67e8f9);"></div></div><span class="dmi-bar-value" style="color:#22d3ee;">&mdash;</span></div>
+        <div class="dmi-bar-row"><span class="dmi-bar-label">⚡ Operationele Veerkracht</span><div class="dmi-bar-track"><div class="dmi-bar-fill" style="width:0%;background:linear-gradient(90deg,#22c55e,#4ade80);"></div></div><span class="dmi-bar-value" style="color:#22c55e;">&mdash;</span></div>
+        <div class="dmi-bar-row"><span class="dmi-bar-label">🔧 Technische Schuld</span><div class="dmi-bar-track"><div class="dmi-bar-fill" style="width:0%;background:linear-gradient(90deg,#f59e0b,#fcd34d);"></div></div><span class="dmi-bar-value" style="color:#f59e0b;">&mdash;</span></div>
+      </div>
+      <div class="dmi-footnote"><strong>⚠ Demo-modus:</strong> Voer een domein in om live data te laden. Metrics worden real-time bijgewerkt via de DueSight Intelligence Engine.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Auto-start demo wanneer standalone geladen
+setTimeout(() => {
+  if (!window._userActive) window.startScan?.('Mollie B.V.');
+}, 8000);
+</script>
+</body>
+</html>

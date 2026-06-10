@@ -1,0 +1,39 @@
+name: Nightly Data Refresh
+
+on:
+  schedule:
+    # Runs daily at 02:00 UTC (03:00 CET)
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: pip install httpx
+
+      - name: Run KvK + Sanctions data refresh
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          KVK_API_KEY: ${{ secrets.KVK_API_KEY }}
+        run: python scripts/data_refresh.py
+
+      - name: Summary
+        run: |
+          echo "## 🔄 Nightly Data Refresh Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ KvK data refreshed for stale companies" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ OpenSanctions screening updated" >> $GITHUB_STEP_SUMMARY
+          echo "- ⏰ Next run: tomorrow at 03:00 CET" >> $GITHUB_STEP_SUMMARY
