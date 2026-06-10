@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - DueSight</title>
+  <meta name="description" content="Neem contact op met DueSight voor handmatige intake, voorbeeldrapporten en pre-DD vragen.">
+  <link rel="canonical" href="https://avl1981.github.io/duesight-website/contact.html">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070b12;
+      --panel: #0e1624;
+      --line: rgba(148, 163, 184, .22);
+      --text: #f8fafc;
+      --muted: #a8b3c7;
+      --blue: #4f8cff;
+      --teal: #13d6b1;
+      --warn: #fbbf24;
+      font-family: Manrope, Inter, Segoe UI, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 56px;
+      font-size: 14px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 2px solid var(--blue);
+      border-radius: 8px;
+      display: inline-grid;
+      place-items: center;
+      color: var(--teal);
+      font-weight: 900;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+    .nav-links a { text-decoration: none; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 32px;
+      align-items: start;
+    }
+    .eyebrow {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: .95;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 0 26px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .04);
+      color: var(--text);
+    }
+    .btn.primary {
+      border-color: rgba(79, 140, 255, .65);
+      background: #2f6df6;
+      color: white;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .panel h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .panel p, .panel li {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .panel ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+    .notice {
+      margin-top: 22px;
+      border-left: 3px solid var(--warn);
+      padding: 12px 14px;
+      color: var(--muted);
+      background: rgba(251, 191, 36, .08);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+    }
+    .small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 48px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    @media (max-width: 820px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav" aria-label="Contact navigatie">
+      <a class="brand" href="index.html"><span class="mark">D</span><span>DueSight</span></a>
+      <span class="nav-links">
+        <a href="index.html#pricing">Prijzen</a>
+        <a href="index.html#samples">Samples</a>
+        <a href="privacy/">Privacy</a>
+        <a href="assurance/">Trust</a>
+      </span>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Handmatige intake</div>
+        <h1>Bespreek een targetscan of memo.</h1>
+        <p class="lede">DueSight is beschikbaar voor handmatige intake, voorbeeldrapporten en pre-DD scopevragen. Deel geen gevoelige dataroomdocumenten in de eerste mail; stuur alleen de targetnaam, context en gewenste output.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:info@duesight.nl?subject=DueSight%20intake%20aanvraag&body=Target%20of%20bedrijf%3A%0AContext%20deal%20of%20vraag%3A%0AGewenste%20output%3A%20Quick%20scan%20%2F%20Evidence%20memo%20%2F%20Uitgebreid%20dossier%0ATiming%3A%0A">Mail intake</a>
+          <a class="btn" href="index.html#pricing">Bekijk prijzen</a>
+          <a class="btn" href="index.html#samples">Bekijk samples</a>
+        </div>
+        <div class="notice">Online checkout en live payment blijven afhankelijk van de launch gates voor legal review, SMTP, Mollie live-configuratie en service monitoring. Tot die tijd loopt verkoop alleen via handmatige intake en expliciete bevestiging.</div>
+      </div>
+
+      <aside class="panel">
+        <h2>Stuur mee</h2>
+        <ul>
+          <li>Targetnaam, land en website of KvK-nummer als dat al bekend is.</li>
+          <li>Dealcontext: acquisitie, vendor DD, portfolio review of monitoring.</li>
+          <li>Gewenste output: quick scan, evidence memo of uitgebreider dossier.</li>
+          <li>Deadline en taalvoorkeur.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="grid" aria-label="Contact routes">
+      <article class="panel">
+        <h2>Sales en intake</h2>
+        <p><a href="mailto:info@duesight.nl">info@duesight.nl</a></p>
+        <p>Voor targetscans, memo's, batchvragen en voorbeeldrapporten.</p>
+      </article>
+      <article class="panel">
+        <h2>Legal en privacy</h2>
+        <p><a href="mailto:legal@duesight.nl">legal@duesight.nl</a><br><a href="mailto:privacy@duesight.nl">privacy@duesight.nl</a></p>
+        <p>Voor DPA, privacyvragen, contractdocumentatie en rechtenverzoeken.</p>
+      </article>
+      <article class="panel">
+        <h2>Security</h2>
+        <p><a href="mailto:security@duesight.nl">security@duesight.nl</a></p>
+        <p>Voor securitymeldingen en responsible disclosure.</p>
+      </article>
+    </section>
+
+    <p class="small">DueSight is een productnaam van Vibe The Code (KvK 99920301). Deze pagina is een contact- en intakepunt, geen juridisch advies en geen bevestiging dat online checkout live staat.</p>
+  </main>
+</body>
+</html>
