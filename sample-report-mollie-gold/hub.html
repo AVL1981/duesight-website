@@ -17,7 +17,7 @@
 
 <script>function dsTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem('ds-report-theme',t)}document.addEventListener('DOMContentLoaded',function(){dsTheme(localStorage.getItem('ds-report-theme')||'dark')});</script>
 </head>
-<body><div class="topbar"><div class="brand">DueSight</div><nav class="nav"><a href="index.html">Kort</a><a href="hub.html">Uitgebreid</a><a href="flipbook.html">Flipbook</a><a href="pipeline-manifest.json">Manifest</a><a href="evidence-ledger.json">Ledger</a></nav><div class="theme"><button onclick="dsTheme('light')">Light</button><button onclick="dsTheme('dark')">Dark</button></div></div>
+<body><div class="topbar"><div class="brand">DueSight</div><nav class="nav"><a href="index.html">Kort</a><a href="hub.html">Uitgebreid</a><a href="flipbook.html">Flipbook</a></nav><div class="theme"><button onclick="dsTheme('light')">Light</button><button onclick="dsTheme('dark')">Dark</button></div></div>
 <main class="shell">
   <section class="hero">
     <div class="hero-card">
@@ -74,8 +74,7 @@
   </section>
   <section class="panel section" id="audit">
     <h2>Audit Appendix</h2>
-    <p class="muted">Manifest, evidence support model en evidence ledger blijven beschikbaar voor replay en audit. Het hoofdrapport toont alleen gecureerde buyer-facing samenvattingen.</p>
-    <div class="links"><a href="pipeline-manifest.json">Manifest</a><a href="pipeline-score.json">Score JSON</a><a href="evidence-ledger.json">Evidence ledger</a><a href="company-intel-findings.json">Company intel findings</a></div>
+    <p class="muted">Replay- en auditdetails blijven intern reproduceerbaar. Het hoofdrapport toont alleen gecureerde buyer-facing samenvattingen.</p>
   </section>
   <section class="panel section">
     <h2>Limitations & Next Actions</h2>
