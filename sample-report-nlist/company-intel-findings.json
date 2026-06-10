@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.company_intel_findings.v1",
-  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
   "target": "NLIST B.V.",
-  "updated_at": "2026-06-08T13:34:55+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -10,11 +10,10 @@
       "what_duesight_found": "NLIST wordt in de publieke laag zichtbaar als technical staffing / detachering met internationale sourcing, relocation, fieldmanagement en backoffice-uitvoering.",
       "buyer_value": "Dit is een sterkere buyer-thesis dan een generiek recruitmentbureau: de waarde zit in schaarse profielen plus uitvoering rond relocatie en plaatsing.",
       "claim_level": "source-backed public context",
-      "evidence_rows": 3,
-      "memo_safe_rows": 3,
+      "evidence_rows": 1,
+      "memo_safe_rows": 1,
       "sources": [
-        "thespecialistgroup.com",
-        "nlist.nl"
+        "thespecialistgroup.com"
       ],
       "source_envelope": {
         "required": [
@@ -36,11 +35,9 @@
       "what_duesight_found": "De target-owned teamlaag noemt managing partners en operationele rollen, waaronder Anne-Jan Geertsma, Dennis Kuiper, Stephanie van der Toorn - Faas, Roy Beekman, consultants, recruiters, relocation en backoffice.",
       "buyer_value": "Een koper ziet direct of er leadership, commercial, delivery, sourcing en operations capaciteit aanwezig is.",
       "claim_level": "high public/team-page context",
-      "evidence_rows": 6,
-      "memo_safe_rows": 6,
-      "sources": [
-        "nlist.nl"
-      ],
+      "evidence_rows": 0,
+      "memo_safe_rows": 0,
+      "sources": [],
       "source_envelope": {
         "required": [
           "source",
@@ -61,17 +58,17 @@
       "what_duesight_found": "Publieke bronnen koppelen NLIST herhaald aan The Specialist Group en aan een overname-/platformnarratief.",
       "buyer_value": "Dit maakt de platform-fit, cross-sell en consolidatielogica zichtbaar, maar blijft geen aandeelhoudersbewijs.",
       "claim_level": "high public transaction context",
-      "evidence_rows": 19,
-      "memo_safe_rows": 7,
+      "evidence_rows": 18,
+      "memo_safe_rows": 6,
       "sources": [
-        "news.google.com",
         "nlist.nl",
         "thespecialistgroup.com",
         "nl.linkedin.com",
         "open identity reference",
         "international entity register route",
         "Public Website",
-        "archive discovery"
+        "archive discovery",
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -119,10 +116,10 @@
       "buyer_value": "Commercieel bruikbaar als signalering voor groei, niet als harde financiele claim.",
       "claim_level": "review-only growth context",
       "evidence_rows": 3,
-      "memo_safe_rows": 3,
+      "memo_safe_rows": 2,
       "sources": [
-        "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
-        "nlist.nl"
+        "nlist.nl",
+        "Financial Times FT1000"
       ],
       "source_envelope": {
         "required": [
@@ -144,7 +141,7 @@
       "what_duesight_found": "Company.info/Creditsafe routes en DueSight finance modules zijn gevonden, maar er is geen target-specifieke jaarrekening/XBRL/P&L met bronhash attached.",
       "buyer_value": "Het rapport kan de documentvraag scherp maken zonder revenue of resultaatcijfers te verzinnen.",
       "claim_level": "blocked for official finance claim",
-      "evidence_rows": 5,
+      "evidence_rows": 3,
       "memo_safe_rows": 0,
       "sources": [
         "provider discovery route"
@@ -170,10 +167,10 @@
       "buyer_value": "Goed voor snelle buyer triage: geen rode paniekclaim, wel duidelijke rerun op directors/UBO en asset-owned cyber scan.",
       "claim_level": "guarded triage signal",
       "evidence_rows": 5,
-      "memo_safe_rows": 3,
+      "memo_safe_rows": 2,
       "sources": [
-        "sanctions screening route",
-        "infrastructure exposure route + network registry route"
+        "infrastructure exposure route + network registry route",
+        "sanctions screening route"
       ],
       "source_envelope": {
         "required": [

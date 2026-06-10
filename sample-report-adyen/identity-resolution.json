@@ -7,8 +7,7 @@
   "claim_level": "configured and source-route context; official extract required for final reliance",
   "sources": [
     "Public Website",
-    "public professional source route",
-    "DueSight adverse-media source ladder (public news + legal metadata)"
+    "public professional source route"
   ],
   "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
 }

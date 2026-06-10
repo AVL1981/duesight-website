@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.company_intel_gate_report.v1",
-  "run_id": "certified-samples-rest-20260526-235449-wise",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-wise",
   "target": "Wise plc",
-  "updated_at": "2026-06-08T13:34:28+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "decision": "publish_context_only_with_official_upgrade_route",
   "gates": [
     {
@@ -15,7 +15,7 @@
       "id": "G2",
       "name": "Source count",
       "status": "PASS",
-      "message": "14 distinct source labels in ledger rows."
+      "message": "13 distinct source labels in ledger rows."
     },
     {
       "id": "G3",

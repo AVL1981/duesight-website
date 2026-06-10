@@ -2,15 +2,15 @@
   "aggregate_score_certified": true,
   "investment_verdict_certified": false,
   "score_kind": "DueSight Evidence Readiness Score",
-  "score_model": "duesight.sample_report_source_support_model.v2",
+  "score_model": "duesight.sample_report_score_model.v2",
   "score": 70,
   "scale": "0-100",
   "display_value": "70/100",
   "verdict": "READY_WITH_LIMITATIONS",
   "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
   "score_confidence": "medium",
-  "computed_at": "2026-05-28T10:34:24+00:00",
-  "run_id": "certified-samples-rest-20260526-235449-adyen",
+  "computed_at": "2026-06-10T15:40:15+00:00",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-adyen",
   "target": {
     "slug": "sample-report-adyen",
     "company_name": "Adyen N.V.",
@@ -19,20 +19,20 @@
     "kvk_number": "34259528",
     "ch_uid": "",
     "tier": "standard",
-    "identity_resolution_path": "identity-resolution.json",
-    "identity_resolution_status": "configured_needs_official_extract",
-    "previous_configured_kvk_number": "34259528"
+    "identity_resolution_path": "identity-resolution.json"
   },
   "inputs": {
     "manifest_path": "pipeline-manifest.json",
     "ledger_path": "evidence-ledger.json",
-    "evidence_rows": 49,
+    "evidence_rows": 46,
     "source_envelope_complete": true,
     "source_envelope_incomplete_rows": 0,
     "provider_preflight_summary": {
-      "OK": 8,
-      "OPTIONAL_NOT_CONFIGURED": 4,
-      "HOSTED_FALLBACK_DEFERRED": 2
+      "OK": 7,
+      "CREDIT_REQUIRED": 1,
+      "SKIPPED_RECOVERY_CADENCE": 1,
+      "SKIPPED_LOCAL_PRIMARY": 1,
+      "OPTIONAL_NOT_CONFIGURED": 4
     }
   },
   "components": [
@@ -44,10 +44,10 @@
       "status": "strong",
       "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
       "evidence": [
-        "rows=49",
+        "rows=46",
         "source_envelope_complete=True",
         "incomplete_rows=0",
-        "run_id=certified-samples-rest-20260526-235449-adyen"
+        "run_id=sample-pipeline-replay-20260610T154700Z-all-adyen"
       ],
       "limitations": [
         "Evidence completeness is not the same as business-risk completeness."
@@ -56,15 +56,15 @@
     {
       "name": "source_readiness",
       "label": "Source readiness",
-      "score": 7,
+      "score": 9,
       "max_score": 13,
-      "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "status": "strong",
+      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
       "evidence": [
-        "preflight_ok=8",
-        "hosted_fallback_deferred=2",
+        "preflight_ok=7",
+        "hosted_fallback_deferred=0",
         "optional_not_configured=4",
-        "source_health=YELLOW"
+        "source_health=GREEN"
       ],
       "limitations": [
         "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
@@ -73,7 +73,7 @@
     {
       "name": "compliance_media",
       "label": "Compliance and media",
-      "score": 16,
+      "score": 12,
       "max_score": 18,
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
@@ -81,10 +81,10 @@
         "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
-        "hosted_fallback_deferred=2"
+        "hosted_fallback_deferred=0"
       ],
       "limitations": [
-        "Zero candidates is source-limited and not proof of reputation clearance.",
+        "No-hit is not proof of clean reputation.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ]
     },
@@ -113,7 +113,7 @@
       "rationale": "Finance route is technically verified, but no memo-safe official filing or target-specific finance output is available.",
       "evidence": [
         "finance_status=available",
-        "finance_rows=3",
+        "finance_rows=2",
         "official_finance_source_unavailable=True"
       ],
       "limitations": [
@@ -129,7 +129,7 @@
       "rationale": "External footprint evidence exists, but provider/CDN context is not target-owned exposure without asset proof.",
       "evidence": [
         "cyber_status=OK",
-        "cyber_rows=2",
+        "cyber_rows=1",
         "target_claim_safe=False"
       ],
       "limitations": [
@@ -139,14 +139,14 @@
     {
       "name": "business_context",
       "label": "Business context",
-      "score": 5,
+      "score": 7,
       "max_score": 7,
-      "status": "limited",
+      "status": "context_rich",
       "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
       "evidence": [
-        "business_profile_rows=16",
-        "award_rows=0",
-        "award_status=unknown",
+        "business_profile_rows=14",
+        "award_rows=1",
+        "award_status=no_hit",
         "public_acquisition_rows=10",
         "premium_source_rows=5",
         "local_bulk_rows=8"

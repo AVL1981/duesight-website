@@ -1,6 +1,6 @@
 {
   "schema_version": "duesight.commercial_deep_research_delta.v1",
-  "target": "Get There ICT Solutions B.V.",
+  "target": "Get There ICT professionals",
   "identity_resolution": {
     "status": "configured_needs_official_extract",
     "configured_kvk": "",
@@ -10,15 +10,14 @@
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
       "Public Website",
-      "kvk_public",
-      "DueSight adverse-media source ladder (public news + legal metadata)"
+      "kvk_public"
     ],
     "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
   },
   "target_contacts": {
-    "count": 20,
+    "count": 1,
     "role_buckets": {
-      "source_rows": 20
+      "source_rows": 1
     },
     "source": "business_profile_intel / public source rows",
     "claim_level": "public/team/contact context if source-enveloped; otherwise route context",
@@ -34,27 +33,16 @@
   "talent_intel": {
     "source": "getthere.nl",
     "claim_level": "hiring and skill context; live counts require fresh archived replay",
-    "role_families": [
-      {
-        "family": "Hiring routes",
-        "signals": [
-          "LinkedIn Jack Anja Hektor is listed with role Recruitment & Coördin...",
-          "LinkedIn Anja Mark van der Molen is listed with role Recruiter for..."
-        ]
-      }
-    ],
+    "role_families": [],
     "skill_buckets": [],
-    "source_rows": 2
+    "source_rows": 0
   },
   "customer_signal": {
     "source": "getthere.nl",
     "claim_level": "public customer/partner context; concentration requires seller/provider proof",
     "examples": [
-      "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT...",
-      "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with ro...",
-      "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners...",
-      "Lees meer is listed with role IT Partners for Get There ICT Solutions B.V..",
-      "Cases Over ons Privacy is listed with role Cookies for Get There ICT Solution..."
+      "News/reference signal found for Get There ICT professionals: DUO selecteert p...",
+      "News/reference signal found for Get There ICT professionals: CJIB kiest voork..."
     ]
   },
   "source_layer_passes": {
@@ -65,6 +53,7 @@
       "ownership_register",
       "business_profile_intel",
       "company_intel_deep_research",
+      "award_intelligence",
       "local_bulk_inventory",
       "regulatory_exposure",
       "reputation_adverse_media",
@@ -72,8 +61,7 @@
       "premium_source_discovery",
       "source_health",
       "provider_preflight",
-      "llm_orchestrator_synthesis",
-      "social_sentiment_intel"
+      "llm_orchestrator_synthesis"
     ],
     "source_labels": [
       "open identity reference",
@@ -84,13 +72,9 @@
       "infrastructure exposure route + network registry route",
       "sanctions screening route",
       "kvk_public",
-      "ownership review route",
-      "getthere.nl",
       "news.google.com",
-      "linkedin.com",
-      "audit artifact",
       "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
-      "DueSight adverse-media source ladder (public news + legal metadata)"
+      "news discovery route / Google News RSS / Rechtspraak metadata (news discovery route:PAS..."
     ],
     "tools_expected": [
       "business_profile_intel",
@@ -105,14 +89,14 @@
     ]
   },
   "measurable_delta": {
-    "contacts_added_from_business_profile": 20,
+    "contacts_added_from_business_profile": 1,
     "role_buckets_added": 1,
     "competitor_records_added": 0,
-    "talent_buckets_added": 2,
-    "customer_examples_added": 5,
+    "talent_buckets_added": 0,
+    "customer_examples_added": 2,
     "identity_conflicts_detected": 0,
     "source_layers_recorded": 15,
-    "distinct_source_labels": 15
+    "distinct_source_labels": 11
   },
   "guardrails": [
     "LinkedIn/social is discovery or corroboration only.",
@@ -120,6 +104,6 @@
     "Finance, ownership and UBO stay gated until official/provider documents with source hash are attached.",
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
-  "run_id": "certified-samples-rest-20260526-235449-getthere",
-  "updated_at": "2026-06-08T13:34:27+00:00"
+  "run_id": "sample-pipeline-replay-20260610T161000Z-getthere-getthere",
+  "updated_at": "2026-06-10T16:06:28+00:00"
 }

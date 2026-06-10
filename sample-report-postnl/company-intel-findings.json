@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.company_intel_findings.v1",
-  "run_id": "certified-samples-rest-20260526-235449-postnl",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-postnl",
   "target": "PostNL N.V.",
-  "updated_at": "2026-06-08T13:34:27+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -10,8 +10,8 @@
       "what_duesight_found": "DueSight heeft voor PostNL N.V. publieke bedrijfs-, markt- en bronroutes samengebracht zonder targetvreemde NLIST/TSG-context te promoten.",
       "buyer_value": "Een koper ziet wat publiek onderbouwd is en welke route nog naar official-proof moet.",
       "claim_level": "source-backed or route-backed context",
-      "evidence_rows": 20,
-      "memo_safe_rows": 18,
+      "evidence_rows": 17,
+      "memo_safe_rows": 15,
       "sources": [
         "postnl.nl",
         "news.google.com",
@@ -38,12 +38,12 @@
       "what_duesight_found": "Management-, team- of contactinformatie voor PostNL N.V. wordt alleen getoond wanneer de replay targetrelevante bronroutes bevat.",
       "buyer_value": "Dit voorkomt dat social/profile hints worden verward met juridische bestuurderclaims.",
       "claim_level": "public/team context or route context",
-      "evidence_rows": 8,
-      "memo_safe_rows": 7,
+      "evidence_rows": 5,
+      "memo_safe_rows": 3,
       "sources": [
-        "sanctions screening route",
         "postnl.nl",
-        "provider discovery route"
+        "provider discovery route",
+        "sanctions screening route"
       ],
       "source_envelope": {
         "required": [
@@ -88,11 +88,9 @@
       "what_duesight_found": "Finance-routes voor PostNL N.V. blijven geblokkeerd voor harde cijfers zolang geen jaarrekening, XBRL, P&L of providerdocument met bronhash is gekoppeld.",
       "buyer_value": "Het rapport maakt de documentvraag scherp in plaats van revenue of resultaatcijfers te verzinnen.",
       "claim_level": "blocked for official finance claim",
-      "evidence_rows": 2,
+      "evidence_rows": 1,
       "memo_safe_rows": 0,
-      "sources": [
-        "audit artifact"
-      ],
+      "sources": [],
       "source_envelope": {
         "required": [
           "source",
@@ -114,12 +112,11 @@
       "buyer_value": "Buyers krijgen een concrete close-route zonder dat publieke hints als aandeelhoudersbewijs worden verkocht.",
       "claim_level": "blocked for official ownership claim",
       "evidence_rows": 6,
-      "memo_safe_rows": 1,
+      "memo_safe_rows": 0,
       "sources": [
-        "sanctions screening route",
         "international entity register route",
-        "international entity register route LEI register corroboration",
-        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
+        "sanctions screening route",
+        "international entity register route LEI register corroboration"
       ],
       "source_envelope": {
         "required": [
@@ -138,20 +135,20 @@
     {
       "id": "commercial-deep-research-yield",
       "title": "Commercial deep-research yield gemeten",
-      "what_duesight_found": "De replay bevat 14 bronlabels, 15 modulelagen en 8 team/contact routes.",
+      "what_duesight_found": "De replay bevat 13 bronlabels, 15 modulelagen en 5 team/contact routes.",
       "buyer_value": "Hiermee wordt zichtbaar hoeveel commerciële context de huidige bronlagen al opleveren voordat official-proof documenten worden toegevoegd.",
       "claim_level": "measured replay context",
-      "evidence_rows": 50,
-      "memo_safe_rows": 23,
+      "evidence_rows": 46,
+      "memo_safe_rows": 19,
       "sources": [
+        "tools.award_intel.award_intel_tool",
         "open identity reference",
         "international entity register route",
         "Public Website",
         "archive discovery",
         "provider discovery route",
         "infrastructure exposure route + network registry route",
-        "sanctions screening route",
-        "international entity register route LEI register corroboration"
+        "sanctions screening route"
       ],
       "source_envelope": {
         "required": [
@@ -170,20 +167,20 @@
     {
       "id": "market-talent-commercial-routes",
       "title": "Market, talent en klant-routes staan klaar",
-      "what_duesight_found": "Commercial route scan telt 0 competitor rows, 0 hiring/skill rows en 2 customer/partner rows.",
+      "what_duesight_found": "Commercial route scan telt 0 competitor rows, 0 hiring/skill rows en 0 customer/partner rows.",
       "buyer_value": "Dit voorkomt dat de rapportage alleen auditstatus toont; per target is nu zichtbaar welke sales, talent en marktcontext nog verrijkt moet worden.",
       "claim_level": "route-backed context",
-      "evidence_rows": 2,
+      "evidence_rows": 0,
       "memo_safe_rows": 0,
       "sources": [
+        "tools.award_intel.award_intel_tool",
         "open identity reference",
         "international entity register route",
         "Public Website",
         "archive discovery",
         "provider discovery route",
         "infrastructure exposure route + network registry route",
-        "sanctions screening route",
-        "international entity register route LEI register corroboration"
+        "sanctions screening route"
       ],
       "source_envelope": {
         "required": [

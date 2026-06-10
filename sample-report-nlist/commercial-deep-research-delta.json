@@ -197,11 +197,10 @@
       "premium_source_discovery",
       "source_health",
       "provider_preflight",
-      "llm_orchestrator_synthesis",
-      "social_sentiment_intel"
+      "llm_orchestrator_synthesis"
     ],
     "source_labels": [
-      "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+      "Financial Times FT1000",
       "open identity reference",
       "international entity register route",
       "Public Website",
@@ -209,14 +208,12 @@
       "provider discovery route",
       "infrastructure exposure route + network registry route",
       "sanctions screening route",
-      "ownership review route",
       "nlist.nl",
-      "news.google.com",
       "thespecialistgroup.com",
       "nl.linkedin.com",
       "linkedin.com",
-      "AFM/DNB/BaFin regulatory scanner / AFM (NL), DNB (NL)",
-      "DueSight adverse-media source ladder (public news + legal metadata)"
+      "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
+      "news discovery route / Google News RSS / Rechtspraak metadata (news discovery route:PAS..."
     ],
     "tools_expected": [
       "business_profile_intel",
@@ -237,8 +234,8 @@
     "talent_buckets_added": 6,
     "customer_examples_added": 7,
     "identity_conflicts_detected": 0,
-    "source_layers_recorded": 16,
-    "distinct_source_labels": 16
+    "source_layers_recorded": 15,
+    "distinct_source_labels": 14
   },
   "guardrails": [
     "LinkedIn/social is discovery or corroboration only.",
@@ -246,6 +243,6 @@
     "Finance, ownership and UBO stay gated until official/provider documents with source hash are attached.",
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
-  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
-  "updated_at": "2026-06-08T13:34:55+00:00"
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
+  "updated_at": "2026-06-10T16:06:29+00:00"
 }

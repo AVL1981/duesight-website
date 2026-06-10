@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.context_strength.v1",
-  "run_id": "certified-samples-rest-20260526-235449-truelegends",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-truelegends",
   "target": "True Legends IT B.V.",
-  "updated_at": "2026-06-08T13:34:28+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -23,22 +23,20 @@
       "topic": "Management en aanspreekpunten",
       "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor True Legends IT B.V. gevonden.",
       "strength": "Middel als onderbouwde context",
-      "evidence_rows": 13,
+      "evidence_rows": 4,
       "sources": [
         "truelegendsit.nl",
         "sanctions screening route"
       ],
-      "safe_rows": 13,
+      "safe_rows": 3,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
     },
     {
       "topic": "Groei- en marktcontext",
       "meaning": "Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.",
-      "strength": "Laag / discovery",
-      "evidence_rows": 1,
-      "sources": [
-        "audit artifact"
-      ],
+      "strength": "Niet aangetoond in deze replay",
+      "evidence_rows": 0,
+      "sources": [],
       "safe_rows": 0,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
@@ -66,12 +64,11 @@
       "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
       "evidence_rows": 6,
       "sources": [
-        "sanctions screening route",
         "infrastructure exposure route + network registry route",
-        "kvk_public",
-        "ownership review route"
+        "sanctions screening route",
+        "kvk_public"
       ],
-      "safe_rows": 1,
+      "safe_rows": 0,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]

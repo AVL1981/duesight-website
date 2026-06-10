@@ -58,6 +58,24 @@ PUBLIC_FORBIDDEN_PATTERNS = (
     r"\bFALLBACK\b",
     r"\bREVIEW_ONLY\b",
     r"recovered_seed_requires_primary_check",
+    r"\bExa\b",
+    r"GLEIF",
+    r"OpenKvK",
+    r"sanctions_enricher",
+    r"Shodan",
+    r"InternetDB",
+    r"\bRDAP\b",
+    r"news\.google",
+    r"Yente",
+    r"OpenSanctions",
+    r"Ollama",
+    r"FinBERT",
+    r"linkedin_public",
+    r"Cloudflare",
+    r"Google Cloud",
+    r"Legacy index\.html",
+    r"copied NLIST labels",
+    r"targetvreemde NLIST/TSG-context",
 )
 
 INTERNAL_ROW_TERMS = (
@@ -170,6 +188,26 @@ def _public_text(value: Any, limit: int = 260) -> str:
     text = re.sub(r"\b429\b", "deferred provider response", text)
     text = re.sub(r"\bTIMEOUT\b|\btimeout\b", "deferred source response", text)
     text = re.sub(r"OpenSanctions hosted", "sanctions hosted fallback", text, flags=re.I)
+    text = re.sub(r"Yente/OpenSanctions backend", "local sanctions screening route", text, flags=re.I)
+    text = re.sub(r"\bOpenSanctions\b|\bYente\b", "sanctions screening route", text, flags=re.I)
+    text = re.sub(r"\bsanctions_enricher_v1\b|sanctions_enricher", "sanctions screening route", text, flags=re.I)
+    text = re.sub(r"\bExa\b|premium-provider discovery|premium provider", "provider discovery route", text, flags=re.I)
+    text = re.sub(r"\bGLEIF\b", "international entity register route", text, flags=re.I)
+    text = re.sub(r"\bOpenKvK\b|open identity reference", "official register route", text, flags=re.I)
+    text = re.sub(r"Shodan ?InternetDB|Shodan|InternetDB", "infrastructure exposure route", text, flags=re.I)
+    text = re.sub(r"\bRDAP\b", "network registry route", text, flags=re.I)
+    text = re.sub(r"\blinkedin_public\b", "public professional source route", text, flags=re.I)
+    text = re.sub(r"Cloudflare|Google Cloud|Google Front End", "third-party cloud edge", text, flags=re.I)
+    text = re.sub(
+        r"Legacy index\.html contains copied NLIST labels;?\s*",
+        "Legacy template labels are not promoted; ",
+        text,
+        flags=re.I,
+    )
+    text = re.sub(r"targetvreemde NLIST/TSG-context", "targetvreemde context", text, flags=re.I)
+    text = re.sub(r"https?://news\.google\.com/\S+", "news discovery route", text, flags=re.I)
+    text = re.sub(r"news\.google(?:\.com)?", "news discovery route", text, flags=re.I)
+    text = re.sub(r"Ollama|FinBERT", "proprietary analysis route", text, flags=re.I)
     text = re.sub(r"\bgdelt\b", "news discovery route", text, flags=re.I)
     text = re.sub(r"\blocalhost\b|127\.0\.0\.1", "audit service", text, flags=re.I)
     text = re.sub(r"\bDuckDB\b", "audit store", text)
@@ -180,7 +218,7 @@ def _public_text(value: Any, limit: int = 260) -> str:
     text = re.sub(r"recovered_seed_requires_primary_check", "primary proof required", text, flags=re.I)
     text = re.sub(r"Benford route smoke", "finance diagnostic route", text, flags=re.I)
     text = re.sub(r"\bBenford\b", "finance forensic", text)
-    text = text.replace("pipeline_certified_with_limitations", "certified with limitations")
+    text = text.replace("pipeline_certified_with_limitations", "evidence-limited")
     text = text.replace("READY_WITH_LIMITATIONS", "ready with limitations")
     text = " ".join(text.split())
     if len(text) > limit:
@@ -204,6 +242,21 @@ def _sanitize_public_html(html_text: str) -> str:
         (r"route-text", "procescopy"),
         (r"Benford route smoke", "finance diagnostic route"),
         (r"\bBenford\b", "finance forensic"),
+        (r"Yente/OpenSanctions backend", "local sanctions screening route"),
+        (r"\bOpenSanctions\b|\bYente\b", "sanctions screening route"),
+        (r"\bsanctions_enricher_v1\b|sanctions_enricher", "sanctions screening route"),
+        (r"\bExa\b|premium-provider discovery|premium provider", "provider discovery route"),
+        (r"\bGLEIF\b", "international entity register route"),
+        (r"\bOpenKvK\b|open identity reference", "official register route"),
+        (r"Shodan ?InternetDB|Shodan|InternetDB", "infrastructure exposure route"),
+        (r"\bRDAP\b", "network registry route"),
+        (r"\blinkedin_public\b", "public professional source route"),
+        (r"Cloudflare|Google Cloud|Google Front End", "third-party cloud edge"),
+        (r"Legacy index\.html contains copied NLIST labels;?\s*", "Legacy template labels are not promoted; "),
+        (r"targetvreemde NLIST/TSG-context", "targetvreemde context"),
+        (r"https?://news\.google\.com/\S+", "news discovery route"),
+        (r"news\.google(?:\.com)?", "news discovery route"),
+        (r"Ollama|FinBERT", "proprietary analysis route"),
         (r"\blocalhost\b|127\.0\.0\.1", "audit service"),
         (r"\bDuckDB\b", "audit store"),
         (r"\[local cache\]|\blocal cache\b", "audit artifact"),
@@ -449,7 +502,11 @@ def _official_limit_notice(ctx: dict[str, Any]) -> str:
     blockers = ctx["manifest"].get("official_claim_ladder", {}).get("current_blockers") or []
     blocker_text = ", ".join(str(item) for item in blockers) or "finance_source, ownership_ubo"
     upsell = ladder.get("upsell") or (
-        "Attach KvK/Dataservice finance filings, lawful UBO extract or a licensed provider document with hash, then rerun certified replay."
+        "Attach KvK/Dataservice finance filings, lawful UBO extract or a licensed provider document with hash, then rerun evidence replay."
+    )
+    upsell = str(upsell).replace(
+        "then rerun certified replay",
+        "then run the evidence replay again",
     )
     return (
         "Belangrijke beperking: finance_source en ownership_ubo blijven geblokkeerd voor officiële claims zolang "
@@ -1222,7 +1279,6 @@ def _write_company_intel_artifacts(report_dir: Path, ctx: dict[str, Any], now: s
         ],
         "routes": ["website/team", "TSG/public transaction context", "LinkedIn discovery", "news/adverse media", "Wayback/archive", "public dorking", "reverse media", "Xortron on verified evidence"],
         "deep_research_agent_required": True,
-        "candidate_prompt_evaluation_path": "company-intel-prompt-evaluation.json",
         "candidate_prompt_decision": prompt_evaluation["candidate_prompt"]["decision"],
         "verified_findings": len(verified),
         "review_only_findings": len(review_only),
@@ -1237,7 +1293,6 @@ def _write_company_intel_artifacts(report_dir: Path, ctx: dict[str, Any], now: s
 
     (report_dir / "company-intel-findings.json").write_text(json.dumps({"schema_version": "duesight.company_intel_findings.v1", "run_id": ctx["manifest"].get("run_id"), "target": ctx["company"], "updated_at": now, "findings": findings}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (report_dir / "company-intel-gate-report.json").write_text(json.dumps(gate_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    (report_dir / "company-intel-prompt-evaluation.json").write_text(json.dumps(prompt_evaluation, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (report_dir / "company-intel-deep-research.json").write_text(json.dumps(deep_research, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if commercial_pack:
         commercial_pack["run_id"] = ctx["manifest"].get("run_id")
@@ -1261,7 +1316,6 @@ def _write_company_intel_artifacts(report_dir: Path, ctx: dict[str, Any], now: s
         "path": "company-intel-deep-research.json",
         "findings_path": "company-intel-findings.json",
         "gate_report_path": "company-intel-gate-report.json",
-        "prompt_evaluation_path": "company-intel-prompt-evaluation.json",
         "commercial_delta_path": "commercial-deep-research-delta.json" if commercial_pack else "",
         "identity_resolution_path": "identity-resolution.json" if commercial_pack else "",
         "competitor_intel_path": "competitor-intel.json" if commercial_pack else "",
@@ -1709,8 +1763,8 @@ def render_index(report_dir: Path) -> None:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>DueSight Certified Replay - {_h(company, 120)} | Kort Memo</title>
-<meta name="description" content="Certified sample replay voor {_h(company, 120)} met score {ctx['score_display']} {display_verdict}, manifest en evidence ledger.">
+<title>DueSight Evidence Replay - {_h(company, 120)} | Kort Memo</title>
+<meta name="description" content="Evidence sample replay voor {_h(company, 120)} met evidence-readiness {ctx['score_display']} {display_verdict}, manifest en evidence ledger.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 {_base_css()}
 {_theme_script()}
@@ -1719,13 +1773,13 @@ def render_index(report_dir: Path) -> None:
 <main class="shell">
   <section class="hero">
     <div class="hero-card">
-      <div class="eyebrow">Certified short memo</div>
+      <div class="eyebrow">Short evidence memo</div>
       <h1>{_h(company, 120)}</h1>
-      <p class="lead">Compacte boardroom-samenvatting met score, kernbevindingen en official-proof vervolgstappen. Geen investeringsadvies; finance en ownership blijven gated zonder primaire documenten.</p>
+      <p class="lead">Compacte boardroom-samenvatting met evidence-readiness, kernbevindingen en official-proof vervolgstappen. Geen investeringsadvies; finance en ownership blijven gated zonder primaire documenten.</p>
       <div class="links"><a href="hub.html">Open uitgebreid dossier</a><a href="flipbook.html">Open flipbook</a></div>
     </div>
     <aside class="hero-card score-lockup">
-      <div class="score-ring" style="--score:{ctx['score_value']}"><div><strong>{ctx['score_value']}</strong><span>Evidence score</span></div></div>
+      <div class="score-ring" style="--score:{ctx['score_value']}"><div><strong>{ctx['score_value']}</strong><span>Evidence readiness</span></div></div>
       <div class="metric-grid" style="grid-template-columns:1fr 1fr">
         {_metric_card('Status', display_verdict, _status_class(ctx['verdict']))}
         {_metric_card('Rows', manifest.get('evidence', {}).get('row_count') or len(rows), 'ok')}
@@ -1744,11 +1798,11 @@ def render_index(report_dir: Path) -> None:
       <tr><th>Run ID</th><td>{_h(manifest.get('run_id'), 180)}</td></tr>
       <tr><th>Target</th><td>{_h(company, 120)} / {_h(ctx['domain'], 120)}</td></tr>
       <tr><th>Generated</th><td>{_h(manifest.get('timestamp'), 120)}</td></tr>
-      <tr><th>Score model</th><td>{_h(score.get('score_model'), 120)}</td></tr>
+      <tr><th>Evidence method</th><td>Evidence-readiness components, source envelope and official-proof gates</td></tr>
     </tbody></table></div>
   </section>
   <section class="panel section">
-    <h2>Score Model</h2>
+    <h2>Evidence Support Model</h2>
     <div class="table-wrap"><table><thead><tr><th>Component</th><th>Score</th><th>Status</th><th>Rationale</th></tr></thead><tbody>{component_rows}</tbody></table></div>
   </section>
   <section class="panel section">
@@ -1769,7 +1823,7 @@ def render_index(report_dir: Path) -> None:
     <h2>Official-Proof Gates</h2>
     <div class="callout">{_h(_official_limit_notice(ctx), 700)}</div>
   </section>
-  <div class="footer">DueSight certified sample replay. Public/authorized sources only; auditdetails staan in JSON-artifacts.</div>
+  <div class="footer">DueSight evidence sample replay. Public/authorized sources only; auditdetails staan in JSON-artifacts.</div>
 </main></body></html>
 """
     _write_public_html(report_dir / "index.html", html_doc)
@@ -1808,8 +1862,8 @@ def render_hub(report_dir: Path) -> None:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>DueSight Certified Replay - {_h(company, 120)} | Uitgebreid Dossier</title>
-<meta name="description" content="Uitgebreid pipeline-certified sample report voor {_h(company, 120)}. Score {ctx['score_display']} {display_verdict} met manifest, evidence ledger en source envelopes.">
+<title>DueSight Evidence Replay - {_h(company, 120)} | Uitgebreid Dossier</title>
+<meta name="description" content="Uitgebreid source-backed sample report voor {_h(company, 120)}. Evidence-readiness {ctx['score_display']} {display_verdict} met manifest, evidence ledger en source envelopes.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 {_base_css()}
 {_theme_script()}
@@ -1818,7 +1872,7 @@ def render_hub(report_dir: Path) -> None:
 <main class="shell">
   <section class="hero">
     <div class="hero-card">
-      <div class="eyebrow">Certified extended dossier</div>
+      <div class="eyebrow">Extended evidence dossier</div>
       <h1>{_h(company, 120)}</h1>
       <p class="lead">Uitgebreide boardroom-view met target-specifieke bevindingen, bewijsniveau en official-proof vervolgstappen. Ruwe diagnostics blijven in de audit-artifacts.</p>
       <div class="links"><a href="#executive">Executive read</a><a href="#context">Onderbouwde context</a><a href="#modules">Evidence summary</a><a href="#audit">Audit appendix</a></div>
@@ -1832,7 +1886,7 @@ def render_hub(report_dir: Path) -> None:
   <section class="panel section" id="executive">
     <h2>Executive Read</h2>
     <div class="metric-grid">
-      {_metric_card('Pipeline score', ctx['score_display'], _status_class(ctx['verdict']))}
+      {_metric_card('Evidence readiness', ctx['score_display'], _status_class(ctx['verdict']))}
       {_metric_card('Status', display_verdict, _status_class(ctx['verdict']))}
       {_metric_card('Evidence rows', len(rows), 'ok')}
       {_metric_card('Missing envelopes', ledger.get('source_envelope_incomplete_rows') or 0, 'ok' if not ledger.get('source_envelope_incomplete_rows') else 'warn')}
@@ -1840,7 +1894,7 @@ def render_hub(report_dir: Path) -> None:
     <div class="table-wrap"><table><tbody>
       <tr><th>Run ID</th><td>{_h(manifest.get('run_id'), 190)}</td></tr>
       <tr><th>Target</th><td>{_h(target.get('company_name'), 120)} / {_h(target.get('domain'), 120)} / {_h(target.get('country'), 40)}</td></tr>
-      <tr><th>Score model</th><td>{_h(score.get('score_model'), 130)}</td></tr>
+      <tr><th>Evidence method</th><td>Evidence-readiness components, source envelope and official-proof gates</td></tr>
       <tr><th>Claim rule</th><td>Publiek rapport toont context en buyer-safe bevindingen; officiele finance/ownership claims blijven gated tot bronhash-documenten zijn gekoppeld.</td></tr>
     </tbody></table></div>
   </section>
@@ -1871,14 +1925,14 @@ def render_hub(report_dir: Path) -> None:
   </section>
   <section class="panel section" id="audit">
     <h2>Audit Appendix</h2>
-    <p class="muted">Manifest, scoremodel en evidence ledger blijven beschikbaar voor replay en audit. Het hoofdrapport toont alleen gecureerde buyer-facing samenvattingen.</p>
+    <p class="muted">Manifest, evidence support model en evidence ledger blijven beschikbaar voor replay en audit. Het hoofdrapport toont alleen gecureerde buyer-facing samenvattingen.</p>
     <div class="links"><a href="pipeline-manifest.json">Manifest</a><a href="pipeline-score.json">Score JSON</a><a href="evidence-ledger.json">Evidence ledger</a><a href="company-intel-findings.json">Company intel findings</a></div>
   </section>
   <section class="panel section">
     <h2>Limitations & Next Actions</h2>
     <div class="callout">{_h(_official_limit_notice(ctx), 700)}</div>
   </section>
-  <div class="footer">DueSight certified sample replay. Publieke HTML is buyer-facing; auditdetails staan in JSON-artifacts.</div>
+  <div class="footer">DueSight evidence sample replay. Publieke HTML is buyer-facing; auditdetails staan in JSON-artifacts.</div>
 </main></body></html>
 """
     _write_public_html(report_dir / "hub.html", html_doc)
@@ -1889,7 +1943,7 @@ def _flip_page(title: str, body: str, footer: str) -> str:
         '<div class="fp fp-page"><div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span>'
         f'<span class="fp-h-doc">{_h(footer, 100)}</span></div><div class="fp-body">'
         f'<h2 class="fp-title">{_h(title, 130)}</h2>{body}</div>'
-        f'<div class="fp-footer"><span>{_h(title, 70)}</span><span>Certified sample replay</span></div></div>'
+        f'<div class="fp-footer"><span>{_h(title, 70)}</span><span>Evidence sample replay</span></div></div>'
     )
 
 
@@ -1929,7 +1983,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         '</div></div></div>'
     )
     summary_body = (
-        f'<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> SCORE <strong>{_h(ctx["score_display"], 40)}</strong> · {_h(short_verdict, 22)}</div>'
+        f'<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> EVIDENCE READINESS <strong>{_h(ctx["score_display"], 40)}</strong> · {_h(short_verdict, 22)}</div>'
         '<div class="fp-kpi-row">'
         f'<div class="fp-kpi"><div class="fp-kpi-val">{_h(manifest.get("evidence", {}).get("row_count") or len(ctx["rows"]), 20)}</div><div class="fp-kpi-lbl">Evidence rows</div></div>'
         f'<div class="fp-kpi"><div class="fp-kpi-val">{_h("YES" if manifest.get("evidence", {}).get("source_envelope_complete") else "REVIEW", 20)}</div><div class="fp-kpi-lbl">Envelope</div></div>'
@@ -1951,8 +2005,8 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
     ) + "</tbody></table>"
     pages = [
         cover,
-        _flip_page("Executive certification", summary_body, company),
-        _flip_page("Score model", score_body, company),
+        _flip_page("Executive evidence summary", summary_body, company),
+        _flip_page("Evidence support model", score_body, company),
         _flip_page("Onderbouwde context", context_body, company),
         _flip_page("Bewijssterkte", strength_body, company),
         _flip_page("Entity identity scope", _flip_rows(grouped.get("ownership_register", []), 5), company),
@@ -1965,16 +2019,16 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         _flip_page("Dorking and public acquisition", _flip_rows(grouped.get("public_acquisition", []), 5), company),
         _flip_page("Local source inventory", _flip_rows(grouped.get("local_bulk_inventory", []), 6), company),
         _flip_page("Limitations", f'<p class="fp-text-sm">{_h(" ".join(manifest.get("limitations") or score.get("limitations") or []), 700)}</p>', company),
-        '<div class="fp fp-back"><div class="fp-back-inner"><div class="fp-back-brand">DueSight Intelligence</div><div class="fp-back-tagline">Certified evidence replay</div><div class="fp-back-divider"></div>'
-        f'<div class="fp-back-stats"><div class="fp-back-stat"><div class="fp-back-stat-val">{score_value}</div><div class="fp-back-stat-lbl">Score</div></div>'
+        '<div class="fp fp-back"><div class="fp-back-inner"><div class="fp-back-brand">DueSight Intelligence</div><div class="fp-back-tagline">Evidence replay</div><div class="fp-back-divider"></div>'
+        f'<div class="fp-back-stats"><div class="fp-back-stat"><div class="fp-back-stat-val">{score_value}</div><div class="fp-back-stat-lbl">Readiness</div></div>'
         f'<div class="fp-back-stat"><div class="fp-back-stat-val">{len(ctx["rows"])}</div><div class="fp-back-stat-lbl">Rows</div></div>'
         f'<div class="fp-back-stat"><div class="fp-back-stat-val">{_h(short_verdict, 20)}</div><div class="fp-back-stat-lbl">Status</div></div></div>'
         '<div class="fp-back-info">Manifest, score JSON and evidence ledger are the authoritative audit layer.</div><div class="fp-back-url">duesight.nl</div></div></div>',
     ]
     labels = [
         f"Cover - {company}",
-        "Executive certification",
-        "Score model",
+        "Executive evidence",
+        "Evidence support",
         "Onderbouwde context",
         "Bewijssterkte",
         "Entity identity",
@@ -2033,7 +2087,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
             '<div class="fp fp-page">'
             f'<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">{_h(company, 90)} - Target Integrity Memo</span></div>'
             f'<div class="fp-body"><h2 class="fp-title">{title}</h2>{body}</div>'
-            f'<div class="fp-footer"><span>Page {n} of {total_pages}</span><span>Certified sample replay</span></div>'
+            f'<div class="fp-footer"><span>Page {n} of {total_pages}</span><span>Evidence sample replay</span></div>'
             '</div>'
         )
 
@@ -2045,12 +2099,12 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         f'<h1 class="fp-cover-company">{_h(company, 90)}</h1><div class="fp-cover-type">DueSight Intelligence Sample</div></div>'
         '<div class="fp-cover-verdict"><div class="fp-verdict-icon">&#10003;</div><div class="fp-verdict-text">'
         f'<div class="fp-verdict-label">MEMO STATUS</div><div class="fp-verdict-value">{_h(short_verdict, 22)}</div></div>'
-        f'<div class="fp-verdict-score"><div style="font-size:28px;font-weight:900">{score_value}</div><div style="font-size:10px;color:rgba(255,255,255,.55)">/100</div></div>'
+        f'<div class="fp-verdict-score"><div style="font-size:28px;font-weight:900">{score_value}</div><div style="font-size:10px;color:rgba(255,255,255,.55)">readiness</div></div>'
         '</div></div></div>'
     )
 
     executive = (
-        f'<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> DUESIGHT SCORE <strong>{_h(ctx["score_display"], 40)}</strong> - {_h(short_verdict, 22)} met twee expliciete official-proof gates.</div>'
+        f'<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> EVIDENCE READINESS <strong>{_h(ctx["score_display"], 40)}</strong> - {_h(short_verdict, 22)} met twee expliciete official-proof gates.</div>'
         '<p class="fp-text">NLIST komt uit de DueSight-stack naar voren als specialistische talent- en detacheringscase: internationale technische professionals, relocation-support, fieldmanagement en plaatsingscapaciteit voor de Nederlandse engineering- en maintenance-markt.</p>'
         '<div class="fp-kpi-row">'
         f'<div class="fp-kpi"><div class="fp-kpi-val">{row_count}</div><div class="fp-kpi-lbl">Evidence rows</div></div>'
@@ -2317,7 +2371,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         '<tr><td>What is already useful</td><td>Provider discovery, FT1000 context, company-profile routes and official document request list</td><td>Context</td></tr>'
         '<tr><td>Wat niet wordt geclaimd</td><td>Revenue, resultaatcijfers, werkkapitaal, debiteurenrisico of audited growth</td><td>Geen hard claim</td></tr>'
         '<tr><td>Best next source</td><td>KvK Dataservice / current annual account / Company.info or Kyckr document with source hash</td><td>Primary close</td></tr>'
-        '<tr><td>How score improves</td><td>Attach financial statements, extract numeric population, rerun source envelope and score model</td><td>Replayable</td></tr>'
+        '<tr><td>How readiness improves</td><td>Attach financial statements, extract numeric population, rerun source envelope and support model</td><td>Replayable</td></tr>'
         '</tbody></table>'
         '<p class="fp-text-sm">For a staffing business the finance read should focus on gross margin, placement volume, debtor days, payroll obligations, client concentration and recurring placement demand. The current sample flags those questions instead of inventing numbers.</p>'
     )
@@ -2401,7 +2455,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         '<h3 class="fp-subtitle">Commercial upgrade path</h3>'
         '<table class="fp-table"><tbody>'
         '<tr><td>Demo level</td><td>Public website, team page, TSG narrative, provider discovery, audit artifacts en guarded source envelope</td><td>Strong sample</td></tr>'
-        '<tr><td>Paid DueSight run</td><td>Attach official KvK/financial/UBO/provider documents and rerun certified replay</td><td>Official-ready</td></tr>'
+        '<tr><td>Paid DueSight run</td><td>Attach official KvK/financial/UBO/provider documents and rerun evidence replay</td><td>Official-ready</td></tr>'
         '<tr><td>Enhanced DD</td><td>Kyckr/Sayari/Company.info/Creditsafe plus customer-supplied docs and management answers</td><td>Premium</td></tr>'
         '<tr><td>Deliverable</td><td>Short memo, extended dossier, flipbook, evidence ledger and internal provider recovery log</td><td>Replayable</td></tr>'
         '</tbody></table>'
@@ -2422,7 +2476,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         '<table class="fp-table"><tbody>'
         '<tr><td>Public report</td><td>Claims, source class, confidence, limitation and official close route</td><td>Buyer readable</td></tr>'
         '<tr><td>Internal log</td><td>Provider status, retry attempts, rate-limit events and recovery queue</td><td>Operational</td></tr>'
-        '<tr><td>Replay evidence</td><td>Manifest, score model, source envelope and evidence ledger</td><td>Auditable</td></tr>'
+        '<tr><td>Replay evidence</td><td>Manifest, support model, source envelope and evidence ledger</td><td>Auditable</td></tr>'
         '</tbody></table>'
     )
 
@@ -2470,7 +2524,7 @@ def _certified_flipbook_payload(report_dir: Path) -> tuple[list[str], list[str]]
         '</div>'
         '<h3 class="fp-subtitle">Upsell language</h3>'
         '<p class="fp-text-sm">DueSight heeft publieke/contextuele signalen gevonden die wijzen op NLIST als specialistische technical-talent operatie met TSG-context. Dit is bruikbaar voor pre-DD triage en commerciele risico-inschatting. Voor een harde juridische/financiele claim is een KvK-uittreksel, jaarrekening, UBO/shareholder-document of licensed provider extract nodig. Beschikbaar als official-proof upgrade.</p>'
-        '<div class="fp-callout ok">Concrete close: attach documents, rerun certified replay, and the same memo moves from context level to claim level.</div>'
+        '<div class="fp-callout ok">Concrete close: attach documents, rerun evidence replay, and the same memo moves from context level to claim level.</div>'
     )
 
     buyer_agenda = (

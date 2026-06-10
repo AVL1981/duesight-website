@@ -1,14 +1,14 @@
 {
   "schema_version": "duesight.sample_report_pipeline_manifest.v1",
-  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
-  "timestamp": "2026-05-27T11:20:16+00:00",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
+  "timestamp": "2026-06-10T15:44:44+00:00",
   "replay_mode": {
-    "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
-    "timestamp": "2026-05-27T11:20:16+00:00",
+    "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
+    "timestamp": "2026-06-10T15:44:44+00:00",
     "target_slug": "sample-report-nlist",
-    "mode": "orbit_max_stack_replay",
-    "llm_orchestrator_synthesis": "completed",
-    "orbit_max_stack": true,
+    "mode": "evidence_only_replay",
+    "llm_orchestrator_synthesis": "not_requested",
+    "orbit_max_stack": false,
     "source_envelope": {
       "required_row_fields": [
         "source",
@@ -54,9 +54,9 @@
       "status": "source_limited_zero_candidates",
       "rows": 1,
       "source": "sanctions_enricher_v1",
-      "target_claim_safe": true,
+      "target_claim_safe": false,
       "limitations": [
-        "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness."
+        "Zero candidates is point-in-time and depends on available identifiers, transliteration and dataset freshness."
       ]
     },
     {
@@ -78,19 +78,19 @@
       "target_claim_safe": false,
       "limitations": [
         "Wikidata is a reference layer only; it cannot replace official register evidence.",
-        "Escalation flags are diligence routing signals, not final ownership findings."
+        "Algorithmic UBO proxy was not run in this smoke; use --include-ubo-proxy for route verification."
       ]
     },
     {
       "name": "business_profile_intel",
       "status": "available",
-      "rows": 38,
+      "rows": 14,
       "source": "DueSight business profile source ladder",
       "target_claim_safe": false,
       "limitations": [
         "Page existence is source-backed; role, scale and strategy claims still require page-level extraction review.",
-        "Article metadata is source-backed; strategic interpretation requires corroboration and context review.",
-        "This supports public operating/group context; use a current registry extract or provider graph for legal ownership and UBO claims."
+        "This supports public operating/group context; use a current registry extract or provider graph for legal ownership and UBO claims.",
+        "Public transaction narrative is useful context but does not replace transaction documents or the shareholder register."
       ]
     },
     {
@@ -106,13 +106,13 @@
     },
     {
       "name": "award_intelligence",
-      "status": "available_with_primary_award_artifact",
+      "status": "available_with_primary_check_required",
       "rows": 1,
       "source": "tools.award_intel.award_intel_tool + data/award_intel/awards.db",
       "target_claim_safe": false,
       "limitations": [
         "Context layer only; official finance and ownership claims still require primary documents or licensed provider evidence.",
-        "Primary Statista/Financial Times 2026 rendered row captured for NList: rank 19, CAGR 232.41%, with primary artifact hash; award-row revenue remains context and not official finance proof."
+        "Primary Statista/Financial Times 2026 rendered row captured for NList: rank 19, CAGR 232.41%, Netherlands, Employment Services, revenue EUR 14,995,242, start revenue EUR 408,258, employees 15, start employees 3, found..."
       ]
     },
     {
@@ -144,7 +144,7 @@
       "source": "DueSight Adverse Media Scanner",
       "target_claim_safe": false,
       "limitations": [
-        "No-hit is point-in-time and source-limited; it is not proof of reputation clearance."
+        "Zero candidates is point-in-time and source-limited; it is not reputation clearance."
       ]
     },
     {
@@ -172,10 +172,10 @@
     },
     {
       "name": "source_health",
-      "status": "YELLOW",
+      "status": "GREEN",
       "rows": 29,
       "source": "tools.source_health_live.run_all",
-      "checked_at": "2026-05-27T11:20:16.577324+00:00",
+      "checked_at": "2026-06-10T15:18:39.023535+00:00",
       "limitations": [
         "Global source-health snapshot; not a target-specific completeness proof."
       ]
@@ -185,31 +185,18 @@
       "status": "go",
       "rows": 14,
       "source": "tools.sample_report_provider_preflight.run_preflight",
-      "checked_at": "2026-05-27T11:20:06+00:00",
+      "checked_at": "2026-06-10T15:39:30+00:00",
       "limitations": [
         "Provider readiness probe; not target-specific evidence."
       ]
     },
     {
       "name": "llm_orchestrator_synthesis",
-      "status": "completed",
-      "rows": 1,
-      "source": "local_ollama",
-      "model": "xortron3-fast:Q5_K_M",
-      "checked_at": "2026-05-27T11:21:58+00:00",
+      "status": "not_requested_evidence_only_replay",
+      "rows": 0,
+      "source": "not invoked",
       "limitations": [
-        "Guarded synthesis only; not an evidence source and not a production due-diligence opinion.",
-        "Uses only normalized evidence rows present in this sample replay."
-      ]
-    },
-    {
-      "name": "social_sentiment_intel",
-      "status": "completed_with_review",
-      "artifact": "social-sentiment-intel.json",
-      "gate_decision": "REVIEW",
-      "limitations": [
-        "Professional/social sources are corroboration or discovery unless independently source-backed.",
-        "Sentiment is a guarded signal layer and not legal/finance/ownership proof."
+        "No heavy LLM/orchestrator synthesis was requested during this replay certification pass."
       ]
     }
   ],
@@ -249,15 +236,15 @@
     "Public/local authorized sources only; no auth bypass, no database export, no invasive scraping.",
     "Demo/pre-DD preview only; no production completeness claim or legal advice.",
     "Point-in-time source statuses can change and must be rerun before customer use.",
-    "Legacy sample identifiers are inconsistent; this run records identifier reconciliation as a limitation.",
-    "Guarded local LLM synthesis completed; synthesis remains non-evidence and source-bound."
+    "Legacy sample identifiers are inconsistent; this run records identifier reconciliation as a limitation."
   ],
   "provider_preflight": {
     "status": "go",
-    "run_id": "sample-provider-preflight-20260527T112006Z",
-    "timestamp": "2026-05-27T11:20:06+00:00",
+    "run_id": "sample-provider-preflight-20260610T153930Z",
+    "timestamp": "2026-06-10T15:39:30+00:00",
     "summary": {
-      "OK": 8,
+      "OK": 7,
+      "CREDIT_REQUIRED": 1,
       "SKIPPED_RECOVERY_CADENCE": 1,
       "SKIPPED_LOCAL_PRIMARY": 1,
       "OPTIONAL_NOT_CONFIGURED": 4
@@ -270,7 +257,7 @@
         "status": "OK",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:03+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.9,
         "limitation": "Discovery layer only; individual claims still require source-envelope corroboration."
@@ -281,7 +268,7 @@
         "status": "OK",
         "required": false,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:03+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.9,
         "limitation": "Review/triangulation layer unless official document hash or contract terms make output memo-safe."
@@ -289,12 +276,12 @@
       {
         "provider": "OpenRegister",
         "capability": "DE register autocomplete / official-source wrapper",
-        "status": "OK",
+        "status": "CREDIT_REQUIRED",
         "required": false,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:03+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
-        "confidence": 0.9,
+        "confidence": 0.2,
         "limitation": "Country-specific DE source; not a global UBO graph replacement."
       },
       {
@@ -303,7 +290,7 @@
         "status": "OK",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:03+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.9,
         "limitation": "LEI relationship data is corroboration, not a complete UBO register."
@@ -314,10 +301,10 @@
         "status": "OK",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:04+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.9,
-        "limitation": "Passive/free subset; absence of exposure is not a security clearance attestation."
+        "limitation": "Passive/free subset; absence of exposure is not a clean security attestation."
       },
       {
         "provider": "Cloudflare DoH",
@@ -325,7 +312,7 @@
         "status": "OK",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:04+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.9,
         "limitation": "DNS resolution does not prove target-owned infrastructure."
@@ -336,7 +323,7 @@
         "status": "SKIPPED_RECOVERY_CADENCE",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:04+00:00",
+        "checked_at": "2026-06-10T15:39:27+00:00",
         "fallback_used": false,
         "confidence": 0.7,
         "limitation": "GDELT is a shared public source; sample replays do not spend inline quota when Exa/News RSS are available."
@@ -347,7 +334,7 @@
         "status": "OK",
         "required": true,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:29+00:00",
         "fallback_used": false,
         "confidence": 0.9,
         "limitation": "Local readiness health only; matching still needs entity identifiers and policy thresholds."
@@ -358,7 +345,7 @@
         "status": "SKIPPED_LOCAL_PRIMARY",
         "required": false,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:29+00:00",
         "fallback_used": true,
         "confidence": 0.8,
         "limitation": "Local Yente is healthy; hosted OpenSanctions fallback was not probed to avoid unnecessary quota pressure."
@@ -369,7 +356,7 @@
         "status": "OK",
         "required": false,
         "configured": true,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:30+00:00",
         "fallback_used": false,
         "confidence": 0.8,
         "limitation": "Readiness probe only; does not confirm Xortron 14B or prompt quality."
@@ -380,7 +367,7 @@
         "status": "OPTIONAL_NOT_CONFIGURED",
         "required": false,
         "configured": false,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:30+00:00",
         "fallback_used": false,
         "confidence": 0.0,
         "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
@@ -391,7 +378,7 @@
         "status": "OPTIONAL_NOT_CONFIGURED",
         "required": false,
         "configured": false,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:30+00:00",
         "fallback_used": false,
         "confidence": 0.0,
         "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
@@ -402,7 +389,7 @@
         "status": "OPTIONAL_NOT_CONFIGURED",
         "required": false,
         "configured": false,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:30+00:00",
         "fallback_used": false,
         "confidence": 0.0,
         "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
@@ -413,7 +400,7 @@
         "status": "OPTIONAL_NOT_CONFIGURED",
         "required": false,
         "configured": false,
-        "checked_at": "2026-05-27T11:20:06+00:00",
+        "checked_at": "2026-06-10T15:39:30+00:00",
         "fallback_used": false,
         "confidence": 0.0,
         "limitation": "Not a blocker for NL/DACH/BE/LU sample rerun under the agreed national-source strategy."
@@ -424,7 +411,7 @@
     "normalizer": "report_output_normalizer.ensure_report_evidence_output",
     "normalized_report_path": "pipeline-evidence.json",
     "ledger_path": "evidence-ledger.json",
-    "row_count": 70,
+    "row_count": 46,
     "ledger_status": "available",
     "source_envelope_complete": true,
     "required_row_fields": [
@@ -440,29 +427,9 @@
     "source_envelope_issues": []
   },
   "verification": {
-    "desktop": "passed",
-    "mobile": "passed",
-    "print_pdf": "passed",
-    "public_html_sanitization": "passed",
-    "publish_gate": "PASS",
-    "artifacts": {
-      "desktop_index": "output/playwright/nlist-index-desktop.png",
-      "desktop_hub": "output/playwright/nlist-hub-desktop.png",
-      "desktop_flipbook": "output/playwright/nlist-flipbook-desktop-final4.png",
-      "mobile_index": "output/playwright/nlist-index-mobile.png",
-      "mobile_hub": "output/playwright/nlist-hub-mobile.png",
-      "mobile_flipbook": "output/playwright/nlist-flipbook-mobile-final3.png",
-      "print_pdf": "output/playwright/nlist-hub-print-final.pdf",
-      "publish_gate": "publish-gate.json",
-      "desktop_context": "output/playwright/nlist-hub-context-desktop.png",
-      "mobile_context": "output/playwright/nlist-hub-context-mobile.png",
-      "desktop_context_strength": "output/playwright/nlist-hub-context-strength-desktop.png",
-      "mobile_context_strength": "output/playwright/nlist-hub-context-strength-mobile.png",
-      "context_strength": "context-strength.json"
-    },
-    "checked_at": "2026-05-27T12:16:18+00:00",
-    "underbouwde_context": "passed",
-    "context_strength": "passed"
+    "desktop": "pending",
+    "mobile": "pending",
+    "print_pdf": "pending"
   },
   "source_policy": {
     "allowed": [
@@ -489,7 +456,7 @@
       "finance_source",
       "ownership_ubo"
     ],
-    "updated_at": "2026-05-27T11:20:16+00:00"
+    "updated_at": "2026-06-10T15:44:44+00:00"
   },
   "award_intelligence_summary": {
     "status": "hit",
@@ -503,35 +470,33 @@
     "aggregate_score_certified": true,
     "investment_verdict_certified": false,
     "score_kind": "DueSight Evidence Readiness Score",
-    "score_model": "duesight.sample_report_source_support_model.v2",
-    "score": 71,
+    "score_model": "duesight.sample_report_score_model.v2",
+    "score": 66,
     "scale": "0-100",
-    "display_value": "71/100",
-    "verdict": "READY_WITH_LIMITATIONS",
-    "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
+    "display_value": "66/100",
+    "verdict": "REVIEW",
+    "verdict_meaning": "Evidence pack is useful for pre-DD triage, but material source gaps require review.",
     "score_confidence": "medium",
-    "computed_at": "2026-05-28T10:34:25+00:00",
-    "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
+    "computed_at": "2026-06-10T15:45:10+00:00",
+    "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
     "target": {
       "slug": "sample-report-nlist",
       "company_name": "NLIST B.V.",
       "domain": "nlist.nl",
       "country": "NL",
-      "kvk_number": "85442410",
+      "kvk_number": "58932100",
       "ch_uid": "",
-      "tier": "standard",
-      "identity_resolution_path": "identity-resolution.json",
-      "identity_resolution_status": "aligned",
-      "previous_configured_kvk_number": "85442410"
+      "tier": "standard"
     },
     "inputs": {
       "manifest_path": "pipeline-manifest.json",
       "ledger_path": "evidence-ledger.json",
-      "evidence_rows": 70,
+      "evidence_rows": 46,
       "source_envelope_complete": true,
       "source_envelope_incomplete_rows": 0,
       "provider_preflight_summary": {
-        "OK": 8,
+        "OK": 7,
+        "CREDIT_REQUIRED": 1,
         "SKIPPED_RECOVERY_CADENCE": 1,
         "SKIPPED_LOCAL_PRIMARY": 1,
         "OPTIONAL_NOT_CONFIGURED": 4
@@ -541,15 +506,15 @@
       {
         "name": "evidence_integrity",
         "label": "Evidence integrity",
-        "score": 22,
+        "score": 21,
         "max_score": 22,
         "status": "strong",
         "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
         "evidence": [
-          "rows=70",
+          "rows=46",
           "source_envelope_complete=True",
           "incomplete_rows=0",
-          "run_id=nlist-full-certified-replay-20260527T132000Z-nlist"
+          "run_id=sample-pipeline-replay-20260610T154700Z-all-nlist"
         ],
         "limitations": [
           "Evidence completeness is not the same as business-risk completeness."
@@ -560,13 +525,13 @@
         "label": "Source readiness",
         "score": 9,
         "max_score": 13,
-        "status": "yellow",
-        "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
+        "status": "strong",
+        "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
         "evidence": [
-          "preflight_ok=8",
+          "preflight_ok=7",
           "hosted_fallback_deferred=0",
           "optional_not_configured=4",
-          "source_health=YELLOW"
+          "source_health=GREEN"
         ],
         "limitations": [
           "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
@@ -575,7 +540,7 @@
       {
         "name": "compliance_media",
         "label": "Compliance and media",
-        "score": 16,
+        "score": 12,
         "max_score": 18,
         "status": "limited_clean",
         "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
@@ -586,7 +551,7 @@
           "hosted_fallback_deferred=0"
         ],
         "limitations": [
-          "Zero candidates is source-limited and not proof of reputation clearance.",
+          "No-hit is not proof of clean reputation.",
           "UBOs/directors still need final sanctions and PEP screening before sign-off."
         ]
       },
@@ -646,9 +611,9 @@
         "status": "context_rich",
         "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
         "evidence": [
-          "business_profile_rows=38",
+          "business_profile_rows=14",
           "award_rows=1",
-          "award_status=available_with_primary_award_artifact",
+          "award_status=available_with_primary_check_required",
           "public_acquisition_rows=10",
           "premium_source_rows=5",
           "local_bulk_rows=8"
@@ -670,14 +635,13 @@
     "path": "context-strength.json",
     "status": "available",
     "items": 6,
-    "updated_at": "2026-06-08T13:34:55+00:00"
+    "updated_at": "2026-06-10T16:06:29+00:00"
   },
   "company_intel_deep_research": {
     "status": "completed_with_warnings",
     "path": "company-intel-deep-research.json",
     "findings_path": "company-intel-findings.json",
     "gate_report_path": "company-intel-gate-report.json",
-    "prompt_evaluation_path": "company-intel-prompt-evaluation.json",
     "commercial_delta_path": "commercial-deep-research-delta.json",
     "identity_resolution_path": "identity-resolution.json",
     "competitor_intel_path": "competitor-intel.json",
@@ -765,107 +729,9 @@
       "talent_buckets_added": 6,
       "customer_examples_added": 7,
       "identity_conflicts_detected": 0,
-      "source_layers_recorded": 16,
-      "distinct_source_labels": 16
+      "source_layers_recorded": 15,
+      "distinct_source_labels": 14
     },
-    "updated_at": "2026-06-08T13:34:55+00:00"
-  },
-  "max_deep_research": {
-    "status": "completed",
-    "updated_at": "2026-06-02T10:18:01+00:00",
-    "providers_executed": [
-      "deep_research_crawl",
-      "minimax_search",
-      "minimax_highspeed_a",
-      "minimax_highspeed_b",
-      "glm_direct",
-      "local_xortron",
-      "hermes_deepseek",
-      "nvidia_nim_nemotron",
-      "antigravity_codeassist",
-      "codex_cli",
-      "claude_code"
-    ],
-    "providers_failed_or_skipped": [],
-    "provider_models_executed": [
-      "deep_research_crawl:query-plan-mmx-search",
-      "minimax_search:MiniMax search",
-      "minimax_highspeed_a:MiniMax-M2.5-highspeed",
-      "minimax_highspeed_b:MiniMax-M2.5-highspeed",
-      "glm_direct:glm-5.1",
-      "local_xortron:xortron3-fast:Q5_K_M",
-      "hermes_deepseek:deepseek-chat",
-      "nvidia_nim_nemotron:nvidia/llama-3.3-nemotron-super-49b-v1",
-      "antigravity_codeassist:gemini31_flash",
-      "codex_cli:gpt-5.5",
-      "claude_code:opus"
-    ],
-    "provider_freshness_summary": {
-      "fresh_current_run_count": 8,
-      "retained_previous_success_count": 3,
-      "failed_or_skipped_current_run_count": 0,
-      "strict_core_retained": [
-        "antigravity_codeassist",
-        "claude_code",
-        "local_xortron"
-      ],
-      "health_gated_retained_or_skipped": []
-    },
-    "source_urls_count": 83,
-    "candidate_findings_count": 5,
-    "anti_hallucination_decision": "PASS",
-    "run_path": "max-deep-research-run.json",
-    "provider_status_path": "max-model-provider-status.json",
-    "provider_freshness_path": "max-provider-freshness-report.json",
-    "findings_path": "max-deep-research-findings.json",
-    "anti_hallucination_gates_path": "max-research-anti-hallucination-gates.json"
-  },
-  "social_sentiment_intel": {
-    "status": "completed_with_review",
-    "updated_at": "2026-06-02T10:08:26+00:00",
-    "gate_decision": "REVIEW",
-    "social_status": "executed",
-    "sentiment_status": "deferred",
-    "platforms_checked": 443,
-    "profiles_found": 90,
-    "promoted_social_sources": 12,
-    "sentiment_sources_active": 0,
-    "sentiment_sources_total": 0,
-    "artifact": "social-sentiment-intel.json",
-    "platform_coverage_path": "social-platform-coverage.json",
-    "provider_status_path": "sentiment-provider-status.json",
-    "gate_report_path": "social-sentiment-gate-report.json"
-  },
-  "business_intel_framework": {
-    "status": "active",
-    "artifact": "business-intel-framework.json",
-    "pillar_count": 7,
-    "execution_coverage_artifact": "execution-coverage-framework.json",
-    "source_urls_count": 83
-  },
-  "execution_coverage_framework": {
-    "status": "active",
-    "artifact": "execution-coverage-framework.json",
-    "execution_layers_total": 9,
-    "execution_layers_with_signal": 9,
-    "covered_boardroom_pillars": [
-      "cyber_compliance",
-      "finance_growth",
-      "identity_source_lock",
-      "market_talent_demand",
-      "operating_model",
-      "ownership_group",
-      "social_sentiment_reputation"
-    ],
-    "anti_hallucination_decision": "PASS"
-  },
-  "data_quality_breakdown": {
-    "status": "active",
-    "artifact": "data-quality-breakdown.json",
-    "current_score": 71,
-    "missing_points": 29,
-    "official_proof_gate_count": 5,
-    "proof_ladder_version": "duesight.data_quality_breakdown.v1"
-  },
-  "updated_at": "2026-06-02T11:38:50+00:00"
+    "updated_at": "2026-06-10T16:06:29+00:00"
+  }
 }

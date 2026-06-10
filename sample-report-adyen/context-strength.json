@@ -1,45 +1,42 @@
 {
   "schema_version": "duesight.context_strength.v1",
-  "run_id": "certified-samples-rest-20260526-235449-adyen",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-adyen",
   "target": "Adyen N.V.",
-  "updated_at": "2026-06-08T13:34:26+00:00",
+  "updated_at": "2026-06-10T16:06:28+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
       "topic": "Groeps- en transactiecontext",
       "meaning": "DueSight beoordeelt eventuele groeps- of transactiecontext voor Adyen N.V. alleen wanneer die uit targetrelevante bronnen komt.",
       "strength": "Middel als onderbouwde context",
-      "evidence_rows": 11,
+      "evidence_rows": 10,
       "sources": [
-        "news.google.com",
         "open identity reference",
         "international entity register route",
         "Public Website",
         "archive discovery"
       ],
-      "safe_rows": 1,
+      "safe_rows": 0,
       "missing_for_official_claim": "Current registry extract, shareholder register, transaction document or licensed provider output with document hash."
     },
     {
       "topic": "Management en aanspreekpunten",
       "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor Adyen N.V. gevonden.",
       "strength": "Middel als onderbouwde context",
-      "evidence_rows": 4,
+      "evidence_rows": 3,
       "sources": [
-        "sanctions screening route",
-        "adyen.com"
+        "adyen.com",
+        "sanctions screening route"
       ],
-      "safe_rows": 4,
+      "safe_rows": 2,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
     },
     {
       "topic": "Groei- en marktcontext",
       "meaning": "Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.",
-      "strength": "Laag / discovery",
-      "evidence_rows": 1,
-      "sources": [
-        "audit artifact"
-      ],
+      "strength": "Niet aangetoond in deze replay",
+      "evidence_rows": 0,
+      "sources": [],
       "safe_rows": 0,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
@@ -59,10 +56,9 @@
       "topic": "Financiële claimbaarheid",
       "meaning": "De finance-route is technisch aanwezig, maar de replay heeft geen target-specifieke officiële filing of P&L opgehaald.",
       "strength": "Geblokkeerd voor officiële finance-claim",
-      "evidence_rows": 3,
+      "evidence_rows": 2,
       "sources": [
-        "public professional source route",
-        "DueSight Financial Bridge validation"
+        "public professional source route"
       ],
       "safe_rows": 0,
       "missing_for_official_claim": "KVK/Dataservice annual account, XBRL/PDF filing, seller P&L or licensed provider finance document with source hash."
@@ -71,14 +67,12 @@
       "topic": "Juridische eigendom / UBO",
       "meaning": "Publieke structuurcontext kan richting geven, maar juridisch eigendom/UBO blijft niet officieel bewezen in deze replay.",
       "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
-      "evidence_rows": 6,
+      "evidence_rows": 5,
       "sources": [
         "sanctions screening route",
-        "provider discovery route",
-        "DueSight manual golden control",
-        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
+        "DueSight manual golden control"
       ],
-      "safe_rows": 1,
+      "safe_rows": 0,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]

@@ -1,36 +1,36 @@
 {
   "schema_version": "duesight.context_strength.v1",
-  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
   "target": "NLIST B.V.",
-  "updated_at": "2026-06-08T13:34:55+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
       "topic": "Groeps- en overnamecontext",
       "meaning": "NLIST B.V. is publiek herhaald gekoppeld aan The Specialist Group en er is publieke transactie-/overnamecontext gevonden.",
       "strength": "Hoog als publieke context",
-      "evidence_rows": 18,
+      "evidence_rows": 17,
       "sources": [
-        "news.google.com",
         "nlist.nl",
         "thespecialistgroup.com",
         "nl.linkedin.com",
         "open identity reference",
-        "international entity register route"
+        "international entity register route",
+        "Public Website"
       ],
-      "safe_rows": 7,
+      "safe_rows": 6,
       "missing_for_official_claim": "Current KvK extract, shareholder register, transaction document or Kyckr/Sayari/Company.info provider output with document hash."
     },
     {
       "topic": "Management en aanspreekpunten",
       "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor NLIST B.V. gevonden.",
       "strength": "Hoog als publieke context",
-      "evidence_rows": 30,
+      "evidence_rows": 7,
       "sources": [
         "nlist.nl",
         "sanctions screening route"
       ],
-      "safe_rows": 30,
+      "safe_rows": 6,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
     },
     {
@@ -39,11 +39,11 @@
       "strength": "Hoog als publieke context",
       "evidence_rows": 4,
       "sources": [
-        "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
         "thespecialistgroup.com",
-        "nlist.nl"
+        "nlist.nl",
+        "Financial Times FT1000"
       ],
-      "safe_rows": 4,
+      "safe_rows": 3,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
     {
@@ -73,14 +73,14 @@
       "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
       "evidence_rows": 11,
       "sources": [
-        "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
         "nlist.nl",
         "thespecialistgroup.com",
+        "Financial Times FT1000",
         "nl.linkedin.com",
         "sanctions screening route",
         "open identity reference"
       ],
-      "safe_rows": 6,
+      "safe_rows": 4,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]

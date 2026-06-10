@@ -1,14 +1,7 @@
 {
   "source": "truelegendsit.nl",
   "claim_level": "hiring and skill context; live counts require fresh archived replay",
-  "role_families": [
-    {
-      "family": "Hiring routes",
-      "signals": [
-        "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl"
-      ]
-    }
-  ],
+  "role_families": [],
   "skill_buckets": [],
-  "source_rows": 1
+  "source_rows": 0
 }

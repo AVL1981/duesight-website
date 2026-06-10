@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.context_strength.v1",
-  "run_id": "certified-samples-rest-20260526-235449-bunq",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-bunq",
   "target": "bunq B.V.",
-  "updated_at": "2026-06-08T13:34:26+00:00",
+  "updated_at": "2026-06-10T16:06:28+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -22,24 +22,21 @@
     {
       "topic": "Management en aanspreekpunten",
       "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor bunq B.V. gevonden.",
-      "strength": "Hoog als triangulatie-context",
-      "evidence_rows": 9,
+      "strength": "Middel als onderbouwde context",
+      "evidence_rows": 4,
       "sources": [
-        "sanctions screening route",
         "bunq.com",
-        "news.google.com"
+        "sanctions screening route"
       ],
-      "safe_rows": 9,
+      "safe_rows": 3,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
     },
     {
       "topic": "Groei- en marktcontext",
       "meaning": "Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.",
-      "strength": "Laag / discovery",
-      "evidence_rows": 1,
-      "sources": [
-        "audit artifact"
-      ],
+      "strength": "Niet aangetoond in deze replay",
+      "evidence_rows": 0,
+      "sources": [],
       "safe_rows": 0,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
@@ -47,8 +44,10 @@
       "topic": "Professionele/sociale corroboratie",
       "meaning": "LinkedIn/professional-profile routes leveren corroboratie en discovery-hints, geen zelfstandige ownership- of personeelsclaim.",
       "strength": "Laag / discovery",
-      "evidence_rows": 0,
-      "sources": [],
+      "evidence_rows": 1,
+      "sources": [
+        "public professional source route"
+      ],
       "safe_rows": 0,
       "missing_for_official_claim": "Official website, register or contracted provider corroboration for each people/company profile claim."
     },
@@ -58,7 +57,7 @@
       "strength": "Geblokkeerd voor officiële finance-claim",
       "evidence_rows": 2,
       "sources": [
-        "finance source route"
+        "public professional source route"
       ],
       "safe_rows": 0,
       "missing_for_official_claim": "KVK/Dataservice annual account, XBRL/PDF filing, seller P&L or licensed provider finance document with source hash."
@@ -70,10 +69,9 @@
       "evidence_rows": 5,
       "sources": [
         "sanctions screening route",
-        "international entity register route LEI register corroboration",
-        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
+        "international entity register route LEI register corroboration"
       ],
-      "safe_rows": 1,
+      "safe_rows": 0,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]

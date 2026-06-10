@@ -1,12 +1,12 @@
 {
   "version": "v1_20260428",
-  "ts": "2026-05-27T11:20:16.577324+00:00",
-  "overall": "YELLOW",
+  "ts": "2026-06-10T15:52:32.597194+00:00",
+  "overall": "GREEN",
   "summary": {
     "total": 29,
-    "ok": 27,
-    "failed": 1,
-    "ok_rate_pct": 93.1,
+    "ok": 28,
+    "failed": 0,
+    "ok_rate_pct": 96.6,
     "critical_failures": []
   },
   "sources": [
@@ -15,8 +15,8 @@
       "category": "sanctions",
       "critical": true,
       "status": "OK",
-      "detail": "catalog=ok, datasets=349, searchable=true, stale=True",
-      "latency_ms": 747.9,
+      "detail": "catalog=ok, datasets=366, searchable=true, stale=True",
+      "latency_ms": 1137.6,
       "rate_limit_policy_key": "",
       "rate_limit": {}
     },
@@ -56,8 +56,8 @@
       "category": "ownership",
       "critical": true,
       "status": "OK",
-      "detail": "2782b",
-      "latency_ms": 499.9,
+      "detail": "2854b",
+      "latency_ms": 589.9,
       "rate_limit_policy_key": "gleif",
       "rate_limit": {
         "provider_key": "gleif",
@@ -95,7 +95,7 @@
       "critical": true,
       "status": "OK",
       "detail": "814344 entities, 5 tables, 402MB",
-      "latency_ms": 59.2,
+      "latency_ms": 15.7,
       "rate_limit_policy_key": "",
       "rate_limit": {}
     },
@@ -105,7 +105,7 @@
       "critical": true,
       "status": "OK",
       "detail": "3892b",
-      "latency_ms": 306.7,
+      "latency_ms": 387.5,
       "rate_limit_policy_key": "rechtspraak",
       "rate_limit": {
         "provider_key": "rechtspraak",
@@ -143,7 +143,7 @@
       "critical": true,
       "status": "OK",
       "detail": "public_search 127KB",
-      "latency_ms": 429.7,
+      "latency_ms": 522.5,
       "rate_limit_policy_key": "kvk_public",
       "rate_limit": {
         "provider_key": "kvk_public",
@@ -181,7 +181,7 @@
       "critical": true,
       "status": "OK",
       "detail": "token issued, ttl=1199s",
-      "latency_ms": 308.9,
+      "latency_ms": 463.5,
       "rate_limit_policy_key": "epo_ops",
       "rate_limit": {
         "provider_key": "epo_ops",
@@ -218,8 +218,8 @@
       "category": "registry",
       "critical": false,
       "status": "OK",
-      "detail": "3415b",
-      "latency_ms": 570.6,
+      "detail": "3342b",
+      "latency_ms": 649.5,
       "rate_limit_policy_key": "staatscourant",
       "rate_limit": {
         "provider_key": "staatscourant",
@@ -257,7 +257,7 @@
       "critical": false,
       "status": "OK",
       "detail": "10438b",
-      "latency_ms": 300.3,
+      "latency_ms": 389.9,
       "rate_limit_policy_key": "cbs",
       "rate_limit": {
         "provider_key": "cbs",
@@ -294,8 +294,8 @@
       "category": "regulator",
       "critical": false,
       "status": "OK",
-      "detail": "register page 50894b",
-      "latency_ms": 482.5,
+      "detail": "register page 50881b",
+      "latency_ms": 578.5,
       "rate_limit_policy_key": "afm",
       "rate_limit": {
         "provider_key": "afm",
@@ -333,7 +333,7 @@
       "critical": false,
       "status": "OK",
       "detail": "api-guide reachable 9847b",
-      "latency_ms": 315.6,
+      "latency_ms": 387.8,
       "rate_limit_policy_key": "dnb",
       "rate_limit": {
         "provider_key": "dnb",
@@ -370,11 +370,10 @@
       "category": "registry",
       "critical": false,
       "status": "OK",
-      "detail": "deutschland pkg ok, SAP returned 20 reports",
-      "latency_ms": 9884.8,
+      "detail": "deutschland pkg ok, SAP returned 19 reports",
+      "latency_ms": 8598.2,
       "rate_limit_policy_key": "bundesanzeiger",
       "rate_limit": {
-        "provider_key": "bundesanzeiger",
         "policy": {
           "key": "bundesanzeiger",
           "name": "Bundesanzeiger",
@@ -394,13 +393,7 @@
           "max_inline_retry_wait_s": 15.0,
           "recovery_poll_interval_s": 7200,
           "notes": "DE official publication source; slow health cadence due bot/captcha sensitivity."
-        },
-        "attempts": 1,
-        "pre_call_wait_seconds": 0.0,
-        "inline_retry_count": 0,
-        "retry_after_seconds": null,
-        "next_retry_at": "",
-        "rate_limit_handled": true
+        }
       }
     },
     {
@@ -409,10 +402,9 @@
       "critical": false,
       "status": "OK",
       "detail": "linked_data uid=CHE109376417",
-      "latency_ms": 1032.3,
+      "latency_ms": 711.4,
       "rate_limit_policy_key": "zefix",
       "rate_limit": {
-        "provider_key": "zefix",
         "policy": {
           "key": "zefix",
           "name": "Zefix / Swiss register",
@@ -432,13 +424,7 @@
           "max_inline_retry_wait_s": 15.0,
           "recovery_poll_interval_s": 3600,
           "notes": "Swiss public register route; official/public access only."
-        },
-        "attempts": 1,
-        "pre_call_wait_seconds": 0.0,
-        "inline_retry_count": 0,
-        "retry_after_seconds": null,
-        "next_retry_at": "",
-        "rate_limit_handled": true
+        }
       }
     },
     {
@@ -447,7 +433,7 @@
       "critical": false,
       "status": "OK",
       "detail": "8964b",
-      "latency_ms": 433.4,
+      "latency_ms": 428.2,
       "rate_limit_policy_key": "bce_kbo",
       "rate_limit": {
         "provider_key": "bce_kbo",
@@ -485,7 +471,7 @@
       "critical": false,
       "status": "OK",
       "detail": "endpoint reachable (HTTP_401)",
-      "latency_ms": 316.5,
+      "latency_ms": 357.5,
       "rate_limit_policy_key": "companies_house",
       "rate_limit": {
         "provider_key": "companies_house",
@@ -523,7 +509,7 @@
       "critical": false,
       "status": "OK",
       "detail": "endpoint reachable (HTTP_401)",
-      "latency_ms": 303.9,
+      "latency_ms": 346.2,
       "rate_limit_policy_key": "sirene",
       "rate_limit": {
         "provider_key": "sirene",
@@ -561,7 +547,7 @@
       "critical": false,
       "status": "OK",
       "detail": "200 OK",
-      "latency_ms": 607.0,
+      "latency_ms": 357.8,
       "rate_limit_policy_key": "hibp",
       "rate_limit": {
         "provider_key": "hibp",
@@ -599,7 +585,7 @@
       "critical": false,
       "status": "OK",
       "detail": "4 latest vulnerabilities",
-      "latency_ms": 224.3,
+      "latency_ms": 208.2,
       "rate_limit_policy_key": "euvd",
       "rate_limit": {
         "provider_key": "euvd",
@@ -636,8 +622,8 @@
       "category": "cyber",
       "critical": false,
       "status": "OK",
-      "detail": "321 keyword results",
-      "latency_ms": 702.9,
+      "detail": "335 keyword results",
+      "latency_ms": 665.3,
       "rate_limit_policy_key": "nvd",
       "rate_limit": {
         "provider_key": "nvd",
@@ -675,7 +661,7 @@
       "critical": false,
       "status": "OK",
       "detail": "1 exact CPE results",
-      "latency_ms": 1092.4,
+      "latency_ms": 814.4,
       "rate_limit_policy_key": "nvd_cpe",
       "rate_limit": {
         "provider_key": "nvd_cpe",
@@ -713,7 +699,7 @@
       "critical": false,
       "status": "OK",
       "detail": "200 OK",
-      "latency_ms": 295.7,
+      "latency_ms": 245.7,
       "rate_limit_policy_key": "cisa_kev",
       "rate_limit": {
         "provider_key": "cisa_kev",
@@ -751,7 +737,7 @@
       "critical": false,
       "status": "OK",
       "detail": "1 passive results",
-      "latency_ms": 336.9,
+      "latency_ms": 1014.2,
       "rate_limit_policy_key": "urlscan",
       "rate_limit": {
         "provider_key": "urlscan",
@@ -789,7 +775,7 @@
       "critical": false,
       "status": "RATE_LIMIT",
       "detail": "throttled",
-      "latency_ms": 543.0,
+      "latency_ms": 4.3,
       "rate_limit_policy_key": "certspotter",
       "rate_limit": {
         "provider_key": "certspotter",
@@ -813,11 +799,11 @@
           "recovery_poll_interval_s": 7200,
           "notes": "Often rate-limits unauthenticated CT searches; slow recovery cadence."
         },
-        "attempts": 1,
-        "pre_call_wait_seconds": 0.0,
+        "attempts": 0,
+        "pre_call_wait_seconds": 31.785,
         "inline_retry_count": 0,
-        "retry_after_seconds": 578.0,
-        "next_retry_at": "2026-05-27T11:29:45+00:00",
+        "retry_after_seconds": 31.785,
+        "next_retry_at": "2026-06-10T15:52:51+00:00",
         "rate_limit_handled": true
       }
     },
@@ -827,7 +813,7 @@
       "critical": false,
       "status": "OK",
       "detail": "2 ports, 0 vulns",
-      "latency_ms": 167.4,
+      "latency_ms": 139.6,
       "rate_limit_policy_key": "shodan_internetdb",
       "rate_limit": {
         "provider_key": "shodan_internetdb",
@@ -865,7 +851,7 @@
       "critical": false,
       "status": "OK",
       "detail": "5 RDAP services",
-      "latency_ms": 154.2,
+      "latency_ms": 147.5,
       "rate_limit_policy_key": "iana_rdap",
       "rate_limit": {
         "provider_key": "iana_rdap",
@@ -901,9 +887,9 @@
       "name": "Wayback",
       "category": "historical",
       "critical": false,
-      "status": "FAIL",
-      "detail": "HTTP_429",
-      "latency_ms": 4.9,
+      "status": "OK",
+      "detail": "48b",
+      "latency_ms": 13370.7,
       "rate_limit_policy_key": "wayback",
       "rate_limit": {
         "provider_key": "wayback",
@@ -927,11 +913,11 @@
           "recovery_poll_interval_s": 7200,
           "notes": "Public archive route; defer aggressively after 429."
         },
-        "attempts": 0,
-        "pre_call_wait_seconds": 169.219,
-        "inline_retry_count": 0,
-        "retry_after_seconds": 169.219,
-        "next_retry_at": "2026-05-27T11:22:56+00:00",
+        "attempts": 2,
+        "pre_call_wait_seconds": 0.0,
+        "inline_retry_count": 1,
+        "retry_after_seconds": null,
+        "next_retry_at": "",
         "rate_limit_handled": true
       }
     },
@@ -958,11 +944,11 @@
             504
           ],
           "base_backoff_s": 5.0,
-          "max_backoff_s": 300.0,
-          "default_retry_after_s": 120.0,
+          "max_backoff_s": 1800.0,
+          "default_retry_after_s": 1800.0,
           "max_inline_retry_wait_s": 15.0,
           "recovery_poll_interval_s": 1800,
-          "notes": "Public DOC API; DueSight applies a conservative 1 request per 10 seconds per host/process, does not retry 429 inline, and honors Retry-After via recovery backfill."
+          "notes": "Public DOC API; DueSight applies a conservative 1 request per 10 seconds per host/process, does not retry 429 inline, and backs off to recovery cadence after 429."
         }
       }
     },
@@ -972,7 +958,7 @@
       "critical": false,
       "status": "OK",
       "detail": "479b",
-      "latency_ms": 313.7,
+      "latency_ms": 348.1,
       "rate_limit_policy_key": "wikidata_api",
       "rate_limit": {
         "provider_key": "wikidata_api",
@@ -1010,7 +996,7 @@
       "critical": false,
       "status": "OK",
       "detail": "1252b",
-      "latency_ms": 220.6,
+      "latency_ms": 248.8,
       "rate_limit_policy_key": "duckduckgo",
       "rate_limit": {
         "provider_key": "duckduckgo",

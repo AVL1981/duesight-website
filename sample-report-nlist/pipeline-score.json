@@ -2,15 +2,15 @@
   "aggregate_score_certified": true,
   "investment_verdict_certified": false,
   "score_kind": "DueSight Evidence Readiness Score",
-  "score_model": "duesight.sample_report_source_support_model.v2",
-  "score": 71,
+  "score_model": "duesight.sample_report_score_model.v2",
+  "score": 66,
   "scale": "0-100",
-  "display_value": "71/100",
-  "verdict": "READY_WITH_LIMITATIONS",
-  "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
+  "display_value": "66/100",
+  "verdict": "REVIEW",
+  "verdict_meaning": "Evidence pack is useful for pre-DD triage, but material source gaps require review.",
   "score_confidence": "medium",
-  "computed_at": "2026-05-28T10:34:25+00:00",
-  "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
+  "computed_at": "2026-06-10T15:45:10+00:00",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-nlist",
   "target": {
     "slug": "sample-report-nlist",
     "company_name": "NLIST B.V.",
@@ -19,18 +19,17 @@
     "kvk_number": "85442410",
     "ch_uid": "",
     "tier": "standard",
-    "identity_resolution_path": "identity-resolution.json",
-    "identity_resolution_status": "aligned",
-    "previous_configured_kvk_number": "85442410"
+    "identity_resolution_path": "identity-resolution.json"
   },
   "inputs": {
     "manifest_path": "pipeline-manifest.json",
     "ledger_path": "evidence-ledger.json",
-    "evidence_rows": 70,
+    "evidence_rows": 46,
     "source_envelope_complete": true,
     "source_envelope_incomplete_rows": 0,
     "provider_preflight_summary": {
-      "OK": 8,
+      "OK": 7,
+      "CREDIT_REQUIRED": 1,
       "SKIPPED_RECOVERY_CADENCE": 1,
       "SKIPPED_LOCAL_PRIMARY": 1,
       "OPTIONAL_NOT_CONFIGURED": 4
@@ -40,15 +39,15 @@
     {
       "name": "evidence_integrity",
       "label": "Evidence integrity",
-      "score": 22,
+      "score": 21,
       "max_score": 22,
       "status": "strong",
       "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
       "evidence": [
-        "rows=70",
+        "rows=46",
         "source_envelope_complete=True",
         "incomplete_rows=0",
-        "run_id=nlist-full-certified-replay-20260527T132000Z-nlist"
+        "run_id=sample-pipeline-replay-20260610T154700Z-all-nlist"
       ],
       "limitations": [
         "Evidence completeness is not the same as business-risk completeness."
@@ -59,13 +58,13 @@
       "label": "Source readiness",
       "score": 9,
       "max_score": 13,
-      "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "status": "strong",
+      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
       "evidence": [
-        "preflight_ok=8",
+        "preflight_ok=7",
         "hosted_fallback_deferred=0",
         "optional_not_configured=4",
-        "source_health=YELLOW"
+        "source_health=GREEN"
       ],
       "limitations": [
         "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
@@ -74,7 +73,7 @@
     {
       "name": "compliance_media",
       "label": "Compliance and media",
-      "score": 16,
+      "score": 12,
       "max_score": 18,
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
@@ -85,7 +84,7 @@
         "hosted_fallback_deferred=0"
       ],
       "limitations": [
-        "Zero candidates is source-limited and not proof of reputation clearance.",
+        "No-hit is not proof of clean reputation.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ]
     },
@@ -143,20 +142,18 @@
       "score": 7,
       "max_score": 7,
       "status": "context_rich",
-      "rationale": "Target-specific public context and a source-hard FT1000/Statista 2026 award row differentiate this target without promoting award-row revenue to official finance proof.",
+      "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
       "evidence": [
-        "business_profile_rows=38",
+        "business_profile_rows=14",
         "award_rows=1",
-        "award_status=available_with_primary_award_artifact",
-        "ft1000_rank=19",
-        "ft1000_cagr=232.41",
+        "award_status=available_with_primary_check_required",
         "public_acquisition_rows=10",
         "premium_source_rows=5",
         "local_bulk_rows=8"
       ],
       "limitations": [
         "Context-rich does not mean officially proven finance or ownership.",
-        "FT1000/Statista award row is primary award context; official revenue, EBITDA and margin claims still require annual account, seller P&L or provider document hash."
+        "Award and public-web rows remain source-bound context unless primary artifacts are attached."
       ]
     }
   ],

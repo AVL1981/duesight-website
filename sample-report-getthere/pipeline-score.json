@@ -2,52 +2,52 @@
   "aggregate_score_certified": true,
   "investment_verdict_certified": false,
   "score_kind": "DueSight Evidence Readiness Score",
-  "score_model": "duesight.sample_report_source_support_model.v2",
-  "score": 67,
+  "score_model": "duesight.sample_report_score_model.v2",
+  "score": 70,
   "scale": "0-100",
-  "display_value": "67/100",
-  "verdict": "REVIEW",
-  "verdict_meaning": "Evidence pack is useful for pre-DD triage, but material source gaps require review.",
+  "display_value": "70/100",
+  "verdict": "READY_WITH_LIMITATIONS",
+  "verdict_meaning": "Evidence pack is usable, with explicit source and scope limitations.",
   "score_confidence": "medium",
-  "computed_at": "2026-05-28T10:34:24+00:00",
-  "run_id": "certified-samples-rest-20260526-235449-getthere",
+  "computed_at": "2026-06-10T15:54:30+00:00",
+  "run_id": "sample-pipeline-replay-20260610T161000Z-getthere-getthere",
   "target": {
     "slug": "sample-report-getthere",
-    "company_name": "Get There ICT Solutions B.V.",
+    "company_name": "Get There ICT professionals",
     "domain": "getthere.nl",
     "country": "NL",
     "kvk_number": "",
     "ch_uid": "",
     "tier": "standard",
-    "identity_resolution_path": "identity-resolution.json",
-    "identity_resolution_status": "configured_needs_official_extract",
-    "previous_configured_kvk_number": ""
+    "identity_resolution_path": "identity-resolution.json"
   },
   "inputs": {
     "manifest_path": "pipeline-manifest.json",
     "ledger_path": "evidence-ledger.json",
-    "evidence_rows": 50,
+    "evidence_rows": 43,
     "source_envelope_complete": true,
     "source_envelope_incomplete_rows": 0,
     "provider_preflight_summary": {
-      "OK": 8,
-      "OPTIONAL_NOT_CONFIGURED": 4,
-      "HOSTED_FALLBACK_DEFERRED": 2
+      "OK": 7,
+      "CREDIT_REQUIRED": 1,
+      "SKIPPED_RECOVERY_CADENCE": 1,
+      "SKIPPED_LOCAL_PRIMARY": 1,
+      "OPTIONAL_NOT_CONFIGURED": 4
     }
   },
   "components": [
     {
       "name": "evidence_integrity",
       "label": "Evidence integrity",
-      "score": 22,
+      "score": 21,
       "max_score": 22,
       "status": "strong",
       "rationale": "Manifest, run ID, timestamp and evidence envelope are present; all required source-envelope fields are complete.",
       "evidence": [
-        "rows=50",
+        "rows=43",
         "source_envelope_complete=True",
         "incomplete_rows=0",
-        "run_id=certified-samples-rest-20260526-235449-getthere"
+        "run_id=sample-pipeline-replay-20260610T161000Z-getthere-getthere"
       ],
       "limitations": [
         "Evidence completeness is not the same as business-risk completeness."
@@ -56,15 +56,15 @@
     {
       "name": "source_readiness",
       "label": "Source readiness",
-      "score": 7,
+      "score": 9,
       "max_score": 13,
-      "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "status": "strong",
+      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
       "evidence": [
-        "preflight_ok=8",
-        "hosted_fallback_deferred=2",
+        "preflight_ok=7",
+        "hosted_fallback_deferred=0",
         "optional_not_configured=4",
-        "source_health=YELLOW"
+        "source_health=GREEN"
       ],
       "limitations": [
         "Deferred hosted fallback routes require recovery, backfill or paid/local coverage before production completeness claims."
@@ -73,7 +73,7 @@
     {
       "name": "compliance_media",
       "label": "Compliance and media",
-      "score": 16,
+      "score": 12,
       "max_score": 18,
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
@@ -81,24 +81,24 @@
         "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
-        "hosted_fallback_deferred=2"
+        "hosted_fallback_deferred=0"
       ],
       "limitations": [
-        "Zero candidates is source-limited and not proof of reputation clearance.",
+        "No-hit is not proof of clean reputation.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ]
     },
     {
       "name": "ownership_governance",
       "label": "Ownership and governance",
-      "score": 6,
+      "score": 10,
       "max_score": 15,
       "status": "manual_review",
       "rationale": "Ownership routes exist, but official UBO/shareholder evidence is not claim-safe in this replay.",
       "evidence": [
         "ownership_status=available",
         "ownership_rows=2",
-        "fallback_or_review_only=True"
+        "fallback_or_review_only=False"
       ],
       "limitations": [
         "Needs primary register extract, shareholder tree and acquisition documents before final UBO claims."
@@ -139,14 +139,14 @@
     {
       "name": "business_context",
       "label": "Business context",
-      "score": 5,
+      "score": 7,
       "max_score": 7,
-      "status": "limited",
+      "status": "context_rich",
       "rationale": "Target-specific public context, award/proxy signals and local source inventory differentiate this target without promoting context rows to official proof.",
       "evidence": [
-        "business_profile_rows=20",
-        "award_rows=0",
-        "award_status=unknown",
+        "business_profile_rows=12",
+        "award_rows=1",
+        "award_status=available_with_primary_check_required",
         "public_acquisition_rows=10",
         "premium_source_rows=5",
         "local_bulk_rows=8"

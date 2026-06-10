@@ -10,15 +10,14 @@
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
       "Public Website",
-      "public professional source route",
-      "DueSight adverse-media source ladder (public news + legal metadata)"
+      "public professional source route"
     ],
     "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
   },
   "target_contacts": {
-    "count": 6,
+    "count": 5,
     "role_buckets": {
-      "source_rows": 6
+      "source_rows": 5
     },
     "source": "business_profile_intel / public source rows",
     "claim_level": "public/team/contact context if source-enveloped; otherwise route context",
@@ -51,6 +50,7 @@
       "ownership_register",
       "business_profile_intel",
       "company_intel_deep_research",
+      "award_intelligence",
       "local_bulk_inventory",
       "regulatory_exposure",
       "reputation_adverse_media",
@@ -58,10 +58,10 @@
       "premium_source_discovery",
       "source_health",
       "provider_preflight",
-      "llm_orchestrator_synthesis",
-      "social_sentiment_intel"
+      "llm_orchestrator_synthesis"
     ],
     "source_labels": [
+      "tools.award_intel.award_intel_tool",
       "open identity reference",
       "international entity register route",
       "Public Website",
@@ -70,15 +70,12 @@
       "infrastructure exposure route + network registry route",
       "sanctions screening route",
       "public professional source route",
-      "DueSight Financial Bridge validation",
       "DueSight manual golden control",
-      "DueSight Algorithmic UBO Proxy / official register route, international entity register...",
       "adyen.com",
       "news.google.com",
       "linkedin.com",
-      "audit artifact",
       "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
-      "DueSight adverse-media source ladder (public news + legal metadata)"
+      "news discovery route / Google News RSS / Rechtspraak metadata (news discovery route:PAS..."
     ],
     "tools_expected": [
       "business_profile_intel",
@@ -93,14 +90,14 @@
     ]
   },
   "measurable_delta": {
-    "contacts_added_from_business_profile": 6,
+    "contacts_added_from_business_profile": 5,
     "role_buckets_added": 1,
     "competitor_records_added": 0,
     "talent_buckets_added": 0,
     "customer_examples_added": 0,
     "identity_conflicts_detected": 0,
     "source_layers_recorded": 15,
-    "distinct_source_labels": 17
+    "distinct_source_labels": 15
   },
   "guardrails": [
     "LinkedIn/social is discovery or corroboration only.",
@@ -108,6 +105,6 @@
     "Finance, ownership and UBO stay gated until official/provider documents with source hash are attached.",
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
-  "run_id": "certified-samples-rest-20260526-235449-adyen",
-  "updated_at": "2026-06-08T13:34:26+00:00"
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-adyen",
+  "updated_at": "2026-06-10T16:06:28+00:00"
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.company_intel_deep_research.v1",
-  "run_id": "certified-samples-rest-20260526-235449-postnl",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-postnl",
   "target": "PostNL N.V.",
-  "updated_at": "2026-06-08T13:34:27+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "prompt_version": "BUSINESS_PROFILE_INTEL_LAYER_20260521",
   "query_policy_version": "deep_research_query_policy_20260526",
   "models_used": [
@@ -39,7 +39,6 @@
     "Xortron on verified evidence"
   ],
   "deep_research_agent_required": true,
-  "candidate_prompt_evaluation_path": "company-intel-prompt-evaluation.json",
   "candidate_prompt_decision": "adopt_as_market_talent_expansion_layer_not_replacement",
   "verified_findings": 5,
   "review_only_findings": 2,

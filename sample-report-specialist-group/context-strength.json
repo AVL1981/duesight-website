@@ -1,24 +1,24 @@
 {
   "schema_version": "duesight.context_strength.v1",
-  "run_id": "certified-samples-rest-20260526-235449-specialist-group",
+  "run_id": "sample-pipeline-replay-20260610T154700Z-all-specialist-group",
   "target": "The Specialist Group B.V.",
-  "updated_at": "2026-06-08T13:34:27+00:00",
+  "updated_at": "2026-06-10T16:06:29+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
       "topic": "Groeps- en platformcontext",
       "meaning": "Publieke bronnen tonen platform- en acquisitiecontext rond The Specialist Group B.V.; juridische eigendom en UBO blijven official-proof gates.",
       "strength": "Hoog als triangulatie-context",
-      "evidence_rows": 34,
+      "evidence_rows": 35,
       "sources": [
-        "sanctions screening route",
         "international entity register route LEI Register",
         "news.google.com",
+        "tools.award_intel.award_intel_tool",
         "provider discovery route",
-        "finance source route",
-        "ownership review route"
+        "sanctions screening route",
+        "DueSight Algorithmic UBO Proxy"
       ],
-      "safe_rows": 14,
+      "safe_rows": 13,
       "missing_for_official_claim": "Current KvK extract, shareholder register, transaction document or Kyckr/Sayari/Company.info provider output with document hash."
     },
     {
@@ -27,20 +27,18 @@
       "strength": "Middel als onderbouwde context",
       "evidence_rows": 2,
       "sources": [
-        "sanctions screening route",
-        "provider discovery route"
+        "provider discovery route",
+        "sanctions screening route"
       ],
-      "safe_rows": 1,
+      "safe_rows": 0,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
     },
     {
       "topic": "Groei- en marktcontext",
       "meaning": "Er zijn groei-, award- en marktcontextsignalen gevonden, maar die blijven context zolang primaire award/finance artifacts ontbreken.",
-      "strength": "Laag / discovery",
-      "evidence_rows": 1,
-      "sources": [
-        "audit artifact"
-      ],
+      "strength": "Niet aangetoond in deze replay",
+      "evidence_rows": 0,
+      "sources": [],
       "safe_rows": 0,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
@@ -58,9 +56,7 @@
       "meaning": "De finance-route is technisch aanwezig, maar de replay heeft geen target-specifieke officiële filing of P&L opgehaald.",
       "strength": "Geblokkeerd voor officiële finance-claim",
       "evidence_rows": 2,
-      "sources": [
-        "finance source route"
-      ],
+      "sources": [],
       "safe_rows": 0,
       "missing_for_official_claim": "KVK/Dataservice annual account, XBRL/PDF filing, seller P&L or licensed provider finance document with source hash."
     },
@@ -70,11 +66,11 @@
       "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
       "evidence_rows": 5,
       "sources": [
-        "sanctions screening route",
         "international entity register route LEI Register",
-        "ownership review route"
+        "sanctions screening route",
+        "DueSight Algorithmic UBO Proxy"
       ],
-      "safe_rows": 2,
+      "safe_rows": 1,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]
