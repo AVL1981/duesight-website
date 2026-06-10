@@ -8,6 +8,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Contact -->
+  <url>
+    <loc>https://avl1981.github.io/duesight-website/contact.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Sample Reports -->
   <url>
     <loc>https://avl1981.github.io/duesight-website/sample-report-shell/</loc>
