@@ -6,9 +6,7 @@
   "country": "NL",
   "claim_level": "configured and source-route context; official extract required for final reliance",
   "sources": [
-    "GLEIF",
-    "Public Website",
-    "GLEIF LEI Register"
+    "Public Website"
   ],
   "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
 }

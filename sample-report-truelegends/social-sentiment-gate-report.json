@@ -7,7 +7,7 @@
     "sector": "",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T07:52:20+00:00",
+  "updated_at": "2026-06-02T09:58:14+00:00",
   "decision": "REVIEW",
   "gates": [
     {
@@ -19,7 +19,7 @@
     {
       "id": "S2",
       "name": "Social route execution",
-      "status": "PASS",
+      "status": "WARN",
       "message": "SocialMediaEnricher completed or records deferred status."
     },
     {

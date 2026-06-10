@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wwft Risicocheck | DueSight &#8212; Gratis Compliance Zelftest</title>
+<meta name="description" content="Gratis Wwft risicocheck voor notarissen, accountants en compliance officers. Toets uw klantacceptatiebeleid in 10 vragen. Direct resultaat, geen account vereist.">
+<link rel="canonical" href="https://duesight.nl/wwft-check">
+<meta property="og:title" content="Wwft Risicocheck | DueSight &#8212; Compliance Zelftest">
+<meta property="og:description" content="Toets uw Wwft-compliance in 10 vragen. Gratis tool voor notarissen, accountants en compliance officers.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"DueSight Wwft Risicocheck","url":"https://duesight.nl/wwft-check","description":"Gratis Wwft compliance zelftest voor notarissen, accountants en compliance officers. 10 vragen over klantacceptatie, UBO-identificatie, transactiemonitoring en meldplicht.","applicationCategory":"BusinessApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0f1a;--surface:#151b2e;--surface2:#1a2340;--border:rgba(255,255,255,0.06);--accent:#8b5cf6;--accent-dim:rgba(139,92,246,0.1);--ok:#22c55e;--warn:#f59e0b;--danger:#ef4444;--text:#e8eaf6;--muted:#64748b;--mono:'DM Mono',monospace;--sans:'DM Sans',system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;line-height:1.6}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:0 24px;height:52px;background:rgba(12,15,26,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);font-weight:500;font-size:15px}
+.nav-sep{height:16px;width:1px;background:var(--border)}
+.nav-tool{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase}
+.nav-cta{margin-left:auto;padding:6px 14px;background:var(--accent-dim);border:1px solid rgba(139,92,246,0.25);border-radius:7px;color:#c4b5fd;font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:rgba(139,92,246,0.2)}
+main{max-width:680px;margin:0 auto;padding:48px 20px 80px}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:300;letter-spacing:-0.03em;line-height:1.15;margin-bottom:12px}
+h1 strong{font-weight:600}
+.subtitle{font-size:14px;color:var(--muted);max-width:520px;margin-bottom:36px;line-height:1.7}
+.progress{display:flex;gap:4px;margin-bottom:32px}
+.progress-seg{flex:1;height:3px;border-radius:2px;background:var(--border);transition:background 0.3s}
+.progress-seg.done{background:var(--accent)}
+.progress-seg.active{background:var(--accent);box-shadow:0 0 8px rgba(139,92,246,0.4)}
+.q-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;margin-bottom:16px;animation:fadeUp 0.3s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.q-num{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.q-text{font-size:15px;font-weight:500;margin-bottom:20px;line-height:1.5}
+.q-opts{display:flex;flex-direction:column;gap:8px}
+.q-opt{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;font-size:13px;color:var(--text)}
+.q-opt:hover{border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.05)}
+.q-opt.selected{border-color:var(--accent);background:var(--accent-dim)}
+.q-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.q-opt.selected .q-dot{border-color:var(--accent);background:var(--accent)}
+.q-opt.selected .q-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff}
+.q-hint{margin-top:8px;font-size:11px;color:var(--muted);line-height:1.5;padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:6px}
+.nav-btns{display:flex;gap:12px;margin-top:8px}
+.nav-prev,.nav-next{padding:10px 20px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text);font-family:var(--sans);font-size:13px;cursor:pointer;transition:all 0.2s}
+.nav-next{background:var(--accent);border-color:var(--accent);color:#fff;margin-left:auto}
+.nav-next:hover{background:#7c3aed}
+.nav-prev:hover{border-color:rgba(255,255,255,0.15)}
+.nav-next:disabled{opacity:0.4;cursor:not-allowed}
+
+/* Results */
+.result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 24px;margin-bottom:16px}
+.score-circle{width:80px;height:80px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 20px;font-family:var(--mono);font-size:24px;font-weight:600}
+.score-high{background:rgba(34,197,94,0.12);border:2px solid rgba(34,197,94,0.3);color:var(--ok)}
+.score-med{background:rgba(245,158,11,0.12);border:2px solid rgba(245,158,11,0.3);color:var(--warn)}
+.score-low{background:rgba(239,68,68,0.12);border:2px solid rgba(239,68,68,0.3);color:var(--danger)}
+.score-label{font-size:8px;letter-spacing:1px;margin-top:2px}
+.result-title{text-align:center;font-size:18px;font-weight:500;margin-bottom:6px}
+.result-sub{text-align:center;font-size:13px;color:var(--muted);margin-bottom:24px}
+.finding{display:flex;align-items:flex-start;gap:10px;padding:12px;border-radius:8px;margin-bottom:8px;font-size:12px;line-height:1.5}
+.finding-ok{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.12)}
+.finding-warn{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.12)}
+.finding-bad{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.12)}
+.finding-icon{flex-shrink:0;font-size:14px;margin-top:1px}
+.cta-box{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:10px;background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.2);margin-top:20px}
+.cta-box-text{flex:1;font-size:12px;color:var(--muted);line-height:1.5}
+.cta-box-text strong{color:var(--text)}
+.cta-btn{flex-shrink:0;padding:8px 16px;background:var(--accent);border:none;border-radius:7px;color:#fff;font-family:var(--sans);font-size:12px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.cta-btn:hover{background:#7c3aed}
+.disclaimer{margin-top:32px;font-size:11px;color:#1e2a3c;line-height:1.6}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="https://duesight.nl" class="nav-logo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    DueSight
+  </a>
+  <div class="nav-sep"></div>
+  <span class="nav-tool">Wwft Risicocheck</span>
+  <a href="https://duesight.nl/#scan-dashboard" class="nav-cta">Volledig rapport &#8594;</a>
+</nav>
+<main>
+  <div class="eyebrow">Gratis Compliance Tool</div>
+  <h1>Wwft Risicocheck &#8212; <strong>10 vragen, direct inzicht</strong></h1>
+  <p class="subtitle">Toets uw klantacceptatiebeleid, UBO-identificatie en transactiemonitoring tegen de Wwft-vereisten. Resultaat in 2 minuten. Geen account. Geen dataopslag.</p>
+  <div class="progress" id="progress"></div>
+  <div id="quiz"></div>
+  <p class="disclaimer">DueSight Wwft Risicocheck is een indicatieve zelftest en vervangt geen juridisch advies of formele compliance audit. Raadpleeg uw compliance officer of juridisch adviseur voor bindende conclusies. DueSight slaat geen antwoorden op.</p>
+</main>
+<script>
+var QS=[
+{q:'Heeft uw organisatie een schriftelijk vastgelegd Wwft-beleid dat periodiek wordt geactualiseerd?',hint:'Art. 2c Wwft vereist een actueel beleid inzake cli\u00ebntonderzoek, risicobeoordeling en meldplicht.',opts:['Ja, jaarlijks geactualiseerd','Ja, maar ouder dan 2 jaar','Nee / weet ik niet'],scores:[3,1,0]},
+{q:'Wordt bij elke nieuwe cli\u00ebnt een cli\u00ebntacceptatie-procedure doorlopen inclusief risicoklasse-toewijzing?',hint:'Iedere meldingsplichtige instelling moet een risicogebaseerde benadering hanteren (Art. 3 Wwft).',opts:['Ja, gestandaardiseerd proces','Soms, afhankelijk van omvang','Nee, we beoordelen ad hoc'],scores:[3,1,0]},
+{q:'Worden UBO\u2019s (Ultimate Beneficial Owners) ge\u00efdentificeerd en geverifieerd bij elke relatie?',hint:'Art. 3 lid 1 sub b Wwft: identificatie en verificatie van de UBO is verplicht.',opts:['Ja, altijd met verificatie','Ja, maar niet altijd geverifieerd','Nee / alleen bij grote transacties'],scores:[3,1,0]},
+{q:'Controleert u cli\u00ebnten periodiek tegen de EU-sanctielijst, OFAC en PEP-registers?',hint:'Sanctiescreening is een kernonderdeel van het Wwft-cli\u00ebntonderzoek.',opts:['Ja, geautomatiseerd en periodiek','Ja, maar handmatig/incidenteel','Nee'],scores:[3,1,0]},
+{q:'Is er een aangewezen compliance officer verantwoordelijk voor Wwft-naleving?',hint:'DNB en AFM verwachten een aantoonbaar aangewezen compliance-functie.',opts:['Ja, formeel aangesteld','Ja, maar gecombineerde functie','Nee / onduidelijk'],scores:[3,1,0]},
+{q:'Worden medewerkers periodiek getraind op Wwft-signalen en meldplicht?',hint:'Art. 35 Wwft: opleiding en training is verplicht voor alle relevante medewerkers.',opts:['Ja, minimaal jaarlijks','Ja, maar onregelmatig','Nee, geen formeel programma'],scores:[3,1,0]},
+{q:'Heeft u in de afgelopen 24 maanden een ongebruikelijke transactie gemeld bij FIU-NL?',hint:'Nul meldingen in twee jaar bij actieve dienstverlening kan duiden op under-reporting.',opts:['Ja, waar nodig','Nee, maar bewust beoordeeld','Nee / weet niet hoe'],scores:[3,2,0]},
+{q:'Worden PEP-relaties (Politically Exposed Persons) specifiek gemonitord met enhanced due diligence?',hint:'PEP-screening vereist verscherpt cli\u00ebntonderzoek inclusief brongevalideerd vermogen.',opts:['Ja, enhanced procedures','Ge\u00efdentificeerd maar geen aanvullend beleid','Nee / PEP-check niet ingebouwd'],scores:[3,1,0]},
+{q:'Bewaart u cli\u00ebntenonderzoekdossiers conform de wettelijke bewaartermijn van 5 jaar?',hint:'Art. 33 Wwft: gegevens bewaren tot 5 jaar na be\u00ebindiging van de zakelijke relatie.',opts:['Ja, digitaal gearchiveerd','Gedeeltelijk bewaard','Nee / onzeker'],scores:[3,1,0]},
+{q:'Heeft uw organisatie een onafhankelijke (interne of externe) Wwft-audit ondergaan in de afgelopen 3 jaar?',hint:'Periodieke audits zijn niet wettelijk verplicht maar worden sterk aanbevolen door DNB.',opts:['Ja, met rapportage','Gepland maar nog niet uitgevoerd','Nee'],scores:[3,1,0]}
+];
+var current=0,answers=new Array(QS.length).fill(-1);
+function renderProgress(){var h='';for(var i=0;i<QS.length;i++){var cls=answers[i]>=0?'done':(i===current?'active':'');h+='<div class="progress-seg '+cls+'"></div>';}document.getElementById('progress').innerHTML=h;}
+function renderQ(){
+var q=QS[current];var h='<div class="q-card"><div class="q-num">Vraag '+(current+1)+' van '+QS.length+'</div><div class="q-text">'+q.q+'</div><div class="q-opts">';
+q.opts.forEach(function(o,i){var sel=answers[current]===i?'selected':'';h+='<div class="q-opt '+sel+'" data-idx="'+i+'"><div class="q-dot"></div>'+o+'</div>';});
+h+='</div><div class="q-hint">'+q.hint+'</div><div class="nav-btns">';
+if(current>0)h+='<button class="nav-prev" id="prevBtn">&#8592; Vorige</button>';
+h+='<button class="nav-next" id="nextBtn" '+(answers[current]<0?'disabled':'')+'>'+( current===QS.length-1?'Resultaat bekijken &#8594;':'Volgende &#8594;')+'</button></div></div>';
+document.getElementById('quiz').innerHTML=h;renderProgress();
+document.querySelectorAll('.q-opt').forEach(function(el){el.addEventListener('click',function(){answers[current]=parseInt(this.dataset.idx);renderQ();});});
+document.getElementById('nextBtn').addEventListener('click',function(){if(answers[current]<0)return;if(current<QS.length-1){current++;renderQ();}else{showResults();}});
+var pb=document.getElementById('prevBtn');if(pb)pb.addEventListener('click',function(){if(current>0){current--;renderQ();}});
+}
+function showResults(){
+var total=0,max=QS.length*3;
+answers.forEach(function(a,i){total+=QS[i].scores[a];});
+var pct=Math.round(total/max*100);
+var cls=pct>=80?'score-high':pct>=50?'score-med':'score-low';
+var label=pct>=80?'GOED':pct>=50?'MATIG':'ONVOLDOENDE';
+var h='<div class="result-card"><div class="score-circle '+cls+'">'+pct+'%<div class="score-label">'+label+'</div></div>';
+h+='<div class="result-title">Wwft Compliance Score: '+pct+'%</div>';
+h+='<div class="result-sub">'+total+'/'+max+' punten op basis van '+QS.length+' criteria</div>';
+answers.forEach(function(a,i){
+var q=QS[i],s=q.scores[a];
+var fc=s===3?'finding-ok':s>=1?'finding-warn':'finding-bad';
+var ic=s===3?'\u2713':s>=1?'\u26a0':'\u2717';
+h+='<div class="finding '+fc+'"><span class="finding-icon">'+ic+'</span><div><strong>'+q.q.substring(0,60)+'...</strong><br>Uw antwoord: '+q.opts[a]+'</div></div>';
+});
+h+='<div class="cta-box"><div class="cta-box-text"><strong>Volledige Wwft-screening per cli\u00ebnt:</strong> Een DueSight Pre-DD rapport bevat automatische sanctiescreening, UBO-tracering en Wwft-risicoklassificatie \u2014 gedocumenteerd met audit trail.</div><a href="https://duesight.nl/#scan-dashboard" class="cta-btn">Pre-DD starten \u2192</a></div>';
+h+='</div>';
+h+='<button style="margin-top:16px;padding:10px 20px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text);cursor:pointer;font-family:var(--sans);font-size:13px" id="retryBtn">Opnieuw invullen</button>';
+document.getElementById('quiz').innerHTML=h;renderProgress();
+document.getElementById('retryBtn').addEventListener('click',function(){current=0;answers=new Array(QS.length).fill(-1);renderQ();});
+}
+renderQ();
+</script>
+</body>
+</html>

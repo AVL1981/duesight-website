@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
   "target": "Mollie B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -14,10 +14,10 @@
       "memo_safe_rows": 19,
       "sources": [
         "news.google.com",
-        "linkedin_public",
+        "public professional source route",
         "mollie.com",
         "Public Website",
-        "Exa"
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -42,7 +42,7 @@
       "evidence_rows": 10,
       "memo_safe_rows": 9,
       "sources": [
-        "linkedin_public",
+        "public professional source route",
         "sanctions screening route",
         "mollie.com",
         "news.google.com"
@@ -97,7 +97,7 @@
       "memo_safe_rows": 0,
       "sources": [
         "audit artifact",
-        "linkedin_public"
+        "public professional source route"
       ],
       "source_envelope": {
         "required": [
@@ -123,10 +123,10 @@
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "GLEIF",
-        "Exa",
+        "international entity register route",
+        "provider discovery route",
         "DueSight manual golden control",
-        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
       ],
       "source_envelope": {
         "required": [
@@ -152,13 +152,13 @@
       "memo_safe_rows": 24,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "linkedin_public"
+        "public professional source route"
       ],
       "source_envelope": {
         "required": [
@@ -184,13 +184,13 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "linkedin_public"
+        "public professional source route"
       ],
       "source_envelope": {
         "required": [

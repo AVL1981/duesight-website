@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoe Benford's Law Fraude Detecteert | DueSight Intelligence</title>
+    <title>Hoe eerste-cijferanalyse fraude detecteert | DueSight Intelligence</title>
     <meta name="description"
-        content="Benford's Law uitgelegd: hoe deze forensische techniek manipulatie in jaarrekeningen en financiele rapportages detecteert. Met voorbeelden en Python code.">
+        content="Eerste-cijferanalyse uitgelegd: hoe deze forensische techniek manipulatie in jaarrekeningen en financiele rapportages detecteert. Met voorbeelden en Python code.">
     <link rel="canonical" href="https://avl1981.github.io/duesight-website/blog/benfords-law-fraude-detectie/">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Hoe Benford's Law Fraude Detecteert in Financiele Rapportages">
+    <meta property="og:title" content="Hoe eerste-cijferanalyse fraude detecteert in Financiele Rapportages">
     <meta property="og:description"
-        content="De wetenschap achter Benford's Law: hoe AI het toepast op jaarrekeningen om manipulatie te detecteren.">
+        content="De wetenschap achter eerste-cijferanalyse: hoe AI het toepast op jaarrekeningen om manipulatie te detecteren.">
     <meta property="og:locale" content="nl_NL">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Hoe Benford's Law Fraude Detecteert in Financiele Rapportages",
+        "headline": "Hoe eerste-cijferanalyse fraude detecteert in Financiele Rapportages",
         "author": {"@type": "Organization", "name": "DueSight Intelligence"},
         "datePublished": "2026-03-13",
         "dateModified": "2026-03-13"
@@ -30,7 +30,7 @@
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://avl1981.github.io/duesight-website/"},
             {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avl1981.github.io/duesight-website/blog/"},
-            {"@type": "ListItem", "position": 3, "name": "Benford's Law"}
+            {"@type": "ListItem", "position": 3, "name": "eerste-cijferanalyse"}
         ]
     }
     </script>
@@ -307,10 +307,10 @@
 <body>
     <article class="article-container">
         <nav class="breadcrumb">
-            <a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; Benford's Law
+            <a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; eerste-cijferanalyse
         </nav>
 
-        <h1>Hoe Benford's Law Fraude Detecteert in Financi&euml;le Rapportages</h1>
+        <h1>Hoe eerste-cijferanalyse fraude detecteert in Financi&euml;le Rapportages</h1>
 
         <div class="article-meta">
             <span>DueSight Intelligence</span>
@@ -322,35 +322,35 @@
 
         <div class="answer-box">
             <strong>Snel antwoord</strong>
-            Benford's Law stelt dat in natuurlijke datasets het eerste cijfer niet gelijkmatig verdeeld is: het cijfer 1
+            Eerste-cijferanalyse stelt dat in natuurlijke datasets het eerste cijfer niet gelijkmatig verdeeld is: het cijfer 1
             komt in ~30% van de gevallen voor, terwijl 9 slechts ~4.6% voorkomt. Financi&euml;le rapportages die
-            significant afwijken van deze verdeling kunnen wijzen op manipulatie. DueSight past Benford's Law
-            automatisch toe op alle gescande bedrijven.
+            significant afwijken van deze verdeling kunnen wijzen op manipulatie. DueSight past statistische
+            patroonherkenning automatisch toe op alle gescande bedrijven.
         </div>
 
         <div class="toc">
             <h3>Inhoudsopgave</h3>
             <ol>
-                <li><a href="#wat">Wat is Benford's Law?</a></li>
+                <li><a href="#wat">Wat is eerste-cijferanalyse?</a></li>
                 <li><a href="#wiskunde">De wiskunde erachter</a></li>
-                <li><a href="#fraude">Benford's Law in fraude-detectie</a></li>
+                <li><a href="#fraude">Eerste-cijferanalyse in fraude-detectie</a></li>
                 <li><a href="#cases">Bekende fraude-cases</a></li>
-                <li><a href="#toepassing">Hoe DueSight het toepast</a></li>
+                <li><a href="#toepassing">Hoe DueSight forensische data-analyse toepast</a></li>
                 <li><a href="#beperkingen">Beperkingen en valkuilen</a></li>
                 <li><a href="#faq">Veelgestelde vragen</a></li>
             </ol>
         </div>
 
         <p class="lead">
-            In 1938 ontdekte fysicus Frank Benford iets verrassends: in de meeste natuurlijk voorkomende datasets
+            In 1938 werd iets verrassends vastgesteld: in de meeste natuurlijk voorkomende datasets
             beginnen getallen veel vaker met een 1 dan met een 9. Dit contra-intu&iuml;tieve fenomeen is sindsdien een
             krachtig forensisch instrument geworden voor het detecteren van financi&euml;le fraude.
         </p>
 
-        <h2 id="wat">1. Wat is Benford's Law?</h2>
+        <h2 id="wat">1. Wat is eerste-cijferanalyse?</h2>
 
         <p>
-            <strong>Benford's Law</strong> (ook wel de Wet van de Eerste Cijfers genoemd) beschrijft de
+            <strong>Eerste-cijferanalyse</strong> (ook wel de Wet van de Eerste Cijfers genoemd) beschrijft de
             frequentieverdeling van leidende cijfers in veel soorten datasets. In tegenstelling tot wat je zou
             verwachten, komt elk cijfer (1-9) niet even vaak voor als eerste cijfer.
         </p>
@@ -419,7 +419,7 @@
 
         <h2 id="wiskunde">2. De Wiskunde Erachter</h2>
 
-        <p>De formule voor Benford's Law is elegant eenvoudig:</p>
+        <p>De formule voor eerste-cijferanalyse is elegant eenvoudig:</p>
 
         <div class="code-block">
             P(d) = log<sub>10</sub>(1 + 1/d)
@@ -439,11 +439,11 @@
             groeien slechts 11%. Daarom "verblijven" getallen langer in het bereik dat met lagere cijfers begint.
         </p>
 
-        <h2 id="fraude">3. Benford's Law in Fraude-Detectie</h2>
+        <h2 id="fraude">3. Eerste-cijferanalyse in fraude-detectie</h2>
 
         <p>
             Wanneer iemand financi&euml;le cijfers verzint of manipuleert, volgen die cijfers niet de natuurlijke
-            Benford-verdeling. Menselijk bedachte getallen zijn typisch te "gelijkmatig" verdeeld &mdash; mensen kiezen
+            verwachte eerste-cijferverdeling. Menselijk bedachte getallen zijn typisch te "gelijkmatig" verdeeld &mdash; mensen kiezen
             te vaak middelste cijfers (4, 5, 6) en te weinig extreme cijfers (1, 9).
         </p>
 
@@ -458,7 +458,7 @@
             </div>
         </div>
 
-        <h3>Rode vlaggen in Benford-analyse:</h3>
+        <h3>Rode vlaggen in eerste-cijferanalyse:</h3>
         <ul>
             <li><strong>Te weinig 1'en</strong> &mdash; Het meest voorkomende teken van manipulatie</li>
             <li><strong>Te veel 5'en of 6'en</strong> &mdash; Menselijke neiging naar "middencijfers"</li>
@@ -470,7 +470,7 @@
 
         <h3>Enron (2001)</h3>
         <p>
-            De energiegigant manipuleerde omzetcijfers via Special Purpose Entities. Benford-analyse van de
+            De energiegigant manipuleerde omzetcijfers via Special Purpose Entities. Eerste-cijferanalyse van de
             gerapporteerde inkomsten toonde significante afwijkingen bij de cijfers 1 en 4 &mdash; precies de patronen
             die wijzen op kunstmatig opgeblazen omzet.
         </p>
@@ -478,33 +478,33 @@
         <h3>Madoff Investment Securities (2008)</h3>
         <p>
             Bernie Madoff's Ponzi-scheme genereerde fictieve rendementen. De gerapporteerde maandrendementen volgden
-            geen Benford-verdeling. Forensische analisten die achteraf Benford's Law toepasten, konden de fraude
+            geen natuurlijke eerste-cijferverdeling. Forensische analisten die achteraf eerste-cijferanalyse toepasten, konden de fraude
             statistisch significant aantonen.
         </p>
 
         <h3>Wirecard (2020)</h3>
         <p>
             De Duitse fintechgigant rapporteerde &euro;1,9 miljard aan niet-bestaande tegoeden. Academische analyses
-            achteraf toonden aan dat de gerapporteerde omzetcijfers per regio significant afweken van Benford's Law.
+            achteraf toonden aan dat de gerapporteerde omzetcijfers per regio significant afweken van de verwachte eerste-cijferverdeling.
         </p>
 
-        <h2 id="toepassing">5. Hoe DueSight Benford's Law Toepast</h2>
+        <h2 id="toepassing">5. Hoe DueSight forensische data-analyse toepast</h2>
 
         <p>
-            DueSight past Benford's Law automatisch toe op elk gescand bedrijf. Het proces:
+            DueSight past statistische patroonherkenning automatisch toe op elk gescand bedrijf. Het proces:
         </p>
         <ol>
             <li><strong>Data extractie</strong> &mdash; Alle financi&euml;le cijfers uit jaarrekeningen worden
                 ge&euml;xtraheerd</li>
             <li><strong>Eerste-cijfer analyse</strong> &mdash; De verdeling van eerste cijfers wordt berekend</li>
-            <li><strong>Chi-kwadraat test</strong> &mdash; Statistische vergelijking met de verwachte Benford-verdeling
+            <li><strong>Chi-kwadraat test</strong> &mdash; Statistische vergelijking met de verwachte eerste-cijferverdeling
             </li>
             <li><strong>Afwijking-score</strong> &mdash; Hoe groter de afwijking, hoe hoger het fraude-risico</li>
             <li><strong>Contextuele beoordeling</strong> &mdash; AI beoordeelt of de afwijking verklaarbaar is</li>
         </ol>
 
         <div class="code-block">
-            <span style="color:#64748b;"># Vereenvoudigd voorbeeld van Benford-analyse</span><br>
+            <span style="color:#64748b;"># Vereenvoudigd voorbeeld van eerste-cijferanalyse</span><br>
             <span style="color:#c084fc;">import</span> math<br><br>
             <span style="color:#c084fc;">def</span> <span class="highlight">benford_expected</span>(digit):<br>
             &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c084fc;">return</span> math.log10(1 + 1/digit)<br><br>
@@ -524,13 +524,13 @@
         <h2 id="beperkingen">6. Beperkingen en Valkuilen</h2>
 
         <p>
-            Benford's Law is krachtig maar niet onfeilbaar:
+            Eerste-cijferanalyse is krachtig maar niet onfeilbaar:
         </p>
         <ul>
             <li><strong>Kleine datasets</strong> &mdash; Je hebt minimaal ~100 datapunten nodig voor betrouwbare
                 resultaten</li>
             <li><strong>Beperkte ranges</strong> &mdash; Data die binnen een smal bereik valt (bijv. alleen bedragen
-                €400-€500) volgt Benford niet</li>
+                €400-€500) volgt eerste-cijferanalyse niet</li>
             <li><strong>Afwijking ≠ fraude</strong> &mdash; Sommige industri&euml;en (bijv. vastgoed met vaste
                 huurprijzen) wijken natuurlijk af</li>
             <li><strong>Tweede-orde analyse</strong> &mdash; Geavanceerde fraude kan eerste-cijfer tests passeren;
@@ -538,28 +538,28 @@
         </ul>
 
         <div class="cta-block">
-            <h3>Bekijk Benford's Law in actie</h3>
-            <p>In elk DueSight rapport wordt automatisch een Benford-analyse uitgevoerd.</p>
+            <h3>Bekijk forensische cijferanalyse in actie</h3>
+            <p>In elk DueSight rapport wordt automatisch een forensische cijferanalyse uitgevoerd.</p>
             <a href="../../sample-report-shell/" class="cta-btn">Shell Report bekijken &rarr;</a>
         </div>
 
         <h2 id="faq">7. Veelgestelde Vragen</h2>
 
-        <h3>Werkt Benford's Law op alle financi&euml;le data?</h3>
+        <h3>Werkt eerste-cijferanalyse op alle financi&euml;le data?</h3>
         <p>
             Op de meeste typen die meerdere ordes van grootte bestrijken: omzet, kosten, balansposten,
             transactiewaarden. Niet op data met beperkte ranges (bijv. rentepercentages van 3-5%).
         </p>
 
-        <h3>Kan een fraudeur Benford's Law omzeilen?</h3>
+        <h3>Kan een fraudeur eerste-cijferanalyse omzeilen?</h3>
         <p>
-            In theorie ja, als ze bewust getallen genereren die aan de Benford-verdeling voldoen. In de praktijk is dit
+            In theorie ja, als ze bewust getallen genereren die aan de verwachte eerste-cijferverdeling voldoen. In de praktijk is dit
             uiterst moeilijk, met name bij grote datasets en als je ook tweede-cijfer analyse toepast.
         </p>
 
-        <h3>Is Benford-analyse juridisch bewijs?</h3>
+        <h3>Is eerste-cijferanalyse juridisch bewijs?</h3>
         <p>
-            Benford-analyse is geen sluitend bewijs maar een <strong>indicator</strong>. Het wordt internationaal
+            Eerste-cijferanalyse is geen sluitend bewijs maar een <strong>indicator</strong>. Het wordt internationaal
             geaccepteerd als forensisch hulpmiddel dat nader onderzoek rechtvaardigt. Rechtbanken in de VS en EU hebben
             het als ondersteunend bewijs erkend.
         </p>

@@ -1,13 +1,13 @@
 {
   "schema_version": "duesight.max_research_anti_hallucination_gates.v1",
   "target": {
-    "name": "GetThere B.V.",
+    "name": "Get There ICT Solutions B.V.",
     "domain": "getthere.nl",
     "kvk": "",
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T09:49:03+00:00",
+  "updated_at": "2026-06-02T10:29:40+00:00",
   "decision": "PASS",
   "gates": [
     {
@@ -50,7 +50,7 @@
       "id": "G7",
       "name": "Source URL depth",
       "status": "PASS",
-      "message": "61 source URLs extracted from provider outputs."
+      "message": "60 source URLs extracted from provider outputs."
     },
     {
       "id": "G8",

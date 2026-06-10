@@ -7,20 +7,20 @@
     "sector": "7810 Arbeidsbemiddeling",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T08:21:24+00:00",
+  "updated_at": "2026-06-02T10:08:26+00:00",
   "social_scan": {
     "status": "executed",
-    "elapsed_s": 40.821,
+    "elapsed_s": 51.258,
     "result": {
       "social_status": "FOUND",
       "social_platforms_checked": 443,
-      "social_profiles_found": 89,
+      "social_profiles_found": 90,
       "social_trust_badge": {
         "badge": "GOLD",
         "score": 60,
-        "platforms_total": 89,
-        "platforms_verified": 84,
-        "platforms_unique": 84,
+        "platforms_total": 90,
+        "platforms_verified": 86,
+        "platforms_unique": 86,
         "description": "Strong digital footprint across multiple platforms — good confidence"
       },
       "social_breach_check_passed": false,
@@ -80,6 +80,7 @@
         "reverbnation: very few connections/repos (possible throwaway account)",
         "roblox: very few connections/repos (possible throwaway account)",
         "rockettube: very few connections/repos (possible throwaway account)",
+        "runescape: very few connections/repos (possible throwaway account)",
         "scratch: very few connections/repos (possible throwaway account)",
         "scribd: very few connections/repos (possible throwaway account)",
         "slack: very few connections/repos (possible throwaway account)",
@@ -113,9 +114,9 @@
         "threads: very few connections/repos (possible throwaway account)",
         "xhamster: very few connections/repos (possible throwaway account)",
         "linkedin: very few connections/repos (possible throwaway account)",
+        "twitter_x: very few connections/repos (possible throwaway account)",
         "facebook: very few connections/repos (possible throwaway account)",
-        "instagram: very few connections/repos (possible throwaway account)",
-        "twitter_x: very few connections/repos (possible throwaway account)"
+        "instagram: very few connections/repos (possible throwaway account)"
       ],
       "social_profiles": [
         {
@@ -861,6 +862,20 @@
           "job_title": ""
         },
         {
+          "platform": "runescape",
+          "handle": "nlist",
+          "url": "https://apps.runescape.com/runemetrics/app/overview/player/nlist",
+          "name": "NLIST B.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
           "platform": "scratch",
           "handle": "nlist",
           "url": "https://scratch.mit.edu/users/nlist",
@@ -1310,36 +1325,8 @@
         },
         {
           "platform": "linkedin",
-          "handle": "nlist1",
-          "url": "https://www.linkedin.com/company/nlist1/",
-          "name": "NLIST B.V.",
-          "bio": "",
-          "location": "",
-          "followers": 0,
-          "verified": false,
-          "avatar_url": "",
-          "created_at": "",
-          "company": "",
-          "job_title": ""
-        },
-        {
-          "platform": "facebook",
-          "handle": "nlistng",
-          "url": "https://www.facebook.com/nlistng/",
-          "name": "NLIST B.V.",
-          "bio": "",
-          "location": "",
-          "followers": 0,
-          "verified": false,
-          "avatar_url": "",
-          "created_at": "",
-          "company": "",
-          "job_title": ""
-        },
-        {
-          "platform": "instagram",
-          "handle": "nlist_international",
-          "url": "https://www.instagram.com/nlist_international/",
+          "handle": "nlist-b-v",
+          "url": "https://www.linkedin.com/company/nlist-b-v",
           "name": "NLIST B.V.",
           "bio": "",
           "location": "",
@@ -1352,8 +1339,36 @@
         },
         {
           "platform": "twitter_x",
-          "handle": "b",
-          "url": "https://x.com/b?lang=en",
+          "handle": "NLIST_BV",
+          "url": "https://x.com/NLIST_BV",
+          "name": "NLIST B.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
+          "platform": "facebook",
+          "handle": "NLISTBV",
+          "url": "https://www.facebook.com/NLISTBV/",
+          "name": "NLIST B.V.",
+          "bio": "",
+          "location": "",
+          "followers": 0,
+          "verified": false,
+          "avatar_url": "",
+          "created_at": "",
+          "company": "",
+          "job_title": ""
+        },
+        {
+          "platform": "instagram",
+          "handle": "nlist_bv",
+          "url": "https://www.instagram.com/nlist_bv/",
           "name": "NLIST B.V.",
           "bio": "",
           "location": "",
@@ -2110,6 +2125,20 @@
         "job_title": ""
       },
       {
+        "platform": "runescape",
+        "handle": "nlist",
+        "url": "https://apps.runescape.com/runemetrics/app/overview/player/nlist",
+        "name": "NLIST B.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
         "platform": "scratch",
         "handle": "nlist",
         "url": "https://scratch.mit.edu/users/nlist",
@@ -2559,36 +2588,8 @@
       },
       {
         "platform": "linkedin",
-        "handle": "nlist1",
-        "url": "https://www.linkedin.com/company/nlist1/",
-        "name": "NLIST B.V.",
-        "bio": "",
-        "location": "",
-        "followers": 0,
-        "verified": false,
-        "avatar_url": "",
-        "created_at": "",
-        "company": "",
-        "job_title": ""
-      },
-      {
-        "platform": "facebook",
-        "handle": "nlistng",
-        "url": "https://www.facebook.com/nlistng/",
-        "name": "NLIST B.V.",
-        "bio": "",
-        "location": "",
-        "followers": 0,
-        "verified": false,
-        "avatar_url": "",
-        "created_at": "",
-        "company": "",
-        "job_title": ""
-      },
-      {
-        "platform": "instagram",
-        "handle": "nlist_international",
-        "url": "https://www.instagram.com/nlist_international/",
+        "handle": "nlist-b-v",
+        "url": "https://www.linkedin.com/company/nlist-b-v",
         "name": "NLIST B.V.",
         "bio": "",
         "location": "",
@@ -2601,8 +2602,36 @@
       },
       {
         "platform": "twitter_x",
-        "handle": "b",
-        "url": "https://x.com/b?lang=en",
+        "handle": "NLIST_BV",
+        "url": "https://x.com/NLIST_BV",
+        "name": "NLIST B.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
+        "platform": "facebook",
+        "handle": "NLISTBV",
+        "url": "https://www.facebook.com/NLISTBV/",
+        "name": "NLIST B.V.",
+        "bio": "",
+        "location": "",
+        "followers": 0,
+        "verified": false,
+        "avatar_url": "",
+        "created_at": "",
+        "company": "",
+        "job_title": ""
+      },
+      {
+        "platform": "instagram",
+        "handle": "nlist_bv",
+        "url": "https://www.instagram.com/nlist_bv/",
         "name": "NLIST B.V.",
         "bio": "",
         "location": "",
@@ -2615,7 +2644,7 @@
       }
     ],
     "platforms_checked": 443,
-    "profiles_found": 89,
+    "profiles_found": 90,
     "risk_level": "MEDIUM"
   },
   "existing_social_context": {

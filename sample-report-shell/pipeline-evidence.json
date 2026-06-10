@@ -254,8 +254,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'Shell plc' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'Shell plc' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -271,7 +271,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -339,7 +339,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "ubo": {
@@ -374,7 +374,7 @@
             "cost_eur": 0.0,
             "time_s": 0.58
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -421,7 +421,7 @@
         ],
         "articles": [
           {
-            "title": "Shell Scraps \u00a3500m North Sea Sale Amid Fraud Allegations \u2014 What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com",
+            "title": "Shell Scraps £500m North Sea Sale Amid Fraud Allegations — What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com",
             "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQd2ZyRVo5elh1dUU2NDhuYXNOQzhXaEhRLTF4XzJjai1uMDNRMEMxRV93Zms0ejVjdE5ZQnI3YnlhLUt6TzkxNUJMVDBQQ1hXaDhJYUZxOXFic3NOWHB3cGdIb1Jwc1d5eTJKeXJPM1VsdllKVGQtLTRsWEs3d3JaZEIxU2kxdlJaWGNQYlB0RU52WmIyaWxZNEFTckstdHN5bzAzUFp5ZUViWnh1N1RsM2l6WUgwM3NUSlEwMWdWcFJ4c3RwYm5hRXpfRFBYQnZ2UWZDUEtDQQ?oc=5",
             "date": "Wed, 14 Jan 2026",
             "source": "google_news_rss",
@@ -478,7 +478,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "A NEW BLUEPRINT FOR OIL AND GAS BRIBERY: Carlyle \u2013 Shell Oil ties run deep - Royal Dutch Shell Plc .com",
+            "title": "A NEW BLUEPRINT FOR OIL AND GAS BRIBERY: Carlyle – Shell Oil ties run deep - Royal Dutch Shell Plc .com",
             "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPT1VmZmpBakNhOURCSWlPRW1KeXdraWhmTlZtMDhORHZKTXoxOTVDTmJGcExLbFZmOUdfbHVXV1k3NENzOF9SX05hZGxmRU9xVnY2bzQ0UXFSb18wbmJkRWZiSWQtZnE3aWVlWGw5R0NOY2RVcjAySkVmR3g5Sy1fSWtzMS04dHlpdXF3b2Q3d2N2a0llZVAzTUNXaVctY0RIZXNRWTd4UWFBc0tja3ZtM1lYMFI?oc=5",
             "date": "Tue, 08 Dec 2020",
             "source": "google_news_rss",
@@ -592,7 +592,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "WTF Is Going On in Shell\u2019s Security Department? A Greatest Hits Reel of Spooks, Lawsuits, and \u201cDiversity\u201d Theater - Royal Dutch Shell Plc .com",
+            "title": "WTF Is Going On in Shell’s Security Department? A Greatest Hits Reel of Spooks, Lawsuits, and “Diversity” Theater - Royal Dutch Shell Plc .com",
             "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNbHF5RzZ3eWhoaHZhc2dhYnBHX1FfbFBGcjVwMUp6VGxnbTRDWk0xeE1aWnhlbnN4dnBCQ1J4SnFCdkRJSUtmMDJXZkZYVjZGN25PLXgzcVZmSnlKVjM0S3g1T2RqRlFiREVoSnl4SWtBbWZ2OGJYSzNnQnZnbWhHMlZFQnBhaVpWU2VWdWdSSWZPWDk1RXJzWXRvRHROTHVBb0xnWEJYSkVTQTI5MnowY3Zia252UHhUYzUyYl96TXM3ZTl2M1NTNmVQY0FpQlFlRFR0dHBZVVFGLW5Ba1RoZFV3LVU?oc=5",
             "date": "Wed, 27 Aug 2025",
             "source": "google_news_rss",
@@ -611,7 +611,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "\u201cSUE US IF YOU CAN!\u201d: Shell\u2019s Climate Lawsuit Playbook: Deny, Delay\u2026 and Definitely Don\u2019t Panic - Royal Dutch Shell Plc .com",
+            "title": "“SUE US IF YOU CAN!”: Shell’s Climate Lawsuit Playbook: Deny, Delay… and Definitely Don’t Panic - Royal Dutch Shell Plc .com",
             "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOTi1SUnEwcEk5THNLeURnUVZZdUdVOG1yNUdqSEZxSGNPMUNpYzFVMHFrUHgtUlozZmxqYkVXRUQ2aXhBV2MzYnRGVWpIYW5idXV4bVJZVzZmNGxkMUswZUt5OFNJQUthbnoyczZmWG1fM2g2V0psSEZ1QU9XRExSRzJfckVwZGt1ZlJOa3p6bG5KUHQ2THdmTWg1R1Z0elMzNDNUS0MtNW5wcGt5dzRJT2duMGkxUjJ3Z2paOGVsUFpPdlkzZnVMUA?oc=5",
             "date": "Fri, 17 Apr 2026",
             "source": "google_news_rss",
@@ -725,7 +725,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "Nigeria: Shell settles lawsuit in the Netherlands for \u20ac15 million over oil spillages in Niger Delta - Business and Human Rights Centre",
+            "title": "Nigeria: Shell settles lawsuit in the Netherlands for €15 million over oil spillages in Niger Delta - Business and Human Rights Centre",
             "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPWnpOYnNyajdUNC1SOFNyMko2aTZGdGREcGpxdWZpbzEyczhwMUtJbWlVaHphODFsVkx3YjBpRkRRd1ROcHJZbWxKVWl4T2JSMGNVVHBZcjZPaEZXN0E5c2o1VndwZWxtY3lpTExRLVNRZmpQLXdrOUxpUmhFSHU3R1lQUkxKSWJudi1BM0dMZkVKcW1jX2R3UklYTUJTbkxIX003QkhKYl8yVnM2ZU44Wm1Sa1VkTmZhdm5zYi1tbVUxQ1lRR2xVRy1seWJSUkhldXRLZUs5bU9KbGoxSk5fWlptbjM?oc=5",
             "date": "Tue, 03 Jan 2023",
             "source": "google_news_rss",
@@ -820,7 +820,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "UKGC may pay \u00a3200 million to settle Northern & Shell lawsuit - sigma.world",
+            "title": "UKGC may pay £200 million to settle Northern & Shell lawsuit - sigma.world",
             "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxObEg3OGRoNXJzTnVpWEdaSHdjaFRBdkxOSDE2OGVPd0J5N0p3N0R4TDdwellsdXNjMzhhTGxfYWJFc1I2YnNHRDllSlZmSC0weVlWVm9nYXZDcVNYTmw0VndRTkhycnAyUHRqV1BWbVE4Qkh1dXVOLXBycVdkV1NsX2JhUFEzUlNUSmVN?oc=5",
             "date": "Wed, 11 Dec 2024",
             "source": "google_news_rss",
@@ -839,7 +839,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "FG withdraws $1.1bn case against Shell \u2014 after discontinuing Eni lawsuit - TheCable",
+            "title": "FG withdraws $1.1bn case against Shell — after discontinuing Eni lawsuit - TheCable",
             "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcFV4NEhibjZQUDBkUV9pYUd1SlViSmVzYVd1Nm1qRW1TZ3RPMXpBZ2h1aGl5NW1mM19PZjVDNzNmTThiU3ZYQkpuNTZJU2FmaXNoclFyN1l3cGJoVzVPdHJ5MHBrVTlxY3RiVDRxWktYbjl4bXVabm1UNGtzbUhjTEtkWmN3bDRLWkhNWVdqazE3TEFEdHhLRl9n?oc=5",
             "date": "Fri, 17 Nov 2023",
             "source": "google_news_rss",
@@ -877,7 +877,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "Shell vs Venture Global: When LNG Contracts Meet the Fine Print\u2014and the Missing Emails - Royal Dutch Shell Plc .com",
+            "title": "Shell vs Venture Global: When LNG Contracts Meet the Fine Print—and the Missing Emails - Royal Dutch Shell Plc .com",
             "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNTkNUMmVZTS0wYVZQNG5OSEw0b252aWs3ZU1oY3ZTYlpNWXh1Nk1Cdm1pa3A1WlVQeTc2cnVUcEVyODVWNGxzN0FoUkpLbHVUV3BJdmlnQUxqdzlTeUpWeXZIRWJNY2FFQVFPRHRpWGdWRk0zUVBBVVJ6WlA4ZjBBNEFYaUVEbmViLTNqUjVXTG5OYWxpa1dLSklaSjd6eXRCYndTeGotTVNMWmplNDB1a2czRF9Zd2o1Q0NQZElJVW8zcUtIM2ZF?oc=5",
             "date": "Thu, 29 Jan 2026",
             "source": "google_news_rss",
@@ -2062,7 +2062,7 @@
             "url": "https://www.shell.com/investors/results-and-reporting/annual-report/_jcr_content/root/main/section_2113846431/link_list/links/item5.stream/1773292256746/543dfa9bd532f695e4cc282b0e19080eb2e61f00/additional-information-ar25.pdf",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Additional\n\nInformation\n\n427 Shareholder information 430 Non-GAAP measures reconciliations 436 Appendix: Significant subsidiaries\u00a0and other\u00a0related undertakings (audited) v About this Report vii Financial calendar\n\nShareholder information Shell plc (the Company) was incorporated in England and Wales on February\u00a05, 2002, as a private company under the Companies Act 1985, as amended. On October\u00a027, 2004, the Company was re registered as a public company limited by shares and changed its name from Forthdeal Limited to Royal Dutch Shell plc. On January 21, 2022, the Company changed its name from R"
+            "snippet": "Additional\n\nInformation\n\n427 Shareholder information 430 Non-GAAP measures reconciliations 436 Appendix: Significant subsidiaries and other related undertakings (audited) v About this Report vii Financial calendar\n\nShareholder information Shell plc (the Company) was incorporated in England and Wales on February 5, 2002, as a private company under the Companies Act 1985, as amended. On October 27, 2004, the Company was re registered as a public company limited by shares and changed its name from Forthdeal Limited to Royal Dutch Shell plc. On January 21, 2022, the Company changed its name from R"
           },
           {
             "title": "SEC filings | Shell Global",
@@ -2083,7 +2083,7 @@
             "url": "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab_copy/text.multi.stream/1751445525195/e136de58f65e2a30bc91aa5f2d7c6833e4e060b3/shell-annual-report-and-accounts-and-form-20-f-2024.pdf",
             "published_date": "",
             "source": "Exa",
-            "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,\u00a0D.C. 20549 Form\u00a020-F/A (Amendment No. 1)\n\n(Mark one) \n\u2610 REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 \nOR \n\u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \nFor the fiscal year ended December 31, 2024 \nOR \n\u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \nOR \n\u2610 SHELL COMPANY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \n\nCommission file number 001-32575\n\nShell plc (Exact nam"
+            "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1)\n\n(Mark one) \n☐ REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 \nOR \n☑ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \nFor the fiscal year ended December 31, 2024 \nOR \n☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \nOR \n☐ SHELL COMPANY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 \n\nCommission file number 001-32575\n\nShell plc (Exact nam"
           },
           {
             "title": "News and media releases | Shell Global",
@@ -2189,25 +2189,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for Shell plc via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for Shell plc.",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "Shell plc",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2376,7 +2376,7 @@
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
               "bucket": "Adverse media signal",
-              "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps \u00a3500m North Sea Sale Amid Fraud Allegations \u2014 What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
+              "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps £500m North Sea Sale Amid Fraud Allegations — What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
               "source": "DueSight adverse-media source ladder (public news + legal metadata)",
               "confidence": "Review required",
               "limitation": "Adverse media is a triage signal unless confirmed against authoritative sources, exact entity identifiers and publication context.",
@@ -2755,7 +2755,7 @@
               "bucket": "Shell Annual Report and Accounts and Form 20-F 2024",
               "title": "Shell Annual Report and Accounts and Form 20-F 2024",
               "url": "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab_copy/text.multi.stream/1751445525195/e136de58f65e2a30bc91aa5f2d7c6833e4e060b3/shell-annual-...",
-              "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) \u2610 REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR \u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR \u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
+              "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) ☐ REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR ☑ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:02:03+00:00",
@@ -3624,7 +3624,7 @@
           "bucket": "Shell Annual Report and Accounts and Form 20-F 2024",
           "title": "Shell Annual Report and Accounts and Form 20-F 2024",
           "url": "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab_copy/text.multi.stream/1751445525195/e136de58f65e2a30bc91aa5f2d7c6833e4e060b3/shell-annual-...",
-          "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) \u2610 REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR \u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR \u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
+          "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) ☐ REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR ☑ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:02:03+00:00",
@@ -3705,14 +3705,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for Shell plc.",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "Shell plc",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -4298,7 +4298,7 @@
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
           "bucket": "Adverse media signal",
-          "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps \u00a3500m North Sea Sale Amid Fraud Allegations \u2014 What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
+          "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps £500m North Sea Sale Amid Fraud Allegations — What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Review required",
           "limitation": "Adverse media is a triage signal unless confirmed against authoritative sources, exact entity identifiers and publication context.",
@@ -4445,25 +4445,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for Shell plc via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for Shell plc.",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "Shell plc",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4632,7 +4632,7 @@
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
             "bucket": "Adverse media signal",
-            "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps \u00a3500m North Sea Sale Amid Fraud Allegations \u2014 What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
+            "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps £500m North Sea Sale Amid Fraud Allegations — What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
             "source": "DueSight adverse-media source ladder (public news + legal metadata)",
             "confidence": "Review required",
             "limitation": "Adverse media is a triage signal unless confirmed against authoritative sources, exact entity identifiers and publication context.",
@@ -5011,7 +5011,7 @@
             "bucket": "Shell Annual Report and Accounts and Form 20-F 2024",
             "title": "Shell Annual Report and Accounts and Form 20-F 2024",
             "url": "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab_copy/text.multi.stream/1751445525195/e136de58f65e2a30bc91aa5f2d7c6833e4e060b3/shell-annual-...",
-            "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) \u2610 REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR \u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR \u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
+            "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) ☐ REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR ☑ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:02:03+00:00",
@@ -5880,7 +5880,7 @@
         "bucket": "Shell Annual Report and Accounts and Form 20-F 2024",
         "title": "Shell Annual Report and Accounts and Form 20-F 2024",
         "url": "https://www.shell.com/investors/results-and-reporting/annual-report-archive/_jcr_content/root/main/section_812377294/tabs/tab_copy/text.multi.stream/1751445525195/e136de58f65e2a30bc91aa5f2d7c6833e4e060b3/shell-annual-...",
-        "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) \u2610 REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR \u2611 ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR \u2610 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
+        "snippet": "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form 20-F/A (Amendment No. 1) (Mark one) ☐ REGISTRATION STATEMENT PURSUANT TO SECTION 12(b) OR (g) OF THE SECURITIES EXCHANGE ACT OF 1934 OR ☑ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the fiscal year ended December 31, 2024 OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:02:03+00:00",
@@ -5961,14 +5961,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for Shell plc.",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "Shell plc",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -6554,7 +6554,7 @@
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
         "bucket": "Adverse media signal",
-        "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps \u00a3500m North Sea Sale Amid Fraud Allegations \u2014 What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
+        "claim": "Adverse-media route found 35 target-relevant article signal(s) for Shell plc. Categories: fraude, legal, data_breach. Example title: Shell Scraps £500m North Sea Sale Amid Fraud Allegations — What It Means for Corporate Due Diligence - Royal Dutch Shell Plc .com.",
         "source": "DueSight adverse-media source ladder (public news + legal metadata)",
         "confidence": "Review required",
         "limitation": "Adverse media is a triage signal unless confirmed against authoritative sources, exact entity identifiers and publication context.",

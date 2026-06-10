@@ -1,14 +1,14 @@
 {
   "schema_version": "duesight.social_sentiment_gate_report.v1",
   "target": {
-    "name": "GetThere B.V.",
+    "name": "Get There ICT Solutions B.V.",
     "domain": "getthere.nl",
     "kvk": "",
     "sector": "",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T09:39:11+00:00",
-  "decision": "PASS",
+  "updated_at": "2026-06-02T10:21:09+00:00",
+  "decision": "REVIEW",
   "gates": [
     {
       "id": "S1",
@@ -25,7 +25,7 @@
     {
       "id": "S3",
       "name": "Sentiment route execution",
-      "status": "PASS",
+      "status": "WARN",
       "message": "DDSentimentEngine completed or records deferred status."
     },
     {

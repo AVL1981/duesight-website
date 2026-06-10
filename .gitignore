@@ -3,11 +3,51 @@
 *.pyc
 __pycache__/
 
+# Production backend/API code must remain visible for review and deploy.
+!app/**/*.py
+!backtesting/report_generator.py
+!scan_server.py
+!payment_server.py
+!attio_orders_sync.py
+!tests/**/*.py
+!tools/**/*.py
+
 # Data & caches
 *.db
+*.duckdb
 *.sqlite
 *.xlsx
 *.pdf
+*.log
+*.tmp
+backtesting/reports/
+backtesting/benchmark_results/
+backtesting/scorecard_*.json
+
+# Generated public/test/scratch artefacts
+_pages/
+_tmp*/
+output/
+reports/
+test-results/
+tmp/
+*.backup
+*.backup-*
+*.backup_*
+*.bak
+*.bak_*
+*.orig
+
+# Local browser/smoke-test artefacts
+.browser-smoke*/
+.chrome*-profile*/
+.chromeprofile-smoke/
+.edge*-profile*/
+.edgeprofile-smoke/
+_chromium_profile_codex*/
+_edge_profile_codex*/
+_audit_temp/
+_codex_*/
 
 # Video files (te groot voor GitHub, host via CDN/YouTube)
 *.mp4
@@ -23,11 +63,15 @@ Thumbs.db
 .DS_Store
 
 # Dev config
+.env
+.env.local
+.env.*.local
 extensions.json
 subsidy_rules_2026.json
 
 # PowerShell scripts
 *.ps1
+!scripts/payment_live_readiness.ps1
 
 # Text dumps
 *.txt
@@ -35,3 +79,61 @@ subsidy_rules_2026.json
 
 # Strategy docs (niet publiek)
 STRATEGY_RADAR_MRR.md
+
+.session-logs/
+
+
+# Interne agent-/bedrijfsmappen — NIET publiek (cleanup 2026-06-04)
+company/
+backups/
+
+# One-off migration artefacts
+tools/rebrand_prijs_20260604/
+NEXT_PARALLEL_TASK_2_SITE_CLAIMS_AUDIT_20260604.md
+NEXT_PARALLEL_TASK_WEBSITE_PERF_A11Y_20260604.md
+SITE_CLAIMS_AUDIT_20260604.md
+WEBSITE_PERF_A11Y_SMOKE_20260604.md
+WEBSITE_REBRAND_PRIJS_20260604.md
+antigravity-31-vs-35-ab-test.json
+antigravity-31-vs-35-compact-ab.json
+antigravity-31-vs-35-fact-extraction-ab.json
+assets/duesight-benelux-dach-night-map.svg
+assets/duesight-mollie-flipbook-live-preview.png
+assets/duesight-mollie-flipbook-mobile-preview.png
+backtesting/report_generator.py
+backtesting/scan_server.py
+blog/tech-dd-mythos-alternatief/index.html
+docs/TECH_DD_OUTREACH_20260605.md
+orbit-duesight.html
+sample-report-adyen/eigen_bedrijf_rendered.html
+sample-report-gasunie/eigen_bedrijf_rendered.html
+sample-report-gasunie/eigen_bedrijf_template.html
+sample-report-gasunie/hub_rendered.html
+sample-report-nlist/award-source-hardening.json
+sample-report-nlist/business_profile_intel_20260526_222448.json
+sample-report-nlist/business_profile_intel_20260526_222610.json
+sample-report-nlist/business_profile_intel_20260526_222743.json
+sample-report-nlist/business_profile_intel_20260526_222858.json
+sample-report-nlist/business_profile_intel_20260526_222948.json
+sample-report-nlist/business_profile_intel_20260526_223228.json
+sample-report-nlist/business_profile_intel_20260526_223919.json
+tech-security-scanner.html
+tests/test_ai_budget.py
+tests/test_ath_integrity_guards.py
+tests/test_premium_sources.py
+tests/test_premium_sources_live.py
+tests/test_shadow_intelligence_service.py
+tests/test_shadow_router.py
+tests/test_smoke_report_contract.py
+tools/bundesanzeiger_dispatcher.py
+tools/claims_audit_20260604/fix_artifacts_v2.py
+tools/claims_audit_20260604/fix_claims.py
+tools/claims_audit_20260604/fix_doubles.py
+tools/duesight_live_api_wrapper.py
+tools/gap_deep_research_crawler.py
+tools/radar_scheduler.py
+tools/sample_report_pipeline_replay.py
+tools/sample_report_provider_preflight.py
+tools/sample_report_run_audit.py
+tools/sample_report_score_model.py
+tools/source_recovery_backfill.py

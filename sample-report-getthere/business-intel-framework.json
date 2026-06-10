@@ -1,13 +1,13 @@
 {
   "schema_version": "duesight.business_intel_market_report_framework.v1",
   "target": {
-    "name": "GetThere B.V.",
+    "name": "Get There ICT Solutions B.V.",
     "domain": "getthere.nl",
     "kvk": "",
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T09:49:03+00:00",
+  "updated_at": "2026-06-02T10:29:40+00:00",
   "inspiration_local_sources": [
     "C:\\Users\\arian\\market_reports",
     "C:\\Users\\arian\\trading-bot\\notebooklm_intelligence.py",
@@ -68,7 +68,7 @@
   "execution_coverage_artifact": "execution-coverage-framework.json",
   "generation_metrics": {
     "provider_routes_executed": 11,
-    "source_urls_count": 61,
+    "source_urls_count": 60,
     "candidate_findings_count": 5,
     "anti_hallucination_decision": "PASS"
   },

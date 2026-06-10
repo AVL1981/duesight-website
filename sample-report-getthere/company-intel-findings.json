@@ -1,13 +1,13 @@
 {
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-getthere",
-  "target": "GetThere B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "target": "Get There ICT Solutions B.V.",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "findings": [
     {
       "id": "operating-model",
       "title": "Operating model context",
-      "what_duesight_found": "DueSight heeft voor GetThere B.V. publieke bedrijfs-, markt- en bronroutes samengebracht zonder targetvreemde NLIST/TSG-context te promoten.",
+      "what_duesight_found": "DueSight heeft voor Get There ICT Solutions B.V. publieke bedrijfs-, markt- en bronroutes samengebracht zonder targetvreemde NLIST/TSG-context te promoten.",
       "buyer_value": "Een koper ziet wat publiek onderbouwd is en welke route nog naar official-proof moet.",
       "claim_level": "source-backed or route-backed context",
       "evidence_rows": 22,
@@ -36,7 +36,7 @@
     {
       "id": "management-team",
       "title": "Management and role routes",
-      "what_duesight_found": "Management-, team- of contactinformatie voor GetThere B.V. wordt alleen getoond wanneer de replay targetrelevante bronroutes bevat.",
+      "what_duesight_found": "Management-, team- of contactinformatie voor Get There ICT Solutions B.V. wordt alleen getoond wanneer de replay targetrelevante bronroutes bevat.",
       "buyer_value": "Dit voorkomt dat social/profile hints worden verward met juridische bestuurderclaims.",
       "claim_level": "public/team context or route context",
       "evidence_rows": 20,
@@ -45,7 +45,7 @@
         "getthere.nl",
         "linkedin.com",
         "sanctions screening route",
-        "Exa"
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -64,7 +64,7 @@
     {
       "id": "market-talent-context",
       "title": "Market, talent and customer routes",
-      "what_duesight_found": "DueSight meet welke markt-, vacature-, klant- en concurrentieroutes voor GetThere B.V. beschikbaar zijn en labelt lege velden als verrijkingsroute.",
+      "what_duesight_found": "DueSight meet welke markt-, vacature-, klant- en concurrentieroutes voor Get There ICT Solutions B.V. beschikbaar zijn en labelt lege velden als verrijkingsroute.",
       "buyer_value": "Het rapport blijft commercieel bruikbaar zonder ontbrekende data op te vullen met aannames.",
       "claim_level": "route-backed context",
       "evidence_rows": 5,
@@ -90,7 +90,7 @@
     {
       "id": "finance-close-route",
       "title": "Finance route is known, official claim remains gated",
-      "what_duesight_found": "Finance-routes voor GetThere B.V. blijven geblokkeerd voor harde cijfers zolang geen jaarrekening, XBRL, P&L of providerdocument met bronhash is gekoppeld.",
+      "what_duesight_found": "Finance-routes voor Get There ICT Solutions B.V. blijven geblokkeerd voor harde cijfers zolang geen jaarrekening, XBRL, P&L of providerdocument met bronhash is gekoppeld.",
       "buyer_value": "Het rapport maakt de documentvraag scherp in plaats van revenue of resultaatcijfers te verzinnen.",
       "claim_level": "blocked for official finance claim",
       "evidence_rows": 2,
@@ -115,16 +115,16 @@
     {
       "id": "ownership-ubo-route",
       "title": "Ownership and UBO route is gated",
-      "what_duesight_found": "Publieke structuurcontext rond GetThere B.V. kan richting geven, maar juridisch eigendom en UBO blijven official-proof gates.",
+      "what_duesight_found": "Publieke structuurcontext rond Get There ICT Solutions B.V. kan richting geven, maar juridisch eigendom en UBO blijven official-proof gates.",
       "buyer_value": "Buyers krijgen een concrete close-route zonder dat publieke hints als aandeelhoudersbewijs worden verkocht.",
       "claim_level": "blocked for official ownership claim",
       "evidence_rows": 9,
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "GLEIF",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "international entity register route",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "kvk_public",
         "ownership review route",
         "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)"
@@ -153,11 +153,11 @@
       "memo_safe_rows": 23,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
         "kvk_public"
       ],
@@ -185,11 +185,11 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
         "kvk_public"
       ],

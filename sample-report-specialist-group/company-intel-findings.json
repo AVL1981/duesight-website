@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-specialist-group",
   "target": "The Specialist Group B.V.",
-  "updated_at": "2026-05-29T10:57:05+00:00",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -41,7 +41,7 @@
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "Exa"
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -118,9 +118,9 @@
       "memo_safe_rows": 14,
       "sources": [
         "sanctions screening route",
-        "GLEIF LEI Register",
+        "international entity register route LEI Register",
         "news.google.com",
-        "Exa",
+        "provider discovery route",
         "finance source route",
         "ownership review route",
         "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
@@ -150,11 +150,11 @@
       "memo_safe_rows": 17,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Cloudflare DoH",
+        "provider discovery route",
+        "third-party cloud edge DoH",
         "sanctions screening route",
         "finance source route"
       ],
@@ -182,11 +182,11 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Cloudflare DoH",
+        "provider discovery route",
+        "third-party cloud edge DoH",
         "sanctions screening route",
         "finance source route"
       ],

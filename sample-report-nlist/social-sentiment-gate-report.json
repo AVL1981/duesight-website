@@ -7,8 +7,8 @@
     "sector": "7810 Arbeidsbemiddeling",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T08:21:24+00:00",
-  "decision": "PASS",
+  "updated_at": "2026-06-02T10:08:26+00:00",
+  "decision": "REVIEW",
   "gates": [
     {
       "id": "S1",
@@ -25,7 +25,7 @@
     {
       "id": "S3",
       "name": "Sentiment route execution",
-      "status": "PASS",
+      "status": "WARN",
       "message": "DDSentimentEngine completed or records deferred status."
     },
     {

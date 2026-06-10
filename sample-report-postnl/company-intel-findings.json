@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-postnl",
   "target": "PostNL N.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -16,7 +16,7 @@
         "postnl.nl",
         "news.google.com",
         "Public Website",
-        "Exa"
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -43,7 +43,7 @@
       "sources": [
         "sanctions screening route",
         "postnl.nl",
-        "Exa"
+        "provider discovery route"
       ],
       "source_envelope": {
         "required": [
@@ -117,9 +117,9 @@
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "GLEIF",
-        "GLEIF LEI register corroboration",
-        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+        "international entity register route",
+        "international entity register route LEI register corroboration",
+        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
       ],
       "source_envelope": {
         "required": [
@@ -145,13 +145,13 @@
       "memo_safe_rows": 23,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "GLEIF LEI register corroboration"
+        "international entity register route LEI register corroboration"
       ],
       "source_envelope": {
         "required": [
@@ -177,13 +177,13 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "GLEIF LEI register corroboration"
+        "international entity register route LEI register corroboration"
       ],
       "source_envelope": {
         "required": [

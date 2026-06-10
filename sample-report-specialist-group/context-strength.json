@@ -2,7 +2,7 @@
   "schema_version": "duesight.context_strength.v1",
   "run_id": "certified-samples-rest-20260526-235449-specialist-group",
   "target": "The Specialist Group B.V.",
-  "updated_at": "2026-05-29T10:57:05+00:00",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -12,9 +12,9 @@
       "evidence_rows": 34,
       "sources": [
         "sanctions screening route",
-        "GLEIF LEI Register",
+        "international entity register route LEI Register",
         "news.google.com",
-        "Exa",
+        "provider discovery route",
         "finance source route",
         "ownership review route"
       ],
@@ -28,7 +28,7 @@
       "evidence_rows": 2,
       "sources": [
         "sanctions screening route",
-        "Exa"
+        "provider discovery route"
       ],
       "safe_rows": 1,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
@@ -71,7 +71,7 @@
       "evidence_rows": 5,
       "sources": [
         "sanctions screening route",
-        "GLEIF LEI Register",
+        "international entity register route LEI Register",
         "ownership review route"
       ],
       "safe_rows": 2,

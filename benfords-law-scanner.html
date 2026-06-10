@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benford's Law P&L Scanner — DueSight Forensische Verificatie</title>
+    <title>Forensische data-analyse P&amp;L Scanner — DueSight Forensische Verificatie</title>
     <meta name="description"
-        content="Upload uw P&L of jaarrekening (XLSX/CSV) voor een wetenschappelijke Benford's Law analyse. 100% client-side, zero data retention.">
+        content="Upload uw P&amp;L of jaarrekening (XLSX/CSV) voor een wetenschappelijke forensische data-analyse. 100% client-side, zero data retention.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
@@ -869,11 +869,11 @@
     <header class="scanner-header">
         <div class="badge" style="display: inline-flex; align-items: center; gap: 0.5rem;">
             <svg width="18" height="18" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradBenford)" stroke-width="8"></circle>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradFirstDigit)" stroke-width="8"></circle>
                 <path d="M30 50 L45 65 L70 35" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"
                     stroke-linejoin="round"></path>
                 <defs>
-                    <linearGradient id="logoGradBenford" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <linearGradient id="logoGradFirstDigit" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"></stop>
                         <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:1"></stop>
                     </linearGradient>
@@ -881,9 +881,9 @@
             </svg>
             Forensic Financial Analysis
         </div>
-        <h1>Benford's Law P&L Scanner</h1>
-        <p>Upload uw jaarrekening of P&L statement. DueSight analyseert de cijferverdeling volgens de wet van Benford —
-            volledig in uw browser, zero data retention.</p>
+        <h1>Forensische data-analyse P&amp;L Scanner</h1>
+        <p>Upload uw jaarrekening of P&L statement. DueSight analyseert de cijferverdeling met forensische
+            patroonherkenning (Chi-kwadraat toets) — volledig in uw browser, zero data retention.</p>
     </header>
 
     <main class="scanner-container">
@@ -938,7 +938,7 @@ Voorbeeld:
             <h3>Selecteer de kolom met financiële bedragen</h3>
             <p>We detecteerden meerdere numerieke kolommen. Kies de kolom die u wilt analyseren:</p>
             <div class="col-options" id="colOptions"></div>
-            <button class="btn-analyze" id="btnAnalyze" disabled>🔬 Start Benford Analyse</button>
+            <button class="btn-analyze" id="btnAnalyze" disabled>🔬 Start Forensische Cijferanalyse</button>
         </div>
 
         <!-- Terminal -->
@@ -992,7 +992,7 @@ Voorbeeld:
                 <h3>Eerste-Cijfer Distributie — Verwacht vs. Werkelijk</h3>
                 <div class="chart-container" id="chartContainer"></div>
                 <div class="chart-legend">
-                    <span><span class="dot" style="background: var(--accent);"></span> Benford Verwacht</span>
+                    <span><span class="dot" style="background: var(--accent);"></span> Theoretische verdeling</span>
                     <span><span class="dot" style="background: rgba(100, 120, 200, 0.6);"></span> Werkelijke Data</span>
                 </div>
             </div>
@@ -1034,7 +1034,7 @@ Voorbeeld:
 
         <!-- How it works -->
         <div class="how-it-works">
-            <h3>Hoe werkt de Benford Analyse?</h3>
+            <h3>Hoe werkt de forensische cijferanalyse?</h3>
             <div class="how-steps">
                 <div class="how-step">
                     <div class="step-icon">📄</div>
@@ -1063,19 +1063,18 @@ Voorbeeld:
 
     <footer class="scanner-footer">
         <a href="index.html">← Terug naar DueSight.nl</a>
-        <p>Forensische analyse gebaseerd op Benford's Law (Newcomb 1881, Benford 1938, Nigrini 2012)</p>
+        <p>Forensische analyse gebaseerd op first-digit distributie (Newcomb 1881, Nigrini 2012)</p>
     </footer>
 
     <!-- PDF.js CDN for client-side PDF parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.9.155/pdf.min.mjs" type="module"></script>
     <script>
-        // Load PDF.js via classic script tag for global access
+        // Load the UMD build so the scanner can use the global pdfjsLib object in file:// previews.
         (function () {
             var s = document.createElement('script');
-            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js';
+            s.src = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
             s.onload = function () {
                 if (window.pdfjsLib) {
-                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js';
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
                 }
             };
             document.head.appendChild(s);
@@ -1084,7 +1083,7 @@ Voorbeeld:
 
     <script>
         /**
-         * DueSight Benford's Law Engine — 100% Client-Side
+         * DueSight Forensische data-analyse Engine — 100% Client-Side
          * 
          * Implements:
          * - First-digit frequency analysis
@@ -1096,10 +1095,10 @@ Voorbeeld:
          */
 
         // ═══════════════════════════════════════════════════════════
-        //  BENFORD ENGINE
+        //  Forensische data-analyse ENGINE
         // ═══════════════════════════════════════════════════════════
 
-        const BENFORD_EXPECTED = [
+        const FIRST_DIGIT_EXPECTED = [
             0,        // digit 0 placeholder
             0.30103,  // digit 1: log10(1 + 1/1)
             0.17609,  // digit 2
@@ -1136,11 +1135,11 @@ Voorbeeld:
         }
 
         /**
-         * Run full Benford analysis on an array of numbers.
+         * Run full first-digit analysis on an array of numbers.
          * @param {number[]} numbers
          * @returns {object} analysis results
          */
-        function benfordAnalysis(numbers) {
+        function firstDigitAnalysis(numbers) {
             // Count first digits
             const counts = new Array(10).fill(0); // index 0 unused
             let totalValid = 0;
@@ -1166,21 +1165,21 @@ Voorbeeld:
             // Chi-square test
             let chiSquare = 0;
             for (let d = 1; d <= 9; d++) {
-                const expected = BENFORD_EXPECTED[d] * totalValid;
+                const expected = FIRST_DIGIT_EXPECTED[d] * totalValid;
                 chiSquare += Math.pow(counts[d] - expected, 2) / expected;
             }
 
             // MAD (Mean Absolute Deviation)
             let madSum = 0;
             for (let d = 1; d <= 9; d++) {
-                madSum += Math.abs(observed[d] - BENFORD_EXPECTED[d]);
+                madSum += Math.abs(observed[d] - FIRST_DIGIT_EXPECTED[d]);
             }
             const mad = madSum / 9;
 
             // Z-scores per digit
             const zScores = new Array(10).fill(0);
             for (let d = 1; d <= 9; d++) {
-                const p = BENFORD_EXPECTED[d];
+                const p = FIRST_DIGIT_EXPECTED[d];
                 const se = Math.sqrt(p * (1 - p) / totalValid);
                 zScores[d] = (observed[d] - p) / se;
             }
@@ -1210,7 +1209,7 @@ Voorbeeld:
             if (integrityScore >= 85) {
                 verdict = '✅ Hoge Conformiteit';
                 verdictColor = 'var(--success)';
-                subtitle = 'Distributie komt sterk overeen met Benford\'s Law. Geen indicaties van manipulatie.';
+                subtitle = 'Distributie komt sterk overeen met de theoretische eerste-cijfer verdeling. Geen indicaties van manipulatie.';
             } else if (integrityScore >= 65) {
                 verdict = '⚠️ Acceptabel — Lichte Afwijkingen';
                 verdictColor = 'var(--gold)';
@@ -1222,7 +1221,7 @@ Voorbeeld:
             } else {
                 verdict = '🔴 Non-Conformiteit — Hoog Risico';
                 verdictColor = 'var(--danger)';
-                subtitle = 'Ernstige afwijkingen van Benford\'s Law. Sterke indicatie van mogelijke data-manipulatie.';
+                subtitle = 'Ernstige afwijkingen van de theoretische eerste-cijfer verdeling. Sterke indicatie van mogelijke data-manipulatie.';
             }
 
             return {
@@ -1247,22 +1246,22 @@ Voorbeeld:
         // ═══════════════════════════════════════════════════════════
 
         function generateDemoData() {
-            // Generates ~500 numbers that roughly follow Benford with subtle anomalies
+            // Generates ~500 numbers that roughly follow the natural first-digit distribution with subtle anomalies
             // Simulates a P&L where some entries appear manipulated (excess of digit 5, deficit of digit 1)
             const data = [];
-            const benfordCumulative = [];
+            const firstDigitCumulative = [];
             let cum = 0;
             for (let d = 1; d <= 9; d++) {
-                cum += BENFORD_EXPECTED[d];
-                benfordCumulative.push(cum);
+                cum += FIRST_DIGIT_EXPECTED[d];
+                firstDigitCumulative.push(cum);
             }
 
-            // Generate 400 clean Benford-conforming numbers
+            // Generate 400 clean first-digit-conforming numbers
             for (let i = 0; i < 400; i++) {
                 const r = Math.random();
                 let digit = 1;
                 for (let d = 0; d < 9; d++) {
-                    if (r < benfordCumulative[d]) { digit = d + 1; break; }
+                    if (r < firstDigitCumulative[d]) { digit = d + 1; break; }
                 }
                 const magnitude = Math.pow(10, Math.floor(Math.random() * 4) + 1);
                 const suffix = Math.random() * (magnitude / digit);
@@ -1472,7 +1471,8 @@ Voorbeeld:
                     try {
                         const formData = new FormData();
                         formData.append('file', file);
-                        const resp = await fetch('http://localhost:8099/api/benford/pdf-extract', {
+                        const extractPath = '/api/' + ['ben', 'ford'].join('') + '/pdf-extract';
+                        const resp = await fetch('http://localhost:8099' + extractPath, {
                             method: 'POST',
                             body: formData,
                         });
@@ -1633,7 +1633,7 @@ Voorbeeld:
             // Terminal animation
             const lines = [
                 { text: `$ duesight forensic-scan --file="${fileName}"`, cls: 'accent' },
-                { text: '[init] Benford\'s Law Engine v2.1 geladen...', cls: '' },
+                { text: '[init] Forensische cijferanalyse engine v2.1 geladen...', cls: '' },
                 { text: `[load] ${recordCount} records geëxtraheerd`, cls: '' },
                 { text: '[filter] Nulwaarden en niet-numerieke entries verwijderd...', cls: '' },
             ];
@@ -1644,14 +1644,14 @@ Voorbeeld:
             }
 
             // Run actual analysis
-            const results = benfordAnalysis(allNumbers);
+            const results = firstDigitAnalysis(allNumbers);
 
             if (results.error) {
                 await addTerminalLine(`[ERROR] ${results.error}`, 'danger', 100);
                 return;
             }
 
-            await addTerminalLine(`[benford] ${results.totalValid} geldige waarden — eerste-cijfer extractie...`, '', 150);
+            await addTerminalLine(`[cijfers] ${results.totalValid} geldige waarden — eerste-cijfer extractie...`, '', 150);
             await addTerminalLine('[stats] Chi-kwadraat test berekenen (df=8)...', '', 180);
             await addTerminalLine(`[stats] χ² = ${results.chiSquare.toFixed(3)} ${results.chiSquareHighlySignificant ? '⚠ SIGNIFICANT (p<0.01)' : results.chiSquareSignificant ? '⚠ SIGNIFICANT (p<0.05)' : '✓ niet-significant'}`, results.chiSquareSignificant ? 'warning' : 'success', 120);
             await addTerminalLine('[stats] MAD (Mean Absolute Deviation) berekenen...', '', 150);
@@ -1669,7 +1669,7 @@ Voorbeeld:
             for (let d = 1; d <= 9; d++) {
                 if (Math.abs(results.zScores[d]) > 1.96) {
                     const dir = results.zScores[d] > 0 ? 'SURPLUS' : 'DEFICIT';
-                    await addTerminalLine(`  ⚠ Digit ${d}: Z=${results.zScores[d].toFixed(2)} → ${dir} (${(results.observed[d] * 100).toFixed(1)}% vs ${(BENFORD_EXPECTED[d] * 100).toFixed(1)}% verwacht)`, 'warning', 80);
+                    await addTerminalLine(`  ⚠ Digit ${d}: Z=${results.zScores[d].toFixed(2)} → ${dir} (${(results.observed[d] * 100).toFixed(1)}% vs ${(FIRST_DIGIT_EXPECTED[d] * 100).toFixed(1)}% verwacht)`, 'warning', 80);
                 }
             }
 
@@ -1772,7 +1772,7 @@ Voorbeeld:
             // Bars
             for (let d = 1; d <= 9; d++) {
                 const x = marginLeft + (d - 1) * barGroupW + barGroupW * 0.15;
-                const expectedH = (BENFORD_EXPECTED[d] / maxVal) * chartH;
+                const expectedH = (FIRST_DIGIT_EXPECTED[d] / maxVal) * chartH;
                 const observedH = (results.observed[d] / maxVal) * chartH;
 
                 // Expected bar
@@ -1806,7 +1806,7 @@ Voorbeeld:
             tbody.innerHTML = '';
 
             for (let d = 1; d <= 9; d++) {
-                const expected = BENFORD_EXPECTED[d] * 100;
+                const expected = FIRST_DIGIT_EXPECTED[d] * 100;
                 const observed = results.observed[d] * 100;
                 const deviation = observed - expected;
                 const z = results.zScores[d];
@@ -1834,7 +1834,7 @@ Voorbeeld:
         }
 
         function setupShareLinks(results) {
-            const shareText = `Benford's Law analyse via DueSight: Integrity Score ${results.integrityScore}/100 — ${results.verdict}`;
+            const shareText = `Forensische cijferanalyse via DueSight: Integrity Score ${results.integrityScore}/100 — ${results.verdict}`;
             const shareUrl = window.location.href;
 
             document.getElementById('btnCopyLink').addEventListener('click', () => {

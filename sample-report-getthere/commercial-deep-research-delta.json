@@ -1,6 +1,6 @@
 {
   "schema_version": "duesight.commercial_deep_research_delta.v1",
-  "target": "GetThere B.V.",
+  "target": "Get There ICT Solutions B.V.",
   "identity_resolution": {
     "status": "configured_needs_official_extract",
     "configured_kvk": "",
@@ -9,7 +9,6 @@
     "country": "NL",
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
-      "GLEIF",
       "Public Website",
       "kvk_public",
       "DueSight adverse-media source ladder (public news + legal metadata)"
@@ -54,8 +53,8 @@
       "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT...",
       "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with ro...",
       "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners...",
-      "Lees meer is listed with role IT Partners for GetThere B.V..",
-      "Cases Over ons Privacy is listed with role Cookies for GetThere B.V.."
+      "Lees meer is listed with role IT Partners for Get There ICT Solutions B.V..",
+      "Cases Over ons Privacy is listed with role Cookies for Get There ICT Solution..."
     ]
   },
   "source_layer_passes": {
@@ -78,11 +77,11 @@
     ],
     "source_labels": [
       "open identity reference",
-      "GLEIF",
+      "international entity register route",
       "Public Website",
       "archive discovery",
-      "Exa",
-      "Shodan InternetDB + RDAP",
+      "provider discovery route",
+      "infrastructure exposure route + network registry route",
       "sanctions screening route",
       "kvk_public",
       "ownership review route",
@@ -122,5 +121,5 @@
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
   "run_id": "certified-samples-rest-20260526-235449-getthere",
-  "updated_at": "2026-05-29T10:57:04+00:00"
+  "updated_at": "2026-06-08T13:34:27+00:00"
 }

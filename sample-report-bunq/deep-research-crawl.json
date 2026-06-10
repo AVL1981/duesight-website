@@ -635,7 +635,7 @@
         },
         {
           "title": "https://www.afm.nl/export.aspx?Filter1=2&type=04ef...",
-          "snippet": "... bunq B.V.\";\"bunq,bunq B.V.,bunq.com\";\"AMSTERDAM\" \"Buy Way Personal Finance B.V.\";\"Buy Way Personal Finance B.V.,Directa,Directa.nl,EuroQuo Bijzonder Beheer ...",
+          "snippet": "... bunq B.V.\";\"bunq,bunq B.V.,bunq.com\";\"AMSTERDAM\" \"REVIEW Way Personal Finance B.V.\";\"REVIEW Way Personal Finance B.V.,Directa,Directa.nl,EuroQuo Bijzonder Beheer ...",
           "url": "https://www.afm.nl/export.aspx?Filter1=2&type=04efad81-e254-40fa-8728-94d90447ad4b&format=csv",
           "match_basis": "kvk_or_domain"
         },

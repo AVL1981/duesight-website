@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Due Diligence: Hoe Kunstmatige Intelligentie Bedrijfsonderzoek Verandert | DueSight</title>
+    <meta name="description" content="Hoe AI due diligence transformeert: van 6 weken naar 90 seconden. LLM-agenten, forensische analyse en multi-source verificatie. De toekomst van M&A intelligence.">
+    <link rel="canonical" href="https://avl1981.github.io/duesight-website/blog/ai-due-diligence/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI in Due Diligence: De Toekomst van Bedrijfsonderzoek">
+    <meta property="og:description" content="Hoe AI due diligence transformeert met LLM-agenten, forensische analyse en multi-source verificatie.">
+    <meta property="og:locale" content="nl_NL">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"AI in Due Diligence: Hoe Kunstmatige Intelligentie Bedrijfsonderzoek Verandert","author":{"@type":"Organization","name":"DueSight Intelligence"},"publisher":{"@type":"Organization","name":"DueSight Intelligence","url":"https://duesight.nl"},"datePublished":"2026-03-16","dateModified":"2026-03-16"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://avl1981.github.io/duesight-website/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://avl1981.github.io/duesight-website/blog/"},{"@type":"ListItem","position":3,"name":"AI in Due Diligence"}]}
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"Hoe wordt AI gebruikt in due diligence?","acceptedAnswer":{"@type":"Answer","text":"AI wordt in due diligence gebruikt voor: automatische data-aggregatie uit meerdere bronroutes, forensische analyse (forensische data-analyse, Altman Z-Score), sanctiescreening tegen internationale lijsten, cyber-risico scanning, en het genereren van geïntegreerde risicorapporten. Dit versnelt het proces van weken naar seconden."}},
+            {"@type":"Question","name":"Kan AI een due diligence adviseur vervangen?","acceptedAnswer":{"@type":"Answer","text":"Nee, AI vervangt adviseurs niet maar versterkt ze. AI is superieur in data-aggregatie, patroonherkenning en snelheid. Menselijke experts blijven nodig voor contextinterpretatie, strategische beoordeling en onderhandelingsadvies. De optimale aanpak combineert AI-screening met menselijke expertise."}},
+            {"@type":"Question","name":"Wat zijn de voordelen van AI due diligence?","acceptedAnswer":{"@type":"Answer","text":"De drie belangrijkste voordelen zijn: snelheid (90 seconden vs. 6 weken), breedte (meerdere bronnen tegelijk vs. handmatige selectie), en consistentie (AI werkt reproduceerbaar volgens dezelfde bronlijst). Daarnaast verlaagt AI de cost-to-screen drastisch."}}
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:#0a0e1a; color:#c8d0e0; line-height:1.8; font-size:17px; }
+        .article-container { max-width:740px; margin:0 auto; padding:48px 24px 80px; }
+        .breadcrumb { font-size:0.8rem; color:#64748b; margin-bottom:32px; }
+        .breadcrumb a { color:#6366f1; text-decoration:none; }
+        h1 { font-size:2.2rem; font-weight:800; color:#e2e8f0; line-height:1.2; margin-bottom:16px; }
+        .article-meta { font-size:0.85rem; color:#64748b; margin-bottom:40px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+        .tag { background:rgba(99,102,241,0.12); color:#818cf8; padding:3px 12px; border-radius:14px; font-size:0.75rem; font-weight:600; }
+        h2 { font-size:1.5rem; font-weight:700; color:#e2e8f0; margin:48px 0 16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.04); }
+        h3 { font-size:1.15rem; font-weight:700; color:#e2e8f0; margin:28px 0 12px; }
+        p { margin-bottom:18px; } strong { color:#e2e8f0; } a { color:#6366f1; text-decoration:none; }
+        .lead { font-size:1.1rem; color:#94a3b8; line-height:1.7; margin-bottom:32px; }
+        .answer-box { background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06)); border:1px solid rgba(99,102,241,0.15); border-radius:16px; padding:28px 32px; margin:24px 0 40px; }
+        .answer-box strong.label { color:#818cf8; display:block; margin-bottom:8px; font-size:0.8rem; letter-spacing:1.5px; text-transform:uppercase; }
+        ul, ol { margin:0 0 20px 24px; } li { margin-bottom:8px; }
+        .stat-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:16px; margin:24px 0 32px; }
+        .stat-card { background:rgba(15,20,40,0.8); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:20px; text-align:center; }
+        .stat-value { font-size:2rem; font-weight:800; color:#22d3ee; }
+        .stat-label { font-size:0.75rem; color:#64748b; text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+        .pillar { background:rgba(15,20,40,0.6); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:24px 28px; margin:20px 0; }
+        .pillar h3 { margin-top:0; }
+        table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:0.88rem; }
+        th { text-align:left; padding:10px 14px; color:#64748b; font-weight:600; font-size:0.72rem; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid rgba(255,255,255,0.1); background:rgba(15,20,40,0.5); }
+        td { padding:10px 14px; border-bottom:1px solid rgba(255,255,255,0.04); }
+        .cta-block { background:linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08)); border:1px solid rgba(99,102,241,0.2); border-radius:16px; padding:36px; text-align:center; margin:48px 0; }
+        .cta-block h3 { margin-top:0; }
+        .cta-btn { display:inline-block; padding:14px 40px; background:linear-gradient(135deg,#6366f1,#8b5cf6); color:white; font-weight:700; border-radius:12px; text-decoration:none; margin-top:16px; box-shadow:0 4px 20px rgba(99,102,241,0.3); transition:all 0.3s; }
+        .cta-btn:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(99,102,241,0.4); }
+        .footer { margin-top:64px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.06); color:#475569; font-size:0.8rem; text-align:center; }
+        .footer a { color:#6366f1; }
+        @media (max-width:600px) { h1 { font-size:1.7rem; } .stat-grid { grid-template-columns:1fr 1fr; } }
+    </style>
+</head>
+<body>
+    <article class="article-container">
+        <nav class="breadcrumb"><a href="../../">DueSight</a> &rsaquo; <a href="../">Blog</a> &rsaquo; AI in Due Diligence</nav>
+
+        <h1>AI in Due Diligence: Hoe Kunstmatige Intelligentie Bedrijfsonderzoek Verandert</h1>
+
+        <div class="article-meta">
+            <span>DueSight Intelligence</span>
+            <span>&bull; 16 maart 2026</span>
+            <span>&bull; 10 min leestijd</span>
+            <span class="tag">AI</span>
+            <span class="tag">Due Diligence</span>
+            <span class="tag">Thought Leadership</span>
+        </div>
+
+        <div class="answer-box">
+            <strong class="label">Snel antwoord</strong>
+            AI transformeert due diligence op drie manieren: <strong>snelheid</strong> (90 seconden vs. 6 weken),
+            <strong>breedte</strong> (meerdere bronnen tegelijk), en <strong>forensische diepte</strong> (forensische data-analyse, Altman Z-Score automatisch).
+            AI vervangt adviseurs niet &mdash; het versterkt ze door de cost-to-screen te verlagen en blinde vlekken te elimineren.
+        </div>
+
+        <p class="lead">
+            De due diligence industrie staat aan de vooravond van de grootste transformatie sinds de digitalisering van
+            bedrijfsinformatie. Waar een M&amp;A-team vroeger 4-12 weken nodig had om &eacute;&eacute;n target te screenen,
+            genereert een AI-platform dezelfde pre-DD intelligence in 90 seconden. Maar hoe werkt dat precies? En wat betekent
+            het voor professionals in M&amp;A, compliance en risk management?
+        </p>
+
+        <div class="stat-grid">
+            <div class="stat-card"><div class="stat-value">90s</div><div class="stat-label">AI screening tijd</div></div>
+            <div class="stat-card"><div class="stat-value">6 wkn</div><div class="stat-label">Traditionele DD</div></div>
+            <div class="stat-card"><div class="stat-value">Meerdere</div><div class="stat-label">Databronnen gescand</div></div>
+            <div class="stat-card"><div class="stat-value">38</div><div class="stat-label">analyselagen parallel</div></div>
+        </div>
+
+        <h2>De 4 Pijlers van AI Due Diligence</h2>
+
+        <div class="pillar">
+            <h3>1. Multi-Source Data Aggregatie</h3>
+            <p>Traditionele DD vereist dat analisten handmatig bronnen doorzoeken: KvK, Rechtspraak.nl, jaarrekeningen, sanctielijsten.
+            AI doet dit <strong>parallel</strong> &mdash; gespecialiseerde agenten scannen meerdere bronroutes simultaan:</p>
+            <ul>
+                <li><strong>Financi&euml;le bronnen:</strong> KvK jaarrekeningen, CBS, bedrijfsdata</li>
+                <li><strong>Juridische bronnen:</strong> Rechtspraak.nl, registers, vergunningen</li>
+                <li><strong>Compliance bronnen:</strong> OFAC, EU sanctielijsten, VN, PEP-databases, ICIJ</li>
+                <li><strong>Cyber bronnen:</strong> passive infrastructure exposure analysis, HIBP, SSL Labs, DNS-records</li>
+                <li><strong>Nieuwsbronnen:</strong> Google News, media monitoring</li>
+            </ul>
+        </div>
+
+        <div class="pillar">
+            <h3>2. Forensische AI-analyse</h3>
+            <p>AI kan patronen herkennen die menselijke analisten missen:</p>
+            <ul>
+                <li><strong><a href="../benfords-law-fraude-detectie/">forensische data-analyse</a></strong> &mdash; Detecteert statistische anomalie&euml;n in financi&euml;le cijfers die wijzen op manipulatie</li>
+                <li><strong><a href="../altman-z-score/">Altman Z-Score</a></strong> &mdash; Ordent financiele distress-signalen uit balansgegevens als screeningslaag</li>
+                <li><strong>Cross-verificatie</strong> &mdash; Vergelijkt data uit meerdere bronnen om discrepanties te vinden</li>
+                <li><strong>Temporele analyse</strong> &mdash; Detecteert verdachte patronen over tijd (plotselinge bestuurswijzigingen, adresveranderingen)</li>
+            </ul>
+        </div>
+
+        <div class="pillar">
+            <h3>3. Multi-LLM Reasoning</h3>
+            <p>Moderne AI DD-platforms gebruiken niet &eacute;&eacute;n AI-model, maar meerdere &mdash; elk gespecialiseerd:</p>
+            <table>
+                <thead><tr><th>LLM Rol</th><th>Taak</th><th>Voordeel</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Primaire Analyst</strong></td><td>Data samenvatten en risico's identificeren</td><td>Brede kennisbasis</td></tr>
+                    <tr><td><strong>Kritische Reviewer</strong></td><td>Conclusies challengen en gaps vinden</td><td>Reduceert bias</td></tr>
+                    <tr><td><strong>Fact Checker</strong></td><td>Claims verifi&euml;ren tegen brondata</td><td>Voorkomt hallucinaties</td></tr>
+                    <tr><td><strong>Compliance Specialist</strong></td><td>Sancties, PEP, UBO checken</td><td>Domeinexpertise</td></tr>
+                    <tr><td><strong>Synthesizer</strong></td><td>Alles samenvoegen in rapport</td><td>Coherent eindproduct</td></tr>
+                </tbody>
+            </table>
+            <p>Dit "debate" model &mdash; waarbij analyselagen elkaars conclusies verifi&euml;ren &mdash; vermindert fouten drastisch vergeleken met een single-model aanpak.</p>
+        </div>
+
+        <div class="pillar">
+            <h3>4. Geautomatiseerde Risico-rapportage</h3>
+            <p>Het eindproduct is een gestructureerd rapport met:</p>
+            <ul>
+                <li><strong>Risico-scorecard</strong> &mdash; Overzicht van alle ge&iuml;dentificeerde risico's</li>
+                <li><strong>Red flags</strong> &mdash; Concrete waarschuwingen met onderbouwing</li>
+                <li><strong>Bronverwijzingen</strong> &mdash; Elke bevinding linkt naar de originele bron</li>
+                <li><strong>Aanbevelingen</strong> &mdash; Concreet advies per risico-categorie</li>
+            </ul>
+        </div>
+
+        <h2>AI vs. Traditionele DD: Wanneer Wat Gebruiken?</h2>
+
+        <table>
+            <thead><tr><th>Criterium</th><th>AI Due Diligence</th><th>Traditionele DD</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Snelheid</strong></td><td>90 seconden</td><td>4-12 weken</td></tr>
+                <tr><td><strong>Kosten</strong></td><td>Compact &euro;79 / Pre-DD &euro;399</td><td>&euro;10.000-500.000</td></tr>
+                <tr><td><strong>Bronnen</strong></td><td>meerdere bronnen automatisch</td><td>5-15 handmatig</td></tr>
+                <tr><td><strong>Consistentie</strong></td><td>reproduceerbaar</td><td>Analist-afhankelijk</td></tr>
+                <tr><td><strong>Diepte per bron</strong></td><td>Breed, systematisch</td><td>Diep, contextrijk</td></tr>
+                <tr><td><strong>Strategie/onderhandeling</strong></td><td>Niet mogelijk</td><td>Kernkracht</td></tr>
+                <tr><td><strong>Ideaal voor</strong></td><td>Pre-screening, deal funnel</td><td>Finale DD, complexe deals</td></tr>
+            </tbody>
+        </table>
+
+        <p><strong>De optimale aanpak:</strong> gebruik AI voor de <em>pre-screening</em> (snel 100 targets screenen),
+        en investeer in traditionele DD alleen voor de 5-10 targets die door de AI-screening komen.
+        Dit verlaagt de gemiddelde cost-per-deal met 60-80%.</p>
+
+        <div class="cta-block">
+            <h3>Ervaar AI Due Diligence</h3>
+            <p>DueSight scant meerdere bronroutes met analyselagen in 90 seconden. Bekijk de Compact scan.</p>
+            <a href="../../#scan-dashboard" class="cta-btn">Vraag Early Access Aan &rarr;</a>
+        </div>
+
+        <h2>De Toekomst: Wat Komt Eraan?</h2>
+
+        <ul>
+            <li><strong>Continue monitoring</strong> &mdash; Van punt-in-tijd scans naar real-time risico-alerts</li>
+            <li><strong>Predictive analytics</strong> &mdash; Faillissementen voorspellen v&oacute;&oacute;r ze publiek worden</li>
+            <li><strong>Cross-jurisdictie UBO-ketens</strong> &mdash; Eigendomsstructuren automatisch ontrafelen over 6+ landen</li>
+            <li><strong>ESG-integratie</strong> &mdash; AI-analyse van duurzaamheidsrisico's en supply chain compliance</li>
+            <li><strong>NIS2 deep compliance</strong> &mdash; Automatische toeleveringsketenanalyse voor cybersecurity</li>
+        </ul>
+
+        <h2>Veelgestelde Vragen</h2>
+
+        <h3>Hoe wordt AI gebruikt in due diligence?</h3>
+        <p>AI wordt gebruikt voor: automatische data-aggregatie uit meerdere bronroutes, forensische analyse (<a href="../benfords-law-fraude-detectie/">forensische data-analyse</a>, <a href="../altman-z-score/">Altman Z-Score</a>), <a href="../sanctiescreening-nederland/">sanctiescreening</a> tegen internationale lijsten, <a href="../cyber-due-diligence/">cyber-risico scanning</a>, en het genereren van ge&iuml;ntegreerde risicorapporten.</p>
+
+        <h3>Kan AI een due diligence adviseur vervangen?</h3>
+        <p>Nee, AI vervangt adviseurs niet maar versterkt ze. AI is superieur in data-aggregatie, patroonherkenning en snelheid. Menselijke experts blijven nodig voor contextinterpretatie, strategische beoordeling en onderhandelingsadvies.</p>
+
+        <h3>Wat zijn de voordelen van AI due diligence?</h3>
+        <p>Snelheid (90 seconden vs. 6 weken), breedte (meerdere bronnen tegelijk), consistentie (reproduceerbaar), en kosten (Compact &euro;79 / Pre-DD &euro;399). Zie ook onze <a href="../../vergelijk/">vergelijking van DD-platforms</a>.</p>
+
+        <div class="footer">
+            <p>&copy; 2026 DueSight Intelligence | <a href="../../">Home</a> | <a href="../">Alle artikelen</a></p>
+            <p style="margin-top:8px;">Gerelateerd:
+                <a href="../wat-is-due-diligence/">Wat is Due Diligence?</a> |
+                <a href="../bedrijf-checken/">Hoe Check Ik Een Bedrijf?</a> |
+                <a href="../m-and-a-checklist-nederland/">M&amp;A Checklist</a>
+            </p>
+        </div>
+    </article>
+</body>
+</html>

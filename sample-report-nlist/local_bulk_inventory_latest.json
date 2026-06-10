@@ -227,7 +227,7 @@
             "confidence": "High",
             "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
             "claim_safe_for_memo": true,
-            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun Curated replay before production use.",
             "row_id": "local-bulk-inventory-08"
           }
         ],
@@ -444,7 +444,7 @@
               "confidence": "High",
               "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
               "claim_safe_for_memo": true,
-              "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+              "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun Curated replay before production use.",
               "row_id": "local-bulk-inventory-08"
             }
           ],
@@ -656,7 +656,7 @@
           "confidence": "High",
           "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
           "claim_safe_for_memo": true,
-          "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+          "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun Curated replay before production use.",
           "row_id": "local-bulk-inventory-08"
         }
       ],
@@ -912,7 +912,7 @@
             "confidence": "High",
             "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
             "claim_safe_for_memo": true,
-            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+            "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun Curated replay before production use.",
             "row_id": "local-bulk-inventory-08"
           }
         ],
@@ -1124,7 +1124,7 @@
         "confidence": "High",
         "limitation": "The module is operational, but NLIST's FT1000 hit is recovered-seed context until the primary FT row or corroborating publisher article is captured.",
         "claim_safe_for_memo": true,
-        "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun certified replay before production use.",
+        "diligence_question": "For NLIST, capture primary FT1000 evidence or corroborating articles, then rerun Curated replay before production use.",
         "row_id": "local-bulk-inventory-08"
       }
     ],
@@ -1136,5 +1136,6 @@
     "source_envelope_contract_fields_missing": [],
     "source_envelope_incomplete_rows": 0,
     "source_envelope_issues": []
-  }
+  },
+  "updated_at": "2026-06-02T11:38:50+00:00"
 }

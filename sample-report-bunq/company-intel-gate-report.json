@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_gate_report.v1",
   "run_id": "certified-samples-rest-20260526-235449-bunq",
   "target": "bunq B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:26+00:00",
   "decision": "publish_context_only_with_official_upgrade_route",
   "gates": [
     {

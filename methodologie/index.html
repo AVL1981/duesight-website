@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodologie | DueSight</title>
+  <meta name="description" content="DueSight methodologie: Tier0 deterministisch, search, LLM, cloud-escalatie, entity-lock, source envelopes en eerlijke backtestcaveats.">
+  <link rel="canonical" href="https://duesight.nl/methodologie/">
+  <link rel="stylesheet" href="../assets/trust-authority.css">
+</head>
+<body>
+  <div class="topbar">DueSight methodologie - source-first pre-DD</div>
+  <nav class="nav">
+    <a class="brand" href="../"><span class="mark">D</span><span>DueSight</span></a>
+    <div class="navlinks">
+      <a href="../ai-transparantie/">AI Act</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../assurance/">Trust</a>
+      <a href="../security/">Security</a>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span>Methodologie</div>
+      <h1>Van entity-lock naar <em>memo-safe</em> claim</h1>
+      <p class="lead">DueSight gebruikt een cascade waarin deterministische checks eerst komen, search alleen bronroutes opent, LLM-output nooit zelfstandig bewijs is en cloud-escalatie zichtbaar blijft.</p>
+    </section>
+
+    <div class="answer">
+      <p><strong>Antwoord in het kort:</strong> DueSight publiceert claims pas als ze door de source-envelope gate komen. Een rapportregel moet een bron, timestamp, entiteitsmatch, beperking en `claim_safe_for_memo` status hebben. Zonder die basis wordt de claim beperkt, gelabeld als discovery of geblokkeerd.</p>
+    </div>
+
+    <section class="section">
+      <h2>De cascade</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Laag</th><th>Doel</th><th>Wat telt als bewijs</th><th>Wat niet mag</th></tr></thead>
+          <tbody>
+            <tr><td>Tier0 deterministisch</td><td>Entity-lock, registermatch, vaste berekeningen, bekende blockers.</td><td>Exacte identifiers, officiele of primaire bron, reproduceerbare berekening.</td><td>Gokken op naamoverlap of alleen modeloutput.</td></tr>
+            <tr><td>Search</td><td>Bronnen vinden en routes openen.</td><td>URL, bronklasse, retrieval timestamp en relevantiesignaal.</td><td>Search snippet als definitieve claim.</td></tr>
+            <tr><td>LLM</td><td>Samenvatten, conflicten structureren, caveats formuleren.</td><td>Alleen claims die terugwijzen naar bronrijen.</td><td>Nieuwe feiten toevoegen zonder bronpad.</td></tr>
+            <tr><td>Cloud</td><td>Escalatie voor zware extractie of alternatieve review.</td><td>Output plus dezelfde source-envelope verplichting.</td><td>Cloudresultaat als autoriteit op zichzelf.</td></tr>
+            <tr><td>Menselijke review</td><td>Buyer-facing memo vrijgeven.</td><td>Controle op scope, caveats, conflicts en toegestane formulering.</td><td>Certificering, zekerheid of advies claimen.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid two section">
+      <div class="card">
+        <h2>Entity-lock</h2>
+        <p>Een target wordt eerst vastgezet op naam, jurisdictie, domein, register-ID en waar beschikbaar LEI of vergelijkbare identifier. Conflicten leiden tot review, niet tot stille samensmelting.</p>
+      </div>
+      <div class="card">
+        <h2>Source envelopes</h2>
+        <p>Elke claim krijgt minimaal bron-URL, bronklasse, retrieved-at, target-match, confidence, limitation en claimstatus. Dit maakt latere audit en correctie mogelijk.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>`claim_safe_for_memo`</h2>
+      <div class="card">
+        <p>Een claim krijgt `claim_safe_for_memo=true` wanneer de bronroute voldoende is voor buyer-facing pre-DD context. Bij incomplete bronvelden, conflicterende identifiers, ontbrekende officiele documenten of discovery-only search blijft de claim `false` en wordt een official-proof vervolgstap getoond.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Historical replays en benchmarkresultaat</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Case</th><th>Gevraagde legacy label</th><th>Publiceerbare lezing</th><th>Caveat</th></tr></thead>
+          <tbody>
+            <tr><td>Wirecard AG</td><td>Retired high-water label</td><td>Self-assessed historical replay: public pre-event signal layer FLAG 7/10; source-hard overlay FLAG 5/&gt;=3.</td><td>Reported-only math mist Wirecard. Regulator count en adverse-media count waren geblokkeerd of retry-only. Geen public benchmarkclaim.</td></tr>
+            <tr><td>Steinhoff International Holdings N.V.</td><td>Retired over-max label</td><td>Cutoff-fixed replay: FLAG 3/10; source-hard overlay FLAG 3/&gt;=3.</td><td>At-threshold buyer-demo case. Viceroy blijft post-cutoff context en telt niet mee. Oude over-max scorecopy is ingetrokken.</td></tr>
+            <tr><td>FinanceBench</td><td>Public sample</td><td>Interne guardrail: 145/150 op de publieke sample.</td><td>Alleen public-sample scope. Geen full-corpus, markt- of certificeringsclaim.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Eerlijke beperkingen</h2>
+      <div class="card">
+        <ul>
+          <li>Pre-DD is triage: het vervangt geen full due diligence, juridisch advies of investeringsadvies.</li>
+          <li>Publieke bronnen kunnen verouderd, incompleet of achter betaalmuren zitten.</li>
+          <li>Geen-hit betekent niet schoon; het betekent alleen geen brongebonden hit binnen de gebruikte routes.</li>
+          <li>Backtests zijn self-assessed historical replays met vaste cutoffs en beperkte sample, geen extern gevalideerde performanceclaim.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">Vibe The Code (KvK 99920301) - DueSight productnaam - methodology owner: legal/product - bijgewerkt op 2026-06-08</footer>
+  </main>
+</body>
+</html>

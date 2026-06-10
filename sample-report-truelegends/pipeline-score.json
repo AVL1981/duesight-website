@@ -2,7 +2,7 @@
   "aggregate_score_certified": true,
   "investment_verdict_certified": false,
   "score_kind": "DueSight Evidence Readiness Score",
-  "score_model": "duesight.sample_report_score_model.v2",
+  "score_model": "duesight.sample_report_source_support_model.v2",
   "score": 66,
   "scale": "0-100",
   "display_value": "66/100",
@@ -59,7 +59,7 @@
       "score": 7,
       "max_score": 13,
       "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
       "evidence": [
         "preflight_ok=8",
         "hosted_fallback_deferred=2",
@@ -78,13 +78,13 @@
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
       "evidence": [
-        "sanctions_status=clean",
+        "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
         "hosted_fallback_deferred=2"
       ],
       "limitations": [
-        "No-hit is not proof of clean reputation.",
+        "Zero candidates is source-limited and not proof of reputation clearance.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ]
     },

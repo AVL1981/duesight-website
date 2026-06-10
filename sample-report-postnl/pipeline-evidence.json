@@ -322,8 +322,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'PostNL N.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'PostNL N.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -339,7 +339,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -423,7 +423,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "ubo": {
@@ -458,7 +458,7 @@
             "cost_eur": 0.0,
             "time_s": 0.57
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -477,7 +477,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -505,7 +505,7 @@
             }
           ],
           "dnb_source": "https://www.dnb.nl/openbaar-register/",
-          "dnb_data_freshness": "dagelijks ge\u00fcpdatet (werkdagen 06:00)",
+          "dnb_data_freshness": "dagelijks geüpdatet (werkdagen 06:00)",
           "dnb_risk_level": "LOW"
         },
         "summary": "Gevonden in 1 register(s): DNB",
@@ -773,7 +773,7 @@
                 },
                 {
                   "url": "https://shop.postnl.nl/webshop/postzegels/?pst=sp-pnl-nav-verz-ql3-shop-zegels",
-                  "text": "Buy stamps"
+                  "text": "REVIEW stamps"
                 },
                 {
                   "url": "https://jouw.postnl.nl/track-and-trace/?pst=sp-pnl-nav-ontv-ql1-track-and-trace",
@@ -789,7 +789,7 @@
                 },
                 {
                   "url": "https://shop.postnl.nl/webshop/postzegels/?pst=sp-pnl-footer-verz-ql3-shop-zegels",
-                  "text": "Buy stamps"
+                  "text": "REVIEW stamps"
                 },
                 {
                   "url": "https://jouw.postnl.nl/track-and-trace/?pst=sp-pnl-footer-ontv-ql1-track-and-trace",
@@ -900,7 +900,7 @@
                 },
                 {
                   "url": "https://newsroom.postnl.nl/nl-NL/pages/financiele-resultaten",
-                  "text": "Financi\u00eble Resultaten"
+                  "text": "Financiële Resultaten"
                 },
                 {
                   "url": "https://newsroom.postnl.nl/nl-NL/pages/capital-markets-day-deep-dives",
@@ -924,7 +924,7 @@
                 },
                 {
                   "url": "https://newsroom.postnl.nl/nl-NL/events/",
-                  "text": "Financi\u00eble Agenda"
+                  "text": "Financiële Agenda"
                 }
               ],
               "team_contacts_found": 0
@@ -1108,7 +1108,7 @@
               "score": 0.8998
             },
             {
-              "title": "Verzendbedrijven willen strenge regels voor PostNL: \u2019Monopolie heeft ons honderden miljoenen gekost\u2019 - De Telegraaf",
+              "title": "Verzendbedrijven willen strenge regels voor PostNL: ’Monopolie heeft ons honderden miljoenen gekost’ - De Telegraaf",
               "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUJsNzNqSzUwLVlIWlBwLV9xSXE2UEk3a3JaVDNFSk5lSUlZQ2FTMGstYk9RR0kzQXE2Q3h0R3Jnb3hYQW10Y0QyUjdiSER3cmtIdEp5dzBEUlJCWFVmWlZiemcwdzBTMHNmQmt1X3BNbEc5U1VFZURlbEpKQmVyeGQ4WUZZTnpHM1BvSGI2bWh6blBHd1dCY3ZoOGpWdXdWclBKMTRsTjRrYWpLQW1aOU5JakU4UkRWSVB0Z2VDc3RpLU8zUUJuUmRVNGFZbFdoN29ibTdPaFNBcDN1SmdUcEZR?oc=5",
               "source": "De Telegraaf",
               "date": "Wed, 03 De",
@@ -1140,7 +1140,7 @@
               "score": 0.9139
             },
             {
-              "title": "Medewerker PostNL stuurt pakketten met tv\u2019s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad",
+              "title": "Medewerker PostNL stuurt pakketten met tv’s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad",
               "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXBnT0tvalQ0VGxfbEppZzlVcTExcGNkb0JpWTBaajVWbEtfUUdDSE84OFdVaDU0YXRWT29WNHh2aEhnYVhEa293SDA4WkpZNng1UXhJdi10WkF2TFBOcm1HUjlQLW9ORERObmlEd2UxTklacy1BTnBhZE1XWHAzRWFCQWUxYTZaMHIzQURtWEtiTXJScGVtXzl6dkt0cDA5cWhGVVRXOGFiVnNMc1M1cDhXbmpqelo1UjJ2b1MyYXowLUF1N3V2UlZOejlfUHM?oc=5",
               "source": "Brabants Dagblad",
               "date": "Thu, 30 Ap",
@@ -1164,7 +1164,7 @@
               "score": 0.913
             },
             {
-              "title": "Nadine (48) klikte op een \u2018PostNL-linkje\u2019: \u2018Nog geen tien minuten later was er 783 euro verdwenen\u2019 - Metronieuws.nl",
+              "title": "Nadine (48) klikte op een ‘PostNL-linkje’: ‘Nog geen tien minuten later was er 783 euro verdwenen’ - Metronieuws.nl",
               "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX1NQa1dEQ2V0OUhTTDktdjIyMlJWXzl1Y1dQTWFNbGFmREZ4UVhMM3BOT1paWHJDTG93UUo5TkVLNE1CWC1RYWxZX3ByNkcyWEVucVVnNE5vdXJzRU9RYzZkLXRZNkNyeEdiTUxvb3JlaUJWNmsxS2FsaXJZU2lnSXFLa2x0OFloMjJNRnF0WGlycFFhbWphSmJaakYwQmNK?oc=5",
               "source": "Metronieuws.nl",
               "date": "Thu, 19 Ma",
@@ -1180,7 +1180,7 @@
               "score": 0.9328
             },
             {
-              "title": "PostNL dreigt met rechtszaak om bezorging te redden: \u2018Het water staat ons tot over de neus\u2019 - Het Parool",
+              "title": "PostNL dreigt met rechtszaak om bezorging te redden: ‘Het water staat ons tot over de neus’ - Het Parool",
               "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZDJUMEFjMVl5bnZNLTI2ZEpmT001bkFvb1BRNWVrQ25CeWFkajRIZDZCMjBtOUZBdGNfYVlxM29mRFZ6WVdMeTkzX2NqUUNJZzNoczJxVlp0QUhScWY4MnBJLVVFVENaWEJPcHpqZ19CMWtvTHRwN3ZSUGpqYnE2QzNUNy1VV1IzbnNTSF93OEI1TzZpQWdtWlRiaFQzY0Q0eldoQUtMYm1VQi1wNTRFS3d2RHdoYUYwVVBBM0FKeThXNkdSUGJQOXRR?oc=5",
               "source": "Het Parool",
               "date": "Mon, 21 Ju",
@@ -1555,7 +1555,7 @@
                     "url": [
                       {
                         "key": "access_rights",
-                        "value": "Datenlizenz Deutschland \u2013 Zero \u2013 Version 2.0"
+                        "value": "Datenlizenz Deutschland – Zero – Version 2.0"
                       },
                       {
                         "key": "alternate_identifier",
@@ -1668,7 +1668,7 @@
                     "url": [
                       {
                         "key": "access_rights",
-                        "value": "Die Daten k\u00f6nnen gem\u00e4\u00df der \u201eDatenlizenz Deutschland - Namensnennung - Version 2.0\u201c (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: \"GeoBasis-DE/LGB\", Beispiel: \u201e\u00a9 GeoBasis-DE/LGB, dl-de/by-2-0, (Daten ge\u00e4ndert)\u201c, (Klammer = optional). Hinweis: bei Kartendarstellungen au\u00dferhalb des Landes Brandenburg sind die Lizenzbedingungen der betreffenden L\u00e4nder zu beachten."
+                        "value": "Die Daten können gemäß der „Datenlizenz Deutschland - Namensnennung - Version 2.0“ (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: \"GeoBasis-DE/LGB\", Beispiel: „© GeoBasis-DE/LGB, dl-de/by-2-0, (Daten geändert)“, (Klammer = optional). Hinweis: bei Kartendarstellungen außerhalb des Landes Brandenburg sind die Lizenzbedingungen der betreffenden Länder zu beachten."
                       },
                       {
                         "key": "alternate_identifier",
@@ -1777,7 +1777,7 @@
                     "url": [
                       {
                         "key": "access_rights",
-                        "value": "Es gelten keine Zugriffsbeschr\u00e4nkungen"
+                        "value": "Es gelten keine Zugriffsbeschränkungen"
                       },
                       {
                         "key": "alternate_identifier",
@@ -1801,7 +1801,7 @@
                       },
                       {
                         "key": "contact_street",
-                        "value": "Goldbergstra\u00dfe 12"
+                        "value": "Goldbergstraße 12"
                       },
                       {
                         "key": "contact_tel",
@@ -1882,7 +1882,7 @@
                     ]
                   },
                   {
-                    "title": "\u00dcbersetzung und Satz Vulkaneifel Magazin (nl & eng)",
+                    "title": "Übersetzung und Satz Vulkaneifel Magazin (nl & eng)",
                     "name": "ubersetzung-und-satz-vulkaneifel-magazin-nl-eng",
                     "publisher": "Land Rheinland-Pfalz",
                     "license": "",
@@ -2734,7 +2734,7 @@
             "url": "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Main risks Main risks \u2013 PostNL Reporting Center\n\n- Our value chain\n- Our networks and services\n- External developments\n\n- Internal control framework\n- Risk appetite\n- Main risks\n- Emerging risks\n\n### Main Risks\n\nPostNL Main risks\n\nTopic\n\nRisk summary\n\nRisk level\n\nTrend\n\nMain response\n\nStrategic risks\n\nCompetition and client concentration\n\nCompetitive pressure in the e-commerce market remains intense, with established players expanding market share and new entrants further intensifying dynamics. Rising client concentration increases exposure to a limited number of dominant platforms, amplifying"
+            "snippet": "Main risks Main risks – PostNL Reporting Center\n\n- Our value chain\n- Our networks and services\n- External developments\n\n- Internal control framework\n- Risk appetite\n- Main risks\n- Emerging risks\n\n### Main Risks\n\nPostNL Main risks\n\nTopic\n\nRisk summary\n\nRisk level\n\nTrend\n\nMain response\n\nStrategic risks\n\nCompetition and client concentration\n\nCompetitive pressure in the e-commerce market remains intense, with established players expanding market share and new entrants further intensifying dynamics. Rising client concentration increases exposure to a limited number of dominant platforms, amplifying"
           },
           {
             "title": "[PDF] POSTNL N.V. - AFM",
@@ -2748,21 +2748,21 @@
             "url": "https://annualreport.postnl.nl/2025/governance/our-taks-strategy-and-policy-provisions",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions \u2013 PostNL Reporting Center\n\nReport of the Supervisory Board\n\n- Reflecting on 2025 with Jan Nooitgedagt\n- Board structure, composition and responsibilities\n- Meetings and evaluation of the Supervisory Board\n\n- Board structure, composition and responsibilities\n- Business conduct - Policies and procedures\n\n- In conversation with our chairman\n- Remuneration of the Board of Management\n- Remuneration of the Supervisory Board\n\n## Our tax strategy and policy provisions\n\n### Introduction\n\nPostNL\u2019s tax strategy and policy are b"
+            "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions – PostNL Reporting Center\n\nReport of the Supervisory Board\n\n- Reflecting on 2025 with Jan Nooitgedagt\n- Board structure, composition and responsibilities\n- Meetings and evaluation of the Supervisory Board\n\n- Board structure, composition and responsibilities\n- Business conduct - Policies and procedures\n\n- In conversation with our chairman\n- Remuneration of the Board of Management\n- Remuneration of the Supervisory Board\n\n## Our tax strategy and policy provisions\n\n### Introduction\n\nPostNL’s tax strategy and policy are b"
           },
           {
             "title": "PostNL on the capital markets",
             "url": "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
             "published_date": "",
             "source": "Exa",
-            "snippet": "PostNL on the capital markets PostNL on the capital markets \u2013 PostNL Reporting Center\n\nReport of the Supervisory Board\n\n- Reflecting on 2025 with Jan Nooitgedagt\n- Board structure, composition and responsibilities\n- Meetings and evaluation of the Supervisory Board\n\n- Board structure, composition and responsibilities\n- Business conduct - Policies and procedures\n\n- In conversation with our chairman\n- Remuneration of the Board of Management\n- Remuneration of the Supervisory Board\n\n## PostNL on the capital markets\n\n### Shares and share ownership\n\nOrdinary shares in PostNL N.V. (ticker: PNL, ISIN c"
+            "snippet": "PostNL on the capital markets PostNL on the capital markets – PostNL Reporting Center\n\nReport of the Supervisory Board\n\n- Reflecting on 2025 with Jan Nooitgedagt\n- Board structure, composition and responsibilities\n- Meetings and evaluation of the Supervisory Board\n\n- Board structure, composition and responsibilities\n- Business conduct - Policies and procedures\n\n- In conversation with our chairman\n- Remuneration of the Board of Management\n- Remuneration of the Supervisory Board\n\n## PostNL on the capital markets\n\n### Shares and share ownership\n\nOrdinary shares in PostNL N.V. (ticker: PNL, ISIN c"
           },
           {
             "title": "4.4 Financial risk management",
             "url": "https://annualreport.postnl.nl/2025/financial-statements/4-capital-structure-and-financing-costs/4-4-financial-risk-management",
             "published_date": "",
             "source": "Exa",
-            "snippet": "4.4 Financial risk management 4.4 Financial risk management \u2013 PostNL Reporting Center\n\n- Consolidated statement of profit and loss\n- Earnings per share\n- Consolidated statement of comprehensive income\n- Consolidated statement of cash flow\n- Consolidated statement of financial position\n- Consolidated statement of changes in equity\n\n1 Basis of preparation\n\n- 1.1 General information\n- 1.2 Accounting principles applied\n- 1.3 Critical accounting estimates and judgements\n- 1.4 Changes in accounting policies and disclosures\n\n2 Result for the year\n\n- 2.1 Operating revenue\n- 2.2 Other income\n- 2.3 Oper"
+            "snippet": "4.4 Financial risk management 4.4 Financial risk management – PostNL Reporting Center\n\n- Consolidated statement of profit and loss\n- Earnings per share\n- Consolidated statement of comprehensive income\n- Consolidated statement of cash flow\n- Consolidated statement of financial position\n- Consolidated statement of changes in equity\n\n1 Basis of preparation\n\n- 1.1 General information\n- 1.2 Accounting principles applied\n- 1.3 Critical accounting estimates and judgements\n- 1.4 Changes in accounting policies and disclosures\n\n2 Result for the year\n\n- 2.1 Operating revenue\n- 2.2 Other income\n- 2.3 Oper"
           }
         ]
       }
@@ -2892,25 +2892,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for PostNL N.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for PostNL N.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "PostNL N.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -3408,7 +3408,7 @@
               "bucket": "Main risks",
               "title": "Main risks",
               "url": "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
-              "snippet": "Main risks Main risks \u2013 PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
+              "snippet": "Main risks Main risks – PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:01:16+00:00",
@@ -3442,7 +3442,7 @@
               "bucket": "Our tax strategy and policy provisions",
               "title": "Our tax strategy and policy provisions",
               "url": "https://annualreport.postnl.nl/2025/governance/our-taks-strategy-and-policy-provisions",
-              "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
+              "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:01:16+00:00",
@@ -3459,7 +3459,7 @@
               "bucket": "PostNL on the capital markets",
               "title": "PostNL on the capital markets",
               "url": "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
-              "snippet": "PostNL on the capital markets PostNL on the capital markets \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
+              "snippet": "PostNL on the capital markets PostNL on the capital markets – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:01:16+00:00",
@@ -3476,7 +3476,7 @@
               "bucket": "4.4 Financial risk management",
               "title": "4.4 Financial risk management",
               "url": "https://annualreport.postnl.nl/2025/financial-statements/4-capital-structure-and-financing-costs/4-4-financial-risk-management",
-              "snippet": "4.4 Financial risk management 4.4 Financial risk management \u2013 PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
+              "snippet": "4.4 Financial risk management 4.4 Financial risk management – PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:01:16+00:00",
@@ -3622,7 +3622,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: \u2019Monopolie heeft ons honderden miljoenen gekost\u2019 - De Telegraaf.",
+              "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: ’Monopolie heeft ons honderden miljoenen gekost’ - De Telegraaf.",
               "source": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUJsNzNqSzUwLVlIWlBwLV9xSXE2UEk3a3JaVDNFSk5lSUlZQ2FTMGstYk9RR0kzQXE2Q3h0R3Jnb3hYQW10Y0QyUjdiSER3cmtIdEp5dzBEUlJCWFVmWlZiemcwdzBTMHNmQmt1X3BNbEc5U1VFZURlbEpKQmVyeGQ4WUZZTnpHM1BvSGI2bWh6blBHd1dCY3ZoOGpWdXdWclBKMTRsTjRrYWpLQW1aOU5JakU4UkRWSVB0Z2VDc3RpLU8zUUJuUmRVNGFZbFdoN29ibTdPaFNBcDN1SmdUcEZR?oc=5",
               "source_type": "news",
               "published_at": "Wed, 03 De",
@@ -3694,7 +3694,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv\u2019s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
+              "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv’s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
               "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXBnT0tvalQ0VGxfbEppZzlVcTExcGNkb0JpWTBaajVWbEtfUUdDSE84OFdVaDU0YXRWT29WNHh2aEhnYVhEa293SDA4WkpZNng1UXhJdi10WkF2TFBOcm1HUjlQLW9ORERObmlEd2UxTklacy1BTnBhZE1XWHAzRWFCQWUxYTZaMHIzQURtWEtiTXJScGVtXzl6dkt0cDA5cWhGVVRXOGFiVnNMc1M1cDhXbmpqelo1UjJ2b1MyYXowLUF1N3V2UlZOejlfUHM?oc=5",
               "source_type": "news",
               "published_at": "Thu, 30 Ap",
@@ -3748,7 +3748,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een \u2018PostNL-linkje\u2019: \u2018Nog geen tien minuten later was er 783 euro verdwenen\u2019 - Metronieuws.nl.",
+              "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een ‘PostNL-linkje’: ‘Nog geen tien minuten later was er 783 euro verdwenen’ - Metronieuws.nl.",
               "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX1NQa1dEQ2V0OUhTTDktdjIyMlJWXzl1Y1dQTWFNbGFmREZ4UVhMM3BOT1paWHJDTG93UUo5TkVLNE1CWC1RYWxZX3ByNkcyWEVucVVnNE5vdXJzRU9RYzZkLXRZNkNyeEdiTUxvb3JlaUJWNmsxS2FsaXJZU2lnSXFLa2x0OFloMjJNRnF0WGlycFFhbWphSmJaakYwQmNK?oc=5",
               "source_type": "news",
               "published_at": "Thu, 19 Ma",
@@ -3784,7 +3784,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: \u2018Het water staat ons tot over de neus\u2019 - Het Parool.",
+              "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: ‘Het water staat ons tot over de neus’ - Het Parool.",
               "source": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZDJUMEFjMVl5bnZNLTI2ZEpmT001bkFvb1BRNWVrQ25CeWFkajRIZDZCMjBtOUZBdGNfYVlxM29mRFZ6WVdMeTkzX2NqUUNJZzNoczJxVlp0QUhScWY4MnBJLVVFVENaWEJPcHpqZ19CMWtvTHRwN3ZSUGpqYnE2QzNUNy1VV1IzbnNTSF93OEI1TzZpQWdtWlRiaFQzY0Q0eldoQUtMYm1VQi1wNTRFS3d2RHdoYUYwVVBBM0FKeThXNkdSUGJQOXRR?oc=5",
               "source_type": "news",
               "published_at": "Mon, 21 Ju",
@@ -4301,7 +4301,7 @@
           "bucket": "Main risks",
           "title": "Main risks",
           "url": "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
-          "snippet": "Main risks Main risks \u2013 PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
+          "snippet": "Main risks Main risks – PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:01:16+00:00",
@@ -4335,7 +4335,7 @@
           "bucket": "Our tax strategy and policy provisions",
           "title": "Our tax strategy and policy provisions",
           "url": "https://annualreport.postnl.nl/2025/governance/our-taks-strategy-and-policy-provisions",
-          "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
+          "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:01:16+00:00",
@@ -4352,7 +4352,7 @@
           "bucket": "PostNL on the capital markets",
           "title": "PostNL on the capital markets",
           "url": "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
-          "snippet": "PostNL on the capital markets PostNL on the capital markets \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
+          "snippet": "PostNL on the capital markets PostNL on the capital markets – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:01:16+00:00",
@@ -4369,7 +4369,7 @@
           "bucket": "4.4 Financial risk management",
           "title": "4.4 Financial risk management",
           "url": "https://annualreport.postnl.nl/2025/financial-statements/4-capital-structure-and-financing-costs/4-4-financial-risk-management",
-          "snippet": "4.4 Financial risk management 4.4 Financial risk management \u2013 PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
+          "snippet": "4.4 Financial risk management 4.4 Financial risk management – PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:01:16+00:00",
@@ -4463,14 +4463,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for PostNL N.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "PostNL N.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -4672,7 +4672,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: \u2019Monopolie heeft ons honderden miljoenen gekost\u2019 - De Telegraaf.",
+          "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: ’Monopolie heeft ons honderden miljoenen gekost’ - De Telegraaf.",
           "source": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUJsNzNqSzUwLVlIWlBwLV9xSXE2UEk3a3JaVDNFSk5lSUlZQ2FTMGstYk9RR0kzQXE2Q3h0R3Jnb3hYQW10Y0QyUjdiSER3cmtIdEp5dzBEUlJCWFVmWlZiemcwdzBTMHNmQmt1X3BNbEc5U1VFZURlbEpKQmVyeGQ4WUZZTnpHM1BvSGI2bWh6blBHd1dCY3ZoOGpWdXdWclBKMTRsTjRrYWpLQW1aOU5JakU4UkRWSVB0Z2VDc3RpLU8zUUJuUmRVNGFZbFdoN29ibTdPaFNBcDN1SmdUcEZR?oc=5",
           "source_type": "news",
           "published_at": "Wed, 03 De",
@@ -4744,7 +4744,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv\u2019s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
+          "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv’s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
           "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXBnT0tvalQ0VGxfbEppZzlVcTExcGNkb0JpWTBaajVWbEtfUUdDSE84OFdVaDU0YXRWT29WNHh2aEhnYVhEa293SDA4WkpZNng1UXhJdi10WkF2TFBOcm1HUjlQLW9ORERObmlEd2UxTklacy1BTnBhZE1XWHAzRWFCQWUxYTZaMHIzQURtWEtiTXJScGVtXzl6dkt0cDA5cWhGVVRXOGFiVnNMc1M1cDhXbmpqelo1UjJ2b1MyYXowLUF1N3V2UlZOejlfUHM?oc=5",
           "source_type": "news",
           "published_at": "Thu, 30 Ap",
@@ -4798,7 +4798,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een \u2018PostNL-linkje\u2019: \u2018Nog geen tien minuten later was er 783 euro verdwenen\u2019 - Metronieuws.nl.",
+          "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een ‘PostNL-linkje’: ‘Nog geen tien minuten later was er 783 euro verdwenen’ - Metronieuws.nl.",
           "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX1NQa1dEQ2V0OUhTTDktdjIyMlJWXzl1Y1dQTWFNbGFmREZ4UVhMM3BOT1paWHJDTG93UUo5TkVLNE1CWC1RYWxZX3ByNkcyWEVucVVnNE5vdXJzRU9RYzZkLXRZNkNyeEdiTUxvb3JlaUJWNmsxS2FsaXJZU2lnSXFLa2x0OFloMjJNRnF0WGlycFFhbWphSmJaakYwQmNK?oc=5",
           "source_type": "news",
           "published_at": "Thu, 19 Ma",
@@ -4834,7 +4834,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: \u2018Het water staat ons tot over de neus\u2019 - Het Parool.",
+          "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: ‘Het water staat ons tot over de neus’ - Het Parool.",
           "source": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZDJUMEFjMVl5bnZNLTI2ZEpmT001bkFvb1BRNWVrQ25CeWFkajRIZDZCMjBtOUZBdGNfYVlxM29mRFZ6WVdMeTkzX2NqUUNJZzNoczJxVlp0QUhScWY4MnBJLVVFVENaWEJPcHpqZ19CMWtvTHRwN3ZSUGpqYnE2QzNUNy1VV1IzbnNTSF93OEI1TzZpQWdtWlRiaFQzY0Q0eldoQUtMYm1VQi1wNTRFS3d2RHdoYUYwVVBBM0FKeThXNkdSUGJQOXRR?oc=5",
           "source_type": "news",
           "published_at": "Mon, 21 Ju",
@@ -5275,25 +5275,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for PostNL N.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for PostNL N.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "PostNL N.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -5791,7 +5791,7 @@
             "bucket": "Main risks",
             "title": "Main risks",
             "url": "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
-            "snippet": "Main risks Main risks \u2013 PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
+            "snippet": "Main risks Main risks – PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:01:16+00:00",
@@ -5825,7 +5825,7 @@
             "bucket": "Our tax strategy and policy provisions",
             "title": "Our tax strategy and policy provisions",
             "url": "https://annualreport.postnl.nl/2025/governance/our-taks-strategy-and-policy-provisions",
-            "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
+            "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:01:16+00:00",
@@ -5842,7 +5842,7 @@
             "bucket": "PostNL on the capital markets",
             "title": "PostNL on the capital markets",
             "url": "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
-            "snippet": "PostNL on the capital markets PostNL on the capital markets \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
+            "snippet": "PostNL on the capital markets PostNL on the capital markets – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:01:16+00:00",
@@ -5859,7 +5859,7 @@
             "bucket": "4.4 Financial risk management",
             "title": "4.4 Financial risk management",
             "url": "https://annualreport.postnl.nl/2025/financial-statements/4-capital-structure-and-financing-costs/4-4-financial-risk-management",
-            "snippet": "4.4 Financial risk management 4.4 Financial risk management \u2013 PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
+            "snippet": "4.4 Financial risk management 4.4 Financial risk management – PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:01:16+00:00",
@@ -6005,7 +6005,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: \u2019Monopolie heeft ons honderden miljoenen gekost\u2019 - De Telegraaf.",
+            "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: ’Monopolie heeft ons honderden miljoenen gekost’ - De Telegraaf.",
             "source": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUJsNzNqSzUwLVlIWlBwLV9xSXE2UEk3a3JaVDNFSk5lSUlZQ2FTMGstYk9RR0kzQXE2Q3h0R3Jnb3hYQW10Y0QyUjdiSER3cmtIdEp5dzBEUlJCWFVmWlZiemcwdzBTMHNmQmt1X3BNbEc5U1VFZURlbEpKQmVyeGQ4WUZZTnpHM1BvSGI2bWh6blBHd1dCY3ZoOGpWdXdWclBKMTRsTjRrYWpLQW1aOU5JakU4UkRWSVB0Z2VDc3RpLU8zUUJuUmRVNGFZbFdoN29ibTdPaFNBcDN1SmdUcEZR?oc=5",
             "source_type": "news",
             "published_at": "Wed, 03 De",
@@ -6077,7 +6077,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv\u2019s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
+            "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv’s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
             "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXBnT0tvalQ0VGxfbEppZzlVcTExcGNkb0JpWTBaajVWbEtfUUdDSE84OFdVaDU0YXRWT29WNHh2aEhnYVhEa293SDA4WkpZNng1UXhJdi10WkF2TFBOcm1HUjlQLW9ORERObmlEd2UxTklacy1BTnBhZE1XWHAzRWFCQWUxYTZaMHIzQURtWEtiTXJScGVtXzl6dkt0cDA5cWhGVVRXOGFiVnNMc1M1cDhXbmpqelo1UjJ2b1MyYXowLUF1N3V2UlZOejlfUHM?oc=5",
             "source_type": "news",
             "published_at": "Thu, 30 Ap",
@@ -6131,7 +6131,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een \u2018PostNL-linkje\u2019: \u2018Nog geen tien minuten later was er 783 euro verdwenen\u2019 - Metronieuws.nl.",
+            "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een ‘PostNL-linkje’: ‘Nog geen tien minuten later was er 783 euro verdwenen’ - Metronieuws.nl.",
             "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX1NQa1dEQ2V0OUhTTDktdjIyMlJWXzl1Y1dQTWFNbGFmREZ4UVhMM3BOT1paWHJDTG93UUo5TkVLNE1CWC1RYWxZX3ByNkcyWEVucVVnNE5vdXJzRU9RYzZkLXRZNkNyeEdiTUxvb3JlaUJWNmsxS2FsaXJZU2lnSXFLa2x0OFloMjJNRnF0WGlycFFhbWphSmJaakYwQmNK?oc=5",
             "source_type": "news",
             "published_at": "Thu, 19 Ma",
@@ -6167,7 +6167,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: \u2018Het water staat ons tot over de neus\u2019 - Het Parool.",
+            "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: ‘Het water staat ons tot over de neus’ - Het Parool.",
             "source": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZDJUMEFjMVl5bnZNLTI2ZEpmT001bkFvb1BRNWVrQ25CeWFkajRIZDZCMjBtOUZBdGNfYVlxM29mRFZ6WVdMeTkzX2NqUUNJZzNoczJxVlp0QUhScWY4MnBJLVVFVENaWEJPcHpqZ19CMWtvTHRwN3ZSUGpqYnE2QzNUNy1VV1IzbnNTSF93OEI1TzZpQWdtWlRiaFQzY0Q0eldoQUtMYm1VQi1wNTRFS3d2RHdoYUYwVVBBM0FKeThXNkdSUGJQOXRR?oc=5",
             "source_type": "news",
             "published_at": "Mon, 21 Ju",
@@ -6684,7 +6684,7 @@
         "bucket": "Main risks",
         "title": "Main risks",
         "url": "https://annualreport.postnl.nl/2025/business-report/risk-management/main-risks",
-        "snippet": "Main risks Main risks \u2013 PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
+        "snippet": "Main risks Main risks – PostNL Reporting Center - Our value chain - Our networks and services - External developments - Internal control framework - Risk appetite - Main risks - Emerging risks ### Main Risks PostNL Main risks Topic Risk summary Risk level Trend Main response Strategic risks Competition and client concentration Competitive pressure in the e-commerce market remains intense, with established players...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:01:16+00:00",
@@ -6718,7 +6718,7 @@
         "bucket": "Our tax strategy and policy provisions",
         "title": "Our tax strategy and policy provisions",
         "url": "https://annualreport.postnl.nl/2025/governance/our-taks-strategy-and-policy-provisions",
-        "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
+        "snippet": "Our tax strategy and policy provisions Our tax strategy and policy provisions – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - R...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:01:16+00:00",
@@ -6735,7 +6735,7 @@
         "bucket": "PostNL on the capital markets",
         "title": "PostNL on the capital markets",
         "url": "https://annualreport.postnl.nl/2025/governance/postnl-on-the-capital-markets",
-        "snippet": "PostNL on the capital markets PostNL on the capital markets \u2013 PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
+        "snippet": "PostNL on the capital markets PostNL on the capital markets – PostNL Reporting Center Report of the Supervisory Board - Reflecting on 2025 with Jan Nooitgedagt - Board structure, composition and responsibilities - Meetings and evaluation of the Supervisory Board - Board structure, composition and responsibilities - Business conduct - Policies and procedures - In conversation with our chairman - Remuneration of the...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:01:16+00:00",
@@ -6752,7 +6752,7 @@
         "bucket": "4.4 Financial risk management",
         "title": "4.4 Financial risk management",
         "url": "https://annualreport.postnl.nl/2025/financial-statements/4-capital-structure-and-financing-costs/4-4-financial-risk-management",
-        "snippet": "4.4 Financial risk management 4.4 Financial risk management \u2013 PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
+        "snippet": "4.4 Financial risk management 4.4 Financial risk management – PostNL Reporting Center - Consolidated statement of profit and loss - Earnings per share - Consolidated statement of comprehensive income - Consolidated statement of cash flow - Consolidated statement of financial position - Consolidated statement of changes in equity 1 Basis of preparation - 1.1 General information - 1.2 Accounting principles applied -...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:01:16+00:00",
@@ -6846,14 +6846,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for PostNL N.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "PostNL N.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -7055,7 +7055,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: \u2019Monopolie heeft ons honderden miljoenen gekost\u2019 - De Telegraaf.",
+        "claim": "News/reference signal found for PostNL N.V.: Verzendbedrijven willen strenge regels voor PostNL: ’Monopolie heeft ons honderden miljoenen gekost’ - De Telegraaf.",
         "source": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQWUJsNzNqSzUwLVlIWlBwLV9xSXE2UEk3a3JaVDNFSk5lSUlZQ2FTMGstYk9RR0kzQXE2Q3h0R3Jnb3hYQW10Y0QyUjdiSER3cmtIdEp5dzBEUlJCWFVmWlZiemcwdzBTMHNmQmt1X3BNbEc5U1VFZURlbEpKQmVyeGQ4WUZZTnpHM1BvSGI2bWh6blBHd1dCY3ZoOGpWdXdWclBKMTRsTjRrYWpLQW1aOU5JakU4UkRWSVB0Z2VDc3RpLU8zUUJuUmRVNGFZbFdoN29ibTdPaFNBcDN1SmdUcEZR?oc=5",
         "source_type": "news",
         "published_at": "Wed, 03 De",
@@ -7127,7 +7127,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv\u2019s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
+        "claim": "News/reference signal found for PostNL N.V.: Medewerker PostNL stuurt pakketten met tv’s en laptops naar eigen adres, 60 dozen gevonden bij inval - Brabants Dagblad.",
         "source": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPeXBnT0tvalQ0VGxfbEppZzlVcTExcGNkb0JpWTBaajVWbEtfUUdDSE84OFdVaDU0YXRWT29WNHh2aEhnYVhEa293SDA4WkpZNng1UXhJdi10WkF2TFBOcm1HUjlQLW9ORERObmlEd2UxTklacy1BTnBhZE1XWHAzRWFCQWUxYTZaMHIzQURtWEtiTXJScGVtXzl6dkt0cDA5cWhGVVRXOGFiVnNMc1M1cDhXbmpqelo1UjJ2b1MyYXowLUF1N3V2UlZOejlfUHM?oc=5",
         "source_type": "news",
         "published_at": "Thu, 30 Ap",
@@ -7181,7 +7181,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een \u2018PostNL-linkje\u2019: \u2018Nog geen tien minuten later was er 783 euro verdwenen\u2019 - Metronieuws.nl.",
+        "claim": "News/reference signal found for PostNL N.V.: Nadine (48) klikte op een ‘PostNL-linkje’: ‘Nog geen tien minuten later was er 783 euro verdwenen’ - Metronieuws.nl.",
         "source": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNX1NQa1dEQ2V0OUhTTDktdjIyMlJWXzl1Y1dQTWFNbGFmREZ4UVhMM3BOT1paWHJDTG93UUo5TkVLNE1CWC1RYWxZX3ByNkcyWEVucVVnNE5vdXJzRU9RYzZkLXRZNkNyeEdiTUxvb3JlaUJWNmsxS2FsaXJZU2lnSXFLa2x0OFloMjJNRnF0WGlycFFhbWphSmJaakYwQmNK?oc=5",
         "source_type": "news",
         "published_at": "Thu, 19 Ma",
@@ -7217,7 +7217,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: \u2018Het water staat ons tot over de neus\u2019 - Het Parool.",
+        "claim": "News/reference signal found for PostNL N.V.: PostNL dreigt met rechtszaak om bezorging te redden: ‘Het water staat ons tot over de neus’ - Het Parool.",
         "source": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOZDJUMEFjMVl5bnZNLTI2ZEpmT001bkFvb1BRNWVrQ25CeWFkajRIZDZCMjBtOUZBdGNfYVlxM29mRFZ6WVdMeTkzX2NqUUNJZzNoczJxVlp0QUhScWY4MnBJLVVFVENaWEJPcHpqZ19CMWtvTHRwN3ZSUGpqYnE2QzNUNy1VV1IzbnNTSF93OEI1TzZpQWdtWlRiaFQzY0Q0eldoQUtMYm1VQi1wNTRFS3d2RHdoYUYwVVBBM0FKeThXNkdSUGJQOXRR?oc=5",
         "source_type": "news",
         "published_at": "Mon, 21 Ju",

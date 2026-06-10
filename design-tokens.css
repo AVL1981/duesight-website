@@ -1,0 +1,90 @@
+/*
+ * DueSight Design Tokens — Chrome Authority v3.0
+ * Import: <link rel="stylesheet" href="design-tokens.css">
+ * Of: @import url('design-tokens.css');
+ * 
+ * Oorsprong: 22 maart 2026 conversatie
+ * Opgeslagen: 31 maart 2026
+ */
+
+:root {
+  /* ── Backgrounds ── */
+  --ds-bg-primary: #06080f;
+  --ds-bg-secondary: #0a0f1a;
+  --ds-bg-card: rgba(14,20,35,0.85);
+  --ds-bg-elevated: rgba(20,28,48,0.9);
+
+  /* ── Chrome Metal Palette ── */
+  --ds-chrome-100: #f8fafc;
+  --ds-chrome-200: #e2e8f0;
+  --ds-chrome-300: #cbd5e1;
+  --ds-chrome-400: #94a3b8;
+  --ds-chrome-500: #64748b;
+  --ds-chrome-600: #475569;
+
+  /* ── Brand Accent ── */
+  --ds-accent-primary: #4f6d8f;
+  --ds-accent-secondary: #3b82f6;
+  --ds-accent-gradient: linear-gradient(135deg, #4f6d8f 0%, #3b82f6 100%);
+
+  /* ── Semantic ── */
+  --ds-success: #22c55e;
+  --ds-warning: #f59e0b;
+  --ds-danger: #ef4444;
+
+  /* ── Borders ── */
+  --ds-border-glass: rgba(148,163,184,0.1);
+  --ds-border-hover: rgba(148,163,184,0.2);
+  --ds-border-active: rgba(59,130,246,0.3);
+
+  /* ── Text ── */
+  --ds-text-primary: #f1f5f9;
+  --ds-text-secondary: rgba(241,245,249,0.7);
+  --ds-text-muted: rgba(241,245,249,0.4);
+  --ds-text-ghost: rgba(241,245,249,0.2);
+
+  /* ── Typography ── */
+  --ds-font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ds-font-display: 'Playfair Display', Georgia, serif;
+  --ds-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Spacing ── */
+  --ds-section-pad: 80px;
+  --ds-card-pad: 24px;
+  --ds-max-width: 1200px;
+  --ds-radius-card: 16px;
+  --ds-radius-btn: 12px;
+  --ds-radius-badge: 6px;
+}
+
+/* ── Light Mode Overrides ── */
+[data-theme="light"],
+[data-nav-theme="C"] {
+  --ds-bg-primary: #f8fafc;
+  --ds-bg-secondary: #eef0f5;
+  --ds-bg-card: rgba(255,255,255,0.9);
+  --ds-bg-elevated: rgba(255,255,255,0.95);
+
+  --ds-chrome-100: #0f172a;
+  --ds-chrome-200: #1e293b;
+  --ds-chrome-300: #334155;
+  --ds-chrome-400: #475569;
+  --ds-chrome-500: #64748b;
+  --ds-chrome-600: #94a3b8;
+
+  --ds-accent-primary: #1e40af;
+  --ds-accent-secondary: #1a3a9c;
+  --ds-accent-gradient: linear-gradient(180deg, #1e40af 0%, #1a3a9c 100%);
+
+  --ds-text-primary: #0f172a;
+  --ds-text-secondary: rgba(15,23,42,0.7);
+  --ds-text-muted: rgba(15,23,42,0.5);
+  --ds-text-ghost: rgba(15,23,42,0.2);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --ds-section-pad: 48px;
+    --ds-card-pad: 16px;
+  }
+}

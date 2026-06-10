@@ -24,12 +24,12 @@
       "target_claim_safe": false,
       "limitations": [
         "The IP may be shared, hosted, historical, or otherwise not controlled by the target.",
-        "InternetDB is passive and point-in-time; absence of data is not a clean security attestation."
+        "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation."
       ]
     },
     {
       "name": "sanctions_screening",
-      "status": "clean",
+      "status": "source_limited_zero_candidates",
       "rows": 1,
       "source": "sanctions_enricher_v1",
       "target_claim_safe": true,
@@ -109,7 +109,7 @@
       "source": "DueSight Adverse Media Scanner",
       "target_claim_safe": false,
       "limitations": [
-        "No-hit is point-in-time and source-limited; it is not proof of clean reputation."
+        "No-hit is point-in-time and source-limited; it is not proof of reputation clearance."
       ]
     },
     {
@@ -215,7 +215,7 @@
     "Point-in-time source statuses can change and must be rerun before customer use.",
     "Official KvK identifier was not trusted from the legacy sample; register rows remain review-only.",
     "No trusted 8-digit KvK identifier supplied for this target in this replay.",
-    "Hosted fallback readiness was not production-clean in preflight; local/alternative providers remain recorded and paid coverage is required before customer use."
+    "Hosted fallback readiness was not production-ready in preflight; local/alternative providers remain recorded and paid coverage is required before customer use."
   ],
   "provider_preflight": {
     "status": "go",
@@ -281,7 +281,7 @@
         "checked_at": "2026-05-26T21:54:52+00:00",
         "fallback_used": false,
         "confidence": 0.9,
-        "limitation": "Passive/free subset; absence of exposure is not a clean security attestation."
+        "limitation": "Passive/free subset; absence of exposure is not a security clearance attestation."
       },
       {
         "provider": "Cloudflare DoH",
@@ -431,7 +431,7 @@
     "aggregate_score_certified": true,
     "investment_verdict_certified": false,
     "score_kind": "DueSight Evidence Readiness Score",
-    "score_model": "duesight.sample_report_score_model.v2",
+    "score_model": "duesight.sample_report_source_support_model.v2",
     "score": 66,
     "scale": "0-100",
     "display_value": "66/100",
@@ -488,7 +488,7 @@
         "score": 7,
         "max_score": 13,
         "status": "yellow",
-        "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+        "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
         "evidence": [
           "preflight_ok=8",
           "hosted_fallback_deferred=2",
@@ -507,13 +507,13 @@
         "status": "limited_clean",
         "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
         "evidence": [
-          "sanctions_status=clean",
+          "sanctions_status=source_limited_zero_candidates",
           "adverse_media_status=available",
           "regulatory_status=available",
           "hosted_fallback_deferred=2"
         ],
         "limitations": [
-          "No-hit is not proof of clean reputation.",
+          "Zero candidates is source-limited and not proof of reputation clearance.",
           "UBOs/directors still need final sanctions and PEP screening before sign-off."
         ]
       },
@@ -597,7 +597,7 @@
     "path": "context-strength.json",
     "status": "available",
     "items": 6,
-    "updated_at": "2026-05-29T10:57:05+00:00"
+    "updated_at": "2026-06-08T13:34:28+00:00"
   },
   "company_intel_deep_research": {
     "status": "completed_with_warnings",
@@ -695,15 +695,15 @@
       "source_layers_recorded": 15,
       "distinct_source_labels": 14
     },
-    "updated_at": "2026-05-29T10:57:05+00:00"
+    "updated_at": "2026-06-08T13:34:28+00:00"
   },
   "social_sentiment_intel": {
     "status": "completed_with_review",
-    "updated_at": "2026-05-29T07:52:20+00:00",
+    "updated_at": "2026-06-02T09:58:14+00:00",
     "gate_decision": "REVIEW",
-    "social_status": "executed",
+    "social_status": "deferred",
     "sentiment_status": "deferred",
-    "platforms_checked": 443,
+    "platforms_checked": 0,
     "profiles_found": 0,
     "promoted_social_sources": 2,
     "sentiment_sources_active": 0,
@@ -715,7 +715,7 @@
   },
   "max_deep_research": {
     "status": "completed",
-    "updated_at": "2026-05-29T08:18:11+00:00",
+    "updated_at": "2026-06-02T10:05:20+00:00",
     "providers_executed": [
       "deep_research_crawl",
       "minimax_search",
@@ -726,8 +726,8 @@
       "hermes_deepseek",
       "nvidia_nim_nemotron",
       "antigravity_codeassist",
-      "claude_code",
-      "codex_cli"
+      "codex_cli",
+      "claude_code"
     ],
     "providers_failed_or_skipped": [],
     "provider_models_executed": [
@@ -740,17 +740,20 @@
       "hermes_deepseek:deepseek-chat",
       "nvidia_nim_nemotron:nvidia/llama-3.3-nemotron-super-49b-v1",
       "antigravity_codeassist:gemini31_flash",
-      "claude_code:opus",
-      "codex_cli:gpt-5.5"
+      "codex_cli:gpt-5.5",
+      "claude_code:opus"
     ],
     "provider_freshness_summary": {
-      "fresh_current_run_count": 11,
-      "retained_previous_success_count": 0,
+      "fresh_current_run_count": 9,
+      "retained_previous_success_count": 2,
       "failed_or_skipped_current_run_count": 0,
-      "strict_core_retained": [],
+      "strict_core_retained": [
+        "antigravity_codeassist",
+        "claude_code"
+      ],
       "health_gated_retained_or_skipped": []
     },
-    "source_urls_count": 57,
+    "source_urls_count": 70,
     "candidate_findings_count": 5,
     "anti_hallucination_decision": "PASS",
     "run_path": "max-deep-research-run.json",
@@ -764,7 +767,7 @@
     "artifact": "business-intel-framework.json",
     "pillar_count": 7,
     "execution_coverage_artifact": "execution-coverage-framework.json",
-    "source_urls_count": 57
+    "source_urls_count": 70
   },
   "execution_coverage_framework": {
     "status": "active",
@@ -780,7 +783,7 @@
       "ownership_group",
       "social_sentiment_reputation"
     ],
-    "anti_hallucination_decision": "REVIEW"
+    "anti_hallucination_decision": "PASS"
   },
   "replay_mode": {
     "run_id": "certified-samples-rest-20260526-235449-truelegends",

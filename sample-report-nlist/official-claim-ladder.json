@@ -1,7 +1,7 @@
 {
   "schema_version": "duesight.official_claim_ladder.v1",
   "target": "NLIST B.V.",
-  "updated_at": "2026-05-27T11:20:16+00:00",
+  "updated_at": "2026-06-02T11:38:18+00:00",
   "rule": "Demo/context rows may explain why a number or signal is plausible; official finance_source and ownership_ubo claims require primary document/provider evidence with source hash or lawful gated extract.",
   "ladder": [
     {
@@ -65,5 +65,16 @@
     "finance_source",
     "ownership_ubo"
   ],
-  "upsell": "Official claims package: attach KvK/Dataservice finance filings, lawful UBO extract or Kyckr/Sayari/Company.info evidence with document hash, then rerun certified replay."
+  "upsell": "Official claims package: attach KvK/Dataservice finance filings, lawful UBO extract or Kyckr/Sayari/Company.info evidence with document hash, then rerun Curated replay.",
+  "award_source_hard_status": {
+    "status": "closed_for_award_context",
+    "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+    "source_status": "primary_award_artifact_hash",
+    "rank": 19,
+    "cagr_percent": 232.41,
+    "row_html_sha256": "b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e",
+    "rendered_html_sha256": "8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19",
+    "artifact": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-website\\sample-report-nlist\\award-source-hardening.json",
+    "limitation": "Closes award-context proof only; finance_source and ownership_ubo remain open blockers until primary/provider finance and ownership documents are attached."
+  }
 }

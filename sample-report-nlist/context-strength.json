@@ -2,7 +2,7 @@
   "schema_version": "duesight.context_strength.v1",
   "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
   "target": "NLIST B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:55+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -16,7 +16,7 @@
         "thespecialistgroup.com",
         "nl.linkedin.com",
         "open identity reference",
-        "GLEIF"
+        "international entity register route"
       ],
       "safe_rows": 7,
       "missing_for_official_claim": "Current KvK extract, shareholder register, transaction document or Kyckr/Sayari/Company.info provider output with document hash."
@@ -39,10 +39,11 @@
       "strength": "Hoog als publieke context",
       "evidence_rows": 4,
       "sources": [
+        "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
         "thespecialistgroup.com",
         "nlist.nl"
       ],
-      "safe_rows": 3,
+      "safe_rows": 4,
       "missing_for_official_claim": "Primary award page/PDF/article capture plus annual account, seller P&L or provider finance document with hash."
     },
     {
@@ -70,16 +71,16 @@
       "topic": "Juridische eigendom / UBO",
       "meaning": "Publieke structuurcontext kan richting geven, maar juridisch eigendom/UBO blijft niet officieel bewezen in deze replay.",
       "strength": "Geblokkeerd voor officiële ownership/UBO-claim",
-      "evidence_rows": 10,
+      "evidence_rows": 11,
       "sources": [
+        "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
         "nlist.nl",
         "thespecialistgroup.com",
         "nl.linkedin.com",
         "sanctions screening route",
-        "open identity reference",
-        "ownership review route"
+        "open identity reference"
       ],
-      "safe_rows": 5,
+      "safe_rows": 6,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."
     }
   ]

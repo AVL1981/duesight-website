@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:18:11+00:00",
+  "updated_at": "2026-06-02T10:05:20+00:00",
   "decision": "PASS",
   "gates": [
     {
@@ -50,7 +50,7 @@
       "id": "G7",
       "name": "Source URL depth",
       "status": "PASS",
-      "message": "57 source URLs extracted from provider outputs."
+      "message": "70 source URLs extracted from provider outputs."
     },
     {
       "id": "G8",

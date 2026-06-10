@@ -72,25 +72,25 @@
     "sanctions_screening": {
       "section": "sanctions_screening",
       "title": "Sanctions and PEP screening evidence",
-      "status": "clean",
-      "summary": "No claim-safe sanctions/PEP match was found for GetThere B.V. via sanctions_enricher_v1.",
+      "status": "source_limited_zero_candidates",
+      "summary": "No claim-safe sanctions/PEP match was found for Get There ICT Solutions B.V. via sanctions_enricher_v1.",
       "target_claim_safe": true,
       "source": "sanctions_enricher_v1",
       "buckets": {
-        "No sanctions/PEP match": 1
+        "Source-limited sanctions/PEP zero candidates": 1
       },
       "rows": [
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
-          "claim": "No claim-safe sanctions or PEP risk match was found for GetThere B.V..",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
+          "claim": "No claim-safe sanctions or PEP risk match was found for Get There ICT Solutions B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
-          "target": "GetThere B.V.",
-          "status": "clean",
+          "target": "Get There ICT Solutions B.V.",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -111,7 +111,7 @@
       "section": "finance_forensics",
       "title": "Finance forensic evidence",
       "status": "available",
-      "summary": "Finance forensic evidence for GetThere B.V. verifies the Benford analyzer route, but no target-specific Benford conclusion is available yet.",
+      "summary": "Finance forensic evidence for Get There ICT Solutions B.V. verifies the Benford analyzer route, but no target-specific Benford conclusion is available yet.",
       "target_claim_safe": false,
       "source": "DueSight Financial Bridge + Benford Analyzer + DE Register Filing Gate",
       "buckets": {
@@ -122,12 +122,12 @@
           "section": "finance_forensics",
           "row_id": "finance-benford-01",
           "bucket": "Benford route smoke",
-          "claim": "Benford analyzer route completed for GetThere B.V. on a deterministic smoke population. Only 0 target-specific finance values were extractable, below the 30-value minimum. Route-smoke metrics: chi2=0.0282, MAD=0.0142, n=64, deviation=LOW.",
+          "claim": "Benford analyzer route completed for Get There ICT Solutions B.V. on a deterministic smoke population. Only 0 target-specific finance values were extractable, below the 30-value minimum. Route-smoke metrics: chi2=0.0282, MAD=0.0142, n=64, deviation=LOW.",
           "source": "benford_analyzer_v1",
           "confidence": "Route verified",
           "limitation": "This verifies that the Benford analyzer path works; it is not a target-specific finance finding and cannot support a memo conclusion.",
           "diligence_question": "Collect an official filing, XBRL extract, P&L export or transaction-level population before using Benford as target evidence.",
-          "target": "GetThere B.V.",
+          "target": "Get There ICT Solutions B.V.",
           "status": "completed",
           "deviation_level": "LOW",
           "benford_passed": true,
@@ -152,7 +152,7 @@
       "section": "ownership_register",
       "title": "Ownership and register evidence",
       "status": "available",
-      "summary": "Ownership/register evidence for GetThere B.V. is incomplete; missing UBO or register data remains a diligence item.",
+      "summary": "Ownership/register evidence for Get There ICT Solutions B.V. is incomplete; missing UBO or register data remains a diligence item.",
       "target_claim_safe": false,
       "source": "DueSight KvK/GLEIF/Zefix/Wikidata/UBO register routes",
       "buckets": {
@@ -164,12 +164,12 @@
           "section": "ownership_register",
           "row_id": "ownership-identity-01",
           "bucket": "Register source unavailable",
-          "claim": "No memo-safe register identity result is available for GetThere B.V. because the source route failed.",
+          "claim": "No memo-safe register identity result is available for Get There ICT Solutions B.V. because the source route failed.",
           "source": "kvk_public",
           "confidence": "Low",
           "limitation": "circuit_open: previous KVK public failure, retry in 114s",
           "diligence_question": "Retry official KvK Basisprofiel/Dataservice or a verified LEI/register source before memo reliance.",
-          "target": "GetThere B.V.",
+          "target": "Get There ICT Solutions B.V.",
           "source_status": "unreachable",
           "claim_safe_for_memo": false,
           "checked_at": "2026-05-26T21:59:08+00:00",
@@ -180,12 +180,12 @@
           "section": "ownership_register",
           "row_id": "ownership-chain-01",
           "bucket": "Ownership escalation trigger",
-          "claim": "Ownership proxy for GetThere B.V. requires manual escalation. Triggers: Geen eigendomsdata beschikbaar bij KvK.",
+          "claim": "Ownership proxy for Get There ICT Solutions B.V. requires manual escalation. Triggers: Geen eigendomsdata beschikbaar bij KvK.",
           "source": "DueSight Algorithmic UBO Proxy / OpenKvK",
           "confidence": "Proxy score 20",
           "limitation": "Escalation flags are diligence routing signals, not final ownership findings.",
           "diligence_question": "Which STAK, foreign-entity, missing-data or circular-ownership issue needs manual diligence before memo completion?",
-          "target": "GetThere B.V.",
+          "target": "Get There ICT Solutions B.V.",
           "status": "ESCALATION_REQUIRED",
           "ubo_candidate_count": 0,
           "escalation_count": 1,
@@ -208,7 +208,7 @@
       "section": "regulatory_exposure",
       "title": "Regulatory exposure evidence",
       "status": "available",
-      "summary": "No regulatory-register hit was found for GetThere B.V. across the checked routes, with scope limitations.",
+      "summary": "No regulatory-register hit was found for Get There ICT Solutions B.V. across the checked routes, with scope limitations.",
       "target_claim_safe": false,
       "source": "DueSight Regulatory Scanner",
       "buckets": {
@@ -219,12 +219,12 @@
           "section": "regulatory_exposure",
           "row_id": "regulatory-01",
           "bucket": "No regulatory register hit",
-          "claim": "No regulatory-register hit was found for GetThere B.V. in the checked routes.",
+          "claim": "No regulatory-register hit was found for Get There ICT Solutions B.V. in the checked routes.",
           "source": "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
           "confidence": "Medium",
           "limitation": "No-hit is not proof that no regulatory exposure exists; source availability, country scope and name matching limit coverage.",
           "diligence_question": "Should the target be regulated based on activity, geography, license perimeter or group structure?",
-          "target": "GetThere B.V.",
+          "target": "Get There ICT Solutions B.V.",
           "status": "NIET GEVONDEN",
           "risk": "MEDIUM",
           "registers_checked": [
@@ -247,25 +247,25 @@
       "section": "reputation_adverse_media",
       "title": "Reputation and adverse media evidence",
       "status": "available",
-      "summary": "No target-relevant adverse-media signal was found for GetThere B.V. in the checked source window.",
+      "summary": "No target-relevant adverse-media signal was found for Get There ICT Solutions B.V. in the checked source window.",
       "target_claim_safe": false,
       "source": "DueSight Adverse Media Scanner",
       "buckets": {
-        "No adverse media signal": 1
+        "Source-limited adverse-media zero candidates": 1
       },
       "rows": [
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
-          "claim": "No target-relevant adverse-media signal was found for GetThere B.V. in the checked sources.",
+          "bucket": "Source-limited adverse-media zero candidates",
+          "claim": "No target-relevant adverse-media signal was found for Get There ICT Solutions B.V. in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
-          "target": "GetThere B.V.",
+          "target": "Get There ICT Solutions B.V.",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -304,7 +304,7 @@
       "rows": [
         {
           "source": "GovData CKAN",
-          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=Get+There+ICT+Solutions+B.V.&rows=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:21+00:00",
           "freshness": "live",
@@ -317,11 +317,11 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:878cd570aed03c7ccbb653b326f846b6b665f1a2ec4cc3d8509c056cf7d95184",
           "fields": {
-            "query": "GetThere B.V.",
+            "query": "Get There ICT Solutions B.V.",
             "result_count": 5,
             "sample_titles": [
-              "Gro\u00dffeuerungsanlagen nach 13. BImSchV",
-              "WFS Hangneigungswerte an der Gew\u00e4sserbemessungsgrenze (D\u00fcV)",
+              "Großfeuerungsanlagen nach 13. BImSchV",
+              "WFS Hangneigungswerte an der Gewässerbemessungsgrenze (DüV)",
               "Feuerungsanlagen nach 44. BImSchV Hamburg"
             ]
           },
@@ -332,7 +332,7 @@
         },
         {
           "source": "GovData CKAN",
-          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+insolvenz&rows=5",
+          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+insolvenz&rows=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:21+00:00",
           "freshness": "live",
@@ -345,7 +345,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "\"GetThere B.V.\" insolvenz",
+            "query": "\"Get There ICT Solutions B.V.\" insolvenz",
             "result_count": 0,
             "sample_titles": []
           },
@@ -356,7 +356,7 @@
         },
         {
           "source": "GovData CKAN",
-          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+sanktionen&rows=5",
+          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+sanktionen&rows=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:21+00:00",
           "freshness": "live",
@@ -369,7 +369,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "\"GetThere B.V.\" sanktionen",
+            "query": "\"Get There ICT Solutions B.V.\" sanktionen",
             "result_count": 0,
             "sample_titles": []
           },
@@ -380,7 +380,7 @@
         },
         {
           "source": "GovData CKAN",
-          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+vergabe&rows=5",
+          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+vergabe&rows=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:22+00:00",
           "freshness": "live",
@@ -393,7 +393,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "\"GetThere B.V.\" vergabe",
+            "query": "\"Get There ICT Solutions B.V.\" vergabe",
             "result_count": 0,
             "sample_titles": []
           },
@@ -404,7 +404,7 @@
         },
         {
           "source": "GovData CKAN",
-          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+Jahresabschluss&rows=5",
+          "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+Jahresabschluss&rows=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:22+00:00",
           "freshness": "live",
@@ -417,7 +417,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "\"GetThere B.V.\" Jahresabschluss",
+            "query": "\"Get There ICT Solutions B.V.\" Jahresabschluss",
             "result_count": 0,
             "sample_titles": []
           },
@@ -428,7 +428,7 @@
         },
         {
           "source": "Wikidata",
-          "source_url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=GetThere+B.V.&language=en&format=json&limit=5",
+          "source_url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=Get+There+ICT+Solutions+B.V.&language=en&format=json&limit=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:22+00:00",
           "freshness": "live",
@@ -441,7 +441,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "GetThere B.V.",
+            "query": "Get There ICT Solutions B.V.",
             "result_count": 0,
             "ids": []
           },
@@ -452,7 +452,7 @@
         },
         {
           "source": "GLEIF",
-          "source_url": "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+          "source_url": "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Get+There+ICT+Solutions+B.V.&page%5Bsize%5D=5",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:22+00:00",
           "freshness": "live",
@@ -465,7 +465,7 @@
           "claim_safe_for_memo": false,
           "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
           "fields": {
-            "query": "GetThere B.V.",
+            "query": "Get There ICT Solutions B.V.",
             "result_count": 0,
             "leis": []
           },
@@ -611,7 +611,7 @@
           "bucket": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl",
           "title": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl",
           "url": "https://www.computable.nl/2021/10/12/nom-ondersteunt-generatiewisseling-bij-get-there/",
-          "snippet": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl De NOM (Noordelijke Ontwikkelingsmaatschappij) treedt toe als aandeelhouder van Get There. Deze Noord-Nederlandse investeerder ondersteunt de wisseling van de wacht bij deze automatiseerder uit Leek. Daar dragen de drie oprichters na twee\u00ebntwintig jaar het stokje over aan een nieuwe directie. Get There, opgericht in 1999, bedient de Noord- Nederlands...",
+          "snippet": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl De NOM (Noordelijke Ontwikkelingsmaatschappij) treedt toe als aandeelhouder van Get There. Deze Noord-Nederlandse investeerder ondersteunt de wisseling van de wacht bij deze automatiseerder uit Leek. Daar dragen de drie oprichters na tweeëntwintig jaar het stokje over aan een nieuwe directie. Get There, opgericht in 1999, bedient de Noord- Nederlands...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:03+00:00",
@@ -679,7 +679,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: Get There ICT professionals - Get There Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Get There ICT professionals - Get There Get There.",
           "source": "https://www.getthere.nl/",
           "source_type": "company_website",
           "confidence": "High",
@@ -695,7 +695,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: Enquete kennisevent - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Enquete kennisevent - Get There.",
           "source": "https://www.getthere.nl/enquete-kennisevent/",
           "source_type": "company_website",
           "confidence": "High",
@@ -711,7 +711,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -727,7 +727,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -743,7 +743,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -759,7 +759,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
           "source": "https://www.getthere.nl/ai-solutions/contact-ai/",
           "source_type": "company_website",
           "confidence": "High",
@@ -775,7 +775,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "GetThere B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
+          "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
           "source": "https://www.getthere.nl/ai-solutions/contact-ai/",
           "source_type": "company_website",
           "confidence": "High",
@@ -791,7 +791,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for GetThere B.V.: DUO gunt raamovereenkomst voor inhuur ICT-specialisten - Dutch IT Channel.",
+          "claim": "News/reference signal found for Get There ICT Solutions B.V.: DUO gunt raamovereenkomst voor inhuur ICT-specialisten - Dutch IT Channel.",
           "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ3ZyTWlEaUdHOGt5MFZIalNHenFSODZTV1JBbVdnM0pPcWgxem85T252bTV4ZnpxSEJheXFEYjV4RjI0SkVibU1hbnBEU1lyalR2azlJNWlxa0E3bXNTaDFsZGVvMlREeDhtcFJGdlR6Q0RUbjJ3VGx4OU1DR3VkNXJleXBQcmJVOXN0M2tZS0pNMmZja2FyTHQ1Qy0?oc=5",
           "source_type": "news",
           "published_at": "Tue, 21 Ap",
@@ -809,7 +809,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for GetThere B.V.: NOM ondersteunt generatiewisseling bij Get There - Computable.nl.",
+          "claim": "News/reference signal found for Get There ICT Solutions B.V.: NOM ondersteunt generatiewisseling bij Get There - Computable.nl.",
           "source": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPWWplQy1QekIwVEVqZlFPSVZfM0hzNmNEeWdqbndMYjhwTDlxZ1l6NXFDaktCRXcyem92QVJRanNwalA4X1dzUjh5SlhVNzgtRHgtLVFhdUVFUTNfalBXTzFhWXR4TENUM3EzVXdfX2IyMXlXVkRBR0hSRElsbUZaV3EwTjNkZHZ0VnJOZzFSWQ?oc=5",
           "source_type": "news",
           "published_at": "Tue, 12 Oc",
@@ -827,7 +827,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT Partners for GetThere B.V..",
+          "claim": "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT Partners for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -843,7 +843,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with role IT Partners for GetThere B.V..",
+          "claim": "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with role IT Partners for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -859,7 +859,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Schrijf je in Team AI Solutions is listed with role AI Consultant for GetThere B.V..",
+          "claim": "Schrijf je in Team AI Solutions is listed with role AI Consultant for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -875,7 +875,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Jack de Groot is listed with role Business Development Manager for GetThere B.V..",
+          "claim": "Jack de Groot is listed with role Business Development Manager for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -891,7 +891,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "LinkedIn Jack Anja Hektor is listed with role Recruitment & Co\u00f6rdinator Freelancers for GetThere B.V..",
+          "claim": "LinkedIn Jack Anja Hektor is listed with role Recruitment & Coördinator Freelancers for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -907,7 +907,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "LinkedIn Anja Mark van der Molen is listed with role Recruiter for GetThere B.V..",
+          "claim": "LinkedIn Anja Mark van der Molen is listed with role Recruiter for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -923,7 +923,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners for GetThere B.V..",
+          "claim": "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -939,7 +939,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Lees meer is listed with role IT Partners for GetThere B.V..",
+          "claim": "Lees meer is listed with role IT Partners for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -955,7 +955,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Lees meer Home Expertises is listed with role Cookies for GetThere B.V..",
+          "claim": "Lees meer Home Expertises is listed with role Cookies for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -971,7 +971,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Cases Over ons Privacy is listed with role Cookies for GetThere B.V..",
+          "claim": "Cases Over ons Privacy is listed with role Cookies for Get There ICT Solutions B.V..",
           "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
           "source_type": "company_website",
           "confidence": "High",
@@ -987,7 +987,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Professional/social discovery hint",
-          "claim": "GetThere B.V. has a public professional/social discovery hint on LinkedIn.",
+          "claim": "Get There ICT Solutions B.V. has a public professional/social discovery hint on LinkedIn.",
           "source": "https://www.linkedin.com/company/724706/",
           "source_type": "social_or_professional_profile",
           "confidence": "Low",
@@ -1228,7 +1228,7 @@
   "rows": [
     {
       "source": "GovData CKAN",
-      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=GetThere+B.V.&rows=5",
+      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=Get+There+ICT+Solutions+B.V.&rows=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:21+00:00",
       "freshness": "live",
@@ -1241,11 +1241,11 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:878cd570aed03c7ccbb653b326f846b6b665f1a2ec4cc3d8509c056cf7d95184",
       "fields": {
-        "query": "GetThere B.V.",
+        "query": "Get There ICT Solutions B.V.",
         "result_count": 5,
         "sample_titles": [
-          "Gro\u00dffeuerungsanlagen nach 13. BImSchV",
-          "WFS Hangneigungswerte an der Gew\u00e4sserbemessungsgrenze (D\u00fcV)",
+          "Großfeuerungsanlagen nach 13. BImSchV",
+          "WFS Hangneigungswerte an der Gewässerbemessungsgrenze (DüV)",
           "Feuerungsanlagen nach 44. BImSchV Hamburg"
         ]
       },
@@ -1256,7 +1256,7 @@
     },
     {
       "source": "GovData CKAN",
-      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+insolvenz&rows=5",
+      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+insolvenz&rows=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:21+00:00",
       "freshness": "live",
@@ -1269,7 +1269,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "\"GetThere B.V.\" insolvenz",
+        "query": "\"Get There ICT Solutions B.V.\" insolvenz",
         "result_count": 0,
         "sample_titles": []
       },
@@ -1280,7 +1280,7 @@
     },
     {
       "source": "GovData CKAN",
-      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+sanktionen&rows=5",
+      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+sanktionen&rows=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:21+00:00",
       "freshness": "live",
@@ -1293,7 +1293,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "\"GetThere B.V.\" sanktionen",
+        "query": "\"Get There ICT Solutions B.V.\" sanktionen",
         "result_count": 0,
         "sample_titles": []
       },
@@ -1304,7 +1304,7 @@
     },
     {
       "source": "GovData CKAN",
-      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+vergabe&rows=5",
+      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+vergabe&rows=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:22+00:00",
       "freshness": "live",
@@ -1317,7 +1317,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "\"GetThere B.V.\" vergabe",
+        "query": "\"Get There ICT Solutions B.V.\" vergabe",
         "result_count": 0,
         "sample_titles": []
       },
@@ -1328,7 +1328,7 @@
     },
     {
       "source": "GovData CKAN",
-      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22GetThere+B.V.%22+Jahresabschluss&rows=5",
+      "source_url": "https://ckan.govdata.de/api/3/action/package_search?q=%22Get+There+ICT+Solutions+B.V.%22+Jahresabschluss&rows=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:22+00:00",
       "freshness": "live",
@@ -1341,7 +1341,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "\"GetThere B.V.\" Jahresabschluss",
+        "query": "\"Get There ICT Solutions B.V.\" Jahresabschluss",
         "result_count": 0,
         "sample_titles": []
       },
@@ -1352,7 +1352,7 @@
     },
     {
       "source": "Wikidata",
-      "source_url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=GetThere+B.V.&language=en&format=json&limit=5",
+      "source_url": "https://www.wikidata.org/w/api.php?action=wbsearchentities&search=Get+There+ICT+Solutions+B.V.&language=en&format=json&limit=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:22+00:00",
       "freshness": "live",
@@ -1365,7 +1365,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "GetThere B.V.",
+        "query": "Get There ICT Solutions B.V.",
         "result_count": 0,
         "ids": []
       },
@@ -1376,7 +1376,7 @@
     },
     {
       "source": "GLEIF",
-      "source_url": "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=GetThere+B.V.&page%5Bsize%5D=5",
+      "source_url": "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=Get+There+ICT+Solutions+B.V.&page%5Bsize%5D=5",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:22+00:00",
       "freshness": "live",
@@ -1389,7 +1389,7 @@
       "claim_safe_for_memo": false,
       "content_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "fields": {
-        "query": "GetThere B.V.",
+        "query": "Get There ICT Solutions B.V.",
         "result_count": 0,
         "leis": []
       },
@@ -1521,7 +1521,7 @@
       "bucket": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl",
       "title": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl",
       "url": "https://www.computable.nl/2021/10/12/nom-ondersteunt-generatiewisseling-bij-get-there/",
-      "snippet": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl De NOM (Noordelijke Ontwikkelingsmaatschappij) treedt toe als aandeelhouder van Get There. Deze Noord-Nederlandse investeerder ondersteunt de wisseling van de wacht bij deze automatiseerder uit Leek. Daar dragen de drie oprichters na twee\u00ebntwintig jaar het stokje over aan een nieuwe directie. Get There, opgericht in 1999, bedient de Noord- Nederlands...",
+      "snippet": "NOM ondersteunt generatiewisseling bij Get There - Computable.nl De NOM (Noordelijke Ontwikkelingsmaatschappij) treedt toe als aandeelhouder van Get There. Deze Noord-Nederlandse investeerder ondersteunt de wisseling van de wacht bij deze automatiseerder uit Leek. Daar dragen de drie oprichters na tweeëntwintig jaar het stokje over aan een nieuwe directie. Get There, opgericht in 1999, bedient de Noord- Nederlands...",
       "source": "Exa",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:59:03+00:00",
@@ -1599,14 +1599,14 @@
     {
       "section": "sanctions_screening",
       "row_id": "sanctions-01",
-      "bucket": "No sanctions/PEP match",
-      "claim": "No claim-safe sanctions or PEP risk match was found for GetThere B.V..",
+      "bucket": "Source-limited sanctions/PEP zero candidates",
+      "claim": "No claim-safe sanctions or PEP risk match was found for Get There ICT Solutions B.V..",
       "source": "sanctions_enricher_v1",
       "confidence": "Medium",
       "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
       "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
-      "target": "GetThere B.V.",
-      "status": "clean",
+      "target": "Get There ICT Solutions B.V.",
+      "status": "source_limited_zero_candidates",
       "match_count": 0,
       "web_signal_count": 0,
       "highest_severity": "NONE",
@@ -1621,12 +1621,12 @@
       "section": "finance_forensics",
       "row_id": "finance-benford-01",
       "bucket": "Benford route smoke",
-      "claim": "Benford analyzer route completed for GetThere B.V. on a deterministic smoke population. Only 0 target-specific finance values were extractable, below the 30-value minimum. Route-smoke metrics: chi2=0.0282, MAD=0.0142, n=64, deviation=LOW.",
+      "claim": "Benford analyzer route completed for Get There ICT Solutions B.V. on a deterministic smoke population. Only 0 target-specific finance values were extractable, below the 30-value minimum. Route-smoke metrics: chi2=0.0282, MAD=0.0142, n=64, deviation=LOW.",
       "source": "benford_analyzer_v1",
       "confidence": "Route verified",
       "limitation": "This verifies that the Benford analyzer path works; it is not a target-specific finance finding and cannot support a memo conclusion.",
       "diligence_question": "Collect an official filing, XBRL extract, P&L export or transaction-level population before using Benford as target evidence.",
-      "target": "GetThere B.V.",
+      "target": "Get There ICT Solutions B.V.",
       "status": "completed",
       "deviation_level": "LOW",
       "benford_passed": true,
@@ -1646,12 +1646,12 @@
       "section": "ownership_register",
       "row_id": "ownership-identity-01",
       "bucket": "Register source unavailable",
-      "claim": "No memo-safe register identity result is available for GetThere B.V. because the source route failed.",
+      "claim": "No memo-safe register identity result is available for Get There ICT Solutions B.V. because the source route failed.",
       "source": "kvk_public",
       "confidence": "Low",
       "limitation": "circuit_open: previous KVK public failure, retry in 114s",
       "diligence_question": "Retry official KvK Basisprofiel/Dataservice or a verified LEI/register source before memo reliance.",
-      "target": "GetThere B.V.",
+      "target": "Get There ICT Solutions B.V.",
       "source_status": "unreachable",
       "claim_safe_for_memo": false,
       "checked_at": "2026-05-26T21:59:08+00:00",
@@ -1662,12 +1662,12 @@
       "section": "ownership_register",
       "row_id": "ownership-chain-01",
       "bucket": "Ownership escalation trigger",
-      "claim": "Ownership proxy for GetThere B.V. requires manual escalation. Triggers: Geen eigendomsdata beschikbaar bij KvK.",
+      "claim": "Ownership proxy for Get There ICT Solutions B.V. requires manual escalation. Triggers: Geen eigendomsdata beschikbaar bij KvK.",
       "source": "DueSight Algorithmic UBO Proxy / OpenKvK",
       "confidence": "Proxy score 20",
       "limitation": "Escalation flags are diligence routing signals, not final ownership findings.",
       "diligence_question": "Which STAK, foreign-entity, missing-data or circular-ownership issue needs manual diligence before memo completion?",
-      "target": "GetThere B.V.",
+      "target": "Get There ICT Solutions B.V.",
       "status": "ESCALATION_REQUIRED",
       "ubo_candidate_count": 0,
       "escalation_count": 1,
@@ -1683,7 +1683,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: Get There ICT professionals - Get There Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Get There ICT professionals - Get There Get There.",
       "source": "https://www.getthere.nl/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1699,7 +1699,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: Enquete kennisevent - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Enquete kennisevent - Get There.",
       "source": "https://www.getthere.nl/enquete-kennisevent/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1715,7 +1715,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1731,7 +1731,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1747,7 +1747,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: IT freelance Team - Get There.",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1763,7 +1763,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
       "source": "https://www.getthere.nl/ai-solutions/contact-ai/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1779,7 +1779,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Company website profile",
-      "claim": "GetThere B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
+      "claim": "Get There ICT Solutions B.V. has an official website page relevant to company profile: Contact met onze AI professionals? Vul het formulier in! - Get There.",
       "source": "https://www.getthere.nl/ai-solutions/contact-ai/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1795,7 +1795,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Business news signal",
-      "claim": "News/reference signal found for GetThere B.V.: DUO gunt raamovereenkomst voor inhuur ICT-specialisten - Dutch IT Channel.",
+      "claim": "News/reference signal found for Get There ICT Solutions B.V.: DUO gunt raamovereenkomst voor inhuur ICT-specialisten - Dutch IT Channel.",
       "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ3ZyTWlEaUdHOGt5MFZIalNHenFSODZTV1JBbVdnM0pPcWgxem85T252bTV4ZnpxSEJheXFEYjV4RjI0SkVibU1hbnBEU1lyalR2azlJNWlxa0E3bXNTaDFsZGVvMlREeDhtcFJGdlR6Q0RUbjJ3VGx4OU1DR3VkNXJleXBQcmJVOXN0M2tZS0pNMmZja2FyTHQ1Qy0?oc=5",
       "source_type": "news",
       "published_at": "Tue, 21 Ap",
@@ -1813,7 +1813,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Business news signal",
-      "claim": "News/reference signal found for GetThere B.V.: NOM ondersteunt generatiewisseling bij Get There - Computable.nl.",
+      "claim": "News/reference signal found for Get There ICT Solutions B.V.: NOM ondersteunt generatiewisseling bij Get There - Computable.nl.",
       "source": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPWWplQy1QekIwVEVqZlFPSVZfM0hzNmNEeWdqbndMYjhwTDlxZ1l6NXFDaktCRXcyem92QVJRanNwalA4X1dzUjh5SlhVNzgtRHgtLVFhdUVFUTNfalBXTzFhWXR4TENUM3EzVXdfX2IyMXlXVkRBR0hSRElsbUZaV3EwTjNkZHZ0VnJOZzFSWQ?oc=5",
       "source_type": "news",
       "published_at": "Tue, 12 Oc",
@@ -1831,7 +1831,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT Partners for GetThere B.V..",
+      "claim": "ICT Professionals Onze arbeidsvoorwaarden IT Freelance is listed with role IT Partners for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1847,7 +1847,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with role IT Partners for GetThere B.V..",
+      "claim": "Wet DBA voor IT-freelancers Opdrachten Mantelovereenkomsten is listed with role IT Partners for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1863,7 +1863,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Schrijf je in Team AI Solutions is listed with role AI Consultant for GetThere B.V..",
+      "claim": "Schrijf je in Team AI Solutions is listed with role AI Consultant for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1879,7 +1879,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Jack de Groot is listed with role Business Development Manager for GetThere B.V..",
+      "claim": "Jack de Groot is listed with role Business Development Manager for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1895,7 +1895,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "LinkedIn Jack Anja Hektor is listed with role Recruitment & Co\u00f6rdinator Freelancers for GetThere B.V..",
+      "claim": "LinkedIn Jack Anja Hektor is listed with role Recruitment & Coördinator Freelancers for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1911,7 +1911,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "LinkedIn Anja Mark van der Molen is listed with role Recruiter for GetThere B.V..",
+      "claim": "LinkedIn Anja Mark van der Molen is listed with role Recruiter for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1927,7 +1927,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners for GetThere B.V..",
+      "claim": "LinkedIn Mark Lees meer Freelance opdrachten is listed with role IT Partners for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1943,7 +1943,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Lees meer is listed with role IT Partners for GetThere B.V..",
+      "claim": "Lees meer is listed with role IT Partners for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1959,7 +1959,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Lees meer Home Expertises is listed with role Cookies for GetThere B.V..",
+      "claim": "Lees meer Home Expertises is listed with role Cookies for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1975,7 +1975,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Leadership/contact profile",
-      "claim": "Cases Over ons Privacy is listed with role Cookies for GetThere B.V..",
+      "claim": "Cases Over ons Privacy is listed with role Cookies for Get There ICT Solutions B.V..",
       "source": "https://www.getthere.nl/freelance-it-opdrachten/team/",
       "source_type": "company_website",
       "confidence": "High",
@@ -1991,7 +1991,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Professional/social discovery hint",
-      "claim": "GetThere B.V. has a public professional/social discovery hint on LinkedIn.",
+      "claim": "Get There ICT Solutions B.V. has a public professional/social discovery hint on LinkedIn.",
       "source": "https://www.linkedin.com/company/724706/",
       "source_type": "social_or_professional_profile",
       "confidence": "Low",
@@ -2212,12 +2212,12 @@
       "section": "regulatory_exposure",
       "row_id": "regulatory-01",
       "bucket": "No regulatory register hit",
-      "claim": "No regulatory-register hit was found for GetThere B.V. in the checked routes.",
+      "claim": "No regulatory-register hit was found for Get There ICT Solutions B.V. in the checked routes.",
       "source": "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)",
       "confidence": "Medium",
       "limitation": "No-hit is not proof that no regulatory exposure exists; source availability, country scope and name matching limit coverage.",
       "diligence_question": "Should the target be regulated based on activity, geography, license perimeter or group structure?",
-      "target": "GetThere B.V.",
+      "target": "Get There ICT Solutions B.V.",
       "status": "NIET GEVONDEN",
       "risk": "MEDIUM",
       "registers_checked": [
@@ -2234,15 +2234,15 @@
     {
       "section": "reputation_adverse_media",
       "row_id": "reputation-01",
-      "bucket": "No adverse media signal",
-      "claim": "No target-relevant adverse-media signal was found for GetThere B.V. in the checked sources.",
+      "bucket": "Source-limited adverse-media zero candidates",
+      "claim": "No target-relevant adverse-media signal was found for Get There ICT Solutions B.V. in the checked sources.",
       "source": "DueSight adverse-media source ladder (public news + legal metadata)",
       "confidence": "Medium",
-      "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+      "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
       "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
-      "target": "GetThere B.V.",
+      "target": "Get There ICT Solutions B.V.",
       "claim_status": "INCOMPLETE_SOURCES",
-      "risk_verdict": "CLEAN",
+      "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
       "severity_score": 0,
       "total_articles": 0,
       "categories_found": [],

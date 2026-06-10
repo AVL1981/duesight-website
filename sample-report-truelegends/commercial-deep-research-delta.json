@@ -9,7 +9,6 @@
     "country": "NL",
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
-      "GLEIF",
       "Public Website",
       "kvk_public",
       "DueSight adverse-media source ladder (public news + legal metadata)"
@@ -71,11 +70,11 @@
     ],
     "source_labels": [
       "open identity reference",
-      "GLEIF",
+      "international entity register route",
       "Public Website",
       "archive discovery",
-      "Exa",
-      "Shodan InternetDB + RDAP",
+      "provider discovery route",
+      "infrastructure exposure route + network registry route",
       "sanctions screening route",
       "kvk_public",
       "ownership review route",
@@ -114,5 +113,5 @@
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
   "run_id": "certified-samples-rest-20260526-235449-truelegends",
-  "updated_at": "2026-05-29T10:57:05+00:00"
+  "updated_at": "2026-06-08T13:34:28+00:00"
 }

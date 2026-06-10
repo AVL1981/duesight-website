@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:18:11+00:00",
+  "updated_at": "2026-06-02T10:05:20+00:00",
   "findings": [
     {
       "topic": "identity",
@@ -18,11 +18,12 @@
         "glm_direct",
         "hermes_deepseek",
         "local_xortron",
-        "minimax_highspeed_b",
+        "minimax_highspeed_a",
         "nvidia_nim_nemotron"
       ],
       "provider_count": 8,
       "source_urls": [
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT&page%5Bsize%5D=5",
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl/",
         "https://bebee.com/",
@@ -31,13 +32,12 @@
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+Jahresabschluss&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+insolvenz&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=+True+Legends+IT+B.V.&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=True+Legends+IT+B.V.&rows=5",
-        "https://companyinfo.nl/",
-        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-uitleenbureaus/true-legends-it-professionals-amsterdam-64750426",
-        "https://compworth.com/company/true-legends-it-professionals",
-        "https://ga.linkedin.com/company/truelegends-it-professionals",
-        "https://growjo.com/company/True_Legends_IT_Professionals"
+        "https://cloudlegends.nl/en/about/",
+        "https://companyinfo.nl/"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -50,28 +50,27 @@
         "claude_code",
         "codex_cli",
         "deep_research_crawl",
-        "glm_direct",
-        "hermes_deepseek",
         "local_xortron",
-        "minimax_highspeed_b"
+        "minimax_highspeed_a",
+        "minimax_search"
       ],
-      "provider_count": 8,
+      "provider_count": 7,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT&page%5Bsize%5D=5",
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT+B.V.&page%5Bsize%5D=5",
+        "https://apply.workable.com/true-legends-1/",
         "https://autoriteitpersoonsgegevens.nl/",
-        "https://bebee.com/",
+        "https://bebee.com/nl/jobs/",
         "https://bebee.com/nl/jobs/penetratietester-true-legends-it-professionals-the-hague-south-holland--theirstack-683889555",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+Jahresabschluss&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+insolvenz&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+sanktionen&rows=5",
-        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=5",
-        "https://ckan.govdata.de/api/3/action/package_search?q=True+Legends+IT+B.V.&rows=5",
-        "https://companyinfo.nl/",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=",
+        "https://cloudlegends.nl/en/about/",
         "https://companyinfo.nl/organisatieprofiel/activiteiten-van-uitleenbureaus/true-legends-it-professionals-amsterdam-64750426",
         "https://compworth.com/company/true-legends-it-professionals",
-        "https://ga.linkedin.com/company/truelegends-it-professionals",
-        "https://growjo.com/company/True_Legends_IT_Professionals"
+        "https://cyberlegends.org/career/",
+        "https://experiencetrue.com/about-true/"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -80,10 +79,9 @@
     {
       "topic": "group_context",
       "providers": [
-        "claude_code",
-        "minimax_highspeed_b"
+        "claude_code"
       ],
-      "provider_count": 2,
+      "provider_count": 1,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT&page%5Bsize%5D=5",
         "https://companyinfo.nl/organisatieprofiel/activiteiten-van-uitleenbureaus/true-legends-it-professionals-amsterdam-64750426",
@@ -100,27 +98,28 @@
         "antigravity_codeassist",
         "codex_cli",
         "deep_research_crawl",
-        "hermes_deepseek",
-        "minimax_highspeed_b",
-        "nvidia_nim_nemotron"
+        "glm_direct",
+        "local_xortron",
+        "minimax_highspeed_a",
+        "minimax_search"
       ],
-      "provider_count": 6,
+      "provider_count": 7,
       "source_urls": [
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT&page%5Bsize%5D=5",
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT+B.V.&page%5Bsize%5D=5",
+        "https://apply.workable.com/true-legends-1/",
         "https://autoriteitpersoonsgegevens.nl/",
-        "https://bebee.com/",
         "https://bebee.com/nl/jobs/",
         "https://bebee.com/nl/jobs/penetratietester-true-legends-it-professionals-the-hague-south-holland--theirstack-683889555",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+Jahresabschluss&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+insolvenz&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+sanktionen&rows=5",
-        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=5",
-        "https://ckan.govdata.de/api/3/action/package_search?q=True+Legends+IT+B.V.&rows=5",
-        "https://companyinfo.nl/",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=",
+        "https://cloudlegends.nl/en/about/",
         "https://companyinfo.nl/organisatieprofiel/activiteiten-van-uitleenbureaus/true-legends-it-professionals-amsterdam-64750426",
         "https://compworth.com/company/true-legends-it-professionals",
-        "https://ga.linkedin.com/company/truelegends-it-professionals",
-        "https://growjo.com/company/True_Legends_IT_Professionals"
+        "https://cyberlegends.org/career/",
+        "https://experiencetrue.com/about-true/"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -140,6 +139,8 @@
       ],
       "provider_count": 8,
       "source_urls": [
+        "https://...\\",
+        "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT&page%5Bsize%5D=5",
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=True+Legends+IT+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl/",
         "https://bebee.com/",
@@ -148,13 +149,11 @@
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+Jahresabschluss&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+insolvenz&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22True+Legends+IT+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=+True+Legends+IT+B.V.&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=True+Legends+IT+B.V.&rows=5",
-        "https://companyinfo.nl/",
-        "https://companyinfo.nl/organisatieprofiel/activiteiten-van-uitleenbureaus/true-legends-it-professionals-amsterdam-64750426",
-        "https://compworth.com/company/true-legends-it-professionals",
-        "https://ga.linkedin.com/company/truelegends-it-professionals",
-        "https://growjo.com/company/True_Legends_IT_Professionals"
+        "https://cloudlegends.nl/en/about/"
       ],
       "claim_level": "official-proof gated",
       "public_report_allowed": false,

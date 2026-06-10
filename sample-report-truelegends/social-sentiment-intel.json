@@ -1,6 +1,6 @@
 {
   "schema_version": "duesight.social_sentiment_intel.v1",
-  "run_id": "social-sentiment-true-legends-it-b.v.-20260529T075220Z",
+  "run_id": "social-sentiment-true-legends-it-b.v.-20260602T095814Z",
   "target": {
     "name": "True Legends IT B.V.",
     "domain": "truelegendsit.nl",
@@ -8,14 +8,14 @@
     "sector": "",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T07:52:20+00:00",
+  "updated_at": "2026-06-02T09:58:14+00:00",
   "summary": {
     "status": "completed_with_review",
-    "updated_at": "2026-05-29T07:52:20+00:00",
+    "updated_at": "2026-06-02T09:58:14+00:00",
     "gate_decision": "REVIEW",
-    "social_status": "executed",
+    "social_status": "deferred",
     "sentiment_status": "deferred",
-    "platforms_checked": 443,
+    "platforms_checked": 0,
     "profiles_found": 0,
     "promoted_social_sources": 2,
     "sentiment_sources_active": 0,
@@ -34,7 +34,7 @@
       "source_envelope": {
         "source": "https://index.commoncrawl.org/CC-MAIN-2026-18-index?url=truelegendsit.nl%2F%2A&output=json&limit=5&fl=url%2Ctimestamp%2Cstatus%2Cmime%2Cdigest",
         "source_status": "source-bound",
-        "checked_at": "2026-05-29T07:52:20+00:00",
+        "checked_at": "2026-06-02T09:58:14+00:00",
         "freshness": "point-in-time",
         "fallback_used": false,
         "confidence": "Medium",
@@ -55,7 +55,7 @@
       "source_envelope": {
         "source": "DueSight DDSentimentEngine",
         "source_status": "deferred",
-        "checked_at": "2026-05-29T07:52:20+00:00",
+        "checked_at": "2026-06-02T09:58:14+00:00",
         "freshness": "point-in-time",
         "fallback_used": true,
         "confidence": "Low",

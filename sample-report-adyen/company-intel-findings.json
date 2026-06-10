@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-adyen",
   "target": "Adyen N.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:26+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -14,7 +14,7 @@
       "memo_safe_rows": 15,
       "sources": [
         "news.google.com",
-        "linkedin_public",
+        "public professional source route",
         "linkedin.com",
         "adyen.com",
         "Public Website"
@@ -42,7 +42,7 @@
       "evidence_rows": 6,
       "memo_safe_rows": 4,
       "sources": [
-        "linkedin_public",
+        "public professional source route",
         "linkedin.com",
         "sanctions screening route",
         "adyen.com"
@@ -96,7 +96,7 @@
       "memo_safe_rows": 0,
       "sources": [
         "audit artifact",
-        "linkedin_public",
+        "public professional source route",
         "DueSight Financial Bridge validation"
       ],
       "source_envelope": {
@@ -123,10 +123,10 @@
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "GLEIF",
-        "Exa",
+        "international entity register route",
+        "provider discovery route",
         "DueSight manual golden control",
-        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
       ],
       "source_envelope": {
         "required": [
@@ -152,13 +152,13 @@
       "memo_safe_rows": 20,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "linkedin_public"
+        "public professional source route"
       ],
       "source_envelope": {
         "required": [
@@ -184,13 +184,13 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
-        "linkedin_public"
+        "public professional source route"
       ],
       "source_envelope": {
         "required": [

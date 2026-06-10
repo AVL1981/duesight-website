@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breach Radar — Gratis Data Breach Check | DueSight</title>
+    <meta name="description" content="Controleer gratis of uw bedrijfsdomein voorkomt in 961+ bekende datalekken. 17,5 miljard gecompromitteerde records gescand. Powered by DueSight.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://duesight.nl/breach-radar">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DueSight Breach Radar",
+        "url": "https://duesight.nl/breach-radar",
+        "description": "Gratis data breach check voor Nederlandse bedrijven. Controleert 961+ bekende datalekken met 17,5 miljard gecompromitteerde records.",
+        "applicationCategory": "SecurityApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "provider": {
+            "@type": "Organization",
+            "name": "Vibe The Code",
+            "alternateName": "DueSight",
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "KvK",
+                "value": "99920301"
+            },
+            "url": "https://duesight.nl"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.8);
+            --bg-glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent-blue: #6366f1;
+            --accent-green: #34d399;
+            --accent-red: #f87171;
+            --accent-yellow: #fbbf24;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(52, 211, 153, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .header .logo {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f1f5f9 0%, #6366f1 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Counter strip */
+        .counter-strip {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 32px 0 48px;
+            padding: 20px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+        }
+        .counter-item {
+            text-align: center;
+        }
+        .counter-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent-blue);
+            font-variant-numeric: tabular-nums;
+        }
+        .counter-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Search box */
+        .search-box {
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            margin-bottom: 32px;
+        }
+        .search-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .search-row {
+            display: flex;
+            gap: 12px;
+        }
+        .search-input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .search-input:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        .search-input::placeholder {
+            color: #4b5563;
+        }
+        .search-btn {
+            background: linear-gradient(135deg, var(--accent-blue), #818cf8);
+            border: none;
+            border-radius: 12px;
+            padding: 16px 32px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+        .search-btn:active { transform: translateY(0); }
+
+        /* Results */
+        #results { display: none; }
+
+        .result-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            margin-bottom: 24px;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .result-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        .result-icon.clear {
+            background: rgba(52, 211, 153, 0.15);
+        }
+        .result-icon.exposed {
+            background: rgba(248, 113, 113, 0.15);
+        }
+        .result-domain {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .result-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .badge-clear {
+            background: rgba(52, 211, 153, 0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+        .badge-exposed {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--accent-red);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+        }
+
+        .result-detail {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* Breach table */
+        .breach-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        .breach-table th {
+            text-align: left;
+            padding: 10px 12px;
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border);
+        }
+        .breach-table td {
+            padding: 10px 12px;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+        .breach-table tr:hover td {
+            background: rgba(99, 102, 241, 0.05);
+        }
+        .records-count {
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(52, 211, 153, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 24px;
+        }
+        .cta-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .cta-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), #818cf8);
+            color: white;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Trust footer */
+        .trust-footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            font-size: 11px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .trust-badge svg {
+            width: 16px; height: 16px; fill: #4b5563;
+        }
+        .footer-text {
+            font-size: 12px;
+            color: #4b5563;
+            margin-top: 20px;
+        }
+        .footer-text a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Loading */
+        .loading { display: none; text-align: center; padding: 40px; }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header h1 { font-size: 28px; }
+            .counter-strip { flex-wrap: wrap; gap: 20px; }
+            .search-row { flex-direction: column; }
+            .search-btn { width: 100%; }
+            .counter-value { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">DueSight · Breach Radar</div>
+        <h1>Is uw bedrijf blootgesteld aan datalekken?</h1>
+        <p>Controleer gratis of uw bedrijfsdomein voorkomt in bekende datalekken.<br>
+            Wij scannen real-time tegen de grootste breach database ter wereld.</p>
+    </div>
+
+    <!-- Counter strip -->
+    <div class="counter-strip">
+        <div class="counter-item">
+            <div class="counter-value" id="breach-count">961</div>
+            <div class="counter-label">Bekende Breaches</div>
+        </div>
+        <div class="counter-item">
+            <div class="counter-value" id="record-count">17.502.525.745</div>
+            <div class="counter-label">Gecompromitteerde Records</div>
+        </div>
+        <div class="counter-item">
+            <div class="counter-value">884</div>
+            <div class="counter-label">Unieke Domeinen</div>
+        </div>
+        <div class="counter-item">
+            <div class="counter-value">2007–2026</div>
+            <div class="counter-label">Bereik</div>
+        </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+        <label class="search-label">Voer een bedrijfsdomein in om te controleren</label>
+        <div class="search-row">
+            <input type="text" class="search-input" id="domain-input"
+                   placeholder="bijv. bedrijf.nl of bedrijf.com"
+                   autocomplete="off" spellcheck="false">
+            <button class="search-btn" id="check-btn" onclick="checkDomain()">
+                🔍 Controleer
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <div style="color: var(--text-secondary);">Scanning 961 breach databases...</div>
+    </div>
+
+    <!-- Results -->
+    <div id="results"></div>
+
+    <!-- Trust footer -->
+    <div class="trust-footer">
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                Zero-Retention Processing
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                AES-256 Encryption
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                Privacy-by-design workflow
+            </div>
+            <div class="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                EU AI Act Art. 50
+            </div>
+        </div>
+        <div class="footer-text">
+            Data bron: <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">Have I Been Pwned</a> (Troy Hunt) · Gratis en open breach metadata<br>
+            © 2026 Vibe The Code (KvK 99920301) · DueSight productnaam · Breach Radar v1.0 · Protocol v6.5
+        </div>
+    </div>
+
+</div>
+
+<script>
+// HIBP breach domain index — loaded lazily
+let breachIndex = null;
+let indexLoading = false;
+
+async function loadBreachIndex() {
+    if (breachIndex) return breachIndex;
+    if (indexLoading) {
+        while (indexLoading) await new Promise(r => setTimeout(r, 100));
+        return breachIndex;
+    }
+    indexLoading = true;
+
+    try {
+        // Try to load from local file first, then fallback to HIBP API
+        const localUrl = './backtesting/data/hibp_domains_compact.json';
+        let resp = await fetch(localUrl);
+        if (!resp.ok) {
+            // Fallback: fetch directly from HIBP (free, no key)
+            resp = await fetch('https://haveibeenpwned.com/api/v3/breaches');
+            if (resp.ok) {
+                const raw = await resp.json();
+                breachIndex = {};
+                for (const b of raw) {
+                    const d = (b.Domain || '').toLowerCase();
+                    if (d) {
+                        if (!breachIndex[d]) breachIndex[d] = [];
+                        breachIndex[d].push({
+                            n: b.Name,
+                            d: b.BreachDate,
+                            r: b.PwnCount,
+                            c: (b.DataClasses || []).slice(0, 5),
+                            v: b.IsVerified || false
+                        });
+                    }
+                }
+            }
+        } else {
+            breachIndex = await resp.json();
+        }
+    } catch (e) {
+        console.error('Failed to load breach index:', e);
+        breachIndex = {};
+    }
+
+    indexLoading = false;
+    return breachIndex;
+}
+
+function normalizeDomain(input) {
+    let d = input.trim().toLowerCase();
+    d = d.replace(/^https?:\/\//, '');
+    d = d.replace(/^www\./, '');
+    d = d.split('/')[0];
+    d = d.split(':')[0];
+    return d;
+}
+
+function formatNumber(n) {
+    return n.toLocaleString('nl-NL');
+}
+
+async function checkDomain() {
+    const input = document.getElementById('domain-input').value;
+    if (!input) return;
+
+    const domain = normalizeDomain(input);
+    const domainBase = domain.split('.')[0];
+
+    // Show loading
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('results').style.display = 'none';
+
+    // Load index
+    const index = await loadBreachIndex();
+
+    // Simulate scanning delay for UX
+    await new Promise(r => setTimeout(r, 1500));
+
+    // Match
+    let matches = [];
+
+    // Direct domain match
+    if (index[domain]) {
+        matches.push(...index[domain]);
+    }
+
+    // Partial match (e.g., "linkedin" in "linkedin.com")
+    for (const [key, breaches] of Object.entries(index)) {
+        if (key === domain) continue;
+        if (domainBase.length >= 4 && key.includes(domainBase)) {
+            for (const b of breaches) {
+                if (!matches.find(m => m.n === b.n)) {
+                    matches.push(b);
+                }
+            }
+        }
+    }
+
+    // Hide loading, show results
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+
+    if (matches.length > 0) {
+        showExposed(domain, matches);
+    } else {
+        showClear(domain);
+    }
+}
+
+function showClear(domain) {
+    const totalRecords = 17502525745;
+    document.getElementById('results').innerHTML = `
+        <div class="result-card">
+            <div class="result-header">
+                <div class="result-icon clear">🛡️</div>
+                <div>
+                    <div class="result-domain">${domain}</div>
+                    <span class="result-badge badge-clear">0 MATCHES</span>
+                </div>
+            </div>
+            <div class="result-detail">
+                <strong>Geen match gevonden in de HIBP-bronnen.</strong> Het domein <strong>${domain}</strong> is niet
+                aangetroffen in deze database van <strong>961 bekende datalekken</strong> met in totaal
+                <strong>${formatNumber(totalRecords)}</strong> gecompromitteerde records.
+            </div>
+            <div style="background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.2);border-radius:12px;padding:16px;">
+                <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--accent-green);font-weight:600;">
+                    ✓ 0 matches in 961 breach databases
+                </div>
+                <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">
+                    Gecontroleerd tegen 961 breach databases · ${formatNumber(totalRecords)} records ·
+                    Bereik: 2007 – 2026 · Bron: HIBP. Geen match betekent niet automatisch
+                    "geen risico" — enkel geen hit in deze bronnen op dit moment.
+                </div>
+            </div>
+        </div>
+        <div class="cta-section">
+            <div class="cta-title">Wilt u dieper graven?</div>
+            <div class="cta-text">
+                Geen datalekken gevonden in onze 961 HIBP-bronnen is een geruststellende
+                eerste indicator, maar geen volledige due diligence. Een DD-rapport omvat
+                ook sanctiescreening, eigendomsanalyse, forensische data-analyse, cyber
+                exposure, en AI-gestuurde deep research.
+            </div>
+            <a href="https://duesight.nl/#contact" class="cta-btn">📋 Vraag Premium Rapport Aan</a>
+        </div>
+    `;
+}
+
+function showExposed(domain, matches) {
+    const totalRecords = matches.reduce((sum, m) => sum + (m.r || 0), 0);
+    let tableRows = matches.slice(0, 10).map(m => `
+        <tr>
+            <td><strong>${m.n}</strong></td>
+            <td>${m.d || '—'}</td>
+            <td class="records-count">${formatNumber(m.r || 0)}</td>
+            <td style="font-size:12px;color:var(--text-secondary)">${(m.c || []).join(', ')}</td>
+            <td>${m.v ? '✓' : '?'}</td>
+        </tr>
+    `).join('');
+
+    document.getElementById('results').innerHTML = `
+        <div class="result-card">
+            <div class="result-header">
+                <div class="result-icon exposed">⚠️</div>
+                <div>
+                    <div class="result-domain">${domain}</div>
+                    <span class="result-badge badge-exposed">${matches.length} BREACH${matches.length > 1 ? 'ES' : ''}</span>
+                </div>
+            </div>
+            <div class="result-detail">
+                <strong>⚠️ Waarschuwing:</strong> Het domein <strong>${domain}</strong> is aangetroffen in
+                <strong>${matches.length} bekende datalek${matches.length > 1 ? 'ken' : ''}</strong> met in totaal
+                <strong>${formatNumber(totalRecords)}</strong> blootgestelde records.
+            </div>
+
+            <table class="breach-table">
+                <thead>
+                    <tr>
+                        <th>Breach</th>
+                        <th>Datum</th>
+                        <th>Records</th>
+                        <th>Data Types</th>
+                        <th>Verified</th>
+                    </tr>
+                </thead>
+                <tbody>${tableRows}</tbody>
+            </table>
+
+            <div style="background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.2);border-radius:12px;padding:16px;margin-top:16px;">
+                <div style="font-size:14px;color:var(--accent-red);font-weight:600;">
+                    ⚠️ Breach exposure signal: ${matches.length} matched breach${matches.length > 1 ? 'es' : ''}
+                </div>
+                <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">
+                    Dit domein vereist nader onderzoek. Een premium due diligence rapport bevat
+                    dark web monitoring, sanctiescreening, en eigendoms- en UBO-verificatiepaden.
+                </div>
+            </div>
+        </div>
+        <div class="cta-section" style="border-color:rgba(248,113,113,0.3);background:linear-gradient(135deg,rgba(248,113,113,0.08),rgba(99,102,241,0.05));">
+            <div class="cta-title">⚠️ Actie vereist — Bestel het volledige rapport</div>
+            <div class="cta-text">
+                Dit domein is blootgesteld aan ${matches.length} datalek${matches.length > 1 ? 'ken' : ''}.
+                Ons premium rapport bevat dark web intelligence, sanctiescreening, eigendomsanalyse,
+                Forensische data-analyse, en AI deep research door 8 providers.
+            </div>
+            <a href="https://duesight.nl/#contact" class="cta-btn" style="background:linear-gradient(135deg,#f87171,#ef4444);">
+                🚨 Bestel Premium Analyse
+            </a>
+        </div>
+    `;
+}
+
+// Enter key support
+document.getElementById('domain-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') checkDomain();
+});
+
+// Preload breach index on page load
+loadBreachIndex();
+
+// Animate counter on load
+function animateCounter(elementId, target, suffix = '') {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    let current = 0;
+    const step = target / 60;
+    const interval = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            current = target;
+            clearInterval(interval);
+        }
+        el.textContent = formatNumber(Math.floor(current)) + suffix;
+    }, 25);
+}
+
+// Start animations when page loads
+window.addEventListener('load', () => {
+    animateCounter('breach-count', 961);
+    animateCounter('record-count', 17502525745);
+});
+</script>
+
+</body>
+</html>

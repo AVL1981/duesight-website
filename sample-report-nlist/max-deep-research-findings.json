@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:33:20+00:00",
+  "updated_at": "2026-06-02T10:18:01+00:00",
   "findings": [
     {
       "topic": "identity",
@@ -17,11 +17,9 @@
         "glm_direct",
         "hermes_deepseek",
         "local_xortron",
-        "minimax_highspeed_a",
-        "minimax_highspeed_b",
         "nvidia_nim_nemotron"
       ],
-      "provider_count": 8,
+      "provider_count": 6,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=NLIST+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl",
@@ -33,11 +31,11 @@
         "https://ckan.govdata.de/api/3/action/package_search?q=NLIST+B.V.&rows=5",
         "https://companyinfo.nl",
         "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
+        "https://de.linkedin.com/company/thespecialistgroup",
         "https://ind.nl/en/public-register-recognised-sponsors/public-register-work",
         "https://insolventies.rechtspraak.nl",
-        "https://kvk.nl",
         "https://nl.linkedin.com/company/nlist1",
-        "https://nlist.nl"
+        "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -48,12 +46,10 @@
       "providers": [
         "antigravity_codeassist",
         "deep_research_crawl",
-        "glm_direct",
         "hermes_deepseek",
-        "local_xortron",
-        "minimax_search"
+        "local_xortron"
       ],
-      "provider_count": 6,
+      "provider_count": 4,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=NLIST+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl",
@@ -66,10 +62,10 @@
         "https://companyinfo.nl",
         "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
         "https://de.linkedin.com/company/thespecialistgroup",
+        "https://ind.nl/en/public-register-recognised-sponsors/public-register-work",
         "https://nl.linkedin.com/company/nlist1",
-        "https://nlist.nl/",
-        "https://nlist.nl/en/",
-        "https://nlist.nl/en/about-nlist"
+        "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu",
+        "https://nlist.nl/"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -80,27 +76,26 @@
       "providers": [
         "antigravity_codeassist",
         "codex_cli",
-        "minimax_highspeed_a",
-        "minimax_search",
-        "nvidia_nim_nemotron"
+        "glm_direct",
+        "hermes_deepseek"
       ],
-      "provider_count": 5,
+      "provider_count": 4,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=NLIST+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl",
         "https://bizzy.org/nl/nl/85442410/nlist-bv",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=NLIST+B.V.&rows=5",
         "https://companyinfo.nl",
         "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
         "https://de.linkedin.com/company/thespecialistgroup",
         "https://ind.nl/en/public-register-recognised-sponsors/public-register-work",
         "https://insolventies.rechtspraak.nl",
-        "https://kvk.nl",
-        "https://nlist.nl",
         "https://nlist.nl/en",
-        "https://nlist.nl/en/",
-        "https://nlist.nl/en/vacancies",
-        "https://nlist.nl/nl",
-        "https://nlist.nl/nl/contact"
+        "https://nlist.nl/en/"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -111,25 +106,29 @@
       "providers": [
         "antigravity_codeassist",
         "codex_cli",
-        "deep_research_crawl"
+        "deep_research_crawl",
+        "glm_direct",
+        "hermes_deepseek",
+        "minimax_search",
+        "nvidia_nim_nemotron"
       ],
-      "provider_count": 3,
+      "provider_count": 7,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=NLIST+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl",
         "https://bizzy.org/nl/nl/85442410/nlist-bv",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+insolvenz&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+sanktionen&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=NLIST+B.V.&rows=5",
+        "https://companyinfo.nl",
         "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
         "https://de.linkedin.com/company/thespecialistgroup",
         "https://ind.nl/en/public-register-recognised-sponsors/public-register-work",
         "https://insolventies.rechtspraak.nl",
         "https://nl.linkedin.com/company/nlist1",
-        "https://nlist.nl/",
-        "https://nlist.nl/en",
-        "https://nlist.nl/en/",
-        "https://nlist.nl/en/about-nlist",
-        "https://nlist.nl/en/contact",
-        "https://nlist.nl/en/team",
-        "https://nlist.nl/en/vacancies"
+        "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu"
       ],
       "claim_level": "source-backed context",
       "public_report_allowed": true,
@@ -140,28 +139,29 @@
       "providers": [
         "codex_cli",
         "glm_direct",
+        "hermes_deepseek",
         "local_xortron",
         "minimax_highspeed_a",
         "minimax_highspeed_b",
         "nvidia_nim_nemotron"
       ],
-      "provider_count": 6,
+      "provider_count": 7,
       "source_urls": [
         "https://api.gleif.org/api/v1/lei-records?filter%5Bfulltext%5D=NLIST+B.V.&page%5Bsize%5D=5",
         "https://autoriteitpersoonsgegevens.nl",
         "https://bizzy.org/nl/nl/85442410/nlist-bv",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+Jahresabschluss&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+insolvenz&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+sanktionen&rows=5",
         "https://ckan.govdata.de/api/3/action/package_search?q=%22NLIST+B.V.%22+vergabe&rows=5",
+        "https://ckan.govdata.de/api/3/action/package_search?q=NLIST+B.V.&rows=5",
         "https://companyinfo.nl",
         "https://companyinfo.nl/organisatieprofiel/arbeidsbemiddeling/nlist-b-v-meppel-85442410-000041173562",
+        "https://de.linkedin.com/company/thespecialistgroup",
         "https://ind.nl/en/public-register-recognised-sponsors/public-register-work",
         "https://insolventies.rechtspraak.nl",
-        "https://kvk.nl",
-        "https://nlist.nl",
         "https://nlist.nl/en",
-        "https://nlist.nl/en/vacancies",
-        "https://nlist.nl/nl",
-        "https://nlist.nl/nl/contact"
+        "https://nlist.nl/en/vacancies"
       ],
       "claim_level": "official-proof gated",
       "public_report_allowed": false,

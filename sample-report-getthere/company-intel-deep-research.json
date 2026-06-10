@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.company_intel_deep_research.v1",
   "run_id": "certified-samples-rest-20260526-235449-getthere",
-  "target": "GetThere B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "target": "Get There ICT Solutions B.V.",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "prompt_version": "BUSINESS_PROFILE_INTEL_LAYER_20260521",
   "query_policy_version": "deep_research_query_policy_20260526",
   "models_used": [

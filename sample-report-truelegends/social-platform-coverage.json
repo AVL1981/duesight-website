@@ -7,31 +7,12 @@
     "sector": "",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T07:52:20+00:00",
+  "updated_at": "2026-06-02T09:58:14+00:00",
   "social_scan": {
-    "status": "executed",
-    "elapsed_s": 60.118,
-    "result": {
-      "social_status": "NOT_FOUND",
-      "social_platforms_checked": 443,
-      "social_profiles_found": 0,
-      "social_trust_badge": {
-        "badge": "NONE",
-        "score": 0,
-        "platforms": 0
-      },
-      "social_breach_check_passed": false,
-      "social_breach_count": 0,
-      "social_risk_level": "MEDIUM",
-      "social_risk_signals": [
-        "No social media presence detected (could indicate fake/persona)"
-      ],
-      "social_profiles": []
-    },
-    "profiles": [],
-    "platforms_checked": 443,
-    "profiles_found": 0,
-    "risk_level": "MEDIUM"
+    "status": "deferred",
+    "elapsed_s": 80.486,
+    "public_status": "Social scan did not complete in this replay; existing source envelopes remain available.",
+    "internal_error_class": "TimeoutError"
   },
   "existing_social_context": {
     "source_files_checked": [

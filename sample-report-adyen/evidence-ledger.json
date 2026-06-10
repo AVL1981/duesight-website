@@ -103,25 +103,25 @@
     "sanctions_screening": {
       "section": "sanctions_screening",
       "title": "Sanctions and PEP screening evidence",
-      "status": "clean",
+      "status": "source_limited_zero_candidates",
       "summary": "No claim-safe sanctions/PEP match was found for Adyen N.V. via sanctions_enricher_v1.",
       "target_claim_safe": true,
       "source": "sanctions_enricher_v1",
       "buckets": {
-        "No sanctions/PEP match": 1
+        "Source-limited sanctions/PEP zero candidates": 1
       },
       "rows": [
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for Adyen N.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "Adyen N.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -155,7 +155,7 @@
           "section": "finance_forensics",
           "row_id": "finance-source-01",
           "bucket": "Financial filing coverage",
-          "claim": "Financial source route found real filing data for Adyen N.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+          "claim": "Financial source route found real filing data for Adyen N.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
           "source": "linkedin_public",
           "confidence": "Medium source coverage",
           "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -179,7 +179,7 @@
           "section": "finance_forensics",
           "row_id": "finance-validation-01",
           "bucket": "Financial validation flags",
-          "claim": "Financial bridge validation for Adyen N.V. returned SILVER quality with review flags: Extreem lage omzet/FTE: \u20ac3,411; low_rev_per_fte.",
+          "claim": "Financial bridge validation for Adyen N.V. returned SILVER quality with review flags: Extreem lage omzet/FTE: €3,411; low_rev_per_fte.",
           "source": "DueSight Financial Bridge validation",
           "confidence": "Review required",
           "limitation": "Validation flags are triage signals; they require original filings, notes and accounting context before being treated as deal findings.",
@@ -187,7 +187,7 @@
           "target": "Adyen N.V.",
           "quality_tier": "SILVER",
           "issues": [
-            "Extreem lage omzet/FTE: \u20ac3,411"
+            "Extreem lage omzet/FTE: €3,411"
           ],
           "outlier_flags": [
             "low_rev_per_fte"
@@ -344,21 +344,21 @@
       "target_claim_safe": false,
       "source": "DueSight Adverse Media Scanner",
       "buckets": {
-        "No adverse media signal": 1
+        "Source-limited adverse-media zero candidates": 1
       },
       "rows": [
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for Adyen N.V. in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "Adyen N.V.",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -670,7 +670,7 @@
           "bucket": "Annual Report 2024 - Adyen",
           "title": "Annual Report 2024 - Adyen",
           "url": "https://investors.adyen.com/financials/2024",
-          "snippet": "Annual Report 2024 - Adyen 2024 # Annual Report \u201cWhat amazes me most about Adyen is how we\u2019ve scaled our company without slowing down. \u2018We launch fast and iterate\u2019 is a principle at the core of how we work. In most companies, growth tends to mean more approvals, slower decisions, or a fear of making mistakes. But at Adyen, we\u2019ve been able to maintain speed, empower people with the autonomy to make decisions, and s...",
+          "snippet": "Annual Report 2024 - Adyen 2024 # Annual Report “What amazes me most about Adyen is how we’ve scaled our company without slowing down. ‘We launch fast and iterate’ is a principle at the core of how we work. In most companies, growth tends to mean more approvals, slower decisions, or a fear of making mistakes. But at Adyen, we’ve been able to maintain speed, empower people with the autonomy to make decisions, and s...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:55:52+00:00",
@@ -687,7 +687,7 @@
           "bucket": "Annual Report 2025 - Adyen Investor Relations",
           "title": "Annual Report 2025 - Adyen Investor Relations",
           "url": "https://investors.adyen.com/financials/2025",
-          "snippet": "Annual Report 2025 - Adyen 2025 # Annual Report \u201cWhat stands out to me is how deeply we live the idea of seeking out different perspectives. Even as a newcomer, your voice matters from day one. You\u2019re encouraged to contribute, question, and help refine our thinking. And when an idea shows clear value for our customers, it moves forward no matter where it comes from.\u201d Damien Desir \u2014 Sales Manager, Card Issuing ## M...",
+          "snippet": "Annual Report 2025 - Adyen 2025 # Annual Report “What stands out to me is how deeply we live the idea of seeking out different perspectives. Even as a newcomer, your voice matters from day one. You’re encouraged to contribute, question, and help refine our thinking. And when an idea shows clear value for our customers, it moves forward no matter where it comes from.” Damien Desir — Sales Manager, Card Issuing ## M...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:55:52+00:00",
@@ -704,7 +704,7 @@
           "bucket": "EDGAR Search Results",
           "title": "EDGAR Search Results",
           "url": "https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001788707",
-          "snippet": "EDGAR Search Results # EDGAR Company Search Results - SEC Home\u00bb - Company Search\u00bb - Current Page Mailing Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 Business Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 212-238-3267 Adyen N.V./ADR CIK#: 0001788707 (see all company filings) State location: NY(CF Office: International Corp Fin) | Filter Results | Search Within Files | | --- | --- | | Filing Type: | Prior...",
+          "snippet": "EDGAR Search Results # EDGAR Company Search Results - SEC Home» - Company Search» - Current Page Mailing Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 Business Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 212-238-3267 Adyen N.V./ADR CIK#: 0001788707 (see all company filings) State location: NY(CF Office: International Corp Fin) | Filter Results | Search Within Files | | --- | --- | | Filing Type: | Prior...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:55:52+00:00",
@@ -981,7 +981,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Adyen N.V.: Adyen doet eerste overname en breekt met het principe van \u2018alles zelf bouwen\u2019 - beleggersvereniging VEB.",
+          "claim": "News/reference signal found for Adyen N.V.: Adyen doet eerste overname en breekt met het principe van ‘alles zelf bouwen’ - beleggersvereniging VEB.",
           "source": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbC00emxJeUcxRExhQmJMWVJveXhVT3Z5NTZiNFBpNEVma1hlTGdwa0xtMW83ZXV5Q1VER0JjU1pTdXZMTWctbHFJYXM4Y0NXeTBqQnh3MDgtanlLWFlBaUtPd0ZBb0JvZ09zQzdib2hZRHFJT251ZFZOazVRUEJ3VjFjWC1pYUN5Mlh2TmdydHlMVjRqamFqVlZ0YkNJWDBRS0xOWWJFNVptT25KN2c?oc=5",
           "source_type": "news",
           "published_at": "Mon, 27 Ap",
@@ -1535,7 +1535,7 @@
       "bucket": "Annual Report 2024 - Adyen",
       "title": "Annual Report 2024 - Adyen",
       "url": "https://investors.adyen.com/financials/2024",
-      "snippet": "Annual Report 2024 - Adyen 2024 # Annual Report \u201cWhat amazes me most about Adyen is how we\u2019ve scaled our company without slowing down. \u2018We launch fast and iterate\u2019 is a principle at the core of how we work. In most companies, growth tends to mean more approvals, slower decisions, or a fear of making mistakes. But at Adyen, we\u2019ve been able to maintain speed, empower people with the autonomy to make decisions, and s...",
+      "snippet": "Annual Report 2024 - Adyen 2024 # Annual Report “What amazes me most about Adyen is how we’ve scaled our company without slowing down. ‘We launch fast and iterate’ is a principle at the core of how we work. In most companies, growth tends to mean more approvals, slower decisions, or a fear of making mistakes. But at Adyen, we’ve been able to maintain speed, empower people with the autonomy to make decisions, and s...",
       "source": "Exa",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:55:52+00:00",
@@ -1552,7 +1552,7 @@
       "bucket": "Annual Report 2025 - Adyen Investor Relations",
       "title": "Annual Report 2025 - Adyen Investor Relations",
       "url": "https://investors.adyen.com/financials/2025",
-      "snippet": "Annual Report 2025 - Adyen 2025 # Annual Report \u201cWhat stands out to me is how deeply we live the idea of seeking out different perspectives. Even as a newcomer, your voice matters from day one. You\u2019re encouraged to contribute, question, and help refine our thinking. And when an idea shows clear value for our customers, it moves forward no matter where it comes from.\u201d Damien Desir \u2014 Sales Manager, Card Issuing ## M...",
+      "snippet": "Annual Report 2025 - Adyen 2025 # Annual Report “What stands out to me is how deeply we live the idea of seeking out different perspectives. Even as a newcomer, your voice matters from day one. You’re encouraged to contribute, question, and help refine our thinking. And when an idea shows clear value for our customers, it moves forward no matter where it comes from.” Damien Desir — Sales Manager, Card Issuing ## M...",
       "source": "Exa",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:55:52+00:00",
@@ -1569,7 +1569,7 @@
       "bucket": "EDGAR Search Results",
       "title": "EDGAR Search Results",
       "url": "https://www.sec.gov/cgi-bin/browse-edgar?CIK=0001788707",
-      "snippet": "EDGAR Search Results # EDGAR Company Search Results - SEC Home\u00bb - Company Search\u00bb - Current Page Mailing Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 Business Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 212-238-3267 Adyen N.V./ADR CIK#: 0001788707 (see all company filings) State location: NY(CF Office: International Corp Fin) | Filter Results | Search Within Files | | --- | --- | | Filing Type: | Prior...",
+      "snippet": "EDGAR Search Results # EDGAR Company Search Results - SEC Home» - Company Search» - Current Page Mailing Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 Business Address 120 BROADWAY 32ND FLOOR NEW YORK NY 10271 212-238-3267 Adyen N.V./ADR CIK#: 0001788707 (see all company filings) State location: NY(CF Office: International Corp Fin) | Filter Results | Search Within Files | | --- | --- | | Filing Type: | Prior...",
       "source": "Exa",
       "source_status": "OK",
       "checked_at": "2026-05-26T21:55:52+00:00",
@@ -1677,14 +1677,14 @@
     {
       "section": "sanctions_screening",
       "row_id": "sanctions-01",
-      "bucket": "No sanctions/PEP match",
+      "bucket": "Source-limited sanctions/PEP zero candidates",
       "claim": "No claim-safe sanctions or PEP risk match was found for Adyen N.V..",
       "source": "sanctions_enricher_v1",
       "confidence": "Medium",
       "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
       "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
       "target": "Adyen N.V.",
-      "status": "clean",
+      "status": "source_limited_zero_candidates",
       "match_count": 0,
       "web_signal_count": 0,
       "highest_severity": "NONE",
@@ -1699,7 +1699,7 @@
       "section": "finance_forensics",
       "row_id": "finance-source-01",
       "bucket": "Financial filing coverage",
-      "claim": "Financial source route found real filing data for Adyen N.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+      "claim": "Financial source route found real filing data for Adyen N.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
       "source": "linkedin_public",
       "confidence": "Medium source coverage",
       "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -1723,7 +1723,7 @@
       "section": "finance_forensics",
       "row_id": "finance-validation-01",
       "bucket": "Financial validation flags",
-      "claim": "Financial bridge validation for Adyen N.V. returned SILVER quality with review flags: Extreem lage omzet/FTE: \u20ac3,411; low_rev_per_fte.",
+      "claim": "Financial bridge validation for Adyen N.V. returned SILVER quality with review flags: Extreem lage omzet/FTE: €3,411; low_rev_per_fte.",
       "source": "DueSight Financial Bridge validation",
       "confidence": "Review required",
       "limitation": "Validation flags are triage signals; they require original filings, notes and accounting context before being treated as deal findings.",
@@ -1731,7 +1731,7 @@
       "target": "Adyen N.V.",
       "quality_tier": "SILVER",
       "issues": [
-        "Extreem lage omzet/FTE: \u20ac3,411"
+        "Extreem lage omzet/FTE: €3,411"
       ],
       "outlier_flags": [
         "low_rev_per_fte"
@@ -2029,7 +2029,7 @@
     {
       "section": "business_profile_intel",
       "bucket": "Business news signal",
-      "claim": "News/reference signal found for Adyen N.V.: Adyen doet eerste overname en breekt met het principe van \u2018alles zelf bouwen\u2019 - beleggersvereniging VEB.",
+      "claim": "News/reference signal found for Adyen N.V.: Adyen doet eerste overname en breekt met het principe van ‘alles zelf bouwen’ - beleggersvereniging VEB.",
       "source": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbC00emxJeUcxRExhQmJMWVJveXhVT3Z5NTZiNFBpNEVma1hlTGdwa0xtMW83ZXV5Q1VER0JjU1pTdXZMTWctbHFJYXM4Y0NXeTBqQnh3MDgtanlLWFlBaUtPd0ZBb0JvZ09zQzdib2hZRHFJT251ZFZOazVRUEJ3VjFjWC1pYUN5Mlh2TmdydHlMVjRqamFqVlZ0YkNJWDBRS0xOWWJFNVptT25KN2c?oc=5",
       "source_type": "news",
       "published_at": "Mon, 27 Ap",
@@ -2326,15 +2326,15 @@
     {
       "section": "reputation_adverse_media",
       "row_id": "reputation-01",
-      "bucket": "No adverse media signal",
+      "bucket": "Source-limited adverse-media zero candidates",
       "claim": "No target-relevant adverse-media signal was found for Adyen N.V. in the checked sources.",
       "source": "DueSight adverse-media source ladder (public news + legal metadata)",
       "confidence": "Medium",
-      "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+      "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
       "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
       "target": "Adyen N.V.",
       "claim_status": "INCOMPLETE_SOURCES",
-      "risk_verdict": "CLEAN",
+      "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
       "severity_score": 0,
       "total_articles": 0,
       "categories_found": [],

@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:02:47+00:00",
+  "updated_at": "2026-06-02T10:05:20+00:00",
   "coverage_model": "9 execution layers mapped to 7 buyer-facing boardroom pillars and guarded by 10/12-gate validation.",
   "boardroom_pillars": [
     "identity_source_lock",
@@ -223,10 +223,10 @@
       "hermes_deepseek",
       "nvidia_nim_nemotron",
       "antigravity_codeassist",
-      "claude_code",
-      "codex_cli"
+      "codex_cli",
+      "claude_code"
     ],
-    "anti_hallucination_decision": "REVIEW"
+    "anti_hallucination_decision": "PASS"
   },
   "public_report_rule": "Public HTML may summarize status and findings, but raw provider errors, rate-limit text and unverified social hits stay in artifacts."
 }

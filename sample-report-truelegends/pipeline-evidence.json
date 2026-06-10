@@ -208,7 +208,7 @@
               "claim": "2a02:2350:5:113:800a:86b0:19a3:92da returned no passive port or CVE exposure signal.",
               "source": "Shodan InternetDB + RDAP",
               "confidence": "Medium",
-              "limitation": "InternetDB is passive and point-in-time; absence of data is not a clean security attestation.",
+              "limitation": "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation.",
               "diligence_question": "Confirm the external attack surface with seller-provided asset inventory.",
               "ip": "2a02:2350:5:113:800a:86b0:19a3:92da",
               "provider_context": [],
@@ -224,8 +224,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'True Legends IT B.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'True Legends IT B.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -241,7 +241,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -292,7 +292,7 @@
         "gleif": {
           "gleif_status": "NOT_FOUND",
           "gleif_target": "True Legends IT B.V.",
-          "gleif_note": "Geen LEI geregistreerd \u2014 niet verplicht voor alle entiteiten",
+          "gleif_note": "Geen LEI geregistreerd — niet verplicht voor alle entiteiten",
           "source": "gleif_client_v1"
         },
         "ubo": {
@@ -332,7 +332,7 @@
             "cost_eur": 0.0,
             "time_s": 0.5
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -351,7 +351,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -363,7 +363,7 @@
         "dnb": {
           "dnb_status": "NIET GEVONDEN",
           "dnb_registered": false,
-          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financi\u00eble instellingen.",
+          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financiële instellingen.",
           "dnb_source": "https://www.dnb.nl/openbaar-register/"
         },
         "summary": "Niet gevonden in 2 register(s)",
@@ -373,7 +373,7 @@
         "company": "True Legends IT B.V.",
         "total_articles": 0,
         "severity_score": 0,
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "claim_status": "INCOMPLETE_SOURCES",
         "source_status": {
           "gdelt": {
@@ -1027,9 +1027,9 @@
                     ]
                   },
                   {
-                    "title": "Parkplatzkataster Stand 2023 (Stra\u00dfenebene) der Stadt Freiburg i. Br.",
+                    "title": "Parkplatzkataster Stand 2023 (Straßenebene) der Stadt Freiburg i. Br.",
                     "name": "parkplatzkataster-stand-2023-strassenebene-der-stadt-freiburg-i-brcc99d",
-                    "publisher": "Open Data Baden-W\u00fcrttemberg",
+                    "publisher": "Open Data Baden-Württemberg",
                     "license": "",
                     "modified": "2026-01-15T07:38:50.843711",
                     "url": [
@@ -1059,7 +1059,7 @@
                       },
                       {
                         "key": "contact_name",
-                        "value": "Stadt Freiburg i. Br. - Amt f\u00fcr Digitales und IT"
+                        "value": "Stadt Freiburg i. Br. - Amt für Digitales und IT"
                       },
                       {
                         "key": "contact_street",
@@ -1123,7 +1123,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Stadt Freiburg i. Br. - Amt f\u00fcr Digitales und IT"
+                        "value": "Stadt Freiburg i. Br. - Amt für Digitales und IT"
                       },
                       {
                         "key": "publisher_url",
@@ -1156,7 +1156,7 @@
                     ]
                   },
                   {
-                    "title": "INSPIRE Soil / Retentionsfl\u00e4chen \u00dcberschwemmung BB",
+                    "title": "INSPIRE Soil / Retentionsflächen Überschwemmung BB",
                     "name": "inspire-soil-retentionsflachen-uberschwemmung-bbba5bb",
                     "publisher": "Open Data Brandenburg",
                     "license": "",
@@ -1164,7 +1164,7 @@
                     "url": [
                       {
                         "key": "access_rights",
-                        "value": "Die Daten k\u00f6nnen gem\u00e4\u00df der \u201eDatenlizenz Deutschland - Namensnennung - Version 2.0\u201c (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: \"Landesamt f\u00fcr Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)\", Beispiel: \u201e\u00a9 Landesamt f\u00fcr Bergbau, Geologie und Rohstoffe Brandenburg (LBGR), dl-de/by-2-0, (Daten ge\u00e4ndert)\u201c, (Klammer = optional)"
+                        "value": "Die Daten können gemäß der „Datenlizenz Deutschland - Namensnennung - Version 2.0“ (https://www.govdata.de/dl-de/by-2-0) genutzt werden. Namensnennung: \"Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)\", Beispiel: „© Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg (LBGR), dl-de/by-2-0, (Daten geändert)“, (Klammer = optional)"
                       },
                       {
                         "key": "alternate_identifier",
@@ -1184,11 +1184,11 @@
                       },
                       {
                         "key": "contact_name",
-                        "value": "Landesamt f\u00fcr Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)"
+                        "value": "Landesamt für Bergbau, Geologie und Rohstoffe Brandenburg (LBGR)"
                       },
                       {
                         "key": "contact_street",
-                        "value": "Inselstra\u00dfe 26"
+                        "value": "Inselstraße 26"
                       },
                       {
                         "key": "contact_tel",
@@ -1920,7 +1920,7 @@
             "url": "https://www.compadex.com/nl/businesses/nl/true-legends-it-professionals-64750426-33546290",
             "published_date": "",
             "source": "Exa",
-            "snippet": "True Legends IT Professionals | Amsterdam | Compadex\n\n## Volledig bedrijfsrapport\n\nKrijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden\n\nWat krijgt u?\n\n- Concernrelaties en groepsstructuur\n- Betaalgedrag en betalingservaringen\n- Financi\u00eble cijfers en ratio-analyse\n- Directie, bestuur en aandeelhouders\n- Kredietwaardigheid score met kredietlimiet advies\n\n\u20ac 12,49incl. BTW\n\nRapport bestellenRapport bestellen\n\nVoorbeeld rapportVoorbeeld rapport\n\n## 1. Bedrijfsgegevens\n\nNaamTrue Legends IT Professionals\n\nKvK nummer64750426\n\nHandelsnamenTrue Legends IT Professionals\n\nRechtsvo"
+            "snippet": "True Legends IT Professionals | Amsterdam | Compadex\n\n## Volledig bedrijfsrapport\n\nKrijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden\n\nWat krijgt u?\n\n- Concernrelaties en groepsstructuur\n- Betaalgedrag en betalingservaringen\n- Financiële cijfers en ratio-analyse\n- Directie, bestuur en aandeelhouders\n- Kredietwaardigheid score met kredietlimiet advies\n\n€ 12,49incl. BTW\n\nRapport bestellenRapport bestellen\n\nVoorbeeld rapportVoorbeeld rapport\n\n## 1. Bedrijfsgegevens\n\nNaamTrue Legends IT Professionals\n\nKvK nummer64750426\n\nHandelsnamenTrue Legends IT Professionals\n\nRechtsvo"
           },
           {
             "title": "TrueLegends B.V., Amsterdam, Netherlands",
@@ -1930,11 +1930,11 @@
             "snippet": "TrueLegends B.V., Amsterdam, Netherlands\n\n## European Companies Search Engine\n\nall countries\n\nCountry\n\nAll countries\n\nPlace\n\nRadius\n\nkm\n\nLegal form\n\nAll legal forms\n\nLegal status\n\nAll\n\nSearch keywords\n\nIndustry segment Standard\n\nAll industries\n\nUKSIC\n\nPerformance indicator Event filter Submit search\n\nPower search is only available to our premium service subscribers.\n\nLearn more about the North Data Premium Service\n\nPerformance indicators\n\nPerformance indicator\n\n-\n\nEvents\n\nEvent\n\n-\n\n# TrueLegends B.V., Amsterdam, Netherlands\n\nDossier Watch\n\n### Name\n\nTrueLegends B.V.\n\nTrue Legends IT Profession"
           },
           {
-            "title": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
+            "title": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
             "url": "https://www.flexnieuws.nl/2016/11/true-legends-koppelt-bedrijven-aan-it-talent/",
             "published_date": "2016-11-16T09:36:19.000Z",
             "source": "Exa",
-            "snippet": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl\n\nHinke Wever 16 november 2016 0 reacties\n\nPrint\n\n# True Legends koppelt bedrijven aan IT-talent\n\nRecruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent.\n\nDe perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, talentvolle IT\u2019ers en de toenemende vraag naar dat talent vanuit het bedrijfsleven. Dat dit hard nodig is, bleek eind vorig jaar tijdens het IT Masters Debat, onder andere georganis"
+            "snippet": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl\n\nHinke Wever 16 november 2016 0 reacties\n\nPrint\n\n# True Legends koppelt bedrijven aan IT-talent\n\nRecruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent.\n\nDe perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, talentvolle IT’ers en de toenemende vraag naar dat talent vanuit het bedrijfsleven. Dat dit hard nodig is, bleek eind vorig jaar tijdens het IT Masters Debat, onder andere georganis"
           },
           {
             "title": "TrueLegends B.V. - NIDV",
@@ -2015,7 +2015,7 @@
               "claim": "2a02:2350:5:113:800a:86b0:19a3:92da returned no passive port or CVE exposure signal.",
               "source": "Shodan InternetDB + RDAP",
               "confidence": "Medium",
-              "limitation": "InternetDB is passive and point-in-time; absence of data is not a clean security attestation.",
+              "limitation": "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation.",
               "diligence_question": "Confirm the external attack surface with seller-provided asset inventory.",
               "ip": "2a02:2350:5:113:800a:86b0:19a3:92da",
               "provider_context": [],
@@ -2043,25 +2043,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for True Legends IT B.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for True Legends IT B.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "True Legends IT B.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2222,21 +2222,21 @@
           "target_claim_safe": false,
           "source": "DueSight Adverse Media Scanner",
           "buckets": {
-            "No adverse media signal": 1
+            "Source-limited adverse-media zero candidates": 1
           },
           "rows": [
             {
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
-              "bucket": "No adverse media signal",
+              "bucket": "Source-limited adverse-media zero candidates",
               "claim": "No target-relevant adverse-media signal was found for True Legends IT B.V. in the checked sources.",
               "source": "DueSight adverse-media source ladder (public news + legal metadata)",
               "confidence": "Medium",
-              "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+              "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
               "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
               "target": "True Legends IT B.V.",
               "claim_status": "INCOMPLETE_SOURCES",
-              "risk_verdict": "CLEAN",
+              "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
               "severity_score": 0,
               "total_articles": 0,
               "categories_found": [],
@@ -2561,7 +2561,7 @@
               "bucket": "True Legends IT Professionals | Amsterdam | Compadex",
               "title": "True Legends IT Professionals | Amsterdam | Compadex",
               "url": "https://www.compadex.com/nl/businesses/nl/true-legends-it-professionals-64750426-33546290",
-              "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financi\u00eble cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies \u20ac 12,49incl. BTW Rapport bestellenRapport...",
+              "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financiële cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies € 12,49incl. BTW Rapport bestellenRapport...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:02:26+00:00",
@@ -2592,10 +2592,10 @@
             {
               "section": "premium_source_discovery",
               "row_id": "premium-source-04",
-              "bucket": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
-              "title": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
+              "bucket": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
+              "title": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
               "url": "https://www.flexnieuws.nl/2016/11/true-legends-koppelt-bedrijven-aan-it-talent/",
-              "snippet": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
+              "snippet": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:02:26+00:00",
@@ -3351,7 +3351,7 @@
           "bucket": "True Legends IT Professionals | Amsterdam | Compadex",
           "title": "True Legends IT Professionals | Amsterdam | Compadex",
           "url": "https://www.compadex.com/nl/businesses/nl/true-legends-it-professionals-64750426-33546290",
-          "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financi\u00eble cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies \u20ac 12,49incl. BTW Rapport bestellenRapport...",
+          "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financiële cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies € 12,49incl. BTW Rapport bestellenRapport...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:02:26+00:00",
@@ -3382,10 +3382,10 @@
         {
           "section": "premium_source_discovery",
           "row_id": "premium-source-04",
-          "bucket": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
-          "title": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
+          "bucket": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
+          "title": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
           "url": "https://www.flexnieuws.nl/2016/11/true-legends-koppelt-bedrijven-aan-it-talent/",
-          "snippet": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
+          "snippet": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:02:26+00:00",
@@ -3445,7 +3445,7 @@
           "claim": "2a02:2350:5:113:800a:86b0:19a3:92da returned no passive port or CVE exposure signal.",
           "source": "Shodan InternetDB + RDAP",
           "confidence": "Medium",
-          "limitation": "InternetDB is passive and point-in-time; absence of data is not a clean security attestation.",
+          "limitation": "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation.",
           "diligence_question": "Confirm the external attack surface with seller-provided asset inventory.",
           "ip": "2a02:2350:5:113:800a:86b0:19a3:92da",
           "provider_context": [],
@@ -3467,14 +3467,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for True Legends IT B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "True Legends IT B.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -3988,15 +3988,15 @@
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for True Legends IT B.V. in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "True Legends IT B.V.",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -4107,7 +4107,7 @@
             "claim": "2a02:2350:5:113:800a:86b0:19a3:92da returned no passive port or CVE exposure signal.",
             "source": "Shodan InternetDB + RDAP",
             "confidence": "Medium",
-            "limitation": "InternetDB is passive and point-in-time; absence of data is not a clean security attestation.",
+            "limitation": "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation.",
             "diligence_question": "Confirm the external attack surface with seller-provided asset inventory.",
             "ip": "2a02:2350:5:113:800a:86b0:19a3:92da",
             "provider_context": [],
@@ -4135,25 +4135,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for True Legends IT B.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for True Legends IT B.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "True Legends IT B.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4314,21 +4314,21 @@
         "target_claim_safe": false,
         "source": "DueSight Adverse Media Scanner",
         "buckets": {
-          "No adverse media signal": 1
+          "Source-limited adverse-media zero candidates": 1
         },
         "rows": [
           {
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
-            "bucket": "No adverse media signal",
+            "bucket": "Source-limited adverse-media zero candidates",
             "claim": "No target-relevant adverse-media signal was found for True Legends IT B.V. in the checked sources.",
             "source": "DueSight adverse-media source ladder (public news + legal metadata)",
             "confidence": "Medium",
-            "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+            "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
             "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
             "target": "True Legends IT B.V.",
             "claim_status": "INCOMPLETE_SOURCES",
-            "risk_verdict": "CLEAN",
+            "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
             "severity_score": 0,
             "total_articles": 0,
             "categories_found": [],
@@ -4653,7 +4653,7 @@
             "bucket": "True Legends IT Professionals | Amsterdam | Compadex",
             "title": "True Legends IT Professionals | Amsterdam | Compadex",
             "url": "https://www.compadex.com/nl/businesses/nl/true-legends-it-professionals-64750426-33546290",
-            "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financi\u00eble cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies \u20ac 12,49incl. BTW Rapport bestellenRapport...",
+            "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financiële cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies € 12,49incl. BTW Rapport bestellenRapport...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:02:26+00:00",
@@ -4684,10 +4684,10 @@
           {
             "section": "premium_source_discovery",
             "row_id": "premium-source-04",
-            "bucket": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
-            "title": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
+            "bucket": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
+            "title": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
             "url": "https://www.flexnieuws.nl/2016/11/true-legends-koppelt-bedrijven-aan-it-talent/",
-            "snippet": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
+            "snippet": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:02:26+00:00",
@@ -5443,7 +5443,7 @@
         "bucket": "True Legends IT Professionals | Amsterdam | Compadex",
         "title": "True Legends IT Professionals | Amsterdam | Compadex",
         "url": "https://www.compadex.com/nl/businesses/nl/true-legends-it-professionals-64750426-33546290",
-        "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financi\u00eble cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies \u20ac 12,49incl. BTW Rapport bestellenRapport...",
+        "snippet": "True Legends IT Professionals | Amsterdam | Compadex ## Volledig bedrijfsrapport Krijg direct inzicht in alle belangrijke bedrijfsinformatie en achtergronden Wat krijgt u? - Concernrelaties en groepsstructuur - Betaalgedrag en betalingservaringen - Financiële cijfers en ratio-analyse - Directie, bestuur en aandeelhouders - Kredietwaardigheid score met kredietlimiet advies € 12,49incl. BTW Rapport bestellenRapport...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:02:26+00:00",
@@ -5474,10 +5474,10 @@
       {
         "section": "premium_source_discovery",
         "row_id": "premium-source-04",
-        "bucket": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
-        "title": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl",
+        "bucket": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
+        "title": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl",
         "url": "https://www.flexnieuws.nl/2016/11/true-legends-koppelt-bedrijven-aan-it-talent/",
-        "snippet": "True Legends koppelt bedrijven aan IT-talent \u2013 Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
+        "snippet": "True Legends koppelt bedrijven aan IT-talent – Flexnieuws.nl Hinke Wever 16 november 2016 0 reacties Print # True Legends koppelt bedrijven aan IT-talent Recruitmentplatform Business Talent Network (BTN) uit Amsterdam heeft True Legends opgericht. Een zusteronderneming die zich uitsluitend richt op detachering van IT-talent. De perfecte match True Legends wil de kloof overbruggen tussen de schaarste aan jonge, tal...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:02:26+00:00",
@@ -5537,7 +5537,7 @@
         "claim": "2a02:2350:5:113:800a:86b0:19a3:92da returned no passive port or CVE exposure signal.",
         "source": "Shodan InternetDB + RDAP",
         "confidence": "Medium",
-        "limitation": "InternetDB is passive and point-in-time; absence of data is not a clean security attestation.",
+        "limitation": "InternetDB is passive and point-in-time; absence of data is not a security clearance attestation.",
         "diligence_question": "Confirm the external attack surface with seller-provided asset inventory.",
         "ip": "2a02:2350:5:113:800a:86b0:19a3:92da",
         "provider_context": [],
@@ -5559,14 +5559,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for True Legends IT B.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "True Legends IT B.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -6080,15 +6080,15 @@
       {
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
-        "bucket": "No adverse media signal",
+        "bucket": "Source-limited adverse-media zero candidates",
         "claim": "No target-relevant adverse-media signal was found for True Legends IT B.V. in the checked sources.",
         "source": "DueSight adverse-media source ladder (public news + legal metadata)",
         "confidence": "Medium",
-        "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+        "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
         "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
         "target": "True Legends IT B.V.",
         "claim_status": "INCOMPLETE_SOURCES",
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "severity_score": 0,
         "total_articles": 0,
         "categories_found": [],

@@ -7,10 +7,10 @@
     "sector": "",
     "country": "NL"
   },
-  "updated_at": "2026-05-29T07:52:20+00:00",
+  "updated_at": "2026-06-02T09:58:14+00:00",
   "sentiment_scan": {
     "status": "deferred",
-    "elapsed_s": 150.16,
+    "elapsed_s": 150.122,
     "public_status": "Composite sentiment did not complete in this replay; public report may only show attached source-backed context.",
     "internal_error_class": "TimeoutError"
   },

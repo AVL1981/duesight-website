@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DueSight ROI & Arbitrage Calculator</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --color-background-primary: #ffffff;
+    --color-background-secondary: #f5f5f5;
+    --color-background-danger: #fff0f0;
+    --color-background-info: #eff6ff;
+    --color-background-warning: #fffbeb;
+    --color-background-success: #f0fdf4;
+    --color-text-primary: #111111;
+    --color-text-secondary: #555555;
+    --color-text-tertiary: #888888;
+    --color-text-danger: #dc2626;
+    --color-text-info: #1d4ed8;
+    --color-text-warning: #92400e;
+    --color-text-success: #166534;
+    --color-border-primary: #111111;
+    --color-border-secondary: #cccccc;
+    --color-border-tertiary: #e5e5e5;
+    --color-border-info: #bfdbfe;
+    --color-border-warning: #fde68a;
+    --color-border-success: #bbf7d0;
+    --color-border-danger: #fecaca;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-background-primary: #1a1a1a;
+      --color-background-secondary: #252525;
+      --color-background-danger: #2d1111;
+      --color-background-info: #0f1e3d;
+      --color-background-warning: #2d2206;
+      --color-background-success: #0d2b1a;
+      --color-text-primary: #f0f0f0;
+      --color-text-secondary: #aaaaaa;
+      --color-text-tertiary: #666666;
+      --color-text-danger: #f87171;
+      --color-text-info: #93c5fd;
+      --color-text-warning: #fcd34d;
+      --color-text-success: #86efac;
+      --color-border-primary: #f0f0f0;
+      --color-border-secondary: #3a3a3a;
+      --color-border-tertiary: #2e2e2e;
+      --color-border-info: #1e3a5f;
+      --color-border-warning: #713f12;
+      --color-border-success: #14532d;
+      --color-border-danger: #7f1d1d;
+    }
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  /* ── Widget shell ── */
+  .dcw { max-width: 520px; width: 100%; }
+  .dcbrand { display: flex; align-items: center; gap: 4px; margin-bottom: 1.5rem; }
+  .dcb1 { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+  .dcb2 { font-size: 20px; font-weight: 500; color: #BA7517; }
+  .dcbbadge { font-size: 11px; color: var(--color-text-tertiary); border: 0.5px solid var(--color-border-tertiary); padding: 2px 8px; border-radius: 99px; margin-left: 6px; }
+  .dcc { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 1.5rem; }
+  .dcsteps { display: flex; gap: 4px; margin-bottom: 1.5rem; }
+  .dcseg { height: 3px; flex: 1; border-radius: 2px; background: var(--color-border-tertiary); transition: background .3s; }
+  .dcseg.on { background: #BA7517; }
+  h2.dch { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  p.dcsub { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1.25rem; line-height: 1.5; }
+  .dcback { font-size: 12px; color: var(--color-text-tertiary); background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 1rem; }
+  .dcback:hover { color: var(--color-text-secondary); }
+
+  /* Role grid */
+  .dcrgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dcrcard { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 12px; cursor: pointer; text-align: left; transition: all .15s; }
+  .dcrcard:hover { background: var(--color-background-primary); border-color: var(--color-border-secondary); }
+  .dcricon { font-size: 20px; margin-bottom: 6px; }
+  .dcrname { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .dcrdesc { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+
+  /* Slider */
+  .dcrow { margin-bottom: 1.25rem; }
+  .dclrow { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .dcl { font-size: 13px; color: var(--color-text-secondary); }
+  .dcv { font-size: 15px; font-weight: 500; color: #BA7517; }
+  input.dcsl { width: 100%; height: 4px; border-radius: 2px; outline: none; cursor: pointer; -webkit-appearance: none; appearance: none; }
+  input.dcsl::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #BA7517; cursor: pointer; border: 2px solid var(--color-background-primary); box-shadow: 0 0 0 1px #BA7517; }
+  input.dcsl::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: #BA7517; cursor: pointer; border: none; }
+  .dchint { font-size: 11px; color: var(--color-text-tertiary); margin-top: 3px; }
+
+  /* Methodology cards */
+  .dcmgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 1.25rem; }
+  .dcmcard { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 10px 8px; cursor: pointer; text-align: center; transition: all .15s; }
+  .dcmcard:hover { border-color: var(--color-border-secondary); }
+  .dcmcard.sel { background: #FAEEDA; border: 2px solid #BA7517; }
+  .dcmicon { font-size: 18px; margin-bottom: 4px; }
+  .dcmname { font-size: 12px; font-weight: 500; color: var(--color-text-primary); }
+  .dcmprice { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .dcmdays { font-size: 11px; color: var(--color-text-tertiary); }
+
+  /* Sunk cost toggle */
+  .dctogrow { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--color-background-secondary); border-radius: 8px; margin-bottom: .75rem; cursor: pointer; }
+  .dctogbox { flex: 1; }
+  .dctll { font-size: 13px; color: var(--color-text-secondary); }
+  .dctls { font-size: 11px; color: var(--color-text-tertiary); margin-top: 1px; }
+  .dctrack { width: 36px; height: 20px; border-radius: 10px; background: var(--color-border-secondary); position: relative; transition: background .2s; flex-shrink: 0; }
+  .dctrack.on { background: #BA7517; }
+  .dcthumb { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: white; transition: transform .2s; }
+  .dctrack.on .dcthumb { transform: translateX(16px); }
+  .dckfields { padding-left: 12px; border-left: 2px solid #EF9F27; margin-bottom: 1rem; }
+
+  /* Tier buttons */
+  .dctiers { display: flex; gap: 8px; margin-bottom: 1.5rem; }
+  .dctier { flex: 1; padding: 10px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; text-align: center; cursor: pointer; transition: all .15s; }
+  .dctier:hover { border-color: var(--color-border-secondary); }
+  .dctier.sel { background: #FAEEDA; border: 1.5px solid #BA7517; }
+  .dctn { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .dctp { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+  .dctier.sel .dctn { color: #633806; }
+  .dctier.sel .dctp { color: #854F0B; }
+
+  /* Divider */
+  .dchr { height: 0.5px; background: var(--color-border-tertiary); margin: 1.25rem 0; }
+
+  /* KPI cards */
+  .dckpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+  .dckpi { background: var(--color-background-secondary); border-radius: 8px; padding: 12px; }
+  .dckpi.grn { background: #EAF3DE; }
+  .dckpi.red { background: var(--color-background-danger); }
+  .dckpi.wide { grid-column: span 2; }
+  .dckpilbl { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+  .dckpi.grn .dckpilbl { color: #3B6D11; }
+  .dckpi.red .dckpilbl { color: var(--color-text-danger); }
+  .dckpival { font-size: 20px; font-weight: 500; color: var(--color-text-primary); font-variant-numeric: tabular-nums; }
+  .dckpi.grn .dckpival { color: #27500A; font-size: 28px; }
+  .dckpi.red .dckpival { color: var(--color-text-danger); }
+  .dckpiunit { font-size: 11px; color: var(--color-text-tertiary); margin-top: 2px; }
+
+  /* Savings bar */
+  .dcbarwrap { margin-bottom: 1rem; }
+  .dcbarlbls { display: flex; justify-content: space-between; font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+  .dcbartrack { height: 8px; background: var(--color-background-secondary); border-radius: 4px; overflow: hidden; }
+  .dcbarfill { height: 100%; background: #3B6D11; border-radius: 4px; transition: width .5s ease; }
+  .dcbarpct { font-size: 12px; color: #3B6D11; font-weight: 500; text-align: right; margin-top: 3px; }
+
+  /* Info blocks */
+  .dcpb { background: var(--color-background-info); border: 0.5px solid var(--color-border-info); border-radius: 8px; padding: 10px 12px; font-size: 13px; color: var(--color-text-info); margin-bottom: 1rem; line-height: 1.6; }
+  .dcrisk { background: var(--color-background-warning); border: 0.5px solid var(--color-border-warning); border-radius: 8px; padding: 10px 12px; font-size: 12px; color: var(--color-text-warning); margin-bottom: 1rem; line-height: 1.5; }
+  .dcrisk strong { font-weight: 500; }
+
+  /* Action buttons */
+  .dcclip { width: 100%; padding: 10px; background: transparent; border: 0.5px solid var(--color-border-secondary); border-radius: 8px; color: var(--color-text-secondary); font-size: 13px; cursor: pointer; margin-bottom: 8px; transition: all .15s; }
+  .dcclip:hover { border-color: var(--color-border-primary); color: var(--color-text-primary); }
+  .dcclip.ok { background: var(--color-background-success); border-color: var(--color-border-success); color: var(--color-text-success); }
+  .dccta { width: 100%; padding: 12px; background: #BA7517; border: none; border-radius: 8px; color: white; font-size: 14px; font-weight: 500; cursor: pointer; transition: background .15s; }
+  .dccta:hover { background: #854F0B; }
+  .dcreset { width: 100%; padding: 8px; background: none; border: none; color: var(--color-text-tertiary); font-size: 12px; cursor: pointer; margin-top: 4px; }
+  .dcreset:hover { color: var(--color-text-secondary); }
+
+  /* Footer */
+  .dcfoot { font-size: 11px; color: var(--color-text-tertiary); text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="dcw">
+  <div class="dcbrand">
+    <span class="dcb1">Due</span><span class="dcb2">Sight</span>
+    <span class="dcbbadge">ROI &amp; Arbitrage Calculator</span>
+  </div>
+  <div class="dcc" id="dcroot"></div>
+  <p class="dcfoot">Conservatieve schattingen op basis van NL marktgemiddelden.</p>
+</div>
+
+<script>
+const _R = [
+  { id:'ma', e:'\u2696',  n:'M&A Adviseur',        d:'Deal sourcing & executie',       type:'deal',   deals:8,  m:'extern', ko:false, k:15, t:399, u:'overnamedossiers', us:'overnamedossier',   risk:'E\u00e9n gemiste sanctielisting in een \u20ac2M deal kost meer dan een volledig jaar DueSight.' },
+  { id:'pe', e:'\ud83d\udcc8', n:'Private Equity',       d:'Portfolio & deal screening',     type:'deal',   deals:35, m:'extern', ko:true,  k:20, t:399, u:'deal screenings',   us:'deal screening',    risk:'LP-rapportages vereisen aantoonbare due diligence. E\u00e9n sanctielisting raakt uw fund-reputatie.' },
+  { id:'co', e:'\ud83d\udee1',  n:'Compliance Officer',  d:'Wwft, KYC, AML screening',       type:'screen', s:90,     h:3.5,  r:110, t:79,  u:'Wwft-screenings',   us:'Wwft-screening',    risk:'DNB-boetes voor Wwft-schendingen beginnen bij \u20ac10.000. E\u00e9n gemiste UBO kost meer dan een jaar DueSight.' },
+  { id:'no', e:'\ud83d\udcdc', n:'Notaris',              d:'UBO, Wwft, KvK-verificatie',     type:'screen', s:65,     h:2.5,  r:155, t:79,  u:'dossierscreenings', us:'dossierscreening',  risk:'Art. 23 Wwft: bij twijfel over UBO gehouden tot melding bij FIU-NL.' },
+  { id:'ac', e:'\ud83d\udd22', n:'Accountant / RA',      d:'Due diligence & cli\u00ebntenonderzoek', type:'deal', deals:15, m:'mix', ko:false, k:10, t:399, u:'klantdossiers',    us:'klantdossier',      risk:'Wwft-meldplicht geldt ook voor registeraccountants. Ontoereikende screening is persoonlijk aansprakelijkheidsrisico.' },
+  { id:'cd', e:'\ud83c\udfe2', n:'Corp. Development',   d:'Inhouse M&A & partnerschappen',  type:'deal',   deals:22, m:'intern', ko:false, k:15, t:399, u:'targets gescreend', us:'target gescreend', risk:'Board-goedkeuring vereist documenteerbare due diligence met SHA256-gecertificeerde audit trail.' },
+];
+
+const _M = {
+  extern: { n:'Extern bureau', e:'\ud83c\udfdb', c:5000, d:15, p:'\u20ac4k\u20138k/rapport' },
+  intern: { n:'Intern team',   e:'\ud83d\udc65', c:2200, d:5,  p:'\u20ac1,5k\u20133k/rapport' },
+  mix:    { n:'Mix',           e:'\ud83d\udd00', c:3500, d:10, p:'\u20ac2,5k\u20135k/rapport' },
+};
+
+const S = { step:0, role:null, deals:8, m:'extern', ko:false, k:15, t:399, s:65, h:2.5, r:110 };
+
+const fe = n => new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(Math.round(n));
+const fn = n => Math.round(n).toLocaleString('nl-NL');
+
+function setSl(el) {
+  if (!el) return;
+  const p = ((el.value - el.min) / (el.max - el.min)) * 100;
+  el.style.background = 'linear-gradient(to right,#BA7517 '+p+'%,var(--color-border-tertiary) '+p+'%)';
+}
+function allSl() { document.querySelectorAll('input.dcsl').forEach(function(e){ setSl(e); }); }
+
+function calc() {
+  var r = S.role;
+  if (r.type === 'deal') {
+    var m = _M[S.m];
+    var ck = (r.id === 'ma' || r.id === 'pe') && (S.m === 'extern' || S.m === 'mix');
+    var sk = ck && S.ko ? S.deals * (S.k / 100) * m.c : 0;
+    var tr = S.deals * m.c + sk;
+    var ds = S.deals * S.t;
+    var sv = Math.max(0, tr - ds);
+    var pc = tr > 0 ? Math.round(sv / tr * 100) : 0;
+    var dy = S.deals * m.d;
+    var pb = ds / m.c;
+    var pd = m.c - S.t;
+    return { tr:tr, ds:ds, sv:sv, pc:pc, dy:dy, pb:pb, pd:pd, sk:sk, isScr:false };
+  } else {
+    var tr2 = S.s * S.h * S.r;
+    var ds2 = S.s * S.t;
+    var sv2 = Math.max(0, tr2 - ds2);
+    var pc2 = tr2 > 0 ? Math.round(sv2 / tr2 * 100) : 0;
+    var hr = Math.round(S.s * S.h);
+    var pb2 = ds2 / (S.h * S.r);
+    var ps = (S.h * S.r) - S.t;
+    return { tr:tr2, ds:ds2, sv:sv2, pc:pc2, hr:hr, pb:pb2, ps:ps, isScr:true };
+  }
+}
+
+function pbTxt(c) {
+  var r = S.role;
+  if (!c.isScr) {
+    if (c.pb < 0.1) return 'Uw DueSight investering ('+fe(S.deals * S.t)+') is terugverdiend <strong>v\u00f3\u00f3r uw eerste deal is afgerond</strong>. Elke volgende '+r.us+' levert '+fe(c.pd)+' netto op.';
+    var rem = S.deals - c.pb;
+    return 'Terugverdiend na <strong>'+c.pb.toFixed(1)+' '+r.u+'</strong>. De overige <strong>'+rem.toFixed(1)+'</strong> zijn pure winst van '+fe(c.pd)+' per stuk.';
+  } else {
+    return 'Terugverdiend na <strong>'+Math.ceil(c.pb)+' van de '+S.s+' screenings</strong>. Elke volgende screening bespaart '+fe(c.ps)+' aan intern uurtarief.';
+  }
+}
+
+function refreshR() {
+  var c = calc();
+  var g = function(id){ return document.getElementById(id); };
+  if (g('dcrtrad'))   g('dcrtrad').textContent   = fe(c.tr);
+  if (g('dcrds'))     g('dcrds').textContent     = fe(c.ds);
+  if (g('dcrsav'))    g('dcrsav').textContent    = fe(c.sv);
+  if (g('dcrtime'))   g('dcrtime').textContent   = c.isScr ? fn(c.hr)+' uur' : fn(c.dy)+' dagen';
+  if (g('dcrpct'))    g('dcrpct').textContent    = fn(c.pc)+'%';
+  if (g('dcbleft'))   g('dcbleft').textContent   = fe(c.ds)+' DueSight';
+  if (g('dcbright'))  g('dcbright').textContent  = fe(c.tr)+' huidig';
+  if (g('dcbpct'))    g('dcbpct').textContent    = c.pc+'% besparing';
+  if (g('dcpb'))      g('dcpb').innerHTML        = pbTxt(c);
+  if (g('dcbfill'))   g('dcbfill').style.width   = c.pc+'%';
+  if (g('dcsunkunit'))g('dcsunkunit').textContent = c.sk > 0 ? 'per jaar (incl. sunk costs)' : 'per jaar';
+}
+
+function animateSav(target) {
+  var el = document.getElementById('dcrsav');
+  if (!el) return;
+  var t0 = performance.now();
+  var step = function(t) {
+    var p = Math.min((t - t0) / 700, 1);
+    var e = 1 - Math.pow(1 - p, 3);
+    el.textContent = fe(e * target);
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+function r0() {
+  document.getElementById('dcroot').innerHTML =
+    '<h2 class="dch">Wat is uw functie?</h2>' +
+    '<p class="dcsub">Wij berekenen uw DueSight ROI op maat.</p>' +
+    '<div class="dcrgrid">' +
+      _R.map(function(r){ return '<button class="dcrcard" onclick="selR(\''+r.id+'\')">' +
+        '<div class="dcricon">'+r.e+'</div>' +
+        '<div class="dcrname">'+r.n+'</div>' +
+        '<div class="dcrdesc">'+r.d+'</div>' +
+      '</button>'; }).join('') +
+    '</div>';
+}
+
+function selR(id) {
+  var r = _R.find(function(x){ return x.id === id; });
+  S.role = r; S.step = 1;
+  if (r.type === 'deal') { S.deals = r.deals; S.m = r.m; S.ko = r.ko; S.k = r.k; S.t = r.t; }
+  else { S.s = r.s; S.h = r.h; S.r = r.r; S.t = r.t; }
+  r1();
+}
+
+function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+function r1() {
+  var r = S.role;
+  var ck = (r.id === 'ma' || r.id === 'pe') && (S.m === 'extern' || S.m === 'mix');
+  var inp = '';
+
+  if (r.type === 'deal') {
+    var dmax = r.id === 'pe' ? 150 : 50;
+    var mc = Object.keys(_M).map(function(k){
+      var m = _M[k];
+      return '<button class="dcmcard '+(S.m===k?'sel':'')+'" onclick="setM(\''+k+'\')">' +
+        '<div class="dcmicon">'+m.e+'</div>' +
+        '<div class="dcmname">'+m.n+'</div>' +
+        '<div class="dcmprice">'+m.p+'</div>' +
+        '<div class="dcmdays">'+m.d+' dagen</div>' +
+      '</button>';
+    }).join('');
+    var kh = ck ? '<div class="dctogrow" onclick="togK()">' +
+        '<div class="dctogbox">' +
+          '<div class="dctll">Bereken ook "Sunk Cost" verliezen</div>' +
+          '<div class="dctls">Kosten gemaakt v\u00f3\u00f3rdat een deal afketste</div>' +
+        '</div>' +
+        '<div class="dctrack '+(S.ko?'on':'')+'" id="dckt"><div class="dcthumb"></div></div>' +
+      '</div>' +
+      (S.ko ? '<div class="dckfields"><div class="dcrow">' +
+        '<div class="dclrow"><span class="dcl">Late Deal-Kill Ratio</span><span class="dcv" id="dckvl">'+S.k+'%</span></div>' +
+        '<input type="range" class="dcsl" id="dcksl" min="5" max="50" step="5" value="'+S.k+'" oninput="updK(this)">' +
+        '<p class="dchint">% van trajecten dat afketst nadat externe kosten zijn gemaakt</p>' +
+      '</div></div>' : '')
+    : '';
+    inp = '<div class="dcrow">' +
+      '<div class="dclrow"><span class="dcl">'+cap(r.u)+' per jaar</span><span class="dcv" id="dcdvl">'+S.deals+'</span></div>' +
+      '<input type="range" class="dcsl" id="dcdsl" min="1" max="'+dmax+'" step="1" value="'+S.deals+'" oninput="updD(this)">' +
+    '</div>' +
+    '<p class="dcl" style="margin-bottom:8px;font-size:12px">Hoe voert u DD nu uit?</p>' +
+    '<div class="dcmgrid">'+mc+'</div>'+kh;
+  } else {
+    inp = '<div class="dcrow">' +
+      '<div class="dclrow"><span class="dcl">'+cap(r.u)+' per jaar</span><span class="dcv" id="dcsvl">'+S.s+'</span></div>' +
+      '<input type="range" class="dcsl" id="dcssl" min="5" max="300" step="5" value="'+S.s+'" oninput="updS(this)">' +
+    '</div>' +
+    '<div class="dcrow">' +
+      '<div class="dclrow"><span class="dcl">Uren per screening</span><span class="dcv" id="dchvl">'+S.h+'u</span></div>' +
+      '<input type="range" class="dcsl" id="dchsl" min="0.5" max="12" step="0.5" value="'+S.h+'" oninput="updH(this)">' +
+      '<p class="dchint">Research, verificatie, documentatie en overleg</p>' +
+    '</div>' +
+    '<div class="dcrow">' +
+      '<div class="dclrow"><span class="dcl">Intern uurtarief</span><span class="dcv" id="dcrvl">\u20ac'+S.r+'/u</span></div>' +
+      '<input type="range" class="dcsl" id="dcrsl" min="60" max="300" step="10" value="'+S.r+'" oninput="updR(this)">' +
+    '</div>';
+  }
+
+  var c = calc();
+  document.getElementById('dcroot').innerHTML =
+    '<div class="dcsteps"><div class="dcseg on"></div><div class="dcseg on"></div></div>' +
+    '<button class="dcback" onclick="goB()">\u2190 '+r.e+' '+r.n+'</button>' +
+    '<h2 class="dch">Uw situatie</h2>' +
+    '<p class="dcsub">Pas aan naar uw realiteit \u2014 resultaten updaten live.</p>' +
+    inp +
+    '<p class="dcl" style="margin-bottom:8px;font-size:12px">DueSight product</p>' +
+    '<div class="dctiers">' +
+      '<button class="dctier '+(S.t===79?'sel':'')+'" data-t="79" onclick="setT(79)"><div class="dctn">Compact Scan</div><div class="dctp">\u20ac79 per scan</div></button>' +
+      '<button class="dctier '+(S.t===399?'sel':'')+'" data-t="399" onclick="setT(399)"><div class="dctn">Pre-DD / M&A Rapport</div><div class="dctp">\u20ac399 per rapport</div></button>' +
+    '</div>' +
+    '<div class="dchr"></div>' +
+    '<div class="dckpis">' +
+      '<div class="dckpi red"><div class="dckpilbl">Kosten huidig</div><div class="dckpival" id="dcrtrad">'+fe(c.tr)+'</div><div class="dckpiunit" id="dcsunkunit">'+(c.sk>0?'per jaar (incl. sunk costs)':'per jaar')+'</div></div>' +
+      '<div class="dckpi"><div class="dckpilbl">Kosten DueSight</div><div class="dckpival" id="dcrds">'+fe(c.ds)+'</div><div class="dckpiunit">per jaar</div></div>' +
+      '<div class="dckpi grn wide"><div class="dckpilbl">Jaarlijkse besparing</div><div class="dckpival" id="dcrsav">'+fe(0)+'</div></div>' +
+      '<div class="dckpi"><div class="dckpilbl">'+(c.isScr?'Uren teruggewonnen':'Werkdagen bespaard')+'</div><div class="dckpival" id="dcrtime">'+(c.isScr?fn(c.hr)+' uur':fn(c.dy)+' dagen')+'</div></div>' +
+      '<div class="dckpi"><div class="dckpilbl">Kostenbesparing</div><div class="dckpival" id="dcrpct">'+fn(c.pc)+'%</div><div class="dckpiunit">t.o.v. huidig</div></div>' +
+    '</div>' +
+    '<div class="dcbarwrap">' +
+      '<div class="dcbarlbls"><span id="dcbleft">'+fe(c.ds)+' DueSight</span><span id="dcbright">'+fe(c.tr)+' huidig</span></div>' +
+      '<div class="dcbartrack"><div class="dcbarfill" id="dcbfill" style="width:0%"></div></div>' +
+      '<div class="dcbarpct" id="dcbpct">0% besparing</div>' +
+    '</div>' +
+    '<div class="dcpb" id="dcpb">'+pbTxt(c)+'</div>' +
+    '<div class="dcrisk"><strong>Regulatoir risico:</strong> '+r.risk+'</div>' +
+    '<button class="dcclip" id="dcclip" onclick="doCopy()">Kopieer business case voor directie / management</button>' +
+    '<button class="dccta" onclick="openLink(\'https://duesight.nl\')">Start uw eerste scan \u2014 duesight.nl \u2192</button>' +
+    '<button class="dcreset" onclick="goReset()">Opnieuw beginnen</button>';
+
+  allSl();
+  setTimeout(function() {
+    animateSav(c.sv);
+    var bf = document.getElementById('dcbfill');
+    var bp = document.getElementById('dcbpct');
+    if (bf) bf.style.width = c.pc + '%';
+    if (bp) bp.textContent = c.pc + '% besparing';
+  }, 60);
+}
+
+function updD(el) { S.deals = parseInt(el.value); setSl(el); var v=document.getElementById('dcdvl'); if(v) v.textContent=S.deals; refreshR(); }
+function setM(k)  { S.m = k; r1(); }
+function togK()   { S.ko = !S.ko; r1(); }
+function updK(el) { S.k = parseInt(el.value); setSl(el); var v=document.getElementById('dckvl'); if(v) v.textContent=S.k+'%'; refreshR(); }
+function updS(el) { S.s = parseInt(el.value); setSl(el); var v=document.getElementById('dcsvl'); if(v) v.textContent=S.s; refreshR(); }
+function updH(el) { S.h = parseFloat(el.value); setSl(el); var v=document.getElementById('dchvl'); if(v) v.textContent=S.h+'u'; refreshR(); }
+function updR(el) { S.r = parseInt(el.value); setSl(el); var v=document.getElementById('dcrvl'); if(v) v.textContent='\u20ac'+S.r+'/u'; refreshR(); }
+function setT(t)  { S.t = t; document.querySelectorAll('.dctier').forEach(function(b){ b.classList.toggle('sel', parseInt(b.dataset.t) === t); }); refreshR(); }
+function goB()    { S.step = 0; r0(); }
+function goReset(){ S.step = 0; S.role = null; r0(); }
+function openLink(url) { window.open(url, '_blank'); }
+
+function doCopy() {
+  var r = S.role, c = calc(), d = new Date().toLocaleDateString('nl-NL');
+  var txt;
+  if (!c.isScr) {
+    var m = _M[S.m];
+    var sl = c.sk > 0 ? '\n  + Sunk costs ('+S.k+'% kill ratio): '+fe(c.sk) : '';
+    txt = 'Business Case DueSight \u2014 '+r.n+' ('+d+')\n\nSituatie: '+S.deals+' '+r.u+'/jaar via '+m.n.toLowerCase()+sl+'\n\nHuidige kosten: '+fe(c.tr)+'/jaar\nDueSight investering: '+fe(c.ds)+'/jaar (\u20ac'+S.t+' \u00d7 '+S.deals+' rapporten)\n\nJaarlijkse besparing: '+fe(c.sv)+' ('+c.pc+'%)\nWerkdagen teruggewonnen: '+fn(c.dy)+'/jaar\nTerugverdiend: na '+c.pb.toFixed(1)+' '+r.u+'\n\nRegulatoir: '+r.risk+'\n\nhttps://duesight.nl';
+  } else {
+    txt = 'Business Case DueSight \u2014 '+r.n+' ('+d+')\n\nSituatie: '+S.s+' '+r.u+'/jaar\nIntern tarief: '+S.h+'u \u00d7 \u20ac'+S.r+'/u = '+fe(S.h*S.r)+' per screening\n\nHuidige kosten: '+fe(c.tr)+'/jaar\nDueSight investering: '+fe(c.ds)+'/jaar (\u20ac'+S.t+' \u00d7 '+S.s+' scans)\n\nJaarlijkse besparing: '+fe(c.sv)+' ('+c.pc+'%)\nUren teruggewonnen: '+fn(c.hr)+'/jaar\nTerugverdiend: na '+Math.ceil(c.pb)+' screenings\n\nRegulatoir: '+r.risk+'\n\nhttps://duesight.nl';
+  }
+  navigator.clipboard.writeText(txt).then(function() {
+    var b = document.getElementById('dcclip');
+    if (b) {
+      b.textContent = '\u2713 Business case gekopieerd naar klembord';
+      b.classList.add('ok');
+      setTimeout(function() {
+        b.textContent = 'Kopieer business case voor directie / management';
+        b.classList.remove('ok');
+      }, 2500);
+    }
+  });
+}
+
+r0();
+</script>
+</body>
+</html>

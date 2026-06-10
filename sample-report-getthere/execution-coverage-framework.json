@@ -1,13 +1,13 @@
 {
   "schema_version": "duesight.execution_coverage_framework.v1",
   "target": {
-    "name": "GetThere B.V.",
+    "name": "Get There ICT Solutions B.V.",
     "domain": "getthere.nl",
     "kvk": "",
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T09:49:03+00:00",
+  "updated_at": "2026-06-02T10:29:40+00:00",
   "coverage_model": "9 execution layers mapped to 7 buyer-facing boardroom pillars and guarded by 10/12-gate validation.",
   "boardroom_pillars": [
     "identity_source_lock",
@@ -223,8 +223,8 @@
       "hermes_deepseek",
       "nvidia_nim_nemotron",
       "antigravity_codeassist",
-      "claude_code",
-      "codex_cli"
+      "codex_cli",
+      "claude_code"
     ],
     "anti_hallucination_decision": "PASS"
   },

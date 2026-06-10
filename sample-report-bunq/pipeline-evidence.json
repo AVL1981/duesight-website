@@ -263,8 +263,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'bunq B.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'bunq B.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -287,7 +287,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -409,7 +409,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "wikidata": {
@@ -449,7 +449,7 @@
             "cost_eur": 0.0,
             "time_s": 0.61
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -470,7 +470,7 @@
           "afm_entities": [
             {
               "name": "bunq B.V.",
-              "register_type": "Financi\u00eble dienstverleners",
+              "register_type": "Financiële dienstverleners",
               "status": "actief",
               "licence_number": null,
               "trade_names": [
@@ -494,7 +494,7 @@
             }
           ],
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -543,7 +543,7 @@
             }
           ],
           "dnb_source": "https://www.dnb.nl/openbaar-register/",
-          "dnb_data_freshness": "dagelijks ge\u00fcpdatet (werkdagen 06:00)",
+          "dnb_data_freshness": "dagelijks geüpdatet (werkdagen 06:00)",
           "dnb_risk_level": "LOW"
         },
         "summary": "Gevonden in 2 register(s): AFM, DNB",
@@ -628,7 +628,7 @@
               "url": "https://www.bunq.com/",
               "path": "/",
               "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
-              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking\u2014sign up in just 5 minutes with your phone and ID.",
+              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking—sign up in just 5 minutes with your phone and ID.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:28+00:00",
@@ -641,7 +641,7 @@
               "url": "https://www.bunq.com/",
               "path": "/nl",
               "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
-              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking\u2014sign up in just 5 minutes with your phone and ID.",
+              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking—sign up in just 5 minutes with your phone and ID.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:29+00:00",
@@ -654,7 +654,7 @@
               "url": "https://www.bunq.com/",
               "path": "/en",
               "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
-              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking\u2014sign up in just 5 minutes with your phone and ID.",
+              "description": "Discover a banking experience that fits your life. bunq offers hassle-free online banking—sign up in just 5 minutes with your phone and ID.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:29+00:00",
@@ -667,7 +667,7 @@
               "url": "https://www.bunq.com/about",
               "path": "/about",
               "title": "About Us | bunq",
-              "description": "We\u2019re bunq \u2013 bank of The Free. Our mission is to break through banking and make life easy for everyone by removing the hassle of money management.",
+              "description": "We’re bunq – bank of The Free. Our mission is to break through banking and make life easy for everyone by removing the hassle of money management.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:29+00:00",
@@ -680,7 +680,7 @@
               "url": "https://www.bunq.com/about",
               "path": "/en/about",
               "title": "About Us | bunq",
-              "description": "We\u2019re bunq \u2013 bank of The Free. Our mission is to break through banking and make life easy for everyone by removing the hassle of money management.",
+              "description": "We’re bunq – bank of The Free. Our mission is to break through banking and make life easy for everyone by removing the hassle of money management.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:29+00:00",
@@ -693,7 +693,7 @@
               "url": "https://www.bunq.com/contact",
               "path": "/contact",
               "title": "Contact Us | bunq",
-              "description": "We\u2019re available 24/7/365 to offer a helping hand. If there\u2019s an urgent issue with your account or cards, call our emergency line at +31208083666.",
+              "description": "We’re available 24/7/365 to offer a helping hand. If there’s an urgent issue with your account or cards, call our emergency line at +31208083666.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:57:30+00:00",
@@ -1366,7 +1366,7 @@
                   "content_hash": "sha256:5fe06af371d5c30c20fbacb807c554aa4e47c261dedddb8999da765aa6f0dac9",
                   "title": "Online Banking Made Easy | Join bunq in 5 Minutes",
                   "text_chars": 1876,
-                  "text_excerpt": "Online Banking Made Easy | Join bunq in 5 Minutes Finance at your fingertips All you need from an online bank, in 1 app Stay organized with different money pockets for budgeting. Notifications and insights show where your money goes. Grow your savings, with up to 2.01% interest\u2014one of the best rates of interest on savings. Buy &amp; sell crypto securely, right where you bank. Control everything yourself, day or night\u2014just like you\u2019d expect from a true mobile bank. Finance at your fingertips All you need from an online bank, in 1 app Stay organized with different money pockets for budgeting. No",
+                  "text_excerpt": "Online Banking Made Easy | Join bunq in 5 Minutes Finance at your fingertips All you need from an online bank, in 1 app Stay organized with different money pockets for budgeting. Notifications and insights show where your money goes. Grow your savings, with up to 2.01% interest—one of the best rates of interest on savings. REVIEW &amp; sell crypto securely, right where you bank. Control everything yourself, day or night—just like you’d expect from a true mobile bank. Finance at your fingertips All you need from an online bank, in 1 app Stay organized with different money pockets for budgeting. No",
                   "jsonld": []
                 },
                 {
@@ -1379,7 +1379,7 @@
                   "content_hash": "sha256:eb0071fd625d6aa62e4bf6106d91d0627e567f4fcdf85fe6e4adfc397cf52fa3",
                   "title": "Imprint | bunq",
                   "text_chars": 2430,
-                  "text_excerpt": "Imprint | bunq This website (bunq.com) is provided by bunq B.V. Basisweg 32, 1043 AP Amsterdam, The Netherlands Email: support@bunq.com VAT: NL851519945B01 Registration The Netherlands bunq B.V. Registered at: Kamer van Koophandel Registration number: 54992060 Authorized Representative: Ali Niknam Germany bunq B.V. Registered at: Oberlandesgericht M\u00fcnchen Registration number: HRB 293822 Authorized Representative: Sebastian Kumeth France bunq B.V. Registered at: Tribunal de Commerce de Paris Registration number: SIREN - 893970970 Authorized Representative: Boris Rousselot Spain bunq B.V. Sucurs",
+                  "text_excerpt": "Imprint | bunq This website (bunq.com) is provided by bunq B.V. Basisweg 32, 1043 AP Amsterdam, The Netherlands Email: support@bunq.com VAT: NL851519945B01 Registration The Netherlands bunq B.V. Registered at: Kamer van Koophandel Registration number: 54992060 Authorized Representative: Ali Niknam Germany bunq B.V. Registered at: Oberlandesgericht München Registration number: HRB 293822 Authorized Representative: Sebastian Kumeth France bunq B.V. Registered at: Tribunal de Commerce de Paris Registration number: SIREN - 893970970 Authorized Representative: Boris Rousselot Spain bunq B.V. Sucurs",
                   "jsonld": []
                 },
                 {
@@ -1399,7 +1399,7 @@
                   "content_hash": "sha256:260412827fab476f4dddad503c740908b0881cf9c50cce4bc2e034b1edb9792d",
                   "title": "About Us | bunq",
                   "text_chars": 6044,
-                  "text_excerpt": "About Us | bunq Break through banking In 2012, serial entrepreneur Ali Niknam and a group of ambitious trailblazers set out to build the first real user-centric bank. With the launch of the bunq app in 2015, the bank of The Free was born, and we\u2019ve been challenging the status quo ever since. Break through banking In 2012, serial entrepreneur Ali Niknam and a group of ambitious trailblazers set out to build the first real user-centric bank. With the launch of the bunq app in 2015, the bank of The Free was born, and we\u2019ve been challenging the status quo ever since. Break through banking In 2012,",
+                  "text_excerpt": "About Us | bunq Break through banking In 2012, serial entrepreneur Ali Niknam and a group of ambitious trailblazers set out to build the first real user-centric bank. With the launch of the bunq app in 2015, the bank of The Free was born, and we’ve been challenging the status quo ever since. Break through banking In 2012, serial entrepreneur Ali Niknam and a group of ambitious trailblazers set out to build the first real user-centric bank. With the launch of the bunq app in 2015, the bank of The Free was born, and we’ve been challenging the status quo ever since. Break through banking In 2012,",
                   "jsonld": []
                 },
                 {
@@ -1425,7 +1425,7 @@
                   "content_hash": "sha256:062a8972d60f09737f1e6c7fe6bdaf727c0a3969287c28557259c2170bcb4849",
                   "title": "Privacy Policy | bunq",
                   "text_chars": 41366,
-                  "text_excerpt": "Privacy Policy | bunq Open PDF Open PDF 1. Introduction \ud83d\udcc4 2. What data does bunq collect? \ud83d\udcca 3. What is the lawful basis for the processing of my personal data? \u2696\ufe0f 4. For what purposes does bunq use my personal data? \ud83c\udfaf 5. Does bunq make automatic decisions based on my personal data? \ud83e\udd16 6. Does bunq share my personal data with third parties? \ud83d\udd17 7. How long does bunq store my data? \u23f3 8. What are my rights? \ud83d\udee1\ufe0f 9. Revoking consent &amp; limiting access \ud83d\udeab&nbsp; 10. Changes to the Privacy Statement \ud83d\udd04 11. Complaints \ud83d\udde3\ufe0f 1. Introduction \ud83d\udcc4 At bunq, your privacy matters. We\u2019ll never sell or rent your person",
+                  "text_excerpt": "Privacy Policy | bunq Open PDF Open PDF 1. Introduction 📄 2. What data does bunq collect? 📊 3. What is the lawful basis for the processing of my personal data? ⚖️ 4. For what purposes does bunq use my personal data? 🎯 5. Does bunq make automatic decisions based on my personal data? 🤖 6. Does bunq share my personal data with third parties? 🔗 7. How long does bunq store my data? ⏳ 8. What are my rights? 🛡️ 9. Revoking consent &amp; limiting access 🚫&nbsp; 10. Changes to the Privacy Statement 🔄 11. Complaints 🗣️ 1. Introduction 📄 At bunq, your privacy matters. We’ll never sell or rent your person",
                   "jsonld": []
                 }
               ],
@@ -1770,7 +1770,7 @@
             "url": "https://www.dnb.nl/en/general-news/enforcement-measures-2025/fine-for-bunq-b-v-for-insufficient-customer-due-diligence/",
             "published_date": "2025-08-25T12:00:00.000Z",
             "source": "Exa",
-            "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank\n\n# Fine for bunq B.V. for insufficient customer due diligence\n\nEnforcement measures\n\nDe Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of \u20ac2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022.\n\nPublished: 25 August 2025\n\nLatest update: 18 December 2025\n\n\u00a9 DNB\n\n### Summary of the decision\n\n- Banks play a crucial role in the fight against subversive crime because of their unique access to "
+            "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank\n\n# Fine for bunq B.V. for insufficient customer due diligence\n\nEnforcement measures\n\nDe Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of €2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022.\n\nPublished: 25 August 2025\n\nLatest update: 18 December 2025\n\n© DNB\n\n### Summary of the decision\n\n- Banks play a crucial role in the fight against subversive crime because of their unique access to "
           },
           {
             "title": "Documents | bunq",
@@ -1784,14 +1784,14 @@
             "url": "https://www.bunq.com/documents/2024-srep-decision-statement",
             "published_date": "",
             "source": "Exa",
-            "snippet": "# 2024 SREP Decision Statement\n\nThis document is currently only available as a PDF.\n\nOpen PDF\n\n## We\u2019re here to help\n\nIf you have any questions or need assistance with anything, we're always available to offer a helping hand.\n\nGet in touch\n\n## Start your 30-day free trial\n\nOpen your account in just 5 minutes, directly from your phone.\n\nGet started\n\n---\n\n## Navigation\n\n- For Students\n- For Expats\n- For Couples\n- For Parents\n- bunq Free\n- bunq Core\n- bunq Pro\n- bunq Elite\n- Compare Plans\n- Budgeting\n- Credit Cards\n- Crypto\n- Joint Accounts\n- Payments\n- Refer a Friend\n- Savings Account\n- Term Dep"
+            "snippet": "# 2024 SREP Decision Statement\n\nThis document is currently only available as a PDF.\n\nOpen PDF\n\n## We’re here to help\n\nIf you have any questions or need assistance with anything, we're always available to offer a helping hand.\n\nGet in touch\n\n## Start your 30-day free trial\n\nOpen your account in just 5 minutes, directly from your phone.\n\nGet started\n\n---\n\n## Navigation\n\n- For Students\n- For Expats\n- For Couples\n- For Parents\n- bunq Free\n- bunq Core\n- bunq Pro\n- bunq Elite\n- Compare Plans\n- Budgeting\n- Credit Cards\n- Crypto\n- Joint Accounts\n- Payments\n- Refer a Friend\n- Savings Account\n- Term Dep"
           },
           {
             "title": "About bunq | bunq Newsroom",
             "url": "https://press.bunq.com/about",
             "published_date": "",
             "source": "Exa",
-            "snippet": "About bunq | bunq Newsroom\n\n# About bunq\n\nLearn what we are all about\n\nbunq, Europe\u2019s second-largest neobank, has rebuilt banking from the ground up. As the world\u2019s first GenAI-powered bank, bunq\u2019s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq\u2019s own operations. By developing a product rooted in its users\u2019 wants and needs, bunq makes life easy for location-independent people and businesses, starting from the way they manage money: how they spend, save, budget and invest.\n\nPioneering many things considered impossible, bunq was "
+            "snippet": "About bunq | bunq Newsroom\n\n# About bunq\n\nLearn what we are all about\n\nbunq, Europe’s second-largest neobank, has rebuilt banking from the ground up. As the world’s first GenAI-powered bank, bunq’s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq’s own operations. By developing a product rooted in its users’ wants and needs, bunq makes life easy for location-independent people and businesses, starting from the way they manage money: how they spend, save, budget and REVIEW.\n\nPioneering many things considered impossible, bunq was "
           },
           {
             "title": "Result from register investment firms",
@@ -1905,25 +1905,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for bunq B.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for bunq B.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "bunq B.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2443,7 +2443,7 @@
               "bucket": "Fine for bunq B.V. for insufficient customer due diligence",
               "title": "Fine for bunq B.V. for insufficient customer due diligence",
               "url": "https://www.dnb.nl/en/general-news/enforcement-measures-2025/fine-for-bunq-b-v-for-insufficient-customer-due-diligence/",
-              "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of \u20ac2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
+              "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of €2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:56:48+00:00",
@@ -2477,7 +2477,7 @@
               "bucket": "2024 SREP Decision Statement | bunq",
               "title": "2024 SREP Decision Statement | bunq",
               "url": "https://www.bunq.com/documents/2024-srep-decision-statement",
-              "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We\u2019re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
+              "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We’re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:56:48+00:00",
@@ -2494,7 +2494,7 @@
               "bucket": "About bunq | bunq Newsroom",
               "title": "About bunq | bunq Newsroom",
               "url": "https://press.bunq.com/about",
-              "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe\u2019s second-largest neobank, has rebuilt banking from the ground up. As the world\u2019s first GenAI-powered bank, bunq\u2019s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq\u2019s own operations. By developing a product rooted in its users\u2019 wants and needs, bunq makes life easy for lo...",
+              "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe’s second-largest neobank, has rebuilt banking from the ground up. As the world’s first GenAI-powered bank, bunq’s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq’s own operations. By developing a product rooted in its users’ wants and needs, bunq makes life easy for lo...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:56:48+00:00",
@@ -3356,7 +3356,7 @@
           "bucket": "Fine for bunq B.V. for insufficient customer due diligence",
           "title": "Fine for bunq B.V. for insufficient customer due diligence",
           "url": "https://www.dnb.nl/en/general-news/enforcement-measures-2025/fine-for-bunq-b-v-for-insufficient-customer-due-diligence/",
-          "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of \u20ac2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
+          "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of €2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:56:48+00:00",
@@ -3390,7 +3390,7 @@
           "bucket": "2024 SREP Decision Statement | bunq",
           "title": "2024 SREP Decision Statement | bunq",
           "url": "https://www.bunq.com/documents/2024-srep-decision-statement",
-          "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We\u2019re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
+          "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We’re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:56:48+00:00",
@@ -3407,7 +3407,7 @@
           "bucket": "About bunq | bunq Newsroom",
           "title": "About bunq | bunq Newsroom",
           "url": "https://press.bunq.com/about",
-          "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe\u2019s second-largest neobank, has rebuilt banking from the ground up. As the world\u2019s first GenAI-powered bank, bunq\u2019s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq\u2019s own operations. By developing a product rooted in its users\u2019 wants and needs, bunq makes life easy for lo...",
+          "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe’s second-largest neobank, has rebuilt banking from the ground up. As the world’s first GenAI-powered bank, bunq’s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq’s own operations. By developing a product rooted in its users’ wants and needs, bunq makes life easy for lo...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:56:48+00:00",
@@ -3496,14 +3496,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for bunq B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "bunq B.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -4317,25 +4317,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for bunq B.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for bunq B.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "bunq B.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4855,7 +4855,7 @@
             "bucket": "Fine for bunq B.V. for insufficient customer due diligence",
             "title": "Fine for bunq B.V. for insufficient customer due diligence",
             "url": "https://www.dnb.nl/en/general-news/enforcement-measures-2025/fine-for-bunq-b-v-for-insufficient-customer-due-diligence/",
-            "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of \u20ac2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
+            "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of €2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:56:48+00:00",
@@ -4889,7 +4889,7 @@
             "bucket": "2024 SREP Decision Statement | bunq",
             "title": "2024 SREP Decision Statement | bunq",
             "url": "https://www.bunq.com/documents/2024-srep-decision-statement",
-            "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We\u2019re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
+            "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We’re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:56:48+00:00",
@@ -4906,7 +4906,7 @@
             "bucket": "About bunq | bunq Newsroom",
             "title": "About bunq | bunq Newsroom",
             "url": "https://press.bunq.com/about",
-            "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe\u2019s second-largest neobank, has rebuilt banking from the ground up. As the world\u2019s first GenAI-powered bank, bunq\u2019s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq\u2019s own operations. By developing a product rooted in its users\u2019 wants and needs, bunq makes life easy for lo...",
+            "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe’s second-largest neobank, has rebuilt banking from the ground up. As the world’s first GenAI-powered bank, bunq’s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq’s own operations. By developing a product rooted in its users’ wants and needs, bunq makes life easy for lo...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:56:48+00:00",
@@ -5768,7 +5768,7 @@
         "bucket": "Fine for bunq B.V. for insufficient customer due diligence",
         "title": "Fine for bunq B.V. for insufficient customer due diligence",
         "url": "https://www.dnb.nl/en/general-news/enforcement-measures-2025/fine-for-bunq-b-v-for-insufficient-customer-due-diligence/",
-        "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of \u20ac2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
+        "snippet": "Fine for bunq B.V. for insufficient customer due diligence | De Nederlandsche Bank # Fine for bunq B.V. for insufficient customer due diligence Enforcement measures De Nederlandsche Bank (DNB) on 6 May 2025 imposed an administrative fine of €2.6 million on bunq B.V. (bunq) for serious deficiencies in its anti-money laundering controls during the period under review, from January 2021 to May 2022. Published: 25 Aug...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:56:48+00:00",
@@ -5802,7 +5802,7 @@
         "bucket": "2024 SREP Decision Statement | bunq",
         "title": "2024 SREP Decision Statement | bunq",
         "url": "https://www.bunq.com/documents/2024-srep-decision-statement",
-        "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We\u2019re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
+        "snippet": "# 2024 SREP Decision Statement This document is currently only available as a PDF. Open PDF ## We’re here to help If you have any questions or need assistance with anything, we're always available to offer a helping hand. Get in touch ## Start your 30-day free trial Open your account in just 5 minutes, directly from your phone. Get started --- ## Navigation - For Students - For Expats - For Couples - For Parents -...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:56:48+00:00",
@@ -5819,7 +5819,7 @@
         "bucket": "About bunq | bunq Newsroom",
         "title": "About bunq | bunq Newsroom",
         "url": "https://press.bunq.com/about",
-        "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe\u2019s second-largest neobank, has rebuilt banking from the ground up. As the world\u2019s first GenAI-powered bank, bunq\u2019s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq\u2019s own operations. By developing a product rooted in its users\u2019 wants and needs, bunq makes life easy for lo...",
+        "snippet": "About bunq | bunq Newsroom # About bunq Learn what we are all about bunq, Europe’s second-largest neobank, has rebuilt banking from the ground up. As the world’s first GenAI-powered bank, bunq’s proprietary AI powers every part of the business, from helping users with their finances, to being baked into bunq’s own operations. By developing a product rooted in its users’ wants and needs, bunq makes life easy for lo...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:56:48+00:00",
@@ -5908,14 +5908,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for bunq B.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "bunq B.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",

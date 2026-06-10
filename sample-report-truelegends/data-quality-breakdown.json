@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:18:11+00:00",
+  "updated_at": "2026-06-02T10:05:20+00:00",
   "score_kind": "DueSight Evidence Readiness Score",
   "current_score": 66,
   "scale": "0-100",
@@ -105,7 +105,7 @@
       "max_score": 13,
       "missing_points_to_100": 6,
       "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
       "current_evidence": [
         "preflight_ok=8",
         "hosted_fallback_deferred=2",
@@ -129,13 +129,13 @@
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
       "current_evidence": [
-        "sanctions_status=clean",
+        "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
         "hosted_fallback_deferred=2"
       ],
       "current_limitations": [
-        "No-hit is not proof of clean reputation.",
+        "Zero candidates is source-limited and not proof of reputation clearance.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ],
       "claim_area": "Sanctions, PEP and adverse media",
@@ -240,7 +240,7 @@
       "max_score": 13,
       "missing_points_to_100": 6,
       "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
       "current_evidence": [
         "preflight_ok=8",
         "hosted_fallback_deferred=2",
@@ -264,13 +264,13 @@
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
       "current_evidence": [
-        "sanctions_status=clean",
+        "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
         "hosted_fallback_deferred=2"
       ],
       "current_limitations": [
-        "No-hit is not proof of clean reputation.",
+        "Zero candidates is source-limited and not proof of reputation clearance.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ],
       "claim_area": "Sanctions, PEP and adverse media",
@@ -343,10 +343,13 @@
     }
   ],
   "provider_freshness_summary": {
-    "fresh_current_run_count": 11,
-    "retained_previous_success_count": 0,
+    "fresh_current_run_count": 9,
+    "retained_previous_success_count": 2,
     "failed_or_skipped_current_run_count": 0,
-    "strict_core_retained": [],
+    "strict_core_retained": [
+      "antigravity_codeassist",
+      "claude_code"
+    ],
     "health_gated_retained_or_skipped": []
   },
   "max_stack_evidence": {
@@ -360,22 +363,19 @@
       "hermes_deepseek",
       "nvidia_nim_nemotron",
       "antigravity_codeassist",
-      "claude_code",
-      "codex_cli"
+      "codex_cli",
+      "claude_code"
     ],
-    "source_urls_count": 57,
+    "source_urls_count": 70,
     "candidate_findings_count": 5,
     "anti_hallucination_decision": "PASS"
   },
   "claim_level_counts": {
-    "source-backed public context": 1,
-    "high public/team-page context": 1,
-    "high public transaction context": 1,
-    "commercial context": 1,
-    "review-only growth context": 1,
-    "blocked for official finance claim": 1,
-    "guarded triage signal": 1,
+    "source-backed or route-backed context": 1,
+    "public/team context or route context": 1,
     "route-backed context": 2,
+    "blocked for official finance claim": 1,
+    "blocked for official ownership claim": 1,
     "measured replay context": 1,
     "source-backed context": 4,
     "official-proof gated": 1

@@ -201,12 +201,13 @@
       "social_sentiment_intel"
     ],
     "source_labels": [
+      "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
       "open identity reference",
-      "GLEIF",
+      "international entity register route",
       "Public Website",
       "archive discovery",
-      "Exa",
-      "Shodan InternetDB + RDAP",
+      "provider discovery route",
+      "infrastructure exposure route + network registry route",
       "sanctions screening route",
       "ownership review route",
       "nlist.nl",
@@ -237,7 +238,7 @@
     "customer_examples_added": 7,
     "identity_conflicts_detected": 0,
     "source_layers_recorded": 16,
-    "distinct_source_labels": 15
+    "distinct_source_labels": 16
   },
   "guardrails": [
     "LinkedIn/social is discovery or corroboration only.",
@@ -246,5 +247,5 @@
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
   "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
-  "updated_at": "2026-05-29T10:57:04+00:00"
+  "updated_at": "2026-06-08T13:34:55+00:00"
 }

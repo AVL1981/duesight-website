@@ -316,8 +316,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'Wise plc' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'Wise plc' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -333,7 +333,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -401,7 +401,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "ubo": {
@@ -436,7 +436,7 @@
             "cost_eur": 0.0,
             "time_s": 0.62
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -520,7 +520,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "FCA fines CEO of Wise \u00a3350,000 for senior manager conduct failure - International Adviser",
+            "title": "FCA fines CEO of Wise £350,000 for senior manager conduct failure - International Adviser",
             "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQ1JXUDl3WkVXY1dGbGlqb1I3Y3laVi1DQlhscVVSN0NPZFFNcnlPaG1KRHhpT1d4d3RWeEp6N1RTUXVOVk9fRXI3OUVaWW4wbHIyT3dEQzMzcTBFUU9ELThUQmxzcWMzcVNSZjg2RHpDUkxFUHFCMnA4aGpiUThsSE5vQlJ0ZEVpRzUtcGFDTTBLMWhHOG5OaWs5T0YxdTFUb0Z6Ng?oc=5",
             "date": "Mon, 28 Oct 2024",
             "source": "google_news_rss",
@@ -540,7 +540,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "FCA Fines Wise CEO Kristo K\u00e4\u00e4rmann \u00a3350,000 Over Tax Issues - Bloomberg.com",
+            "title": "FCA Fines Wise CEO Kristo Käärmann £350,000 Over Tax Issues - Bloomberg.com",
             "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaUFxM09fa2czZTIwVU9jWUd1VUZqR0VseFFmMmJSTUZzRnRtTnJsUl9wVGZJNzdKYUdwQjFJNWE4cXJqZVRpWUgyQXI5S29mV212c3hzSVUzOXNHdnBaVU0wX19Pd3pPN1pNQWRNODRjSUUxTHNNUTMwVnNDbkdLV1hDQnRVODJZRXZpS3p3ZkNTZUthUHJxRDEydHROWFVGVW5KWG5mWWlXNEJqRlE?oc=5",
             "date": "Mon, 28 Oct 2024",
             "source": "google_news_rss",
@@ -655,7 +655,7 @@
             "limitation": "Google News RSS is a discovery fallback; article source must be checked before reporting."
           },
           {
-            "title": "\u201cCareless Rather Than Deliberate or Reckless\u201d Approach Cost Wise CEO Another +\u00a3350K Fine - Finance Magnates",
+            "title": "“Careless Rather Than Deliberate or Reckless” Approach Cost Wise CEO Another +£350K Fine - Finance Magnates",
             "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOMkRSS3ppbldqOFRabUFDdUtqeE5lX28wR3Uzdld3ZHFsb0NKLWFiRjFibDdGVG5IN18ydnN2cUtqNUswYjhZMDlEd0lGN092eFBaMzd4UjkzNFlDOWkwbGs5aXJ6M0hjRjdwTWx5dklZTXpEOXd2R0JQcVhvcktMVUFyVWNvdVFzV0VkQjhrZEhaakZyeHBxcm13Vmdwd3NodEJ0RnBrRmR6RHdjTFBMSVF5OThZVWl4U1hQakZTR0ZobXU0bFJ1Vko2QkxmUTg?oc=5",
             "date": "Mon, 28 Oct 2024",
             "source": "google_news_rss",
@@ -769,7 +769,7 @@
               "relevant_internal_links": [
                 {
                   "url": "https://wise.com/nl/business/manage-team",
-                  "text": "Beheer teamfinanci\u00ebn"
+                  "text": "Beheer teamfinanciën"
                 },
                 {
                   "url": "https://wise.com/gb/business/contact?click_cta_id=gb_bhomepage_top",
@@ -787,23 +787,23 @@
                 },
                 {
                   "url": "https://wise-app.sng.link/Apnl5/0r11?_dl=tw%3A%2F%2F&_smtype=3&",
-                  "text": "4,8 \u2605 in App Store 152K reviews"
+                  "text": "4,8 ★ in App Store 152K reviews"
                 },
                 {
                   "url": "https://wise-app.sng.link/Apnl5/3b0q6?_dl=tw%3A%2F%2F&_smtype=3&",
-                  "text": "4,8 \u2605 op Google Play 1,3 mln. reviews"
+                  "text": "4,8 ★ op Google Play 1,3 mln. reviews"
                 },
                 {
                   "url": "https://wise-app.sng.link/Apnl5/0r11?_dl=tw%3A%2F%2F&_smtype=3&",
-                  "text": "4,8 \u2605 in App Store 152K reviews"
+                  "text": "4,8 ★ in App Store 152K reviews"
                 },
                 {
                   "url": "https://wise-app.sng.link/Apnl5/3b0q6?_dl=tw%3A%2F%2F&_smtype=3&",
-                  "text": "4,8 \u2605 op Google Play 1,3 mln. reviews"
+                  "text": "4,8 ★ op Google Play 1,3 mln. reviews"
                 },
                 {
                   "url": "https://www.trustpilot.com/review/wise.com",
-                  "text": "4,3 \u2605 op Trustpilot 290.692 reviews"
+                  "text": "4,3 ★ op Trustpilot 290.692 reviews"
                 },
                 {
                   "url": "https://www.trustpilot.com/reviews/6502faa17a75830973fb7eff",
@@ -823,7 +823,7 @@
                 },
                 {
                   "url": "https://wise-app.sng.link/Apnl5/0r11?_dl=tw%3A%2F%2F&_smtype=3&",
-                  "text": "4,8 \u2605 in App Store 152K reviews"
+                  "text": "4,8 ★ in App Store 152K reviews"
                 }
               ],
               "team_contacts_found": 0
@@ -832,7 +832,7 @@
               "url": "https://wise.com/gb/about/our-story",
               "path": "/about",
               "title": "The Story of Wise<!-- --> - Wise",
-              "description": "There's never been a better way to send money internationally. Get the fairest exchange rates out there and say bye\u2013bye to big bank fees.",
+              "description": "There's never been a better way to send money internationally. Get the fairest exchange rates out there and say bye–bye to big bank fees.",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T22:02:47+00:00",
@@ -934,7 +934,7 @@
           "company": "Wise plc",
           "articles": [
             {
-              "title": "AWS-storing legt Europa\u2019s digitale afhankelijkheid pijnlijk bloot - debelegger.nl",
+              "title": "AWS-storing legt Europa’s digitale afhankelijkheid pijnlijk bloot - debelegger.nl",
               "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPczJSUVFRTUVxTzZDRjQtVEo5dDRiWGt4TGNwUTl6Umw3ZXhicFpqM3YyTzB5cUpLNGVyUnBTc3g1N3Z3RDRsMGwyQlFCazBlNGZuOGRidmo2QVM5SzdvODlBUjQ3NTFtVlNuSFMwOVRVRVFwTWZOdVlES2R4R0hnY0JoVVkyNnRHVmEyMElpYXBsMExKVEFBbndGb3E?oc=5",
               "source": "debelegger.nl",
               "date": "Tue, 21 Oc",
@@ -1477,7 +1477,7 @@
               "results": [
                 {
                   "lei": "5493001L0QQHCFFK6541",
-                  "legal_name": "P\u00c2RIS BERTRAND SYSTEMATIC ASSET MANAGEMENT PLC - WISE EUROPE",
+                  "legal_name": "PÂRIS BERTRAND SYSTEMATIC ASSET MANAGEMENT PLC - WISE EUROPE",
                   "status": "ACTIVE",
                   "jurisdiction": "IE",
                   "registration_status": "LAPSED"
@@ -1947,7 +1947,7 @@
         ],
         "evidence": [
           {
-            "title": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
+            "title": "Wise plc – MIFIDPRU Disclosures March 2025",
             "url": "https://wise.com/imaginary-v2/images/9dd49904dd00b61a8ef501bd82fd6754-2025MIFIDPRU8Disclosures.pdf",
             "published_date": "",
             "source": "Exa",
@@ -1958,7 +1958,7 @@
             "url": "https://wise.com/imaginary-v2/images/18740bcae1349f119cb3fcca22f20ad6-Statementpursuanttos314oftheCompaniesAct.pdf",
             "published_date": "",
             "source": "Exa",
-            "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc\n\nWise plc has received a statement from Skaala Investments O\u00dc pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board\n\n\u2019 s response, is set out in\n\nfull below. \nThe Board considers the dual listing proposal to be in the best interests of Wise and Wise \nOwners and unanimously recommends that Wise Owners vote in favour of the scheme and \neach related special resolution as each Director intends to do in respect of their own \nholdings."
+            "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc\n\nWise plc has received a statement from Skaala Investments OÜ pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board\n\n’ s response, is set out in\n\nfull below. \nThe Board considers the dual listing proposal to be in the best interests of Wise and Wise \nOwners and unanimously recommends that Wise Owners vote in favour of the scheme and \neach related special resolution as each Director intends to do in respect of their own \nholdings."
           },
           {
             "title": "2025 Annual Report and Accounts",
@@ -1972,14 +1972,14 @@
             "url": "https://owners.wise.com/investor-relations",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Overview | Wise Plc.\n\n# MONEYWITHOUTBORDERS\n\nWe are building the best way to move and manage the world's money. We are building an evangelical customer base - we served nearly 19 million customers in FY26, with many joining based on a recommendation.Powered by our world class infrastructure. Built to sustain rapid and substantial growth. Investing towards moving and managing trillions. Building 'the' network for the world's money.\n\n## Why Invest in Wise\n\n### Strong track record\n\nMethodically investing in long-term growth.\n\n### Just getting started\n\nWe have a $43tn opportunity\n\nSource: Research"
+            "snippet": "Overview | Wise Plc.\n\n# MONEYWITHOUTBORDERS\n\nWe are building the best way to move and manage the world's money. We are building an evangelical customer base - we served nearly 19 million customers in FY26, with many joining based on a recommendation.Powered by our world class infrastructure. Built to sustain rapid and substantial growth. Investing towards moving and managing trillions. Building 'the' network for the world's money.\n\n## Why REVIEW in Wise\n\n### Strong track record\n\nMethodically investing in long-term growth.\n\n### Just getting started\n\nWe have a $43tn opportunity\n\nSource: Research"
           },
           {
             "title": "",
             "url": "https://wise.com/imaginary-v2/images/be2bc3b2907e50806b164ca1a64012fa-2024-MIFIDPRU-8-Disclosures.pdf",
             "published_date": "",
             "source": "Exa",
-            "snippet": "IJWis\u00e9\n\nMIFIDPRU 8\nDISCLOSURES\n\nFor the period ended March 31, 2024\n\n1. Contents\n1. Contents 1\n2. Introduction 2\nAbout this document and its background 2\nRegulatory Context 2\nBasis of preparation and frequency of disclosure 2\nCompany Structure & Business activities 3\nMateriality 5\nLocation and verification 5\n3. Governance structure 6\nBoard Structure & Committees 6\nRisk Governance Structure 8\nGovernance Hierarchy 8\n4. Risk Management 9\nRisk management objectives 9\nRisk Strategy 9\nRisk appetite statement 10\nRisk reporting 10\nBoard Declaration 11\nRisk Profile 11\nRisk of Harms Assessment 12\n5. Own"
+            "snippet": "IJWisé\n\nMIFIDPRU 8\nDISCLOSURES\n\nFor the period ended March 31, 2024\n\n1. Contents\n1. Contents 1\n2. Introduction 2\nAbout this document and its background 2\nRegulatory Context 2\nBasis of preparation and frequency of disclosure 2\nCompany Structure & Business activities 3\nMateriality 5\nLocation and verification 5\n3. Governance structure 6\nBoard Structure & Committees 6\nRisk Governance Structure 8\nGovernance Hierarchy 8\n4. Risk Management 9\nRisk management objectives 9\nRisk Strategy 9\nRisk appetite statement 10\nRisk reporting 10\nBoard Declaration 11\nRisk Profile 11\nRisk of Harms Assessment 12\n5. Own"
           }
         ]
       }
@@ -2104,25 +2104,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for Wise plc via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for Wise plc.",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "Wise plc",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2609,8 +2609,8 @@
             {
               "section": "premium_source_discovery",
               "row_id": "premium-source-01",
-              "bucket": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
-              "title": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
+              "bucket": "Wise plc – MIFIDPRU Disclosures March 2025",
+              "title": "Wise plc – MIFIDPRU Disclosures March 2025",
               "url": "https://wise.com/imaginary-v2/images/9dd49904dd00b61a8ef501bd82fd6754-2025MIFIDPRU8Disclosures.pdf",
               "snippet": "mifidpru 8 disclosures For the period ended March 31, 2025 1. Contents 1 1. Contents 2 2. Introduction 2 2.1. About this document and its background 2 2.2. Regulatory Context 2 2.3. Basis of preparation and frequency of disclosure 3 2.4. Company Structure & Business activities 5 2.5. Materiality 5 2.6. Location and verification 6 3. Governance Structure 6 3.1. Board Structure & Committees 8 3.2. Risk Governance St...",
               "source": "Exa",
@@ -2629,7 +2629,7 @@
               "bucket": "Statement pursuant to s 314 of the Companies Act",
               "title": "Statement pursuant to s 314 of the Companies Act",
               "url": "https://wise.com/imaginary-v2/images/18740bcae1349f119cb3fcca22f20ad6-Statementpursuanttos314oftheCompaniesAct.pdf",
-              "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments O\u00dc pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board \u2019 s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
+              "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments OÜ pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board ’ s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:02:42+00:00",
@@ -2680,7 +2680,7 @@
               "bucket": "Exa",
               "title": "",
               "url": "https://wise.com/imaginary-v2/images/be2bc3b2907e50806b164ca1a64012fa-2024-MIFIDPRU-8-Disclosures.pdf",
-              "snippet": "IJWis\u00e9 MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
+              "snippet": "IJWisé MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:02:42+00:00",
@@ -2792,7 +2792,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa\u2019s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
+              "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa’s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
               "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPczJSUVFRTUVxTzZDRjQtVEo5dDRiWGt4TGNwUTl6Umw3ZXhicFpqM3YyTzB5cUpLNGVyUnBTc3g1N3Z3RDRsMGwyQlFCazBlNGZuOGRidmo2QVM5SzdvODlBUjQ3NTFtVlNuSFMwOVRVRVFwTWZOdVlES2R4R0hnY0JoVVkyNnRHVmEyMElpYXBsMExKVEFBbndGb3E?oc=5",
               "source_type": "news",
               "published_at": "Tue, 21 Oc",
@@ -3487,8 +3487,8 @@
         {
           "section": "premium_source_discovery",
           "row_id": "premium-source-01",
-          "bucket": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
-          "title": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
+          "bucket": "Wise plc – MIFIDPRU Disclosures March 2025",
+          "title": "Wise plc – MIFIDPRU Disclosures March 2025",
           "url": "https://wise.com/imaginary-v2/images/9dd49904dd00b61a8ef501bd82fd6754-2025MIFIDPRU8Disclosures.pdf",
           "snippet": "mifidpru 8 disclosures For the period ended March 31, 2025 1. Contents 1 1. Contents 2 2. Introduction 2 2.1. About this document and its background 2 2.2. Regulatory Context 2 2.3. Basis of preparation and frequency of disclosure 3 2.4. Company Structure & Business activities 5 2.5. Materiality 5 2.6. Location and verification 6 3. Governance Structure 6 3.1. Board Structure & Committees 8 3.2. Risk Governance St...",
           "source": "Exa",
@@ -3507,7 +3507,7 @@
           "bucket": "Statement pursuant to s 314 of the Companies Act",
           "title": "Statement pursuant to s 314 of the Companies Act",
           "url": "https://wise.com/imaginary-v2/images/18740bcae1349f119cb3fcca22f20ad6-Statementpursuanttos314oftheCompaniesAct.pdf",
-          "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments O\u00dc pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board \u2019 s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
+          "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments OÜ pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board ’ s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:02:42+00:00",
@@ -3558,7 +3558,7 @@
           "bucket": "Exa",
           "title": "",
           "url": "https://wise.com/imaginary-v2/images/be2bc3b2907e50806b164ca1a64012fa-2024-MIFIDPRU-8-Disclosures.pdf",
-          "snippet": "IJWis\u00e9 MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
+          "snippet": "IJWisé MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:02:42+00:00",
@@ -3647,14 +3647,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for Wise plc.",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "Wise plc",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -3815,7 +3815,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa\u2019s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
+          "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa’s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
           "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPczJSUVFRTUVxTzZDRjQtVEo5dDRiWGt4TGNwUTl6Umw3ZXhicFpqM3YyTzB5cUpLNGVyUnBTc3g1N3Z3RDRsMGwyQlFCazBlNGZuOGRidmo2QVM5SzdvODlBUjQ3NTFtVlNuSFMwOVRVRVFwTWZOdVlES2R4R0hnY0JoVVkyNnRHVmEyMElpYXBsMExKVEFBbndGb3E?oc=5",
           "source_type": "news",
           "published_at": "Tue, 21 Oc",
@@ -4429,25 +4429,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for Wise plc via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for Wise plc.",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "Wise plc",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4934,8 +4934,8 @@
           {
             "section": "premium_source_discovery",
             "row_id": "premium-source-01",
-            "bucket": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
-            "title": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
+            "bucket": "Wise plc – MIFIDPRU Disclosures March 2025",
+            "title": "Wise plc – MIFIDPRU Disclosures March 2025",
             "url": "https://wise.com/imaginary-v2/images/9dd49904dd00b61a8ef501bd82fd6754-2025MIFIDPRU8Disclosures.pdf",
             "snippet": "mifidpru 8 disclosures For the period ended March 31, 2025 1. Contents 1 1. Contents 2 2. Introduction 2 2.1. About this document and its background 2 2.2. Regulatory Context 2 2.3. Basis of preparation and frequency of disclosure 3 2.4. Company Structure & Business activities 5 2.5. Materiality 5 2.6. Location and verification 6 3. Governance Structure 6 3.1. Board Structure & Committees 8 3.2. Risk Governance St...",
             "source": "Exa",
@@ -4954,7 +4954,7 @@
             "bucket": "Statement pursuant to s 314 of the Companies Act",
             "title": "Statement pursuant to s 314 of the Companies Act",
             "url": "https://wise.com/imaginary-v2/images/18740bcae1349f119cb3fcca22f20ad6-Statementpursuanttos314oftheCompaniesAct.pdf",
-            "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments O\u00dc pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board \u2019 s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
+            "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments OÜ pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board ’ s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:02:42+00:00",
@@ -5005,7 +5005,7 @@
             "bucket": "Exa",
             "title": "",
             "url": "https://wise.com/imaginary-v2/images/be2bc3b2907e50806b164ca1a64012fa-2024-MIFIDPRU-8-Disclosures.pdf",
-            "snippet": "IJWis\u00e9 MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
+            "snippet": "IJWisé MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:02:42+00:00",
@@ -5117,7 +5117,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa\u2019s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
+            "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa’s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
             "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPczJSUVFRTUVxTzZDRjQtVEo5dDRiWGt4TGNwUTl6Umw3ZXhicFpqM3YyTzB5cUpLNGVyUnBTc3g1N3Z3RDRsMGwyQlFCazBlNGZuOGRidmo2QVM5SzdvODlBUjQ3NTFtVlNuSFMwOVRVRVFwTWZOdVlES2R4R0hnY0JoVVkyNnRHVmEyMElpYXBsMExKVEFBbndGb3E?oc=5",
             "source_type": "news",
             "published_at": "Tue, 21 Oc",
@@ -5812,8 +5812,8 @@
       {
         "section": "premium_source_discovery",
         "row_id": "premium-source-01",
-        "bucket": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
-        "title": "Wise plc \u2013 MIFIDPRU Disclosures March 2025",
+        "bucket": "Wise plc – MIFIDPRU Disclosures March 2025",
+        "title": "Wise plc – MIFIDPRU Disclosures March 2025",
         "url": "https://wise.com/imaginary-v2/images/9dd49904dd00b61a8ef501bd82fd6754-2025MIFIDPRU8Disclosures.pdf",
         "snippet": "mifidpru 8 disclosures For the period ended March 31, 2025 1. Contents 1 1. Contents 2 2. Introduction 2 2.1. About this document and its background 2 2.2. Regulatory Context 2 2.3. Basis of preparation and frequency of disclosure 3 2.4. Company Structure & Business activities 5 2.5. Materiality 5 2.6. Location and verification 6 3. Governance Structure 6 3.1. Board Structure & Committees 8 3.2. Risk Governance St...",
         "source": "Exa",
@@ -5832,7 +5832,7 @@
         "bucket": "Statement pursuant to s 314 of the Companies Act",
         "title": "Statement pursuant to s 314 of the Companies Act",
         "url": "https://wise.com/imaginary-v2/images/18740bcae1349f119cb3fcca22f20ad6-Statementpursuanttos314oftheCompaniesAct.pdf",
-        "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments O\u00dc pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board \u2019 s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
+        "snippet": "21 July 2025 Statement circulated pursuant to section 314 of the Companies Act 2006 and response from the Board of Wise plc Wise plc has received a statement from Skaala Investments OÜ pursuant to section 314(1) of the UK Companies Act 2006. That statement, together with the Board ’ s response, is set out in full below. The Board considers the dual listing proposal to be in the best interests of Wise and Wise Owne...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:02:42+00:00",
@@ -5883,7 +5883,7 @@
         "bucket": "Exa",
         "title": "",
         "url": "https://wise.com/imaginary-v2/images/be2bc3b2907e50806b164ca1a64012fa-2024-MIFIDPRU-8-Disclosures.pdf",
-        "snippet": "IJWis\u00e9 MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
+        "snippet": "IJWisé MIFIDPRU 8 DISCLOSURES For the period ended March 31, 2024 1. Contents 1. Contents 1 2. Introduction 2 About this document and its background 2 Regulatory Context 2 Basis of preparation and frequency of disclosure 2 Company Structure & Business activities 3 Materiality 5 Location and verification 5 3. Governance structure 6 Board Structure & Committees 6 Risk Governance Structure 8 Governance Hierarchy 8 4....",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:02:42+00:00",
@@ -5972,14 +5972,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for Wise plc.",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "Wise plc",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -6140,7 +6140,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa\u2019s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
+        "claim": "News/reference signal found for Wise plc: AWS-storing legt Europa’s digitale afhankelijkheid pijnlijk bloot - debelegger.nl.",
         "source": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPczJSUVFRTUVxTzZDRjQtVEo5dDRiWGt4TGNwUTl6Umw3ZXhicFpqM3YyTzB5cUpLNGVyUnBTc3g1N3Z3RDRsMGwyQlFCazBlNGZuOGRidmo2QVM5SzdvODlBUjQ3NTFtVlNuSFMwOVRVRVFwTWZOdVlES2R4R0hnY0JoVVkyNnRHVmEyMElpYXBsMExKVEFBbndGb3E?oc=5",
         "source_type": "news",
         "published_at": "Tue, 21 Oc",

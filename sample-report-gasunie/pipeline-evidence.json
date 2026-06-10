@@ -412,8 +412,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'N.V. Nederlandse Gasunie' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'N.V. Nederlandse Gasunie' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -436,7 +436,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -527,7 +527,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "wikidata": {
@@ -567,7 +567,7 @@
             "cost_eur": 0.0,
             "time_s": 0.53
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -586,7 +586,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -598,7 +598,7 @@
         "dnb": {
           "dnb_status": "NIET GEVONDEN",
           "dnb_registered": false,
-          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financi\u00eble instellingen.",
+          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financiële instellingen.",
           "dnb_source": "https://www.dnb.nl/openbaar-register/"
         },
         "summary": "Niet gevonden in 2 register(s)",
@@ -608,7 +608,7 @@
         "company": "N.V. Nederlandse Gasunie",
         "total_articles": 0,
         "severity_score": 0,
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "claim_status": "INCOMPLETE_SOURCES",
         "source_status": {
           "gdelt": {
@@ -786,7 +786,7 @@
             {
               "url": "https://www.gasunie.nl/contact",
               "path": "/contact",
-              "title": "Contact \u203a Gasunie",
+              "title": "Contact › Gasunie",
               "description": "",
               "status_code": 200,
               "source_type": "company_website",
@@ -836,7 +836,7 @@
             {
               "url": "https://www.gasunie.nl/nl/contact",
               "path": "/nl/contact",
-              "title": "Contact \u203a Gasunie",
+              "title": "Contact › Gasunie",
               "description": "",
               "status_code": 200,
               "source_type": "company_website",
@@ -928,7 +928,7 @@
               "score": 0.9109
             },
             {
-              "title": "Gasvoorraad zakt naar een schamele 11,7 procent, maar \u2018er komen warmere dagen aan\u2019 - de Stentor",
+              "title": "Gasvoorraad zakt naar een schamele 11,7 procent, maar ‘er komen warmere dagen aan’ - de Stentor",
               "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1htQzJ5SVhSZ2ljV3RVUml6NjVhUEhERUtERXV2LU9zSE5xaFJIMVFSZE56Unc3bDBPa3Q3eDJyM3ExcElPUlR0ZmJ5NHZucXc2MU1HTnVGTVJjZk5HUG1HQkNSYXNNdmdiYTVjYVlNZlh5bk1ScGlXUk9aMFJQLUNaN0lXbGkzTkdsalBRR3ZnMVA4M2RzbnBwRl84d29IbFBSazBQMzRCTlRNd1Vxd1EwSmlUQVhEWTIwS2oyR0VlWUU?oc=5",
               "source": "de Stentor",
               "date": "Tue, 24 Fe",
@@ -936,7 +936,7 @@
               "score": 0.8747
             },
             {
-              "title": "Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: \u2018Iedereen mag daar duistere bedoelingen in zien\u2019 - De Morgen",
+              "title": "Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: ‘Iedereen mag daar duistere bedoelingen in zien’ - De Morgen",
               "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQenh2c1lKZF85MnZUZ2l0UHVtR3Z4aHQ4VnFZYTdhYVgtd1lxMTR2Z01pSGZ6NU0tZnBpS3VPWVBUSVBZTFRoM0MtZmVpUHlWekpHcWVvNGxGVDAxc3ZENFNKZWJ0aGc3QVAxM0hoeXBiamlaRFJ5V3BUb0RSMlNIYXJmc2IzUDFCbUJxbXVxY3h0M1FCa2J2dHBETlRUN2NwZFR3TVYwcjNpR2Y0MUkwWmtFODEwdy1BSDIyNXZFUjlhNzU2ZllRWmpDbWJXOVRWUEYyamN6SmxCWV9mLUNHUURyUGRfQ2JiZ3hVS2J1WEdxUk1TS0p4YkpFd1lqLUU1NEZRVnRWdjFIZw?oc=5",
               "source": "De Morgen",
               "date": "Tue, 18 No",
@@ -984,7 +984,7 @@
               "score": 0.9306
             },
             {
-              "title": "Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en Belgi\u00eb - MarketScreener Nederland",
+              "title": "Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en België - MarketScreener Nederland",
               "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObUc0QkY0cnlKWG84dDVEcy1rc056c01UOEpfaGp6X19QT1ZHb1ZudTk3WUNBRUZZdmJrQ0loLWRnVWI0bXQxLW04SEwyZ3VVN3VDN1F0NFFHUUJSUGNhbWtBRkhrX1NXWjFrb25LY3JDaFdZVkZNa2x4MS1rZVNjMWZ6UU5UV0tTTkpzRjgwMlNyLTBrWFdfRHpkU2g1NUQ0eEw1YUhYWHNSV1ByRlJjbU5mOThHdlFYMzJwUWxuNkg4MFdkaUthS0dlR3luVXlN?oc=5",
               "source": "MarketScreener Nederland",
               "date": "Thu, 09 Ap",
@@ -1891,28 +1891,28 @@
             "snippet": "Infrastructure and Project Finance\nCREDIT OPINION\n23 July 2025\nUpdate\nRATINGS\nN.V. Nederlandse Gasunie\nDomicile Groningen, Netherlands\nLong Term Rating A2\nType LT Issuer Rating\nOutlook Stable\nPlease see the ratings section at the end of this report\nfor more information. The ratings and outlook shown\nreflect information as of the publication date.\nContacts\nMark Remshardt +49.69.70730.808\nVP-Sr Credit Officer\nmark.remshardt@moodys.com\nVitalij Jermolajev +49.69.86790.2103\nSr Ratings Associate\nvitalij.jermolajev@moodys.com\nPaul Marty +33.1.5330.3371\nAssociate Managing Director\npaul.marty@moodys.co"
           },
           {
-            "title": "1. Significant matters and events\n\t\t\t\t\t\t\t\t\t\t\t\t\t\u203a 2025 Annual report",
+            "title": "1. Significant matters and events\n\t\t\t\t\t\t\t\t\t\t\t\t\t› 2025 Annual report",
             "url": "https://www.publicatiesgasunie.nl/en/2025/2025-annual-report/additional-notes-to-the-consolidated-financial-statements/1-significant-matters-and-events",
             "published_date": "",
             "source": "Exa",
-            "snippet": "1. Significant matters and events \u203a 2025 Annual report\n\nCookie settings\n\n## 1. Significant matters and events\n\n### Development of revenue and result\n\nIn 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units.\n\nIf our regulated revenue in any year exceeds the permitted revenues determined by the regulatory authority, we must offset the surplus revenue in subsequent years by charging lower tariffs (and vice versa), as determined by the regulatory system both in the Netherlands an"
+            "snippet": "1. Significant matters and events › 2025 Annual report\n\nCookie settings\n\n## 1. Significant matters and events\n\n### Development of revenue and result\n\nIn 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units.\n\nIf our regulated revenue in any year exceeds the permitted revenues determined by the regulatory authority, we must offset the surplus revenue in subsequent years by charging lower tariffs (and vice versa), as determined by the regulatory system both in the Netherlands an"
           },
           {
             "title": "",
             "url": "https://www.gasunie.nl/en/organisation/investor-relations/debt-programmes/$14715/$14716",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Green Financing \nFramework\nNovember 2023\n2 N.V. Nederlandse Gasunie Green Financing Framework\n3\nContent \n1 Introduction5\n1.1 About Gasunie5\n1.2 Accelerating the energy transition 8\n1.3 Investments in sustainable energy infrastructure 11\n1.4 Social impact of Gasunie\u2019s strategy 15\n1.5 Gasunie\u2019s contribution to the UN SDGs 16\n1.6 External ESG Ratings 18\n1.7 Rationale for Green Financing Framework 18\n2 Green Financing Framework and alignment with the Green Bond Principles (2021) \n& Green Loan Principles (2023) 19\n2.1 Use of Proceeds 19\n2.2 Process for Project Evaluation and Selection 24\n2.3 Manage"
+            "snippet": "Green Financing \nFramework\nNovember 2023\n2 N.V. Nederlandse Gasunie Green Financing Framework\n3\nContent \n1 Introduction5\n1.1 About Gasunie5\n1.2 Accelerating the energy transition 8\n1.3 Investments in sustainable energy infrastructure 11\n1.4 Social impact of Gasunie’s strategy 15\n1.5 Gasunie’s contribution to the UN SDGs 16\n1.6 External ESG Ratings 18\n1.7 Rationale for Green Financing Framework 18\n2 Green Financing Framework and alignment with the Green Bond Principles (2021) \n& Green Loan Principles (2023) 19\n2.1 Use of Proceeds 19\n2.2 Process for Project Evaluation and Selection 24\n2.3 Manage"
           },
           {
-            "title": "Governance\n\t\t\t\t\t\t\t\t\t\t\t\t\t\u203a 2023 Annual report",
+            "title": "Governance\n\t\t\t\t\t\t\t\t\t\t\t\t\t› 2023 Annual report",
             "url": "https://www.publicatiesgasunie.nl/en/archief-2023/2023-annual-report/governance",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Governance \u203a 2023 Annual report\n\nCookie settings\n\n# Governance\n\n## Governance\n\nCorporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasunie\u2019s stakeholders.\n\nCorporate governance at Gasunie\n\n#### Shareholder\n\nN.V. Nederlandse Gasunie (Gasunie) is a public limited company whose sole shareholder is the Dutch State, wi"
+            "snippet": "Governance › 2023 Annual report\n\nCookie settings\n\n# Governance\n\n## Governance\n\nCorporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasunie’s stakeholders.\n\nCorporate governance at Gasunie\n\n#### Shareholder\n\nN.V. Nederlandse Gasunie (Gasunie) is a public limited company whose sole shareholder is the Dutch State, wi"
           },
           {
-            "title": "BASE PROSPECTUS N.V. NEDERLANDSE GASUNIE (incorporated with limited liability in the Netherlands and having its corporate seat in Groningen, the Netherlands) EUR 7,500,000,000 Euro Medium Term Note Programme Due up to 50 years from the date of Issue Under this Euro Medium Term Note Programme (the \"Programme\"), N.V. Nederlandse Gasunie (the \"Issuer\") may from time to time issue notes (the \"Notes\") denominated in any currency agreed between the Issuer and the relevant Dealer (as defined below). The aggregate nominal amount of all Notes from time to time outstanding under the Programme will not exceed \u20ac 7,500,000,000 (or its equivalent in other currencies calculated as described in the Programme Agreement described herein), subject to increase as described herein. The Notes may be issued on a continuing basis to one or more of the Dealers specified under \"Overview\" and any additional Dealer appointed under the Programme from time to time by the Issuer (each a \"Dealer\" and together the \"Dealers\"), which appointment may be for a specific issue or on an ongoing basis. References in this base prospectus (the \"Prospectus\") to the relevant Dealer shall, in the case of an issue of Notes being (or intended to be) subscribed by more than one Dealer, be to all Dealers agreeing to subscribe such Notes. Notes may be distributed by way of a public offer or private placements and, in each case, on a syndicated or non-syndicated basis. The method of distribution of each relevant series of Notes (a \"Series\") or tranche thereof (a \"Tranche\") will be stated in the applicable Final Terms (the \"Final Terms\"). An investment in Notes issued under the Programme involves certain risks. For a discussion of these risks see \"Risk Factors\". The Authority for the Financial Markets (Autoriteit Financi\u00eble Markten, the \"AFM\"), in its capacity as competent authority under the Financial Supervision Act (Wet op het financieel toezicht, the \"Wft\"), has approved this Prospectus pursuant to Section 5:2 of the Wft. Application has been made to Euronext Amsterdam N.V. (\"Euronext Amsterdam\") to allow Notes issued under the Programme, during the period of 12 months from the date of this Prospectus, to be admitted to trading and to be listed on Euronext in Amsterdam. The Issuer may request the AFM to provide competent authorities in additional countries which are parties to the Agreement on the European Economic Area of 17 March 2003 with a certificate of approval attesting that this Prospectus has been drawn up in accordance with the Wft and related regulations which implement the Prospectus Directive in Dutch law. As used herein, the expression \"Prospectus Directive\" means Directive 2003/71/EC (as amended, including by Directive 2010/73/EU), and includes any relevant implementing measure in a relevant Member State of the European Economic Area. References in this Prospectus to Notes being listed (and all related references) shall mean that such Notes have been admitted to trading and listing on Euronext in Amsterdam. Euronext in Amsterdam is a regulated market for the purposes of Directive 2004/39/EC (the Markets in Financial Instruments Directive). The Programme provides that Notes may be listed or admitted to trading, as the case may be, on such other or further stock exchanges, automated trading systems, over the",
+            "title": "BASE PROSPECTUS N.V. NEDERLANDSE GASUNIE (incorporated with limited liability in the Netherlands and having its corporate seat in Groningen, the Netherlands) EUR 7,500,000,000 Euro Medium Term Note Programme Due up to 50 years from the date of Issue Under this Euro Medium Term Note Programme (the \"Programme\"), N.V. Nederlandse Gasunie (the \"Issuer\") may from time to time issue notes (the \"Notes\") denominated in any currency agreed between the Issuer and the relevant Dealer (as defined below). The aggregate nominal amount of all Notes from time to time outstanding under the Programme will not exceed € 7,500,000,000 (or its equivalent in other currencies calculated as described in the Programme Agreement described herein), subject to increase as described herein. The Notes may be issued on a continuing basis to one or more of the Dealers specified under \"Overview\" and any additional Dealer appointed under the Programme from time to time by the Issuer (each a \"Dealer\" and together the \"Dealers\"), which appointment may be for a specific issue or on an ongoing basis. References in this base prospectus (the \"Prospectus\") to the relevant Dealer shall, in the case of an issue of Notes being (or intended to be) subscribed by more than one Dealer, be to all Dealers agreeing to subscribe such Notes. Notes may be distributed by way of a public offer or private placements and, in each case, on a syndicated or non-syndicated basis. The method of distribution of each relevant series of Notes (a \"Series\") or tranche thereof (a \"Tranche\") will be stated in the applicable Final Terms (the \"Final Terms\"). An investment in Notes issued under the Programme involves certain risks. For a discussion of these risks see \"Risk Factors\". The Authority for the Financial Markets (Autoriteit Financiële Markten, the \"AFM\"), in its capacity as competent authority under the Financial Supervision Act (Wet op het financieel toezicht, the \"Wft\"), has approved this Prospectus pursuant to Section 5:2 of the Wft. Application has been made to Euronext Amsterdam N.V. (\"Euronext Amsterdam\") to allow Notes issued under the Programme, during the period of 12 months from the date of this Prospectus, to be admitted to trading and to be listed on Euronext in Amsterdam. The Issuer may request the AFM to provide competent authorities in additional countries which are parties to the Agreement on the European Economic Area of 17 March 2003 with a certificate of approval attesting that this Prospectus has been drawn up in accordance with the Wft and related regulations which implement the Prospectus Directive in Dutch law. As used herein, the expression \"Prospectus Directive\" means Directive 2003/71/EC (as amended, including by Directive 2010/73/EU), and includes any relevant implementing measure in a relevant Member State of the European Economic Area. References in this Prospectus to Notes being listed (and all related references) shall mean that such Notes have been admitted to trading and listing on Euronext in Amsterdam. Euronext in Amsterdam is a regulated market for the purposes of Directive 2004/39/EC (the Markets in Financial Instruments Directive). The Programme provides that Notes may be listed or admitted to trading, as the case may be, on such other or further stock exchanges, automated trading systems, over the",
             "url": "https://www.gasunie.nl/organisatie/investor-relations/schuldprogrammas/$3301/$3353",
             "published_date": "",
             "source": "Exa",
@@ -2069,25 +2069,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for N.V. Nederlandse Gasunie via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for N.V. Nederlandse Gasunie.",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "N.V. Nederlandse Gasunie",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2274,21 +2274,21 @@
           "target_claim_safe": false,
           "source": "DueSight Adverse Media Scanner",
           "buckets": {
-            "No adverse media signal": 1
+            "Source-limited adverse-media zero candidates": 1
           },
           "rows": [
             {
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
-              "bucket": "No adverse media signal",
+              "bucket": "Source-limited adverse-media zero candidates",
               "claim": "No target-relevant adverse-media signal was found for N.V. Nederlandse Gasunie in the checked sources.",
               "source": "DueSight adverse-media source ladder (public news + legal metadata)",
               "confidence": "Medium",
-              "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+              "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
               "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
               "target": "N.V. Nederlandse Gasunie",
               "claim_status": "INCOMPLETE_SOURCES",
-              "risk_verdict": "CLEAN",
+              "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
               "severity_score": 0,
               "total_articles": 0,
               "categories_found": [],
@@ -2610,10 +2610,10 @@
             {
               "section": "premium_source_discovery",
               "row_id": "premium-source-02",
-              "bucket": "1. Significant matters and events \u203a 2025 Annual report",
-              "title": "1. Significant matters and events \u203a 2025 Annual report",
+              "bucket": "1. Significant matters and events › 2025 Annual report",
+              "title": "1. Significant matters and events › 2025 Annual report",
               "url": "https://www.publicatiesgasunie.nl/en/2025/2025-annual-report/additional-notes-to-the-consolidated-financial-statements/1-significant-matters-and-events",
-              "snippet": "1. Significant matters and events \u203a 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
+              "snippet": "1. Significant matters and events › 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:58:01+00:00",
@@ -2630,7 +2630,7 @@
               "bucket": "Exa",
               "title": "",
               "url": "https://www.gasunie.nl/en/organisation/investor-relations/debt-programmes/$14715/$14716",
-              "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie\u2019s strategy 15 1.5 Gasunie\u2019s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
+              "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie’s strategy 15 1.5 Gasunie’s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:58:01+00:00",
@@ -2644,10 +2644,10 @@
             {
               "section": "premium_source_discovery",
               "row_id": "premium-source-04",
-              "bucket": "Governance \u203a 2023 Annual report",
-              "title": "Governance \u203a 2023 Annual report",
+              "bucket": "Governance › 2023 Annual report",
+              "title": "Governance › 2023 Annual report",
               "url": "https://www.publicatiesgasunie.nl/en/archief-2023/2023-annual-report/governance",
-              "snippet": "Governance \u203a 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
+              "snippet": "Governance › 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:58:01+00:00",
@@ -2744,7 +2744,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+              "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
               "source": "https://www.gasunie.nl/contact",
               "source_type": "company_website",
               "confidence": "High",
@@ -2760,7 +2760,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+              "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
               "source": "https://www.gasunie.nl/nl/contact",
               "source_type": "company_website",
               "confidence": "High",
@@ -2848,7 +2848,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar \u2018er komen warmere dagen aan\u2019 - de Stentor.",
+              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar ‘er komen warmere dagen aan’ - de Stentor.",
               "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1htQzJ5SVhSZ2ljV3RVUml6NjVhUEhERUtERXV2LU9zSE5xaFJIMVFSZE56Unc3bDBPa3Q3eDJyM3ExcElPUlR0ZmJ5NHZucXc2MU1HTnVGTVJjZk5HUG1HQkNSYXNNdmdiYTVjYVlNZlh5bk1ScGlXUk9aMFJQLUNaN0lXbGkzTkdsalBRR3ZnMVA4M2RzbnBwRl84d29IbFBSazBQMzRCTlRNd1Vxd1EwSmlUQVhEWTIwS2oyR0VlWUU?oc=5",
               "source_type": "news",
               "published_at": "Tue, 24 Fe",
@@ -2866,7 +2866,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: \u2018Iedereen mag daar duistere bedoelingen in zien\u2019 - De Morgen.",
+              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: ‘Iedereen mag daar duistere bedoelingen in zien’ - De Morgen.",
               "source": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQenh2c1lKZF85MnZUZ2l0UHVtR3Z4aHQ4VnFZYTdhYVgtd1lxMTR2Z01pSGZ6NU0tZnBpS3VPWVBUSVBZTFRoM0MtZmVpUHlWekpHcWVvNGxGVDAxc3ZENFNKZWJ0aGc3QVAxM0hoeXBiamlaRFJ5V3BUb0RSMlNIYXJmc2IzUDFCbUJxbXVxY3h0M1FCa2J2dHBETlRUN2NwZFR3TVYwcjNpR2Y0MUkwWmtFODEwdy1BSDIyNXZFUjlhNzU2ZllRWmpDbWJXOVRWUEYyamN6SmxCWV9mLUNHUURyUGRfQ2JiZ3hVS2J1WEdxUk1TS0p4YkpFd1lqLUU1NEZRVnRWdjFIZw?oc=5",
               "source_type": "news",
               "published_at": "Tue, 18 No",
@@ -2974,7 +2974,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en Belgi\u00eb - MarketScreener Nederland.",
+              "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en België - MarketScreener Nederland.",
               "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObUc0QkY0cnlKWG84dDVEcy1rc056c01UOEpfaGp6X19QT1ZHb1ZudTk3WUNBRUZZdmJrQ0loLWRnVWI0bXQxLW04SEwyZ3VVN3VDN1F0NFFHUUJSUGNhbWtBRkhrX1NXWjFrb25LY3JDaFdZVkZNa2x4MS1rZVNjMWZ6UU5UV0tTTkpzRjgwMlNyLTBrWFdfRHpkU2g1NUQ0eEw1YUhYWHNSV1ByRlJjbU5mOThHdlFYMzJwUWxuNkg4MFdkaUthS0dlR3luVXlN?oc=5",
               "source_type": "news",
               "published_at": "Thu, 09 Ap",
@@ -3486,10 +3486,10 @@
         {
           "section": "premium_source_discovery",
           "row_id": "premium-source-02",
-          "bucket": "1. Significant matters and events \u203a 2025 Annual report",
-          "title": "1. Significant matters and events \u203a 2025 Annual report",
+          "bucket": "1. Significant matters and events › 2025 Annual report",
+          "title": "1. Significant matters and events › 2025 Annual report",
           "url": "https://www.publicatiesgasunie.nl/en/2025/2025-annual-report/additional-notes-to-the-consolidated-financial-statements/1-significant-matters-and-events",
-          "snippet": "1. Significant matters and events \u203a 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
+          "snippet": "1. Significant matters and events › 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:58:01+00:00",
@@ -3506,7 +3506,7 @@
           "bucket": "Exa",
           "title": "",
           "url": "https://www.gasunie.nl/en/organisation/investor-relations/debt-programmes/$14715/$14716",
-          "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie\u2019s strategy 15 1.5 Gasunie\u2019s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
+          "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie’s strategy 15 1.5 Gasunie’s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:58:01+00:00",
@@ -3520,10 +3520,10 @@
         {
           "section": "premium_source_discovery",
           "row_id": "premium-source-04",
-          "bucket": "Governance \u203a 2023 Annual report",
-          "title": "Governance \u203a 2023 Annual report",
+          "bucket": "Governance › 2023 Annual report",
+          "title": "Governance › 2023 Annual report",
           "url": "https://www.publicatiesgasunie.nl/en/archief-2023/2023-annual-report/governance",
-          "snippet": "Governance \u203a 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
+          "snippet": "Governance › 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:58:01+00:00",
@@ -3657,14 +3657,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for N.V. Nederlandse Gasunie.",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "N.V. Nederlandse Gasunie",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -3813,7 +3813,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+          "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
           "source": "https://www.gasunie.nl/contact",
           "source_type": "company_website",
           "confidence": "High",
@@ -3829,7 +3829,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+          "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
           "source": "https://www.gasunie.nl/nl/contact",
           "source_type": "company_website",
           "confidence": "High",
@@ -3917,7 +3917,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar \u2018er komen warmere dagen aan\u2019 - de Stentor.",
+          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar ‘er komen warmere dagen aan’ - de Stentor.",
           "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1htQzJ5SVhSZ2ljV3RVUml6NjVhUEhERUtERXV2LU9zSE5xaFJIMVFSZE56Unc3bDBPa3Q3eDJyM3ExcElPUlR0ZmJ5NHZucXc2MU1HTnVGTVJjZk5HUG1HQkNSYXNNdmdiYTVjYVlNZlh5bk1ScGlXUk9aMFJQLUNaN0lXbGkzTkdsalBRR3ZnMVA4M2RzbnBwRl84d29IbFBSazBQMzRCTlRNd1Vxd1EwSmlUQVhEWTIwS2oyR0VlWUU?oc=5",
           "source_type": "news",
           "published_at": "Tue, 24 Fe",
@@ -3935,7 +3935,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: \u2018Iedereen mag daar duistere bedoelingen in zien\u2019 - De Morgen.",
+          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: ‘Iedereen mag daar duistere bedoelingen in zien’ - De Morgen.",
           "source": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQenh2c1lKZF85MnZUZ2l0UHVtR3Z4aHQ4VnFZYTdhYVgtd1lxMTR2Z01pSGZ6NU0tZnBpS3VPWVBUSVBZTFRoM0MtZmVpUHlWekpHcWVvNGxGVDAxc3ZENFNKZWJ0aGc3QVAxM0hoeXBiamlaRFJ5V3BUb0RSMlNIYXJmc2IzUDFCbUJxbXVxY3h0M1FCa2J2dHBETlRUN2NwZFR3TVYwcjNpR2Y0MUkwWmtFODEwdy1BSDIyNXZFUjlhNzU2ZllRWmpDbWJXOVRWUEYyamN6SmxCWV9mLUNHUURyUGRfQ2JiZ3hVS2J1WEdxUk1TS0p4YkpFd1lqLUU1NEZRVnRWdjFIZw?oc=5",
           "source_type": "news",
           "published_at": "Tue, 18 No",
@@ -4043,7 +4043,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en Belgi\u00eb - MarketScreener Nederland.",
+          "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en België - MarketScreener Nederland.",
           "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObUc0QkY0cnlKWG84dDVEcy1rc056c01UOEpfaGp6X19QT1ZHb1ZudTk3WUNBRUZZdmJrQ0loLWRnVWI0bXQxLW04SEwyZ3VVN3VDN1F0NFFHUUJSUGNhbWtBRkhrX1NXWjFrb25LY3JDaFdZVkZNa2x4MS1rZVNjMWZ6UU5UV0tTTkpzRjgwMlNyLTBrWFdfRHpkU2g1NUQ0eEw1YUhYWHNSV1ByRlJjbU5mOThHdlFYMzJwUWxuNkg4MFdkaUthS0dlR3luVXlN?oc=5",
           "source_type": "news",
           "published_at": "Thu, 09 Ap",
@@ -4288,15 +4288,15 @@
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for N.V. Nederlandse Gasunie in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "N.V. Nederlandse Gasunie",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -4486,25 +4486,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for N.V. Nederlandse Gasunie via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for N.V. Nederlandse Gasunie.",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "N.V. Nederlandse Gasunie",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4691,21 +4691,21 @@
         "target_claim_safe": false,
         "source": "DueSight Adverse Media Scanner",
         "buckets": {
-          "No adverse media signal": 1
+          "Source-limited adverse-media zero candidates": 1
         },
         "rows": [
           {
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
-            "bucket": "No adverse media signal",
+            "bucket": "Source-limited adverse-media zero candidates",
             "claim": "No target-relevant adverse-media signal was found for N.V. Nederlandse Gasunie in the checked sources.",
             "source": "DueSight adverse-media source ladder (public news + legal metadata)",
             "confidence": "Medium",
-            "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+            "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
             "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
             "target": "N.V. Nederlandse Gasunie",
             "claim_status": "INCOMPLETE_SOURCES",
-            "risk_verdict": "CLEAN",
+            "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
             "severity_score": 0,
             "total_articles": 0,
             "categories_found": [],
@@ -5027,10 +5027,10 @@
           {
             "section": "premium_source_discovery",
             "row_id": "premium-source-02",
-            "bucket": "1. Significant matters and events \u203a 2025 Annual report",
-            "title": "1. Significant matters and events \u203a 2025 Annual report",
+            "bucket": "1. Significant matters and events › 2025 Annual report",
+            "title": "1. Significant matters and events › 2025 Annual report",
             "url": "https://www.publicatiesgasunie.nl/en/2025/2025-annual-report/additional-notes-to-the-consolidated-financial-statements/1-significant-matters-and-events",
-            "snippet": "1. Significant matters and events \u203a 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
+            "snippet": "1. Significant matters and events › 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:58:01+00:00",
@@ -5047,7 +5047,7 @@
             "bucket": "Exa",
             "title": "",
             "url": "https://www.gasunie.nl/en/organisation/investor-relations/debt-programmes/$14715/$14716",
-            "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie\u2019s strategy 15 1.5 Gasunie\u2019s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
+            "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie’s strategy 15 1.5 Gasunie’s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:58:01+00:00",
@@ -5061,10 +5061,10 @@
           {
             "section": "premium_source_discovery",
             "row_id": "premium-source-04",
-            "bucket": "Governance \u203a 2023 Annual report",
-            "title": "Governance \u203a 2023 Annual report",
+            "bucket": "Governance › 2023 Annual report",
+            "title": "Governance › 2023 Annual report",
             "url": "https://www.publicatiesgasunie.nl/en/archief-2023/2023-annual-report/governance",
-            "snippet": "Governance \u203a 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
+            "snippet": "Governance › 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:58:01+00:00",
@@ -5161,7 +5161,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+            "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
             "source": "https://www.gasunie.nl/contact",
             "source_type": "company_website",
             "confidence": "High",
@@ -5177,7 +5177,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+            "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
             "source": "https://www.gasunie.nl/nl/contact",
             "source_type": "company_website",
             "confidence": "High",
@@ -5265,7 +5265,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar \u2018er komen warmere dagen aan\u2019 - de Stentor.",
+            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar ‘er komen warmere dagen aan’ - de Stentor.",
             "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1htQzJ5SVhSZ2ljV3RVUml6NjVhUEhERUtERXV2LU9zSE5xaFJIMVFSZE56Unc3bDBPa3Q3eDJyM3ExcElPUlR0ZmJ5NHZucXc2MU1HTnVGTVJjZk5HUG1HQkNSYXNNdmdiYTVjYVlNZlh5bk1ScGlXUk9aMFJQLUNaN0lXbGkzTkdsalBRR3ZnMVA4M2RzbnBwRl84d29IbFBSazBQMzRCTlRNd1Vxd1EwSmlUQVhEWTIwS2oyR0VlWUU?oc=5",
             "source_type": "news",
             "published_at": "Tue, 24 Fe",
@@ -5283,7 +5283,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: \u2018Iedereen mag daar duistere bedoelingen in zien\u2019 - De Morgen.",
+            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: ‘Iedereen mag daar duistere bedoelingen in zien’ - De Morgen.",
             "source": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQenh2c1lKZF85MnZUZ2l0UHVtR3Z4aHQ4VnFZYTdhYVgtd1lxMTR2Z01pSGZ6NU0tZnBpS3VPWVBUSVBZTFRoM0MtZmVpUHlWekpHcWVvNGxGVDAxc3ZENFNKZWJ0aGc3QVAxM0hoeXBiamlaRFJ5V3BUb0RSMlNIYXJmc2IzUDFCbUJxbXVxY3h0M1FCa2J2dHBETlRUN2NwZFR3TVYwcjNpR2Y0MUkwWmtFODEwdy1BSDIyNXZFUjlhNzU2ZllRWmpDbWJXOVRWUEYyamN6SmxCWV9mLUNHUURyUGRfQ2JiZ3hVS2J1WEdxUk1TS0p4YkpFd1lqLUU1NEZRVnRWdjFIZw?oc=5",
             "source_type": "news",
             "published_at": "Tue, 18 No",
@@ -5391,7 +5391,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en Belgi\u00eb - MarketScreener Nederland.",
+            "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en België - MarketScreener Nederland.",
             "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObUc0QkY0cnlKWG84dDVEcy1rc056c01UOEpfaGp6X19QT1ZHb1ZudTk3WUNBRUZZdmJrQ0loLWRnVWI0bXQxLW04SEwyZ3VVN3VDN1F0NFFHUUJSUGNhbWtBRkhrX1NXWjFrb25LY3JDaFdZVkZNa2x4MS1rZVNjMWZ6UU5UV0tTTkpzRjgwMlNyLTBrWFdfRHpkU2g1NUQ0eEw1YUhYWHNSV1ByRlJjbU5mOThHdlFYMzJwUWxuNkg4MFdkaUthS0dlR3luVXlN?oc=5",
             "source_type": "news",
             "published_at": "Thu, 09 Ap",
@@ -5903,10 +5903,10 @@
       {
         "section": "premium_source_discovery",
         "row_id": "premium-source-02",
-        "bucket": "1. Significant matters and events \u203a 2025 Annual report",
-        "title": "1. Significant matters and events \u203a 2025 Annual report",
+        "bucket": "1. Significant matters and events › 2025 Annual report",
+        "title": "1. Significant matters and events › 2025 Annual report",
         "url": "https://www.publicatiesgasunie.nl/en/2025/2025-annual-report/additional-notes-to-the-consolidated-financial-statements/1-significant-matters-and-events",
-        "snippet": "1. Significant matters and events \u203a 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
+        "snippet": "1. Significant matters and events › 2025 Annual report Cookie settings ## 1. Significant matters and events ### Development of revenue and result In 2025, our consolidated net revenue (excluding other revenue) was up 23.8% compared to 2024, largely on the back of higher permitted revenues at our regulated business units. If our regulated revenue in any year exceeds the permitted revenues determined by the regulato...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:58:01+00:00",
@@ -5923,7 +5923,7 @@
         "bucket": "Exa",
         "title": "",
         "url": "https://www.gasunie.nl/en/organisation/investor-relations/debt-programmes/$14715/$14716",
-        "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie\u2019s strategy 15 1.5 Gasunie\u2019s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
+        "snippet": "Green Financing Framework November 2023 2 N.V. Nederlandse Gasunie Green Financing Framework 3 Content 1 Introduction5 1.1 About Gasunie5 1.2 Accelerating the energy transition 8 1.3 Investments in sustainable energy infrastructure 11 1.4 Social impact of Gasunie’s strategy 15 1.5 Gasunie’s contribution to the UN SDGs 16 1.6 External ESG Ratings 18 1.7 Rationale for Green Financing Framework 18 2 Green Financing F...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:58:01+00:00",
@@ -5937,10 +5937,10 @@
       {
         "section": "premium_source_discovery",
         "row_id": "premium-source-04",
-        "bucket": "Governance \u203a 2023 Annual report",
-        "title": "Governance \u203a 2023 Annual report",
+        "bucket": "Governance › 2023 Annual report",
+        "title": "Governance › 2023 Annual report",
         "url": "https://www.publicatiesgasunie.nl/en/archief-2023/2023-annual-report/governance",
-        "snippet": "Governance \u203a 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
+        "snippet": "Governance › 2023 Annual report Cookie settings # Governance ## Governance Corporate governance is all about the way that Gasunie is run, about how management is supervised and how we render account. Good corporate governance is a precondition for effectiveness and efficiency in achieving the goals we have set ourselves. It ensures adequate risk management and careful consideration of the interests of all of Gasun...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:58:01+00:00",
@@ -6074,14 +6074,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for N.V. Nederlandse Gasunie.",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "N.V. Nederlandse Gasunie",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -6230,7 +6230,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+        "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
         "source": "https://www.gasunie.nl/contact",
         "source_type": "company_website",
         "confidence": "High",
@@ -6246,7 +6246,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact \u203a Gasunie.",
+        "claim": "N.V. Nederlandse Gasunie has an official website page relevant to company profile: Contact › Gasunie.",
         "source": "https://www.gasunie.nl/nl/contact",
         "source_type": "company_website",
         "confidence": "High",
@@ -6334,7 +6334,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar \u2018er komen warmere dagen aan\u2019 - de Stentor.",
+        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasvoorraad zakt naar een schamele 11,7 procent, maar ‘er komen warmere dagen aan’ - de Stentor.",
         "source": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPb1htQzJ5SVhSZ2ljV3RVUml6NjVhUEhERUtERXV2LU9zSE5xaFJIMVFSZE56Unc3bDBPa3Q3eDJyM3ExcElPUlR0ZmJ5NHZucXc2MU1HTnVGTVJjZk5HUG1HQkNSYXNNdmdiYTVjYVlNZlh5bk1ScGlXUk9aMFJQLUNaN0lXbGkzTkdsalBRR3ZnMVA4M2RzbnBwRl84d29IbFBSazBQMzRCTlRNd1Vxd1EwSmlUQVhEWTIwS2oyR0VlWUU?oc=5",
         "source_type": "news",
         "published_at": "Tue, 24 Fe",
@@ -6352,7 +6352,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: \u2018Iedereen mag daar duistere bedoelingen in zien\u2019 - De Morgen.",
+        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Hij was de architect van de Green Deal, nu is hij toezichthouder bij de Nederlandse Gasunie: ‘Iedereen mag daar duistere bedoelingen in zien’ - De Morgen.",
         "source": "https://news.google.com/rss/articles/CBMiigJBVV95cUxQenh2c1lKZF85MnZUZ2l0UHVtR3Z4aHQ4VnFZYTdhYVgtd1lxMTR2Z01pSGZ6NU0tZnBpS3VPWVBUSVBZTFRoM0MtZmVpUHlWekpHcWVvNGxGVDAxc3ZENFNKZWJ0aGc3QVAxM0hoeXBiamlaRFJ5V3BUb0RSMlNIYXJmc2IzUDFCbUJxbXVxY3h0M1FCa2J2dHBETlRUN2NwZFR3TVYwcjNpR2Y0MUkwWmtFODEwdy1BSDIyNXZFUjlhNzU2ZllRWmpDbWJXOVRWUEYyamN6SmxCWV9mLUNHUURyUGRfQ2JiZ3hVS2J1WEdxUk1TS0p4YkpFd1lqLUU1NEZRVnRWdjFIZw?oc=5",
         "source_type": "news",
         "published_at": "Tue, 18 No",
@@ -6460,7 +6460,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en Belgi\u00eb - MarketScreener Nederland.",
+        "claim": "News/reference signal found for N.V. Nederlandse Gasunie: Gasunie en Fluxys ontwikkelen waterstofverbinding tussen Nederland en België - MarketScreener Nederland.",
         "source": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxObUc0QkY0cnlKWG84dDVEcy1rc056c01UOEpfaGp6X19QT1ZHb1ZudTk3WUNBRUZZdmJrQ0loLWRnVWI0bXQxLW04SEwyZ3VVN3VDN1F0NFFHUUJSUGNhbWtBRkhrX1NXWjFrb25LY3JDaFdZVkZNa2x4MS1rZVNjMWZ6UU5UV0tTTkpzRjgwMlNyLTBrWFdfRHpkU2g1NUQ0eEw1YUhYWHNSV1ByRlJjbU5mOThHdlFYMzJwUWxuNkg4MFdkaUthS0dlR3luVXlN?oc=5",
         "source_type": "news",
         "published_at": "Thu, 09 Ap",
@@ -6705,15 +6705,15 @@
       {
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
-        "bucket": "No adverse media signal",
+        "bucket": "Source-limited adverse-media zero candidates",
         "claim": "No target-relevant adverse-media signal was found for N.V. Nederlandse Gasunie in the checked sources.",
         "source": "DueSight adverse-media source ladder (public news + legal metadata)",
         "confidence": "Medium",
-        "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+        "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
         "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
         "target": "N.V. Nederlandse Gasunie",
         "claim_status": "INCOMPLETE_SOURCES",
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "severity_score": 0,
         "total_articles": 0,
         "categories_found": [],

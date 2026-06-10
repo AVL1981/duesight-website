@@ -2,7 +2,7 @@
   "schema_version": "duesight.context_strength.v1",
   "run_id": "certified-samples-rest-20260526-235449-adyen",
   "target": "Adyen N.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:26+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -13,7 +13,7 @@
       "sources": [
         "news.google.com",
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery"
       ],
@@ -49,7 +49,7 @@
       "strength": "Laag / discovery",
       "evidence_rows": 2,
       "sources": [
-        "linkedin_public",
+        "public professional source route",
         "linkedin.com"
       ],
       "safe_rows": 0,
@@ -61,7 +61,7 @@
       "strength": "Geblokkeerd voor officiële finance-claim",
       "evidence_rows": 3,
       "sources": [
-        "linkedin_public",
+        "public professional source route",
         "DueSight Financial Bridge validation"
       ],
       "safe_rows": 0,
@@ -74,9 +74,9 @@
       "evidence_rows": 6,
       "sources": [
         "sanctions screening route",
-        "Exa",
+        "provider discovery route",
         "DueSight manual golden control",
-        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
       ],
       "safe_rows": 1,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."

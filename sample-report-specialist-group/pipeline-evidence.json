@@ -83,8 +83,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'The Specialist Group B.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'The Specialist Group B.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -107,7 +107,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -182,7 +182,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "wikidata": {
@@ -227,7 +227,7 @@
             "cost_eur": 0.0,
             "time_s": 0.59
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -246,7 +246,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -258,7 +258,7 @@
         "dnb": {
           "dnb_status": "NIET GEVONDEN",
           "dnb_registered": false,
-          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financi\u00eble instellingen.",
+          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financiële instellingen.",
           "dnb_source": "https://www.dnb.nl/openbaar-register/"
         },
         "summary": "Niet gevonden in 2 register(s)",
@@ -268,7 +268,7 @@
         "company": "The Specialist Group B.V.",
         "total_articles": 0,
         "severity_score": 0,
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "claim_status": "NO_ADVERSE_SIGNAL_FOUND",
         "source_status": {
           "gdelt": {
@@ -710,7 +710,7 @@
                       },
                       {
                         "key": "contact_name",
-                        "value": "Universit\u00e4tsbibliothek W\u00fcrzburg"
+                        "value": "Universitätsbibliothek Würzburg"
                       },
                       {
                         "key": "contributorID",
@@ -722,7 +722,7 @@
                       },
                       {
                         "key": "contributor_name",
-                        "value": "M\u00fcller, Tobias"
+                        "value": "Müller, Tobias"
                       },
                       {
                         "key": "creator_name",
@@ -750,7 +750,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Universit\u00e4tsbibliothek W\u00fcrzburg"
+                        "value": "Universitätsbibliothek Würzburg"
                       },
                       {
                         "key": "publisher_uri",
@@ -779,7 +779,7 @@
                     ]
                   },
                   {
-                    "title": "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
+                    "title": "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
                     "name": "supporting-data-for-the-manuscript-birch-betula-pubescens-ehrh-encroachment-alters-contribution",
                     "publisher": "OpenAgrar",
                     "license": "",
@@ -831,7 +831,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Bundesministerium f\u00fcr Landwirtschaft, Ern\u00e4hrung und Heimat"
+                        "value": "Bundesministerium für Landwirtschaft, Ernährung und Heimat"
                       },
                       {
                         "key": "publisher_uri",
@@ -860,7 +860,7 @@
                     ]
                   },
                   {
-                    "title": "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)",
+                    "title": "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)",
                     "name": "inspire-the-general-geological-map-of-the-federal-republic-of-germany-1-250000-guk250",
                     "publisher": "GDI-DE",
                     "license": "",
@@ -892,7 +892,7 @@
                       },
                       {
                         "key": "contact_name",
-                        "value": "Bundesanstalt f\u00fcr Geowissenschaften und Rohstoffe (BGR)"
+                        "value": "Bundesanstalt für Geowissenschaften und Rohstoffe (BGR)"
                       },
                       {
                         "key": "contact_street",
@@ -944,7 +944,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Bundesanstalt f\u00fcr Geowissenschaften und Rohstoffe (BGR)"
+                        "value": "Bundesanstalt für Geowissenschaften und Rohstoffe (BGR)"
                       },
                       {
                         "key": "spatial",
@@ -997,7 +997,7 @@
                       },
                       {
                         "key": "contact_name",
-                        "value": "Universit\u00e4tsbibliothek W\u00fcrzburg"
+                        "value": "Universitätsbibliothek Würzburg"
                       },
                       {
                         "key": "contributorID",
@@ -1037,7 +1037,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Universit\u00e4tsbibliothek W\u00fcrzburg"
+                        "value": "Universitätsbibliothek Würzburg"
                       },
                       {
                         "key": "publisher_uri",
@@ -1066,7 +1066,7 @@
                     ]
                   },
                   {
-                    "title": "Dataset from Merz B, Frommherz L, Rist MJ, Kulling SE, Bub A, Watzl B. \"Dietary Pattern and Plasma BCAA-Variations in Healthy Men and Women \u2013 Results from the KarMeN Study\"",
+                    "title": "Dataset from Merz B, Frommherz L, Rist MJ, Kulling SE, Bub A, Watzl B. \"Dietary Pattern and Plasma BCAA-Variations in Healthy Men and Women – Results from the KarMeN Study\"",
                     "name": "dataset-from-merz-b-frommherz-l-rist-mj-kulling-se-bub-a-watzl-b-dietary-pattern-and-plasma-bca",
                     "publisher": "OpenAgrar",
                     "license": "",
@@ -1118,7 +1118,7 @@
                       },
                       {
                         "key": "publisher_name",
-                        "value": "Bundesministerium f\u00fcr Landwirtschaft, Ern\u00e4hrung und Heimat"
+                        "value": "Bundesministerium für Landwirtschaft, Ernährung und Heimat"
                       },
                       {
                         "key": "publisher_uri",
@@ -1166,8 +1166,8 @@
                     "result_count": 5,
                     "sample_titles": [
                       "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-                      "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-                      "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+                      "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+                      "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
                     ]
                   }
                 }
@@ -1509,8 +1509,8 @@
               "result_count": 5,
               "sample_titles": [
                 "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-                "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-                "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+                "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+                "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
               ]
             }
           },
@@ -1731,28 +1731,28 @@
             "url": "https://www.acm.nl/nl/publicaties/oaktree-capital-group-mag-uitsluitende-zeggenschap-verkrijgen-over-specialist-group-international-holding-concentratiebesluit",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Oaktree Capital Group mag uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding (concentratiebesluit) | ACM\n\nAcm.nl gebruikt cookies om het gebruik van de website te analyseren en het gebruikersgemak te verbeteren. Lees meer over cookies\n\nSluiten\n\n# Oaktree Capital Group mag uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding (concentratiebesluit)\n\nOaktree Capital Group LLC mag via OCM Luxembourg POW VI TSG S.\u00e0.r.L. uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding B.V. Dat heeft de Autoriteit Consu"
+            "snippet": "Oaktree Capital Group mag uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding (concentratiebesluit) | ACM\n\nAcm.nl gebruikt cookies om het gebruik van de website te analyseren en het gebruikersgemak te verbeteren. Lees meer over cookies\n\nSluiten\n\n# Oaktree Capital Group mag uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding (concentratiebesluit)\n\nOaktree Capital Group LLC mag via OCM Luxembourg POW VI TSG S.à.r.L. uitsluitende zeggenschap verkrijgen over The Specialist Group International Holding B.V. Dat heeft de Autoriteit Consu"
           },
           {
             "title": "The Specialist Group continues to grow - The Specialist Group",
             "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/",
             "published_date": "2023-04-03T09:46:04.000Z",
             "source": "Exa",
-            "snippet": "The Specialist Group continues to grow - The Specialist Group\n\n## The Specialist Group continues to grow\n\nSil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader\u2019s position\n\nOn March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, provides technical specialists in sectors such as energy, chemicals, infrastructure, renewable energy and life sciences. TSG is owned by funds managed by Oaktree Capital Management, a"
+            "snippet": "The Specialist Group continues to grow - The Specialist Group\n\n## The Specialist Group continues to grow\n\nSil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader’s position\n\nOn March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, provides technical specialists in sectors such as energy, chemicals, infrastructure, renewable energy and life sciences. TSG is owned by funds managed by Oaktree Capital Management, a"
           },
           {
             "title": "The Specialist Group - Governance",
             "url": "https://thespecialistgroup.com/governance/",
             "published_date": "2023-05-02T08:47:18.000Z",
             "source": "Exa",
-            "snippet": "The Specialist Group - Governance \n\nOur responsibility\n\n# Guarding good governance\n\nThe Specialist Group is dedicated to a variety of requirements for corporate governance and best\u2013practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate\u2013governance requirements applicable in the countries in which we operate.\n\n \n\n## Sustainability Report\n\nThe Specialist Group is committed to generating long-term value for our clients, investors, and team. We are pleased to share our inaugural "
+            "snippet": "The Specialist Group - Governance \n\nOur responsibility\n\n# Guarding good governance\n\nThe Specialist Group is dedicated to a variety of requirements for corporate governance and best–practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate–governance requirements applicable in the countries in which we operate.\n\n \n\n## Sustainability Report\n\nThe Specialist Group is committed to generating long-term value for our clients, investors, and team. We are pleased to share our inaugural "
           },
           {
             "title": "The Specialist Group to be acquired by Oaktree and TSG Management",
             "url": "https://persportaal.anp.nl/artikel/48e197c0-316d-4a09-a35d-bb2c74a3faca/the-specialist-group-to-be-acquired-by-oaktree-and-tsg-management",
             "published_date": "2022-06-08T08:00:00.000Z",
             "source": "Exa",
-            "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management\n\nTSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management\n\n8 June 2022 \u2013 Moerdijk \u2013 The Specialist Group (\u201cTSG\u201d), Parcom and funds managed by Oaktree Capital Management, L.P. (\u201cOaktree\u201d) today announced that TSG founder Francois Claeijs and Parcom have reached an agreement to sell their stake in TSG to Oaktree and TSG management.\n\nHeadquartered in Moerdijk, Netherlands, TSG is a leading staffing provider of technical engineering speciali"
+            "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management\n\nTSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management\n\n8 June 2022 – Moerdijk – The Specialist Group (“TSG”), Parcom and funds managed by Oaktree Capital Management, L.P. (“Oaktree”) today announced that TSG founder Francois Claeijs and Parcom have reached an agreement to sell their stake in TSG to Oaktree and TSG management.\n\nHeadquartered in Moerdijk, Netherlands, TSG is a leading staffing provider of technical engineering speciali"
           },
           {
             "title": "The Specialist Group International B.V. | Company.info",
@@ -1777,7 +1777,7 @@
         ],
         "synthesis": {
           "status": "completed_limited",
-          "raw_text": "```json { \"status\": \"ANALYZED\", \"target\": \"The Specialist Group B.V.\", \"executive_summary\": { \"risk_verdict\": \"LOW-MEDIUM (WITH CAVEATS)\", \"key_findings\": [ { \"category\": \"LEGAL/REGULATORY\", \"status\": \"CLEAR (WITH LIMITATIONS)\", \"details\": { \"no_sanctions\": true, \"no_insolvency\": true, \"regulatory_exposure\": { \"DNB/NL\": \"NOT_FOUND\", \"AFM/NL\": \"NOT_FOUND\", \"risk\": \"MEDIUM (NO-HIT \u2260 CLEARANCE)\" } } }, { \"category\": \"REPUTATION\", \"status\": \"CLEAN\", \"details\": { \"adverse_media\": \"NONE_FOUND\", \"litigation\": \"NONE_FOUND\", \"sources\": [\"GDELT\", \"Google News RSS\", \"Rechtspraak.nl\"] } }, { \"category\": \"OWNERSHIP/STRUCTURE\", \"status\": \"UPDATED (2023)\", \"details\": { \"ownership_change\": { \"acquirer\": \"Oaktree Capital Group\", \"action\": \"EXCLUSIVE CONTROL (CONCENTRATION DECISION)\", \"source\": \"ACM (Dutch Competition Authority)\", \"date\": \"2023 (live provider call)\" } } }, { \"category\": \"FINANCIAL/OPERATIONAL\", \"status\": \"UNVERIFIED\", \"details\": { \"financials\": \"NO DIRECT ACCESS\", \"group_structure\": { \"parent\": \"The Specialist Group International Holding B.V.\", \"note\": \"LEGAL ENTITY MATCH CONFIRMED (LEI/LEGAL REGISTRY RECOMMENDED)\" } } }, { \"category\": \"CYBER/TECHNOLOGY\", \"status\": \"N/A\", \"details\": { \"exposure\": \"NO SIGNALS\", \"note\": \"NO SPECIFIC SCANNING PERFORMED\" } } ], \"critical_gaps\": [ { \"type\": \"DATA_ACCESS\", \"details\": { \"missing\": [\"FINANCIAL STATEMENTS (2022-2024)\", \"GROUP STRUCTURE DIAGRAM\"], \"recommendation\": \"REQUEST FROM SELLER OR SOURCE: BLOOMBERG/REFINITIV/ORBIS\" } }, { \"type\": \"REGULATORY\", \"details\": { \"missing\": [\"SECTOR-SPECIFIC LICENSES (E.G., SECURITY SERVICES, PRIVATE INVESTIGATION)\"], \"recommendation\": \"CONFIRM WITH DUTCH CHAMBER OF COMMERCE (KVK)\" } }, { \"type\": \"OWNERSHIP\", \"details\": { \"missing\": [\"FULL SHAREHOLDER REGISTER (POST-OAKTREE TRANSACTION)\"], \"recommendation\": \"VERIFY WITH NOTARISSED DOCUMENTS\" } } ], \"action_required\": [ { \"priority\": \"HIGH\", \"task\": \"CONFIRM LEGAL ENTITY MATCH WITH KVK (DUTCH CHAMBER OF COMMERCE)\", \"deadline\": \"PRE-CLOSING\" }, { \"priority\": \"HIGH\", \"task\": \"OBTAIN FINANCIALS (AUDITED, 2022-2024)\", \"source\": \"SELLER OR ACCOUNTING FIRM\" }, { \"priority\": \"MEDIUM\", \"task\": \"VERIFY OAKTREE CAPITAL GROUP\u2019S CONTROL ME"
+          "raw_text": "```json { \"status\": \"ANALYZED\", \"target\": \"The Specialist Group B.V.\", \"executive_summary\": { \"risk_verdict\": \"LOW-MEDIUM (WITH CAVEATS)\", \"key_findings\": [ { \"category\": \"LEGAL/REGULATORY\", \"status\": \"CLEAR (WITH LIMITATIONS)\", \"details\": { \"no_sanctions\": true, \"no_insolvency\": true, \"regulatory_exposure\": { \"DNB/NL\": \"NOT_FOUND\", \"AFM/NL\": \"NOT_FOUND\", \"risk\": \"MEDIUM (NO-HIT ≠ CLEARANCE)\" } } }, { \"category\": \"REPUTATION\", \"status\": \"CLEAN\", \"details\": { \"adverse_media\": \"NONE_FOUND\", \"litigation\": \"NONE_FOUND\", \"sources\": [\"GDELT\", \"Google News RSS\", \"Rechtspraak.nl\"] } }, { \"category\": \"OWNERSHIP/STRUCTURE\", \"status\": \"UPDATED (2023)\", \"details\": { \"ownership_change\": { \"acquirer\": \"Oaktree Capital Group\", \"action\": \"EXCLUSIVE CONTROL (CONCENTRATION DECISION)\", \"source\": \"ACM (Dutch Competition Authority)\", \"date\": \"2023 (live provider call)\" } } }, { \"category\": \"FINANCIAL/OPERATIONAL\", \"status\": \"UNVERIFIED\", \"details\": { \"financials\": \"NO DIRECT ACCESS\", \"group_structure\": { \"parent\": \"The Specialist Group International Holding B.V.\", \"note\": \"LEGAL ENTITY MATCH CONFIRMED (LEI/LEGAL REGISTRY RECOMMENDED)\" } } }, { \"category\": \"CYBER/TECHNOLOGY\", \"status\": \"N/A\", \"details\": { \"exposure\": \"NO SIGNALS\", \"note\": \"NO SPECIFIC SCANNING PERFORMED\" } } ], \"critical_gaps\": [ { \"type\": \"DATA_ACCESS\", \"details\": { \"missing\": [\"FINANCIAL STATEMENTS (2022-2024)\", \"GROUP STRUCTURE DIAGRAM\"], \"recommendation\": \"REQUEST FROM SELLER OR SOURCE: BLOOMBERG/REFINITIV/ORBIS\" } }, { \"type\": \"REGULATORY\", \"details\": { \"missing\": [\"SECTOR-SPECIFIC LICENSES (E.G., SECURITY SERVICES, PRIVATE INVESTIGATION)\"], \"recommendation\": \"CONFIRM WITH DUTCH CHAMBER OF COMMERCE (KVK)\" } }, { \"type\": \"OWNERSHIP\", \"details\": { \"missing\": [\"FULL SHAREHOLDER REGISTER (POST-OAKTREE TRANSACTION)\"], \"recommendation\": \"VERIFY WITH NOTARISSED DOCUMENTS\" } } ], \"action_required\": [ { \"priority\": \"HIGH\", \"task\": \"CONFIRM LEGAL ENTITY MATCH WITH KVK (DUTCH CHAMBER OF COMMERCE)\", \"deadline\": \"PRE-CLOSING\" }, { \"priority\": \"HIGH\", \"task\": \"OBTAIN FINANCIALS (AUDITED, 2022-2024)\", \"source\": \"SELLER OR ACCOUNTING FIRM\" }, { \"priority\": \"MEDIUM\", \"task\": \"VERIFY OAKTREE CAPITAL GROUP’S CONTROL ME"
         },
         "limitations": [
           "Guarded synthesis only; not an evidence source and not a production due-diligence opinion.",
@@ -1853,25 +1853,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for The Specialist Group B.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for The Specialist Group B.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "The Specialist Group B.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2054,21 +2054,21 @@
           "target_claim_safe": false,
           "source": "DueSight Adverse Media Scanner",
           "buckets": {
-            "No adverse media signal": 1
+            "Source-limited adverse-media zero candidates": 1
           },
           "rows": [
             {
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
-              "bucket": "No adverse media signal",
+              "bucket": "Source-limited adverse-media zero candidates",
               "claim": "No target-relevant adverse-media signal was found for The Specialist Group B.V. in the checked sources.",
               "source": "GDELT / Google News RSS / Rechtspraak metadata (gdelt:PASS, google_news_rss:PASS, rechtspraak_nl:PASS)",
               "confidence": "Medium",
-              "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+              "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
               "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
               "target": "The Specialist Group B.V.",
               "claim_status": "NO_ADVERSE_SIGNAL_FOUND",
-              "risk_verdict": "CLEAN",
+              "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
               "severity_score": 0,
               "total_articles": 0,
               "categories_found": [],
@@ -2124,8 +2124,8 @@
                 "result_count": 5,
                 "sample_titles": [
                   "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-                  "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-                  "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+                  "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+                  "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
                 ]
               },
               "section": "public_acquisition",
@@ -2389,7 +2389,7 @@
               "bucket": "The Specialist Group continues to grow - The Specialist Group",
               "title": "The Specialist Group continues to grow - The Specialist Group",
               "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/",
-              "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader\u2019s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
+              "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader’s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:03:11+00:00",
@@ -2406,7 +2406,7 @@
               "bucket": "The Specialist Group - Governance",
               "title": "The Specialist Group - Governance",
               "url": "https://thespecialistgroup.com/governance/",
-              "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best\u2013practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate\u2013governance requirements applicable in the countries in which we...",
+              "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best–practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate–governance requirements applicable in the countries in which we...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:03:11+00:00",
@@ -2423,7 +2423,7 @@
               "bucket": "The Specialist Group to be acquired by Oaktree and TSG Management",
               "title": "The Specialist Group to be acquired by Oaktree and TSG Management",
               "url": "https://persportaal.anp.nl/artikel/48e197c0-316d-4a09-a35d-bb2c74a3faca/the-specialist-group-to-be-acquired-by-oaktree-and-tsg-management",
-              "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 \u2013 Moerdijk \u2013 The Specialist Group (\u201cTSG\u201d), Parcom and funds managed by Oaktree Capital Management, L.P. (\u201cOaktree\u201d) today announced that TSG founder Francois Claeijs and Parcom have reached...",
+              "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 – Moerdijk – The Specialist Group (“TSG”), Parcom and funds managed by Oaktree Capital Management, L.P. (“Oaktree”) today announced that TSG founder Francois Claeijs and Parcom have reached...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T22:03:11+00:00",
@@ -2929,8 +2929,8 @@
             "result_count": 5,
             "sample_titles": [
               "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-              "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-              "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+              "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+              "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
             ]
           },
           "section": "public_acquisition",
@@ -3180,7 +3180,7 @@
           "bucket": "The Specialist Group continues to grow - The Specialist Group",
           "title": "The Specialist Group continues to grow - The Specialist Group",
           "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/",
-          "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader\u2019s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
+          "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader’s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:03:11+00:00",
@@ -3197,7 +3197,7 @@
           "bucket": "The Specialist Group - Governance",
           "title": "The Specialist Group - Governance",
           "url": "https://thespecialistgroup.com/governance/",
-          "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best\u2013practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate\u2013governance requirements applicable in the countries in which we...",
+          "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best–practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate–governance requirements applicable in the countries in which we...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:03:11+00:00",
@@ -3214,7 +3214,7 @@
           "bucket": "The Specialist Group to be acquired by Oaktree and TSG Management",
           "title": "The Specialist Group to be acquired by Oaktree and TSG Management",
           "url": "https://persportaal.anp.nl/artikel/48e197c0-316d-4a09-a35d-bb2c74a3faca/the-specialist-group-to-be-acquired-by-oaktree-and-tsg-management",
-          "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 \u2013 Moerdijk \u2013 The Specialist Group (\u201cTSG\u201d), Parcom and funds managed by Oaktree Capital Management, L.P. (\u201cOaktree\u201d) today announced that TSG founder Francois Claeijs and Parcom have reached...",
+          "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 – Moerdijk – The Specialist Group (“TSG”), Parcom and funds managed by Oaktree Capital Management, L.P. (“Oaktree”) today announced that TSG founder Francois Claeijs and Parcom have reached...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T22:03:11+00:00",
@@ -3269,14 +3269,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for The Specialist Group B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "The Specialist Group B.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -3816,15 +3816,15 @@
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for The Specialist Group B.V. in the checked sources.",
           "source": "GDELT / Google News RSS / Rechtspraak metadata (gdelt:PASS, google_news_rss:PASS, rechtspraak_nl:PASS)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "The Specialist Group B.V.",
           "claim_status": "NO_ADVERSE_SIGNAL_FOUND",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -3934,25 +3934,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for The Specialist Group B.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for The Specialist Group B.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "The Specialist Group B.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4135,21 +4135,21 @@
         "target_claim_safe": false,
         "source": "DueSight Adverse Media Scanner",
         "buckets": {
-          "No adverse media signal": 1
+          "Source-limited adverse-media zero candidates": 1
         },
         "rows": [
           {
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
-            "bucket": "No adverse media signal",
+            "bucket": "Source-limited adverse-media zero candidates",
             "claim": "No target-relevant adverse-media signal was found for The Specialist Group B.V. in the checked sources.",
             "source": "GDELT / Google News RSS / Rechtspraak metadata (gdelt:PASS, google_news_rss:PASS, rechtspraak_nl:PASS)",
             "confidence": "Medium",
-            "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+            "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
             "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
             "target": "The Specialist Group B.V.",
             "claim_status": "NO_ADVERSE_SIGNAL_FOUND",
-            "risk_verdict": "CLEAN",
+            "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
             "severity_score": 0,
             "total_articles": 0,
             "categories_found": [],
@@ -4205,8 +4205,8 @@
               "result_count": 5,
               "sample_titles": [
                 "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-                "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-                "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+                "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+                "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
               ]
             },
             "section": "public_acquisition",
@@ -4470,7 +4470,7 @@
             "bucket": "The Specialist Group continues to grow - The Specialist Group",
             "title": "The Specialist Group continues to grow - The Specialist Group",
             "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/",
-            "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader\u2019s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
+            "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader’s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:03:11+00:00",
@@ -4487,7 +4487,7 @@
             "bucket": "The Specialist Group - Governance",
             "title": "The Specialist Group - Governance",
             "url": "https://thespecialistgroup.com/governance/",
-            "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best\u2013practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate\u2013governance requirements applicable in the countries in which we...",
+            "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best–practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate–governance requirements applicable in the countries in which we...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:03:11+00:00",
@@ -4504,7 +4504,7 @@
             "bucket": "The Specialist Group to be acquired by Oaktree and TSG Management",
             "title": "The Specialist Group to be acquired by Oaktree and TSG Management",
             "url": "https://persportaal.anp.nl/artikel/48e197c0-316d-4a09-a35d-bb2c74a3faca/the-specialist-group-to-be-acquired-by-oaktree-and-tsg-management",
-            "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 \u2013 Moerdijk \u2013 The Specialist Group (\u201cTSG\u201d), Parcom and funds managed by Oaktree Capital Management, L.P. (\u201cOaktree\u201d) today announced that TSG founder Francois Claeijs and Parcom have reached...",
+            "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 – Moerdijk – The Specialist Group (“TSG”), Parcom and funds managed by Oaktree Capital Management, L.P. (“Oaktree”) today announced that TSG founder Francois Claeijs and Parcom have reached...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T22:03:11+00:00",
@@ -5010,8 +5010,8 @@
           "result_count": 5,
           "sample_titles": [
             "Phase diagram of the J-Jd Heisenberg Model on the Maple-Leaf Lattice: Neural networks and density matrix renormalization group",
-            "Supporting data for the manuscript \u2018Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog\u2019",
-            "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (G\u00dcK250)"
+            "Supporting data for the manuscript ‘Birch (Betula pubescens Ehrh.) encroachment alters contribution of plant functional groups to ecosystem carbon cycling in a rewetted bog’",
+            "INSPIRE: The General Geological Map of the Federal Republic of Germany 1:250,000 (GÜK250)"
           ]
         },
         "section": "public_acquisition",
@@ -5261,7 +5261,7 @@
         "bucket": "The Specialist Group continues to grow - The Specialist Group",
         "title": "The Specialist Group continues to grow - The Specialist Group",
         "url": "https://thespecialistgroup.com/news/the-specialist-group-continues-to-grow/",
-        "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader\u2019s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
+        "snippet": "The Specialist Group continues to grow - The Specialist Group ## The Specialist Group continues to grow Sil Hoeve, Chief Executive Officer, about the acquisition of Litecad by technical secondment provider The Specialist Group that further strengthens the market leader’s position On March 1, The Specialist Group (TSG) acquired industry peer Litecad. With Sil Hoeve as Chief Executive Officer, TSG, like Litecad, pro...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:03:11+00:00",
@@ -5278,7 +5278,7 @@
         "bucket": "The Specialist Group - Governance",
         "title": "The Specialist Group - Governance",
         "url": "https://thespecialistgroup.com/governance/",
-        "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best\u2013practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate\u2013governance requirements applicable in the countries in which we...",
+        "snippet": "The Specialist Group - Governance Our responsibility # Guarding good governance The Specialist Group is dedicated to a variety of requirements for corporate governance and best–practice codes. Everything we do is done by internationally accepted principles of good governance and best practice. At the same time, we ensure compliance with the corporate–governance requirements applicable in the countries in which we...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:03:11+00:00",
@@ -5295,7 +5295,7 @@
         "bucket": "The Specialist Group to be acquired by Oaktree and TSG Management",
         "title": "The Specialist Group to be acquired by Oaktree and TSG Management",
         "url": "https://persportaal.anp.nl/artikel/48e197c0-316d-4a09-a35d-bb2c74a3faca/the-specialist-group-to-be-acquired-by-oaktree-and-tsg-management",
-        "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 \u2013 Moerdijk \u2013 The Specialist Group (\u201cTSG\u201d), Parcom and funds managed by Oaktree Capital Management, L.P. (\u201cOaktree\u201d) today announced that TSG founder Francois Claeijs and Parcom have reached...",
+        "snippet": "The Specialist Group to be acquired by Oaktree and TSG Management TSG, the leading staffing provider of technical specialists for the energy transition in Western Europe, to be acquired by Oaktree and TSG Management 8 June 2022 – Moerdijk – The Specialist Group (“TSG”), Parcom and funds managed by Oaktree Capital Management, L.P. (“Oaktree”) today announced that TSG founder Francois Claeijs and Parcom have reached...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T22:03:11+00:00",
@@ -5350,14 +5350,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for The Specialist Group B.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "The Specialist Group B.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -5897,15 +5897,15 @@
       {
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
-        "bucket": "No adverse media signal",
+        "bucket": "Source-limited adverse-media zero candidates",
         "claim": "No target-relevant adverse-media signal was found for The Specialist Group B.V. in the checked sources.",
         "source": "GDELT / Google News RSS / Rechtspraak metadata (gdelt:PASS, google_news_rss:PASS, rechtspraak_nl:PASS)",
         "confidence": "Medium",
-        "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+        "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
         "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
         "target": "The Specialist Group B.V.",
         "claim_status": "NO_ADVERSE_SIGNAL_FOUND",
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "severity_score": 0,
         "total_articles": 0,
         "categories_found": [],

@@ -9,9 +9,7 @@
     "country": "NL",
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
-      "GLEIF",
-      "Public Website",
-      "GLEIF LEI Register"
+      "Public Website"
     ],
     "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
   },
@@ -63,14 +61,14 @@
     ],
     "source_labels": [
       "open identity reference",
-      "GLEIF",
+      "international entity register route",
       "Public Website",
       "archive discovery",
-      "Exa",
-      "Cloudflare DoH",
+      "provider discovery route",
+      "third-party cloud edge DoH",
       "sanctions screening route",
       "finance source route",
-      "GLEIF LEI Register",
+      "international entity register route LEI Register",
       "ownership review route",
       "news.google.com",
       "audit artifact",
@@ -106,5 +104,5 @@
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
   "run_id": "certified-samples-rest-20260526-235449-specialist-group",
-  "updated_at": "2026-05-29T10:57:05+00:00"
+  "updated_at": "2026-06-08T13:34:27+00:00"
 }

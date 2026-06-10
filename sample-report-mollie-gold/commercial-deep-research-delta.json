@@ -9,10 +9,8 @@
     "country": "NL",
     "claim_level": "configured and source-route context; official extract required for final reliance",
     "sources": [
-      "GLEIF",
       "Public Website",
-      "linkedin_public",
-      "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2",
+      "public professional source route",
       "DueSight adverse-media source ladder (public news + legal metadata)"
     ],
     "official_upgrade_required": "Current registry extract or licensed provider dossier with source hash."
@@ -72,15 +70,15 @@
     ],
     "source_labels": [
       "open identity reference",
-      "GLEIF",
+      "international entity register route",
       "Public Website",
       "archive discovery",
-      "Exa",
-      "Shodan InternetDB + RDAP",
+      "provider discovery route",
+      "infrastructure exposure route + network registry route",
       "sanctions screening route",
-      "linkedin_public",
+      "public professional source route",
       "DueSight manual golden control",
-      "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2",
+      "DueSight Algorithmic UBO Proxy / official register route, international entity register...",
       "mollie.com",
       "news.google.com",
       "audit artifact",
@@ -116,5 +114,5 @@
     "Robots.txt, ToS and paywalls must be respected; no bypass language is allowed."
   ],
   "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
-  "updated_at": "2026-05-29T10:57:04+00:00"
+  "updated_at": "2026-06-08T13:34:27+00:00"
 }

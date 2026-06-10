@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DueSight Sovereign Intelligence Hub — {{COMPANY_NAME}}</title>
+    
+    <!-- Core Styling -->
+    <style>
+        :root {
+            --ds-bg: #0a0e17;
+            --ds-surface: #131b2a;
+            --ds-surface-hover: #1c2638;
+            --ds-border: rgba(255,255,255,0.08);
+            --ds-text: #f0f2f5;
+            --ds-muted: #8b9bb4;
+            --ds-accent: #6d28d9;
+            --ds-accent-glow: rgba(109, 40, 217, 0.4);
+            --ds-green: #10b981;
+            --ds-red: #ef4444;
+            --ds-amber: #f59e0b;
+            --ds-cyan: #06b6d4;
+            
+            --hub-sidebar-w: 280px;
+            --hub-trust-w: 320px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--ds-bg);
+            color: var(--ds-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            display: flex;
+        }
+
+        /* typography */
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; color: #fff; line-height: 1.2; }
+        h1 { font-size: 2.5rem; margin-bottom: 0.5em; }
+        h2 { font-size: 1.8rem; margin-top: 2em; margin-bottom: 0.8em; padding-bottom: 0.5em; border-bottom: 1px solid var(--ds-border); scroll-margin-top: 100px; }
+        h3 { font-size: 1.2rem; margin-top: 1.5em; margin-bottom: 0.5em; color: var(--ds-cyan); }
+        p { margin-bottom: 1em; font-size: 1.05rem; color: #cbd5e1; }
+        
+        /* 1. Loader Animatie */
+        #loader-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: var(--ds-bg); z-index: 9999;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease;
+        }
+        .scan-line {
+            width: 300px; height: 2px; background: var(--ds-border); position: relative; overflow: hidden; margin-bottom: 20px;
+        }
+        .scan-line::after {
+            content: ''; position: absolute; left: -50%; width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, var(--ds-accent), transparent);
+            animation: scanline 1.5s infinite linear;
+        }
+        @keyframes scanline { 0% { left: -50%; } 100% { left: 100%; } }
+        .loading-text { font-family: monospace; color: var(--ds-cyan); letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem;}
+        
+        /* 2. Main Layout */
+        #hub-container {
+            display: flex; width: 100%; max-width: 1800px; margin: 0 auto;
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+
+        /* 3. TOC Sidebar (Left) */
+        .hub-toc {
+            width: var(--hub-sidebar-w);
+            height: 100vh;
+            position: sticky; top: 0;
+            padding: 40px 30px;
+            background: rgba(10, 14, 23, 0.8);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--ds-border);
+            overflow-y: auto;
+        }
+        .brand-logo {
+            font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 40px; display: flex; align-items: center; gap: 10px;
+        }
+        .brand-logo::before {
+            content: ''; display: inline-block; width: 12px; height: 12px; background: var(--ds-accent); border-radius: 50%; box-shadow: 0 0 10px var(--ds-accent-glow);
+        }
+        .toc-menu { list-style: none; }
+        .toc-menu li { margin-bottom: 12px; }
+        .toc-menu a {
+            color: var(--ds-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            transition: all 0.2s; display: block; padding-left: 12px; border-left: 2px solid transparent;
+        }
+        .toc-menu a:hover, .toc-menu a.active {
+            color: var(--ds-cyan); border-left-color: var(--ds-cyan);
+        }
+
+        /* 4. Main Content (Center) */
+        .hub-content {
+            flex: 1; min-width: 0; padding: 60px 80px;
+        }
+        .doc-header { margin-bottom: 60px; }
+        .badge {
+            display: inline-block; padding: 4px 10px; background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3);
+            color: var(--ds-cyan); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; margin-bottom: 15px;
+        }
+
+        /* Data Tables & Boxes (from old print style, adapted) */
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: var(--ds-surface); border-radius: 8px; overflow: hidden; border: 1px solid var(--ds-border); }
+        th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--ds-border); }
+        th { background: rgba(0,0,0,0.3); color: var(--ds-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        td { font-size: 0.95rem; }
+        
+        .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .score-card { background: var(--ds-surface); border: 1px solid var(--ds-border); padding: 25px; border-radius: 12px; text-align: center; }
+        .score-card .number { font-size: 2.2rem; font-weight: 800; line-height: 1; margin-bottom: 10px; }
+        .score-card .label { font-size: 0.85rem; color: var(--ds-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;}
+
+        .info-box { background: rgba(109, 40, 217, 0.05); border: 1px solid var(--ds-accent-glow); border-left: 4px solid var(--ds-accent); padding: 25px; border-radius: 0 8px 8px 0; margin: 30px 0; }
+        .status { padding: 4px 8px; border-radius: 4px; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.5px; }
+        .status.verified { background: rgba(16, 185, 129, 0.1); color: var(--ds-green); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .status.warning { background: rgba(245, 158, 11, 0.1); color: var(--ds-amber); border: 1px solid rgba(245, 158, 11, 0.2); }
+        .status.neutral { background: rgba(139, 155, 180, 0.1); color: var(--ds-muted); border: 1px solid rgba(139, 155, 180, 0.2); }
+
+        .toolkit-badge { margin: 15px 0; font-family: monospace; font-size: 0.85rem; color: #a8b2c1; }
+
+        /* 5. Trust Authority Sidebar (Right) */
+        .hub-trust {
+            width: var(--hub-trust-w); height: 100vh; position: sticky; top: 0;
+            padding: 40px 30px; background: rgba(19, 27, 42, 0.5); border-left: 1px solid var(--ds-border);
+        }
+        .trust-section { margin-bottom: 40px; }
+        .trust-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--ds-muted); margin-bottom: 15px; font-weight: 700; }
+        
+        .trust-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.9rem; }
+        .dot { width: 8px; height: 8px; min-width: 8px; background: var(--ds-green); border-radius: 50%; box-shadow: 0 0 8px rgba(16, 185, 129, 0.6); margin-top: 6px; }
+        .dot.pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); } 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); } }
+        
+        .ti-text strong { display: block; color: #fff; font-weight: 600; font-size: 0.85rem; }
+        .ti-text span { color: var(--ds-muted); font-size: 0.75rem; font-family: monospace; }
+
+        .cta-panel { background: linear-gradient(135deg, rgba(109, 40, 217, 0.2), rgba(10, 14, 23, 0.8)); border: 1px solid var(--ds-border); padding: 25px; border-radius: 12px; text-align: center; }
+        .cta-panel h4 { font-size: 1.1rem; margin-bottom: 10px; color: #fff; }
+        .cta-panel p { font-size: 0.85rem; color: var(--ds-muted); margin-bottom: 20px; }
+        .btn-cta { display: inline-block; background: var(--ds-accent); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; transition: background 0.2s; box-shadow: 0 4px 15px var(--ds-accent-glow); width: 100%; border: none; cursor: pointer; }
+        .btn-cta:hover { background: #7c3aed; }
+        
+        .hash-box { font-family: monospace; font-size: 0.65rem; color: rgba(255,255,255,0.3); word-break: break-all; margin-top: 20px; padding-top: 20px; border-top: 1px dashed var(--ds-border); }
+    </style>
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader-overlay">
+        <div class="scan-line"></div>
+        <div id="loading-msg" class="loading-text">INITIALIZING QUANTUM PROTOCOL...</div>
+    </div>
+
+    <!-- Hub Container -->
+    <div id="hub-container">
+        
+        <!-- Left TOC -->
+        <nav class="hub-toc">
+            <div class="brand-logo">DueSight Hub</div>
+            <ul class="toc-menu" id="toc-menu">
+                <!-- Injected via DOM in generation -->
+                {{TOC_INJECT}}
+            </ul>
+        </nav>
+
+        <!-- Center Content -->
+        <main class="hub-content">
+            <header class="doc-header">
+                <div class="badge">DueSight Protocol v6.5</div>
+                <h1>{{COMPANY_NAME}}</h1>
+                <p>Volledig Deep Research Dossier &middot; Generative AI Zichtbaar / 28 Pagina Equivalent</p>
+            </header>
+            
+            <div id="report-body">
+                {{REPORT_CONTENT}}
+            </div>
+            
+            <!-- Hidden FAQ Schema for GEO/AI Overviews -->
+            <script type="application/ld+json">
+                {{FAQ_SCHEMA_INJECT}}
+            </script>
+        </main>
+
+        <!-- Right Trust Authority -->
+        <aside class="hub-trust">
+            <div class="trust-section">
+                <div class="trust-title">Live API Connectivity</div>
+                <div class="trust-item">
+                    <div class="dot pulse"></div>
+                    <div class="ti-text">
+                        <strong>KVK Open Data API</strong>
+                        <span>Handelsregister Verified</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="dot pulse"></div>
+                    <div class="ti-text">
+                        <strong>GLEIF L2 Graph</strong>
+                        <span>UBO & Parent Trees</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div class="dot pulse"></div>
+                    <div class="ti-text">
+                        <strong>OpenSanctions</strong>
+                        <span>OFAC/EU Screening Clear</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-section">
+                <div class="trust-title">Security & Protocol</div>
+                <div class="trust-item">
+                    <div style="font-size:1.2rem; margin-top:2px;">🛡️</div>
+                    <div class="ti-text">
+                        <strong>Security controls documented</strong>
+                        <span>Zero-Retention Architecture</span>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <div style="font-size:1.2rem; margin-top:2px;">🧠</div>
+                    <div class="ti-text">
+                        <strong>Multi-source evidence review</strong>
+                        <span>Constitutional AI Gates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-panel">
+                <h4>Eigen Target Analyseren?</h4>
+                <p>Genereer een identiek 28-pagina M&A pre-DD rapport voor jouw targetbedrijf.</p>
+                <button class="btn-cta" onclick="window.location.href='https://duesight.nl/pricing'">Start Scan (&euro;399)</button>
+            </div>
+            
+            <div class="hash-box">
+                CRYPTO HASH:<br>
+                SHA-256: 8d140f1e9c24c267aef4...<br>
+                Rapport ID: DS-{{SCAN_ID}} <br>
+                Timestamp: <span id="clock"></span>
+            </div>
+        </aside>
+
+    </div>
+
+    <script>
+        // 1. Fake Loader UX (Perceived Value & Authority)
+        const messages = [
+            "CONNECTING KVK API...",
+            "RETRIEVING OFFSHORE LEAKS...",
+            "BOOTING EVIDENCE REVIEW...",
+            "VERIFYING EPISTEMIC GATES...",
+            "DECRYPTING INTELLIGENCE DOSSIER..."
+        ];
+        let msgIndex = 0;
+        const msgEl = document.getElementById('loading-msg');
+        
+        const loaderInt = setInterval(() => {
+            msgIndex++;
+            if (msgIndex < messages.length) {
+                msgEl.innerText = messages[msgIndex];
+            } else {
+                clearInterval(loaderInt);
+                document.getElementById('loader-overlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loader-overlay').style.display = 'none';
+                    document.getElementById('hub-container').style.opacity = '1';
+                }, 800);
+            }
+        }, 600); // 3 seconds total load time
+
+        // 2. Scrollspy for TOC
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.toc-menu a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    // If we've scrolled past the section start - 150px offset
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // 3. Live clock for the hash box
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById('clock').innerText = now.toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

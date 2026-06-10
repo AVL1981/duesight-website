@@ -2,7 +2,7 @@
   "schema_version": "duesight.context_strength.v1",
   "run_id": "certified-samples-rest-20260526-235449-truelegends",
   "target": "True Legends IT B.V.",
-  "updated_at": "2026-05-29T10:57:05+00:00",
+  "updated_at": "2026-06-08T13:34:28+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -12,7 +12,7 @@
       "evidence_rows": 10,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery"
       ],
@@ -67,7 +67,7 @@
       "evidence_rows": 6,
       "sources": [
         "sanctions screening route",
-        "Shodan InternetDB + RDAP",
+        "infrastructure exposure route + network registry route",
         "kvk_public",
         "ownership review route"
       ],

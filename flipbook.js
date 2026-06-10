@@ -13,7 +13,7 @@
     var PAGES = [
         // ═══ PAGE 0: FRONT COVER ═══
         '<div class="fp fp-cover">' +
-        '<div class="fp-cover-ribbon">★ GOLD TIER</div>' +
+        '<div class="fp-cover-ribbon">SAMPLE MEMO</div>' +
         '<div class="fp-cover-inner">' +
         '<div class="fp-cover-logo">' +
         '<svg viewBox="0 0 40 40" width="56" height="56"><circle cx="20" cy="20" r="19" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2.5"/>' +
@@ -30,8 +30,8 @@
         '<div class="fp-cover-verdict">' +
         '<div class="fp-verdict-icon">✔</div>' +
         '<div class="fp-verdict-text">' +
-        '<div class="fp-verdict-label">AI VERDICT</div>' +
-        '<div class="fp-verdict-value">INVEST</div>' +
+        '<div class="fp-verdict-label">PIPELINE STATUS</div>' +
+        '<div class="fp-verdict-value">REVIEW</div>' +
         '</div>' +
         '<div class="fp-verdict-score">' +
         '<svg viewBox="0 0 80 80" class="fp-verdict-ring"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="5"/>' +
@@ -46,24 +46,24 @@
 
         // ═══ PAGE 1: EXECUTIVE SUMMARY ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">📋</span> Executive Summary</h2>' +
-        '<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> VERDICT: <strong>INVEST</strong> — 5-Engine Unanimous Consensus</div>' +
-        '<p class="fp-text">Mollie B.V. presents a <strong>strong investment profile</strong> with robust financial indicators, clean compliance across all jurisdictions, and dominant market positioning in the European payment services space.</p>' +
+        '<div class="fp-verdict-bar"><span class="fp-vb-dot"></span> STATUS: <strong>REVIEW</strong> — Curated evidence review</div>' +
+        '<p class="fp-text">Mollie B.V. presents a <strong>review-ready evidence profile</strong> with document-gated financial context, source-limited compliance context, and market-positioning evidence in the European payment services space.</p>' +
         '<div class="fp-kpi-row">' +
-        '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#22d3ee">78%</div><div class="fp-kpi-lbl">Confidence Score</div></div>' +
-        '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#00ff88">A+</div><div class="fp-kpi-lbl">Compliance Grade</div></div>' +
+        '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#22d3ee">78%</div><div class="fp-kpi-lbl">Source-strength indicator</div></div>' +
+        '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#00ff88">A+</div><div class="fp-kpi-lbl">Compliance context</div></div>' +
         '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#a5b4fc">12</div><div class="fp-kpi-lbl">Modules Analysed</div></div>' +
         '<div class="fp-kpi"><div class="fp-kpi-val" style="color:#f59e0b">★ 4.2</div><div class="fp-kpi-lbl">Trustpilot Rating</div></div>' +
         '</div>' +
         '<h3 class="fp-subtitle">AI Cross-Validation</h3>' +
         '<div class="fp-engines">' +
-        '<div class="fp-engine"><div class="fp-eng-name">GPT-4o</div><div class="fp-eng-score">INVEST · 81%</div></div>' +
-        '<div class="fp-engine"><div class="fp-eng-name">Claude Opus</div><div class="fp-eng-score">INVEST · 84%</div></div>' +
-        '<div class="fp-engine"><div class="fp-eng-name">Gemini Pro</div><div class="fp-eng-score">INVEST · 76%</div></div>' +
-        '<div class="fp-engine"><div class="fp-eng-name">DeepSeek R1</div><div class="fp-eng-score">INVEST · 79%</div></div>' +
-        '<div class="fp-engine"><div class="fp-eng-name">Llama 3.1</div><div class="fp-eng-score">INVEST · 73%</div></div>' +
+        '<div class="fp-engine"><div class="fp-eng-name">specialist model</div><div class="fp-eng-score">REVIEW · 81%</div></div>' +
+        '<div class="fp-engine"><div class="fp-eng-name">specialist model</div><div class="fp-eng-score">REVIEW · 84%</div></div>' +
+        '<div class="fp-engine"><div class="fp-eng-name">specialist model</div><div class="fp-eng-score">REVIEW · 76%</div></div>' +
+        '<div class="fp-engine"><div class="fp-eng-name">specialist model</div><div class="fp-eng-score">REVIEW · 79%</div></div>' +
+        '<div class="fp-engine"><div class="fp-eng-name">specialist model</div><div class="fp-eng-score">REVIEW · 73%</div></div>' +
         '</div>' +
         '<h3 class="fp-subtitle">Key Strengths</h3>' +
         '<ul class="fp-list">' +
@@ -77,7 +77,7 @@
 
         // ═══ PAGE 2: FINANCIAL PROXY ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">💰</span> Financial Proxy Analysis</h2>' +
         '<p class="fp-text-sm">Multi-source financial estimation using the DueSight Financial Waterfall methodology across 6 independent tiers.</p>' +
@@ -102,20 +102,20 @@
         '<div class="fp-footer"><span>Page 2 of 12</span><span>Confidential · Protocol v3.2</span></div>' +
         '</div>',
 
-        // ═══ PAGE 3: BENFORD'S LAW FORENSIC ═══
+        // ═══ PAGE 3: first-digit forensic analysis FORENSIC ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
-        '<h2 class="fp-title"><span class="fp-icon">📊</span> Benford\'s Law Forensic Analysis</h2>' +
-        '<p class="fp-text">First-digit distribution analysis of 847 financial data points tested against Benford\'s theoretical distribution for anomaly detection.</p>' +
-        '<div class="fp-benford-row">' +
-        '<div class="fp-benford-card ok"><div class="fp-bf-icon">✓</div><div class="fp-bf-label">VERDICT</div><div class="fp-bf-value">Conforming</div></div>' +
-        '<div class="fp-benford-card"><div class="fp-bf-icon">χ²</div><div class="fp-bf-label">CHI-SQUARED</div><div class="fp-bf-value">4.2</div></div>' +
-        '<div class="fp-benford-card"><div class="fp-bf-icon">Δ</div><div class="fp-bf-label">MAD SCORE</div><div class="fp-bf-value">0.008</div></div>' +
-        '<div class="fp-benford-card"><div class="fp-bf-icon">n</div><div class="fp-bf-label">SAMPLE SIZE</div><div class="fp-bf-value">847</div></div>' +
+        '<h2 class="fp-title"><span class="fp-icon">📊</span> first-digit analysis\'s Law Forensic Analysis</h2>' +
+        '<p class="fp-text">First-digit distribution analysis of 847 financial data points tested against first-digit analysis\'s theoretical distribution for anomaly detection.</p>' +
+        '<div class="fp-first-digit analysis-row">' +
+        '<div class="fp-first-digit analysis-card ok"><div class="fp-bf-icon">✓</div><div class="fp-bf-label">VERDICT</div><div class="fp-bf-value">Conforming</div></div>' +
+        '<div class="fp-first-digit analysis-card"><div class="fp-bf-icon">χ²</div><div class="fp-bf-label">CHI-SQUARED</div><div class="fp-bf-value">4.2</div></div>' +
+        '<div class="fp-first-digit analysis-card"><div class="fp-bf-icon">Δ</div><div class="fp-bf-label">MAD SCORE</div><div class="fp-bf-value">0.008</div></div>' +
+        '<div class="fp-first-digit analysis-card"><div class="fp-bf-icon">n</div><div class="fp-bf-label">SAMPLE SIZE</div><div class="fp-bf-value">847</div></div>' +
         '</div>' +
         '<h3 class="fp-subtitle">First-Digit Distribution</h3>' +
-        '<div class="fp-benford-bar">' +
+        '<div class="fp-first-digit analysis-bar">' +
         '<div class="fp-bar-segment" style="width:30.1%;background:rgba(34,211,238,0.4)"><span>1</span></div>' +
         '<div class="fp-bar-segment" style="width:17.6%;background:rgba(129,140,248,0.4)"><span>2</span></div>' +
         '<div class="fp-bar-segment" style="width:12.5%;background:rgba(165,180,252,0.35)"><span>3</span></div>' +
@@ -127,25 +127,25 @@
         '<div class="fp-bar-segment" style="width:4.6%;background:rgba(34,211,238,0.12)"><span>9</span></div>' +
         '</div>' +
         '<p class="fp-text-sm" style="margin-top:12px">No anomalies detected — financial data passes forensic first-digit tests with close conformity. MAD score 0.008 is well below the 0.015 threshold for concern.</p>' +
-        '<div class="fp-callout ok">✓ All financial datasets tested conform to Benford\'s Law — no indications of data fabrication or manipulation detected.</div>' +
+        '<div class="fp-callout ok">✓ All financial datasets tested conform to first-digit analysis\'s Law — no indications of data fabrication or manipulation detected.</div>' +
         '</div>' +
         '<div class="fp-footer"><span>Page 3 of 12</span><span>Confidential · Protocol v3.2</span></div>' +
         '</div>',
 
         // ═══ PAGE 4: COMPLIANCE & SANCTIONS ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">🛡️</span> Compliance & Sanctions</h2>' +
-        '<div class="fp-verdict-bar ok"><span class="fp-vb-dot ok"></span> ALL CLEAR — Zero Matches Across 5 Databases</div>' +
+        '<div class="fp-verdict-bar ok"><span class="fp-vb-dot ok"></span> 0 MATCHES — Scoped screening across meerdere sanctielijsten</div>' +
         '<table class="fp-table">' +
         '<thead><tr><th>Database</th><th>Jurisdiction</th><th>Status</th><th>Matches</th></tr></thead>' +
         '<tbody>' +
-        '<tr><td>OFAC SDN</td><td>United States</td><td><span class="fp-pill ok">CLEAR</span></td><td>0</td></tr>' +
-        '<tr><td>EU Financial Sanctions</td><td>European Union</td><td><span class="fp-pill ok">CLEAR</span></td><td>0</td></tr>' +
-        '<tr><td>UN Security Council</td><td>International</td><td><span class="fp-pill ok">CLEAR</span></td><td>0</td></tr>' +
-        '<tr><td>UK HMT</td><td>United Kingdom</td><td><span class="fp-pill ok">CLEAR</span></td><td>0</td></tr>' +
-        '<tr><td>OpenSanctions</td><td>80+ datasets</td><td><span class="fp-pill ok">CLEAR</span></td><td>0</td></tr>' +
+        '<tr><td>OFAC SDN</td><td>United States</td><td><span class="fp-pill ok">NO MATCH</span></td><td>0</td></tr>' +
+        '<tr><td>EU Financial Sanctions</td><td>European Union</td><td><span class="fp-pill ok">NO MATCH</span></td><td>0</td></tr>' +
+        '<tr><td>UN Security Council</td><td>International</td><td><span class="fp-pill ok">NO MATCH</span></td><td>0</td></tr>' +
+        '<tr><td>UK HMT</td><td>United Kingdom</td><td><span class="fp-pill ok">NO MATCH</span></td><td>0</td></tr>' +
+        '<tr><td>OpenSanctions</td><td>80+ datasets</td><td><span class="fp-pill ok">NO MATCH</span></td><td>0</td></tr>' +
         '</tbody>' +
         '</table>' +
         '<h3 class="fp-subtitle">Legal Intelligence</h3>' +
@@ -161,7 +161,7 @@
 
         // ═══ PAGE 5: CYBER & SECURITY ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">🔒</span> Cyber Exposure Assessment</h2>' +
         '<div class="fp-verdict-bar ok"><span class="fp-vb-dot ok"></span> LOW RISK — Exposure Score 12/100</div>' +
@@ -189,7 +189,7 @@
 
         // ═══ PAGE 6: MARKET POSITION & PEERS ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">📈</span> Market Position & Peers</h2>' +
         '<h3 class="fp-subtitle">Competitive Landscape</h3>' +
@@ -222,7 +222,7 @@
 
         // ═══ PAGE 7: EMPLOYEE INTELLIGENCE ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">👥</span> Employee Intelligence</h2>' +
         '<p class="fp-text-sm">Workforce analysis via LinkedIn, GDELT, and Glassdoor proxies for hiring velocity and culture signals.</p>' +
@@ -250,7 +250,7 @@
 
         // ═══ PAGE 8: DIGITAL PRESENCE & SEO ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">🌐</span> Digital Presence & SEO</h2>' +
         '<p class="fp-text-sm">Multi-signal digital footprint analysis via PageSpeed, SERP rankings, CrUX Web Vitals, and domain authority estimation.</p>' +
@@ -281,7 +281,7 @@
 
         // ═══ PAGE 9: KVK COMPANY REGISTRY ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">🏛️</span> KvK Company Registry</h2>' +
         '<p class="fp-text-sm">Dutch Chamber of Commerce (Handelsregister) validation and corporate structure analysis.</p>' +
@@ -309,7 +309,7 @@
 
         // ═══ PAGE 10: MANAGEMENT PROFILING ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">🎯</span> Management Profiling</h2>' +
         '<p class="fp-text-sm">C-suite leadership analysis via Apollo.io enrichment and LinkedIn intelligence. Contact discovery for deal execution.</p>' +
@@ -336,7 +336,7 @@
 
         // ═══ PAGE 11: DISCLAIMER & METHODOLOGY ═══
         '<div class="fp fp-page">' +
-        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — GOLD Report</span></div>' +
+        '<div class="fp-header"><span class="fp-h-brand">DueSight Intelligence</span><span class="fp-h-doc">Mollie B.V. — Curated Sample Replay</span></div>' +
         '<div class="fp-body">' +
         '<h2 class="fp-title"><span class="fp-icon">📜</span> Disclaimer & Methodology</h2>' +
         '<h3 class="fp-subtitle">Data Sources & Methodology</h3>' +
@@ -345,13 +345,13 @@
         '<li>KvK Handelsregister & XBRL Jaarrekeningen (Dutch Chamber of Commerce)</li>' +
         '<li>CBS StatLine — Official Dutch Statistics (sector benchmarks)</li>' +
         '<li>OpenSanctions — Global watchlist screening (OFAC, EU, UN, UK HMT)</li>' +
-        '<li>Shodan InternetDB — Cyber exposure assessment</li>' +
+        '<li>passive infrastructure exposure analysis — Cyber exposure assessment</li>' +
         '<li>Google PageSpeed, CrUX & Knowledge Graph APIs</li>' +
         '<li>Apollo.io — Company & contact enrichment</li>' +
         '<li>GDELT — Global news sentiment analysis</li>' +
         '</ul>' +
         '<h3 class="fp-subtitle">AI Cross-Validation</h3>' +
-        '<p class="fp-text-sm">Verdicts are generated by 5 independent AI engines (GPT-4o, Claude Opus, Gemini Pro, DeepSeek R1, Llama 3.1) using structured chain-of-thought reasoning. Unanimous consensus required for final verdict.</p>' +
+        '<p class="fp-text-sm">Verdicts are generated by multiple review paths (specialist model, specialist model, specialist model, specialist model, specialist model) using structured chain-of-thought reasoning. Unanimous consensus required for final verdict.</p>' +
         '<h3 class="fp-subtitle">Disclaimer</h3>' +
         '<p class="fp-text-sm" style="color:rgba(255,255,255,0.5)">This report is provided for informational purposes only and does not constitute financial, legal, or investment advice. DueSight makes no warranties regarding accuracy or completeness. Always verify findings with primary sources before making investment decisions.</p>' +
         '<div class="fp-callout">ℹ All data collected via public APIs — zero manual research required. Report generation time: ~90 seconds.</div>' +
@@ -371,10 +371,10 @@
         '<div class="fp-back-divider"></div>' +
         '<div class="fp-back-stats">' +
         '<div class="fp-back-stat"><div class="fp-back-stat-val">12</div><div class="fp-back-stat-lbl">Intelligence Modules</div></div>' +
-        '<div class="fp-back-stat"><div class="fp-back-stat-val">64+</div><div class="fp-back-stat-lbl">Data Sources</div></div>' +
-        '<div class="fp-back-stat"><div class="fp-back-stat-val">5</div><div class="fp-back-stat-lbl">AI Engines</div></div>' +
+        '<div class="fp-back-stat"><div class="fp-back-stat-val">Multi-source</div><div class="fp-back-stat-lbl">Data Sources</div></div>' +
+        '<div class="fp-back-stat"><div class="fp-back-stat-val">Multi-source</div><div class="fp-back-stat-lbl">Analyse</div></div>' +
         '</div>' +
-        '<div class="fp-back-info">This report was generated using the DueSight Neuro-Symbolic AI stack with 5-engine cross-validation across 64+ public data sources.</div>' +
+        '<div class="fp-back-info">This report was generated using the DueSight Neuro-Symbolic AI stack with multi-source cross-validation over meerdere publieke bronnen.</div>' +
         '<div class="fp-back-cta-wrap"><a class="fp-back-cta-btn" href="#start">Genereer uw eigen rapport →</a></div>' +
         '<div class="fp-back-url">duesight.nl</div>' +
         '<div class="fp-back-legal">© 2026 DueSight Intelligence · Confidential · All rights reserved</div>' +
@@ -383,10 +383,10 @@
     ];
 
     var PAGE_LABELS = [
-        'Cover — Mollie B.V. GOLD Report',
+        'Cover — Mollie B.V. Curated Sample Replay',
         'Executive Summary & AI Validation',
         'Financial Proxy Analysis',
-        'Benford\'s Law Forensic Analysis',
+        'first-digit analysis\'s Law Forensic Analysis',
         'Compliance & Sanctions Screening',
         'Cyber Exposure Assessment',
         'Market Position & Peer Benchmarks',
@@ -397,6 +397,72 @@
         'Disclaimer & Methodology',
         ''
     ];
+
+    var hasCertifiedPages = Array.isArray(window.FLIPBOOK_CERTIFIED_PAGES) && window.FLIPBOOK_CERTIFIED_PAGES.length >= 3;
+
+    if (hasCertifiedPages) {
+        PAGES = window.FLIPBOOK_CERTIFIED_PAGES.map(function (page) { return String(page || ''); });
+        PAGE_LABELS = Array.isArray(window.FLIPBOOK_CERTIFIED_LABELS) && window.FLIPBOOK_CERTIFIED_LABELS.length
+            ? window.FLIPBOOK_CERTIFIED_LABELS.map(function (label) { return String(label || ''); })
+            : PAGES.map(function (_, index) { return index === 0 ? 'Cover' : 'Pagina ' + index; });
+    }
+
+    else if (window.FLIPBOOK_COMPANY && window.FLIPBOOK_COMPANY.name && window.FLIPBOOK_COMPANY.name !== 'Mollie B.V.') {
+        var c = window.FLIPBOOK_COMPANY;
+        var companyName = String(c.name || 'Target company');
+        var companyDomain = String(c.domain || '');
+        var companyVerdict = String(c.verdict || 'REVIEW');
+        var companyScore = String(c.score || 67);
+        var faviconUrl = companyDomain ? 'https://www.google.com/s2/favicons?domain=' + encodeURIComponent(companyDomain) + '&sz=128' : '';
+        var replacements = [
+            [/mollie\.com/g, companyDomain],
+            [/Mollie B\.V\./g, companyName],
+            [/Mollie/g, companyName],
+            [/Curated Sample Replay/g, 'Curated Sample Replay'],
+            [/SAMPLE MEMO/g, 'SAMPLE MEMO'],
+            [/PIPELINE STATUS/g, 'PIPELINE STATUS'],
+            [/REVIEW/g, companyVerdict],
+            [/78%/g, companyScore + '/100'],
+            [/81%|84%|76%|79%|73%/g, companyScore + '/100'],
+            [/Bronsterkte-indicatie/g, 'Source-strength indicator'],
+            [/Curated evidence review/g, 'Curated evidence review'],
+            [/Evidence layers/g, 'the deterministic DueSight evidence-readiness model'],
+            [/specialist model|specialist model|specialist model|specialist model|specialist model\.1/g, 'Evidence layer'],
+            [/review-ready evidence profile/g, 'review-ready evidence profile'],
+            [/payment services space/g, 'technical talent and recruitment context'],
+            [/Processing €50B\+ annually across the European Union/g, 'Public profile, acquisition context and source envelope are present'],
+            [/€800M\+|€800M/g, 'Document-gated'],
+            [/2,500\+/g, 'Public-profile'],
+            [/€320K/g, 'N/A'],
+            [/A\+/g, 'REVIEW'],
+            [/Series C\+/g, 'N/A'],
+            [/DNB PSD2 license/g, 'Primary-source verification'],
+            [/20\+ years of continuous operation/g, 'legal continuity requires current extract']
+        ];
+        PAGES = PAGES.map(function (html) {
+            var out = html;
+            replacements.forEach(function (pair) { out = out.replace(pair[0], pair[1]); });
+            if (faviconUrl) {
+                out = out.replace(/https:\/\/www\.google\.com\/s2\/favicons\?domain=[^"&']+&sz=128/g, faviconUrl);
+            }
+            return out;
+        });
+        PAGE_LABELS = [
+            'Cover - ' + companyName,
+            'Executive Summary',
+            'Financial Evidence',
+            'Forensic Route Check',
+            'Compliance & Sanctions',
+            'Cyber Exposure',
+            'Market & Public Context',
+            'Employee Intelligence',
+            'Digital Presence',
+            'Registry Context',
+            'Management Profile',
+            'Disclaimer & Methodology',
+            'Back Cover'
+        ];
+    }
 
     // ─── BUILD DOM ──────────────────────────────────────────
     var scene = document.createElement('div');
@@ -467,12 +533,17 @@
         if (typeof St === 'undefined' || !St.PageFlip) return;
 
         var isMobile = window.innerWidth < 768;
+        var customSize = window.FLIPBOOK_PAGE_SIZE || {};
+        var desktopWidth = Number(customSize.desktopWidth) || 580;
+        var desktopHeight = Number(customSize.desktopHeight) || 820;
+        var mobileWidth = Number(customSize.mobileWidth) || 360;
+        var mobileHeight = Number(customSize.mobileHeight) || 540;
         var pageFlip = new St.PageFlip(flipEl, {
-            width: isMobile ? 360 : 700,
-            height: isMobile ? 540 : 980,
-            size: 'stretch',
+            width: isMobile ? mobileWidth : desktopWidth,
+            height: isMobile ? mobileHeight : desktopHeight,
+            size: isMobile ? 'stretch' : 'fixed',
             minWidth: 320,
-            maxWidth: 920,
+            maxWidth: isMobile ? 390 : 1400,
             minHeight: 460,
             maxHeight: 1200,
             usePortrait: isMobile,
@@ -481,13 +552,12 @@
             maxShadowOpacity: 0.7,
             flippingTime: 900,
             startPage: 0,
-            autoSize: true,
+            autoSize: isMobile,
             mobileScrollSupport: true
         });
 
         pageFlip.loadFromHTML(flipEl.querySelectorAll('.fp'));
 
-        // Start with cover clipping (page 0 = front cover, only right half visible)
         wrapper.classList.add('fp-at-cover');
 
         navPrev.addEventListener('click', function () {

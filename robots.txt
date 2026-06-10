@@ -4,6 +4,22 @@
 User-agent: *
 Allow: /
 Disallow: /.git/
+Disallow: /.github/
+Disallow: /docs/
+Disallow: /backups/
+Disallow: /backtesting/
+Disallow: /company/
+Disallow: /designs/
+Disallow: /reports/
+Disallow: /output/
+Disallow: /tmp/
+Disallow: /test-results/
+Disallow: /website_src/
+Disallow: /sample-report-*/
+Disallow: /index_*.html
+Disallow: /index_backup*.html
+Disallow: /*.bak*
+Disallow: /*.backup*.html
 
 # AI Crawlers - explicitly allowed for GEO
 User-agent: GPTBot

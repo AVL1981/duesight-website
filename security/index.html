@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsible Disclosure | DueSight</title>
+  <meta name="description" content="Coordinated Vulnerability Disclosure beleid van DueSight. Meld beveiligingskwetsbaarheden via security@duesight.nl.">
+  <link rel="canonical" href="https://duesight.nl/security/">
+  <link rel="stylesheet" href="../assets/trust-authority.css">
+</head>
+<body>
+  <div class="topbar">DueSight trust layer - coordinated vulnerability disclosure</div>
+  <nav class="nav">
+    <a class="brand" href="../"><span class="mark">D</span><span>DueSight</span></a>
+    <div class="navlinks">
+      <a href="../assurance/">Trust</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../dpa/">DPA</a>
+      <a href="../methodologie/">Methodologie</a>
+    </div>
+  </nav>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow"><span class="dot"></span>Security</div>
+      <h1>Responsible disclosure zonder <em>ruis</em></h1>
+      <p class="lead">DueSight behandelt kwetsbaarheidsmeldingen als Coordinated Vulnerability Disclosure: snel bevestigen, reproduceerbaar beoordelen en pas openbaar maken na afstemming.</p>
+    </section>
+
+    <div class="answer">
+      <p><strong>Antwoord in het kort:</strong> meld kwetsbaarheden via <a href="mailto:security@duesight.nl">security@duesight.nl</a>. De canonical machine-readable policy staat op <a href="../.well-known/security.txt">/.well-known/security.txt</a>. Gebruik dit programma voor beveiligingsproblemen in DueSight-systemen, niet voor commerciele scans, social engineering of denial-of-service-tests.</p>
+    </div>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>In scope</h2>
+        <ul>
+          <li>DueSight.nl en publiek bereikbare DueSight-subdomeinen.</li>
+          <li>Authenticatie, sessiebeheer en toegangscontrole.</li>
+          <li>Data-exposure, injection, XSS, SSRF, path traversal en vergelijkbare technische kwetsbaarheden.</li>
+          <li>Rapport- of documentroutes waarbij klantdata zichtbaar kan worden voor onbevoegden.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Buiten scope</h2>
+        <ul>
+          <li>Denial-of-service of volumetests.</li>
+          <li>Social engineering, phishing of fysieke beveiliging.</li>
+          <li>Automatische scanner-output zonder reproduceerbaar bewijs.</li>
+          <li>Derde partijen waar DueSight geen beheer over heeft.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Wat wij nodig hebben</h2>
+      <div class="card">
+        <ul>
+          <li>Een korte omschrijving van de kwetsbaarheid en impact.</li>
+          <li>Stappen om het probleem te reproduceren, inclusief URL's, request bodies of screenshots waar passend.</li>
+          <li>Een proof of concept die geen data van derden opent, wijzigt of verwijdert.</li>
+          <li>Uw contactgegevens voor triagevragen en coordinated disclosure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Response-tijden</h2>
+      <div class="grid">
+        <div class="card"><span class="kpi">2 werkdagen</span><span class="label">Ontvangstbevestiging</span></div>
+        <div class="card"><span class="kpi">5 werkdagen</span><span class="label">Eerste triage</span></div>
+        <div class="card"><span class="kpi">90 dagen</span><span class="label">Standaard disclosure-window</span></div>
+      </div>
+      <p class="callout">Kritieke meldingen kunnen sneller gaan. De termijn hangt af van reproduceerbaarheid, impact, afhankelijkheden en of er derde partijen betrokken zijn.</p>
+    </section>
+
+    <section class="section">
+      <h2>Safe harbor</h2>
+      <div class="card">
+        <p>DueSight zal geen juridische stappen zetten tegen onderzoekers die te goeder trouw handelen, binnen scope blijven, geen privacy van derden schenden, geen verstorende tests uitvoeren en hun bevindingen niet publiceren voordat wij een redelijke herstelmogelijkheid hebben gehad.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Machine-readable policy</h2>
+      <pre class="codeblock">Contact: mailto:security@duesight.nl
+Expires: 2027-05-31T00:00:00Z
+Preferred-Languages: nl, en
+Policy: https://duesight.nl/security/
+Canonical: https://duesight.nl/.well-known/security.txt</pre>
+    </section>
+
+    <footer class="footer">Vibe The Code (KvK 99920301) - DueSight productnaam - security@duesight.nl - bijgewerkt op 2026-06-08</footer>
+  </main>
+</body>
+</html>

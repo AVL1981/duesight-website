@@ -2,7 +2,7 @@
   "schema_version": "duesight.context_strength.v1",
   "run_id": "certified-samples-rest-20260526-235449-gasunie",
   "target": "N.V. Nederlandse Gasunie",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
@@ -12,7 +12,7 @@
       "evidence_rows": 10,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery"
       ],
@@ -69,8 +69,8 @@
       "evidence_rows": 5,
       "sources": [
         "sanctions screening route",
-        "GLEIF LEI register corroboration",
-        "DueSight Algorithmic UBO Proxy / OpenKvK, GLEIF Level 2"
+        "international entity register route LEI register corroboration",
+        "DueSight Algorithmic UBO Proxy / official register route, international entity register..."
       ],
       "safe_rows": 1,
       "missing_for_official_claim": "Lawful UBO extract, shareholder register, KvK extract or licensed ownership graph/provider evidence with document hash."

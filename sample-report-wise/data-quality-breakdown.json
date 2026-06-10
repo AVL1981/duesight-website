@@ -105,7 +105,7 @@
       "max_score": 13,
       "missing_points_to_100": 6,
       "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
       "current_evidence": [
         "preflight_ok=8",
         "hosted_fallback_deferred=2",
@@ -129,13 +129,13 @@
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
       "current_evidence": [
-        "sanctions_status=clean",
+        "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
         "hosted_fallback_deferred=2"
       ],
       "current_limitations": [
-        "No-hit is not proof of clean reputation.",
+        "Zero candidates is source-limited and not proof of reputation clearance.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ],
       "claim_area": "Sanctions, PEP and adverse media",
@@ -240,7 +240,7 @@
       "max_score": 13,
       "missing_points_to_100": 6,
       "status": "yellow",
-      "rationale": "Provider preflight is usable but not fully production-clean because deferred hosted fallback routes need recovery or paid/local coverage.",
+      "rationale": "Provider preflight is usable but not fully production-ready because deferred hosted fallback routes need recovery or paid/local coverage.",
       "current_evidence": [
         "preflight_ok=8",
         "hosted_fallback_deferred=2",
@@ -264,13 +264,13 @@
       "status": "limited_clean",
       "rationale": "Sanctions screening returned no claim-safe match, while adverse media remains point-in-time and source-limited.",
       "current_evidence": [
-        "sanctions_status=clean",
+        "sanctions_status=source_limited_zero_candidates",
         "adverse_media_status=available",
         "regulatory_status=available",
         "hosted_fallback_deferred=2"
       ],
       "current_limitations": [
-        "No-hit is not proof of clean reputation.",
+        "Zero candidates is source-limited and not proof of reputation clearance.",
         "UBOs/directors still need final sanctions and PEP screening before sign-off."
       ],
       "claim_area": "Sanctions, PEP and adverse media",

@@ -166,8 +166,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'NLIST B.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'NLIST B.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -197,7 +197,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -255,7 +255,7 @@
         "gleif": {
           "gleif_status": "NOT_FOUND",
           "gleif_target": "NLIST B.V.",
-          "gleif_note": "Geen LEI geregistreerd \u2014 niet verplicht voor alle entiteiten",
+          "gleif_note": "Geen LEI geregistreerd — niet verplicht voor alle entiteiten",
           "source": "gleif_client_v1"
         },
         "wikidata": {
@@ -300,7 +300,7 @@
             "cost_eur": 0.0,
             "time_s": 0.49
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "manual_control_applied": false,
@@ -319,7 +319,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -331,7 +331,7 @@
         "dnb": {
           "dnb_status": "NIET GEVONDEN",
           "dnb_registered": false,
-          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financi\u00eble instellingen.",
+          "dnb_note": "Bedrijf niet gevonden in DNB openbaar register. DNB-toezicht geldt voor banken, verzekeraars, pensioenfondsen, betaaldienstverleners en andere financiële instellingen.",
           "dnb_source": "https://www.dnb.nl/openbaar-register/"
         },
         "summary": "Niet gevonden in 2 register(s)",
@@ -341,7 +341,7 @@
         "company": "NLIST B.V.",
         "total_articles": 0,
         "severity_score": 0,
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "claim_status": "INCOMPLETE_SOURCES",
         "source_status": {
           "gdelt": {
@@ -678,7 +678,7 @@
               "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
             },
             {
-              "name": "Stephanie van der Toorn \u2013 Faas",
+              "name": "Stephanie van der Toorn – Faas",
               "role": "Managing partner",
               "source_type": "company_website",
               "source_url": "https://nlist.nl/nl/team",
@@ -700,7 +700,7 @@
               "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
             },
             {
-              "name": "C\u00e9leste Romijn \u2013 Ter Haar",
+              "name": "Céleste Romijn – Ter Haar",
               "role": "Managing consultant",
               "source_type": "company_website",
               "source_url": "https://nlist.nl/nl/team",
@@ -766,7 +766,7 @@
               "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
             },
             {
-              "name": "Ch\u00e9tika du Preez",
+              "name": "Chétika du Preez",
               "role": "Recruiter",
               "source_type": "company_website",
               "source_url": "https://nlist.nl/nl/team",
@@ -854,7 +854,7 @@
               "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
             },
             {
-              "name": "Crista Smid \u2013 Gon\u00e7alves",
+              "name": "Crista Smid – Gonçalves",
               "role": "Backoffice medewerker",
               "source_type": "company_website",
               "source_url": "https://nlist.nl/nl/team",
@@ -877,7 +877,7 @@
             },
             {
               "name": "Tamara Kroes",
-              "role": "VCU- en opleidingsco\u00f6rdinator",
+              "role": "VCU- en opleidingscoördinator",
               "source_type": "company_website",
               "source_url": "https://nlist.nl/nl/team",
               "evidence_level": "target_owned_public_profile",
@@ -1092,7 +1092,7 @@
             "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
           },
           {
-            "name": "Stephanie van der Toorn \u2013 Faas",
+            "name": "Stephanie van der Toorn – Faas",
             "role": "Managing partner",
             "source_type": "company_website",
             "source_url": "https://nlist.nl/nl/team",
@@ -1114,7 +1114,7 @@
             "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
           },
           {
-            "name": "C\u00e9leste Romijn \u2013 Ter Haar",
+            "name": "Céleste Romijn – Ter Haar",
             "role": "Managing consultant",
             "source_type": "company_website",
             "source_url": "https://nlist.nl/nl/team",
@@ -1180,7 +1180,7 @@
             "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
           },
           {
-            "name": "Ch\u00e9tika du Preez",
+            "name": "Chétika du Preez",
             "role": "Recruiter",
             "source_type": "company_website",
             "source_url": "https://nlist.nl/nl/team",
@@ -1268,7 +1268,7 @@
             "limitation": "Target-owned team page supports a public management/role claim; statutory director, shareholder and UBO status still require official register proof."
           },
           {
-            "name": "Crista Smid \u2013 Gon\u00e7alves",
+            "name": "Crista Smid – Gonçalves",
             "role": "Backoffice medewerker",
             "source_type": "company_website",
             "source_url": "https://nlist.nl/nl/team",
@@ -1291,7 +1291,7 @@
           },
           {
             "name": "Tamara Kroes",
-            "role": "VCU- en opleidingsco\u00f6rdinator",
+            "role": "VCU- en opleidingscoördinator",
             "source_type": "company_website",
             "source_url": "https://nlist.nl/nl/team",
             "evidence_level": "target_owned_public_profile",
@@ -1648,10 +1648,10 @@
         "summary": "Local bulk inventory records which cached/bulk sources are available. It is provenance evidence, not a substitute for target-specific source rows."
       },
       "award_intelligence": {
-        "company_name": "NLIST B.V.",
-        "kvk_number": "58932100",
+        "company_name": "NLIST",
+        "kvk_number": "85442410",
         "status": "hit",
-        "checked_at": "2026-05-27T11:21:23.053527+00:00",
+        "checked_at": "2026-06-02T11:38:18.240126+00:00",
         "db_path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-agent\\data\\award_intel\\awards.db",
         "sources_consulted": [
           "local_awards_sqlite"
@@ -1662,49 +1662,49 @@
         "award_count": 1,
         "awards": [
           {
-            "id": 1,
+            "id": 1514,
             "company_name": "NLIST B.V.",
             "normalized_name": "nlist",
             "aliases": "NLIST;nlist;nlist.nl",
-            "kvk_number": "",
+            "kvk_number": "85442410",
             "domain": "nlist.nl",
             "country": "NL",
-            "sector": "staffing / technical recruitment",
+            "sector": "Employment Services",
             "source": "ft1000",
             "source_label": "Financial Times FT1000",
             "award_name": "FT1000 Europe's Fastest Growing Companies",
-            "year": 2024,
-            "rank": 42,
+            "year": 2026,
+            "rank": 19,
             "category": "",
-            "cagr_percent": 189.0,
-            "revenue_floor_eur": 1500000.0,
-            "revenue_ceiling_eur": 0.0,
-            "source_url": "https://ig.ft.com/ft-1000/2024/",
-            "evidence_note": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
-            "source_status": "recovered_seed_requires_primary_check",
-            "confidence": "medium",
-            "claim_level": "context_signal",
-            "retrieved_at": "2026-05-27T10:22:30.948146+00:00"
+            "cagr_percent": 232.41,
+            "revenue_floor_eur": 14995242.0,
+            "revenue_ceiling_eur": 14995242.0,
+            "source_url": "https://rankings.statista.com/en/fastest-growing-companies/rankings/fastest-growing-companies-europe-2026/",
+            "evidence_note": "Primary Statista/Financial Times 2026 rendered row captured for NList: rank 19, CAGR 232.41%, Netherlands, Employment Services, revenue EUR 14,995,242, start revenue EUR 408,258, employees 15, start employees 3, founded 2018. Row HTML SHA-256 b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e; rendered HTML SHA-256 8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19. Award row is primary award evidence, not a substitute for official annual accounts, KvK Dataservice/XBRL, UBO, shareholder, or provider finance evidence.",
+            "source_status": "primary_award_artifact_hash",
+            "confidence": "high",
+            "claim_level": "primary_award_context",
+            "retrieved_at": "2026-06-02T11:35:59.991291+00:00"
           }
         ],
         "trend": {
-          "classification": "historisch",
+          "classification": "groeiend",
           "years": [
-            2024
+            2026
           ],
-          "newest_year": 2024,
-          "summary": "1 award year(s) found; newest mention 2024."
+          "newest_year": 2026,
+          "summary": "1 award year(s) found; newest mention 2026."
         },
         "trust_score_delta": 15,
         "shadow_pl_patch": {
           "has_bounds": true,
-          "revenue_floor_eur": 1500000.0,
-          "revenue_ceiling_eur": 4500000.0,
-          "revenue_midpoint": 2598076.0,
-          "arithmetic_midpoint": 3000000.0,
+          "revenue_floor_eur": 14995242.0,
+          "revenue_ceiling_eur": 14995242.0,
+          "revenue_midpoint": 14995242.0,
+          "arithmetic_midpoint": 14995242.0,
           "bound_method": "conservative_geometric_midpoint",
           "drivers": [
-            "FT1000 eligibility floor: EUR 1,500,000 end-year revenue"
+            "FT1000 primary award row revenue context: EUR 14,995,242"
           ],
           "claim_level": "context_signal",
           "limitation": "Award/ranking data supports a revenue context range only. It is not a substitute for primary annual accounts, KvK extract, UBO record, or official paid provider evidence.",
@@ -1715,23 +1715,22 @@
           "recommended_use": "retain_existing_revenue_source"
         },
         "alerts": [
-          "Award/ranking signal: Financial Times FT1000 (rank #42, CAGR 189%)."
+          "Award/ranking signal: Financial Times FT1000 (rank #19, CAGR 232%)."
         ],
         "source_envelopes": [
           {
             "source": "Financial Times FT1000",
-            "source_status": "recovered_seed_requires_primary_check",
-            "checked_at": "2026-05-27T11:21:23.053506+00:00",
-            "freshness": "award_year_2024",
-            "fallback_used": true,
-            "confidence": "medium",
-            "limitation": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
-            "claim_level": "context_signal"
+            "source_status": "primary_award_artifact_hash",
+            "checked_at": "2026-06-02T11:38:18.240113+00:00",
+            "freshness": "award_year_2026",
+            "fallback_used": false,
+            "confidence": "high",
+            "limitation": "Primary Statista/Financial Times 2026 rendered row captured for NList: rank 19, CAGR 232.41%, Netherlands, Employment Services, revenue EUR 14,995,242, start revenue EUR 408,258, employees 15, start employees 3, founded 2018. Row HTML SHA-256 b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e; rendered HTML SHA-256 8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19. Award row is primary award evidence, not a substitute for official annual accounts, KvK Dataservice/XBRL, UBO, shareholder, or provider finance evidence.",
+            "claim_level": "primary_award_context"
           }
         ],
         "limitations": [
-          "Award intelligence is a context/proxy layer, not official financial proof.",
-          "Primary award page/PDF capture should be added to the evidence ledger before production claims."
+          "Award intelligence is a context/proxy layer, not official financial proof."
         ],
         "claim_policy": {
           "public_report": "May be shown as underbouwde context with source envelope.",
@@ -2471,7 +2470,7 @@
             "url": "https://nlist.nl/nl",
             "published_date": "",
             "source": "Exa",
-            "snippet": "NLIST\n\nPart of The Specialist Group\n\nVolg ons op LinkedIn\n\n# Wij detacheren internationals en regelen alles...\n\nGa verder\n\n;\n\nEr is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn w\u00e9l te vinden in het buitenland. E\u00e9n en \u00e9\u00e9n is twee.\n\n## Wij detacheren Internationale technici en regelen alles\n\nWij zijn expert in het detacheren van Internationale technische talenten met aantoonbare ervaring op MBO, HBO en WO niveau. We focussen ons op engineering,"
+            "snippet": "NLIST\n\nPart of The Specialist Group\n\nVolg ons op LinkedIn\n\n# Wij detacheren internationals en regelen alles...\n\nGa verder\n\n;\n\nEr is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn wél te vinden in het buitenland. Eén en één is twee.\n\n## Wij detacheren Internationale technici en regelen alles\n\nWij zijn expert in het detacheren van Internationale technische talenten met aantoonbare ervaring op MBO, HBO en WO niveau. We focussen ons op engineering,"
           },
           {
             "title": "Nlist B.V. full company profile on Creditsafe",
@@ -2584,25 +2583,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for NLIST B.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for NLIST B.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "NLIST B.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2783,21 +2782,21 @@
           "target_claim_safe": false,
           "source": "DueSight Adverse Media Scanner",
           "buckets": {
-            "No adverse media signal": 1
+            "Source-limited adverse-media zero candidates": 1
           },
           "rows": [
             {
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
-              "bucket": "No adverse media signal",
+              "bucket": "Source-limited adverse-media zero candidates",
               "claim": "No target-relevant adverse-media signal was found for NLIST B.V. in the checked sources.",
               "source": "DueSight adverse-media source ladder (public news + legal metadata)",
               "confidence": "Medium",
-              "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+              "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
               "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
               "target": "NLIST B.V.",
               "claim_status": "INCOMPLETE_SOURCES",
-              "risk_verdict": "CLEAN",
+              "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
               "severity_score": 0,
               "total_articles": 0,
               "categories_found": [],
@@ -2828,41 +2827,53 @@
         "award_intelligence": {
           "section": "award_intelligence",
           "title": "Award and growth intelligence",
-          "status": "available_with_primary_check_required",
-          "summary": "Award/ranking and distress-source context from the restored local award intelligence layer.",
-          "target_claim_safe": false,
-          "source": "tools.award_intel.award_intel_tool + data/award_intel/awards.db",
-          "limitation": "Context layer only; official finance and ownership claims still require primary documents or licensed provider evidence.",
+          "status": "available_with_primary_award_artifact",
+          "summary": "NLIST FT1000 2026 award row is source-hard as primary award context; finance and ownership reliance remain gated to primary/provider documents.",
+          "target_claim_safe": true,
+          "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026 + tools.award_intel.award_intel_tool",
+          "source_status": "primary_award_artifact_hash",
+          "checked_at": "2026-06-02T11:38:18+00:00",
+          "freshness": "award_year_2026",
+          "fallback_used": false,
+          "confidence": "high",
+          "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
           "rows": [
             {
               "section": "award_intelligence",
               "row_id": "award-intelligence-01",
-              "bucket": "Financial Times FT1000",
-              "claim": "Local award intelligence returned Financial Times FT1000 (rank #42, 2024, CAGR 189%) for NLIST B.V.; this is context until primary artifact proof is attached.",
-              "source": "Financial Times FT1000",
-              "source_status": "recovered_seed_requires_primary_check",
-              "checked_at": "2026-05-27T11:21:23.053506+00:00",
-              "freshness": "award_year_2024",
-              "fallback_used": true,
-              "confidence": "medium",
-              "claim_safe_for_memo": false,
-              "limitation": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
+              "bucket": "Financial Times FT1000 / Statista 2026",
+              "claim": "FT1000 #19 for NLIST B.V. is source-hard as primary award context via rendered Statista/Financial Times 2026 row with primary artifact hash; award-row revenue remains context, not official finance proof.",
+              "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+              "source_url": "https://rankings.statista.com/en/fastest-growing-companies/rankings/fastest-growing-companies-europe-2026/",
+              "source_status": "primary_award_artifact_hash",
+              "checked_at": "2026-06-02T11:38:18+00:00",
+              "freshness": "award_year_2026",
+              "fallback_used": false,
+              "confidence": "high",
+              "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
+              "claim_level": "primary_award_context",
+              "claim_safe_for_memo": true,
               "fields": {
-                "award_year": 2024,
-                "rank": 42,
-                "category": "",
-                "cagr_percent": 189.0,
-                "claim_level": "context_signal",
-                "revenue_floor_eur": 1500000.0,
-                "revenue_ceiling_eur": 4500000.0,
-                "recommended_revenue_eur": 0
+                "award_year": 2026,
+                "rank": 19,
+                "cagr_percent": 232.41,
+                "country": "Netherlands",
+                "sector": "Employment Services",
+                "revenue_eur_award_row": 14995242,
+                "start_revenue_eur_award_row": 408258,
+                "employees_award_row": 15,
+                "start_employees_award_row": 3,
+                "founded": 2018,
+                "row_html_sha256": "b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e",
+                "rendered_html_sha256": "8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19",
+                "row_screenshot_sha256": "c9666521d39dd7cce0814dccbfa3c36d59f2add5f25ad00c0f11ff0d6d43c51d",
+                "artifact_path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-website\\sample-report-nlist\\award-source-hardening.json"
               },
-              "diligence_question": "Which source, identifier, date and scope make this evidence row memo-safe?"
+              "diligence_question": "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
             }
           ],
           "diligence_questions": [
-            "Which primary award page/PDF/article should be attached and hashed before production use?",
-            "Does the award-derived revenue context conflict with official filings or seller financials?"
+            "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
           ]
         },
         "public_acquisition": {
@@ -3183,7 +3194,7 @@
               "bucket": "NLIST",
               "title": "NLIST",
               "url": "https://nlist.nl/nl",
-              "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn w\u00e9l te vinden in het buitenland. E\u00e9n en \u00e9\u00e9n is twee. ## Wij detacheren Internationale techni...",
+              "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn wél te vinden in het buitenland. Eén en één is twee. ## Wij detacheren Internationale techni...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-27T11:20:16+00:00",
@@ -3468,7 +3479,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Leadership/contact profile",
-              "claim": "Stephanie van der Toorn \u2013 Faas is listed with role Managing partner for NLIST B.V..",
+              "claim": "Stephanie van der Toorn – Faas is listed with role Managing partner for NLIST B.V..",
               "source": "https://nlist.nl/nl/team",
               "source_type": "company_website",
               "confidence": "High",
@@ -3500,7 +3511,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Leadership/contact profile",
-              "claim": "C\u00e9leste Romijn \u2013 Ter Haar is listed with role Managing consultant for NLIST B.V..",
+              "claim": "Céleste Romijn – Ter Haar is listed with role Managing consultant for NLIST B.V..",
               "source": "https://nlist.nl/nl/team",
               "source_type": "company_website",
               "confidence": "High",
@@ -3596,7 +3607,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Leadership/contact profile",
-              "claim": "Ch\u00e9tika du Preez is listed with role Recruiter for NLIST B.V..",
+              "claim": "Chétika du Preez is listed with role Recruiter for NLIST B.V..",
               "source": "https://nlist.nl/nl/team",
               "source_type": "company_website",
               "confidence": "High",
@@ -3724,7 +3735,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Leadership/contact profile",
-              "claim": "Crista Smid \u2013 Gon\u00e7alves is listed with role Backoffice medewerker for NLIST B.V..",
+              "claim": "Crista Smid – Gonçalves is listed with role Backoffice medewerker for NLIST B.V..",
               "source": "https://nlist.nl/nl/team",
               "source_type": "company_website",
               "confidence": "High",
@@ -3756,7 +3767,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Leadership/contact profile",
-              "claim": "Tamara Kroes is listed with role VCU- en opleidingsco\u00f6rdinator for NLIST B.V..",
+              "claim": "Tamara Kroes is listed with role VCU- en opleidingscoördinator for NLIST B.V..",
               "source": "https://nlist.nl/nl/team",
               "source_type": "company_website",
               "confidence": "High",
@@ -4121,27 +4132,35 @@
         {
           "section": "award_intelligence",
           "row_id": "award-intelligence-01",
-          "bucket": "Financial Times FT1000",
-          "claim": "Local award intelligence returned Financial Times FT1000 (rank #42, 2024, CAGR 189%) for NLIST B.V.; this is context until primary artifact proof is attached.",
-          "source": "Financial Times FT1000",
-          "source_status": "recovered_seed_requires_primary_check",
-          "checked_at": "2026-05-27T11:21:23.053506+00:00",
-          "freshness": "award_year_2024",
-          "fallback_used": true,
-          "confidence": "medium",
-          "claim_safe_for_memo": false,
-          "limitation": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
+          "bucket": "Financial Times FT1000 / Statista 2026",
+          "claim": "FT1000 #19 for NLIST B.V. is source-hard as primary award context via rendered Statista/Financial Times 2026 row with primary artifact hash; award-row revenue remains context, not official finance proof.",
+          "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+          "source_url": "https://rankings.statista.com/en/fastest-growing-companies/rankings/fastest-growing-companies-europe-2026/",
+          "source_status": "primary_award_artifact_hash",
+          "checked_at": "2026-06-02T11:38:18+00:00",
+          "freshness": "award_year_2026",
+          "fallback_used": false,
+          "confidence": "high",
+          "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
+          "claim_level": "primary_award_context",
+          "claim_safe_for_memo": true,
           "fields": {
-            "award_year": 2024,
-            "rank": 42,
-            "category": "",
-            "cagr_percent": 189.0,
-            "claim_level": "context_signal",
-            "revenue_floor_eur": 1500000.0,
-            "revenue_ceiling_eur": 4500000.0,
-            "recommended_revenue_eur": 0
+            "award_year": 2026,
+            "rank": 19,
+            "cagr_percent": 232.41,
+            "country": "Netherlands",
+            "sector": "Employment Services",
+            "revenue_eur_award_row": 14995242,
+            "start_revenue_eur_award_row": 408258,
+            "employees_award_row": 15,
+            "start_employees_award_row": 3,
+            "founded": 2018,
+            "row_html_sha256": "b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e",
+            "rendered_html_sha256": "8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19",
+            "row_screenshot_sha256": "c9666521d39dd7cce0814dccbfa3c36d59f2add5f25ad00c0f11ff0d6d43c51d",
+            "artifact_path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-website\\sample-report-nlist\\award-source-hardening.json"
           },
-          "diligence_question": "Which source, identifier, date and scope make this evidence row memo-safe?"
+          "diligence_question": "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
         },
         {
           "source": "GovData CKAN",
@@ -4438,7 +4457,7 @@
           "bucket": "NLIST",
           "title": "NLIST",
           "url": "https://nlist.nl/nl",
-          "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn w\u00e9l te vinden in het buitenland. E\u00e9n en \u00e9\u00e9n is twee. ## Wij detacheren Internationale techni...",
+          "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn wél te vinden in het buitenland. Eén en één is twee. ## Wij detacheren Internationale techni...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-27T11:20:16+00:00",
@@ -4515,14 +4534,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for NLIST B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "NLIST B.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -4832,7 +4851,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Stephanie van der Toorn \u2013 Faas is listed with role Managing partner for NLIST B.V..",
+          "claim": "Stephanie van der Toorn – Faas is listed with role Managing partner for NLIST B.V..",
           "source": "https://nlist.nl/nl/team",
           "source_type": "company_website",
           "confidence": "High",
@@ -4864,7 +4883,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "C\u00e9leste Romijn \u2013 Ter Haar is listed with role Managing consultant for NLIST B.V..",
+          "claim": "Céleste Romijn – Ter Haar is listed with role Managing consultant for NLIST B.V..",
           "source": "https://nlist.nl/nl/team",
           "source_type": "company_website",
           "confidence": "High",
@@ -4960,7 +4979,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Ch\u00e9tika du Preez is listed with role Recruiter for NLIST B.V..",
+          "claim": "Chétika du Preez is listed with role Recruiter for NLIST B.V..",
           "source": "https://nlist.nl/nl/team",
           "source_type": "company_website",
           "confidence": "High",
@@ -5088,7 +5107,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Crista Smid \u2013 Gon\u00e7alves is listed with role Backoffice medewerker for NLIST B.V..",
+          "claim": "Crista Smid – Gonçalves is listed with role Backoffice medewerker for NLIST B.V..",
           "source": "https://nlist.nl/nl/team",
           "source_type": "company_website",
           "confidence": "High",
@@ -5120,7 +5139,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Leadership/contact profile",
-          "claim": "Tamara Kroes is listed with role VCU- en opleidingsco\u00f6rdinator for NLIST B.V..",
+          "claim": "Tamara Kroes is listed with role VCU- en opleidingscoördinator for NLIST B.V..",
           "source": "https://nlist.nl/nl/team",
           "source_type": "company_website",
           "confidence": "High",
@@ -5486,15 +5505,15 @@
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for NLIST B.V. in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "NLIST B.V.",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -5609,25 +5628,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for NLIST B.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for NLIST B.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "NLIST B.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -5808,21 +5827,21 @@
         "target_claim_safe": false,
         "source": "DueSight Adverse Media Scanner",
         "buckets": {
-          "No adverse media signal": 1
+          "Source-limited adverse-media zero candidates": 1
         },
         "rows": [
           {
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
-            "bucket": "No adverse media signal",
+            "bucket": "Source-limited adverse-media zero candidates",
             "claim": "No target-relevant adverse-media signal was found for NLIST B.V. in the checked sources.",
             "source": "DueSight adverse-media source ladder (public news + legal metadata)",
             "confidence": "Medium",
-            "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+            "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
             "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
             "target": "NLIST B.V.",
             "claim_status": "INCOMPLETE_SOURCES",
-            "risk_verdict": "CLEAN",
+            "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
             "severity_score": 0,
             "total_articles": 0,
             "categories_found": [],
@@ -5853,41 +5872,53 @@
       "award_intelligence": {
         "section": "award_intelligence",
         "title": "Award and growth intelligence",
-        "status": "available_with_primary_check_required",
-        "summary": "Award/ranking and distress-source context from the restored local award intelligence layer.",
-        "target_claim_safe": false,
-        "source": "tools.award_intel.award_intel_tool + data/award_intel/awards.db",
-        "limitation": "Context layer only; official finance and ownership claims still require primary documents or licensed provider evidence.",
+        "status": "available_with_primary_award_artifact",
+        "summary": "NLIST FT1000 2026 award row is source-hard as primary award context; finance and ownership reliance remain gated to primary/provider documents.",
+        "target_claim_safe": true,
+        "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026 + tools.award_intel.award_intel_tool",
+        "source_status": "primary_award_artifact_hash",
+        "checked_at": "2026-06-02T11:38:18+00:00",
+        "freshness": "award_year_2026",
+        "fallback_used": false,
+        "confidence": "high",
+        "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
         "rows": [
           {
             "section": "award_intelligence",
             "row_id": "award-intelligence-01",
-            "bucket": "Financial Times FT1000",
-            "claim": "Local award intelligence returned Financial Times FT1000 (rank #42, 2024, CAGR 189%) for NLIST B.V.; this is context until primary artifact proof is attached.",
-            "source": "Financial Times FT1000",
-            "source_status": "recovered_seed_requires_primary_check",
-            "checked_at": "2026-05-27T11:21:23.053506+00:00",
-            "freshness": "award_year_2024",
-            "fallback_used": true,
-            "confidence": "medium",
-            "claim_safe_for_memo": false,
-            "limitation": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
+            "bucket": "Financial Times FT1000 / Statista 2026",
+            "claim": "FT1000 #19 for NLIST B.V. is source-hard as primary award context via rendered Statista/Financial Times 2026 row with primary artifact hash; award-row revenue remains context, not official finance proof.",
+            "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+            "source_url": "https://rankings.statista.com/en/fastest-growing-companies/rankings/fastest-growing-companies-europe-2026/",
+            "source_status": "primary_award_artifact_hash",
+            "checked_at": "2026-06-02T11:38:18+00:00",
+            "freshness": "award_year_2026",
+            "fallback_used": false,
+            "confidence": "high",
+            "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
+            "claim_level": "primary_award_context",
+            "claim_safe_for_memo": true,
             "fields": {
-              "award_year": 2024,
-              "rank": 42,
-              "category": "",
-              "cagr_percent": 189.0,
-              "claim_level": "context_signal",
-              "revenue_floor_eur": 1500000.0,
-              "revenue_ceiling_eur": 4500000.0,
-              "recommended_revenue_eur": 0
+              "award_year": 2026,
+              "rank": 19,
+              "cagr_percent": 232.41,
+              "country": "Netherlands",
+              "sector": "Employment Services",
+              "revenue_eur_award_row": 14995242,
+              "start_revenue_eur_award_row": 408258,
+              "employees_award_row": 15,
+              "start_employees_award_row": 3,
+              "founded": 2018,
+              "row_html_sha256": "b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e",
+              "rendered_html_sha256": "8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19",
+              "row_screenshot_sha256": "c9666521d39dd7cce0814dccbfa3c36d59f2add5f25ad00c0f11ff0d6d43c51d",
+              "artifact_path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-website\\sample-report-nlist\\award-source-hardening.json"
             },
-            "diligence_question": "Which source, identifier, date and scope make this evidence row memo-safe?"
+            "diligence_question": "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
           }
         ],
         "diligence_questions": [
-          "Which primary award page/PDF/article should be attached and hashed before production use?",
-          "Does the award-derived revenue context conflict with official filings or seller financials?"
+          "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
         ]
       },
       "public_acquisition": {
@@ -6208,7 +6239,7 @@
             "bucket": "NLIST",
             "title": "NLIST",
             "url": "https://nlist.nl/nl",
-            "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn w\u00e9l te vinden in het buitenland. E\u00e9n en \u00e9\u00e9n is twee. ## Wij detacheren Internationale techni...",
+            "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn wél te vinden in het buitenland. Eén en één is twee. ## Wij detacheren Internationale techni...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-27T11:20:16+00:00",
@@ -6493,7 +6524,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Leadership/contact profile",
-            "claim": "Stephanie van der Toorn \u2013 Faas is listed with role Managing partner for NLIST B.V..",
+            "claim": "Stephanie van der Toorn – Faas is listed with role Managing partner for NLIST B.V..",
             "source": "https://nlist.nl/nl/team",
             "source_type": "company_website",
             "confidence": "High",
@@ -6525,7 +6556,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Leadership/contact profile",
-            "claim": "C\u00e9leste Romijn \u2013 Ter Haar is listed with role Managing consultant for NLIST B.V..",
+            "claim": "Céleste Romijn – Ter Haar is listed with role Managing consultant for NLIST B.V..",
             "source": "https://nlist.nl/nl/team",
             "source_type": "company_website",
             "confidence": "High",
@@ -6621,7 +6652,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Leadership/contact profile",
-            "claim": "Ch\u00e9tika du Preez is listed with role Recruiter for NLIST B.V..",
+            "claim": "Chétika du Preez is listed with role Recruiter for NLIST B.V..",
             "source": "https://nlist.nl/nl/team",
             "source_type": "company_website",
             "confidence": "High",
@@ -6749,7 +6780,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Leadership/contact profile",
-            "claim": "Crista Smid \u2013 Gon\u00e7alves is listed with role Backoffice medewerker for NLIST B.V..",
+            "claim": "Crista Smid – Gonçalves is listed with role Backoffice medewerker for NLIST B.V..",
             "source": "https://nlist.nl/nl/team",
             "source_type": "company_website",
             "confidence": "High",
@@ -6781,7 +6812,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Leadership/contact profile",
-            "claim": "Tamara Kroes is listed with role VCU- en opleidingsco\u00f6rdinator for NLIST B.V..",
+            "claim": "Tamara Kroes is listed with role VCU- en opleidingscoördinator for NLIST B.V..",
             "source": "https://nlist.nl/nl/team",
             "source_type": "company_website",
             "confidence": "High",
@@ -7146,27 +7177,35 @@
       {
         "section": "award_intelligence",
         "row_id": "award-intelligence-01",
-        "bucket": "Financial Times FT1000",
-        "claim": "Local award intelligence returned Financial Times FT1000 (rank #42, 2024, CAGR 189%) for NLIST B.V.; this is context until primary artifact proof is attached.",
-        "source": "Financial Times FT1000",
-        "source_status": "recovered_seed_requires_primary_check",
-        "checked_at": "2026-05-27T11:21:23.053506+00:00",
-        "freshness": "award_year_2024",
-        "fallback_used": true,
-        "confidence": "medium",
-        "claim_safe_for_memo": false,
-        "limitation": "Recovered DueSight README/session seed: NLIST rank 42 and CAGR 189. Use as context until the primary FT row is captured in the evidence ledger.",
+        "bucket": "Financial Times FT1000 / Statista 2026",
+        "claim": "FT1000 #19 for NLIST B.V. is source-hard as primary award context via rendered Statista/Financial Times 2026 row with primary artifact hash; award-row revenue remains context, not official finance proof.",
+        "source": "Statista / Financial Times Europe's Fastest-Growing Companies 2026",
+        "source_url": "https://rankings.statista.com/en/fastest-growing-companies/rankings/fastest-growing-companies-europe-2026/",
+        "source_status": "primary_award_artifact_hash",
+        "checked_at": "2026-06-02T11:38:18+00:00",
+        "freshness": "award_year_2026",
+        "fallback_used": false,
+        "confidence": "high",
+        "limitation": "Primary award row captured and hashed. Award-row revenue is not a substitute for KvK/Dataservice annual account, XBRL/PDF filing, seller P&L, UBO/shareholder extract or licensed provider finance/ownership evidence.",
+        "claim_level": "primary_award_context",
+        "claim_safe_for_memo": true,
         "fields": {
-          "award_year": 2024,
-          "rank": 42,
-          "category": "",
-          "cagr_percent": 189.0,
-          "claim_level": "context_signal",
-          "revenue_floor_eur": 1500000.0,
-          "revenue_ceiling_eur": 4500000.0,
-          "recommended_revenue_eur": 0
+          "award_year": 2026,
+          "rank": 19,
+          "cagr_percent": 232.41,
+          "country": "Netherlands",
+          "sector": "Employment Services",
+          "revenue_eur_award_row": 14995242,
+          "start_revenue_eur_award_row": 408258,
+          "employees_award_row": 15,
+          "start_employees_award_row": 3,
+          "founded": 2018,
+          "row_html_sha256": "b1fa0b63c4e7465ec7d8c5d9e34983949bd2c30c449ea2f918c80ea151055d0e",
+          "rendered_html_sha256": "8cec2f9a6f3ce593506d796a1c084b8c15acb8d8efe2c4eec5e2f5d0c9b01b19",
+          "row_screenshot_sha256": "c9666521d39dd7cce0814dccbfa3c36d59f2add5f25ad00c0f11ff0d6d43c51d",
+          "artifact_path": "C:\\Users\\arian\\OneDrive\\Desktop\\DueSight website\\duesight-website\\sample-report-nlist\\award-source-hardening.json"
         },
-        "diligence_question": "Which source, identifier, date and scope make this evidence row memo-safe?"
+        "diligence_question": "Does the Statista/FT award-row revenue reconcile to KvK/Dataservice annual accounts, seller P&L or licensed provider finance documents?"
       },
       {
         "source": "GovData CKAN",
@@ -7463,7 +7502,7 @@
         "bucket": "NLIST",
         "title": "NLIST",
         "url": "https://nlist.nl/nl",
-        "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn w\u00e9l te vinden in het buitenland. E\u00e9n en \u00e9\u00e9n is twee. ## Wij detacheren Internationale techni...",
+        "snippet": "NLIST Part of The Specialist Group Volg ons op LinkedIn # Wij detacheren internationals en regelen alles... Ga verder ; Er is een groeiend tekort aan (hoog) opgeleid technisch personeel in Nederland. Op dit moment zijn er al meer dan 60.000 openstaande technische vacatures. Deze goede technici met aantoonbare ervaring zijn wél te vinden in het buitenland. Eén en één is twee. ## Wij detacheren Internationale techni...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-27T11:20:16+00:00",
@@ -7540,14 +7579,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for NLIST B.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "NLIST B.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -7857,7 +7896,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Leadership/contact profile",
-        "claim": "Stephanie van der Toorn \u2013 Faas is listed with role Managing partner for NLIST B.V..",
+        "claim": "Stephanie van der Toorn – Faas is listed with role Managing partner for NLIST B.V..",
         "source": "https://nlist.nl/nl/team",
         "source_type": "company_website",
         "confidence": "High",
@@ -7889,7 +7928,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Leadership/contact profile",
-        "claim": "C\u00e9leste Romijn \u2013 Ter Haar is listed with role Managing consultant for NLIST B.V..",
+        "claim": "Céleste Romijn – Ter Haar is listed with role Managing consultant for NLIST B.V..",
         "source": "https://nlist.nl/nl/team",
         "source_type": "company_website",
         "confidence": "High",
@@ -7985,7 +8024,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Leadership/contact profile",
-        "claim": "Ch\u00e9tika du Preez is listed with role Recruiter for NLIST B.V..",
+        "claim": "Chétika du Preez is listed with role Recruiter for NLIST B.V..",
         "source": "https://nlist.nl/nl/team",
         "source_type": "company_website",
         "confidence": "High",
@@ -8113,7 +8152,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Leadership/contact profile",
-        "claim": "Crista Smid \u2013 Gon\u00e7alves is listed with role Backoffice medewerker for NLIST B.V..",
+        "claim": "Crista Smid – Gonçalves is listed with role Backoffice medewerker for NLIST B.V..",
         "source": "https://nlist.nl/nl/team",
         "source_type": "company_website",
         "confidence": "High",
@@ -8145,7 +8184,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Leadership/contact profile",
-        "claim": "Tamara Kroes is listed with role VCU- en opleidingsco\u00f6rdinator for NLIST B.V..",
+        "claim": "Tamara Kroes is listed with role VCU- en opleidingscoördinator for NLIST B.V..",
         "source": "https://nlist.nl/nl/team",
         "source_type": "company_website",
         "confidence": "High",
@@ -8511,15 +8550,15 @@
       {
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
-        "bucket": "No adverse media signal",
+        "bucket": "Source-limited adverse-media zero candidates",
         "claim": "No target-relevant adverse-media signal was found for NLIST B.V. in the checked sources.",
         "source": "DueSight adverse-media source ladder (public news + legal metadata)",
         "confidence": "Medium",
-        "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+        "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
         "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
         "target": "NLIST B.V.",
         "claim_status": "INCOMPLETE_SOURCES",
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "severity_score": 0,
         "total_articles": 0,
         "categories_found": [],

@@ -12,7 +12,29 @@
 
     // ── Configuration ────────────────────────────────────────────────
 
-    const API_BASE = window.DUESIGHT_API_URL || 'http://localhost:8000';
+    function serviceOrigin(port) {
+        const protocol = window.location.protocol === 'https:' ? 'https' : 'http';
+        const host = window.location.hostname || 'localhost';
+        return `${protocol}://${host}:${port}`;
+    }
+
+    function localDefault(port) {
+        const host = window.location.hostname || '';
+        return (host === 'localhost' || host === '127.0.0.1') ? serviceOrigin(port) : '';
+    }
+
+    function escapeHTML(value) {
+        return String(value ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    const API_BASE = window.DUESIGHT_API_BASE || window.DUESIGHT_API_URL || localDefault(5050);
+    const PAYMENT_BASE = window.DUESIGHT_PAYMENT_BASE || localDefault(5051);
+    const TOOL_BASE = window.DUESIGHT_TOOL_URL || 'http://localhost:5050';  // scan_server.py interactive tools
 
     // Scanner name → metric card selector mapping
     const SCANNER_MAP = {
@@ -184,11 +206,11 @@
             document.getElementById('modalDomain').value = domain;
 
             // Default to highest converting tier
-            document.getElementById('modalTier').value = 'standard';
+            document.getElementById('modalTier').value = 'premium';
             const tierBadge = document.getElementById('modalTierBadge');
             if (tierBadge) tierBadge.textContent = 'MEEST GEKOZEN';
-            document.getElementById('modalTierTitle').textContent = 'Digital + Verified';
-            document.getElementById('modalTierPrice').textContent = '€599';
+            document.getElementById('modalTierTitle').textContent = 'Evidence memo';
+            document.getElementById('modalTierPrice').textContent = '€399';
 
             checkoutModal.style.display = 'flex';
         }
@@ -281,6 +303,15 @@
 
     function handleCompleted(data) {
         showProgress('DD Rapport voltooid! ✓', 100);
+
+        // Dopamine confetti blast
+        if (typeof window.confetti === 'function') {
+            window.confetti({
+                particleCount: 150,
+                spread: 80,
+                origin: { y: 0.6 }
+            });
+        }
 
         // Update mode badge
         setModeBadge('completed');
@@ -449,6 +480,8 @@
             label.style.color = '#ef4444';
         }
         showProgress(`❌ ${message}`, 100);
+        const btn = document.getElementById('scanStartBtn');
+        if (btn) btn.textContent = `Mislukt: ${message}`;
         const fill = document.getElementById('scanProgressFill');
         if (fill) fill.style.background = '#ef4444';
     }
@@ -534,8 +567,18 @@
                 }
 
                 // 2. Redirect to Mollie iDEAL Checkout
-                const checkoutUrl = `${API_BASE}/api/checkout?tier=${encodeURIComponent(tier)}&domain=${encodeURIComponent(domain)}&email=${encodeURIComponent(email)}`;
-                const outResponse = await fetch(checkoutUrl);
+                const termsAccepted = true;
+                const outResponse = await fetch(`${PAYMENT_BASE}/api/payment/create`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        product: tier,
+                        domain: domain,
+                        company_name: domain,
+                        customer_email: email,
+                        terms_accepted: termsAccepted
+                    })
+                });
                 if (outResponse.ok) {
                     const outData = await outResponse.json();
                     if (outData.checkout_url) {
@@ -579,6 +622,7 @@
     }
 
     function showPostPaymentOverlay(domain, tier) {
+        const safeDomain = escapeHTML(domain || 'uw bedrijf');
         // Create full-screen loading overlay
         const overlay = document.createElement('div');
         overlay.id = 'subsidyOverlay';
@@ -596,7 +640,7 @@
                     Uw DueSight rapport wordt gegenereerd
                 </h2>
                 <p style="color: #94a3b8; font-size: 14px; margin-bottom: 32px;">
-                    Onze AI analyseert ${domain || 'uw bedrijf'} via 64+ datapunten...
+                    Onze AI analyseert ${safeDomain} via meerdere publieke bronnen...
                 </p>
 
                 <!-- Progress bar -->
@@ -690,7 +734,7 @@
         // Try to get personalized questions from backend
         let questions = defaultQuestions;
         try {
-            const res = await fetch(`${API_BASE}/api/subsidy-questionnaire?company_name=${encodeURIComponent(domain)}&fte_count=0`, {
+            const res = await fetch(`${TOOL_BASE}/api/subsidy-questionnaire?company_name=${encodeURIComponent(domain)}&fte_count=0`, {
                 method: 'POST'
             });
             if (res.ok) {
@@ -714,20 +758,22 @@
             // Fallback to defaults — graceful degradation
         }
 
-        container.innerHTML = questions.map(q => `
+        container.replaceChildren();
+        const html = questions.map(q => `
             <label style="
                 display: flex; align-items: center; gap: 12px; padding: 12px 16px;
                 background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
                 border-radius: 10px; cursor: pointer; transition: border-color 0.2s;
             " onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'"
               onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
-                <input type="checkbox" data-question-id="${q.id}"
+                <input type="checkbox" data-question-id="${escapeHTML(q.id)}"
                     style="width: 18px; height: 18px; accent-color: #6366f1; flex-shrink: 0;"
-                    onchange="window._dsSubsidyAnswers = window._dsSubsidyAnswers || {}; window._dsSubsidyAnswers['${q.id}'] = this.checked;"
+                    onchange="window._dsSubsidyAnswers = window._dsSubsidyAnswers || {}; window._dsSubsidyAnswers['${escapeHTML(q.id)}'] = this.checked;"
                 />
-                <span style="font-size: 13px; color: #cbd5e1; line-height: 1.4;">${q.text}</span>
+                <span style="font-size: 13px; color: #cbd5e1; line-height: 1.4;">${escapeHTML(q.text)}</span>
             </label>
         `).join('');
+        container.innerHTML = html;
     }
 
     // Make submit function globally accessible (called from onclick)
@@ -743,7 +789,7 @@
         const domain = sessionStorage.getItem('ds_scan_domain') || '';
 
         try {
-            await fetch(`${API_BASE}/api/subsidy-questionnaire?company_name=${encodeURIComponent(domain)}&answers=${encodeURIComponent(JSON.stringify(answers))}`, {
+            await fetch(`${TOOL_BASE}/api/subsidy-questionnaire?company_name=${encodeURIComponent(domain)}&answers=${encodeURIComponent(JSON.stringify(answers))}`, {
                 method: 'POST'
             });
         } catch (e) {
@@ -775,9 +821,9 @@
         btn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            const tiers = ['quick_scan', 'standard', 'premium'];
-            const titles = ['Digitale Analyse', 'Digital + Verified', 'Full Service Expert'];
-            const prices = ['€299', '€599', '€2.999'];
+            const tiers = ['quick_scan', 'premium', 'premium'];
+            const titles = ['Quick scan', 'Evidence memo', 'Uitgebreid DD dossier'];
+            const prices = ['€79', '€399', 'Op aanvraag'];
 
             document.getElementById('modalTier').value = tiers[index];
             document.getElementById('modalTierTitle').textContent = titles[index];

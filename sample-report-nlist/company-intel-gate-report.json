@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_gate_report.v1",
   "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
   "target": "NLIST B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "updated_at": "2026-06-08T13:34:55+00:00",
   "decision": "publish_context_only_with_official_upgrade_route",
   "gates": [
     {
@@ -15,7 +15,7 @@
       "id": "G2",
       "name": "Source count",
       "status": "PASS",
-      "message": "15 distinct source labels in ledger rows."
+      "message": "16 distinct source labels in ledger rows."
     },
     {
       "id": "G3",

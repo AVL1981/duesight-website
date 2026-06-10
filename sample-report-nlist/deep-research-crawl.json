@@ -7,14 +7,14 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:22:21+00:00",
+  "updated_at": "2026-06-02T10:09:38+00:00",
   "route": "query-plan:mmx-search",
   "query_policy_version": "deep_research_query_policy_20260526",
-  "queries_attempted": 18,
-  "queries_executed": 4,
-  "failed_or_skipped": 14,
+  "queries_attempted": 24,
+  "queries_executed": 11,
+  "failed_or_skipped": 13,
   "target_site_crawl": {
-    "pages_checked": 38,
+    "pages_checked": 35,
     "source_urls": [
       "https://nlist.nl/",
       "https://nlist.nl/nl/",
@@ -42,10 +42,7 @@
       "https://nlist.nl/nl/vacature/beheertechnicus-e",
       "https://nlist.nl/nl/vacature/mechanical-design-engineer",
       "https://nlist.nl/nl/vacature/full-stack-developer",
-      "https://nlist.nl/nl/vacature/monteur-e-i",
-      "https://nlist.nl/nl/vacature/hvac-monteur",
-      "https://nlist.nl/nl/vacature/structural-engineer",
-      "https://nlist.nl/nl/vacature/beheertechnicus-wtb"
+      "https://nlist.nl/nl/vacature/monteur-e-i"
     ],
     "pages": [
       {
@@ -257,28 +254,10 @@
         "status": 200,
         "title": "NLIST",
         "bytes": 44995
-      },
-      {
-        "url": "https://nlist.nl/nl/vacature/hvac-monteur",
-        "status": 200,
-        "title": "NLIST",
-        "bytes": 44678
-      },
-      {
-        "url": "https://nlist.nl/nl/vacature/structural-engineer",
-        "status": 200,
-        "title": "NLIST",
-        "bytes": 44897
-      },
-      {
-        "url": "https://nlist.nl/nl/vacature/beheertechnicus-wtb",
-        "status": 200,
-        "title": "NLIST",
-        "bytes": 45260
       }
     ]
   },
-  "source_urls_count": 39,
+  "source_urls_count": 44,
   "source_urls": [
     "https://nlist.nl/",
     "https://nlist.nl/nl/",
@@ -307,18 +286,23 @@
     "https://nlist.nl/nl/vacature/mechanical-design-engineer",
     "https://nlist.nl/nl/vacature/full-stack-developer",
     "https://nlist.nl/nl/vacature/monteur-e-i",
-    "https://nlist.nl/nl/vacature/hvac-monteur",
-    "https://nlist.nl/nl/vacature/structural-engineer",
-    "https://nlist.nl/nl/vacature/beheertechnicus-wtb",
-    "https://nl.linkedin.com/company/nlist1",
-    "https://www.facebook.com/61581688121175/",
     "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
-    "https://www.instagram.com/p/DU-HbG3AJ7y/",
-    "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
-    "https://www.crunchbase.com/organization/nlist-18a7",
+    "https://nl.linkedin.com/company/nlist1",
+    "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215",
     "https://talentbusinesspartners.com/en-de/agency/nlist-b-v-mx",
+    "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
+    "https://rocketreach.co/nlist-bv-email-format_b4308e49c1f5c553",
+    "https://www.crunchbase.com/organization/nlist-18a7",
+    "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu",
+    "https://www.facebook.com/61581688121175/",
+    "https://www.pehub.com/oaktree-capital-backed-tsg-adds-on-nlist/",
+    "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-further-strengthens-activity-7300472820860420096-KzKX",
+    "https://rocketreach.co/stephanie-van-der-toorn-faas-email_391654361",
+    "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+    "https://www.linkedin.com/posts/thespecialistgroup_one-year-after-joining-the-specialist-group-activity-7457704972152078336-xoXq",
+    "https://www.instagram.com/p/DU-HbG3AJ7y/",
     "https://rocketreach.co/nlist-bv-management_b4308e49c1f5c553",
-    "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
+    "https://www.tiktok.com/@nlist.recruitment/video/7617749948443954454"
   ],
   "queries": [
     {
@@ -328,12 +312,21 @@
       "query": "\"NLIST B.V.\" \"nlist.nl\" team management founders directors recruiters new business manager",
       "source_hint": "target-owned website and public professional discovery",
       "guardrail": "Names are public-business context only; LinkedIn/social corroborates, not legal proof.",
-      "status": "failed",
-      "elapsed_s": 1.7,
-      "discovered_urls_count": 0,
-      "source_urls": [],
-      "source_urls_count": 0,
-      "matched_results": []
+      "status": "executed_retry",
+      "elapsed_s": 1.484,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "NLIST B.V. - Pubrio कंपनी प्रोफ़ाइल और इंटेंट",
+          "snippet": "NLIST B.V. is a Dutch recruitment company established in 2018, located in Meppel, Netherlands. The company specializes in the job placement industry, ...",
+          "url": "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
+          "match_basis": "name_plus_context"
+        }
+      ]
     },
     {
       "index": 2,
@@ -343,7 +336,7 @@
       "source_hint": "public transaction and group-context sources",
       "guardrail": "Transaction context is not legal ownership proof without official/provider documents.",
       "status": "failed",
-      "elapsed_s": 1.41,
+      "elapsed_s": 2.583,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -357,7 +350,7 @@
       "source_hint": "target careers pages, job boards and public market sources",
       "guardrail": "Hiring data is a point-in-time public signal.",
       "status": "executed",
-      "elapsed_s": 1.172,
+      "elapsed_s": 1.35,
       "discovered_urls_count": 2,
       "source_urls": [
         "https://nl.linkedin.com/company/nlist1"
@@ -380,7 +373,7 @@
       "source_hint": "growth and finance context routes",
       "guardrail": "Hard finance claims remain gated until primary/provider document bytes and source hash exist.",
       "status": "failed",
-      "elapsed_s": 1.355,
+      "elapsed_s": 1.487,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -394,7 +387,7 @@
       "source_hint": "public competitor and market-context sources",
       "guardrail": "Competitor sets stay contextual unless confirmed by sector/source evidence.",
       "status": "failed",
-      "elapsed_s": 1.322,
+      "elapsed_s": 1.246,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -407,52 +400,19 @@
       "query": "(\"NLIST B.V.\" OR \"nlist.nl\" OR \"85442410\") (\"logo\" OR \"team\" OR \"office\" OR \"about us\" OR \"over ons\")",
       "source_hint": "public web/media index",
       "guardrail": "Reverse media is context/provenance support, not identity proof.",
-      "status": "partial_executed",
-      "elapsed_s": 1.241,
-      "discovered_urls_count": 12,
+      "status": "executed_retry",
+      "elapsed_s": 1.528,
+      "discovered_urls_count": 1,
       "source_urls": [
-        "https://www.facebook.com/61581688121175/",
-        "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
-        "https://www.instagram.com/p/DU-HbG3AJ7y/",
-        "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
-        "https://nlist.nl/",
-        "https://nl.linkedin.com/company/nlist1",
-        "https://nlist.nl/en/contact",
-        "https://www.crunchbase.com/organization/nlist-18a7",
-        "https://talentbusinesspartners.com/en-de/agency/nlist-b-v-mx",
-        "https://rocketreach.co/nlist-bv-management_b4308e49c1f5c553"
+        "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl"
       ],
-      "source_urls_count": 10,
+      "source_urls_count": 1,
       "matched_results": [
         {
-          "title": "NLIST - Facebook",
-          "snippet": "Crista has been part of our team for almost 2 years now and makes sure everything in our back office runs smoothly. From timesheets to leave and sick reports ...",
-          "url": "https://www.facebook.com/61581688121175/",
-          "match_basis": "name_plus_context"
-        },
-        {
           "title": "NLIST B.V. - Pubrio कंपनी प्रोफ़ाइल और इंटेंट",
-          "snippet": "NLIST B.V. is a Dutch recruitment company established in 2018, located in Meppel, Netherlands ... NLIST B.V. ... Company Tech Logo. Sendgrid. https://sendgrid.com ...",
+          "snippet": "NLIST B.V. is a Dutch recruitment company established in 2018, located in Meppel, Netherlands. The company specializes in the job placement industry, ...",
           "url": "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
           "match_basis": "name_plus_context"
-        },
-        {
-          "title": "Do you want to relocate and work in the Netherlands? The role of ...",
-          "snippet": "Our relocation team has you covered. From ... Click here: www.nlist.nl/team #NLIST #recruitment ... office roles. Pro Tips for your Dutch Job ...",
-          "url": "https://www.instagram.com/p/DU-HbG3AJ7y/",
-          "match_basis": "kvk_or_domain"
-        },
-        {
-          "title": "Nlist B.V. | Creditsafe",
-          "snippet": "The company number for Nlist B.V. is 85442410, with a safe number NL06034215. ... Nlist B.V.'s website is www.nlist.nl. What year ... Company Logo ...",
-          "url": "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
-          "match_basis": "kvk_or_domain"
-        },
-        {
-          "title": "NLIST",
-          "snippet": "NLIST is so valuable because they provide us with well-trained and experienced technical personnel. NLIST's committed team is very sensitive to the fact that ...",
-          "url": "https://nlist.nl/",
-          "match_basis": "target_domain"
         }
       ]
     },
@@ -464,7 +424,7 @@
       "source_hint": "site:acm.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.462,
+      "elapsed_s": 1.361,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -478,7 +438,7 @@
       "source_hint": "site:afm.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.122,
+      "elapsed_s": 1.405,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -492,7 +452,7 @@
       "source_hint": "site:autoriteitpersoonsgegevens.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.087,
+      "elapsed_s": 1.315,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -506,7 +466,7 @@
       "source_hint": "site:dnb.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.252,
+      "elapsed_s": 1.22,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -520,7 +480,7 @@
       "source_hint": "site:insolventies.rechtspraak.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.132,
+      "elapsed_s": 2.607,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -534,7 +494,7 @@
       "source_hint": "site:kvk.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.2,
+      "elapsed_s": 1.368,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -548,7 +508,7 @@
       "source_hint": "site:rechtspraak.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.256,
+      "elapsed_s": 1.287,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -562,7 +522,7 @@
       "source_hint": "site:uitspraken.rechtspraak.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.554,
+      "elapsed_s": 1.217,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -576,7 +536,7 @@
       "source_hint": "site:zoek.officielebekendmakingen.nl",
       "guardrail": "Passive public-source lookup only; verify exact entity before reporting.",
       "status": "failed",
-      "elapsed_s": 1.203,
+      "elapsed_s": 1.349,
       "discovered_urls_count": 0,
       "source_urls": [],
       "source_urls_count": 0,
@@ -590,8 +550,8 @@
       "source_hint": "GDELT DOC 2.0",
       "guardrail": "Guarded media signal only; requires exact entity match and source envelope.",
       "status": "failed",
-      "elapsed_s": 1.395,
-      "discovered_urls_count": 6,
+      "elapsed_s": 1.488,
+      "discovered_urls_count": 5,
       "source_urls": [],
       "source_urls_count": 0,
       "matched_results": []
@@ -604,7 +564,7 @@
       "source_hint": "public web index",
       "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
       "status": "executed_retry",
-      "elapsed_s": 1.389,
+      "elapsed_s": 1.467,
       "discovered_urls_count": 1,
       "source_urls": [
         "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
@@ -627,7 +587,7 @@
       "source_hint": "public web index",
       "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
       "status": "executed_retry",
-      "elapsed_s": 1.571,
+      "elapsed_s": 1.711,
       "discovered_urls_count": 1,
       "source_urls": [
         "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
@@ -638,6 +598,240 @@
           "title": "Nlist B.V. - Bedrijfsinformatie | Business Index - Creditsafe",
           "snippet": "Wat is de website van Nlist B.V.? De website van Nlist B.V. is www.nlist.nl. In welk jaar werd Nlist B.V. opgericht? Nlist B.V. werd opgericht in 2018. Wilt ...",
           "url": "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:github.com \"nlist.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.599,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Nlist B.V. - Bedrijfsinformatie | Business Index - Creditsafe",
+          "snippet": "Wat is de website van Nlist B.V.? De website van Nlist B.V. is www.nlist.nl. In welk jaar werd Nlist B.V. opgericht? Nlist B.V. werd opgericht in 2018. Wilt ...",
+          "url": "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:gitlab.com \"nlist.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.401,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Nlist B.V. - Bedrijfsinformatie | Business Index - Creditsafe",
+          "snippet": "Wat is de website van Nlist B.V.? De website van Nlist B.V. is www.nlist.nl. In welk jaar werd Nlist B.V. opgericht? Nlist B.V. werd opgericht in 2018. Wilt ...",
+          "url": "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "taxonomy": "shadow",
+      "provider": "search_cascade",
+      "query": "site:pastebin.com \"nlist.nl\"",
+      "source_hint": "public web index",
+      "guardrail": "Guarded signal layer only; do not access secrets, bypass auth, or claim compromise.",
+      "status": "executed_retry",
+      "elapsed_s": 1.353,
+      "discovered_urls_count": 1,
+      "source_urls": [
+        "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215"
+      ],
+      "source_urls_count": 1,
+      "matched_results": [
+        {
+          "title": "Nlist B.V. - Bedrijfsinformatie | Business Index - Creditsafe",
+          "snippet": "Wat is de website van Nlist B.V.? De website van Nlist B.V. is www.nlist.nl. In welk jaar werd Nlist B.V. opgericht? Nlist B.V. werd opgericht in 2018. Wilt ...",
+          "url": "https://www.creditsafe.com/business-index/nl-nl/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "taxonomy": "osint",
+      "provider": "official_registry",
+      "query": "\"NLIST B.V.\" OR \"nlist.nl\" OR \"85442410\"",
+      "source_hint": "KvK/GLEIF/Zefix/official registry ladder",
+      "guardrail": "Registry facts must include source, checked_at, identifier, and limitation.",
+      "status": "executed",
+      "elapsed_s": 1.461,
+      "discovered_urls_count": 8,
+      "source_urls": [
+        "https://talentbusinesspartners.com/en-de/agency/nlist-b-v-mx",
+        "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
+        "https://rocketreach.co/nlist-bv-email-format_b4308e49c1f5c553",
+        "https://nlist.nl/",
+        "https://nl.linkedin.com/company/nlist1",
+        "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
+        "https://www.crunchbase.com/organization/nlist-18a7"
+      ],
+      "source_urls_count": 7,
+      "matched_results": [
+        {
+          "title": "NLIST B.V. - client reviews and company overview - Talent Business ...",
+          "snippet": "NLIST B.V., operating under the Bond brand, is a staffing and recruiting company focused on early career hiring, helping employers recruit young talent ...",
+          "url": "https://talentbusinesspartners.com/en-de/agency/nlist-b-v-mx",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "Nlist B.V. | Creditsafe",
+          "snippet": "The company number for Nlist B.V. is 85442410, with a safe number NL06034215. ... 85442410. Safe ... Nlist B.V.'s website is www.nlist.nl. What year ...",
+          "url": "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "NLIST B.V. Email Format | nlist.nl Emails - RocketReach",
+          "snippet": "The most common NLIST B.V. email format is [first] (ex. jane@nlist.nl), which is being used by 90.6% of NLIST B.V. work email addresses.",
+          "url": "https://rocketreach.co/nlist-bv-email-format_b4308e49c1f5c553",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "NLIST",
+          "snippet": "We are experts in finding talented technicians abroad with experience and the needed education level. We focus on candidates who have reached vocational, ...",
+          "url": "https://nlist.nl/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "NLIST B.V. - LinkedIn",
+          "snippet": "Website: https://www.nlist.nl. Externe link voor NLIST B.V. ; Branche: Werving en selectie ; Bedrijfsgrootte: 2-10 medewerkers ; Hoofdkantoor: Meppel, Drenthe.",
+          "url": "https://nl.linkedin.com/company/nlist1",
+          "match_basis": "kvk_or_domain"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "taxonomy": "osint",
+      "provider": "search_cascade",
+      "query": "(\"NLIST B.V.\" OR \"nlist.nl\" OR \"85442410\") (\"acquired\" OR \"acquisition\" OR \"overname\" OR \"acquisitie\" OR \"part of\" OR \"parent company\" OR \"The Specialist Group\")",
+      "source_hint": "official newsroom / transaction announcement / reputable trade press",
+      "guardrail": "Public acquisition narratives are business context only until transaction documents, registry output or licensed ownership graph confirms legal route.",
+      "status": "executed",
+      "elapsed_s": 1.377,
+      "discovered_urls_count": 10,
+      "source_urls": [
+        "https://www.crunchbase.com/organization/nlist-18a7",
+        "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu",
+        "https://nlist.nl/",
+        "https://www.facebook.com/61581688121175/",
+        "https://www.pehub.com/oaktree-capital-backed-tsg-adds-on-nlist/",
+        "https://www.linkedin.com/posts/thespecialistgroup_the-specialist-group-further-strengthens-activity-7300472820860420096-KzKX",
+        "https://nlist.nl/en/contact",
+        "https://rocketreach.co/stephanie-van-der-toorn-faas-email_391654361",
+        "https://thespecialistgroup.com/news/tsg-strengthens-its-technical-talent-network-with-acquisition-of-nlist/",
+        "https://www.linkedin.com/posts/thespecialistgroup_one-year-after-joining-the-specialist-group-activity-7457704972152078336-xoXq"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "NLIST - Crunchbase Company Profile & Funding",
+          "snippet": "Also Known As NLIST B.V.. Operating Status Active. Company Type For Profit. About ... Information Technology Acquired Companies With Fewer Than 100 Employees.",
+          "url": "https://www.crunchbase.com/organization/nlist-18a7",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "#nlist #recruitment #engineering #it #maintenance ... - LinkedIn",
+          "snippet": "NLIST B.V.. 2.294 volgers. 4 mnd. Deze bijdrage melden; Menu sluiten ... NLIST versnelt groei één jaar na overname door The Specialist Group.",
+          "url": "https://nl.linkedin.com/posts/nlist1_nlist-recruitment-engineering-activity-7409125671345704962-_Hgu",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "NLIST",
+          "snippet": "Part of The Specialist Group · Follow us on LinkedIn. We recruit international professionals and take care of everything... Continue. ;. There is a growing ...",
+          "url": "https://nlist.nl/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "NLIST - Facebook",
+          "snippet": "marketing@nlist.nl. Photos. See all. Posts ... We challenged part of our Commercial Team with a mix of fun, random and ...",
+          "url": "https://www.facebook.com/61581688121175/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Oaktree Capital-backed TSG adds on NLIST - PE Hub",
+          "snippet": "Oaktree Capital Management portfolio company The Specialist Group (TSG) has acquired NLIST, a talent resourcing company.",
+          "url": "https://www.pehub.com/oaktree-capital-backed-tsg-adds-on-nlist/",
+          "match_basis": "name_plus_context"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "taxonomy": "market_intel",
+      "provider": "search_cascade",
+      "query": "(\"NLIST B.V.\" OR \"nlist.nl\" OR \"85442410\") (\"concurrenten\" OR \"competitors\" OR \"alternatives\" OR \"detacheerder\" OR \"recruitment\" OR \"staffing\" OR \"engineering\")",
+      "source_hint": "public web, trade press, company websites and market directories",
+      "guardrail": "Competitor output is market context until every competitor field has its own source envelope.",
+      "status": "executed",
+      "elapsed_s": 1.227,
+      "discovered_urls_count": 11,
+      "source_urls": [
+        "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
+        "https://www.instagram.com/p/DU-HbG3AJ7y/",
+        "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
+        "https://nlist.nl/",
+        "https://www.facebook.com/61581688121175/",
+        "https://nl.linkedin.com/company/nlist1",
+        "https://www.crunchbase.com/organization/nlist-18a7",
+        "https://rocketreach.co/nlist-bv-management_b4308e49c1f5c553",
+        "https://talentbusinesspartners.com/en-de/agency/nlist-b-v-mx",
+        "https://www.tiktok.com/@nlist.recruitment/video/7617749948443954454"
+      ],
+      "source_urls_count": 10,
+      "matched_results": [
+        {
+          "title": "Nlist B.V. | Creditsafe",
+          "snippet": "... competitors from creditsafe ... The company number for Nlist B.V. is 85442410, with a safe number NL06034215. ... Nlist B.V.'s website is www.nlist.nl. What year ...",
+          "url": "https://www.creditsafe.com/business-index/en-ie/company/nlist-bv-nl06034215",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "Do you want to relocate and work in the Netherlands? The role of ...",
+          "snippet": "... nlist.nl/team #NLIST #recruitment #engineering #IT #maintenance #workinthenetherlands #southafrica #workabroad #saffasabroad\".",
+          "url": "https://www.instagram.com/p/DU-HbG3AJ7y/",
+          "match_basis": "kvk_or_domain"
+        },
+        {
+          "title": "NLIST B.V. - Pubrio कंपनी प्रोफ़ाइल और इंटेंट",
+          "snippet": "NLIST B.V. is a Dutch recruitment company established in 2018, located in Meppel, Netherlands. The company specializes in the job placement industry, ...",
+          "url": "https://www.pubrio.com/hi/companies/d92f7ce5-1002-4e8a-805a-26dcc69a13d3/nlist-nl",
+          "match_basis": "name_plus_context"
+        },
+        {
+          "title": "NLIST",
+          "snippet": "We focus on candidates who have reached vocational, Bachelor, or Master levels in their education and specialize in engineering, maintenance, and IT. We ...",
+          "url": "https://nlist.nl/",
+          "match_basis": "target_domain"
+        },
+        {
+          "title": "NLIST - Facebook",
+          "snippet": "marketing@nlist.nl ... you're in good hands #NLIST #recruitment #engineering #IT #maintenance #workinthenetherlands #southafrica #workabroad #saffasabroad ...",
+          "url": "https://www.facebook.com/61581688121175/",
           "match_basis": "kvk_or_domain"
         }
       ]

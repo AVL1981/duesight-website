@@ -2,7 +2,7 @@
   "schema_version": "duesight.company_intel_findings.v1",
   "run_id": "certified-samples-rest-20260526-235449-truelegends",
   "target": "True Legends IT B.V.",
-  "updated_at": "2026-05-29T10:57:05+00:00",
+  "updated_at": "2026-06-08T13:34:28+00:00",
   "findings": [
     {
       "id": "operating-model",
@@ -118,8 +118,8 @@
       "memo_safe_rows": 1,
       "sources": [
         "sanctions screening route",
-        "GLEIF",
-        "Shodan InternetDB + RDAP",
+        "international entity register route",
+        "infrastructure exposure route + network registry route",
         "kvk_public",
         "ownership review route",
         "AFM/DNB/BaFin regulatory scanner / DNB (NL), AFM (NL)"
@@ -148,11 +148,11 @@
       "memo_safe_rows": 17,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
         "kvk_public"
       ],
@@ -180,11 +180,11 @@
       "memo_safe_rows": 0,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa",
-        "Shodan InternetDB + RDAP",
+        "provider discovery route",
+        "infrastructure exposure route + network registry route",
         "sanctions screening route",
         "kvk_public"
       ],

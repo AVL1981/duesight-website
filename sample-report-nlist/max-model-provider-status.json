@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:33:20+00:00",
+  "updated_at": "2026-06-02T10:18:01+00:00",
   "providers": [
     {
       "provider": "deep_research_crawl",
@@ -20,8 +20,8 @@
       "health_gated": false,
       "strict_core": true,
       "route": "query-plan:mmx-search",
-      "elapsed_s": 54.286,
-      "source_urls_count": 39,
+      "elapsed_s": 69.972,
+      "source_urls_count": 44,
       "exit_code": null
     },
     {
@@ -35,8 +35,8 @@
       "health_gated": false,
       "strict_core": true,
       "route": null,
-      "elapsed_s": 1.46,
-      "source_urls_count": 2,
+      "elapsed_s": 1.49,
+      "source_urls_count": 10,
       "exit_code": 0
     },
     {
@@ -50,7 +50,7 @@
       "health_gated": false,
       "strict_core": true,
       "route": null,
-      "elapsed_s": 38.687,
+      "elapsed_s": 12.485,
       "source_urls_count": 0,
       "exit_code": 0
     },
@@ -65,8 +65,8 @@
       "health_gated": false,
       "strict_core": true,
       "route": null,
-      "elapsed_s": 26.431,
-      "source_urls_count": 0,
+      "elapsed_s": 34.695,
+      "source_urls_count": 4,
       "exit_code": 0
     },
     {
@@ -80,7 +80,7 @@
       "health_gated": false,
       "strict_core": true,
       "route": "ccglm-native-zai-anthropic-http",
-      "elapsed_s": 21.299,
+      "elapsed_s": 22.139,
       "source_urls_count": 0,
       "exit_code": 200
     },
@@ -88,10 +88,10 @@
       "provider": "local_xortron",
       "model": "xortron3-fast:Q5_K_M",
       "status": "executed",
-      "provider_freshness": "fresh_current_run",
-      "retained_from_previous_success": false,
-      "retained_reason": null,
-      "latest_retry_status": null,
+      "provider_freshness": "retained_previous_success",
+      "retained_from_previous_success": true,
+      "retained_reason": "latest_retry_failed",
+      "latest_retry_status": "failed",
       "health_gated": false,
       "strict_core": true,
       "route": null,
@@ -110,8 +110,8 @@
       "health_gated": false,
       "strict_core": true,
       "route": "hermes-deepseek-auth-cli",
-      "elapsed_s": 26.836,
-      "source_urls_count": 9,
+      "elapsed_s": 37.511,
+      "source_urls_count": 12,
       "exit_code": 0
     },
     {
@@ -125,38 +125,23 @@
       "health_gated": true,
       "strict_core": false,
       "route": "nvidia-nim-chat-completions",
-      "elapsed_s": 92.283,
-      "source_urls_count": 3,
+      "elapsed_s": 31.381,
+      "source_urls_count": 0,
       "exit_code": 200
     },
     {
       "provider": "antigravity_codeassist",
       "model": "gemini31_flash",
       "status": "executed",
-      "provider_freshness": "fresh_current_run",
-      "retained_from_previous_success": false,
-      "retained_reason": null,
-      "latest_retry_status": null,
+      "provider_freshness": "retained_previous_success",
+      "retained_from_previous_success": true,
+      "retained_reason": "latest_retry_failed",
+      "latest_retry_status": "failed",
       "health_gated": false,
       "strict_core": true,
       "route": "antigravity-ui:local-cascade",
       "elapsed_s": 22.843,
       "source_urls_count": 5,
-      "exit_code": null
-    },
-    {
-      "provider": "claude_code",
-      "model": "opus",
-      "status": "partial_executed",
-      "provider_freshness": "fresh_current_run",
-      "retained_from_previous_success": false,
-      "retained_reason": null,
-      "latest_retry_status": null,
-      "health_gated": false,
-      "strict_core": true,
-      "route": "claude-code-auth-cli",
-      "elapsed_s": 180.387,
-      "source_urls_count": 0,
       "exit_code": null
     },
     {
@@ -170,8 +155,23 @@
       "health_gated": false,
       "strict_core": true,
       "route": null,
-      "elapsed_s": 180.406,
+      "elapsed_s": 120.594,
       "source_urls_count": 28,
+      "exit_code": null
+    },
+    {
+      "provider": "claude_code",
+      "model": "opus",
+      "status": "partial_executed",
+      "provider_freshness": "retained_previous_success",
+      "retained_from_previous_success": true,
+      "retained_reason": "not_requested_in_latest_retry",
+      "latest_retry_status": null,
+      "health_gated": false,
+      "strict_core": true,
+      "route": "claude-code-auth-cli",
+      "elapsed_s": 180.387,
+      "source_urls_count": 0,
       "exit_code": null
     }
   ]

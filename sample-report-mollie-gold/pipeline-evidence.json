@@ -179,8 +179,8 @@
         }
       },
       "sanctions": {
-        "status": "clean",
-        "raw_text": "\u2705 CLEAN \u2014 geen sanctions/PEP risk matches voor 'Mollie B.V.' (Yente match self-hosted)",
+        "status": "source_limited_zero_candidates",
+        "raw_text": "✅ CLEAN — geen sanctions/PEP risk matches voor 'Mollie B.V.' (Yente match self-hosted)",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -222,7 +222,7 @@
             "raw": {
               "slug": "mollie",
               "founded": null,
-              "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all \u2013 from startups to enterprises.\n\nFounded in 2004, Mollie\u2019s mission is to make payments and money management effortless"
+              "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all – from startups to enterprises.\n\nFounded in 2004, Mollie’s mission is to make payments and money management effortless"
             }
           },
           "all_sources": [
@@ -253,7 +253,7 @@
               "raw": {
                 "slug": "mollie",
                 "founded": null,
-                "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all \u2013 from startups to enterprises.\n\nFounded in 2004, Mollie\u2019s mission is to make payments and money management effortless"
+                "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all – from startups to enterprises.\n\nFounded in 2004, Mollie’s mission is to make payments and money management effortless"
               }
             },
             {
@@ -281,7 +281,7 @@
               "data_grade": "C",
               "is_real_data": false,
               "raw": {
-                "method": "FTE \u00d7 CBS sector rev_per_fte",
+                "method": "FTE × CBS sector rev_per_fte",
                 "sbi2": "62",
                 "rev_per_fte_eur": 185000,
                 "sbi_matched": true
@@ -323,7 +323,7 @@
             "raw": {
               "slug": "mollie",
               "founded": null,
-              "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all \u2013 from startups to enterprises.\n\nFounded in 2004, Mollie\u2019s mission is to make payments and money management effortless"
+              "description": "Mollie offers a single platform for businesses to get paid and manage their money. One that makes payments, reconciliation, reporting, fraud prevention, and financing simple for all – from startups to enterprises.\n\nFounded in 2004, Mollie’s mission is to make payments and money management effortless"
             }
           },
           "validation": {
@@ -365,7 +365,7 @@
           "benford_passed": true,
           "benford_score": 85.9,
           "benford_deviation_level": "LOW",
-          "benford_interpretation": "Goede financi\u00eble integriteit (\u03c7\u00b2=0.028, MAD=0.0142)",
+          "benford_interpretation": "Goede financiële integriteit (χ²=0.028, MAD=0.0142)",
           "benford_samples": 64,
           "benford_signals": [
             "CHI2_PASS: chi_sq=0.03 < 15.507"
@@ -473,7 +473,7 @@
             }
           ],
           "gleif_has_parent": false,
-          "gleif_source": "GLEIF \u2014 Global Legal Entity Identifier Foundation",
+          "gleif_source": "GLEIF — Global Legal Entity Identifier Foundation",
           "source": "gleif_client_v1"
         },
         "wikidata": {
@@ -517,7 +517,7 @@
             "cost_eur": 0.0,
             "time_s": 0.55
           },
-          "disclaimer": "Dit is een Algorithmic UBO Proxy \u2014 een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
+          "disclaimer": "Dit is een Algorithmic UBO Proxy — een reconstructie op basis van publiek beschikbare registers (KvK, GLEIF, OpenCorporates). Dit is GEEN officieel UBO-register uittreksel. Voor juridisch bindende UBO-informatie raadpleeg het KvK UBO-register via een geautoriseerde notaris of compliance officer.",
           "source": "ubo_resolver_v1"
         },
         "live_kvk_search_before_manual_control": {
@@ -632,7 +632,7 @@
           "afm_status": "NIET GEVONDEN",
           "afm_registered": false,
           "afm_registers_checked": [
-            "Financi\u00eble dienstverleners",
+            "Financiële dienstverleners",
             "Beleggingsondernemingen",
             "Beleggingsinstellingen (AIFM)",
             "Accountantsorganisaties",
@@ -700,7 +700,7 @@
             }
           ],
           "dnb_source": "https://www.dnb.nl/openbaar-register/",
-          "dnb_data_freshness": "dagelijks ge\u00fcpdatet (werkdagen 06:00)",
+          "dnb_data_freshness": "dagelijks geüpdatet (werkdagen 06:00)",
           "dnb_risk_level": "LOW"
         },
         "summary": "Gevonden in 1 register(s): DNB",
@@ -710,7 +710,7 @@
         "company": "Mollie B.V.",
         "total_articles": 0,
         "severity_score": 0,
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "claim_status": "INCOMPLETE_SOURCES",
         "source_status": {
           "gdelt": {
@@ -750,8 +750,8 @@
             {
               "url": "https://www.mollie.com/",
               "path": "/",
-              "title": "Mollie \u2013 Online and in-person payments built for businesses of every size",
-              "description": "Start growing your business with Mollie Payments, for online and in-person payments: \u2713 Quick setup \u2713 Honest pricing \u2713 All leading payment methods. Start today \u00bb",
+              "title": "Mollie – Online and in-person payments built for businesses of every size",
+              "description": "Start growing your business with Mollie Payments, for online and in-person payments: ✓ Quick setup ✓ Honest pricing ✓ All leading payment methods. Start today »",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:59:48+00:00",
@@ -763,8 +763,8 @@
             {
               "url": "https://www.mollie.com/nl/",
               "path": "/nl",
-              "title": "Mollie \u2013 Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang",
-              "description": "Laat je bedrijf groeien met Mollie Payments, voor online en fysieke betalingen: \u2713 Snelle installatie \u2713 Eerlijke tarieven \u2713 Alle populaire betaalmethodes. Start vandaag \u00bb",
+              "title": "Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang",
+              "description": "Laat je bedrijf groeien met Mollie Payments, voor online en fysieke betalingen: ✓ Snelle installatie ✓ Eerlijke tarieven ✓ Alle populaire betaalmethodes. Start vandaag »",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:59:48+00:00",
@@ -776,8 +776,8 @@
             {
               "url": "https://www.mollie.com/",
               "path": "/en",
-              "title": "Mollie \u2013 Online and in-person payments built for businesses of every size",
-              "description": "Start growing your business with Mollie Payments, for online and in-person payments: \u2713 Quick setup \u2713 Honest pricing \u2713 All leading payment methods. Start today \u00bb",
+              "title": "Mollie – Online and in-person payments built for businesses of every size",
+              "description": "Start growing your business with Mollie Payments, for online and in-person payments: ✓ Quick setup ✓ Honest pricing ✓ All leading payment methods. Start today »",
               "status_code": 200,
               "source_type": "company_website",
               "checked_at": "2026-05-26T21:59:49+00:00",
@@ -856,7 +856,7 @@
             {
               "url": "https://www.mollie.com/nl/contact",
               "path": "/nl/contact",
-              "title": "Neem eenvoudig contact op met Mollie \u2013 We helpen u graag!",
+              "title": "Neem eenvoudig contact op met Mollie – We helpen u graag!",
               "description": "Vragen na het instellen van Mollie op je website? Zie je 'Mollie' op je bankafschrift? Check eerst ons Help Center. Voor alle overige vragen, neem contact met ons op.",
               "status_code": 200,
               "source_type": "company_website",
@@ -909,7 +909,7 @@
               "score": 0.934
             },
             {
-              "title": "EZ-minister Karremans waarschuwt: \u2018Volgende Mollie of Coolblue komt mogelijk niet uit Nederland\u2019 - De Ondernemer",
+              "title": "EZ-minister Karremans waarschuwt: ‘Volgende Mollie of Coolblue komt mogelijk niet uit Nederland’ - De Ondernemer",
               "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORExNQXRvdm1Sd3hqWmdEZHVkSWZOaGtwa1ZVdk1Dc05tXzNtZjQ3aFhKNHNYckVzYkFXbjR5MnNhS0h5ZndrbmNfR0tjQWdRcE9uUzNPdy0zZWNfUVBvT1gwWERJSlV2RTRkU0JjQndXbEVHRlFFWE5TSmpVSnVqY21aQmVBSUJPMG14SEg4WlItSmpXSHFNMGtJQ251a2JPcHMwTWVmdUpnam9uMVpXWHJyNE5XdnQ2X3M0eHRDanc?oc=5",
               "source": "De Ondernemer",
               "date": "Wed, 20 Au",
@@ -949,7 +949,7 @@
               "score": 0.934
             },
             {
-              "title": "Adriaan Mol (founder Mollie): \u2018Dit is de missing link in de markt waarmee we Europa gaan veroveren\u2019 - BusinessWise",
+              "title": "Adriaan Mol (founder Mollie): ‘Dit is de missing link in de markt waarmee we Europa gaan veroveren’ - BusinessWise",
               "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczNwM3Z4Rm9LNkNOZHgydWhfbF9oYThRU1dKTUVRaHdXY083UlA4WG81amxtbWpCa1V3alI4X1dScDZubjRXNTlueU1UVWJDbFA3LV9rLUVuSjlLVG0tV19ZZDdSUGJVODU1dW1iUFY2YXo1dGxkWEdNZEVDUEhVb0J2bjdzQmdWdWpWTXVDMGJoQVFKdVE?oc=5",
               "source": "BusinessWise",
               "date": "Thu, 19 Ju",
@@ -965,7 +965,7 @@
               "score": 0.8665
             },
             {
-              "title": "Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittanni\u00eb - Het Parool",
+              "title": "Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittannië - Het Parool",
               "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRS1VUmVYZkhZeWtMX1NRWVB3YVdiZ3VtT0NwU2FQMURoMWZhLXRQY3RTMHZ0UDl5N2ltWFBZdUtJNVltM2tqNXhxd1V6MWtlM0lGMms0OFlZNnBzLWUzWGYxMjFnN3ZGSUFFLVVxUWdJVWdqajJwLTZ2Z1BrVlNQcmsxS25xSjlqb1RZLVQ1ZTRBV2s3c2RPWjJOVlhuc3A1Y25lZnNIcG4tSlJyMGo3Ymt6dw?oc=5",
               "source": "Het Parool",
               "date": "Thu, 11 De",
@@ -981,7 +981,7 @@
               "score": 0.857
             },
             {
-              "title": "Betaalbedrijf Mollie koopt voor \u20ac1,1 mrd concurrent GoCardless - Het Financieele Dagblad",
+              "title": "Betaalbedrijf Mollie koopt voor €1,1 mrd concurrent GoCardless - Het Financieele Dagblad",
               "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdG1HcWVNZzFvcmwtWjE2SjB1WlRfMnZGUk9pUDlFeW9XSnZmcEtNS0RHTXI0eXZoZWo4QXVrYkwwN09WMkwzRHUyMUlYcl9YLTdRV1BwUDRzZndBaHhJTE9OUS1jeGUwNHNFX05OeUhLWlNKQTRBQ05QVWlaSmNveE1uUV91dWx0VVhfTzlSbzVfbHFfSTVwRnpXQUQySWFhLXloQg?oc=5",
               "source": "Het Financieele Dagblad",
               "date": "Thu, 11 De",
@@ -989,7 +989,7 @@
               "score": 0.8681
             },
             {
-              "title": "Mollie koopt GoCardless: \u2019Samengaan cre\u00ebert meest complete betaalplatform van Europa\u2019 - De Telegraaf",
+              "title": "Mollie koopt GoCardless: ’Samengaan creëert meest complete betaalplatform van Europa’ - De Telegraaf",
               "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQmtFelBjRmVvcGtLQWxSbHo3Um1HVGd1VDhEYWozOTQzYzUtR2NyRGpBVDM1NzRBLXlvMUJLblVqSFVqRnc2Q29HOUQ2blh6Ml9KclR0ZGFaWEIyZjkxaFZNX1V3OW05VFE3cFlTRGVrNGZCTWwtejVjTFZldVM1LTBCNEk4VV94NzRLMEtyVHI4QUJJSEQ5Z2RydXNKWmRzYXA3YWQxdmJ0SGhvRGJnNjk2RjZ2cTk0VEFJdFJSWTlPWWxzVVA4OHFzcTY0dw?oc=5",
               "source": "De Telegraaf",
               "date": "Thu, 11 De",
@@ -1522,9 +1522,9 @@
                   "content_type": "text/html",
                   "robots_source": "https://mollie.com/robots.txt",
                   "content_hash": "sha256:95500de6f643c038dd774159262fc5dcd03b49ed24cd3bf6a8e8915c299ebab0",
-                  "title": "Mollie \u2013 Online and in-person payments built for businesses of every size",
+                  "title": "Mollie – Online and in-person payments built for businesses of every size",
                   "text_chars": 2959,
-                  "text_excerpt": "Mollie \u2013 Online and in-person payments built for businesses of every size Powering growth for over 250,000 businesses \u2013&nbsp;from startups to enterprises. Powering growth for over 250,000 businesses \u2013&nbsp;from startups to enterprises. Powering growth for over 250,000 businesses \u2013&nbsp;from startups to enterprises. Online and in-person payments \u2013 built for businesses of every size Online and in-person payments \u2013 built for businesses of every size Online and in-person payments \u2013 built for businesses of every size Online and in-person payments \u2013 built for businesses of every size Get started Get",
+                  "text_excerpt": "Mollie – Online and in-person payments built for businesses of every size Powering growth for over 250,000 businesses –&nbsp;from startups to enterprises. Powering growth for over 250,000 businesses –&nbsp;from startups to enterprises. Powering growth for over 250,000 businesses –&nbsp;from startups to enterprises. Online and in-person payments – built for businesses of every size Online and in-person payments – built for businesses of every size Online and in-person payments – built for businesses of every size Online and in-person payments – built for businesses of every size Get started Get",
                   "jsonld": [
                     {
                       "@type": "WebSite",
@@ -1578,7 +1578,7 @@
                   "content_hash": "sha256:ec4a24fc5e48ec78dd35f6337e62c0efc8eb07e59163223d126ed8d7abe287fb",
                   "title": "Mollie - Impressum",
                   "text_chars": 7749,
-                  "text_excerpt": "Mollie - Impressum Impressum Mollie B.V. Board Koen K\u00f6ppen Chief Executive Officer Rogier Schoute Chief Product Officer Vincent Toolan Chief Financial Officer Sarah Roberto Chief Risk and Compliance Officer Stichting Mollie Payments Board Koen K\u00f6ppen Director Koen K\u00f6ppen Director Rogier Schoute Director Vincent Toolan Chief Financial Officer Sarah Roberto Chief Risk and Compliance Officer Service provider Mollie BV. Promoter of the website mollie.com VAT identifcation number NL81.58.39.091.B01 Commercial register Amsterdam, 302.04.462 Responsible supervisory authority DNB Social media LinkedIn",
+                  "text_excerpt": "Mollie - Impressum Impressum Mollie B.V. Board Koen Köppen Chief Executive Officer Rogier Schoute Chief Product Officer Vincent Toolan Chief Financial Officer Sarah Roberto Chief Risk and Compliance Officer Stichting Mollie Payments Board Koen Köppen Director Koen Köppen Director Rogier Schoute Director Vincent Toolan Chief Financial Officer Sarah Roberto Chief Risk and Compliance Officer Service provider Mollie BV. Promoter of the website mollie.com VAT identifcation number NL81.58.39.091.B01 Commercial register Amsterdam, 302.04.462 Responsible supervisory authority DNB Social media LinkedIn",
                   "jsonld": [
                     {
                       "@type": "WebSite",
@@ -1675,7 +1675,7 @@
                   "content_hash": "sha256:0cb4ccc10550f010c416c7e4438322f728f66d88203372c3b07d4bebd93c5e04",
                   "title": "About Mollie",
                   "text_chars": 6730,
-                  "text_excerpt": "About Mollie About us We\u2019re here to eliminate financial bureaucracy View our jobs ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> At Mollie, we\u2019re on a mission to make payments and money management effortless for every business in Europe and UK. We started 22 years ago when we launched a more direct, affordable way for companies to get paid. That provided an alternative to the frustrating, overpriced solutions that banks offered at the time. Today, we serve more than 250,000 businesses across Europe with an all-in-one solution that simplifies payments ",
+                  "text_excerpt": "About Mollie About us We’re here to eliminate financial bureaucracy View our jobs ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> ')\"> At Mollie, we’re on a mission to make payments and money management effortless for every business in Europe and UK. We started 22 years ago when we launched a more direct, affordable way for companies to get paid. That provided an alternative to the frustrating, overpriced solutions that banks offered at the time. Today, we serve more than 250,000 businesses across Europe with an all-in-one solution that simplifies payments ",
                   "jsonld": [
                     {
                       "@type": "WebSite",
@@ -1783,7 +1783,7 @@
                   "content_hash": "sha256:d1426755347c1ea24f0149f0f9fc1f3384339784972c85b583e055bcd14a4126",
                   "title": "Contact us | Mollie",
                   "text_chars": 6542,
-                  "text_excerpt": "Contact us | Mollie Contact For the quickest answer to your question, please visit our Help Center . Here, you will find the answers to most of your questions. If you didn\u2019t find your answer there, please contact us directly. For the quickest answer to your question, please visit our Help Center . Here, you will find the answers to most of your questions. If you didn\u2019t find your answer there, please contact us directly. For the quickest answer to your question, please visit our Help Center. Here, you will find the answers to most of your questions. If you didn\u2019t find your answer there, please ",
+                  "text_excerpt": "Contact us | Mollie Contact For the quickest answer to your question, please visit our Help Center . Here, you will find the answers to most of your questions. If you didn’t find your answer there, please contact us directly. For the quickest answer to your question, please visit our Help Center . Here, you will find the answers to most of your questions. If you didn’t find your answer there, please contact us directly. For the quickest answer to your question, please visit our Help Center. Here, you will find the answers to most of your questions. If you didn’t find your answer there, please ",
                   "jsonld": [
                     {
                       "@type": "WebSite",
@@ -1871,9 +1871,9 @@
                   "content_type": "text/html",
                   "robots_source": "https://mollie.com/robots.txt",
                   "content_hash": "sha256:706004bd620c1adb97a31e5569b127aaecfb2eaede60e3b659a9f1599a30530e",
-                  "title": "Mollie \u2013 Privacy",
+                  "title": "Mollie – Privacy",
                   "text_chars": 28281,
-                  "text_excerpt": "Mollie \u2013 Privacy Privacy Statement Mollie processes large amounts of data as a result of the services that Mollie provides to our customers and the customers\u2019 of our customers (consumers). Mollie\u2019s role as a financial services provider together with the value that Mollie places on its relationships with its customers requires careful and secure processing of our customers\u2019 and consumers\u2019 data, and&nbsp; in particular personal data. Through this Privacy Statement, Mollie (\u201cMollie\u201d, \u201cwe\u201d, \u201cour\u201d, \u201cus\u201d) informs you about the way in which Mollie processes personal data of (potential) customers, bus",
+                  "text_excerpt": "Mollie – Privacy Privacy Statement Mollie processes large amounts of data as a result of the services that Mollie provides to our customers and the customers’ of our customers (consumers). Mollie’s role as a financial services provider together with the value that Mollie places on its relationships with its customers requires careful and secure processing of our customers’ and consumers’ data, and&nbsp; in particular personal data. Through this Privacy Statement, Mollie (“Mollie”, “we”, “our”, “us”) informs you about the way in which Mollie processes personal data of (potential) customers, bus",
                   "jsonld": [
                     {
                       "@type": "WebSite",
@@ -1973,11 +1973,11 @@
                   "ok_pages": 5,
                   "blocked_pages": 0,
                   "titles": [
-                    "Mollie \u2013 Online and in-person payments built for businesses of every size",
+                    "Mollie – Online and in-person payments built for businesses of every size",
                     "Mollie - Impressum",
                     "About Mollie",
                     "Contact us | Mollie",
-                    "Mollie \u2013 Privacy"
+                    "Mollie – Privacy"
                   ]
                 }
               }
@@ -2253,11 +2253,11 @@
               "ok_pages": 5,
               "blocked_pages": 0,
               "titles": [
-                "Mollie \u2013 Online and in-person payments built for businesses of every size",
+                "Mollie – Online and in-person payments built for businesses of every size",
                 "Mollie - Impressum",
                 "About Mollie",
                 "Contact us | Mollie",
-                "Mollie \u2013 Privacy"
+                "Mollie – Privacy"
               ]
             }
           },
@@ -2337,18 +2337,18 @@
         ],
         "evidence": [
           {
-            "title": "Who are the stakeholders of my business? \u2013 Mollie Support",
+            "title": "Who are the stakeholders of my business? – Mollie Support",
             "url": "https://help.mollie.com/hc/en-us/articles/4405750362642-Who-are-the-stakeholders-of-my-business",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Who are the stakeholders of my business? \u2013 Mollie Support\n\nCookie statement\n\nWe use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy.\n\nFunctional\n\nEnsures the proper technical functioning of our services.\n\nPreferences\n\nEnables personalised settings.\n\nAnalytics\n\nEnables analysis and improvement of performance of our services.\n\nMarketing\n\nEnables targeting with the most relevant content and personalised communication on our and third party websites.\n\nSave Preferences\n\nReject Customise Accept\n\nTo use our payment services, please provide and verify inform"
+            "snippet": "Who are the stakeholders of my business? – Mollie Support\n\nCookie statement\n\nWe use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy.\n\nFunctional\n\nEnsures the proper technical functioning of our services.\n\nPreferences\n\nEnables personalised settings.\n\nAnalytics\n\nEnables analysis and improvement of performance of our services.\n\nMarketing\n\nEnables targeting with the most relevant content and personalised communication on our and third party websites.\n\nSave Preferences\n\nReject Customise Accept\n\nTo use our payment services, please provide and verify inform"
           },
           {
             "title": "What additional proof of ownership documents does Mollie accept?",
             "url": "https://help.mollie.com/hc/en-us/articles/4407739378322-What-additional-proof-of-ownership-documents-does-Mollie-accept",
             "published_date": "",
             "source": "Exa",
-            "snippet": "What additional proof of ownership documents does Mollie accept? \u2013Mollie Support\n[Skip to main content](#page-container)\nSearch\n1. [Mollie Support](https://help.mollie.com/hc/en-us)\n2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account)\n3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information)\n# What additional proof of ownership documents does Mollie accept?\nDuring the verification process in your Mollie dashboard, we ask you for documentation that shows the structure of share ownership and stakeholders of your company. When we "
+            "snippet": "What additional proof of ownership documents does Mollie accept? –Mollie Support\n[Skip to main content](#page-container)\nSearch\n1. [Mollie Support](https://help.mollie.com/hc/en-us)\n2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account)\n3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information)\n# What additional proof of ownership documents does Mollie accept?\nDuring the verification process in your Mollie dashboard, we ask you for documentation that shows the structure of share ownership and stakeholders of your company. When we "
           },
           {
             "title": "Mollie - Impressum",
@@ -2362,14 +2362,14 @@
             "url": "https://www.mollie.com/legal/impressum",
             "published_date": "",
             "source": "Exa",
-            "snippet": "# Impressum\n\nMollie B.V. Board\n\n[Koen K\u00f6ppen Chief Executive Officer]\n\n[Rogier Schoute Chief Product Officer]\n\n[Vincent Toolan Chief Financial Officer]\n\n[Sarah Roberto Chief Risk and Compliance Officer]\n\nStichting Mollie Payments Board\n\n[Koen K\u00f6ppen Director]\n\n[Rogier Schoute Director]\n\n[Vincent Toolan Chief Financial Officer]\n\n[Sarah Roberto Chief Risk and Compliance Officer]\n\nService provider\n\nMollie BV. Promoter of the website mollie.com\n\nVAT identifcation number NL81.58.39.091.B01\n\nCommercial register Amsterdam, 302.04.462\n\nResponsible supervisory authority DNB\n\nSocial media\n\nLinkedIn link"
+            "snippet": "# Impressum\n\nMollie B.V. Board\n\n[Koen Köppen Chief Executive Officer]\n\n[Rogier Schoute Chief Product Officer]\n\n[Vincent Toolan Chief Financial Officer]\n\n[Sarah Roberto Chief Risk and Compliance Officer]\n\nStichting Mollie Payments Board\n\n[Koen Köppen Director]\n\n[Rogier Schoute Director]\n\n[Vincent Toolan Chief Financial Officer]\n\n[Sarah Roberto Chief Risk and Compliance Officer]\n\nService provider\n\nMollie BV. Promoter of the website mollie.com\n\nVAT identifcation number NL81.58.39.091.B01\n\nCommercial register Amsterdam, 302.04.462\n\nResponsible supervisory authority DNB\n\nSocial media\n\nLinkedIn link"
           },
           {
             "title": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
             "url": "https://mergr.com/company/mollie",
             "published_date": "",
             "source": "Exa",
-            "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr\n\n# Mollie \u2013 Company Overview\n\n## Company profile, ownership, and transaction history\n\n#### Mollie at a glance:\n\n| 2 Investors | 1 M&A Transaction | M&A Advisors |\n| --- | --- | --- |\n\nView Mollie\u2019s full profile\n\n## Mollie\n\n### Mollie B.V.\n\nKeizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com\n\n- Profile\n- Investors (2)\n- M&A Activity (1)\n- Pro - Join to Access\"> Analytics\n\nMollie is a payment services provider in Europe, serving more than 120,000 active merchants across the continent. Mollie facilitates online payment accept"
+            "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr\n\n# Mollie – Company Overview\n\n## Company profile, ownership, and transaction history\n\n#### Mollie at a glance:\n\n| 2 Investors | 1 M&A Transaction | M&A Advisors |\n| --- | --- | --- |\n\nView Mollie’s full profile\n\n## Mollie\n\n### Mollie B.V.\n\nKeizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com\n\n- Profile\n- Investors (2)\n- M&A Activity (1)\n- Pro - Join to Access\"> Analytics\n\nMollie is a payment services provider in Europe, serving more than 120,000 active merchants across the continent. Mollie facilitates online payment accept"
           }
         ]
       },
@@ -2387,7 +2387,7 @@
         ],
         "synthesis": {
           "status": "completed_limited",
-          "raw_text": "```json { \"status\": \"COMPLETED\", \"timestamp\": \"2023-10-05T12:00:00Z\", \"target\": \"Mollie B.V.\", \"executive_summary\": { \"risk_assessment\": \"LOW\", \"confidence_level\": \"MEDIUM\", \"key_findings\": [ \"No adverse media, sanctions, or insolvency signals detected in available sources.\", \"Registered with Dutch regulatory bodies (DNB, AFM) with low-risk exposure.\", \"No direct evidence of cybersecurity vulnerabilities or CVE exposure.\", \"Reputation and regulatory compliance appear stable, but source limitations apply.\" ] }, \"guarded_assertions\": { \"sanctions_compliance\": { \"status\": \"CLEAN\", \"sources\": [ { \"type\": \"SANCTIONS_SCREENING\", \"source\": \"DueSight adverse-media source ladder\", \"result\": \"No sanctions-related articles or legal metadata found\", \"confidence\": \"MEDIUM\", \"limitation\": \"Point-in-time assessment; no guarantee of future compliance\" }, { \"type\": \"GOVERNMENT_CATALOG\", \"source\": \"GovData CKAN (insolvenz/sanktionen queries)\", \"result\": \"Zero results for Mollie B.V. in German insolvency/sanctions datasets\", \"confidence\": \"LOW\", \"limitation\": \"Catalog metadata only; no direct entity-level verification\" } ] }, \"regulatory_compliance\": { \"status\": \"REGISTERED\", \"sources\": [ { \"type\": \"REGULATORY_REGISTER\", \"source\": \"AFM/DNB/BaFin scanner\", \"result\": \"Registered with DNB (NL) and AFM (NL); low-risk classification\", \"confidence\": \"MEDIUM\", \"limitation\": \"Scope/license details unverified; no proof of active compliance\" } ] }, \"reputation\": { \"status\": \"CLEAN\", \"sources\": [ { \"type\": \"ADVERSE_MEDIA\", \"source\": \"DueSight adverse-media ladder\", \"result\": \"Zero articles in public news/legal metadata\", \"confidence\": \"MEDIUM\", \"limitation\": \"Source-limited; no local-language or paid-media coverage\" } ] }, \"cybersecurity\": { \"status\": \"UNASSESSED\", \"sources\": [], \"note\": \"No direct cybersecurity or vulnerability data available in provided evidence.\" } }, \"guarded_negations\": { \"no_adverse_media\": { \"assertion\": \"No adverse media signals detected\", \"sources\": [ { \"type\": \"NEWS_LEGAL_METADATA\", \"source\": \"DueSight adverse-media ladder\", \"result\": \"Zero articles in checked sources\", \"confidence\": \"MEDIUM\", \"limitation\": \"Degraded freshness; source coverage gaps\" } ] }, \"no_insolvency\": { \"assertion\": \"No insolvency signals detected\", \"sources\": [ { \"type\": \"GOVERNMENT_CATALOG\", \"source\": \"GovData CKAN (insolvenz query)\", \"result\": \"Zero results for Mollie B.V.\", \"confide..."
+          "raw_text": "```json { \"status\": \"COMPLETED\", \"timestamp\": \"2023-10-05T12:00:00Z\", \"target\": \"Mollie B.V.\", \"executive_summary\": { \"risk_assessment\": \"LOW\", \"confidence_level\": \"MEDIUM\", \"key_findings\": [ \"No adverse media, sanctions, or insolvency signals detected in available sources.\", \"Registered with Dutch regulatory bodies (DNB, AFM) with low-risk exposure.\", \"No direct evidence of cybersecurity vulnerabilities or CVE exposure.\", \"Reputation and regulatory compliance appear stable, but source limitations apply.\" ] }, \"guarded_assertions\": { \"sanctions_compliance\": { \"status\": \"CLEAN\", \"sources\": [ { \"type\": \"SANCTIONS_SCREENING\", \"source\": \"DueSight adverse-media source ladder\", \"result\": \"No sanctions-related articles or legal metadata found\", \"confidence\": \"MEDIUM\", \"limitation\": \"Point-in-time assessment; no guarantee of future compliance\" }, { \"type\": \"GOVERNMENT_CATALOG\", \"source\": \"GovData CKAN (insolvenz/sanktionen queries)\", \"result\": \"Zero results for Mollie B.V. in German insolvency/sanctions datasets\", \"confidence\": \"LOW\", \"limitation\": \"Catalog metadata only; no direct entity-level verification\" } ] }, \"regulatory_compliance\": { \"status\": \"REGISTERED\", \"sources\": [ { \"type\": \"REGULATORY_REGISTER\", \"source\": \"AFM/DNB/BaFin scanner\", \"result\": \"Registered with DNB (NL) and AFM (NL); low-risk classification\", \"confidence\": \"MEDIUM\", \"limitation\": \"Scope/license details unverified; no proof of active compliance\" } ] }, \"reputation\": { \"status\": \"CLEAN\", \"sources\": [ { \"type\": \"ADVERSE_MEDIA\", \"source\": \"DueSight adverse-media ladder\", \"result\": \"Zero articles in public news/legal metadata\", \"confidence\": \"MEDIUM\", \"limitation\": \"Source-limited; no local-language or paid-media coverage\" } ] }, \"cybersecurity\": { \"status\": \"UNASSESSED\", \"sources\": [], \"note\": \"No direct cybersecurity or vulnerability data available in provided evidence.\" } }, \"guarded_negations\": { \"no_adverse_media\": { \"assertion\": \"Source-limited adverse-media zero candidatess detected\", \"sources\": [ { \"type\": \"NEWS_LEGAL_METADATA\", \"source\": \"DueSight adverse-media ladder\", \"result\": \"Zero articles in checked sources\", \"confidence\": \"MEDIUM\", \"limitation\": \"Degraded freshness; source coverage gaps\" } ] }, \"no_insolvency\": { \"assertion\": \"No insolvency signals detected\", \"sources\": [ { \"type\": \"GOVERNMENT_CATALOG\", \"source\": \"GovData CKAN (insolvenz query)\", \"result\": \"Zero results for Mollie B.V.\", \"confide..."
         },
         "limitations": [
           "Guarded synthesis only; not an evidence source and not a production due-diligence opinion.",
@@ -2469,25 +2469,25 @@
         "sanctions_screening": {
           "section": "sanctions_screening",
           "title": "Sanctions and PEP screening evidence",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "summary": "No claim-safe sanctions/PEP match was found for Mollie B.V. via sanctions_enricher_v1.",
           "target_claim_safe": true,
           "source": "sanctions_enricher_v1",
           "buckets": {
-            "No sanctions/PEP match": 1
+            "Source-limited sanctions/PEP zero candidates": 1
           },
           "rows": [
             {
               "section": "sanctions_screening",
               "row_id": "sanctions-01",
-              "bucket": "No sanctions/PEP match",
+              "bucket": "Source-limited sanctions/PEP zero candidates",
               "claim": "No claim-safe sanctions or PEP risk match was found for Mollie B.V..",
               "source": "sanctions_enricher_v1",
               "confidence": "Medium",
               "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
               "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
               "target": "Mollie B.V.",
-              "status": "clean",
+              "status": "source_limited_zero_candidates",
               "match_count": 0,
               "web_signal_count": 0,
               "highest_severity": "NONE",
@@ -2520,7 +2520,7 @@
               "section": "finance_forensics",
               "row_id": "finance-source-01",
               "bucket": "Financial filing coverage",
-              "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+              "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
               "source": "linkedin_public",
               "confidence": "Medium source coverage",
               "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -2685,21 +2685,21 @@
           "target_claim_safe": false,
           "source": "DueSight Adverse Media Scanner",
           "buckets": {
-            "No adverse media signal": 1
+            "Source-limited adverse-media zero candidates": 1
           },
           "rows": [
             {
               "section": "reputation_adverse_media",
               "row_id": "reputation-01",
-              "bucket": "No adverse media signal",
+              "bucket": "Source-limited adverse-media zero candidates",
               "claim": "No target-relevant adverse-media signal was found for Mollie B.V. in the checked sources.",
               "source": "DueSight adverse-media source ladder (public news + legal metadata)",
               "confidence": "Medium",
-              "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+              "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
               "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
               "target": "Mollie B.V.",
               "claim_status": "INCOMPLETE_SOURCES",
-              "risk_verdict": "CLEAN",
+              "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
               "severity_score": 0,
               "total_articles": 0,
               "categories_found": [],
@@ -2930,11 +2930,11 @@
                 "ok_pages": 5,
                 "blocked_pages": 0,
                 "titles": [
-                  "Mollie \u2013 Online and in-person payments built for businesses of every size",
+                  "Mollie – Online and in-person payments built for businesses of every size",
                   "Mollie - Impressum",
                   "About Mollie",
                   "Contact us | Mollie",
-                  "Mollie \u2013 Privacy"
+                  "Mollie – Privacy"
                 ]
               },
               "section": "public_acquisition",
@@ -3013,10 +3013,10 @@
             {
               "section": "premium_source_discovery",
               "row_id": "premium-source-01",
-              "bucket": "Who are the stakeholders of my business? \u2013 Mollie Support",
-              "title": "Who are the stakeholders of my business? \u2013 Mollie Support",
+              "bucket": "Who are the stakeholders of my business? – Mollie Support",
+              "title": "Who are the stakeholders of my business? – Mollie Support",
               "url": "https://help.mollie.com/hc/en-us/articles/4405750362642-Who-are-the-stakeholders-of-my-business",
-              "snippet": "Who are the stakeholders of my business? \u2013 Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
+              "snippet": "Who are the stakeholders of my business? – Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3033,7 +3033,7 @@
               "bucket": "What additional proof of ownership documents does Mollie accept?",
               "title": "What additional proof of ownership documents does Mollie accept?",
               "url": "https://help.mollie.com/hc/en-us/articles/4407739378322-What-additional-proof-of-ownership-documents-does-Mollie-accept",
-              "snippet": "What additional proof of ownership documents does Mollie accept? \u2013Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
+              "snippet": "What additional proof of ownership documents does Mollie accept? –Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3067,7 +3067,7 @@
               "bucket": "Impressum - Mollie",
               "title": "Impressum - Mollie",
               "url": "https://www.mollie.com/legal/impressum",
-              "snippet": "# Impressum Mollie B.V. Board [Koen K\u00f6ppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen K\u00f6ppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
+              "snippet": "# Impressum Mollie B.V. Board [Koen Köppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen Köppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3084,7 +3084,7 @@
               "bucket": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
               "title": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
               "url": "https://mergr.com/company/mollie",
-              "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie \u2013 Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie\u2019s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
+              "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie – Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie’s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
               "source": "Exa",
               "source_status": "OK",
               "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3116,7 +3116,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
               "source": "https://www.mollie.com/",
               "source_type": "company_website",
               "confidence": "High",
@@ -3132,7 +3132,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
+              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
               "source": "https://www.mollie.com/nl/",
               "source_type": "company_website",
               "confidence": "High",
@@ -3148,7 +3148,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+              "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
               "source": "https://www.mollie.com/",
               "source_type": "company_website",
               "confidence": "High",
@@ -3212,7 +3212,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Company website profile",
-              "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie \u2013 We helpen u graag!.",
+              "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie – We helpen u graag!.",
               "source": "https://www.mollie.com/nl/contact",
               "source_type": "company_website",
               "confidence": "High",
@@ -3246,7 +3246,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: \u2018Volgende Mollie of Coolblue komt mogelijk niet uit Nederland\u2019 - De Ondernemer.",
+              "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: ‘Volgende Mollie of Coolblue komt mogelijk niet uit Nederland’ - De Ondernemer.",
               "source": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORExNQXRvdm1Sd3hqWmdEZHVkSWZOaGtwa1ZVdk1Dc05tXzNtZjQ3aFhKNHNYckVzYkFXbjR5MnNhS0h5ZndrbmNfR0tjQWdRcE9uUzNPdy0zZWNfUVBvT1gwWERJSlV2RTRkU0JjQndXbEVHRlFFWE5TSmpVSnVqY21aQmVBSUJPMG14SEg4WlItSmpXSHFNMGtJQ251a2JPcHMwTWVmdUpnam9uMVpXWHJyNE5XdnQ2X3M0eHRDanc?oc=5",
               "source_type": "news",
               "published_at": "Wed, 20 Au",
@@ -3336,7 +3336,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): \u2018Dit is de missing link in de markt waarmee we Europa gaan veroveren\u2019 - BusinessWise.",
+              "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): ‘Dit is de missing link in de markt waarmee we Europa gaan veroveren’ - BusinessWise.",
               "source": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczNwM3Z4Rm9LNkNOZHgydWhfbF9oYThRU1dKTUVRaHdXY083UlA4WG81amxtbWpCa1V3alI4X1dScDZubjRXNTlueU1UVWJDbFA3LV9rLUVuSjlLVG0tV19ZZDdSUGJVODU1dW1iUFY2YXo1dGxkWEdNZEVDUEhVb0J2bjdzQmdWdWpWTXVDMGJoQVFKdVE?oc=5",
               "source_type": "news",
               "published_at": "Thu, 19 Ju",
@@ -3372,7 +3372,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittanni\u00eb - Het Parool.",
+              "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittannië - Het Parool.",
               "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRS1VUmVYZkhZeWtMX1NRWVB3YVdiZ3VtT0NwU2FQMURoMWZhLXRQY3RTMHZ0UDl5N2ltWFBZdUtJNVltM2tqNXhxd1V6MWtlM0lGMms0OFlZNnBzLWUzWGYxMjFnN3ZGSUFFLVVxUWdJVWdqajJwLTZ2Z1BrVlNQcmsxS25xSjlqb1RZLVQ1ZTRBV2s3c2RPWjJOVlhuc3A1Y25lZnNIcG4tSlJyMGo3Ymt6dw?oc=5",
               "source_type": "news",
               "published_at": "Thu, 11 De",
@@ -3408,7 +3408,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor \u20ac1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
+              "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor €1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
               "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdG1HcWVNZzFvcmwtWjE2SjB1WlRfMnZGUk9pUDlFeW9XSnZmcEtNS0RHTXI0eXZoZWo4QXVrYkwwN09WMkwzRHUyMUlYcl9YLTdRV1BwUDRzZndBaHhJTE9OUS1jeGUwNHNFX05OeUhLWlNKQTRBQ05QVWlaSmNveE1uUV91dWx0VVhfTzlSbzVfbHFfSTVwRnpXQUQySWFhLXloQg?oc=5",
               "source_type": "news",
               "published_at": "Thu, 11 De",
@@ -3426,7 +3426,7 @@
             {
               "section": "business_profile_intel",
               "bucket": "Business news signal",
-              "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: \u2019Samengaan cre\u00ebert meest complete betaalplatform van Europa\u2019 - De Telegraaf.",
+              "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: ’Samengaan creëert meest complete betaalplatform van Europa’ - De Telegraaf.",
               "source": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQmtFelBjRmVvcGtLQWxSbHo3Um1HVGd1VDhEYWozOTQzYzUtR2NyRGpBVDM1NzRBLXlvMUJLblVqSFVqRnc2Q29HOUQ2blh6Ml9KclR0ZGFaWEIyZjkxaFZNX1V3OW05VFE3cFlTRGVrNGZCTWwtejVjTFZldVM1LTBCNEk4VV94NzRLMEtyVHI4QUJJSEQ5Z2RydXNKWmRzYXA3YWQxdmJ0SGhvRGJnNjk2RjZ2cTk0VEFJdFJSWTlPWWxzVVA4OHFzcTY0dw?oc=5",
               "source_type": "news",
               "published_at": "Thu, 11 De",
@@ -3861,11 +3861,11 @@
             "ok_pages": 5,
             "blocked_pages": 0,
             "titles": [
-              "Mollie \u2013 Online and in-person payments built for businesses of every size",
+              "Mollie – Online and in-person payments built for businesses of every size",
               "Mollie - Impressum",
               "About Mollie",
               "Contact us | Mollie",
-              "Mollie \u2013 Privacy"
+              "Mollie – Privacy"
             ]
           },
           "section": "public_acquisition",
@@ -3930,10 +3930,10 @@
         {
           "section": "premium_source_discovery",
           "row_id": "premium-source-01",
-          "bucket": "Who are the stakeholders of my business? \u2013 Mollie Support",
-          "title": "Who are the stakeholders of my business? \u2013 Mollie Support",
+          "bucket": "Who are the stakeholders of my business? – Mollie Support",
+          "title": "Who are the stakeholders of my business? – Mollie Support",
           "url": "https://help.mollie.com/hc/en-us/articles/4405750362642-Who-are-the-stakeholders-of-my-business",
-          "snippet": "Who are the stakeholders of my business? \u2013 Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
+          "snippet": "Who are the stakeholders of my business? – Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3950,7 +3950,7 @@
           "bucket": "What additional proof of ownership documents does Mollie accept?",
           "title": "What additional proof of ownership documents does Mollie accept?",
           "url": "https://help.mollie.com/hc/en-us/articles/4407739378322-What-additional-proof-of-ownership-documents-does-Mollie-accept",
-          "snippet": "What additional proof of ownership documents does Mollie accept? \u2013Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
+          "snippet": "What additional proof of ownership documents does Mollie accept? –Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:42+00:00",
@@ -3984,7 +3984,7 @@
           "bucket": "Impressum - Mollie",
           "title": "Impressum - Mollie",
           "url": "https://www.mollie.com/legal/impressum",
-          "snippet": "# Impressum Mollie B.V. Board [Koen K\u00f6ppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen K\u00f6ppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
+          "snippet": "# Impressum Mollie B.V. Board [Koen Köppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen Köppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:42+00:00",
@@ -4001,7 +4001,7 @@
           "bucket": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
           "title": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
           "url": "https://mergr.com/company/mollie",
-          "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie \u2013 Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie\u2019s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
+          "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie – Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie’s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
           "source": "Exa",
           "source_status": "OK",
           "checked_at": "2026-05-26T21:59:42+00:00",
@@ -4044,14 +4044,14 @@
         {
           "section": "sanctions_screening",
           "row_id": "sanctions-01",
-          "bucket": "No sanctions/PEP match",
+          "bucket": "Source-limited sanctions/PEP zero candidates",
           "claim": "No claim-safe sanctions or PEP risk match was found for Mollie B.V..",
           "source": "sanctions_enricher_v1",
           "confidence": "Medium",
           "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
           "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
           "target": "Mollie B.V.",
-          "status": "clean",
+          "status": "source_limited_zero_candidates",
           "match_count": 0,
           "web_signal_count": 0,
           "highest_severity": "NONE",
@@ -4066,7 +4066,7 @@
           "section": "finance_forensics",
           "row_id": "finance-source-01",
           "bucket": "Financial filing coverage",
-          "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+          "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
           "source": "linkedin_public",
           "confidence": "Medium source coverage",
           "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -4163,7 +4163,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
           "source": "https://www.mollie.com/",
           "source_type": "company_website",
           "confidence": "High",
@@ -4179,7 +4179,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
+          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
           "source": "https://www.mollie.com/nl/",
           "source_type": "company_website",
           "confidence": "High",
@@ -4195,7 +4195,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+          "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
           "source": "https://www.mollie.com/",
           "source_type": "company_website",
           "confidence": "High",
@@ -4259,7 +4259,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Company website profile",
-          "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie \u2013 We helpen u graag!.",
+          "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie – We helpen u graag!.",
           "source": "https://www.mollie.com/nl/contact",
           "source_type": "company_website",
           "confidence": "High",
@@ -4293,7 +4293,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: \u2018Volgende Mollie of Coolblue komt mogelijk niet uit Nederland\u2019 - De Ondernemer.",
+          "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: ‘Volgende Mollie of Coolblue komt mogelijk niet uit Nederland’ - De Ondernemer.",
           "source": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORExNQXRvdm1Sd3hqWmdEZHVkSWZOaGtwa1ZVdk1Dc05tXzNtZjQ3aFhKNHNYckVzYkFXbjR5MnNhS0h5ZndrbmNfR0tjQWdRcE9uUzNPdy0zZWNfUVBvT1gwWERJSlV2RTRkU0JjQndXbEVHRlFFWE5TSmpVSnVqY21aQmVBSUJPMG14SEg4WlItSmpXSHFNMGtJQ251a2JPcHMwTWVmdUpnam9uMVpXWHJyNE5XdnQ2X3M0eHRDanc?oc=5",
           "source_type": "news",
           "published_at": "Wed, 20 Au",
@@ -4383,7 +4383,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): \u2018Dit is de missing link in de markt waarmee we Europa gaan veroveren\u2019 - BusinessWise.",
+          "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): ‘Dit is de missing link in de markt waarmee we Europa gaan veroveren’ - BusinessWise.",
           "source": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczNwM3Z4Rm9LNkNOZHgydWhfbF9oYThRU1dKTUVRaHdXY083UlA4WG81amxtbWpCa1V3alI4X1dScDZubjRXNTlueU1UVWJDbFA3LV9rLUVuSjlLVG0tV19ZZDdSUGJVODU1dW1iUFY2YXo1dGxkWEdNZEVDUEhVb0J2bjdzQmdWdWpWTXVDMGJoQVFKdVE?oc=5",
           "source_type": "news",
           "published_at": "Thu, 19 Ju",
@@ -4419,7 +4419,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittanni\u00eb - Het Parool.",
+          "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittannië - Het Parool.",
           "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRS1VUmVYZkhZeWtMX1NRWVB3YVdiZ3VtT0NwU2FQMURoMWZhLXRQY3RTMHZ0UDl5N2ltWFBZdUtJNVltM2tqNXhxd1V6MWtlM0lGMms0OFlZNnBzLWUzWGYxMjFnN3ZGSUFFLVVxUWdJVWdqajJwLTZ2Z1BrVlNQcmsxS25xSjlqb1RZLVQ1ZTRBV2s3c2RPWjJOVlhuc3A1Y25lZnNIcG4tSlJyMGo3Ymt6dw?oc=5",
           "source_type": "news",
           "published_at": "Thu, 11 De",
@@ -4455,7 +4455,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor \u20ac1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
+          "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor €1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
           "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdG1HcWVNZzFvcmwtWjE2SjB1WlRfMnZGUk9pUDlFeW9XSnZmcEtNS0RHTXI0eXZoZWo4QXVrYkwwN09WMkwzRHUyMUlYcl9YLTdRV1BwUDRzZndBaHhJTE9OUS1jeGUwNHNFX05OeUhLWlNKQTRBQ05QVWlaSmNveE1uUV91dWx0VVhfTzlSbzVfbHFfSTVwRnpXQUQySWFhLXloQg?oc=5",
           "source_type": "news",
           "published_at": "Thu, 11 De",
@@ -4473,7 +4473,7 @@
         {
           "section": "business_profile_intel",
           "bucket": "Business news signal",
-          "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: \u2019Samengaan cre\u00ebert meest complete betaalplatform van Europa\u2019 - De Telegraaf.",
+          "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: ’Samengaan creëert meest complete betaalplatform van Europa’ - De Telegraaf.",
           "source": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQmtFelBjRmVvcGtLQWxSbHo3Um1HVGd1VDhEYWozOTQzYzUtR2NyRGpBVDM1NzRBLXlvMUJLblVqSFVqRnc2Q29HOUQ2blh6Ml9KclR0ZGFaWEIyZjkxaFZNX1V3OW05VFE3cFlTRGVrNGZCTWwtejVjTFZldVM1LTBCNEk4VV94NzRLMEtyVHI4QUJJSEQ5Z2RydXNKWmRzYXA3YWQxdmJ0SGhvRGJnNjk2RjZ2cTk0VEFJdFJSWTlPWWxzVVA4OHFzcTY0dw?oc=5",
           "source_type": "news",
           "published_at": "Thu, 11 De",
@@ -4718,15 +4718,15 @@
         {
           "section": "reputation_adverse_media",
           "row_id": "reputation-01",
-          "bucket": "No adverse media signal",
+          "bucket": "Source-limited adverse-media zero candidates",
           "claim": "No target-relevant adverse-media signal was found for Mollie B.V. in the checked sources.",
           "source": "DueSight adverse-media source ladder (public news + legal metadata)",
           "confidence": "Medium",
-          "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+          "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
           "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
           "target": "Mollie B.V.",
           "claim_status": "INCOMPLETE_SOURCES",
-          "risk_verdict": "CLEAN",
+          "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
           "severity_score": 0,
           "total_articles": 0,
           "categories_found": [],
@@ -4842,25 +4842,25 @@
       "sanctions_screening": {
         "section": "sanctions_screening",
         "title": "Sanctions and PEP screening evidence",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "summary": "No claim-safe sanctions/PEP match was found for Mollie B.V. via sanctions_enricher_v1.",
         "target_claim_safe": true,
         "source": "sanctions_enricher_v1",
         "buckets": {
-          "No sanctions/PEP match": 1
+          "Source-limited sanctions/PEP zero candidates": 1
         },
         "rows": [
           {
             "section": "sanctions_screening",
             "row_id": "sanctions-01",
-            "bucket": "No sanctions/PEP match",
+            "bucket": "Source-limited sanctions/PEP zero candidates",
             "claim": "No claim-safe sanctions or PEP risk match was found for Mollie B.V..",
             "source": "sanctions_enricher_v1",
             "confidence": "Medium",
             "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
             "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
             "target": "Mollie B.V.",
-            "status": "clean",
+            "status": "source_limited_zero_candidates",
             "match_count": 0,
             "web_signal_count": 0,
             "highest_severity": "NONE",
@@ -4893,7 +4893,7 @@
             "section": "finance_forensics",
             "row_id": "finance-source-01",
             "bucket": "Financial filing coverage",
-            "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+            "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
             "source": "linkedin_public",
             "confidence": "Medium source coverage",
             "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -5058,21 +5058,21 @@
         "target_claim_safe": false,
         "source": "DueSight Adverse Media Scanner",
         "buckets": {
-          "No adverse media signal": 1
+          "Source-limited adverse-media zero candidates": 1
         },
         "rows": [
           {
             "section": "reputation_adverse_media",
             "row_id": "reputation-01",
-            "bucket": "No adverse media signal",
+            "bucket": "Source-limited adverse-media zero candidates",
             "claim": "No target-relevant adverse-media signal was found for Mollie B.V. in the checked sources.",
             "source": "DueSight adverse-media source ladder (public news + legal metadata)",
             "confidence": "Medium",
-            "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+            "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
             "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
             "target": "Mollie B.V.",
             "claim_status": "INCOMPLETE_SOURCES",
-            "risk_verdict": "CLEAN",
+            "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
             "severity_score": 0,
             "total_articles": 0,
             "categories_found": [],
@@ -5303,11 +5303,11 @@
               "ok_pages": 5,
               "blocked_pages": 0,
               "titles": [
-                "Mollie \u2013 Online and in-person payments built for businesses of every size",
+                "Mollie – Online and in-person payments built for businesses of every size",
                 "Mollie - Impressum",
                 "About Mollie",
                 "Contact us | Mollie",
-                "Mollie \u2013 Privacy"
+                "Mollie – Privacy"
               ]
             },
             "section": "public_acquisition",
@@ -5386,10 +5386,10 @@
           {
             "section": "premium_source_discovery",
             "row_id": "premium-source-01",
-            "bucket": "Who are the stakeholders of my business? \u2013 Mollie Support",
-            "title": "Who are the stakeholders of my business? \u2013 Mollie Support",
+            "bucket": "Who are the stakeholders of my business? – Mollie Support",
+            "title": "Who are the stakeholders of my business? – Mollie Support",
             "url": "https://help.mollie.com/hc/en-us/articles/4405750362642-Who-are-the-stakeholders-of-my-business",
-            "snippet": "Who are the stakeholders of my business? \u2013 Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
+            "snippet": "Who are the stakeholders of my business? – Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:59:42+00:00",
@@ -5406,7 +5406,7 @@
             "bucket": "What additional proof of ownership documents does Mollie accept?",
             "title": "What additional proof of ownership documents does Mollie accept?",
             "url": "https://help.mollie.com/hc/en-us/articles/4407739378322-What-additional-proof-of-ownership-documents-does-Mollie-accept",
-            "snippet": "What additional proof of ownership documents does Mollie accept? \u2013Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
+            "snippet": "What additional proof of ownership documents does Mollie accept? –Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:59:42+00:00",
@@ -5440,7 +5440,7 @@
             "bucket": "Impressum - Mollie",
             "title": "Impressum - Mollie",
             "url": "https://www.mollie.com/legal/impressum",
-            "snippet": "# Impressum Mollie B.V. Board [Koen K\u00f6ppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen K\u00f6ppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
+            "snippet": "# Impressum Mollie B.V. Board [Koen Köppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen Köppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:59:42+00:00",
@@ -5457,7 +5457,7 @@
             "bucket": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
             "title": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
             "url": "https://mergr.com/company/mollie",
-            "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie \u2013 Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie\u2019s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
+            "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie – Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie’s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
             "source": "Exa",
             "source_status": "OK",
             "checked_at": "2026-05-26T21:59:42+00:00",
@@ -5489,7 +5489,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
             "source": "https://www.mollie.com/",
             "source_type": "company_website",
             "confidence": "High",
@@ -5505,7 +5505,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
+            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
             "source": "https://www.mollie.com/nl/",
             "source_type": "company_website",
             "confidence": "High",
@@ -5521,7 +5521,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+            "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
             "source": "https://www.mollie.com/",
             "source_type": "company_website",
             "confidence": "High",
@@ -5585,7 +5585,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Company website profile",
-            "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie \u2013 We helpen u graag!.",
+            "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie – We helpen u graag!.",
             "source": "https://www.mollie.com/nl/contact",
             "source_type": "company_website",
             "confidence": "High",
@@ -5619,7 +5619,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: \u2018Volgende Mollie of Coolblue komt mogelijk niet uit Nederland\u2019 - De Ondernemer.",
+            "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: ‘Volgende Mollie of Coolblue komt mogelijk niet uit Nederland’ - De Ondernemer.",
             "source": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORExNQXRvdm1Sd3hqWmdEZHVkSWZOaGtwa1ZVdk1Dc05tXzNtZjQ3aFhKNHNYckVzYkFXbjR5MnNhS0h5ZndrbmNfR0tjQWdRcE9uUzNPdy0zZWNfUVBvT1gwWERJSlV2RTRkU0JjQndXbEVHRlFFWE5TSmpVSnVqY21aQmVBSUJPMG14SEg4WlItSmpXSHFNMGtJQ251a2JPcHMwTWVmdUpnam9uMVpXWHJyNE5XdnQ2X3M0eHRDanc?oc=5",
             "source_type": "news",
             "published_at": "Wed, 20 Au",
@@ -5709,7 +5709,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): \u2018Dit is de missing link in de markt waarmee we Europa gaan veroveren\u2019 - BusinessWise.",
+            "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): ‘Dit is de missing link in de markt waarmee we Europa gaan veroveren’ - BusinessWise.",
             "source": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczNwM3Z4Rm9LNkNOZHgydWhfbF9oYThRU1dKTUVRaHdXY083UlA4WG81amxtbWpCa1V3alI4X1dScDZubjRXNTlueU1UVWJDbFA3LV9rLUVuSjlLVG0tV19ZZDdSUGJVODU1dW1iUFY2YXo1dGxkWEdNZEVDUEhVb0J2bjdzQmdWdWpWTXVDMGJoQVFKdVE?oc=5",
             "source_type": "news",
             "published_at": "Thu, 19 Ju",
@@ -5745,7 +5745,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittanni\u00eb - Het Parool.",
+            "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittannië - Het Parool.",
             "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRS1VUmVYZkhZeWtMX1NRWVB3YVdiZ3VtT0NwU2FQMURoMWZhLXRQY3RTMHZ0UDl5N2ltWFBZdUtJNVltM2tqNXhxd1V6MWtlM0lGMms0OFlZNnBzLWUzWGYxMjFnN3ZGSUFFLVVxUWdJVWdqajJwLTZ2Z1BrVlNQcmsxS25xSjlqb1RZLVQ1ZTRBV2s3c2RPWjJOVlhuc3A1Y25lZnNIcG4tSlJyMGo3Ymt6dw?oc=5",
             "source_type": "news",
             "published_at": "Thu, 11 De",
@@ -5781,7 +5781,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor \u20ac1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
+            "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor €1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
             "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdG1HcWVNZzFvcmwtWjE2SjB1WlRfMnZGUk9pUDlFeW9XSnZmcEtNS0RHTXI0eXZoZWo4QXVrYkwwN09WMkwzRHUyMUlYcl9YLTdRV1BwUDRzZndBaHhJTE9OUS1jeGUwNHNFX05OeUhLWlNKQTRBQ05QVWlaSmNveE1uUV91dWx0VVhfTzlSbzVfbHFfSTVwRnpXQUQySWFhLXloQg?oc=5",
             "source_type": "news",
             "published_at": "Thu, 11 De",
@@ -5799,7 +5799,7 @@
           {
             "section": "business_profile_intel",
             "bucket": "Business news signal",
-            "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: \u2019Samengaan cre\u00ebert meest complete betaalplatform van Europa\u2019 - De Telegraaf.",
+            "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: ’Samengaan creëert meest complete betaalplatform van Europa’ - De Telegraaf.",
             "source": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQmtFelBjRmVvcGtLQWxSbHo3Um1HVGd1VDhEYWozOTQzYzUtR2NyRGpBVDM1NzRBLXlvMUJLblVqSFVqRnc2Q29HOUQ2blh6Ml9KclR0ZGFaWEIyZjkxaFZNX1V3OW05VFE3cFlTRGVrNGZCTWwtejVjTFZldVM1LTBCNEk4VV94NzRLMEtyVHI4QUJJSEQ5Z2RydXNKWmRzYXA3YWQxdmJ0SGhvRGJnNjk2RjZ2cTk0VEFJdFJSWTlPWWxzVVA4OHFzcTY0dw?oc=5",
             "source_type": "news",
             "published_at": "Thu, 11 De",
@@ -6234,11 +6234,11 @@
           "ok_pages": 5,
           "blocked_pages": 0,
           "titles": [
-            "Mollie \u2013 Online and in-person payments built for businesses of every size",
+            "Mollie – Online and in-person payments built for businesses of every size",
             "Mollie - Impressum",
             "About Mollie",
             "Contact us | Mollie",
-            "Mollie \u2013 Privacy"
+            "Mollie – Privacy"
           ]
         },
         "section": "public_acquisition",
@@ -6303,10 +6303,10 @@
       {
         "section": "premium_source_discovery",
         "row_id": "premium-source-01",
-        "bucket": "Who are the stakeholders of my business? \u2013 Mollie Support",
-        "title": "Who are the stakeholders of my business? \u2013 Mollie Support",
+        "bucket": "Who are the stakeholders of my business? – Mollie Support",
+        "title": "Who are the stakeholders of my business? – Mollie Support",
         "url": "https://help.mollie.com/hc/en-us/articles/4405750362642-Who-are-the-stakeholders-of-my-business",
-        "snippet": "Who are the stakeholders of my business? \u2013 Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
+        "snippet": "Who are the stakeholders of my business? – Mollie Support Cookie statement We use cookies to enhance your experience and deliver personalised content. Read our Cookie Policy. Functional Ensures the proper technical functioning of our services. Preferences Enables personalised settings. Analytics Enables analysis and improvement of performance of our services. Marketing Enables targeting with the most relevant cont...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:59:42+00:00",
@@ -6323,7 +6323,7 @@
         "bucket": "What additional proof of ownership documents does Mollie accept?",
         "title": "What additional proof of ownership documents does Mollie accept?",
         "url": "https://help.mollie.com/hc/en-us/articles/4407739378322-What-additional-proof-of-ownership-documents-does-Mollie-accept",
-        "snippet": "What additional proof of ownership documents does Mollie accept? \u2013Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
+        "snippet": "What additional proof of ownership documents does Mollie accept? –Mollie Support [Skip to main content](#page-container) Search 1. [Mollie Support](https://help.mollie.com/hc/en-us) 2. [Account](https://help.mollie.com/hc/en-us/categories/360002845379-Account) 3. [Update information](https://help.mollie.com/hc/en-us/sections/360004882179-Update-information) # What additional proof of ownership documents does Molli...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:59:42+00:00",
@@ -6357,7 +6357,7 @@
         "bucket": "Impressum - Mollie",
         "title": "Impressum - Mollie",
         "url": "https://www.mollie.com/legal/impressum",
-        "snippet": "# Impressum Mollie B.V. Board [Koen K\u00f6ppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen K\u00f6ppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
+        "snippet": "# Impressum Mollie B.V. Board [Koen Köppen Chief Executive Officer] [Rogier Schoute Chief Product Officer] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Stichting Mollie Payments Board [Koen Köppen Director] [Rogier Schoute Director] [Vincent Toolan Chief Financial Officer] [Sarah Roberto Chief Risk and Compliance Officer] Service provider Mollie BV. Promoter of the web...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:59:42+00:00",
@@ -6374,7 +6374,7 @@
         "bucket": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
         "title": "Mollie: Company Profile, Ownership & M&A Activity | Mergr",
         "url": "https://mergr.com/company/mollie",
-        "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie \u2013 Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie\u2019s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
+        "snippet": "Mollie: Company Profile, Ownership & M&A Activity | Mergr # Mollie – Company Overview ## Company profile, ownership, and transaction history #### Mollie at a glance: | 2 Investors | 1 M&A Transaction | M&A Advisors | | --- | --- | --- | View Mollie’s full profile ## Mollie ### Mollie B.V. Keizersgracht 126, Amsterdam, 1015 CW Netherlands, www.mollie.com - Profile - Investors (2) - M&A Activity (1) - Pro - Join to...",
         "source": "Exa",
         "source_status": "OK",
         "checked_at": "2026-05-26T21:59:42+00:00",
@@ -6417,14 +6417,14 @@
       {
         "section": "sanctions_screening",
         "row_id": "sanctions-01",
-        "bucket": "No sanctions/PEP match",
+        "bucket": "Source-limited sanctions/PEP zero candidates",
         "claim": "No claim-safe sanctions or PEP risk match was found for Mollie B.V..",
         "source": "sanctions_enricher_v1",
         "confidence": "Medium",
         "limitation": "Screening is point-in-time and depends on available identifiers, transliteration and dataset freshness.",
         "diligence_question": "Confirm legal name, registration number, UBOs and directors before final compliance sign-off.",
         "target": "Mollie B.V.",
-        "status": "clean",
+        "status": "source_limited_zero_candidates",
         "match_count": 0,
         "web_signal_count": 0,
         "highest_severity": "NONE",
@@ -6439,7 +6439,7 @@
         "section": "finance_forensics",
         "row_id": "finance-source-01",
         "bucket": "Financial filing coverage",
-        "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include revenue EUR 18,500,000.",
+        "claim": "Financial source route found real filing data for Mollie B.V. (FY2025, grade C, 2/8 sources hit, 50.0% coverage). Extracted fields include finance-source fields; revenue values require primary artifact hash before publication",
         "source": "linkedin_public",
         "confidence": "Medium source coverage",
         "limitation": "Filing-derived values still need period, consolidation scope and original-source verification before final memo reliance.",
@@ -6536,7 +6536,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
         "source": "https://www.mollie.com/",
         "source_type": "company_website",
         "confidence": "High",
@@ -6552,7 +6552,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
+        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online en fysieke betalingen, gebouwd voor bedrijven van elke omvang.",
         "source": "https://www.mollie.com/nl/",
         "source_type": "company_website",
         "confidence": "High",
@@ -6568,7 +6568,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie \u2013 Online and in-person payments built for businesses of every size.",
+        "claim": "Mollie B.V. has an official website page relevant to company profile: Mollie – Online and in-person payments built for businesses of every size.",
         "source": "https://www.mollie.com/",
         "source_type": "company_website",
         "confidence": "High",
@@ -6632,7 +6632,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Company website profile",
-        "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie \u2013 We helpen u graag!.",
+        "claim": "Mollie B.V. has an official website page relevant to company profile: Neem eenvoudig contact op met Mollie – We helpen u graag!.",
         "source": "https://www.mollie.com/nl/contact",
         "source_type": "company_website",
         "confidence": "High",
@@ -6666,7 +6666,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: \u2018Volgende Mollie of Coolblue komt mogelijk niet uit Nederland\u2019 - De Ondernemer.",
+        "claim": "News/reference signal found for Mollie B.V.: EZ-minister Karremans waarschuwt: ‘Volgende Mollie of Coolblue komt mogelijk niet uit Nederland’ - De Ondernemer.",
         "source": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORExNQXRvdm1Sd3hqWmdEZHVkSWZOaGtwa1ZVdk1Dc05tXzNtZjQ3aFhKNHNYckVzYkFXbjR5MnNhS0h5ZndrbmNfR0tjQWdRcE9uUzNPdy0zZWNfUVBvT1gwWERJSlV2RTRkU0JjQndXbEVHRlFFWE5TSmpVSnVqY21aQmVBSUJPMG14SEg4WlItSmpXSHFNMGtJQ251a2JPcHMwTWVmdUpnam9uMVpXWHJyNE5XdnQ2X3M0eHRDanc?oc=5",
         "source_type": "news",
         "published_at": "Wed, 20 Au",
@@ -6756,7 +6756,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): \u2018Dit is de missing link in de markt waarmee we Europa gaan veroveren\u2019 - BusinessWise.",
+        "claim": "News/reference signal found for Mollie B.V.: Adriaan Mol (founder Mollie): ‘Dit is de missing link in de markt waarmee we Europa gaan veroveren’ - BusinessWise.",
         "source": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczNwM3Z4Rm9LNkNOZHgydWhfbF9oYThRU1dKTUVRaHdXY083UlA4WG81amxtbWpCa1V3alI4X1dScDZubjRXNTlueU1UVWJDbFA3LV9rLUVuSjlLVG0tV19ZZDdSUGJVODU1dW1iUFY2YXo1dGxkWEdNZEVDUEhVb0J2bjdzQmdWdWpWTXVDMGJoQVFKdVE?oc=5",
         "source_type": "news",
         "published_at": "Thu, 19 Ju",
@@ -6792,7 +6792,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittanni\u00eb - Het Parool.",
+        "claim": "News/reference signal found for Mollie B.V.: Amsterdams betaalbedrijf Mollie doet recordovername in Groot-Brittannië - Het Parool.",
         "source": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRS1VUmVYZkhZeWtMX1NRWVB3YVdiZ3VtT0NwU2FQMURoMWZhLXRQY3RTMHZ0UDl5N2ltWFBZdUtJNVltM2tqNXhxd1V6MWtlM0lGMms0OFlZNnBzLWUzWGYxMjFnN3ZGSUFFLVVxUWdJVWdqajJwLTZ2Z1BrVlNQcmsxS25xSjlqb1RZLVQ1ZTRBV2s3c2RPWjJOVlhuc3A1Y25lZnNIcG4tSlJyMGo3Ymt6dw?oc=5",
         "source_type": "news",
         "published_at": "Thu, 11 De",
@@ -6828,7 +6828,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor \u20ac1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
+        "claim": "News/reference signal found for Mollie B.V.: Betaalbedrijf Mollie koopt voor €1,1 mrd concurrent GoCardless - Het Financieele Dagblad.",
         "source": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdG1HcWVNZzFvcmwtWjE2SjB1WlRfMnZGUk9pUDlFeW9XSnZmcEtNS0RHTXI0eXZoZWo4QXVrYkwwN09WMkwzRHUyMUlYcl9YLTdRV1BwUDRzZndBaHhJTE9OUS1jeGUwNHNFX05OeUhLWlNKQTRBQ05QVWlaSmNveE1uUV91dWx0VVhfTzlSbzVfbHFfSTVwRnpXQUQySWFhLXloQg?oc=5",
         "source_type": "news",
         "published_at": "Thu, 11 De",
@@ -6846,7 +6846,7 @@
       {
         "section": "business_profile_intel",
         "bucket": "Business news signal",
-        "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: \u2019Samengaan cre\u00ebert meest complete betaalplatform van Europa\u2019 - De Telegraaf.",
+        "claim": "News/reference signal found for Mollie B.V.: Mollie koopt GoCardless: ’Samengaan creëert meest complete betaalplatform van Europa’ - De Telegraaf.",
         "source": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPQmtFelBjRmVvcGtLQWxSbHo3Um1HVGd1VDhEYWozOTQzYzUtR2NyRGpBVDM1NzRBLXlvMUJLblVqSFVqRnc2Q29HOUQ2blh6Ml9KclR0ZGFaWEIyZjkxaFZNX1V3OW05VFE3cFlTRGVrNGZCTWwtejVjTFZldVM1LTBCNEk4VV94NzRLMEtyVHI4QUJJSEQ5Z2RydXNKWmRzYXA3YWQxdmJ0SGhvRGJnNjk2RjZ2cTk0VEFJdFJSWTlPWWxzVVA4OHFzcTY0dw?oc=5",
         "source_type": "news",
         "published_at": "Thu, 11 De",
@@ -7091,15 +7091,15 @@
       {
         "section": "reputation_adverse_media",
         "row_id": "reputation-01",
-        "bucket": "No adverse media signal",
+        "bucket": "Source-limited adverse-media zero candidates",
         "claim": "No target-relevant adverse-media signal was found for Mollie B.V. in the checked sources.",
         "source": "DueSight adverse-media source ladder (public news + legal metadata)",
         "confidence": "Medium",
-        "limitation": "No-hit is point-in-time and source-limited; it is not proof of clean reputation.",
+        "limitation": "No-hit is point-in-time and source-limited; it is not proof of reputation clearance.",
         "diligence_question": "Should buyer-side diligence add local-language, paid-media or litigation searches for this sector/geography?",
         "target": "Mollie B.V.",
         "claim_status": "INCOMPLETE_SOURCES",
-        "risk_verdict": "CLEAN",
+        "risk_verdict": "SOURCE_LIMITED_ZERO_CANDIDATES",
         "severity_score": 0,
         "total_articles": 0,
         "categories_found": [],

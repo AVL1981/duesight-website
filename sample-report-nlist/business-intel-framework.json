@@ -7,7 +7,7 @@
     "country": "NL",
     "city": ""
   },
-  "updated_at": "2026-05-29T08:33:20+00:00",
+  "updated_at": "2026-06-02T10:18:01+00:00",
   "inspiration_local_sources": [
     "C:\\Users\\arian\\market_reports",
     "C:\\Users\\arian\\trading-bot\\notebooklm_intelligence.py",
@@ -68,7 +68,7 @@
   "execution_coverage_artifact": "execution-coverage-framework.json",
   "generation_metrics": {
     "provider_routes_executed": 11,
-    "source_urls_count": 72,
+    "source_urls_count": 83,
     "candidate_findings_count": 5,
     "anti_hallucination_decision": "PASS"
   },

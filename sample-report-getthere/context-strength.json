@@ -1,34 +1,34 @@
 {
   "schema_version": "duesight.context_strength.v1",
   "run_id": "certified-samples-rest-20260526-235449-getthere",
-  "target": "GetThere B.V.",
-  "updated_at": "2026-05-29T10:57:04+00:00",
+  "target": "Get There ICT Solutions B.V.",
+  "updated_at": "2026-06-08T13:34:27+00:00",
   "rule": "Context strength explains what DueSight can responsibly infer without promoting it to official finance, ownership or UBO proof.",
   "items": [
     {
       "topic": "Groeps- en transactiecontext",
-      "meaning": "DueSight beoordeelt eventuele groeps- of transactiecontext voor GetThere B.V. alleen wanneer die uit targetrelevante bronnen komt.",
+      "meaning": "DueSight beoordeelt eventuele groeps- of transactiecontext voor Get There ICT Solutions B.V. alleen wanneer die uit targetrelevante bronnen komt.",
       "strength": "Middel als onderbouwde context",
       "evidence_rows": 11,
       "sources": [
         "open identity reference",
-        "GLEIF",
+        "international entity register route",
         "Public Website",
         "archive discovery",
-        "Exa"
+        "provider discovery route"
       ],
       "safe_rows": 0,
       "missing_for_official_claim": "Current registry extract, shareholder register, transaction document or licensed provider output with document hash."
     },
     {
       "topic": "Management en aanspreekpunten",
-      "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor GetThere B.V. gevonden.",
+      "meaning": "DueSight heeft publiek brongebonden management-/rolcontext voor Get There ICT Solutions B.V. gevonden.",
       "strength": "Hoog als triangulatie-context",
       "evidence_rows": 19,
       "sources": [
         "getthere.nl",
         "sanctions screening route",
-        "Exa"
+        "provider discovery route"
       ],
       "safe_rows": 18,
       "missing_for_official_claim": "Official register/director extract or client-confirmed management schedule for legally binding role claims."
@@ -72,7 +72,7 @@
       "evidence_rows": 6,
       "sources": [
         "sanctions screening route",
-        "Shodan InternetDB + RDAP",
+        "infrastructure exposure route + network registry route",
         "kvk_public",
         "ownership review route"
       ],
