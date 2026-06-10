@@ -1,6 +1,7 @@
 param(
     [string]$WebsiteDir = (Split-Path -Parent $PSScriptRoot),
     [switch]$SkipNetwork,
+    [switch]$SkipSupervisor,
     [switch]$SkipPm2,
     [switch]$SkipLocalService,
     [switch]$StartLocalService,
@@ -70,8 +71,8 @@ try {
     if ($SkipNetwork) {
         $readinessArgs += "--skip-network"
     }
-    if ($SkipPm2) {
-        $readinessArgs += "--skip-pm2"
+    if ($SkipSupervisor -or $SkipPm2) {
+        $readinessArgs += "--skip-supervisor"
     }
     if ($SkipLocalService) {
         $readinessArgs += "--skip-local-service"
@@ -118,19 +119,10 @@ try {
         }
     }
 
-    if (-not $SkipPm2) {
-        Write-Step "PM2 process state"
-        $pm2 = Get-Command pm2 -ErrorAction SilentlyContinue
-        if (-not $pm2) {
-            $pm2 = Get-Command pm2.cmd -ErrorAction SilentlyContinue
-        }
-        if ($pm2) {
-            & $pm2.Source status
-            & $pm2.Source logs duesight-payment --lines 30 --nostream
-            & $pm2.Source logs duesight-delivery-worker --lines 30 --nostream
-        } else {
-            Write-Host "pm2_missing"
-        }
+    if (-not ($SkipSupervisor -or $SkipPm2)) {
+        Write-Step "Payment supervisor service state"
+        Get-Service -Name DueSight-Payment, DueSight-DeliveryWorker -ErrorAction SilentlyContinue |
+            Select-Object Name, Status, StartType
     }
 } finally {
     if ($localProcess -and -not $localProcess.HasExited) {

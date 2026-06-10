@@ -764,14 +764,19 @@ def test_live_readiness_reports_launch_blockers(monkeypatch):
     )
     monkeypatch.setattr(
         payment_server,
-        "_pm2_process_status",
+        "_payment_supervisor_status",
         lambda: {
+            "mode": "nssm",
+            "ok": False,
             "available": False,
-            "required": ["duesight-payment", "duesight-delivery-worker"],
-            "processes": {},
-            "missing": ["duesight-payment", "duesight-delivery-worker"],
-            "not_online": [],
-            "error": "pm2_missing",
+            "nssm": {
+                "required": ["DueSight-Payment", "DueSight-DeliveryWorker"],
+                "services": {},
+                "missing": ["DueSight-Payment", "DueSight-DeliveryWorker"],
+                "not_running": [],
+                "not_automatic": [],
+                "error": "service_probe_shell_missing",
+            },
         },
     )
 
@@ -786,13 +791,14 @@ def test_live_readiness_reports_launch_blockers(monkeypatch):
     assert "payment_service_unreachable" in payload["blockers"]
     assert "local_payment_service_unreachable" in payload["blockers"]
     assert "smtp_not_ready" in payload["blockers"]
-    assert "pm2_missing" in payload["blockers"]
+    assert "payment_supervisor_missing" in payload["blockers"]
     assert payload["tls"]["base_url"]["error"] == "certificate_hostname_mismatch"
     assert payload["payment_service"]["health"]["status_code"] == 404
-    assert payload["pm2"]["missing"] == ["duesight-payment", "duesight-delivery-worker"]
+    assert payload["supervisor_mode"] == "nssm"
+    assert payload["supervisor"]["nssm"]["missing"] == ["DueSight-Payment", "DueSight-DeliveryWorker"]
 
 
-def test_live_readiness_reports_pm2_process_blocker(monkeypatch):
+def test_live_readiness_reports_supervisor_process_blocker(monkeypatch):
     _prepare(monkeypatch)
     monkeypatch.setenv("MOLLIE_API_KEY", "test_unit_should_not_print")
     monkeypatch.setenv("DUESIGHT_EMAIL_SEND_ENABLED", "true")
@@ -811,24 +817,29 @@ def test_live_readiness_reports_pm2_process_blocker(monkeypatch):
     )
     monkeypatch.setattr(
         payment_server,
-        "_pm2_process_status",
+        "_payment_supervisor_status",
         lambda: {
+            "mode": "nssm",
+            "ok": False,
             "available": True,
-            "required": ["duesight-payment", "duesight-delivery-worker"],
-            "processes": {"duesight-payment": {"status": "stopped", "online": False}},
-            "missing": ["duesight-delivery-worker"],
-            "not_online": ["duesight-payment"],
-            "error": "",
+            "nssm": {
+                "required": ["DueSight-Payment", "DueSight-DeliveryWorker"],
+                "services": {"DueSight-Payment": {"status": "Stopped", "running": False}},
+                "missing": ["DueSight-DeliveryWorker"],
+                "not_running": ["DueSight-Payment"],
+                "not_automatic": [],
+                "error": "",
+            },
         },
     )
 
     payload = payment_server.live_readiness_status()
 
     assert payload["ready"] is False
-    assert payload["blockers"] == ["pm2_processes_not_online"]
-    assert payload["pm2_available"] is True
-    assert payload["pm2"]["missing"] == ["duesight-delivery-worker"]
-    assert payload["pm2"]["not_online"] == ["duesight-payment"]
+    assert payload["blockers"] == ["payment_supervisor_processes_not_online"]
+    assert payload["supervisor_available"] is True
+    assert payload["supervisor"]["nssm"]["missing"] == ["DueSight-DeliveryWorker"]
+    assert payload["supervisor"]["nssm"]["not_running"] == ["DueSight-Payment"]
 
 
 def test_live_readiness_can_skip_local_payment_service(monkeypatch):
@@ -841,17 +852,22 @@ def test_live_readiness_can_skip_local_payment_service(monkeypatch):
     monkeypatch.setattr(payment_server, "_payment_service_probe", lambda url: {"service_ready": False})
     monkeypatch.setattr(
         payment_server,
-        "_pm2_process_status",
+        "_payment_supervisor_status",
         lambda: {
+            "mode": "nssm",
+            "ok": True,
             "available": True,
-            "required": ["duesight-payment", "duesight-delivery-worker"],
-            "processes": {
-                "duesight-payment": {"status": "online", "online": True},
-                "duesight-delivery-worker": {"status": "online", "online": True},
+            "nssm": {
+                "required": ["DueSight-Payment", "DueSight-DeliveryWorker"],
+                "services": {
+                    "DueSight-Payment": {"status": "Running", "running": True, "start_type": "Automatic", "automatic": True},
+                    "DueSight-DeliveryWorker": {"status": "Running", "running": True, "start_type": "Automatic", "automatic": True},
+                },
+                "missing": [],
+                "not_running": [],
+                "not_automatic": [],
+                "error": "",
             },
-            "missing": [],
-            "not_online": [],
-            "error": "",
         },
     )
 
@@ -872,17 +888,22 @@ def test_live_readiness_requires_payment_admin_secret(monkeypatch):
     monkeypatch.setattr(payment_server, "_payment_service_probe", lambda url: {"service_ready": True})
     monkeypatch.setattr(
         payment_server,
-        "_pm2_process_status",
+        "_payment_supervisor_status",
         lambda: {
+            "mode": "nssm",
+            "ok": True,
             "available": True,
-            "required": ["duesight-payment", "duesight-delivery-worker"],
-            "processes": {
-                "duesight-payment": {"status": "online", "online": True},
-                "duesight-delivery-worker": {"status": "online", "online": True},
+            "nssm": {
+                "required": ["DueSight-Payment", "DueSight-DeliveryWorker"],
+                "services": {
+                    "DueSight-Payment": {"status": "Running", "running": True, "start_type": "Automatic", "automatic": True},
+                    "DueSight-DeliveryWorker": {"status": "Running", "running": True, "start_type": "Automatic", "automatic": True},
+                },
+                "missing": [],
+                "not_running": [],
+                "not_automatic": [],
+                "error": "",
             },
-            "missing": [],
-            "not_online": [],
-            "error": "",
         },
     )
 
@@ -914,6 +935,39 @@ def test_pm2_process_status_parses_jlist(monkeypatch):
     assert payload["not_online"] == ["duesight-delivery-worker"]
     assert payload["processes"]["duesight-payment"]["online"] is True
     assert payload["processes"]["duesight-delivery-worker"]["status"] == "stopped"
+
+
+def test_nssm_service_status_parses_windows_services(monkeypatch):
+    class Completed:
+        returncode = 0
+        stdout = json.dumps(
+            [
+                {
+                    "name": "DueSight-Payment",
+                    "installed": True,
+                    "status": "Running",
+                    "start_type": "Automatic",
+                },
+                {
+                    "name": "DueSight-DeliveryWorker",
+                    "installed": True,
+                    "status": "Stopped",
+                    "start_type": "Manual",
+                },
+            ]
+        )
+
+    monkeypatch.setattr(payment_server, "_powershell_executable", lambda: "powershell")
+    monkeypatch.setattr(payment_server.subprocess, "run", lambda *args, **kwargs: Completed())
+
+    payload = payment_server._nssm_service_status()
+
+    assert payload["available"] is True
+    assert payload["missing"] == []
+    assert payload["not_running"] == ["DueSight-DeliveryWorker"]
+    assert payload["not_automatic"] == ["DueSight-DeliveryWorker"]
+    assert payload["services"]["DueSight-Payment"]["running"] is True
+    assert payload["services"]["DueSight-Payment"]["automatic"] is True
 
 
 def test_readiness_check_cli_is_redacted(tmp_path):
@@ -958,6 +1012,8 @@ def test_readiness_check_cli_is_redacted(tmp_path):
     assert payload["tls"]["base_url"]["skipped"] is True
     assert payload["payment_service"]["skipped"] is True
     assert payload["local_payment_service"]["skipped"] is True
+    assert payload["supervisor_available"] is None
+    assert payload["supervisor"]["skipped"] is True
     assert payload["pm2_available"] is None
     assert payload["pm2"]["skipped"] is True
 

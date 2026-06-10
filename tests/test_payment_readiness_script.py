@@ -12,6 +12,8 @@ def test_payment_readiness_script_can_start_local_service_smoke():
 
     assert "[switch]$StartLocalService" in text
     assert "[switch]$SkipLocalService" in text
+    assert "[switch]$SkipSupervisor" in text
+    assert "[switch]$SkipPm2" in text
     assert "-StartLocalService cannot be combined with -SkipLocalService" in text
     assert '"payment_server.py",' in text
     assert '"serve",' in text
@@ -32,6 +34,9 @@ def test_payment_readiness_script_includes_legal_surface_gate():
     assert "MOLLIE_API_KEY" not in text
     assert "SMTP_PASS" not in text
     assert ".env" not in text
+    assert "--skip-supervisor" in text
+    assert "DueSight-Payment" in text
+    assert "DueSight-DeliveryWorker" in text
 
 
 def test_payment_readiness_require_ready_fails_when_legal_surface_is_open(tmp_path):

@@ -1202,6 +1202,158 @@ def _pm2_process_status(required_names: tuple[str, ...] = ("duesight-payment", "
     }
 
 
+def _powershell_executable() -> str:
+    return shutil.which("powershell") or shutil.which("pwsh") or ""
+
+
+def _nssm_service_status(
+    required_names: tuple[str, ...] = ("DueSight-Payment", "DueSight-DeliveryWorker"),
+) -> dict[str, Any]:
+    executable = _powershell_executable()
+    if not executable:
+        return {
+            "available": False,
+            "required": list(required_names),
+            "services": {},
+            "missing": list(required_names),
+            "not_running": [],
+            "not_automatic": [],
+            "error": "service_probe_shell_missing",
+        }
+
+    quoted_names = ", ".join(json.dumps(name) for name in required_names)
+    script = f"""
+$names = @({quoted_names})
+$rows = foreach ($name in $names) {{
+    $svc = Get-Service -Name $name -ErrorAction SilentlyContinue
+    if ($svc) {{
+        [ordered]@{{
+            name = $name
+            installed = $true
+            status = $svc.Status.ToString()
+            start_type = $svc.StartType.ToString()
+        }}
+    }} else {{
+        [ordered]@{{
+            name = $name
+            installed = $false
+            status = "NOT_INSTALLED"
+            start_type = ""
+        }}
+    }}
+}}
+$rows | ConvertTo-Json -Depth 4
+""".strip()
+    try:
+        completed = subprocess.run(
+            [executable, "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script],
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except Exception:
+        return {
+            "available": True,
+            "required": list(required_names),
+            "services": {},
+            "missing": list(required_names),
+            "not_running": [],
+            "not_automatic": [],
+            "error": "service_probe_failed",
+        }
+    if completed.returncode != 0:
+        return {
+            "available": True,
+            "required": list(required_names),
+            "services": {},
+            "missing": list(required_names),
+            "not_running": [],
+            "not_automatic": [],
+            "error": "service_probe_failed",
+        }
+
+    try:
+        rows = json.loads(completed.stdout or "[]")
+    except Exception:
+        rows = []
+    if isinstance(rows, dict):
+        rows = [rows]
+
+    seen: dict[str, dict[str, Any]] = {}
+    for item in rows if isinstance(rows, list) else []:
+        if not isinstance(item, dict):
+            continue
+        name = str(item.get("name") or "")
+        if name not in required_names:
+            continue
+        installed = bool(item.get("installed"))
+        status = str(item.get("status") or "")
+        start_type = str(item.get("start_type") or "")
+        seen[name] = {
+            "installed": installed,
+            "status": status,
+            "start_type": start_type,
+            "running": installed and status == "Running",
+            "automatic": installed and start_type == "Automatic",
+        }
+
+    missing = [name for name in required_names if not seen.get(name, {}).get("installed")]
+    not_running = [
+        name for name in required_names
+        if seen.get(name, {}).get("installed") and not seen.get(name, {}).get("running")
+    ]
+    not_automatic = [
+        name for name in required_names
+        if seen.get(name, {}).get("installed") and not seen.get(name, {}).get("automatic")
+    ]
+    return {
+        "available": True,
+        "required": list(required_names),
+        "services": seen,
+        "missing": missing,
+        "not_running": not_running,
+        "not_automatic": not_automatic,
+        "error": "",
+    }
+
+
+def _payment_supervisor_mode() -> str:
+    mode = os.getenv("DUESIGHT_PAYMENT_SUPERVISOR", "nssm").strip().lower()
+    if mode not in {"nssm", "pm2", "auto"}:
+        return "nssm"
+    return mode
+
+
+def _payment_supervisor_status() -> dict[str, Any]:
+    mode = _payment_supervisor_mode()
+    if mode == "pm2":
+        pm2 = _pm2_process_status()
+        ok = bool(pm2.get("available")) and not pm2.get("missing") and not pm2.get("not_online") and not pm2.get("error")
+        return {"mode": "pm2", "ok": ok, "available": bool(pm2.get("available")), "pm2": pm2}
+
+    nssm = _nssm_service_status()
+    nssm_ok = (
+        bool(nssm.get("available"))
+        and not nssm.get("missing")
+        and not nssm.get("not_running")
+        and not nssm.get("not_automatic")
+        and not nssm.get("error")
+    )
+    if mode == "nssm" or nssm_ok:
+        return {"mode": "nssm", "ok": nssm_ok, "available": bool(nssm.get("available")), "nssm": nssm}
+
+    pm2 = _pm2_process_status()
+    pm2_ok = bool(pm2.get("available")) and not pm2.get("missing") and not pm2.get("not_online") and not pm2.get("error")
+    return {
+        "mode": "auto",
+        "selected": "nssm" if nssm_ok else "pm2",
+        "ok": nssm_ok or pm2_ok,
+        "available": bool(nssm.get("available")) or bool(pm2.get("available")),
+        "nssm": nssm,
+        "pm2": pm2,
+    }
+
+
 def _http_json_probe(url: str, timeout_seconds: float = 8.0) -> tuple[dict[str, Any], dict[str, Any] | None]:
     parsed = urlparse(url)
     result: dict[str, Any] = {
@@ -1260,8 +1412,11 @@ def live_readiness_status(
     check_network: bool = True,
     check_pm2: bool = True,
     check_local_service: bool = True,
+    check_supervisor: bool | None = None,
 ) -> dict[str, Any]:
     """Return redacted launch-readiness checks for the paid delivery chain."""
+    if check_supervisor is None:
+        check_supervisor = check_pm2
     config = smoke_config_status()
     webhook_url = f"{BASE_URL}/api/payment/webhook"
     tls_checks = {
@@ -1270,14 +1425,11 @@ def live_readiness_status(
     }
     payment_service = _payment_service_probe(BASE_URL) if check_network else {"skipped": True}
     local_payment_service = _payment_service_probe(_local_payment_base_url()) if check_local_service else {"skipped": True}
-    pm2_status = _pm2_process_status() if check_pm2 else {"skipped": True}
-    pm2_available = bool(pm2_status.get("available")) if check_pm2 else None
-    pm2_ok = (
-        bool(pm2_status.get("available"))
-        and not pm2_status.get("missing")
-        and not pm2_status.get("not_online")
-        and not pm2_status.get("error")
-    ) if check_pm2 else None
+    supervisor_status = _payment_supervisor_status() if check_supervisor else {"skipped": True}
+    supervisor_available = bool(supervisor_status.get("available")) if check_supervisor else None
+    supervisor_ok = bool(supervisor_status.get("ok")) if check_supervisor else None
+    pm2_status = supervisor_status.get("pm2", {"skipped": True})
+    pm2_available = bool(pm2_status.get("available")) if check_supervisor and "pm2" in supervisor_status else None
 
     blockers: list[str] = []
     if _mollie_key_mode() == "missing":
@@ -1295,10 +1447,10 @@ def live_readiness_status(
         blockers.append("local_payment_service_unreachable")
     if not config["smtp_will_send"]:
         blockers.append("smtp_not_ready")
-    if check_pm2 and not pm2_status.get("available"):
-        blockers.append("pm2_missing")
-    elif check_pm2 and not pm2_ok:
-        blockers.append("pm2_processes_not_online")
+    if check_supervisor and not supervisor_status.get("available"):
+        blockers.append("payment_supervisor_missing")
+    elif check_supervisor and not supervisor_ok:
+        blockers.append("payment_supervisor_processes_not_online")
 
     return {
         "status": "ready" if not blockers else "blocked",
@@ -1315,6 +1467,9 @@ def live_readiness_status(
         "smtp_send_enabled": config["smtp_send_enabled"],
         "smtp_config_present": config["smtp_config_present"],
         "smtp_will_send": config["smtp_will_send"],
+        "supervisor_mode": supervisor_status.get("mode"),
+        "supervisor_available": supervisor_available,
+        "supervisor": supervisor_status,
         "pm2_available": pm2_available,
         "pm2": pm2_status,
         "orders_total": config["orders_total"],
@@ -1998,7 +2153,8 @@ if __name__ == "__main__":
 
     readiness_parser = subparsers.add_parser("readiness-check", help="Print redacted launch readiness checks")
     readiness_parser.add_argument("--skip-network", action="store_true", help="Skip TLS/network probes")
-    readiness_parser.add_argument("--skip-pm2", action="store_true", help="Skip local pm2 availability check")
+    readiness_parser.add_argument("--skip-supervisor", action="store_true", help="Skip local payment supervisor check")
+    readiness_parser.add_argument("--skip-pm2", action="store_true", help="Legacy alias for --skip-supervisor")
     readiness_parser.add_argument("--skip-local-service", action="store_true", help="Skip local payment service health probe")
     readiness_parser.add_argument("--fail-on-blocked", action="store_true", help="Exit non-zero when readiness is blocked")
 
@@ -2048,8 +2204,8 @@ if __name__ == "__main__":
     elif command == "readiness-check":
         readiness = live_readiness_status(
             check_network=not args.skip_network,
-            check_pm2=not args.skip_pm2,
             check_local_service=not args.skip_local_service,
+            check_supervisor=not (args.skip_supervisor or args.skip_pm2),
         )
         print(json.dumps(readiness, ensure_ascii=True, indent=2))
         if args.fail_on_blocked and not readiness["ready"]:
