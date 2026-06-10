@@ -500,9 +500,105 @@ def test_agent_report_runner_exports_order_uploads(monkeypatch, tmp_path):
     assert result == {"report_path": str(report)}
     assert captured["cwd"] == str(agent_dir)
     assert "--company" in captured["cmd"]
+    assert captured["cmd"][captured["cmd"].index("--tier") + 1] == "quick_scan"
     uploads = json.loads(captured["env"]["DUESIGHT_ORDER_UPLOADS_JSON"])
     assert uploads[0]["original_filename"] == "jaarrekening.pdf"
     assert uploads[0]["sha256"] == "a" * 64
+
+
+def test_agent_report_runner_rejects_monitoring_without_subprocess(monkeypatch, tmp_path):
+    agent_dir = tmp_path / "duesight-agent"
+    agent_dir.mkdir(parents=True)
+    (agent_dir / "deliver_report.py").write_text("# test stub\n", encoding="utf-8")
+
+    def fail_run(*_args, **_kwargs):
+        pytest.fail("monitoring order should not start deliver_report.py")
+
+    monkeypatch.setenv("DUESIGHT_AGENT_DIR", str(agent_dir))
+    monkeypatch.setattr(payment_server.subprocess, "run", fail_run)
+
+    with pytest.raises(ValueError, match="product_not_report_deliverable:monitoring"):
+        payment_server._run_agent_report(
+            {
+                "order_id": "ds_monitoring",
+                "product": "monitoring",
+                "company_name": "Mollie B.V.",
+                "domain": "mollie.com",
+                "customer_email": "finance@mollie.com",
+            }
+        )
+
+
+def test_delivery_queue_skips_non_report_monitoring_orders(monkeypatch):
+    _prepare(monkeypatch)
+    conn = payment_server._db()
+    conn.execute(
+        """INSERT INTO orders
+           (order_id, mollie_id, product, company_name, customer_email, amount,
+            currency, status, scan_status)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (
+            "ds_monitoring",
+            "tr_monitoring",
+            "monitoring",
+            "Mollie B.V.",
+            "finance@mollie.com",
+            "19.00",
+            "EUR",
+            "paid",
+            "queued",
+        ),
+    )
+    conn.commit()
+    conn.close()
+
+    def fail_runner(order):
+        pytest.fail(f"monitoring order reached report runner: {order['order_id']}")
+
+    assert payment_server.process_delivery_queue(report_runner=fail_runner, send_email=False) == []
+
+
+def test_smoke_config_delivery_queue_counts_only_report_products(monkeypatch):
+    _prepare(monkeypatch)
+    conn = payment_server._db()
+    conn.executemany(
+        """INSERT INTO orders
+           (order_id, mollie_id, product, company_name, customer_email, amount,
+            currency, status, scan_status)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        [
+            (
+                "ds_compact",
+                "tr_compact",
+                "compact",
+                "Mollie B.V.",
+                "finance@mollie.com",
+                "79.00",
+                "EUR",
+                "paid",
+                "queued",
+            ),
+            (
+                "ds_monitoring",
+                "tr_monitoring",
+                "monitoring",
+                "Mollie B.V.",
+                "finance@mollie.com",
+                "19.00",
+                "EUR",
+                "paid",
+                "queued",
+            ),
+        ],
+    )
+    conn.commit()
+    conn.close()
+
+    status = payment_server.smoke_config_status()
+
+    assert status["orders_total"] == 2
+    assert status["paid_orders"] == 2
+    assert status["delivery_queue"] == 1
 
 
 def test_worker_once_cli_processes_isolated_queue(tmp_path):

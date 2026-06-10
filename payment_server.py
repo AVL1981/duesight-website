@@ -117,6 +117,7 @@ PRODUCT_ALIASES = {
     "premium": "predd",
     "institutional": "predd",
 }
+REPORT_DELIVERY_TIERS = {"quick_scan", "standard", "premium", "institutional"}
 
 payment_router = APIRouter()
 
@@ -269,6 +270,21 @@ def _product(value: str | None) -> dict[str, str]:
     if key not in PRODUCTS:
         raise HTTPException(status_code=400, detail=f"Unsupported product: {value}")
     return {"key": key, **PRODUCTS[key]}
+
+
+def _product_tier(value: str | None) -> str:
+    key = _product_key(value)
+    item = PRODUCTS.get(key)
+    if not item:
+        raise ValueError(f"unsupported_product:{value}")
+    return item["tier"]
+
+
+def _is_report_product(value: str | None) -> bool:
+    try:
+        return _product_tier(value) in REPORT_DELIVERY_TIERS
+    except ValueError:
+        return False
 
 
 def _client_ip(request: Request) -> str:
@@ -866,6 +882,10 @@ def _run_agent_report(order: dict[str, Any]) -> dict[str, str]:
     deliver_script = agent_dir / "deliver_report.py"
     if not deliver_script.exists():
         raise FileNotFoundError(f"deliver_report.py not found at {deliver_script}")
+    product_key = _product_key(str(order.get("product") or "predd"))
+    tier = _product_tier(product_key)
+    if tier not in REPORT_DELIVERY_TIERS:
+        raise ValueError(f"product_not_report_deliverable:{product_key}")
 
     domain = (order.get("domain") or "").strip()
     if not domain:
@@ -882,7 +902,7 @@ def _run_agent_report(order: dict[str, Any]) -> dict[str, str]:
         "--company",
         str(order.get("company_name") or domain),
         "--tier",
-        str(order.get("product") or "premium"),
+        tier,
     ]
     email = str(order.get("customer_email") or "").strip()
     if email:
@@ -986,7 +1006,15 @@ def process_delivery_queue(limit: int = 10, report_runner=None, send_email: bool
         (limit,),
     ).fetchall()
     conn.close()
-    return [run_delivery_for_order(row["order_id"], report_runner=report_runner, send_email=send_email) for row in rows]
+    report_order_ids: list[str] = []
+    for row in rows:
+        current = _order_by_id(row["order_id"])
+        if current and _is_report_product(current["product"]):
+            report_order_ids.append(row["order_id"])
+    return [
+        run_delivery_for_order(order_id, report_runner=report_runner, send_email=send_email)
+        for order_id in report_order_ids
+    ]
 
 
 def _present(value: str) -> bool:
@@ -1027,16 +1055,18 @@ def smoke_config_status() -> dict[str, Any]:
     """Return redacted readiness data for payment/delivery live smoke."""
     _init_db()
     conn = _db()
-    row = conn.execute(
-        """SELECT
-             COUNT(*) AS orders_total,
-             SUM(CASE WHEN status = 'paid' THEN 1 ELSE 0 END) AS paid_orders,
-             SUM(CASE WHEN status = 'paid' AND scan_status IN ('queued', 'queueing', 'processing')
-                      AND COALESCE(delivery_status, '') != 'ready'
-                 THEN 1 ELSE 0 END) AS delivery_queue
-           FROM orders"""
-    ).fetchone()
+    rows = conn.execute("SELECT product, status, scan_status, delivery_status FROM orders").fetchall()
     conn.close()
+    orders_total = len(rows)
+    paid_orders = sum(1 for row in rows if row["status"] == "paid")
+    delivery_queue = sum(
+        1
+        for row in rows
+        if row["status"] == "paid"
+        and row["scan_status"] in {"queued", "queueing", "processing"}
+        and (row["delivery_status"] or "") != "ready"
+        and _is_report_product(row["product"])
+    )
     smtp_enabled = _smtp_send_enabled()
     smtp_ready = _smtp_config_present()
     return {
@@ -1053,9 +1083,9 @@ def smoke_config_status() -> dict[str, Any]:
         "max_upload_bytes": MAX_UPLOAD_BYTES,
         "max_uploads_per_order": MAX_UPLOADS_PER_ORDER,
         "stale_upload_retention_hours": STALE_UPLOAD_RETENTION_HOURS,
-        "orders_total": int(row["orders_total"] or 0),
-        "paid_orders": int(row["paid_orders"] or 0),
-        "delivery_queue": int(row["delivery_queue"] or 0),
+        "orders_total": orders_total,
+        "paid_orders": paid_orders,
+        "delivery_queue": delivery_queue,
         "products": {
             key: {"name": value["name"], "amount": value["amount"], "currency": value["currency"]}
             for key, value in PRODUCTS.items()
@@ -1540,6 +1570,21 @@ async def payment_webhook(id: str = Form(...)) -> dict[str, Any]:
             conn.close()
             _log_event(row["order_id"], payment_id, "duplicate_paid_ignored", {})
             return {"status": "duplicate"}
+
+        if not _is_report_product(row["product"]):
+            _log_event(row["order_id"], payment_id, "paid_non_report_active", {"product": row["product"]})
+            conn = _db()
+            conn.execute(
+                """UPDATE orders
+                   SET status = ?, scan_status = ?, delivery_status = ?,
+                       last_webhook_action = ?, updated_at = ?
+                   WHERE order_id = ?""",
+                ("paid", "active", "not_applicable", "paid_non_report_active", _now(), row["order_id"]),
+            )
+            conn.commit()
+            conn.close()
+            _notify_admin(order_id=row["order_id"], company_name=row["company_name"], email=row["customer_email"])
+            return {"status": "paid", "action": "non_report_active"}
 
         _log_event(row["order_id"], payment_id, "paid_queueing", {})
         conn = _db()

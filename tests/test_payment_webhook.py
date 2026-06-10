@@ -64,7 +64,7 @@ def _prepare_db(monkeypatch):
     return TEST_DB
 
 
-def _insert_order(status="pending", scan_status="pending", amount="79.00"):
+def _insert_order(status="pending", scan_status="pending", amount="79.00", product="compact"):
     conn = payment_server._db()
     conn.execute(
         """INSERT INTO orders
@@ -74,7 +74,7 @@ def _insert_order(status="pending", scan_status="pending", amount="79.00"):
         (
             "ds_test",
             "tr_test",
-            "compact",
+            product,
             "Mollie B.V.",
             "56087887",
             "mollie.com",
@@ -133,6 +133,42 @@ def test_paid_webhook_queues_scan_once(monkeypatch):
         "paid_queued",
         "duplicate_paid_ignored",
     ]
+
+
+def test_paid_monitoring_webhook_does_not_queue_report_delivery(monkeypatch):
+    _prepare_db(monkeypatch)
+    _insert_order(product="monitoring", amount="19.00")
+
+    queued = []
+    notified = []
+    monkeypatch.setattr(
+        payment_server,
+        "_mollie",
+        lambda: FakeMollie({"tr_test": FakePayment("tr_test", "paid", value="19.00")}),
+    )
+    monkeypatch.setattr(payment_server, "_queue_scan_order", lambda **kwargs: queued.append(kwargs))
+    monkeypatch.setattr(payment_server, "_notify_admin", lambda **kwargs: notified.append(kwargs))
+
+    response = _client().post("/api/payment/webhook", data={"id": "tr_test"})
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "paid", "action": "non_report_active"}
+    assert queued == []
+    assert len(notified) == 1
+
+    conn = payment_server._db()
+    row = conn.execute(
+        "SELECT status, scan_status, delivery_status, last_webhook_action FROM orders WHERE order_id = ?",
+        ("ds_test",),
+    ).fetchone()
+    events = conn.execute("SELECT action FROM payment_events ORDER BY id").fetchall()
+    conn.close()
+
+    assert row["status"] == "paid"
+    assert row["scan_status"] == "active"
+    assert row["delivery_status"] == "not_applicable"
+    assert row["last_webhook_action"] == "paid_non_report_active"
+    assert [event["action"] for event in events] == ["paid_non_report_active"]
 
 
 def test_amount_mismatch_does_not_queue_or_mark_paid(monkeypatch):
