@@ -11093,7 +11093,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <li><span class="material-symbols-outlined">check</span><span>Kernflags voor ownership, sanctions en cyber</span></li>
             <li><span class="material-symbols-outlined">check</span><span>Korte diligencevraag output</span></li>
           </ul>
-          <div class="pricing-actions"><a class="sample-link" href="#workflow"><span class="material-symbols-outlined">play_arrow</span>Bekijk demo</a></div>
+          <div class="pricing-actions"><button class="sample-link" type="button" onclick="showIntentModal('compact')"><span class="material-symbols-outlined">shopping_cart</span>Start scan</button></div>
         </article>
 
         <article class="pricing-tier featured">
@@ -11109,7 +11109,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <li><span class="material-symbols-outlined">check</span><span>First-digit integriteitstoets inbegrepen</span></li>
             <li><span class="material-symbols-outlined">check</span><span>Flipbook + kort memo sample format</span></li>
           </ul>
-          <div class="pricing-actions"><a class="sample-link primary" href="#samples"><span class="material-symbols-outlined">article</span>Bekijk sample</a></div>
+          <div class="pricing-actions"><button class="sample-link primary" type="button" onclick="showIntentModal('predd')"><span class="material-symbols-outlined">shopping_cart</span>Start memo</button></div>
         </article>
 
         <article class="pricing-tier">
@@ -11151,6 +11151,35 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         </article>
       </div>
       <div class="pricing-note">Excl. btw. Definitieve scope volgt uit targetcomplexiteit en brondekking.</div>
+      <div
+        id="ds-production-api-bridge"
+        data-preview-endpoint="/api/teaser-scan?company_name="
+        data-payment-endpoint="/api/payment/create"
+        hidden
+      ></div>
+      <style>
+        .intent-modal[hidden] { display: none; }
+        .intent-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 24px; background: rgba(5, 10, 22, 0.74); backdrop-filter: blur(16px); }
+        .intent-panel { position: relative; width: min(100%, 430px); display: grid; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: rgba(9, 16, 31, 0.96); box-shadow: 0 24px 80px rgba(0,0,0,.32); }
+        .intent-panel h3 { margin: 0 0 4px; font-size: 20px; }
+        .intent-panel input[type="text"], .intent-panel input[type="email"], .intent-panel input[type="file"] { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; background: rgba(255,255,255,.06); color: var(--text); }
+        .intent-terms { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+        .intent-close { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--text); cursor: pointer; }
+        #intentStatus { min-height: 18px; margin: 0; color: var(--muted); font-size: 12px; }
+      </style>
+      <div class="intent-modal" id="intentModal" hidden>
+        <div class="intent-panel" role="dialog" aria-modal="true" aria-labelledby="intentTitle">
+          <button class="intent-close" type="button" onclick="hideIntentModal()" aria-label="Sluiten">×</button>
+          <h3 id="intentTitle">Target intake</h3>
+          <input id="intentCompanyInput" type="text" autocomplete="organization" placeholder="Bedrijfsnaam of domein">
+          <input id="intentEmailInput" type="email" autocomplete="email" placeholder="E-mail voor status en upload">
+          <input id="intentKvkInput" type="text" inputmode="numeric" placeholder="KvK optioneel">
+          <input id="intentUploadFile" type="file">
+          <label class="intent-terms"><input id="intentTermsAccepted" type="checkbox"> Akkoord met voorwaarden en privacy</label>
+          <button type="button" class="sample-link primary" onclick="selectIntent()">Naar checkout</button>
+          <p id="intentStatus" aria-live="polite"></p>
+        </div>
+      </div>
     </section>
 
     <section class="section scanner" id="forensic-data-analysis">
@@ -12674,6 +12703,117 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       });
     }
 
+    const orderStoragePrefix = 'duesight:payment-order:';
+    let selectedIntentProduct = "compact";
+
+    function localDefault(port) {
+      const host = window.location.hostname;
+      if (host === "localhost" || host === "127.0.0.1") return `http://${host}:${port}`;
+      return "";
+    }
+
+    function serviceOrigin(port) {
+      const local = localDefault(port);
+      return local || window.location.origin;
+    }
+
+    async function safeJson(response) {
+      try { return await response.json(); }
+      catch (_) { return {}; }
+    }
+
+    async function uploadOrderFile(orderId, customerEmail, uploadFile) {
+      if (!orderId || !uploadFile) return null;
+      const uploadBase = window.DUESIGHT_PAYMENT_BASE || serviceOrigin(5051);
+      const form = new FormData();
+      form.append("file", uploadFile);
+      form.append("customer_email", customerEmail);
+      const response = await fetch(uploadBase + '/api/payment/orders/' + encodeURIComponent(orderId) + '/uploads', {
+        method: "POST",
+        body: form
+      });
+      return safeJson(response);
+    }
+
+    window.showIntentModal = function(product) {
+      selectedIntentProduct = product || "compact";
+      const modal = document.getElementById("intentModal");
+      if (!modal) return;
+      modal.hidden = false;
+      document.getElementById("intentCompanyInput")?.focus();
+    };
+
+    window.hideIntentModal = function() {
+      const modal = document.getElementById("intentModal");
+      if (modal) modal.hidden = true;
+    };
+
+    window.selectIntent = async function(product) {
+      const chosenProduct = product || selectedIntentProduct || "compact";
+      const company = document.getElementById("intentCompanyInput")?.value.trim() || "";
+      const customerEmail = document.getElementById("intentEmailInput")?.value.trim() || "";
+      const kvk = document.getElementById("intentKvkInput")?.value.trim() || "";
+      const uploadFile = document.getElementById("intentUploadFile")?.files?.[0] || null;
+      const termsAccepted = document.getElementById("intentTermsAccepted")?.checked === true;
+      const status = document.getElementById("intentStatus");
+      if (!company || !customerEmail || !termsAccepted) {
+        if (status) status.textContent = "Vul target, e-mail en akkoord in.";
+        return;
+      }
+
+      const localPreview = localDefault(5050);
+      const localPayment = localDefault(5051);
+      const previewBase = window.DUESIGHT_API_BASE || window.DUESIGHT_API_URL || localPreview || serviceOrigin(5050);
+      const paymentBase = window.DUESIGHT_PAYMENT_BASE || localPayment || serviceOrigin(5051);
+      const bridge = document.getElementById("ds-production-api-bridge");
+      const previewPath = bridge?.dataset.previewEndpoint || "/api/teaser-scan?company_name=";
+      const paymentPath = bridge?.dataset.paymentEndpoint || "/api/payment/create";
+      const payload = {
+        product: chosenProduct,
+        company_name: company,
+        customer_email: customerEmail,
+        kvk_number: kvk,
+        terms_accepted: true
+      };
+
+      if (status) status.textContent = "Preview en checkout worden voorbereid.";
+      try {
+        await fetch(previewBase + previewPath + encodeURIComponent(company), { headers: { "Accept": "application/json" } });
+      } catch (_) {
+        if (status) status.textContent = "DueSight teaser preview unavailable; continuing to checkout.";
+      }
+
+      try {
+        const response = await fetch(paymentBase + paymentPath, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const order = await safeJson(response);
+        if (!response.ok || !order.checkout_url) throw new Error(order.detail || "Checkout niet beschikbaar");
+        payload.order_id = order.order_id;
+        localStorage.setItem(orderStoragePrefix + order.order_id, JSON.stringify({ product: chosenProduct, company, customerEmail }));
+        await uploadOrderFile(payload.order_id, customerEmail, uploadFile);
+        window.location.assign(order.checkout_url);
+      } catch (error) {
+        if (status) status.textContent = "Checkout nog niet beschikbaar. Neem contact op voor handmatige intake.";
+      }
+    };
+
+    async function hydratePaymentReturnStatus() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('payment') === 'success') {
+        const orderId = params.get("order_id") || params.get("order");
+        const stored = orderId ? localStorage.getItem(orderStoragePrefix + orderId) : "";
+        let customerEmail = "";
+        try { customerEmail = JSON.parse(stored || "{}").customerEmail || ""; } catch (_) {}
+        if (orderId && customerEmail) {
+          const statusBase = window.DUESIGHT_PAYMENT_BASE || serviceOrigin(5051);
+          await fetch(statusBase + '/api/payment/status/' + encodeURIComponent(orderId) + '?customer_email=' + encodeURIComponent(customerEmail));
+        }
+      }
+    }
+
     window.addEventListener("load", () => {
       initThemeToggle();
       initResponsiveNav();
@@ -12683,6 +12823,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       initHeroEarth();
       runScenario(0);
       hydrateSampleEvidenceLedgerFromApi();
+      hydratePaymentReturnStatus();
 
       settleHashScroll();
       window.setTimeout(settleHashScroll, 250);
