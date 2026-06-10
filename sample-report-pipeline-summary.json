@@ -1,8 +1,8 @@
 {
   "schema_version": "duesight.sample_report_pipeline_summary.v1",
-  "run_id": "nlist-full-certified-replay-20260527T132000Z",
-  "timestamp": "2026-05-27T11:21:58+00:00",
-  "result_count": 1,
+  "run_id": "sample-pipeline-replay-20260610T150000Z-manifest-rebuild",
+  "timestamp": "2026-06-10T14:59:01+00:00",
+  "result_count": 12,
   "failure_count": 0,
   "provider_preflight": {
     "status": "go",
@@ -372,14 +372,124 @@
   },
   "results": [
     {
+      "slug": "sample-report-adyen",
+      "run_id": "certified-samples-rest-20260526-235449-adyen",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 49,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-adyen/pipeline-manifest.json",
+      "ledger": "sample-report-adyen/evidence-ledger.json",
+      "score": "70/100"
+    },
+    {
+      "slug": "sample-report-bunq",
+      "run_id": "certified-samples-rest-20260526-235449-bunq",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 51,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-bunq/pipeline-manifest.json",
+      "ledger": "sample-report-bunq/evidence-ledger.json",
+      "score": "71/100"
+    },
+    {
+      "slug": "sample-report-gasunie",
+      "run_id": "certified-samples-rest-20260526-235449-gasunie",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 50,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-gasunie/pipeline-manifest.json",
+      "ledger": "sample-report-gasunie/evidence-ledger.json",
+      "score": "71/100"
+    },
+    {
+      "slug": "sample-report-getthere",
+      "run_id": "certified-samples-rest-20260526-235449-getthere",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 50,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-getthere/pipeline-manifest.json",
+      "ledger": "sample-report-getthere/evidence-ledger.json",
+      "score": "67/100"
+    },
+    {
+      "slug": "sample-report-mollie-gold",
+      "run_id": "certified-samples-rest-20260526-235449-mollie-gold",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 50,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-mollie-gold/pipeline-manifest.json",
+      "ledger": "sample-report-mollie-gold/evidence-ledger.json",
+      "score": "71/100"
+    },
+    {
+      "slug": "sample-report-multiselect",
+      "run_id": "certified-samples-rest-20260526-235449-multiselect",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 33,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-multiselect/pipeline-manifest.json",
+      "ledger": "sample-report-multiselect/evidence-ledger.json",
+      "score": "64/100"
+    },
+    {
       "slug": "sample-report-nlist",
       "run_id": "nlist-full-certified-replay-20260527T132000Z-nlist",
       "status": "pipeline_certified_with_limitations",
       "row_count": 70,
       "source_envelope_complete": true,
-      "manifest": "sample-report-nlist\\pipeline-manifest.json",
-      "ledger": "sample-report-nlist\\evidence-ledger.json",
+      "manifest": "sample-report-nlist/pipeline-manifest.json",
+      "ledger": "sample-report-nlist/evidence-ledger.json",
       "score": "71/100"
+    },
+    {
+      "slug": "sample-report-postnl",
+      "run_id": "certified-samples-rest-20260526-235449-postnl",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 50,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-postnl/pipeline-manifest.json",
+      "ledger": "sample-report-postnl/evidence-ledger.json",
+      "score": "71/100"
+    },
+    {
+      "slug": "sample-report-shell",
+      "run_id": "certified-samples-rest-20260526-235449-shell",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 46,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-shell/pipeline-manifest.json",
+      "ledger": "sample-report-shell/evidence-ledger.json",
+      "score": "70/100"
+    },
+    {
+      "slug": "sample-report-specialist-group",
+      "run_id": "certified-samples-rest-20260526-235449-specialist-group",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 43,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-specialist-group/pipeline-manifest.json",
+      "ledger": "sample-report-specialist-group/evidence-ledger.json",
+      "score": "64/100"
+    },
+    {
+      "slug": "sample-report-truelegends",
+      "run_id": "certified-samples-rest-20260526-235449-truelegends",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 44,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-truelegends/pipeline-manifest.json",
+      "ledger": "sample-report-truelegends/evidence-ledger.json",
+      "score": "66/100"
+    },
+    {
+      "slug": "sample-report-wise",
+      "run_id": "certified-samples-rest-20260526-235449-wise",
+      "status": "pipeline_certified_with_limitations",
+      "row_count": 48,
+      "source_envelope_complete": true,
+      "manifest": "sample-report-wise/pipeline-manifest.json",
+      "ledger": "sample-report-wise/evidence-ledger.json",
+      "score": "70/100"
     }
   ],
   "failures": [],
