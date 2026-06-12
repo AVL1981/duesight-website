@@ -209,8 +209,8 @@
             document.getElementById('modalTier').value = 'premium';
             const tierBadge = document.getElementById('modalTierBadge');
             if (tierBadge) tierBadge.textContent = 'MEEST GEKOZEN';
-            document.getElementById('modalTierTitle').textContent = 'Evidence memo';
-            document.getElementById('modalTierPrice').textContent = '€399';
+            document.getElementById('modalTierTitle').textContent = 'DueSight Pre-DD Rapport';
+            document.getElementById('modalTierPrice').textContent = '€399 per rapport/per target · eenmalig';
 
             checkoutModal.style.display = 'flex';
         }
@@ -822,8 +822,8 @@
             e.preventDefault();
 
             const tiers = ['quick_scan', 'premium', 'premium'];
-            const titles = ['Quick scan', 'Evidence memo', 'Uitgebreid DD dossier'];
-            const prices = ['€79', '€399', 'Op aanvraag'];
+            const titles = ['DueSight Compact Scan', 'DueSight Pre-DD Rapport', 'DueSight M&A Report'];
+            const prices = ['€79 per target · eenmalig', '€399 per rapport/per target · eenmalig', '€399 per rapport/per target · eenmalig'];
 
             document.getElementById('modalTier').value = tiers[index];
             document.getElementById('modalTierTitle').textContent = titles[index];

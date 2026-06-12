@@ -25,6 +25,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet"></noscript>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"></noscript>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="duesight-runtime-config.js"></script>
     <script>
     /* DueSight build: 20260522-pipeline-curated */
     try {
@@ -1646,6 +1647,32 @@
       align-items: stretch;
       max-width: 1120px;
       margin: 0 auto;
+    }
+
+    .workflow-demo-notice,
+    .workflow-demo-error {
+      border: 1px solid rgba(245, 158, 11, 0.34);
+      border-radius: 8px;
+      background: rgba(245, 158, 11, 0.10);
+      color: var(--text);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .workflow-demo-notice {
+      grid-column: 1 / -1;
+      padding: 10px 12px;
+      font-weight: 700;
+    }
+
+    .workflow-demo-error {
+      display: none;
+      margin: 0;
+      padding: 10px 12px;
+    }
+
+    .workflow-demo-error.is-visible {
+      display: block;
     }
 
     .workflow-unified-bar {
@@ -9252,8 +9279,8 @@
     "description": "Pre-due diligence intelligence platform voor M&A boutiques in NL en DACH. Screent targets op sancties, eigendomsstructuur, financiële integriteit en cyber exposure.",
     "url": "https://duesight.nl",
     "offers": [
-      {"@type": "Offer", "name": "Quick Scan", "price": "79", "priceCurrency": "EUR", "description": "Snelle broncheck met risicoscore en korte memo-output"},
-      {"@type": "Offer", "name": "Evidence Memo", "price": "399", "priceCurrency": "EUR", "description": "Bronclaims, confidence, flags en memo-ready tekst met evidence ledger"}
+      {"@type": "Offer", "name": "DueSight Compact Scan", "price": "79", "priceCurrency": "EUR", "description": "Quick scan: snelle broncheck met risicoscore en korte memo-output"},
+      {"@type": "Offer", "name": "DueSight Pre-DD Rapport", "price": "399", "priceCurrency": "EUR", "description": "Evidence memo: bronclaims, confidence, flags en memo-ready tekst met evidence ledger"}
     ]
   }
   </script>
@@ -9283,7 +9310,7 @@
         "name": "Hoe nauwkeurig is DueSight?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "DueSight gebruikt interne benchmark- en replaynotities voor financiele redenering en deterministische checks. De huidige FinanceBench-bewijsstand is 145/150 (96,7%) als frozen public-sample replay en 141-142/150 (94,0-94,7%) in drie clean live reruns. Dat is geen externe certificering, geen perfecte-scoreclaim en geen full official 10.231-vragen claim. Alle bevindingen zijn bronherleidbaar met bron, tijdstip, confidence-label en beperking."
+          "text": "DueSight v12.1 is intern gerepliceerd op 89,53% mean ± 1,37pp op FinanceBench (n=150, k=10 runs), met 90,67% als beste gerepliceerde run. Self-reported; geen full-10.231 official submission. Alle bevindingen zijn bronherleidbaar met bron, tijdstip, confidence-label en beperking."
         }
       },
       {
@@ -9739,6 +9766,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       </div>
 
       <div class="workflow-shell">
+        <div class="workflow-demo-notice" role="note">Demonstratie — vooraf opgenomen replay van voorbeeldprofielen, geen live scan van jouw invoer.</div>
         <div class="workflow-unified-bar">
           <div class="workflow-unified-target">
             <div class="target-card">
@@ -9783,6 +9811,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <input id="companyInput" type="text" placeholder="Bedrijfsnaam of KvK">
             <button class="button button-primary" id="runScan" type="button"><span class="material-symbols-outlined">play_arrow</span>Bouw memo</button>
             <button class="button button-ghost" id="nextScenario" type="button"><span class="material-symbols-outlined">sync</span>Volgend scenario</button>
+            <p class="workflow-demo-error" id="workflowDemoError" aria-live="polite"></p>
           </div>
           <div class="domain-list" aria-label="Risicodomeinen">
             <div class="domain-chip" data-scan-chip="0" data-chip-state="idle" style="--chip-progress:0%"><span class="chip-copy"><strong>Ownership</strong><span data-chip-label>Wacht</span></span><span class="chip-rail"><span></span></span></div>
@@ -10004,8 +10033,8 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <aside class="evidence-flow-output">
           <div class="evidence-output-pill">Output</div>
           <div>
-            <h3>Evidence memo</h3>
-            <p>Geen dashboard, maar een compacte beslisnotitie: risico, bewijs, beperking en volgende vraag voor de dealtafel.</p>
+            <h3>DueSight Pre-DD Rapport</h3>
+            <p>Evidence memo: geen dashboard, maar een compacte beslisnotitie met risico, bewijs, beperking en volgende vraag voor de dealtafel.</p>
           </div>
           <div class="evidence-output-list">
             <div><span>Bronclaims</span><strong>Traceerbaar</strong></div>
@@ -11086,9 +11115,9 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <span>Starter</span>
             <span class="pricing-icon"><span class="material-symbols-outlined">flash_on</span></span>
           </div>
-          <h3>Quick scan</h3>
+          <h3>DueSight Compact Scan</h3>
           <div class="price-line"><strong>&euro;79</strong><span>per target</span></div>
-          <p>Snelle broncheck met risicoscore en korte memo-output.</p>
+          <p>Quick scan: snelle broncheck met risicoscore en korte memo-output.</p>
           <ul class="pricing-list">
             <li><span class="material-symbols-outlined">check</span><span>Target integrity score</span></li>
             <li><span class="material-symbols-outlined">check</span><span>Kernflags voor ownership, sanctions en cyber</span></li>
@@ -11102,9 +11131,9 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <span>Meest logisch</span>
             <span class="pricing-icon"><span class="material-symbols-outlined">verified</span></span>
           </div>
-          <h3>Evidence memo</h3>
+          <h3>DueSight Pre-DD Rapport</h3>
           <div class="price-line"><strong>&euro;399</strong><span>per target</span></div>
-          <p>De standaard DueSight output: bronclaims, confidence, flags en memo-ready tekst.</p>
+          <p>Pre-DD M&amp;A: evidence memo met bronclaims, confidence, flags en memo-ready tekst.</p>
           <ul class="pricing-list">
             <li><span class="material-symbols-outlined">check</span><span>Evidence ledger met claim labels</span></li>
             <li><span class="material-symbols-outlined">check</span><span>First-digit integriteitstoets inbegrepen</span></li>
@@ -11115,27 +11144,11 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
         <article class="pricing-tier">
           <div class="pricing-topline">
-            <span>Deep dive</span>
-            <span class="pricing-icon"><span class="material-symbols-outlined">travel_explore</span></span>
-          </div>
-          <h3>Uitgebreid DD dossier</h3>
-          <div class="price-line"><strong>Op aanvraag</strong><span>intake nodig</span></div>
-          <p>Voor complexere targets, IC voorbereiding en dealroom documentatie.</p>
-          <ul class="pricing-list">
-            <li><span class="material-symbols-outlined">check</span><span>Uitgebreide intelligence hub</span></li>
-            <li><span class="material-symbols-outlined">check</span><span>Bronnen, beperkingen en reviewpunten</span></li>
-            <li><span class="material-symbols-outlined">check</span><span>Vragenlijst voor DD of management Q&amp;A</span></li>
-          </ul>
-          <div class="pricing-actions"><a class="sample-link" href="contact.html"><span class="material-symbols-outlined">mail</span>Plan intake</a></div>
-        </article>
-
-        <article class="pricing-tier">
-          <div class="pricing-topline">
             <span>Teams</span>
             <span class="pricing-icon"><span class="material-symbols-outlined">account_tree</span></span>
           </div>
           <h3>Enterprise / batches</h3>
-          <div class="price-line"><strong>Custom</strong><span>per maand</span></div>
+          <div class="price-line"><strong>Custom &mdash; op aanvraag</strong><span>intake nodig</span></div>
           <p>Voor PE, M&amp;A, compliance of portfolio monitoring met hogere volumes.</p>
           <ul class="pricing-list">
             <li><span class="material-symbols-outlined">check</span><span>Batch target screening</span></li>
@@ -11164,6 +11177,9 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         .intent-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 24px; background: rgba(5, 10, 22, 0.74); backdrop-filter: blur(16px); }
         .intent-panel { position: relative; width: min(100%, 430px); display: grid; gap: 12px; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: rgba(9, 16, 31, 0.96); box-shadow: 0 24px 80px rgba(0,0,0,.32); }
         .intent-panel h3 { margin: 0 0 4px; font-size: 20px; }
+        .intent-product-summary { display: grid; gap: 4px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.05); }
+        .intent-product-summary strong { font-size: 15px; color: var(--text); }
+        .intent-product-summary span { font-size: 12px; color: var(--muted); }
         .intent-panel input[type="text"], .intent-panel input[type="email"], .intent-panel input[type="file"] { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; background: rgba(255,255,255,.06); color: var(--text); }
         .intent-terms { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
         .intent-close { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--text); cursor: pointer; }
@@ -11173,6 +11189,10 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <div class="intent-panel" role="dialog" aria-modal="true" aria-labelledby="intentTitle">
           <button class="intent-close" type="button" onclick="hideIntentModal()" aria-label="Sluiten">×</button>
           <h3 id="intentTitle">Target intake</h3>
+          <div class="intent-product-summary" aria-live="polite">
+            <strong id="intentProductName">DueSight Compact Scan</strong>
+            <span id="intentProductPrice">€79 per target · eenmalige digitale levering</span>
+          </div>
           <input id="intentCompanyInput" type="text" autocomplete="organization" placeholder="Bedrijfsnaam of domein">
           <input id="intentEmailInput" type="email" autocomplete="email" placeholder="E-mail voor status en upload">
           <input id="intentKvkInput" type="text" inputmode="numeric" placeholder="KvK optioneel">
@@ -11298,7 +11318,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       </details>
       <details class="faq-item">
         <summary class="faq-q">Hoe nauwkeurig is de output?</summary>
-        <div class="faq-a">DueSight gebruikt interne benchmark- en replaynotities voor financiele redenering en deterministische checks. De huidige FinanceBench-bewijsstand is 145/150 (96,7%) als frozen public-sample replay en 141-142/150 (94,0-94,7%) in drie clean live reruns. Dat is geen externe certificering, geen perfecte-scoreclaim en geen full official 10.231-vragen claim. Alle bevindingen zijn bronherleidbaar: elke claim heeft een bron, tijdstip, confidence-label en beperking.</div>
+        <div class="faq-a">DueSight v12.1 is intern gerepliceerd op 89,53% mean ± 1,37pp op FinanceBench (n=150, k=10 runs), met 90,67% als beste gerepliceerde run. Self-reported; geen full-10.231 official submission. Alle bevindingen zijn bronherleidbaar: elke claim heeft een bron, tijdstip, confidence-label en beperking.</div>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Heeft DueSight al externe certificering?</summary>
@@ -12083,6 +12103,27 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
     const el = (id) => document.getElementById(id);
 
+    function normalizeDemoInput(value) {
+      return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    function findDemoScenarioIndex(value) {
+      const normalized = normalizeDemoInput(value);
+      if (!normalized) return scenarioIndex;
+      const aliases = [
+        ["mollie", "mollie b.v.", "mollie bv", "56087887"],
+        ["voorbeeld-mkb", "voorbeeld mkb", "acme", "acme logistiek", "acme logistiek b.v.", "acme logistiek bv", "71234567"]
+      ];
+      return aliases.findIndex((items) => items.includes(normalized));
+    }
+
+    function showDemoInputMessage(message) {
+      const box = el("workflowDemoError");
+      if (!box) return;
+      box.textContent = message || "";
+      box.classList.toggle("is-visible", Boolean(message));
+    }
+
     const domainMetricConfig = [
       { pending: "Wacht op registerlaag", scanning: "Sanctions, UBO en registerclaims lopen", version: "v4.2.1-stable", latency: 142, riskLatency: 38 },
       { pending: "Wacht op financiele laag", scanning: "First-digit toets, Z-score en revenue proxy lopen", version: "v3.8.0-stable", latency: 89, riskLatency: 57 },
@@ -12319,6 +12360,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       el("sourceDot").style.background = "var(--dim)";
       renderDomainMetrics(scenario, "pending");
       updateScanChips(scenario, [0, 0, 0, 0]);
+      showDemoInputMessage("");
       el("scanStatus").textContent = "Idle";
       el("progressFill").style.width = "0%";
       updateEvidenceSummary(0, "idle", "Stand-by");
@@ -12399,8 +12441,8 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       const color = scenario.score >= 80 ? "var(--green)" : scenario.score >= 60 ? "var(--amber)" : "var(--red)";
       const memoSourceCount = getMemoSourceCount(scenario) || sourceCount;
       setWorkflowScoreVisual(scenario.score, color);
-      el("workflowScoreLabel").textContent = scenario.score >= 80 ? "Laag risico" : scenario.score >= 60 ? "Review nodig" : "Hoog risico";
-      el("workflowScoreDesc").textContent = scenario.status + ". Memo-output is opgebouwd uit bronclaims en diligencevragen.";
+      el("workflowScoreLabel").textContent = scenario.score >= 80 ? "Laag risico voor " + scenario.name : scenario.score >= 60 ? "Review nodig voor " + scenario.name : "Hoog risico voor " + scenario.name;
+      el("workflowScoreDesc").textContent = scenario.status + " voor voorbeeldprofiel " + scenario.name + ". Memo-output is opgebouwd uit bronclaims en diligencevragen.";
       scenario.scores.forEach((value, index) => {
         el("bar" + index).style.width = value + "%";
         el("bv" + index).textContent = value;
@@ -12427,54 +12469,14 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           <div class="summary-stat"><strong>${flagCount}</strong><span>Vlaggen</span></div>
           <div class="summary-stat"><strong>${scenario.score}</strong><span>Score</span></div>
         </div>
-        <div class="summary-verdict ${scenario.verdictType}"><strong>Conclusie:</strong> ${scenario.verdict}</div>
+        <div class="summary-verdict ${scenario.verdictType}"><strong>Conclusie voor voorbeeldprofiel ${scenario.name}:</strong> ${scenario.verdict}</div>
       `;
       summary.classList.add("show");
     }
 
-    function runScenario(index, customName) {
+    function runScenario(index) {
       clearTimers();
       const scenario = { ...scenarios[index] };
-      if (customName) {
-        scenario.name = customName;
-        scenario.logo = customName.slice(0, 2).toUpperCase();
-        scenario.evidenceLedger = buildSampleEvidenceLedger({
-          targetName: customName,
-          statusLabel: "Handmatige target ledger",
-          summary: customName + " gebruikt dezelfde evidence-ledger contractvorm: eerst entity matching, daarna bronclaims met confidence, beperking en concrete diligence-vraag.",
-          rows: [
-            {
-              bucket: "Entity matching",
-              claim: customName + " wordt eerst gematcht op register, domein, handelsnaam en bronklasse.",
-              source: "DueSight intake + register fallback",
-              confidence: "Pending",
-              limitation: "Zonder officiele bronkey blijft dit intake-context, geen definitieve registerclaim.",
-              diligence_question: "Bevestig KvK-nummer, handelsnamen, domeinen en relevante entiteiten in deal scope."
-            },
-            {
-              bucket: "Source routing",
-              claim: "Beschikbare publieke bronnen bepalen welke claims direct memo-ready zijn en welke bewijs nodig hebben.",
-              source: "OpenSanctions + GLEIF + cyber baseline",
-              confidence: "Policy",
-              limitation: "Ontbrekende brondata wordt expliciet als beperking opgenomen.",
-              diligence_question: "Welke officiele stukken kan seller direct leveren voor register, finance en ownership?"
-            },
-            {
-              bucket: "Memo control",
-              claim: "Onzekere signalen worden als diligence-vraag verwerkt totdat bronbewijs beschikbaar is.",
-              source: "DueSight Evidence Ledger",
-              confidence: "Policy",
-              limitation: "Geen harde conclusie zonder bron, timestamp en scopebevestiging.",
-              diligence_question: "Welke bevindingen moeten voor IC, SPA of post-closing worden opgelost?"
-            }
-          ],
-          diligenceQuestions: [
-            "Welke entiteiten, domeinen en handelsnamen horen aantoonbaar bij deze target?",
-            "Welke officiele register- en finance-stukken zijn beschikbaar voor claim-grade bewijs?",
-            "Welke signalen worden memo-vraag in plaats van harde claim?"
-          ]
-        });
-      }
       renderTarget(scenario);
       resetWorkflow(scenario);
       el("scanStatus").textContent = "Scanning";
@@ -12576,8 +12578,14 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     el("evidenceDetailDrawer").addEventListener("toggle", syncEvidenceToggle);
 
     el("runScan").addEventListener("click", () => {
-      const customName = el("companyInput").value.trim();
-      runScenario(scenarioIndex, customName || null);
+      const matchedIndex = findDemoScenarioIndex(el("companyInput").value);
+      if (matchedIndex < 0) {
+        showDemoInputMessage("Dit is een demo met voorbeeldprofielen. Kies [Mollie] of [voorbeeld-MKB], of vraag een echt rapport aan.");
+        return;
+      }
+      scenarioIndex = matchedIndex;
+      el("companyInput").value = scenarios[scenarioIndex].name;
+      runScenario(scenarioIndex);
     });
 
     el("nextScenario").addEventListener("click", () => {
@@ -12707,6 +12715,20 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     }
 
     const orderStoragePrefix = 'duesight:payment-order:';
+    const intentProducts = {
+      compact: {
+        name: "DueSight Compact Scan",
+        price: "€79 per target · eenmalige digitale levering"
+      },
+      predd: {
+        name: "DueSight Pre-DD Rapport",
+        price: "€399 per rapport/per target · eenmalige digitale levering"
+      },
+      ma: {
+        name: "DueSight M&A Report",
+        price: "€399 per rapport/per target · eenmalige digitale levering"
+      }
+    };
     let selectedIntentProduct = "compact";
 
     function localDefault(port) {
@@ -12720,14 +12742,27 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       return local || window.location.origin;
     }
 
+    function paymentServiceBase() {
+      return window.DUESIGHT_PAYMENT_BASE || localDefault(5051);
+    }
+
     async function safeJson(response) {
       try { return await response.json(); }
       catch (_) { return {}; }
     }
 
+    function updateIntentProduct(product) {
+      const summary = intentProducts[product] || intentProducts.compact;
+      const nameEl = document.getElementById("intentProductName");
+      const priceEl = document.getElementById("intentProductPrice");
+      if (nameEl) nameEl.textContent = summary.name;
+      if (priceEl) priceEl.textContent = summary.price;
+    }
+
     async function uploadOrderFile(orderId, customerEmail, uploadFile) {
       if (!orderId || !uploadFile) return null;
-      const uploadBase = window.DUESIGHT_PAYMENT_BASE || serviceOrigin(5051);
+      const uploadBase = paymentServiceBase();
+      if (!uploadBase) return null;
       const form = new FormData();
       form.append("file", uploadFile);
       form.append("customer_email", customerEmail);
@@ -12742,6 +12777,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       selectedIntentProduct = product || "compact";
       const modal = document.getElementById("intentModal");
       if (!modal) return;
+      updateIntentProduct(selectedIntentProduct);
       modal.hidden = false;
       document.getElementById("intentCompanyInput")?.focus();
     };
@@ -12753,6 +12789,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
     window.selectIntent = async function(product) {
       const chosenProduct = product || selectedIntentProduct || "compact";
+      updateIntentProduct(chosenProduct);
       const company = document.getElementById("intentCompanyInput")?.value.trim() || "";
       const customerEmail = document.getElementById("intentEmailInput")?.value.trim() || "";
       const kvk = document.getElementById("intentKvkInput")?.value.trim() || "";
@@ -12767,7 +12804,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       const localPreview = localDefault(5050);
       const localPayment = localDefault(5051);
       const previewBase = window.DUESIGHT_API_BASE || window.DUESIGHT_API_URL || localPreview || serviceOrigin(5050);
-      const paymentBase = window.DUESIGHT_PAYMENT_BASE || localPayment || serviceOrigin(5051);
+      const paymentBase = window.DUESIGHT_PAYMENT_BASE || localPayment || "";
       const bridge = document.getElementById("ds-production-api-bridge");
       const previewPath = bridge?.dataset.previewEndpoint || "/api/teaser-scan?company_name=";
       const paymentPath = bridge?.dataset.paymentEndpoint || "/api/payment/create";
@@ -12787,6 +12824,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       }
 
       try {
+        if (!paymentBase) throw new Error("Payment API origin is not configured");
         const response = await fetch(paymentBase + paymentPath, {
           method: "POST",
           headers: { "Content-Type": "application/json", "Accept": "application/json" },
@@ -12811,7 +12849,8 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         let customerEmail = "";
         try { customerEmail = JSON.parse(stored || "{}").customerEmail || ""; } catch (_) {}
         if (orderId && customerEmail) {
-          const statusBase = window.DUESIGHT_PAYMENT_BASE || serviceOrigin(5051);
+          const statusBase = paymentServiceBase();
+          if (!statusBase) return;
           await fetch(statusBase + '/api/payment/status/' + encodeURIComponent(orderId) + '?customer_email=' + encodeURIComponent(customerEmail));
         }
       }
