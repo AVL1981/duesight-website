@@ -1,0 +1,15 @@
+{
+  "source": "payment_server.py::PRODUCTS",
+  "products": {
+    "compact": {
+      "name": "DueSight Compact Scan",
+      "amount": "79.00",
+      "currency": "EUR"
+    },
+    "predd": {
+      "name": "DueSight Pre-DD Rapport",
+      "amount": "399.00",
+      "currency": "EUR"
+    }
+  }
+}

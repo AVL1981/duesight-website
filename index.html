@@ -1880,7 +1880,7 @@
       gap: 10px;
     }
 
-    .control-stack input {
+    .control-stack input, .control-stack select {
       width: 100%;
       height: 44px;
       border-radius: 8px;
@@ -1893,7 +1893,7 @@
       font-size: 12px;
     }
 
-    .control-stack input:focus {
+    .control-stack input:focus, .control-stack select:focus {
       border-color: rgba(65, 215, 255, 0.52);
     }
 
@@ -2854,7 +2854,7 @@
       padding-top: 0 !important;
       border-top: 0 !important;
     }
-    /* Trace header is now a live label, not a manual toggle (scanlog auto-unfolds). */
+    /* Trace header is now a replay label, not a manual toggle (scanlog auto-unfolds). */
     .workflow-unified-trace .evidence-toggle {
       cursor: default;
       pointer-events: none;
@@ -4518,7 +4518,7 @@
       font-weight: 900;
       background:
         radial-gradient(circle at center, #f7fbff 0 47%, transparent 48%),
-        conic-gradient(var(--teal) 0 82%, rgba(15, 23, 42, 0.12) 82% 100%);
+        conic-gradient(var(--teal) 0 70%, rgba(15, 23, 42, 0.12) 70% 100%);
     }
 
     .sample-page-metrics {
@@ -5216,7 +5216,7 @@
       width: 86px;
       height: 86px;
       border-radius: 50%;
-      background: conic-gradient(var(--teal) 82%, rgba(173, 198, 255, 0.12) 0);
+      background: conic-gradient(var(--teal) 70%, rgba(173, 198, 255, 0.12) 0);
       display: grid;
       place-items: center;
       position: relative;
@@ -5571,7 +5571,7 @@
       }
 
       .sample-flipbook-iframe {
-        display: none;
+        display: block;
         inset: 0 auto auto -34vw;
         width: 820px;
         height: 1360px;
@@ -5579,7 +5579,7 @@
       }
 
       .sample-flipbook-fallback {
-        display: block;
+        display: none;
       }
 
       .sample-page,
@@ -5993,7 +5993,7 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.86);
     }
 
-    @media (max-width: 1320px) and (min-width: 1181px) {
+    @media (max-width: 1449px) and (min-width: 1181px) {
       .brand-tag {
         display: none;
       }
@@ -6111,6 +6111,23 @@
 
       .nav-link:hover {
         background: rgba(223, 234, 248, 0.86);
+      }
+    }
+
+    @media (max-width: 990px) {
+      .nav {
+        gap: 8px;
+      }
+
+      .nav-cta {
+        width: 40px;
+        padding: 0;
+        justify-content: center;
+        flex: 0 0 40px;
+      }
+
+      .nav-cta span:not(.material-symbols-outlined) {
+        display: none;
       }
     }
 
@@ -6828,7 +6845,7 @@
     .small-ring {
       background:
         radial-gradient(circle at center, rgba(255,255,255,0.80) 0 46%, transparent 47%),
-        conic-gradient(#087f73 0 82%, rgba(86,100,119,0.18) 82% 100%) !important;
+        conic-gradient(#087f73 0 70%, rgba(86,100,119,0.18) 70% 100%) !important;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.82), 0 10px 22px rgba(43,62,91,0.10);
     }
 
@@ -7098,7 +7115,7 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.86);
     }
 
-    .control-stack input {
+    .control-stack input, .control-stack select {
       background:
         linear-gradient(145deg, rgba(255,255,255,0.72), rgba(222,231,242,0.78)),
         rgba(245,248,252,0.76);
@@ -8842,6 +8859,26 @@
       box-shadow: 0 18px 44px rgba(79, 140, 255, 0.24);
     }
 
+    @media (max-width: 1180px) {
+      html[data-theme="dark"] .nav-links {
+        background:
+          linear-gradient(145deg, var(--panel-strong), var(--bg-soft)),
+          var(--bg);
+        border-color: var(--line-strong);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255,255,255,0.05);
+      }
+
+      html[data-theme="dark"] .nav-link {
+        background: var(--bg-soft);
+        border-color: var(--line);
+        color: var(--text);
+      }
+
+      html[data-theme="dark"] .nav-link:hover {
+        background: var(--panel);
+      }
+    }
+
     html[data-theme="dark"] .hero::before {
       background:
         radial-gradient(circle at 58% 44%, rgba(65, 215, 255, 0.10), transparent 36%),
@@ -9342,7 +9379,7 @@
         "name": "Is DueSight privacy-aligned?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ja. DueSight werkt primair met publiek beschikbare brondata. Voor betaalde of uitgebreide flows kan klantinput, zoals ordergegevens of optioneel aangeleverde documenten, worden verwerkt volgens het privacy- en retentiebeleid. Bevindingen blijven gekoppeld aan broncontext en timestamp."
+          "text": "Ja. DueSight werkt primair met publiek beschikbare brondata. Voor betaalde of uitgebreide flows kan klantinput, zoals ordergegevens of optionele klantuploads, worden verwerkt volgens het privacy- en retentiebeleid. Bevindingen blijven gekoppeld aan broncontext en timestamp."
         }
       }
     ]
@@ -9362,7 +9399,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
   <div class="top-signal">
     <span class="pulse"></span>
     <span>Institutionele target intelligence</span>
-    <span>47 databases + forensische data-analyse + memo-output</span>
+    <span>47 databases + first-digit integriteitstoets + memo-output</span>
     <span>proprietary multi-model intelligence engine</span>
     <span>AVG-documentatie + source-bound review</span>
   </div>
@@ -9635,7 +9672,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <div class="eyebrow"><span class="pulse"></span>Institutionele deal intelligence</div>
         <h1>Een target scan die<br class="mobile-title-break"> direct <em>bewijsbaar</em><span class="desktop-title-space"> </span><br class="mobile-title-break">wordt.</h1>
         <p class="hero-copy">
-          DueSight combineert live pre-DD intelligence, bronherleidbare findings en forensische cijfercontrole in een workflow die M&amp;A teams direct kunnen gebruiken voor target triage, IC voorbereiding en gerichte diligence-vragen.
+          DueSight combineert live pre-DD intelligence, bronherleidbare findings en first-digit integriteitstoets in een workflow die M&amp;A teams direct kunnen gebruiken voor target triage, IC voorbereiding en gerichte diligence-vragen.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="#workflow" aria-label="Bekijk workflow"><span class="material-symbols-outlined">route</span>Workflow</a>
@@ -9757,16 +9794,17 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     </section>
 
     <section class="section workflow" id="workflow">
+      <span id="scan-dashboard" aria-hidden="true"></span>
       <div class="section-head">
         <div>
-          <div class="section-kicker">Live Trace Demo</div>
+          <div class="section-kicker">Interactieve Demo</div>
         <h2 class="section-title">Van targetscan<br class="mobile-title-break"> naar herleidbare<br class="mobile-title-break"> bronketen.</h2>
         </div>
         <p class="section-copy">Een enkele flow: start met een target, volg per stap de bron, fallback en normalizer, en klap daarna de memo-output open met claims, confidence en diligencevragen.</p>
       </div>
 
       <div class="workflow-shell">
-        <div class="workflow-demo-notice" role="note">Demonstratie — vooraf opgenomen replay van voorbeeldprofielen, geen live scan van jouw invoer.</div>
+        <div class="workflow-demo-notice" role="note">Interactieve demonstratie met voorbeeldscenario's en illustratieve data — geen live scan van ingevoerde bedrijven.</div>
         <div class="workflow-unified-bar">
           <div class="workflow-unified-target">
             <div class="target-card">
@@ -9778,7 +9816,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
                 </div>
               </div>
               <div class="target-meta-line">
-                <span>KvK <strong id="targetKvk">56087887</strong></span>
+                <span>KvK <strong id="targetKvk">30204462</strong></span>
                 <span id="targetMarket">NL / EU</span>
                 <span>Ownership, finance, cyber</span>
                 <span>Evidence memo</span>
@@ -9790,7 +9828,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
               <div class="terminal-title-group">
                 <div class="terminal-title">Target evidence trace</div>
                 <button class="evidence-toggle" id="evidenceToggle" type="button" aria-expanded="false" aria-controls="evidenceDetailDrawer">
-                  <span class="evidence-detail-copy"><strong>Brontrace live</strong><span class="evidence-detail-subcopy">scanlog, tier-gates en evidence trail</span><span class="evidence-click-cue"><span class="material-symbols-outlined">touch_app</span><span id="evidenceClickText">Klik voor tech scanlog</span><span class="material-symbols-outlined cue-chevron">expand_more</span></span></span>
+                  <span class="evidence-detail-copy"><strong>Brontrace replay</strong><span class="evidence-detail-subcopy">scanlog, tier-gates en evidence trail</span><span class="evidence-click-cue"><span class="material-symbols-outlined">touch_app</span><span id="evidenceClickText">Klik voor tech scanlog</span><span class="material-symbols-outlined cue-chevron">expand_more</span></span></span>
                 </button>
               </div>
               <div class="terminal-header-right">
@@ -9808,10 +9846,15 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <aside class="target-panel">
           <div class="workflow-target-stack">
           <div class="control-stack">
-            <input id="companyInput" type="text" placeholder="Bedrijfsnaam of KvK">
+            <select id="companyInput" aria-label="Kies een demoscenario">
+                <option value="">Kies een scenario&hellip;</option>
+                <option value="Mollie B.V.">Mollie B.V. &mdash; fintech (gold sample)</option>
+                <option value="Acme Logistiek B.V.">Acme Logistiek B.V. &mdash; voorbeeld-MKB</option>
+              </select>
             <button class="button button-primary" id="runScan" type="button"><span class="material-symbols-outlined">play_arrow</span>Bouw memo</button>
             <button class="button button-ghost" id="nextScenario" type="button"><span class="material-symbols-outlined">sync</span>Volgend scenario</button>
             <p class="workflow-demo-error" id="workflowDemoError" aria-live="polite"></p>
+              <p class="workflow-replay-note" style="margin:10px 0 0;font-size:12px;line-height:1.5;color:var(--muted,#9fb0c7)">Interactieve demonstratie met voorbeeldscenario’s en illustratieve data — geen live scan van ingevoerde bedrijven. Replay van run 10-06-2026.</p>
           </div>
           <div class="domain-list" aria-label="Risicodomeinen">
             <div class="domain-chip" data-scan-chip="0" data-chip-state="idle" style="--chip-progress:0%"><span class="chip-copy"><strong>Ownership</strong><span data-chip-label>Wacht</span></span><span class="chip-rail"><span></span></span></div>
@@ -9834,7 +9877,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
               </div>
               <div>
                 <div class="workflow-score-state" id="workflowScoreLabel">Niet gestart</div>
-                <div class="workflow-score-copy" id="workflowScoreDesc">Start de scan om het targetprofiel op te bouwen.</div>
+                <div class="workflow-score-copy" id="workflowScoreDesc">Kies een scenario om het voorbeeldprofiel op te bouwen.</div>
               </div>
             </div>
             <div class="tier-bars">
@@ -9848,54 +9891,54 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <div class="source-grid">
               <div class="source-stat"><span class="source-number" id="sourceCount">0</span><span class="source-label">Bronnen</span></div>
               <div class="source-stat"><span class="source-number" id="findingCount">0</span><span class="source-label">Findings</span></div>
-              <div class="source-stat"><span class="source-number" id="flagCount">0</span><span class="source-label">Vlaggen</span></div>
+              <div class="source-stat"><span class="source-number" id="flagCount">0</span><span class="source-label" id="flagCountLabel">Vlaggen</span></div>
             </div>
             <div class="source-status"><span class="source-dot" id="sourceDot"></span><span id="sourceStatus">Inactief</span></div>
           </div>
           <div class="domain-metrics-panel" aria-label="Bronlaag domeinscores">
-            <article class="domain-metric-card" data-domain-index="0" style="--domain-score:96%">
+            <article class="domain-metric-card" data-domain-index="0" style="--domain-score:67%">
               <div class="domain-metric-head">
                 <div class="domain-metric-title"><span class="material-symbols-outlined">gavel</span>Juridisch</div>
                 <span class="domain-metric-dot"></span>
               </div>
               <div class="domain-metric-sources">OFAC - EU-sancties - Rechtspraak.nl - UBO-chain</div>
               <div class="domain-meter"><span></span></div>
-              <div class="domain-metric-value" data-domain-value>96%</div>
-              <div class="domain-metric-finding" data-domain-finding>0 sanctiehits - UBO-chain schoon</div>
-              <div class="domain-metric-foot"><span data-domain-latency>Latency: 142ms</span><span data-domain-version>v4.2.1-stable</span></div>
+              <div class="domain-metric-value" data-domain-value>67%</div>
+              <div class="domain-metric-finding" data-domain-finding>0 sanctiehits (scoped) - UBO vraagt primaire stukken</div>
+              <div class="domain-metric-foot"><span data-domain-latency>Voorbeeldwaarde</span><span data-domain-version>demo-replay</span></div>
             </article>
-            <article class="domain-metric-card financial" data-domain-index="1" style="--domain-score:87%">
+            <article class="domain-metric-card financial" data-domain-index="1" style="--domain-score:33%">
               <div class="domain-metric-head">
                 <div class="domain-metric-title"><span class="material-symbols-outlined">finance_mode</span>Financieel</div>
                 <span class="domain-metric-dot"></span>
               </div>
               <div class="domain-metric-sources">First-digit toets - Z-score - CBS - revenue proxy</div>
               <div class="domain-meter"><span></span></div>
-              <div class="domain-metric-value" data-domain-value>87%</div>
-              <div class="domain-metric-finding" data-domain-finding>x^2 = 12.34 - MAD = 0.0065</div>
-              <div class="domain-metric-foot"><span data-domain-latency>Latency: 89ms</span><span data-domain-version>v3.8.0-stable</span></div>
+              <div class="domain-metric-value" data-domain-value>33%</div>
+              <div class="domain-metric-finding" data-domain-finding>Geen officiele jaarrekening in deze replay - finance source-limited</div>
+              <div class="domain-metric-foot"><span data-domain-latency>Voorbeeldwaarde</span><span data-domain-version>demo-replay</span></div>
             </article>
-            <article class="domain-metric-card cyber" data-domain-index="2" style="--domain-score:78%">
+            <article class="domain-metric-card cyber" data-domain-index="2" style="--domain-score:60%">
               <div class="domain-metric-head">
                 <div class="domain-metric-title"><span class="material-symbols-outlined">shield_lock</span>Cyber</div>
                 <span class="domain-metric-dot"></span>
               </div>
               <div class="domain-metric-sources">CVE - SSL - HIBP - NIS2</div>
               <div class="domain-meter"><span></span></div>
-              <div class="domain-metric-value" data-domain-value>78%</div>
-              <div class="domain-metric-finding" data-domain-finding>3 medium CVEs - SSL Grade B</div>
-              <div class="domain-metric-foot"><span data-domain-latency>Latency: 234ms</span><span data-domain-version>v2.1.3-stable</span></div>
+              <div class="domain-metric-value" data-domain-value>60%</div>
+              <div class="domain-metric-finding" data-domain-finding>Footprint-context - geen target-attested exposure</div>
+              <div class="domain-metric-foot"><span data-domain-latency>Voorbeeldwaarde</span><span data-domain-version>demo-replay</span></div>
             </article>
-            <article class="domain-metric-card operational" data-domain-index="3" style="--domain-score:91%">
+            <article class="domain-metric-card operational" data-domain-index="3" style="--domain-score:100%">
               <div class="domain-metric-head">
                 <div class="domain-metric-title"><span class="material-symbols-outlined">public</span>Operationeel</div>
                 <span class="domain-metric-dot"></span>
               </div>
               <div class="domain-metric-sources">Wikidata - Wayback - Jobs - GDELT</div>
               <div class="domain-meter"><span></span></div>
-              <div class="domain-metric-value" data-domain-value>91%</div>
-              <div class="domain-metric-finding" data-domain-finding>4 historical claims verified</div>
-              <div class="domain-metric-foot"><span data-domain-latency>Latency: 67ms</span><span data-domain-version>v5.0.2-stable</span></div>
+              <div class="domain-metric-value" data-domain-value>100%</div>
+              <div class="domain-metric-finding" data-domain-finding>Context-rijk - bron-gebonden publieke claims</div>
+              <div class="domain-metric-foot"><span data-domain-latency>Voorbeeldwaarde</span><span data-domain-version>demo-replay</span></div>
             </article>
           </div>
           </div>
@@ -9952,8 +9995,8 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
                 <p class="workflow-brand-note">De workflow is gebouwd voor IC, board prep en klantgesprekken: minder dashboardruis, meer bronclaims, confidence en memo-output.</p>
               </div>
               <div class="workflow-brand-media">
-                <video class="ds-lazy-video" muted loop playsinline preload="none" data-autoplay="true" aria-label="DueSight logo motion">
-                  <source data-src="duesight_logo_animation.mp4" type="video/mp4">
+                <video class="ds-lazy-video" muted loop playsinline preload="none" data-autoplay="true" poster="duesight_intro_scene_1_unspoken_question_poster.jpg" aria-label="DueSight logo motion">
+                  <source data-src="duesight_intro_scene_1_unspoken_question.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
@@ -9992,7 +10035,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           <div class="section-kicker">Evidence workflow</div>
           <h2 class="section-title">Geen losse tools. Een beslislaag.</h2>
         </div>
-        <p class="section-copy">De interface brengt de demo en de forensische scanner samen in een workflow die laat zien waarom elk signaal telt en waar het vandaan komt.</p>
+        <p class="section-copy">De interface brengt de demo en de first-digit integriteitstoets samen in een workflow die laat zien waarom elk signaal telt en waar het vandaan komt.</p>
       </div>
 
       <div class="evidence-flow-shell" aria-label="Evidence workflow van bron naar memo">
@@ -10071,7 +10114,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
       <p class="sample-disclaimer" style="margin: 16px 0 0; font-size: 12.5px; line-height: 1.55; color: var(--muted); display: flex; align-items: flex-start; gap: 8px;">
         <span class="material-symbols-outlined" style="font-size: 16px; flex-shrink: 0;" aria-hidden="true">info</span>
-        <span>Alle voorbeeldrapporten zijn illustratief en uitsluitend samengesteld uit publiek beschikbare bronnen. Ze vormen geen oordeel, kwalificatie of advies over de genoemde organisaties.</span>
+        <span>Alle voorbeeldrapporten zijn illustratief en uitsluitend samengesteld uit publiek beschikbare bronnen. Ze vormen geen oordeel, kwalificatie of advies over de genoemde organisaties; geen externe certificering en geen perfecte-scoreclaim.</span>
       </p>
 
       <div class="sample-format-grid">
@@ -10082,22 +10125,18 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           </div>
           <h3>Flipbook preview</h3>
           <p>Bladerbare preview voor boardroom en IC.</p>
-          <div class="sample-flipbook-preview sample-flipbook-live" aria-label="Live preview van het Mollie Gold flipbook">
+          <div class="sample-flipbook-preview sample-flipbook-live" aria-label="Interactieve preview van het Mollie Gold flipbook">
             <iframe
               class="sample-flipbook-iframe"
               title="Mollie Gold interactief flipbook"
-              srcdoc="&lt;!doctype html&gt;&lt;html lang='nl'&gt;&lt;meta charset='utf-8'&gt;&lt;style&gt;html,body{margin:0;height:100%;font-family:system-ui,sans-serif;background:#0b1220;color:#e5edf7}body{display:grid;place-items:center}.panel{width:min(86%,520px);border:1px solid rgba(148,163,184,.28);border-radius:10px;padding:24px;background:rgba(15,23,42,.86)}strong{display:block;font-size:20px;margin-bottom:8px}span{display:block;color:#9fb0c7;line-height:1.5}.score{margin-top:18px;font-size:42px;font-weight:800;color:#13d6b1}&lt;/style&gt;&lt;body&gt;&lt;main class='panel' aria-label='DueSight sample preview'&gt;&lt;strong&gt;Mollie Gold preview&lt;/strong&gt;&lt;span&gt;Memo, evidence ledger en besluitvragen in een compacte flipbook-simulatie.&lt;/span&gt;&lt;div class='score'&gt;82&lt;/div&gt;&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;"
+              src="sample-report-mollie-gold/flipbook.html"
               loading="lazy"></iframe>
-            <img
-              class="sample-flipbook-fallback"
-              src="duesight-mollie-flipbook-mobile-preview.png"
-              alt="Live preview van het Mollie Gold flipbook">
-            <div class="sample-live-source">live flipbook sample</div>
+            <div class="sample-live-source">interactief flipbook sample</div>
             <div class="sample-page">
               <div class="sample-page-kicker"><span>DueSight</span><span>Pagina 01</span></div>
               <h4>Target memo</h4>
               <div class="sample-page-score">
-                <div class="sample-score-ring">82</div>
+                <div class="sample-score-ring">70</div>
                 <p>Laag tot middel risico. Bronclaims, confidence en vragen in één leesbare flow.</p>
               </div>
               <div class="sample-page-metrics">
@@ -10155,7 +10194,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           <p>Compacte pre-DD samenvatting: score, flags, belangrijkste bronnen en concrete vervolgvraag.</p>
           <div class="sample-preview" aria-hidden="true">
             <div class="sample-preview-row"><span>Claims</span><div class="sample-preview-bar"><span style="width:76%"></span></div><strong>128</strong></div>
-            <div class="sample-preview-row"><span>Score</span><div class="sample-preview-bar"><span style="width:82%"></span></div><strong>82</strong></div>
+            <div class="sample-preview-row"><span>Score</span><div class="sample-preview-bar"><span style="width:70%"></span></div><strong>70</strong></div>
             <div class="sample-preview-row"><span>Output</span><div class="sample-preview-bar"><span style="width:68%;background:linear-gradient(90deg,var(--teal),var(--primary))"></span></div><strong>Memo</strong></div>
           </div>
           <div class="sample-actions">
@@ -10666,24 +10705,6 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           position: relative;
         }
 
-        .pricing-tier.featured::before {
-          content: "Aanbevolen";
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          z-index: 2;
-          padding: 4px 8px;
-          border: 1px solid rgba(19, 214, 177, 0.26);
-          border-radius: 999px;
-          background: rgba(19, 214, 177, 0.10);
-          color: #087f73;
-          font-family: var(--mono);
-          font-size: 9px;
-          font-weight: 900;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-        }
-
         .footer a {
           color: rgba(237, 243, 255, 0.78) !important;
           text-decoration: underline !important;
@@ -10800,7 +10821,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
           var groups = [
             { key: "enterprise", order: 0, title: "Enterprise & beursgenoteerd", meta: "AEX, infra en internationale targets", match: /adyen|gasunie|postnl|shell|wise/i },
-            { key: "scaleup", order: 10, title: "Scale-up & fintech", meta: "Fintech, SaaS en digitale groei", match: /bunq|getthere|payment provider/i },
+            { key: "scaleup", order: 10, title: "Scale-up & fintech", meta: "Fintech, SaaS en digitale groei", match: /bunq|get\s*there|payment provider/i },
             { key: "mkb", order: 20, title: "MKB & NL-markt", meta: "Lokale targets en buy-and-build context", match: /multiselect|nlist|true legends|specialist/i }
           ];
 
@@ -10824,7 +10845,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
               tag.className = "sample-risk-tag";
               if (/gasunie|shell|postnl/i.test(name)) tag.textContent = "Infra / enterprise";
               else if (/adyen|bunq|payment provider|wise/i.test(name)) tag.textContent = "Fintech";
-              else if (/getthere|multiselect|nlist|true legends|specialist/i.test(name)) tag.textContent = "NL-market";
+              else if (/get\s*there|multiselect|nlist|true legends|specialist/i.test(name)) tag.textContent = "NL-market";
               else tag.textContent = "Sample";
               head.appendChild(tag);
             }
@@ -11148,7 +11169,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             <span class="pricing-icon"><span class="material-symbols-outlined">account_tree</span></span>
           </div>
           <h3>Enterprise / batches</h3>
-          <div class="price-line"><strong>Custom &mdash; op aanvraag</strong><span>intake nodig</span></div>
+          <div class="price-line"><strong>Custom &mdash; Op aanvraag</strong><span>intake nodig</span></div>
           <p>Voor PE, M&amp;A, compliance of portfolio monitoring met hogere volumes.</p>
           <ul class="pricing-list">
             <li><span class="material-symbols-outlined">check</span><span>Batch target screening</span></li>
@@ -11181,23 +11202,30 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         .intent-product-summary strong { font-size: 15px; color: var(--text); }
         .intent-product-summary span { font-size: 12px; color: var(--muted); }
         .intent-panel input[type="text"], .intent-panel input[type="email"], .intent-panel input[type="file"] { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; background: rgba(255,255,255,.06); color: var(--text); }
+        .intent-field-label { display: grid; gap: 6px; color: var(--muted); font-size: 12px; }
         .intent-terms { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; }
+        .intent-terms a, #intentStatus a { color: var(--teal); text-decoration: none; }
+        .intent-terms a:hover, #intentStatus a:hover { text-decoration: underline; }
         .intent-close { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--text); cursor: pointer; }
         #intentStatus { min-height: 18px; margin: 0; color: var(--muted); font-size: 12px; }
+        #intentStatus.is-error { color: #fecaca; }
       </style>
       <div class="intent-modal" id="intentModal" hidden>
         <div class="intent-panel" role="dialog" aria-modal="true" aria-labelledby="intentTitle">
           <button class="intent-close" type="button" onclick="hideIntentModal()" aria-label="Sluiten">×</button>
           <h3 id="intentTitle">Target intake</h3>
           <div class="intent-product-summary" aria-live="polite">
-            <strong id="intentProductName">DueSight Compact Scan</strong>
-            <span id="intentProductPrice">€79 per target · eenmalige digitale levering</span>
+            <strong id="intentProductName">Productgegevens laden</strong>
+            <span id="intentProductPrice">Prijs en levertijd worden geladen</span>
           </div>
           <input id="intentCompanyInput" type="text" autocomplete="organization" placeholder="Bedrijfsnaam of domein">
           <input id="intentEmailInput" type="email" autocomplete="email" placeholder="E-mail voor status en upload">
           <input id="intentKvkInput" type="text" inputmode="numeric" placeholder="KvK optioneel">
-          <input id="intentUploadFile" type="file">
-          <label class="intent-terms"><input id="intentTermsAccepted" type="checkbox"> Akkoord met voorwaarden en privacy</label>
+          <label class="intent-field-label" for="intentUploadFile">
+            Optioneel: P&amp;L of jaarrekening uploaden
+            <input id="intentUploadFile" type="file">
+          </label>
+          <label class="intent-terms"><input id="intentTermsAccepted" type="checkbox"> Akkoord met <a href="terms/">voorwaarden</a> en <a href="privacy/">privacy</a></label>
           <button type="button" class="sample-link primary" onclick="selectIntent()">Naar checkout</button>
           <p id="intentStatus" aria-live="polite"></p>
         </div>
@@ -11207,10 +11235,10 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     <section class="section scanner" id="forensic-data-analysis">
       <div class="section-head">
         <div>
-          <div class="section-kicker">Forensische lens</div>
-          <h2 class="section-title">First-digit integriteitstoets — direct uitvouwbaar.</h2>
+          <div class="section-kicker">First-digit integriteitstoets</div>
+          <h2 class="section-title">First-digit integriteitstoets</h2>
         </div>
-        <p class="section-copy">Toets een P&amp;L of jaarrekening op statistische patronen. Volledig client-side, zonder server-upload. Klik om te openen.</p>
+        <p class="section-copy">Open de client-side First-digit integriteitstoets.</p>
       </div>
 
       <style>
@@ -11231,19 +11259,19 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       <details class="scanner-details" id="forensicDetails">
         <summary>
           <span class="material-symbols-outlined" style="color:var(--teal); font-size:20px;">monitoring</span>
-          <span style="font-weight:700; font-size:14px;">DueSight first-digit integriteitsscanner</span>
-          <span class="scanner-summary-hint">Client-side · Geen server-upload · Lokale analyse</span>
+          <span style="font-weight:700; font-size:14px;">First-digit integriteitstoets</span>
+          <span class="scanner-summary-hint">Client-side voorbeeldtool</span>
           <span class="chev-expand">expand_more</span>
         </summary>
 
         <div class="scanner-shell">
           <div class="scanner-top">
-            <div class="scanner-label"><span class="material-symbols-outlined">monitoring</span>DueSight first-digit integriteitsscanner</div>
-            <div class="scanner-note">Client-side analyse - geen server-upload</div>
+            <div class="scanner-label"><span class="material-symbols-outlined">monitoring</span>First-digit integriteitstoets</div>
+            <div class="scanner-note">Client-side voorbeeldtool</div>
           </div>
           <div class="scanner-frame-wrap">
-            <iframe class="scanner-frame" srcdoc="&lt;!doctype html&gt;&lt;html lang='nl'&gt;&lt;meta charset='utf-8'&gt;&lt;style&gt;html,body{margin:0;height:100%;font-family:system-ui,sans-serif;background:#08111f;color:#e5edf7}body{display:grid;place-items:center}.scanner{width:min(88%,620px);border:1px solid rgba(19,214,177,.32);border-radius:10px;padding:24px;background:rgba(15,23,42,.9)}h1{font-size:20px;margin:0 0 10px}p{margin:0;color:#9fb0c7;line-height:1.5}.bars{display:grid;gap:8px;margin-top:18px}.bars span{height:10px;border-radius:999px;background:linear-gradient(90deg,#13d6b1,#3b82f6)}.bars span:nth-child(2){width:76%}.bars span:nth-child(3){width:58%}&lt;/style&gt;&lt;body&gt;&lt;section class='scanner' aria-label='Forensische data-analyse scanner'&gt;&lt;h1&gt;Forensische data-analyse&lt;/h1&gt;&lt;p&gt;Client-side controle van cijferpatronen, bronherleiding en memo-signalen. Geen server-upload.&lt;/p&gt;&lt;div class='bars' aria-hidden='true'&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/section&gt;&lt;/body&gt;&lt;/html&gt;"
-              title="Forensische data-analyse scanner" loading="lazy"></iframe>
+            <iframe class="scanner-frame" src="first-digit-scanner.html"
+              title="First-digit integriteitstoets" loading="lazy"></iframe>
           </div>
         </div>
       </details>
@@ -11254,7 +11282,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <div class="memo-content">
           <div class="section-kicker">Besluitoutput</div>
           <h2>Een memo dat de dealtafel begrijpt.</h2>
-          <p>De interface laat DueSight minder aanvoelen als een losse scan en meer als een intelligence workflow: eerst target, dan bronlagen, daarna forensic check, en als laatste een besluitklare memo met evidence en vragen.</p>
+          <p>De interface laat DueSight minder aanvoelen als een losse scan en meer als een intelligence workflow: eerst target, dan bronlagen, daarna first-digit toets, en als laatste een besluitklare memo met evidence en vragen.</p>
           <div class="memo-steps">
             <div class="memo-step"><div class="step-num">01</div><div><strong>Target intake.</strong> Bedrijfsnaam, KvK of domein start de bronlaag.</div></div>
             <div class="memo-step"><div class="step-num">02</div><div><strong>Risk routing.</strong> Ownership, sancties, finance, cyber, reputatie en regulatory exposure worden gewogen.</div></div>
@@ -11268,7 +11296,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
           </div>
           <div class="memo-close-beat" aria-label="Afsluitende productlaag">
             <div class="memo-close-media">
-              <video class="ds-lazy-video" muted loop playsinline preload="none" data-autoplay="true" aria-label="DueSight productvisualisatie">
+              <video class="ds-lazy-video" muted loop playsinline preload="none" data-autoplay="true" poster="duesight_promo_scene_5_close_poster.jpg" aria-label="DueSight productvisualisatie">
                   <source data-src="duesight_promo_scene_5_close.mp4" type="video/mp4">
                 </video>
             </div>
@@ -11281,7 +11309,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             </div>
           </div>
           <div class="memo-score">
-            <div class="small-ring"><strong>82</strong></div>
+            <div class="small-ring"><strong>70</strong></div>
             <div>
               <div class="memo-verdict">Laag tot middel risicoprofiel</div>
               <div class="memo-detail">Geen sanctiehit. Finance verificatie beschikbaar via first-digit integriteitstoets. Cyber exposure vraagt periodieke hercontrole.</div>
@@ -11322,11 +11350,11 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       </details>
       <details class="faq-item">
         <summary class="faq-q">Heeft DueSight al externe certificering?</summary>
-        <div class="faq-a">Nog niet. Het review- en certificeringsdossier is klaar voor indiening, maar DueSight voert pas een externe certificeringsclaim na een ondertekend attest met scope, datum, versie en uitkomst.</div>
+        <div class="faq-a">Nog niet: geen externe certificering. Het review- en certificeringsdossier is klaar voor indiening, maar DueSight voert pas een externe certificeringsclaim na een ondertekend attest met scope, datum, versie en uitkomst.</div>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Is DueSight privacy-aligned?</summary>
-        <div class="faq-a">Ja. DueSight werkt primair met publiek beschikbare brondata. Voor betaalde of uitgebreide flows kan klantinput, zoals ordergegevens of optioneel aangeleverde documenten, worden verwerkt volgens het privacy- en retentiebeleid. Claims blijven gekoppeld aan broncontext en timestamp; klantdocumenten zijn geen permanente publieke bronlaag.</div>
+        <div class="faq-a">Ja. DueSight werkt primair met publiek beschikbare brondata. Voor betaalde of uitgebreide flows kan klantinput, zoals ordergegevens of optionele klantuploads, worden verwerkt volgens het privacy- en retentiebeleid. Claims blijven gekoppeld aan broncontext en timestamp; klantdocumenten zijn geen permanente publieke bronlaag.</div>
       </details>
       <details class="faq-item">
         <summary class="faq-q">Hoe snel is een DueSight scan?</summary>
@@ -11924,13 +11952,13 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         name: "Mollie B.V.",
         logo: "MO",
         type: "Fintech - betalingsdiensten",
-        kvk: "56087887",
+        kvk: "30204462",
         market: "NL / EU",
-        status: "Laag risico",
-        score: 90,
-        scores: [96, 87, 78, 91],
-        verdictType: "green",
-        verdict: "Laag risicoprofiel. Geen sanctieverbanden, stabiele eigendomsstructuur en een verdedigbare bronpositie voor M&A due diligence.",
+        status: "Bruikbaar met beperkingen",
+        score: 70, // bron: sample-report-mollie-gold/pipeline-score.json (aggregate_score_certified)
+        scores: [67, 33, 60, 100], // afgeleid uit pipeline-score.json components (compliance 12/18, finance 5/15, cyber 6/10, context 7/7)
+        verdictType: "amber",
+        verdict: "Bruikbaar met beperkingen (Evidence Readiness 70/100). Sanctions: geen claim-safe hit binnen scope; UBO en finance vragen primaire stukken. Replay van run 10-06-2026.",
         memo: {
           claims: "146 bronclaims uit meerdere bronnen met timestamp, bronklasse en confidence label.",
           decision: "Ownership, finance, cyber en operationele signalen zijn per risk tier gekoppeld aan reviewpunten.",
@@ -12101,6 +12129,41 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     let timers = [];
     let domainMetricFrames = [];
 
+    const mollieScoreArtifactPath = "sample-report-mollie-gold/pipeline-score.json";
+    const mollieScoreComponentMap = {
+      0: "compliance_media",
+      1: "finance_integrity",
+      2: "cyber_footprint",
+      3: "business_context"
+    };
+
+    function componentPercent(component) {
+      if (!component || !component.max_score) return 0;
+      return Math.round((Number(component.score || 0) / Number(component.max_score)) * 100);
+    }
+
+    async function hydrateMollieScoreFromArtifact() {
+      const scenario = scenarios.find((item) => item.name === "Mollie B.V.");
+      if (!scenario || !window.fetch) return;
+      try {
+        const response = await fetch(mollieScoreArtifactPath, { cache: "no-store" });
+        if (!response.ok) return;
+        const artifact = await response.json();
+        const components = Object.fromEntries((artifact.components || []).map((item) => [item.name, item]));
+        scenario.score = Number(artifact.score || scenario.score);
+        scenario.kvk = artifact.target?.kvk_number || scenario.kvk;
+        scenario.scores = scenario.scores.map((fallback, index) => {
+          const derived = componentPercent(components[mollieScoreComponentMap[index]]);
+          return derived || fallback;
+        });
+        if (artifact.computed_at) {
+          scenario.verdict = scenario.verdict.replace("Replay van run 10-06-2026.", "Replay van run " + new Date(artifact.computed_at).toLocaleString("nl-NL", { timeZone: "Europe/Amsterdam" }) + ".");
+        }
+      } catch (_) {
+        // Static file previews may block fetch; the embedded replay keeps its artifact-derived fallback values.
+      }
+    }
+
     const el = (id) => document.getElementById(id);
 
     function normalizeDemoInput(value) {
@@ -12111,7 +12174,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       const normalized = normalizeDemoInput(value);
       if (!normalized) return scenarioIndex;
       const aliases = [
-        ["mollie", "mollie b.v.", "mollie bv", "56087887"],
+        ["mollie", "mollie b.v.", "mollie bv", "30204462"],
         ["voorbeeld-mkb", "voorbeeld mkb", "acme", "acme logistiek", "acme logistiek b.v.", "acme logistiek bv", "71234567"]
       ];
       return aliases.findIndex((items) => items.includes(normalized));
@@ -12125,10 +12188,10 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     }
 
     const domainMetricConfig = [
-      { pending: "Wacht op registerlaag", scanning: "Sanctions, UBO en registerclaims lopen", version: "v4.2.1-stable", latency: 142, riskLatency: 38 },
-      { pending: "Wacht op financiele laag", scanning: "First-digit toets, Z-score en revenue proxy lopen", version: "v3.8.0-stable", latency: 89, riskLatency: 57 },
-      { pending: "Wacht op cyberlaag", scanning: "CVE, SSL, HIBP en NIS2 signalen lopen", version: "v2.1.3-stable", latency: 234, riskLatency: 74 },
-      { pending: "Wacht op contextlaag", scanning: "Wikidata, Wayback, jobs, GDELT en Talkwalker Alerts lopen", version: "v5.0.2-stable", latency: 67, riskLatency: 31 }
+      { pending: "Wacht op registerlaag", scanning: "Sanctions, UBO en registerclaims lopen", version: "demo-replay", latency: 142, riskLatency: 38 },
+      { pending: "Wacht op financiele laag", scanning: "First-digit toets, Z-score en revenue proxy lopen", version: "demo-replay", latency: 89, riskLatency: 57 },
+      { pending: "Wacht op cyberlaag", scanning: "CVE, SSL, HIBP en NIS2 signalen lopen", version: "demo-replay", latency: 234, riskLatency: 74 },
+      { pending: "Wacht op contextlaag", scanning: "Wikidata, Wayback, jobs, GDELT en Talkwalker Alerts lopen", version: "demo-replay", latency: 67, riskLatency: 31 }
     ];
 
     const scanChipConfig = [
@@ -12210,7 +12273,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       card.classList.toggle("is-complete", state === "complete");
       animateDomainMetricScore(index, card, score, state === "pending" ? 0 : 620);
       card.querySelector("[data-domain-finding]").textContent = finding;
-      card.querySelector("[data-domain-latency]").textContent = "Latency: " + latency + (latency === "--" ? "" : "ms");
+      card.querySelector("[data-domain-latency]").textContent = state === "pending" ? "--" : "Voorbeeldwaarde";
       card.querySelector("[data-domain-version]").textContent = config.version;
     }
 
@@ -12280,7 +12343,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       const completed = tierProgress.filter((value) => value >= 1).length;
 
       setWorkflowScoreVisual(score, color);
-      el("workflowScoreLabel").textContent = activeTierIndex >= 0 ? labels[activeTierIndex] + " loopt" : "Scan loopt...";
+      el("workflowScoreLabel").textContent = activeTierIndex >= 0 ? labels[activeTierIndex] + " replay" : "Replay loopt...";
       el("workflowScoreDesc").textContent = completed + "/4 risicodomeinen verwerkt. Score groeit mee met bronclaims, findings en memo-bewijs.";
 
       scenario.scores.forEach((value, index) => {
@@ -12344,6 +12407,10 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       badge.textContent = text;
     }
 
+    function flagLabel(count) {
+      return Number(count) === 1 ? "Vlag" : "Vlaggen";
+    }
+
     function resetWorkflow(scenario) {
       for (let i = 0; i < 4; i += 1) {
         el("log" + i).innerHTML = "";
@@ -12356,6 +12423,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       el("sourceCount").textContent = "0";
       el("findingCount").textContent = "0";
       el("flagCount").textContent = "0";
+      el("flagCountLabel").textContent = flagLabel(0);
       el("sourceStatus").textContent = "Inactief";
       el("sourceDot").style.background = "var(--dim)";
       renderDomainMetrics(scenario, "pending");
@@ -12367,11 +12435,11 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       el("summaryPanel").className = "summary-panel";
       el("summaryPanel").innerHTML = "";
       setWorkflowScoreVisual(0, getScenarioRiskColor(scenario));
-      el("workflowScoreLabel").textContent = "Scan loopt...";
-      el("workflowScoreDesc").textContent = "Real-time bronverificatie actief.";
+      el("workflowScoreLabel").textContent = "Replay loopt...";
+      el("workflowScoreDesc").textContent = "Voorbeeldreplay met bronlagen actief.";
       el("evidenceDetailDrawer").open = false;
       syncEvidenceToggle();
-      el("memoClaims").textContent = "Bronclaims verschijnen tijdens de scan met timestamp, bronklasse en confidence label.";
+      el("memoClaims").textContent = "Bronclaims verschijnen tijdens de replay met replay-moment, bronklasse en confidence label.";
       el("memoDecision").textContent = "Risk tiers worden gekoppeld aan concrete reviewpunten.";
       el("memoOutput").textContent = "Verdedigbare samenvatting met vragen, uitzonderingen en bewijspositie.";
     }
@@ -12388,7 +12456,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       document.querySelector(".terminal-panel")?.setAttribute("data-evidence-state", state);
       document.querySelector(".workflow-unified-bar")?.setAttribute("data-evidence-state", state);
       fill.style.setProperty("--evidence-progress", pct + "%");
-      status.textContent = label || (state === "complete" ? "Evidence klaar" : state === "idle" ? "Stand-by" : "Bronnen lopen");
+      status.textContent = label || (state === "complete" ? "Evidence replay klaar" : state === "idle" ? "Stand-by" : "Bronnenreplay loopt");
       percent.textContent = pct + "%";
     }
 
@@ -12407,10 +12475,14 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       updateEvidenceSummary(pct, pct >= 100 ? "complete" : "scanning");
     }
 
+    const REPLAY_T0 = new Date("2026-06-10T15:44:09").getTime();
+    let replayTick = 0;
+    function nextReplayTs() { replayTick += 1; return new Date(REPLAY_T0 + replayTick * 1300).toTimeString().slice(0, 8); }
+
     function addTierLog(index, log) {
       const row = document.createElement("div");
       row.className = "tier-log-line";
-      const ts = new Date().toTimeString().slice(0, 8);
+      const ts = nextReplayTs();
       const tone = log.tone === "err" ? "err" : log.tone === "warn" ? "warn" : log.tone === "ok" ? "ok" : "";
       row.innerHTML = `
         <span class="tier-log-time">${ts}</span>
@@ -12447,7 +12519,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         el("bar" + index).style.width = value + "%";
         el("bv" + index).textContent = value;
       });
-      el("sourceStatus").textContent = "Scan voltooid";
+      el("sourceStatus").textContent = "Replay voltooid";
       el("sourceDot").style.background = "var(--green)";
       el("sourceCount").textContent = memoSourceCount;
       el("scanStatus").textContent = "Memo-ready";
@@ -12466,7 +12538,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         <div class="summary-grid">
           <div class="summary-stat"><strong>${memoSourceCount}</strong><span>Bronnen</span></div>
           <div class="summary-stat"><strong>${findingCount}</strong><span>Findings</span></div>
-          <div class="summary-stat"><strong>${flagCount}</strong><span>Vlaggen</span></div>
+          <div class="summary-stat"><strong>${flagCount}</strong><span>${flagLabel(flagCount)}</span></div>
           <div class="summary-stat"><strong>${scenario.score}</strong><span>Score</span></div>
         </div>
         <div class="summary-verdict ${scenario.verdictType}"><strong>Conclusie voor voorbeeldprofiel ${scenario.name}:</strong> ${scenario.verdict}</div>
@@ -12479,10 +12551,10 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       const scenario = { ...scenarios[index] };
       renderTarget(scenario);
       resetWorkflow(scenario);
-      el("scanStatus").textContent = "Scanning";
-      el("sourceStatus").textContent = "Scannen...";
+      el("scanStatus").textContent = "Replay";
+      el("sourceStatus").textContent = "Replay loopt";
       el("sourceDot").style.background = "var(--teal)";
-      updateEvidenceSummary(0, "scanning", "Scan start");
+      updateEvidenceSummary(0, "scanning", "Replay start");
 
       const total = scenario.tiers.reduce((sum, tier) => sum + tier.logs.length + tier.findings.length + 2, 1);
       let step = 0;
@@ -12504,7 +12576,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       scenario.tiers.forEach((tier, tierIndex) => {
         later(() => {
           setTierState(tierIndex, "active");
-          setTierBadge(tierIndex, "scanning", "Scannen");
+          setTierBadge(tierIndex, "scanning", "Replay");
           setDomainMetric(tierIndex, scenario, "scanning", { progress: 0.28 });
           setTierProgress(tierIndex, 0.12);
           step += 1;
@@ -12535,6 +12607,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
             if (finding.sev === "warn" || finding.sev === "crit") flagCount += 1;
             el("findingCount").textContent = findingCount;
             el("flagCount").textContent = flagCount;
+            el("flagCountLabel").textContent = flagLabel(flagCount);
             setDomainMetric(tierIndex, scenario, "scanning", {
               progress: 0.78 + ((findingIndex + 1) / Math.max(1, tier.findings.length)) * 0.14,
               finding: finding.title + (finding.src ? " - " + finding.src.split("/")[0].trim() : "")
@@ -12715,20 +12788,9 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
     }
 
     const orderStoragePrefix = 'duesight:payment-order:';
-    const intentProducts = {
-      compact: {
-        name: "DueSight Compact Scan",
-        price: "€79 per target · eenmalige digitale levering"
-      },
-      predd: {
-        name: "DueSight Pre-DD Rapport",
-        price: "€399 per rapport/per target · eenmalige digitale levering"
-      },
-      ma: {
-        name: "DueSight M&A Report",
-        price: "€399 per rapport/per target · eenmalige digitale levering"
-      }
-    };
+    const intentProductsUrl = "public-products.json";
+    const intentProductDeliveryText = "rapport in 2-4 minuten";
+    let intentProductsPromise = null;
     let selectedIntentProduct = "compact";
 
     function localDefault(port) {
@@ -12751,12 +12813,64 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       catch (_) { return {}; }
     }
 
-    function updateIntentProduct(product) {
-      const summary = intentProducts[product] || intentProducts.compact;
+    function setIntentStatus(message, tone) {
+      const status = document.getElementById("intentStatus");
+      if (!status) return;
+      status.classList.toggle("is-error", tone === "error");
+      status.textContent = message;
+    }
+
+    function setIntentContactStatus() {
+      const status = document.getElementById("intentStatus");
+      if (!status) return;
+      status.classList.add("is-error");
+      status.innerHTML = 'Checkout nog niet beschikbaar. <a href="contact.html">Neem contact op voor handmatige intake</a>.';
+    }
+
+    function loadIntentProducts() {
+      if (!intentProductsPromise) {
+        intentProductsPromise = fetch(intentProductsUrl, { headers: { "Accept": "application/json" } })
+          .then(async (response) => {
+            if (!response.ok) throw new Error("Productgegevens niet beschikbaar");
+            const payload = await safeJson(response);
+            if (!payload.products || typeof payload.products !== "object") {
+              throw new Error("Productgegevens niet beschikbaar");
+            }
+            return payload.products;
+          });
+      }
+      return intentProductsPromise;
+    }
+
+    function formatIntentAmount(product) {
+      const amount = Number(product.amount);
+      if (!Number.isFinite(amount)) throw new Error("Productprijs niet beschikbaar");
+      const decimals = Number.isInteger(amount) ? 0 : 2;
+      return "€" + amount.toLocaleString("nl-NL", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: 2
+      });
+    }
+
+    async function updateIntentProduct(product) {
       const nameEl = document.getElementById("intentProductName");
       const priceEl = document.getElementById("intentProductPrice");
-      if (nameEl) nameEl.textContent = summary.name;
-      if (priceEl) priceEl.textContent = summary.price;
+      if (nameEl) nameEl.textContent = "Productgegevens laden";
+      if (priceEl) priceEl.textContent = "Prijs en levertijd worden geladen";
+      try {
+        const products = await loadIntentProducts();
+        const summary = products[product];
+        if (!summary) throw new Error("Product niet beschikbaar");
+        const price = formatIntentAmount(summary);
+        if (nameEl) nameEl.textContent = summary.name;
+        if (priceEl) priceEl.textContent = `${price} excl. BTW · ${intentProductDeliveryText}`;
+        return summary;
+      } catch (_) {
+        if (nameEl) nameEl.textContent = "Productgegevens niet beschikbaar";
+        if (priceEl) priceEl.textContent = "Neem contact op voor handmatige intake";
+        setIntentContactStatus();
+        return null;
+      }
     }
 
     async function uploadOrderFile(orderId, customerEmail, uploadFile) {
@@ -12777,7 +12891,8 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       selectedIntentProduct = product || "compact";
       const modal = document.getElementById("intentModal");
       if (!modal) return;
-      updateIntentProduct(selectedIntentProduct);
+      setIntentStatus("");
+      void updateIntentProduct(selectedIntentProduct);
       modal.hidden = false;
       document.getElementById("intentCompanyInput")?.focus();
     };
@@ -12789,15 +12904,15 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 
     window.selectIntent = async function(product) {
       const chosenProduct = product || selectedIntentProduct || "compact";
-      updateIntentProduct(chosenProduct);
+      const productSummary = await updateIntentProduct(chosenProduct);
+      if (!productSummary) return;
       const company = document.getElementById("intentCompanyInput")?.value.trim() || "";
       const customerEmail = document.getElementById("intentEmailInput")?.value.trim() || "";
       const kvk = document.getElementById("intentKvkInput")?.value.trim() || "";
       const uploadFile = document.getElementById("intentUploadFile")?.files?.[0] || null;
       const termsAccepted = document.getElementById("intentTermsAccepted")?.checked === true;
-      const status = document.getElementById("intentStatus");
       if (!company || !customerEmail || !termsAccepted) {
-        if (status) status.textContent = "Vul target, e-mail en akkoord in.";
+        setIntentStatus("Vul target, e-mail en akkoord in.", "error");
         return;
       }
 
@@ -12816,11 +12931,11 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         terms_accepted: true
       };
 
-      if (status) status.textContent = "Preview en checkout worden voorbereid.";
+      setIntentStatus("Preview en checkout worden voorbereid.");
       try {
         await fetch(previewBase + previewPath + encodeURIComponent(company), { headers: { "Accept": "application/json" } });
       } catch (_) {
-        if (status) status.textContent = "DueSight teaser preview unavailable; continuing to checkout.";
+        setIntentStatus("DueSight teaser preview unavailable; continuing to checkout.");
       }
 
       try {
@@ -12837,7 +12952,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
         await uploadOrderFile(payload.order_id, customerEmail, uploadFile);
         window.location.assign(order.checkout_url);
       } catch (error) {
-        if (status) status.textContent = "Checkout nog niet beschikbaar. Neem contact op voor handmatige intake.";
+        setIntentContactStatus();
       }
     };
 
@@ -12863,7 +12978,7 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
       hydrateFeedLogos();
       renderSampleEvidenceLedger(sampleEvidenceLedger);
       initHeroEarth();
-      runScenario(0);
+      hydrateMollieScoreFromArtifact().finally(() => runScenario(0));
       hydrateSampleEvidenceLedgerFromApi();
       hydratePaymentReturnStatus();
 
@@ -12909,11 +13024,20 @@ html[data-theme="dark"] .ds-cookie-consent{background:rgba(7,11,20,.96);color:#e
 <style id="ds-darkmap-fix">
 html[data-theme="dark"] .hero-europe-map-stack{opacity:1!important}
 html[data-theme="dark"] .hero-europe-intel{opacity:1!important;mix-blend-mode:screen!important}
-html[data-theme="dark"] .hero-europe-base-map{display:none!important}
+html[data-theme="dark"] .hero-europe-base-map{display:block!important;opacity:.6!important;mix-blend-mode:screen!important}
+html[data-theme="dark"] .hero-europe-base-map path{fill:color-mix(in srgb,var(--primary),transparent 90%)!important;stroke:var(--line-strong)!important;stroke-width:1.25px!important;opacity:.92!important}
 /* Dark-native focus-kaart: verberg licht-variant, toon dark-twin (geen invert/screen) */
 .hero-europe-focus.hero-europe-focus-dark{display:none!important}
 html[data-theme="dark"] .hero-europe-focus:not(.hero-europe-focus-dark){display:none!important}
-html[data-theme="dark"] .hero-europe-focus.hero-europe-focus-dark{display:block!important;opacity:.97!important;mix-blend-mode:normal!important;filter:drop-shadow(0 0 12px rgba(34,200,225,.20))!important}
+html[data-theme="dark"] .hero-europe-focus.hero-europe-focus-dark{display:block!important;opacity:1!important;mix-blend-mode:normal!important;filter:brightness(1.65) contrast(1.12) saturate(1.1) drop-shadow(0 0 14px rgba(34,200,225,.28))!important}
+/* DQ-12: stadslabels en routes leesbaar in dark (tokens, geen nieuwe kleuren) */
+html[data-theme="dark"] .hero-europe-intel .mesh{stroke:var(--line-strong)!important;opacity:.58!important}
+html[data-theme="dark"] .hero-europe-intel .route-primary,html[data-theme="dark"] .hero-europe-intel .live-arc{stroke:var(--primary)!important;opacity:.96!important}
+html[data-theme="dark"] .hero-europe-intel .route-secondary,html[data-theme="dark"] .hero-europe-intel .live-arc.soft{stroke:var(--line-strong)!important;opacity:.88!important}
+html[data-theme="dark"] .hero-europe-intel .city-label{fill:var(--primary)!important;stroke:var(--bg)!important;opacity:1!important}
+html[data-theme="dark"] .hero-europe-intel .city-label.secondary{fill:var(--primary)!important;opacity:.82!important}
+html[data-theme="dark"] .hero-europe-intel .country-label{fill:var(--primary)!important;opacity:.78!important}
+html[data-theme="dark"] .europe-route{opacity:.85!important}
 </style>
 <div id="dsCookieConsent" class="ds-cookie-consent" role="dialog" aria-modal="false" aria-labelledby="ds-cookie-title" hidden>
   <h2 id="ds-cookie-title">Cookie-instellingen</h2>

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forensische data-analyse P&amp;L Scanner — DueSight Forensische Verificatie</title>
+    <title>First-digit integriteitstoets | DueSight</title>
     <meta name="description"
-        content="Upload uw P&amp;L of jaarrekening (XLSX/CSV) voor een wetenschappelijke forensische data-analyse. 100% client-side, zero data retention.">
+        content="Client-side first-digit integriteitstoets voor jaarrekening-, spreadsheet- en CSV-bestanden.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
@@ -879,18 +879,18 @@
                     </linearGradient>
                 </defs>
             </svg>
-            Forensic Financial Analysis
+            First-digit integriteitstoets
         </div>
-        <h1>Forensische data-analyse P&amp;L Scanner</h1>
-        <p>Upload uw jaarrekening of P&L statement. DueSight analyseert de cijferverdeling met forensische
-            patroonherkenning (Chi-kwadraat toets) — volledig in uw browser, zero data retention.</p>
+        <h1>First-digit integriteitstoets</h1>
+        <p>Upload een jaarrekening, spreadsheet of cijferlijst. De toets bekijkt de eerste-cijferverdeling met een
+            chi-kwadraat controle, volledig in uw browser.</p>
     </header>
 
     <main class="scanner-container">
 
         <!-- Privacy badge -->
         <div class="privacy-badge">
-            🔒 Zero Retention — Uw data verlaat nooit uw browser. 100% client-side verwerking.
+            Uw data verlaat nooit uw browser. 100% client-side verwerking.
         </div>
 
         <!-- Upload zone -->
@@ -938,7 +938,7 @@ Voorbeeld:
             <h3>Selecteer de kolom met financiële bedragen</h3>
             <p>We detecteerden meerdere numerieke kolommen. Kies de kolom die u wilt analyseren:</p>
             <div class="col-options" id="colOptions"></div>
-            <button class="btn-analyze" id="btnAnalyze" disabled>🔬 Start Forensische Cijferanalyse</button>
+            <button class="btn-analyze" id="btnAnalyze" disabled>Start first-digit toets</button>
         </div>
 
         <!-- Terminal -->
@@ -947,7 +947,7 @@ Voorbeeld:
                 <span class="terminal-dot red"></span>
                 <span class="terminal-dot yellow"></span>
                 <span class="terminal-dot green"></span>
-                <span class="terminal-title">duesight-forensic-engine v2.1</span>
+                <span class="terminal-title">duesight-first-digit-toets v2.1</span>
             </div>
             <div class="terminal-body" id="terminalBody"></div>
         </div>
@@ -957,7 +957,7 @@ Voorbeeld:
 
             <!-- Score card -->
             <div class="score-card" id="scoreCard">
-                <h2>Forensic Integrity Score</h2>
+                <h2>Integriteitsscore</h2>
                 <div class="score-ring">
                     <svg viewBox="0 0 160 160">
                         <circle class="bg" cx="80" cy="80" r="70" />
@@ -1018,7 +1018,7 @@ Voorbeeld:
             <!-- Upsell -->
             <div class="upsell-lock">
                 <div class="lock-icon">🔐</div>
-                <h3>Volledige Forensische Rapportage</h3>
+                <h3>Volledige rapportage</h3>
                 <p>Ontgrendel cellocatie-analyse, tweede-orde tests, opsplitsing per rekening, en een gedetailleerd
                     PDF-rapport met audit-trail.</p>
                 <a href="index.html#pricing" class="cta-btn">Bekijk DueSight Pro →</a>
@@ -1034,7 +1034,7 @@ Voorbeeld:
 
         <!-- How it works -->
         <div class="how-it-works">
-            <h3>Hoe werkt de forensische cijferanalyse?</h3>
+            <h3>Hoe werkt de first-digit integriteitstoets?</h3>
             <div class="how-steps">
                 <div class="how-step">
                     <div class="step-icon">📄</div>
@@ -1063,7 +1063,7 @@ Voorbeeld:
 
     <footer class="scanner-footer">
         <a href="index.html">← Terug naar DueSight.nl</a>
-        <p>Forensische analyse gebaseerd op first-digit distributie (Newcomb 1881, Nigrini 2012)</p>
+        <p>First-digit integriteitstoets gebaseerd op eerste-cijferdistributie (Newcomb 1881, Nigrini 2012)</p>
     </footer>
 
     <!-- PDF.js CDN for client-side PDF parsing -->
@@ -1083,7 +1083,7 @@ Voorbeeld:
 
     <script>
         /**
-         * DueSight Forensische data-analyse Engine — 100% Client-Side
+         * DueSight first-digit integriteitstoets engine - 100% client-side
          * 
          * Implements:
          * - First-digit frequency analysis
@@ -1095,7 +1095,7 @@ Voorbeeld:
          */
 
         // ═══════════════════════════════════════════════════════════
-        //  Forensische data-analyse ENGINE
+        //  FIRST-DIGIT ENGINE
         // ═══════════════════════════════════════════════════════════
 
         const FIRST_DIGIT_EXPECTED = [
@@ -1242,12 +1242,12 @@ Voorbeeld:
 
 
         // ═══════════════════════════════════════════════════════════
-        //  DEMO DATA — Simulated P&L with subtle manipulation
+        //  DEMO DATA - simulated financial values with subtle anomalies
         // ═══════════════════════════════════════════════════════════
 
         function generateDemoData() {
             // Generates ~500 numbers that roughly follow the natural first-digit distribution with subtle anomalies
-            // Simulates a P&L where some entries appear manipulated (excess of digit 5, deficit of digit 1)
+            // Simulates values where some entries appear unusual (excess of digit 5, deficit of digit 1)
             const data = [];
             const firstDigitCumulative = [];
             let cum = 0;
@@ -1327,7 +1327,7 @@ Voorbeeld:
         // Demo button
         btnDemo.addEventListener('click', () => {
             allNumbers = generateDemoData();
-            runAnalysis('[Demo] Gesimuleerde P&L Dataset', allNumbers.length);
+            runAnalysis('[Demo] Gesimuleerde dataset', allNumbers.length);
         });
 
         // Paste zone toggle
@@ -1632,8 +1632,8 @@ Voorbeeld:
 
             // Terminal animation
             const lines = [
-                { text: `$ duesight forensic-scan --file="${fileName}"`, cls: 'accent' },
-                { text: '[init] Forensische cijferanalyse engine v2.1 geladen...', cls: '' },
+                { text: `$ duesight first-digit-check --file="${fileName}"`, cls: 'accent' },
+                { text: '[init] First-digit integriteitstoets v2.1 geladen...', cls: '' },
                 { text: `[load] ${recordCount} records geëxtraheerd`, cls: '' },
                 { text: '[filter] Nulwaarden en niet-numerieke entries verwijderd...', cls: '' },
             ];
@@ -1674,7 +1674,7 @@ Voorbeeld:
             }
 
             await addTerminalLine(`[score] Integrity Score: ${results.integrityScore}/100`, results.integrityScore >= 70 ? 'success' : results.integrityScore >= 45 ? 'warning' : 'danger', 200);
-            await addTerminalLine('[done] Forensische analyse compleet ✓', 'success', 150);
+            await addTerminalLine('[done] First-digit integriteitstoets compleet', 'success', 150);
 
             // Show results
             await sleep(400);
@@ -1834,7 +1834,7 @@ Voorbeeld:
         }
 
         function setupShareLinks(results) {
-            const shareText = `Forensische cijferanalyse via DueSight: Integrity Score ${results.integrityScore}/100 — ${results.verdict}`;
+            const shareText = `First-digit integriteitstoets via DueSight: Integrity Score ${results.integrityScore}/100 - ${results.verdict}`;
             const shareUrl = window.location.href;
 
             document.getElementById('btnCopyLink').addEventListener('click', () => {
